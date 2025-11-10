@@ -29,7 +29,7 @@
 # Workflow
 
 - Be sure to run unit tests when you're done making a series of code changes
-- Prefer running single tests, and not the whole test suite, for example ```npm run test -- Button.tsx```
+- Prefer running single tests, and not the whole test suite, for example `npm run test -- Button.tsx`
 - Use `npm run format` whenever the format is not correct
 
 # Dependency management
