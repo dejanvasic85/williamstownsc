@@ -29,6 +29,7 @@
 - Each file should have line break at the end
 - Try to limit components and modules up to 200 lines and split in to different components to manage complexity
 - Typescript files should be camelCase e.g. myService.ts
+- Application env variables should be declared in config using a zod schema for validation
 
 # Workflow
 

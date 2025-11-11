@@ -2,15 +2,15 @@ import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './src/sanity/schema';
+import { getConfig } from './src/lib/config';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+const config = getConfig();
 
 export default defineConfig({
 	name: 'default',
 	title: 'Williamstown SC',
-	projectId,
-	dataset,
+	projectId: config.sanityProjectId,
+	dataset: config.sanityDataset,
 	basePath: '/studio',
 	plugins: [structureTool(), visionTool()],
 	schema: {

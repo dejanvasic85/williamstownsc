@@ -13,7 +13,8 @@
 		"prepare": "husky",
 		"sanity:deploy": "sanity deploy",
 		"sanity:build": "sanity build",
-		"sanity:typegen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate"
+		"sanity:typegen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
+		"type:check": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@sanity/client": "^7.12.1",
@@ -25,7 +26,8 @@
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
 		"sanity": "^4.14.2",
-		"styled-components": "^6.1.19"
+		"styled-components": "^6.1.19",
+		"zod": "^4.1.12"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",

@@ -1,12 +1,12 @@
 import { defineCliConfig } from 'sanity/cli';
+import { getConfig } from './src/lib/config';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+const config = getConfig();
 
 export default defineCliConfig({
 	api: {
-		projectId,
-		dataset
+		projectId: config.sanityProjectId,
+		dataset: config.sanityDataset
 	},
 	studioHost: 'williamstownsc',
 	deployment: {

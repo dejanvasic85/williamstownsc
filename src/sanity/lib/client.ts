@@ -1,13 +1,12 @@
 import { createClient } from 'next-sanity';
+import { getConfig } from '@/lib/config';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
-const apiVersion = process.env.SANITY_API_VERSION || '2024-01-01';
+const config = getConfig();
 
 export const client = createClient({
-	projectId,
-	dataset,
-	apiVersion,
+	projectId: config.sanityProjectId,
+	dataset: config.sanityDataset,
+	apiVersion: config.sanityApiVersion,
 	useCdn: true,
 	perspective: 'published'
 });
