@@ -13,7 +13,7 @@
 		"prepare": "husky",
 		"sanity:deploy": "sanity deploy",
 		"sanity:build": "sanity build",
-		"sanity:typegen": "sanity schema extract && sanity typegen generate"
+		"sanity:typegen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate"
 	},
 	"dependencies": {
 		"@sanity/client": "^7.12.1",
