@@ -11,6 +11,8 @@
 		"format": "prettier . --write .",
 		"format:check": "prettier . --check",
 		"prepare": "husky",
+		"sanity:deploy": "sanity deploy",
+		"sanity:build": "sanity build",
 		"sanity:typegen": "sanity schema extract && sanity typegen generate"
 	},
 	"dependencies": {
@@ -22,7 +24,8 @@
 		"next-sanity": "^11.6.5",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"sanity": "^4.14.2"
+		"sanity": "^4.14.2",
+		"styled-components": "^6.1.19"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",

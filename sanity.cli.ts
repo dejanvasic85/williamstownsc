@@ -9,5 +9,8 @@ export default defineCliConfig({
 		dataset
 	},
 	studioHost: 'williamstownsc',
-	autoUpdates: true
+	deployment: {
+		autoUpdates: true,
+		appId: 'q0zt4f7qoqrj6b19qxgnfu8e'
+	}
 });
