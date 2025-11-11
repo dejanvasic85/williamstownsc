@@ -6,7 +6,7 @@ The original website is at https://www.williamstownsc.com/
 
 ### Must have
 
-- [ ] Integrate Sanity CMS
+- [x] Integrate Sanity CMS
 - [ ] Basic layout for mobile and desktop
 - [ ] Homepage
 - [ ] News
@@ -29,6 +29,7 @@ The original website is at https://www.williamstownsc.com/
   - [ ] Summer programs
   - [ ] Mino roos
 - [ ] Play at Williamstown (expression of interest)
+- [ ] Search
 
 ### Nice to have
 

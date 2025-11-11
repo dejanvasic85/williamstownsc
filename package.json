@@ -10,13 +10,19 @@
 		"lint-staged": "lint-staged",
 		"format": "prettier . --write .",
 		"format:check": "prettier . --check",
-		"prepare": "husky"
+		"prepare": "husky",
+		"sanity:typegen": "sanity schema extract && sanity typegen generate"
 	},
 	"dependencies": {
+		"@sanity/client": "^7.12.1",
+		"@sanity/image-url": "^1.2.0",
+		"@sanity/vision": "^4.14.2",
 		"daisyui": "5.4.7",
 		"next": "16.0.1",
+		"next-sanity": "^11.6.5",
 		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react-dom": "19.2.0",
+		"sanity": "^4.14.2"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",
