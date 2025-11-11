@@ -1,34 +1,81 @@
-import Image from 'next/image';
-
 export default function Home() {
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans ">
-			<main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white sm:items-start">
-				<Image src="/next.svg" alt="Next.js logo" width={100} height={20} priority />
-				<div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-					<h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black ">
-						To get started, edit the page.tsx file.
-					</h1>
+		<div className="min-h-screen bg-base-200">
+			<div className="navbar bg-base-100 shadow-lg">
+				<div className="flex-1">
+					<a className="btn btn-ghost text-xl">Williamstown SC</a>
 				</div>
-				<div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-					<a
-						className="btn"
-						href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Deploy Now
-					</a>
-					<a
-						className="btn"
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Documentation
-					</a>
+				<div className="flex-none">
+					<ul className="menu menu-horizontal px-1">
+						<li>
+							<a>Home</a>
+						</li>
+						<li>
+							<a>Teams</a>
+						</li>
+						<li>
+							<a>Fixtures</a>
+						</li>
+						<li>
+							<a>Contact</a>
+						</li>
+					</ul>
 				</div>
-			</main>
+			</div>
+
+			<div className="hero min-h-[60vh] bg-base-200">
+				<div className="hero-content text-center">
+					<div className="max-w-md">
+						<h1 className="text-5xl font-bold">Welcome to Williamstown SC</h1>
+						<p className="py-6">
+							Building community through soccer. Join us for competitive play, skill development,
+							and lifelong friendships.
+						</p>
+						<button className="btn btn-primary">Get Started</button>
+					</div>
+				</div>
+			</div>
+
+			<div className="container mx-auto px-4 py-12">
+				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+					<div className="card bg-base-100 shadow-xl">
+						<div className="card-body">
+							<h2 className="card-title">Youth Programs</h2>
+							<p>Develop skills and passion for the game in our youth programs.</p>
+							<div className="card-actions justify-end">
+								<button className="btn btn-primary">Learn More</button>
+							</div>
+						</div>
+					</div>
+
+					<div className="card bg-base-100 shadow-xl">
+						<div className="card-body">
+							<h2 className="card-title">Senior Teams</h2>
+							<p>Competitive play for adults at all skill levels.</p>
+							<div className="card-actions justify-end">
+								<button className="btn btn-primary">Learn More</button>
+							</div>
+						</div>
+					</div>
+
+					<div className="card bg-base-100 shadow-xl">
+						<div className="card-body">
+							<h2 className="card-title">Training</h2>
+							<p>Professional coaching to help you reach your potential.</p>
+							<div className="card-actions justify-end">
+								<button className="btn btn-primary">Learn More</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer className="footer footer-center bg-base-300 p-10 text-base-content">
+				<aside>
+					<p className="font-bold">Williamstown SC</p>
+					<p>Building community through soccer since 2025</p>
+				</aside>
+			</footer>
 		</div>
 	);
 }
