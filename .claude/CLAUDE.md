@@ -3,6 +3,10 @@
 - Nextjs: Always check latest documentation when implementing features. You can use Tools like Nextjs MCP Tools
 - Sanity: The headless CMS has LLM documentation here: https://www.sanity.io/learn/llms.txt
 - Tailwind CSS V4
+- DaisyUI use llms.txt documentation from: https://daisyui.com/llms.txt
+
+# Technical requirements
+
 - Accessibility (a11y) AA compliant
 - Responsive design (mobile-first)
 - Clean and maintainable code with re-usable Components
