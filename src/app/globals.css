@@ -1,16 +1,13 @@
 @import 'tailwindcss';
 @plugin "daisyui" {
-	themes:
-		light,
-		dark,
-		cupcake;
+	themes: light, dark, cupcake;
 }
 
 @plugin "daisyui/theme" {
-	name: "williamstown";
+	name: 'williamstown';
 	default: true;
 	prefersdark: false;
-	color-scheme: "light";
+	color-scheme: 'light';
 	--color-base-100: oklch(98% 0.003 247.858);
 	--color-base-200: oklch(92% 0.013 255.508);
 	--color-base-300: oklch(86% 0.022 252.894);
@@ -39,4 +36,26 @@
 	--border: 2px;
 	--depth: 0;
 	--noise: 0;
+}
+
+body {
+	font-family: var(--font-inter), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-poppins), sans-serif;
+}
+
+.btn {
+	border-radius: 9999px;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.btn:hover {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 50%, transparent);
 }
