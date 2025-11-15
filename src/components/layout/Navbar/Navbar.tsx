@@ -18,7 +18,7 @@ export function Navbar() {
 		<>
 			{/* Mobile Bottom Navigation */}
 			<nav className="fixed bottom-4 left-4 right-4 z-50 lg:hidden">
-				<div className="mx-auto max-w-md rounded-full bg-neutral/80 px-6 py-3 shadow-2xl backdrop-blur-2xl">
+				<div className="mx-auto max-w-md rounded-full bg-neutral-800/70 px-6 py-3 shadow-2xl backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
@@ -29,7 +29,7 @@ export function Navbar() {
 										href={item.href}
 										className={`flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-colors ${
 											isActive
-												? 'bg-primary text-primary-content'
+												? 'bg-primary text-secondary'
 												: 'text-neutral-content hover:bg-neutral-content/10'
 										}`}
 										aria-label={item.name}
