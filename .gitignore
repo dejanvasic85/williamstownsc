@@ -45,3 +45,6 @@ next-env.d.ts
 .sanity
 src/sanity/schema.json
 src/sanity/sanity.types.ts
+
+# playwright mcp output
+.playwright-mcp/
