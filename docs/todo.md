@@ -8,30 +8,27 @@ The original website is at https://www.williamstownsc.com/
 
 - [x] Integrate Sanity CMS
 - [x] Configure Daisy theme for Williamstown (light and dark)
-- [ ] Basic layout for mobile with mobile menu
-- [ ] Basic layout for desktop with menu at the top
+- [ ] Layout
+- [ ] Navbar (mobile and desktop)
 - [ ] Homepage
 - [ ] News
-- [ ] Links to socials
-- [ ] Sponsors
-- [ ] Contact
+- [ ] Football
+  - [ ] Team listings
+  - [ ] Seniors, reserves + women with profiles
+  - [ ] All other teams with coaches details and other useful information like start / end dates
+  - [ ] Programs (Summer programs, Mino roos)
 - [ ] Club
   - [ ] Org / committee members
   - [ ] History
   - [ ] Policies and regulations
   - [ ] Locations including JT Gray and Digman and their layouts
-- [ ] Football
-  - [ ] Team listings
-  - [ ] Seniors, reserves + women with profiles
-  - [ ] All other teams with coaches details and other useful information like start / end dates
-- [ ] Socials links
+- [ ] Sponsors
+- [ ] Contact
 - [ ] Events
   - [ ] Ticketing integration with Try Booking
-- [ ] Programs
-  - [ ] Summer programs
-  - [ ] Mino roos
 - [ ] Play at Williamstown (expression of interest)
 - [ ] Search
+- [ ] Links to socials
 
 ### Nice to have
 
