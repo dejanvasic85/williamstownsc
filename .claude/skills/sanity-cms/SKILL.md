@@ -31,19 +31,19 @@ Follow these conventions for consistency:
 
 ```typescript
 // Schema files: camelCase.ts
-blogPost.ts
-teamMember.ts
-fixtureResult.ts
+blogPost.ts;
+teamMember.ts;
+fixtureResult.ts;
 
 // Field names: camelCase
-publishedAt
-featuredImage
-homeTeamScore
+publishedAt;
+featuredImage;
+homeTeamScore;
 
 // Document types: camelCase
-blogPost
-teamMember
-fixtureResult
+blogPost;
+teamMember;
+fixtureResult;
 ```
 
 ### Required Fields Pattern
@@ -126,101 +126,101 @@ export default {
 ```typescript
 // schemas/documents/blogPost.ts
 export default {
-  name: 'blogPost',
-  title: 'Blog Post',
-  type: 'document',
-  fields: [
-    {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'slug',
-      type: 'slug',
-      title: 'Slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'publishedAt',
-      type: 'datetime',
-      title: 'Published At',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'excerpt',
-      type: 'text',
-      title: 'Excerpt',
-      description: 'Short summary for cards and previews',
-      rows: 3,
-      validation: (Rule) => Rule.max(200)
-    },
-    {
-      name: 'mainImage',
-      type: 'image',
-      title: 'Main Image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-          validation: (Rule) => Rule.required()
-        }
-      ]
-    },
-    {
-      name: 'categories',
-      type: 'array',
-      title: 'Categories',
-      of: [{type: 'reference', to: [{type: 'category'}]}]
-    },
-    {
-      name: 'body',
-      type: 'array',
-      title: 'Body',
-      of: [
-        {type: 'block'},
-        {
-          type: 'image',
-          options: {hotspot: true},
-          fields: [
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative Text'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'featured',
-      type: 'boolean',
-      title: 'Featured Post',
-      description: 'Display on homepage'
-    },
-    {
-      name: 'seo',
-      type: 'seo',
-      title: 'SEO Settings'
-    }
-  ],
-  preview: {
-    select: {
-      title: 'title',
-      media: 'mainImage',
-      subtitle: 'publishedAt'
-    }
-  }
-}
+	name: 'blogPost',
+	title: 'Blog Post',
+	type: 'document',
+	fields: [
+		{
+			name: 'title',
+			type: 'string',
+			title: 'Title',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'slug',
+			type: 'slug',
+			title: 'Slug',
+			options: {
+				source: 'title',
+				maxLength: 96
+			},
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'publishedAt',
+			type: 'datetime',
+			title: 'Published At',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'excerpt',
+			type: 'text',
+			title: 'Excerpt',
+			description: 'Short summary for cards and previews',
+			rows: 3,
+			validation: (Rule) => Rule.max(200)
+		},
+		{
+			name: 'mainImage',
+			type: 'image',
+			title: 'Main Image',
+			options: {
+				hotspot: true
+			},
+			fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alternative Text',
+					validation: (Rule) => Rule.required()
+				}
+			]
+		},
+		{
+			name: 'categories',
+			type: 'array',
+			title: 'Categories',
+			of: [{ type: 'reference', to: [{ type: 'category' }] }]
+		},
+		{
+			name: 'body',
+			type: 'array',
+			title: 'Body',
+			of: [
+				{ type: 'block' },
+				{
+					type: 'image',
+					options: { hotspot: true },
+					fields: [
+						{
+							name: 'alt',
+							type: 'string',
+							title: 'Alternative Text'
+						}
+					]
+				}
+			]
+		},
+		{
+			name: 'featured',
+			type: 'boolean',
+			title: 'Featured Post',
+			description: 'Display on homepage'
+		},
+		{
+			name: 'seo',
+			type: 'seo',
+			title: 'SEO Settings'
+		}
+	],
+	preview: {
+		select: {
+			title: 'title',
+			media: 'mainImage',
+			subtitle: 'publishedAt'
+		}
+	}
+};
 ```
 
 ### Fixture/Match Result Schema
@@ -228,97 +228,96 @@ export default {
 ```typescript
 // schemas/documents/fixture.ts
 export default {
-  name: 'fixture',
-  title: 'Fixture',
-  type: 'document',
-  fields: [
-    {
-      name: 'matchDate',
-      type: 'datetime',
-      title: 'Match Date & Time',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'competition',
-      type: 'string',
-      title: 'Competition',
-      options: {
-        list: [
-          {title: 'NPL Victoria', value: 'npl'},
-          {title: 'FFA Cup', value: 'ffa-cup'},
-          {title: 'State League', value: 'state-league'},
-        ]
-      }
-    },
-    {
-      name: 'homeTeam',
-      type: 'string',
-      title: 'Home Team',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'awayTeam',
-      type: 'string',
-      title: 'Away Team',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'homeScore',
-      type: 'number',
-      title: 'Home Score',
-      description: 'Leave empty for upcoming matches'
-    },
-    {
-      name: 'awayScore',
-      type: 'number',
-      title: 'Away Score',
-      description: 'Leave empty for upcoming matches'
-    },
-    {
-      name: 'venue',
-      type: 'string',
-      title: 'Venue',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'isHomeGame',
-      type: 'boolean',
-      title: 'Is Home Game',
-      description: 'Is this a Williamstown SC home game?'
-    },
-    {
-      name: 'matchReport',
-      type: 'array',
-      title: 'Match Report',
-      description: 'Detailed match report (optional)',
-      of: [{type: 'block'}]
-    },
-    {
-      name: 'highlights',
-      type: 'url',
-      title: 'Highlights Video URL',
-      description: 'YouTube or other video platform URL'
-    }
-  ],
-  preview: {
-    select: {
-      homeTeam: 'homeTeam',
-      awayTeam: 'awayTeam',
-      homeScore: 'homeScore',
-      awayScore: 'awayScore',
-      date: 'matchDate'
-    },
-    prepare({homeTeam, awayTeam, homeScore, awayScore, date}) {
-      const score = homeScore !== undefined && awayScore !== undefined
-        ? `${homeScore}-${awayScore}`
-        : 'vs';
-      return {
-        title: `${homeTeam} ${score} ${awayTeam}`,
-        subtitle: new Date(date).toLocaleDateString()
-      }
-    }
-  }
-}
+	name: 'fixture',
+	title: 'Fixture',
+	type: 'document',
+	fields: [
+		{
+			name: 'matchDate',
+			type: 'datetime',
+			title: 'Match Date & Time',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'competition',
+			type: 'string',
+			title: 'Competition',
+			options: {
+				list: [
+					{ title: 'NPL Victoria', value: 'npl' },
+					{ title: 'FFA Cup', value: 'ffa-cup' },
+					{ title: 'State League', value: 'state-league' }
+				]
+			}
+		},
+		{
+			name: 'homeTeam',
+			type: 'string',
+			title: 'Home Team',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'awayTeam',
+			type: 'string',
+			title: 'Away Team',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'homeScore',
+			type: 'number',
+			title: 'Home Score',
+			description: 'Leave empty for upcoming matches'
+		},
+		{
+			name: 'awayScore',
+			type: 'number',
+			title: 'Away Score',
+			description: 'Leave empty for upcoming matches'
+		},
+		{
+			name: 'venue',
+			type: 'string',
+			title: 'Venue',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'isHomeGame',
+			type: 'boolean',
+			title: 'Is Home Game',
+			description: 'Is this a Williamstown SC home game?'
+		},
+		{
+			name: 'matchReport',
+			type: 'array',
+			title: 'Match Report',
+			description: 'Detailed match report (optional)',
+			of: [{ type: 'block' }]
+		},
+		{
+			name: 'highlights',
+			type: 'url',
+			title: 'Highlights Video URL',
+			description: 'YouTube or other video platform URL'
+		}
+	],
+	preview: {
+		select: {
+			homeTeam: 'homeTeam',
+			awayTeam: 'awayTeam',
+			homeScore: 'homeScore',
+			awayScore: 'awayScore',
+			date: 'matchDate'
+		},
+		prepare({ homeTeam, awayTeam, homeScore, awayScore, date }) {
+			const score =
+				homeScore !== undefined && awayScore !== undefined ? `${homeScore}-${awayScore}` : 'vs';
+			return {
+				title: `${homeTeam} ${score} ${awayTeam}`,
+				subtitle: new Date(date).toLocaleDateString()
+			};
+		}
+	}
+};
 ```
 
 ### Player Profile Schema
@@ -326,109 +325,109 @@ export default {
 ```typescript
 // schemas/documents/player.ts
 export default {
-  name: 'player',
-  title: 'Player',
-  type: 'document',
-  fields: [
-    {
-      name: 'name',
-      type: 'string',
-      title: 'Full Name',
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'slug',
-      type: 'slug',
-      title: 'Slug',
-      options: {
-        source: 'name',
-        maxLength: 96,
-      }
-    },
-    {
-      name: 'number',
-      type: 'number',
-      title: 'Squad Number',
-      validation: (Rule) => Rule.min(1).max(99)
-    },
-    {
-      name: 'position',
-      type: 'string',
-      title: 'Position',
-      options: {
-        list: [
-          {title: 'Goalkeeper', value: 'GK'},
-          {title: 'Defender', value: 'DEF'},
-          {title: 'Midfielder', value: 'MID'},
-          {title: 'Forward', value: 'FWD'},
-        ]
-      },
-      validation: (Rule) => Rule.required()
-    },
-    {
-      name: 'photo',
-      type: 'image',
-      title: 'Player Photo',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-          validation: (Rule) => Rule.required()
-        }
-      ]
-    },
-    {
-      name: 'bio',
-      type: 'text',
-      title: 'Biography',
-      rows: 4
-    },
-    {
-      name: 'stats',
-      type: 'object',
-      title: 'Season Statistics',
-      fields: [
-        {
-          name: 'appearances',
-          type: 'number',
-          title: 'Appearances',
-          initialValue: 0
-        },
-        {
-          name: 'goals',
-          type: 'number',
-          title: 'Goals',
-          initialValue: 0
-        },
-        {
-          name: 'assists',
-          type: 'number',
-          title: 'Assists',
-          initialValue: 0
-        }
-      ]
-    }
-  ],
-  preview: {
-    select: {
-      title: 'name',
-      number: 'number',
-      position: 'position',
-      media: 'photo'
-    },
-    prepare({title, number, position, media}) {
-      return {
-        title: `${number ? `#${number} ` : ''}${title}`,
-        subtitle: position,
-        media
-      }
-    }
-  }
-}
+	name: 'player',
+	title: 'Player',
+	type: 'document',
+	fields: [
+		{
+			name: 'name',
+			type: 'string',
+			title: 'Full Name',
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'slug',
+			type: 'slug',
+			title: 'Slug',
+			options: {
+				source: 'name',
+				maxLength: 96
+			}
+		},
+		{
+			name: 'number',
+			type: 'number',
+			title: 'Squad Number',
+			validation: (Rule) => Rule.min(1).max(99)
+		},
+		{
+			name: 'position',
+			type: 'string',
+			title: 'Position',
+			options: {
+				list: [
+					{ title: 'Goalkeeper', value: 'GK' },
+					{ title: 'Defender', value: 'DEF' },
+					{ title: 'Midfielder', value: 'MID' },
+					{ title: 'Forward', value: 'FWD' }
+				]
+			},
+			validation: (Rule) => Rule.required()
+		},
+		{
+			name: 'photo',
+			type: 'image',
+			title: 'Player Photo',
+			options: {
+				hotspot: true
+			},
+			fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alternative Text',
+					validation: (Rule) => Rule.required()
+				}
+			]
+		},
+		{
+			name: 'bio',
+			type: 'text',
+			title: 'Biography',
+			rows: 4
+		},
+		{
+			name: 'stats',
+			type: 'object',
+			title: 'Season Statistics',
+			fields: [
+				{
+					name: 'appearances',
+					type: 'number',
+					title: 'Appearances',
+					initialValue: 0
+				},
+				{
+					name: 'goals',
+					type: 'number',
+					title: 'Goals',
+					initialValue: 0
+				},
+				{
+					name: 'assists',
+					type: 'number',
+					title: 'Assists',
+					initialValue: 0
+				}
+			]
+		}
+	],
+	preview: {
+		select: {
+			title: 'name',
+			number: 'number',
+			position: 'position',
+			media: 'photo'
+		},
+		prepare({ title, number, position, media }) {
+			return {
+				title: `${number ? `#${number} ` : ''}${title}`,
+				subtitle: position,
+				media
+			};
+		}
+	}
+};
 ```
 
 ## TypeScript Integration
@@ -439,9 +438,9 @@ Add to your `package.json`:
 
 ```json
 {
-  "scripts": {
-    "sanity:typegen": "sanity schema extract && sanity typegen generate"
-  }
+	"scripts": {
+		"sanity:typegen": "sanity schema extract && sanity typegen generate"
+	}
 }
 ```
 
@@ -478,8 +477,8 @@ const NewsCard = ({post}: NewsCardProps) => {
 ### Type-safe GROQ Queries
 
 ```typescript
-import {groq} from 'next-sanity'
-import type {BlogPost} from '@/sanity/types'
+import { groq } from 'next-sanity';
+import type { BlogPost } from '@/sanity/types';
 
 const query = groq`
   *[_type == "blogPost"] | order(publishedAt desc) {
@@ -491,9 +490,9 @@ const query = groq`
     "mainImage": mainImage.asset->url,
     "categories": categories[]->title
   }
-`
+`;
 
-const posts = await client.fetch<BlogPost[]>(query)
+const posts = await client.fetch<BlogPost[]>(query);
 ```
 
 ## GROQ Query Patterns
@@ -668,38 +667,34 @@ const posts = await client.fetch<BlogPost[]>(query)
 
 ```typescript
 // lib/sanity/image.ts
-import imageUrlBuilder from '@sanity/image-url'
-import {client} from './client'
+import imageUrlBuilder from '@sanity/image-url';
+import { client } from './client';
 
-const builder = imageUrlBuilder(client)
+const builder = imageUrlBuilder(client);
 
 export function urlFor(source: any) {
-  return builder.image(source)
+	return builder.image(source);
 }
 
 // Usage:
-import {urlFor} from '@/lib/sanity/image'
+import { urlFor } from '@/lib/sanity/image';
 
-const imageUrl = urlFor(post.mainImage)
-  .width(800)
-  .height(600)
-  .fit('crop')
-  .url()
+const imageUrl = urlFor(post.mainImage).width(800).height(600).fit('crop').url();
 ```
 
 ### Next.js Image Integration
 
 ```tsx
-import Image from 'next/image'
-import {urlFor} from '@/lib/sanity/image'
+import Image from 'next/image';
+import { urlFor } from '@/lib/sanity/image';
 
 <Image
-  src={urlFor(post.mainImage).width(800).height(600).url()}
-  alt={post.mainImage.alt}
-  width={800}
-  height={600}
-  className="rounded-lg"
-/>
+	src={urlFor(post.mainImage).width(800).height(600).url()}
+	alt={post.mainImage.alt}
+	width={800}
+	height={600}
+	className="rounded-lg"
+/>;
 ```
 
 ### Responsive Images
@@ -841,24 +836,24 @@ const components = {
 
 ```typescript
 // app/api/draft/route.ts
-import {draftMode} from 'next/headers'
-import {redirect} from 'next/navigation'
+import { draftMode } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export async function GET(request: Request) {
-  const {searchParams} = new URL(request.url)
-  const secret = searchParams.get('secret')
-  const slug = searchParams.get('slug')
+	const { searchParams } = new URL(request.url);
+	const secret = searchParams.get('secret');
+	const slug = searchParams.get('slug');
 
-  // Verify secret token
-  if (secret !== process.env.SANITY_PREVIEW_SECRET) {
-    return new Response('Invalid token', {status: 401})
-  }
+	// Verify secret token
+	if (secret !== process.env.SANITY_PREVIEW_SECRET) {
+		return new Response('Invalid token', { status: 401 });
+	}
 
-  // Enable draft mode
-  draftMode().enable()
+	// Enable draft mode
+	draftMode().enable();
 
-  // Redirect to the path
-  redirect(slug || '/')
+	// Redirect to the path
+	redirect(slug || '/');
 }
 ```
 
@@ -866,38 +861,38 @@ export async function GET(request: Request) {
 
 ```typescript
 // app/api/exit-draft/route.ts
-import {draftMode} from 'next/headers'
-import {redirect} from 'next/navigation'
+import { draftMode } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export async function GET() {
-  draftMode().disable()
-  redirect('/')
+	draftMode().disable();
+	redirect('/');
 }
 ```
 
 ### Fetch with Draft Content
 
 ```typescript
-import {draftMode} from 'next/headers'
-import {client} from '@/lib/sanity/client'
+import { draftMode } from 'next/headers';
+import { client } from '@/lib/sanity/client';
 
 export async function getPosts() {
-  const preview = draftMode().isEnabled
+	const preview = draftMode().isEnabled;
 
-  const posts = await client.fetch(
-    query,
-    {},
-    {
-      perspective: preview ? 'previewDrafts' : 'published',
-      // Disable caching in preview mode
-      cache: preview ? 'no-store' : 'force-cache',
-      next: {
-        revalidate: preview ? 0 : 3600
-      }
-    }
-  )
+	const posts = await client.fetch(
+		query,
+		{},
+		{
+			perspective: preview ? 'previewDrafts' : 'published',
+			// Disable caching in preview mode
+			cache: preview ? 'no-store' : 'force-cache',
+			next: {
+				revalidate: preview ? 0 : 3600
+			}
+		}
+	);
 
-  return posts
+	return posts;
 }
 ```
 
@@ -931,21 +926,21 @@ sanity/
 
 ```typescript
 // schemas/index.ts
-import blogPost from './documents/blogPost'
-import event from './documents/event'
-import fixture from './documents/fixture'
-import player from './documents/player'
-import seo from './objects/seo'
+import blogPost from './documents/blogPost';
+import event from './documents/event';
+import fixture from './documents/fixture';
+import player from './documents/player';
+import seo from './objects/seo';
 
 export const schemaTypes = [
-  // Documents
-  blogPost,
-  event,
-  fixture,
-  player,
-  // Objects
-  seo,
-]
+	// Documents
+	blogPost,
+	event,
+	fixture,
+	player,
+	// Objects
+	seo
+];
 ```
 
 ## Validation Patterns
@@ -954,38 +949,40 @@ export const schemaTypes = [
 
 ```typescript
 // Required field
-validation: (Rule) => Rule.required()
+validation: (Rule) => Rule.required();
 
 // String length
-validation: (Rule) => Rule.min(50).max(160)
+validation: (Rule) => Rule.min(50).max(160);
 
 // Number range
-validation: (Rule) => Rule.min(0).max(100)
+validation: (Rule) => Rule.min(0).max(100);
 
 // URL validation
-validation: (Rule) => Rule.uri({
-  scheme: ['http', 'https']
-})
+validation: (Rule) =>
+	Rule.uri({
+		scheme: ['http', 'https']
+	});
 
 // Custom validation
-validation: (Rule) => Rule.custom((value) => {
-  if (!value) {
-    return 'This field is required'
-  }
-  if (value.length < 10) {
-    return 'Must be at least 10 characters'
-  }
-  return true
-})
+validation: (Rule) =>
+	Rule.custom((value) => {
+		if (!value) {
+			return 'This field is required';
+		}
+		if (value.length < 10) {
+			return 'Must be at least 10 characters';
+		}
+		return true;
+	});
 
 // Conditional validation
 validation: (Rule) =>
-  Rule.custom((value, context) => {
-    if (context.document.featured && !value) {
-      return 'Featured posts must have an excerpt'
-    }
-    return true
-  })
+	Rule.custom((value, context) => {
+		if (context.document.featured && !value) {
+			return 'Featured posts must have an excerpt';
+		}
+		return true;
+	});
 ```
 
 ## Content Relationships
@@ -1054,15 +1051,15 @@ validation: (Rule) =>
 
 ```typescript
 // lib/sanity/client.ts
-import {createClient} from 'next-sanity'
+import { createClient } from 'next-sanity';
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  apiVersion: '2024-01-01',
-  useCdn: process.env.NODE_ENV === 'production',
-  perspective: 'published',
-})
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+	dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+	apiVersion: '2024-01-01',
+	useCdn: process.env.NODE_ENV === 'production',
+	perspective: 'published'
+});
 ```
 
 ### Next.js Caching
@@ -1070,23 +1067,23 @@ export const client = createClient({
 ```typescript
 // Fetch with caching
 const posts = await client.fetch(
-  query,
-  {},
-  {
-    cache: 'force-cache',
-    next: {
-      revalidate: 3600, // Revalidate every hour
-      tags: ['posts']    // Tag for on-demand revalidation
-    }
-  }
-)
+	query,
+	{},
+	{
+		cache: 'force-cache',
+		next: {
+			revalidate: 3600, // Revalidate every hour
+			tags: ['posts'] // Tag for on-demand revalidation
+		}
+	}
+);
 
 // On-demand revalidation
-import {revalidateTag} from 'next/cache'
+import { revalidateTag } from 'next/cache';
 
 export async function POST(request: Request) {
-  revalidateTag('posts')
-  return Response.json({revalidated: true})
+	revalidateTag('posts');
+	return Response.json({ revalidated: true });
 }
 ```
 
@@ -1128,32 +1125,32 @@ Configure webhooks in Sanity dashboard:
 
 ```typescript
 // app/api/revalidate/route.ts
-import {revalidatePath, revalidateTag} from 'next/cache'
-import {NextRequest, NextResponse} from 'next/server'
+import { revalidatePath, revalidateTag } from 'next/cache';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
-  const body = await request.json()
-  const secret = request.headers.get('x-sanity-webhook-secret')
+	const body = await request.json();
+	const secret = request.headers.get('x-sanity-webhook-secret');
 
-  // Verify webhook secret
-  if (secret !== process.env.SANITY_WEBHOOK_SECRET) {
-    return NextResponse.json({message: 'Invalid secret'}, {status: 401})
-  }
+	// Verify webhook secret
+	if (secret !== process.env.SANITY_WEBHOOK_SECRET) {
+		return NextResponse.json({ message: 'Invalid secret' }, { status: 401 });
+	}
 
-  // Revalidate based on document type
-  const {_type} = body
+	// Revalidate based on document type
+	const { _type } = body;
 
-  if (_type === 'blogPost') {
-    revalidateTag('posts')
-    revalidatePath('/news')
-  }
+	if (_type === 'blogPost') {
+		revalidateTag('posts');
+		revalidatePath('/news');
+	}
 
-  if (_type === 'fixture') {
-    revalidateTag('fixtures')
-    revalidatePath('/fixtures')
-  }
+	if (_type === 'fixture') {
+		revalidateTag('fixtures');
+		revalidatePath('/fixtures');
+	}
 
-  return NextResponse.json({revalidated: true})
+	return NextResponse.json({ revalidated: true });
 }
 ```
 
@@ -1189,6 +1186,7 @@ export async function POST(request: NextRequest) {
 ## Common Pitfalls
 
 ❌ **Don't:**
+
 - Fetch entire documents when you only need a few fields
 - Store computed values that can be calculated
 - Create deeply nested schemas (max 3-4 levels)
@@ -1196,6 +1194,7 @@ export async function POST(request: NextRequest) {
 - Skip alt text on images
 
 ✅ **Do:**
+
 - Use GROQ projections to limit fields
 - Calculate derived values in queries or components
 - Keep schemas flat when possible

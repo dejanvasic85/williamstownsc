@@ -35,36 +35,36 @@ Configure DaisyUI theme in `tailwind.config.js` for Williamstown SC brand identi
 ```js
 // tailwind.config.js
 module.exports = {
-  plugins: [require('daisyui')],
-  daisyui: {
-    themes: [
-      {
-        williamstown: {
-          primary: '#062174',      // Club blue
-          'primary-content': '#FFFFFF',
-          secondary: '#DEB100',    // Club gold
-          'secondary-content': '#000000',
-          accent: '#10B981',       // Soccer green
-          'accent-content': '#FFFFFF',
-          neutral: '#1F2937',
-          'neutral-content': '#FFFFFF',
-          'base-100': '#FFFFFF',   // White
-          'base-200': '#F3F4F6',   // Light gray
-          'base-300': '#E5E7EB',   // Medium gray
-          'base-content': '#1F2937',
-          info: '#3ABFF8',
-          'info-content': '#000000',
-          success: '#36D399',
-          'success-content': '#000000',
-          warning: '#FBBD23',
-          'warning-content': '#000000',
-          error: '#F87272',
-          'error-content': '#000000',
-        },
-      },
-    ],
-  },
-}
+	plugins: [require('daisyui')],
+	daisyui: {
+		themes: [
+			{
+				williamstown: {
+					primary: '#062174', // Club blue
+					'primary-content': '#FFFFFF',
+					secondary: '#DEB100', // Club gold
+					'secondary-content': '#000000',
+					accent: '#10B981', // Soccer green
+					'accent-content': '#FFFFFF',
+					neutral: '#1F2937',
+					'neutral-content': '#FFFFFF',
+					'base-100': '#FFFFFF', // White
+					'base-200': '#F3F4F6', // Light gray
+					'base-300': '#E5E7EB', // Medium gray
+					'base-content': '#1F2937',
+					info: '#3ABFF8',
+					'info-content': '#000000',
+					success: '#36D399',
+					'success-content': '#000000',
+					warning: '#FBBD23',
+					'warning-content': '#000000',
+					error: '#F87272',
+					'error-content': '#000000'
+				}
+			}
+		]
+	}
+};
 ```
 
 ## Component Selection
@@ -72,6 +72,7 @@ module.exports = {
 ### Use DaisyUI Components For
 
 **Navigation & Menus:**
+
 - `navbar` - Top navigation bar
 - `menu` - Vertical/horizontal menu lists
 - `dropdown` - Dropdown menus
@@ -79,12 +80,14 @@ module.exports = {
 - `breadcrumbs` - Page navigation trail
 
 **Actions:**
+
 - `btn` - Buttons with variants (btn-primary, btn-secondary, btn-ghost, btn-outline)
 - `btn-group` - Grouped button sets
 - `swap` - Toggle/swap icons (menu hamburger)
 - `link` - Styled links
 
 **Data Display:**
+
 - `card` - Content cards for news, fixtures, players
 - `badge` - Labels and tags
 - `avatar` - Profile pictures
@@ -93,6 +96,7 @@ module.exports = {
 - `timeline` - Match history timeline
 
 **Forms:**
+
 - `input` - Text inputs with validation states
 - `textarea` - Multi-line text
 - `select` - Dropdown select
@@ -103,6 +107,7 @@ module.exports = {
 - `file-input` - File upload
 
 **Feedback:**
+
 - `alert` - Notifications and messages
 - `modal` - Modal dialogs
 - `toast` - Toast notifications
@@ -111,6 +116,7 @@ module.exports = {
 - `progress` - Progress bars
 
 **Layout:**
+
 - `divider` - Section dividers
 - `stack` - Vertical stacking
 - `join` - Join elements together
@@ -140,20 +146,21 @@ module.exports = {
    - Use `btn-sm` sparingly, only for secondary actions
 
 3. **Form Accessibility:**
+
    ```jsx
    <label className="form-control w-full">
-     <div className="label">
-       <span className="label-text">Email address</span>
-     </div>
-     <input
-       type="email"
-       placeholder="you@example.com"
-       className="input input-bordered w-full"
-       aria-required="true"
-     />
-     <div className="label">
-       <span className="label-text-alt">We'll never share your email</span>
-     </div>
+   	<div className="label">
+   		<span className="label-text">Email address</span>
+   	</div>
+   	<input
+   		type="email"
+   		placeholder="you@example.com"
+   		className="input input-bordered w-full"
+   		aria-required="true"
+   	/>
+   	<div className="label">
+   		<span className="label-text-alt">We'll never share your email</span>
+   	</div>
    </label>
    ```
 
@@ -173,26 +180,26 @@ module.exports = {
 
 ```jsx
 <div className="card bg-base-100 shadow-xl">
-  <div className="card-body">
-    <div className="flex justify-between items-center">
-      <h3 className="card-title text-lg">Round 5</h3>
-      <div className="badge badge-primary">Home</div>
-    </div>
-    <div className="flex justify-between items-center my-4">
-      <div className="text-center flex-1">
-        <p className="font-bold text-xl">Williamstown SC</p>
-      </div>
-      <div className="text-center px-4">
-        <p className="text-3xl font-bold">2 - 1</p>
-      </div>
-      <div className="text-center flex-1">
-        <p className="font-bold text-xl">Opposition FC</p>
-      </div>
-    </div>
-    <div className="card-actions justify-end">
-      <button className="btn btn-ghost btn-sm">Match Report</button>
-    </div>
-  </div>
+	<div className="card-body">
+		<div className="flex justify-between items-center">
+			<h3 className="card-title text-lg">Round 5</h3>
+			<div className="badge badge-primary">Home</div>
+		</div>
+		<div className="flex justify-between items-center my-4">
+			<div className="text-center flex-1">
+				<p className="font-bold text-xl">Williamstown SC</p>
+			</div>
+			<div className="text-center px-4">
+				<p className="text-3xl font-bold">2 - 1</p>
+			</div>
+			<div className="text-center flex-1">
+				<p className="font-bold text-xl">Opposition FC</p>
+			</div>
+		</div>
+		<div className="card-actions justify-end">
+			<button className="btn btn-ghost btn-sm">Match Report</button>
+		</div>
+	</div>
 </div>
 ```
 
@@ -200,21 +207,21 @@ module.exports = {
 
 ```jsx
 <div className="card bg-base-100 shadow-xl">
-  <figure>
-    <img src="/news-image.jpg" alt="News headline" />
-  </figure>
-  <div className="card-body">
-    <div className="flex gap-2">
-      <div className="badge badge-secondary">News</div>
-      <div className="badge badge-outline">Senior Men</div>
-    </div>
-    <h2 className="card-title">2026 Senior Men's Coaching Team</h2>
-    <p>Exciting announcement about our coaching lineup for the upcoming season...</p>
-    <div className="card-actions justify-between items-center mt-4">
-      <span className="text-sm text-base-content/70">2 days ago</span>
-      <button className="btn btn-primary btn-sm">Read More</button>
-    </div>
-  </div>
+	<figure>
+		<img src="/news-image.jpg" alt="News headline" />
+	</figure>
+	<div className="card-body">
+		<div className="flex gap-2">
+			<div className="badge badge-secondary">News</div>
+			<div className="badge badge-outline">Senior Men</div>
+		</div>
+		<h2 className="card-title">2026 Senior Men's Coaching Team</h2>
+		<p>Exciting announcement about our coaching lineup for the upcoming season...</p>
+		<div className="card-actions justify-between items-center mt-4">
+			<span className="text-sm text-base-content/70">2 days ago</span>
+			<button className="btn btn-primary btn-sm">Read More</button>
+		</div>
+	</div>
 </div>
 ```
 
@@ -222,39 +229,72 @@ module.exports = {
 
 ```jsx
 <div className="navbar bg-primary text-primary-content">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <button tabIndex={0} className="btn btn-ghost lg:hidden">
-        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
-      </button>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>HOME</a></li>
-        <li><a>ABOUT</a></li>
-        <li><a>FIXTURES</a></li>
-      </ul>
-    </div>
-    <a className="btn btn-ghost text-xl">WILLIAMSTOWN SC</a>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>HOME</a></li>
-      <li><a>ABOUT</a></li>
-      <li><a>MEMBER INFO</a></li>
-      <li><a>FIXTURES</a></li>
-      <li><a>CALENDAR</a></li>
-      <li><a>CONTACT</a></li>
-      <li><a>SHOP</a></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <button className="btn btn-ghost btn-circle">
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    </button>
-  </div>
+	<div className="navbar-start">
+		<div className="dropdown">
+			<button tabIndex={0} className="btn btn-ghost lg:hidden">
+				<svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
+						d="M4 6h16M4 12h8m-8 6h16"
+					/>
+				</svg>
+			</button>
+			<ul
+				tabIndex={0}
+				className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+			>
+				<li>
+					<a>HOME</a>
+				</li>
+				<li>
+					<a>ABOUT</a>
+				</li>
+				<li>
+					<a>FIXTURES</a>
+				</li>
+			</ul>
+		</div>
+		<a className="btn btn-ghost text-xl">WILLIAMSTOWN SC</a>
+	</div>
+	<div className="navbar-center hidden lg:flex">
+		<ul className="menu menu-horizontal px-1">
+			<li>
+				<a>HOME</a>
+			</li>
+			<li>
+				<a>ABOUT</a>
+			</li>
+			<li>
+				<a>MEMBER INFO</a>
+			</li>
+			<li>
+				<a>FIXTURES</a>
+			</li>
+			<li>
+				<a>CALENDAR</a>
+			</li>
+			<li>
+				<a>CONTACT</a>
+			</li>
+			<li>
+				<a>SHOP</a>
+			</li>
+		</ul>
+	</div>
+	<div className="navbar-end">
+		<button className="btn btn-ghost btn-circle">
+			<svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					strokeWidth={2}
+					d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+				/>
+			</svg>
+		</button>
+	</div>
 </div>
 ```
 
@@ -262,28 +302,28 @@ module.exports = {
 
 ```jsx
 <div className="card card-compact bg-base-100 shadow-xl">
-  <figure>
-    <img src="/player-photo.jpg" alt="Player name" className="w-full h-64 object-cover" />
-  </figure>
-  <div className="card-body">
-    <div className="flex justify-between items-start">
-      <div>
-        <h3 className="card-title">John Smith</h3>
-        <p className="text-sm text-base-content/70">Midfielder</p>
-      </div>
-      <div className="badge badge-lg badge-primary">15</div>
-    </div>
-    <div className="stats stats-vertical shadow mt-2">
-      <div className="stat p-2">
-        <div className="stat-title text-xs">Appearances</div>
-        <div className="stat-value text-lg">24</div>
-      </div>
-      <div className="stat p-2">
-        <div className="stat-title text-xs">Goals</div>
-        <div className="stat-value text-lg">8</div>
-      </div>
-    </div>
-  </div>
+	<figure>
+		<img src="/player-photo.jpg" alt="Player name" className="w-full h-64 object-cover" />
+	</figure>
+	<div className="card-body">
+		<div className="flex justify-between items-start">
+			<div>
+				<h3 className="card-title">John Smith</h3>
+				<p className="text-sm text-base-content/70">Midfielder</p>
+			</div>
+			<div className="badge badge-lg badge-primary">15</div>
+		</div>
+		<div className="stats stats-vertical shadow mt-2">
+			<div className="stat p-2">
+				<div className="stat-title text-xs">Appearances</div>
+				<div className="stat-value text-lg">24</div>
+			</div>
+			<div className="stat p-2">
+				<div className="stat-title text-xs">Goals</div>
+				<div className="stat-value text-lg">8</div>
+			</div>
+		</div>
+	</div>
 </div>
 ```
 
@@ -291,22 +331,22 @@ module.exports = {
 
 ```jsx
 <div className="card bg-base-100 shadow-xl">
-  <div className="card-body">
-    <div className="flex items-start gap-4">
-      <div className="text-center">
-        <div className="text-4xl font-bold text-primary">15</div>
-        <div className="text-sm text-base-content/70">NOV</div>
-      </div>
-      <div className="flex-1">
-        <h3 className="card-title">Season Launch Event</h3>
-        <p className="text-sm text-base-content/70 mb-2">6:00 PM - 9:00 PM</p>
-        <p>Join us for the official 2026 season launch with the new coaching team...</p>
-        <div className="card-actions justify-end mt-4">
-          <button className="btn btn-primary btn-sm">RSVP</button>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div className="card-body">
+		<div className="flex items-start gap-4">
+			<div className="text-center">
+				<div className="text-4xl font-bold text-primary">15</div>
+				<div className="text-sm text-base-content/70">NOV</div>
+			</div>
+			<div className="flex-1">
+				<h3 className="card-title">Season Launch Event</h3>
+				<p className="text-sm text-base-content/70 mb-2">6:00 PM - 9:00 PM</p>
+				<p>Join us for the official 2026 season launch with the new coaching team...</p>
+				<div className="card-actions justify-end mt-4">
+					<button className="btn btn-primary btn-sm">RSVP</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 ```
 
@@ -501,21 +541,21 @@ DaisyUI components are automatically tree-shaken when not used. Only include com
 ```js
 // tailwind.config.js
 module.exports = {
-  theme: {
-    extend: {
-      // Add custom animations
-      animation: {
-        'fade-in': 'fadeIn 0.3s ease-in',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-      },
-    },
-  },
-}
+	theme: {
+		extend: {
+			// Add custom animations
+			animation: {
+				'fade-in': 'fadeIn 0.3s ease-in'
+			},
+			keyframes: {
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				}
+			}
+		}
+	}
+};
 ```
 
 ## Component Composition
@@ -525,29 +565,31 @@ module.exports = {
 ```jsx
 // Fixture list with stats
 const FixtureList = () => (
-  <div className="overflow-x-auto">
-    <table className="table table-zebra">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Home</th>
-          <th>Score</th>
-          <th>Away</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Nov 15</td>
-          <td className="font-bold">Williamstown SC</td>
-          <td className="text-center">2 - 1</td>
-          <td>Opposition FC</td>
-          <td><div className="badge badge-success">Win</div></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-)
+	<div className="overflow-x-auto">
+		<table className="table table-zebra">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Home</th>
+					<th>Score</th>
+					<th>Away</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Nov 15</td>
+					<td className="font-bold">Williamstown SC</td>
+					<td className="text-center">2 - 1</td>
+					<td>Opposition FC</td>
+					<td>
+						<div className="badge badge-success">Win</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+);
 ```
 
 ## Best Practices
@@ -564,12 +606,14 @@ const FixtureList = () => (
 ## Common Pitfalls
 
 ❌ **Don't:**
+
 - Mix inline styles with DaisyUI classes
 - Override DaisyUI CSS variables without understanding the system
 - Create custom components when DaisyUI has a solution
 - Ignore accessibility features built into components
 
 ✅ **Do:**
+
 - Use DaisyUI's theme system for customization
 - Extend with Tailwind utilities when needed
 - Test components across breakpoints
