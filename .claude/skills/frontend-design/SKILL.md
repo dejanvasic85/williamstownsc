@@ -11,7 +11,7 @@ The user provides frontend requirements: a component, page, application, or inte
 
 Before coding, understand the context and commit to a BOLD aesthetic direction:
 - **Purpose**: The purpose of this interface is to allow users to interact with a community football club's website to reach useful information efficiently.
-- **Tone**: Tone should be a mix between editorial/magazine and modern with lots of space and easy to read font.
+- **Tone**: Tone should be a mix between minimalist / clean design with glassmorphism lots of space and easy to read font.
 - **Constraints**: Technical requirements for building frontend includes tailwindcss and Nextjs targeting SSG (static site generation).
 - **Differentiation**: What makes this UNFORGETTABLE? Ease of use, accessibility and unique design elements.
 
@@ -39,3 +39,5 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
 Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+
+**Inspiration**: use inspiration from ./docs/inspiration
