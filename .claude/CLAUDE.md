@@ -8,6 +8,7 @@
 
 # Technical requirements
 
+- PWA
 - Accessibility (a11y) AA compliant
 - Responsive design (mobile-first)
 - Clean and maintainable code with re-usable Components
