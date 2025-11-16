@@ -7,7 +7,6 @@
 		":timezone(Australia/Melbourne)",
 		":dependencyDashboard",
 		":pinDependencies",
-		":pinDevDependencies",
 		"group:allNonMajor"
 	],
 	"automerge": true,
