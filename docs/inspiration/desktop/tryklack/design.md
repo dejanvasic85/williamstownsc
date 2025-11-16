@@ -85,6 +85,7 @@ The Klack website uses **backdrop-filter** CSS property to create frosted glass 
    - Enhanced with subtle border: `border-t border-orange-50 border-opacity-15`
 
 3. **Light Blur (Tooltips/Overlays)**
+
    ```css
    backdrop-filter: blur(4px);
    background-color: rgba(28, 25, 23, 0.8); /* Dark with 80% opacity */

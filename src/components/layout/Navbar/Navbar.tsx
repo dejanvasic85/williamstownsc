@@ -1,6 +1,15 @@
 'use client';
 
-import { Home, Newspaper, Volleyball, Menu } from 'lucide-react';
+import {
+	Home,
+	Newspaper,
+	Volleyball,
+	Menu,
+	Search,
+	Facebook,
+	Instagram,
+	Youtube
+} from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -9,6 +18,23 @@ const mobileNavItems = [
 	{ name: 'News', href: '/news', icon: Newspaper },
 	{ name: 'Football', href: '/football', icon: Volleyball },
 	{ name: 'Menu', href: '/menu', icon: Menu }
+];
+
+const desktopNavItems = [
+	{ name: 'Home', href: '/' },
+	{ name: 'News', href: '/news' },
+	{ name: 'Football', href: '/football' },
+	{ name: 'Club', href: '/club' },
+	{ name: 'Sponsors', href: '/sponsors' },
+	{ name: 'Contact', href: '/contact' },
+	{ name: 'Events', href: '/events' },
+	{ name: 'Play', href: '/play' }
+];
+
+const socialLinks = [
+	{ name: 'Facebook', href: 'https://facebook.com/williamstownsc', icon: Facebook },
+	{ name: 'Instagram', href: 'https://instagram.com/williamstownsc', icon: Instagram },
+	{ name: 'YouTube', href: 'https://youtube.com/@williamstownsc', icon: Youtube }
 ];
 
 export function Navbar() {
@@ -44,13 +70,64 @@ export function Navbar() {
 				</div>
 			</nav>
 
-			{/* Desktop Navigation - TODO: Design desktop version */}
-			<nav className="hidden lg:block">
-				<div className="navbar sticky top-0 z-50 bg-primary/80 backdrop-blur-lg shadow-lg">
-					<div className="mx-auto w-full max-w-7xl px-4">
-						<Link href="/" className="text-xl font-bold text-primary-content">
+			{/* Desktop Navigation */}
+			<nav className="fixed top-4 left-4 right-4 z-50 hidden lg:block">
+				<div className="mx-auto max-w-7xl rounded-full bg-neutral-800/70 px-8 py-4 shadow-2xl backdrop-blur-md">
+					<div className="flex items-center justify-between">
+						{/* Logo/Brand */}
+						<Link
+							href="/"
+							className="text-xl font-bold text-neutral-content transition-opacity hover:opacity-80"
+						>
 							Williamstown SC
 						</Link>
+
+						{/* Main Navigation */}
+						<ul className="flex items-center gap-1">
+							{desktopNavItems.map((item) => {
+								const isActive = pathname === item.href;
+								return (
+									<li key={item.name}>
+										<Link
+											href={item.href}
+											className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+												isActive
+													? 'bg-primary text-secondary'
+													: 'text-neutral-content hover:bg-neutral-content/10'
+											}`}
+											aria-current={isActive ? 'page' : undefined}
+										>
+											{item.name}
+										</Link>
+									</li>
+								);
+							})}
+						</ul>
+
+						{/* Search & Social Links */}
+						<div className="flex items-center gap-2">
+							<button
+								className="rounded-full p-2 text-neutral-content transition-colors hover:bg-neutral-content/10"
+								aria-label="Search"
+							>
+								<Search className="h-5 w-5" />
+							</button>
+							{socialLinks.map((social) => {
+								const Icon = social.icon;
+								return (
+									<a
+										key={social.name}
+										href={social.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="rounded-full p-2 text-neutral-content transition-colors hover:bg-neutral-content/10"
+										aria-label={social.name}
+									>
+										<Icon className="h-5 w-5" />
+									</a>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</nav>
