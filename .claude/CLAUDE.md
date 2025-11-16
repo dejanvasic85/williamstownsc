@@ -1,8 +1,14 @@
 # Tech stack
 
 - Nextjs: Always check latest documentation when implementing features. You can use Tools like Nextjs MCP Tools
-- Sanity: The headless CMS has LLM documentation here: https://www.sanity.io/learn/llms.txt
+- Sanity CMS
 - Tailwind CSS V4
+- DaisyUI for components like navbar, buttons, dialog and forms
+- Lucide for icons
+
+# Technical requirements
+
+- PWA
 - Accessibility (a11y) AA compliant
 - Responsive design (mobile-first)
 - Clean and maintainable code with re-usable Components
@@ -25,6 +31,7 @@
 - Each file should have line break at the end
 - Try to limit components and modules up to 200 lines and split in to different components to manage complexity
 - Typescript files should be camelCase e.g. myService.ts
+- Application env variables should be declared in config using a zod schema for validation
 
 # Workflow
 

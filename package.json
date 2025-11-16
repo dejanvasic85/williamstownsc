@@ -5,29 +5,46 @@
 	"scripts": {
 		"dev": "next dev --port 3003",
 		"build": "next build",
+		"build:sanity": "sanity build",
+		"deploy:sanity": "sanity deploy",
 		"start": "next start",
 		"lint": "eslint",
 		"lint-staged": "lint-staged",
 		"format": "prettier . --write .",
 		"format:check": "prettier . --check",
-		"prepare": "husky"
+		"prepare": "husky",
+		"typegen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
+		"type:check": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@sanity/client": "^7.12.1",
+		"@sanity/image-url": "^1.2.0",
+		"@sanity/vision": "^4.14.2",
+		"daisyui": "5.4.7",
+		"date-fns": "^4.1.0",
+		"lucide-react": "^0.553.0",
 		"next": "16.0.1",
+		"next-sanity": "^11.6.5",
 		"react": "19.2.0",
-		"react-dom": "19.2.0"
+		"react-dom": "19.2.0",
+		"sanity": "^4.14.2",
+		"styled-components": "^6.1.19",
+		"zod": "^4.1.12"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",
 		"@types/node": "^20",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
+		"dotenv": "^17.2.3",
 		"eslint": "^9",
 		"eslint-config-next": "16.0.1",
 		"eslint-config-prettier": "^10.0.0",
 		"husky": "^9.0.7",
 		"lint-staged": "^16.2.6",
 		"prettier": "^3",
+		"prettier-plugin-organize-imports": "^4.3.0",
+		"prettier-plugin-tailwindcss": "^0.7.1",
 		"tailwindcss": "^4",
 		"typescript": "^5"
 	},
@@ -39,5 +56,6 @@
 	},
 	"volta": {
 		"node": "24.11.1"
-	}
+	},
+	"browserslist": "> 1%"
 }

@@ -1,26 +1,105 @@
 @import 'tailwindcss';
+@plugin 'daisyui' {
+	themes: light, dark, cupcake;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'williamstown';
+	default: true;
+	prefersdark: false;
+	color-scheme: 'light';
+	--color-base-100: oklch(98% 0.003 247.858);
+	--color-base-200: oklch(92% 0.013 255.508);
+	--color-base-300: oklch(86% 0.022 252.894);
+	--color-base-content: oklch(21% 0.006 285.885);
+	--color-primary: #1a4ba6;
+	--color-primary-content: oklch(98% 0.003 247.858);
+	--color-secondary: #c9a900;
+	--color-secondary-content: oklch(0% 0 0);
+	--color-accent: #00dba5;
+	--color-accent-content: oklch(38% 0.063 188.416);
+	--color-neutral: oklch(14% 0.005 285.823);
+	--color-neutral-content: oklch(92% 0.004 286.32);
+	--color-info: oklch(74% 0.16 232.661);
+	--color-info-content: oklch(29% 0.066 243.157);
+	--color-success: oklch(76% 0.177 163.223);
+	--color-success-content: oklch(37% 0.077 168.94);
+	--color-warning: oklch(82% 0.189 84.429);
+	--color-warning-content: oklch(41% 0.112 45.904);
+	--color-error: oklch(71% 0.194 13.428);
+	--color-error-content: oklch(27% 0.105 12.094);
+	--radius-selector: 1rem;
+	--radius-field: 0.5rem;
+	--radius-box: 2rem;
+	--size-selector: 0.3125rem;
+	--size-field: 0.28125rem;
+	--border: 2px;
+	--depth: 0;
+	--noise: 0;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'williamstown-dark';
+	default: false;
+	prefersdark: true;
+	color-scheme: 'dark';
+	--color-base-100: oklch(20.768% 0.039 265.754);
+	--color-base-200: oklch(19.314% 0.037 265.754);
+	--color-base-300: oklch(17.86% 0.034 265.754);
+	--color-base-content: oklch(84.153% 0.007 265.754);
+	--color-primary: #062074;
+	--color-primary-content: oklch(93% 0.034 272.788);
+	--color-secondary: #deb100;
+	--color-secondary-content: oklch(0% 0 0);
+	--color-accent: #00dba5;
+	--color-accent-content: oklch(38% 0.063 188.416);
+	--color-neutral: oklch(14% 0.005 285.823);
+	--color-neutral-content: oklch(92% 0.004 286.32);
+	--color-info: oklch(74% 0.16 232.661);
+	--color-info-content: oklch(29% 0.066 243.157);
+	--color-success: oklch(76% 0.177 163.223);
+	--color-success-content: oklch(37% 0.077 168.94);
+	--color-warning: oklch(82% 0.189 84.429);
+	--color-warning-content: oklch(41% 0.112 45.904);
+	--color-error: oklch(71% 0.194 13.428);
+	--color-error-content: oklch(27% 0.105 12.094);
+	--radius-selector: 1rem;
+	--radius-field: 0.5rem;
+	--radius-box: 2rem;
+	--size-selector: 0.3125rem;
+	--size-field: 0.28125rem;
+	--border: 2px;
+	--depth: 0;
+	--noise: 0;
+}
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
-}
-
-@theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+	--navbar-height-desktop: 5rem;
+	--navbar-offset-desktop: 1rem;
+	--navbar-spacing-desktop: 2rem;
+	--navbar-total-height-desktop: calc(
+		var(--navbar-height-desktop) + var(--navbar-offset-desktop) + var(--navbar-spacing-desktop)
+	);
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-inter), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-poppins), sans-serif;
+}
+
+.btn {
+	border-radius: 9999px;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.btn:hover {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 50%, transparent);
 }
