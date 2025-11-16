@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const mobileNavItems = [
 	{ name: 'Home', href: '/', icon: Home },
@@ -31,20 +32,33 @@ const desktopNavItems = [
 	{ name: 'Play', href: '/play' }
 ];
 
-const socialLinks = [
-	{ name: 'Facebook', href: 'https://facebook.com/williamstownsc', icon: Facebook },
-	{ name: 'Instagram', href: 'https://instagram.com/williamstownsc', icon: Instagram },
-	{ name: 'YouTube', href: 'https://youtube.com/@williamstownsc', icon: Youtube }
-];
+type NavbarProps = {
+	logoUrl?: string;
+	logoAlt?: string;
+	clubName?: string;
+	socials?: {
+		facebook?: string;
+		instagram?: string;
+		youtube?: string;
+	};
+};
 
-export function Navbar() {
+export function Navbar({ logoUrl, logoAlt, clubName, socials }: NavbarProps) {
 	const pathname = usePathname();
+
+	const socialLinks = [
+		...(socials?.facebook ? [{ name: 'Facebook', href: socials.facebook, icon: Facebook }] : []),
+		...(socials?.instagram
+			? [{ name: 'Instagram', href: socials.instagram, icon: Instagram }]
+			: []),
+		...(socials?.youtube ? [{ name: 'YouTube', href: socials.youtube, icon: Youtube }] : [])
+	];
 
 	return (
 		<>
 			{/* Mobile Bottom Navigation */}
 			<nav className="fixed bottom-4 left-4 right-4 z-50 lg:hidden">
-				<div className="mx-auto max-w-md rounded-full bg-neutral-700/70 px-6 py-3 shadow-2xl backdrop-blur-md">
+				<div className="mx-auto max-w-md rounded-full bg-primary px-6 py-3 shadow-2xl backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
@@ -55,7 +69,7 @@ export function Navbar() {
 										href={item.href}
 										className={`flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-colors ${
 											isActive
-												? 'bg-primary text-secondary'
+												? 'bg-secondary text-primary'
 												: 'text-neutral-content hover:bg-neutral-content/10'
 										}`}
 										aria-label={item.name}
@@ -72,14 +86,23 @@ export function Navbar() {
 
 			{/* Desktop Navigation */}
 			<nav className="fixed top-4 left-4 right-4 z-50 hidden lg:block">
-				<div className="mx-auto max-w-7xl rounded-full bg-neutral-800/70 px-8 py-4 shadow-2xl backdrop-blur-md">
+				<div className="mx-auto max-w-7xl rounded-full bg-primary px-8 py-4 shadow-2xl backdrop-blur-md">
 					<div className="flex items-center justify-between">
 						{/* Logo/Brand */}
-						<Link
-							href="/"
-							className="text-xl font-bold text-neutral-content transition-opacity hover:opacity-80"
-						>
-							Williamstown SC
+						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+							{logoUrl && (
+								<Image
+									src={logoUrl}
+									alt={logoAlt || 'Club logo'}
+									width={40}
+									height={40}
+									className="h-10 w-auto"
+								/>
+							)}
+
+							<span className="font-bold text-neutral-content hidden text-sm xl:text-xl lg:block">
+								{clubName}
+							</span>
 						</Link>
 
 						{/* Main Navigation */}
@@ -90,10 +113,10 @@ export function Navbar() {
 									<li key={item.name}>
 										<Link
 											href={item.href}
-											className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+											className={`md:text-sm xl:text-md px-4 py-2 transition-colors ${
 												isActive
-													? 'bg-primary text-secondary'
-													: 'text-neutral-content hover:bg-neutral-content/10'
+													? 'text-secondary font-bold border-b-2 border-b-secondary'
+													: 'rounded-lg text-neutral-content font-medium hover:bg-neutral-content/10'
 											}`}
 											aria-current={isActive ? 'page' : undefined}
 										>
