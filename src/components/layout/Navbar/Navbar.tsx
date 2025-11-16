@@ -8,7 +8,8 @@ import {
 	Search,
 	Facebook,
 	Instagram,
-	Youtube
+	Youtube,
+	MapPin
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -41,12 +42,14 @@ type NavbarProps = {
 		instagram?: string;
 		youtube?: string;
 	};
+	homeGroundLink?: string;
 };
 
-export function Navbar({ logoUrl, logoAlt, clubName, socials }: NavbarProps) {
+export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: NavbarProps) {
 	const pathname = usePathname();
 
 	const socialLinks = [
+		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: MapPin }] : []),
 		...(socials?.facebook ? [{ name: 'Facebook', href: socials.facebook, icon: Facebook }] : []),
 		...(socials?.instagram
 			? [{ name: 'Instagram', href: socials.instagram, icon: Instagram }]
@@ -100,7 +103,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials }: NavbarProps) {
 								/>
 							)}
 
-							<span className="font-bold text-neutral-content hidden text-sm xl:text-xl lg:block">
+							<span className="font-bold text-neutral-content hidden xl:text-xl lg:block invisible xl:visible">
 								{clubName}
 							</span>
 						</Link>
@@ -113,7 +116,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials }: NavbarProps) {
 									<li key={item.name}>
 										<Link
 											href={item.href}
-											className={`md:text-sm xl:text-md px-4 py-2 transition-colors ${
+											className={`md:text-sm xl:text-base px-4 py-2 transition-colors ${
 												isActive
 													? 'text-secondary font-bold border-b-2 border-b-secondary'
 													: 'rounded-lg text-neutral-content font-medium hover:bg-neutral-content/10'
