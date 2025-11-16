@@ -29,7 +29,7 @@
 			"allowedVersions": "/^(24|26)\\.\\d+\\.\\d+$/"
 		},
 		{
-			"description": "Node",
+			"description": "Node and types group",
 			"matchPackageNames": ["node", "@types/node"],
 			"groupName": "node and types",
 			"matchManagers": ["volta", "npm"]
