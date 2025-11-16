@@ -164,39 +164,6 @@ export const siteSettings = defineType({
 			type: 'text',
 			rows: 2,
 			description: 'Copyright notice or additional footer text'
-		}),
-		defineField({
-			name: 'emergencyNotice',
-			title: 'Emergency Notice',
-			type: 'object',
-			description: 'Display urgent alerts for closures, weather updates, etc.',
-			fields: [
-				{
-					name: 'enabled',
-					title: 'Show Notice',
-					type: 'boolean',
-					initialValue: false
-				},
-				{
-					name: 'message',
-					title: 'Notice Message',
-					type: 'text',
-					rows: 3
-				},
-				{
-					name: 'type',
-					title: 'Notice Type',
-					type: 'string',
-					options: {
-						list: [
-							{ title: 'Info', value: 'info' },
-							{ title: 'Warning', value: 'warning' },
-							{ title: 'Alert', value: 'alert' }
-						]
-					},
-					initialValue: 'info'
-				}
-			]
 		})
 	],
 	preview: {

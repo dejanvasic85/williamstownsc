@@ -1,3 +1,6 @@
+import { config as loadEnv } from 'dotenv';
+loadEnv({ path: '.env.local' });
+
 import { defineCliConfig } from 'sanity/cli';
 import { getConfig } from './src/lib/config';
 
