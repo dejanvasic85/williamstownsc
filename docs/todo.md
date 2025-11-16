@@ -12,6 +12,7 @@ The original website is at https://www.williamstownsc.com/
   - [x] Navbar (mobile and desktop)
     - [] Submenu
   - [ ] Footer
+  - [ ] Favicon
 - [ ] Homepage
 - [ ] News
 - [ ] Football
