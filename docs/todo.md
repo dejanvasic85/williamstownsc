@@ -9,8 +9,9 @@ The original website is at https://www.williamstownsc.com/
 - [x] Integrate Sanity CMS
 - [x] Configure Daisy theme for Williamstown (light and dark)
 - [ ] Layout
-- [x] Navbar (mobile and desktop)
-  - [] Submenu
+  - [x] Navbar (mobile and desktop)
+    - [] Submenu
+  - [ ] Footer
 - [ ] Homepage
 - [ ] News
 - [ ] Football
@@ -28,8 +29,10 @@ The original website is at https://www.williamstownsc.com/
 - [ ] Events
   - [ ] Ticketing integration with Try Booking
 - [ ] Play at Williamstown (expression of interest)
+  - [ ] Bot detection
 - [ ] Search
-- [ ] Links to socials
+- [x] Links to socials
+- [ ] SEO
 
 ### Nice to have
 
