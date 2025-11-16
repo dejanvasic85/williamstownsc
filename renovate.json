@@ -8,13 +8,12 @@
 		":dependencyDashboard",
 		":pinDependencies",
 		":pinDevDependencies",
-		"group:allNonMajor",
-		"node:lts"
+		"group:allNonMajor"
 	],
 	"automerge": true,
 	"commitMessageAction": "",
 	"labels": ["dependencies"],
-	"prConcurrentLimit": 3,
+	"prConcurrentLimit": 5,
 	"prNotPendingHours": 1,
 	"semanticCommitScope": "",
 	"semanticCommitType": "deps",
@@ -23,6 +22,17 @@
 			"extends": ["monorepo:nextjs"],
 			"groupName": "nextjs monorepo",
 			"matchUpdateTypes": ["digest", "patch", "minor", "major"]
+		},
+		{
+			"description": "Update Volta Node only to LTS releases",
+			"matchManagers": ["volta"],
+			"allowedVersions": "/^(24|26)\\.\\d+\\.\\d+$/"
+		},
+		{
+			"description": "Node",
+			"matchPackageNames": ["node", "@types/node"],
+			"groupName": "node and types",
+			"matchManagers": ["volta", "npm"]
 		}
 	]
 }
