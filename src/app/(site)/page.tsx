@@ -1,12 +1,15 @@
-import { getFeaturedArticles, getSiteSettings } from '@/lib/content';
+import { getFeaturedArticles, getLatestArticles, getSiteSettings } from '@/lib/content';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { NewsCard } from '@/components/NewsCard';
 import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Facebook, Instagram, Youtube, MapPin } from 'lucide-react';
 
 export default async function Home() {
-	const [featuredArticles, siteSettings] = await Promise.all([
+	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([
 		getFeaturedArticles(),
+		getLatestArticles(3),
 		getSiteSettings()
 	]);
 
@@ -89,6 +92,30 @@ export default async function Home() {
 						</div>
 					</div>
 				</div>
+			)}
+
+			{/* Latest News Section */}
+			{latestArticles.length > 0 && (
+				<section className="container mx-auto px-4 py-12">
+					<div className="mb-8 flex items-center justify-between">
+						<h2 className="text-3xl font-bold">Other news and match reports</h2>
+						<Link href="/news" className="btn btn-ghost btn-sm uppercase">
+							View all
+						</Link>
+					</div>
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+						{latestArticles.map((article) => (
+							<NewsCard
+								key={article._id}
+								slug={article.slug}
+								title={article.title}
+								excerpt={article.excerpt}
+								publishedAt={article.publishedAt}
+								featuredImage={article.featuredImage}
+							/>
+						))}
+					</div>
+				</section>
 			)}
 
 			<div className="container mx-auto px-4 py-12">
