@@ -1,11 +1,11 @@
-import { getFeaturedArticles, getLatestArticles, getSiteSettings } from '@/lib/content';
+import { BrandIcon } from '@/components/BrandIcon';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { NewsCard } from '@/components/NewsCard';
+import { getFeaturedArticles, getLatestArticles, getSiteSettings } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
+import { MapPin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
-import { BrandIcon } from '@/components/BrandIcon';
 
 export default async function Home() {
 	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([

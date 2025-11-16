@@ -1,10 +1,10 @@
 'use client';
 
-import { Home, Newspaper, Volleyball, Menu, Search, MapPin } from 'lucide-react';
+import { BrandIcon } from '@/components/BrandIcon';
+import { Home, MapPin, Menu, Newspaper, Search, Volleyball } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import { BrandIcon } from '@/components/BrandIcon';
 
 const mobileNavItems = [
 	{ name: 'Home', href: '/', icon: Home },
