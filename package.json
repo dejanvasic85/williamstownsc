@@ -36,5 +36,8 @@
 			"prettier . --write",
 			"eslint ."
 		]
+	},
+	"volta": {
+		"node": "24.11.1"
 	}
 }

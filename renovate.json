@@ -1,6 +1,28 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		":rebaseStalePrs",
+		":renovatePrefix",
+		":semanticCommits",
+		":timezone(Australia/Melbourne)",
+		":dependencyDashboard",
+		":pinDependencies",
+		":pinDevDependencies",
+		"group:allNonMajor",
+		"node:lts"
+	],
+	"automerge": true,
+	"commitMessageAction": "",
+	"labels": ["dependencies"],
+	"prConcurrentLimit": 3,
+	"prNotPendingHours": 1,
+	"semanticCommitScope": "",
+	"semanticCommitType": "deps",
+	"packageRules": [
+		{
+			"extends": "monorepo:nextjs",
+			"groupName": "nextjs monorepo",
+			"matchUpdateTypes": ["digest", "patch", "minor", "major"]
+		}
+	]
 }
