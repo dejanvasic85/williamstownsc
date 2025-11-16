@@ -75,7 +75,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 
 	return (
 		<div className="relative w-full">
-			<div className="carousel relative h-[60vh] w-full overflow-hidden rounded-box md:h-[70vh]">
+			<div className="carousel rounded-box relative h-[60vh] w-full overflow-hidden md:h-[70vh]">
 				{articles.map((article, index) => (
 					<div
 						key={article._id}
@@ -96,7 +96,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 
 							<div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
 								<div className="flex justify-start">
-									<div className="badge badge-primary badge-lg gap-2 bg-primary/90 px-4 py-3 font-semibold backdrop-blur-sm">
+									<div className="badge badge-primary badge-lg bg-primary/90 gap-2 px-4 py-3 font-semibold backdrop-blur-sm">
 										{formatDate(article.publishedAt)}
 									</div>
 								</div>
@@ -119,20 +119,20 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 				<>
 					<button
 						onClick={handlePrevious}
-						className="btn btn-circle text-secondary absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
+						className="btn btn-circle text-secondary absolute top-1/2 left-4 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
 						aria-label="Previous slide"
 					>
 						❮
 					</button>
 					<button
 						onClick={handleNext}
-						className="btn btn-circle text-secondary absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
+						className="btn btn-circle text-secondary absolute top-1/2 right-4 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
 						aria-label="Next slide"
 					>
 						❯
 					</button>
 
-					<div className="absolute bottom-6 right-6 flex gap-2">
+					<div className="absolute right-6 bottom-6 flex gap-2">
 						{articles.map((_, index) => (
 							<button
 								key={index}

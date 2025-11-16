@@ -25,7 +25,7 @@ export function NewsCard({ slug, title, excerpt, publishedAt, featuredImage }: N
 
 	return (
 		<Link href={`/news/${slug}`} className="group">
-			<div className="card h-full overflow-hidden bg-base-100 shadow-lg transition-all hover:shadow-xl">
+			<div className="card bg-base-100 h-full overflow-hidden shadow-lg transition-all hover:shadow-xl">
 				<figure className="relative aspect-video overflow-hidden">
 					<Image
 						src={featuredImage.url}
@@ -37,12 +37,12 @@ export function NewsCard({ slug, title, excerpt, publishedAt, featuredImage }: N
 				</figure>
 				<div className="card-body p-6">
 					<h3 className="card-title line-clamp-2 text-xl font-bold">{title}</h3>
-					<p className="line-clamp-3 text-base-content/70">{excerpt}</p>
+					<p className="text-base-content/70 line-clamp-3">{excerpt}</p>
 					<div className="mt-2">
 						<time
 							dateTime={publishedDate.toISOString()}
 							title={fullDate}
-							className="text-sm font-bold text-base-content/60"
+							className="text-base-content/60 text-sm font-bold"
 						>
 							{relativeDate}
 						</time>

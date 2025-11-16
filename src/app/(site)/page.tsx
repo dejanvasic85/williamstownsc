@@ -37,7 +37,7 @@ export default async function Home() {
 	];
 
 	return (
-		<div className="min-h-screen bg-base-200">
+		<div className="bg-base-200 min-h-screen">
 			{/* Mobile Header */}
 			<div className="flex items-center justify-between px-4 pt-6 lg:hidden">
 				<div className="flex items-center gap-3">
@@ -61,7 +61,7 @@ export default async function Home() {
 								href={social.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="rounded-full p-2 text-base-content transition-colors hover:bg-base-300"
+								className="text-base-content hover:bg-base-300 rounded-full p-2 transition-colors"
 								aria-label={social.name}
 							>
 								{social.icon === 'mapPin' ? (
@@ -85,7 +85,7 @@ export default async function Home() {
 			)}
 
 			{featuredArticles.length === 0 && (
-				<div className="hero min-h-[60vh] bg-base-200">
+				<div className="hero bg-base-200 min-h-[60vh]">
 					<div className="hero-content text-center">
 						<div className="max-w-md">
 							<h1 className="text-5xl font-bold">Welcome to Williamstown SC</h1>
@@ -123,7 +123,7 @@ export default async function Home() {
 				</section>
 			)}
 
-			<footer className="footer footer-center bg-base-300 p-10 text-base-content">
+			<footer className="footer footer-center bg-base-300 text-base-content p-10">
 				<aside>
 					<p className="font-bold">Williamstown SC</p>
 					<p>Building community through soccer since 2025</p>

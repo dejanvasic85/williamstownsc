@@ -311,13 +311,13 @@ The Klack website uses **backdrop-filter** CSS property to create frosted glass 
 
 ```html
 <!-- Strong blur badge -->
-<div class="backdrop-blur-xl bg-orange-50/20 rounded-[1.25rem] px-5 pl-3">
+<div class="rounded-[1.25rem] bg-orange-50/20 px-5 pl-3 backdrop-blur-xl">
 	<!-- Extra strong blur panel (dark) -->
 	<div
-		class="backdrop-blur-2xl bg-stone-800/80 rounded-3xl border-t border-orange-50/15 shadow-2xl"
+		class="rounded-3xl border-t border-orange-50/15 bg-stone-800/80 shadow-2xl backdrop-blur-2xl"
 	>
 		<!-- Light blur tooltip -->
-		<div class="backdrop-blur-sm bg-stone-900/80 rounded-xl shadow-lg px-3 py-1"></div>
+		<div class="rounded-xl bg-stone-900/80 px-3 py-1 shadow-lg backdrop-blur-sm"></div>
 	</div>
 </div>
 ```
@@ -326,9 +326,9 @@ The Klack website uses **backdrop-filter** CSS property to create frosted glass 
 
 ```html
 <!-- H1 Main heading -->
-<h1 class="text-[96px] font-bold leading-none tracking-[-2.4px]">
+<h1 class="text-[96px] leading-none font-bold tracking-[-2.4px]">
 	<!-- H2 Feature heading -->
-	<h2 class="text-[30px] font-bold leading-[36px] tracking-[-0.4px]">
+	<h2 class="text-[30px] leading-[36px] font-bold tracking-[-0.4px]">
 		<!-- Button text -->
 		<span class="text-lg font-bold">
 			<!-- Small label -->
@@ -343,7 +343,7 @@ The Klack website uses **backdrop-filter** CSS property to create frosted glass 
 ```html
 <!-- Primary CTA -->
 <a
-	class="inline-flex items-center px-5 pl-[52px] py-4 rounded-2xl bg-stone-800/5 text-lg font-bold"
+	class="inline-flex items-center rounded-2xl bg-stone-800/5 px-5 py-4 pl-[52px] text-lg font-bold"
 ></a>
 ```
 
@@ -470,7 +470,7 @@ module.exports = {
 ### Glass Card Component
 
 ```jsx
-<div className="backdrop-blur-2xl bg-stone-800/80 rounded-3xl border-t border-orange-50/15 shadow-2xl shadow-stone-900/80 p-3">
+<div className="rounded-3xl border-t border-orange-50/15 bg-stone-800/80 p-3 shadow-2xl shadow-stone-900/80 backdrop-blur-2xl">
 	{/* Content */}
 </div>
 ```
@@ -478,7 +478,7 @@ module.exports = {
 ### Hero Heading Component
 
 ```jsx
-<h1 className="text-[96px] font-bold leading-none tracking-[-2.4px]">
+<h1 className="text-[96px] leading-none font-bold tracking-[-2.4px]">
 	Satisfying <mark className="font-extrabold">sound</mark> with every keystroke
 </h1>
 ```
@@ -486,7 +486,7 @@ module.exports = {
 ### Glass Button Component
 
 ```jsx
-<a className="inline-flex items-center gap-2 px-5 pl-[52px] py-4 rounded-2xl bg-stone-800/5 text-lg font-bold hover:bg-stone-800/10 transition-colors">
+<a className="inline-flex items-center gap-2 rounded-2xl bg-stone-800/5 px-5 py-4 pl-[52px] text-lg font-bold transition-colors hover:bg-stone-800/10">
 	<Icon className="absolute left-5" />
 	Mac App Store
 </a>
@@ -495,11 +495,11 @@ module.exports = {
 ### Feature Card Component
 
 ```jsx
-<div className="flex flex-col items-center text-center gap-4">
-	<div className="w-16 h-16 flex items-center justify-center">
-		<Icon className="w-12 h-12" />
+<div className="flex flex-col items-center gap-4 text-center">
+	<div className="flex h-16 w-16 items-center justify-center">
+		<Icon className="h-12 w-12" />
 	</div>
-	<h2 className="text-[30px] font-bold leading-[36px] tracking-[-0.4px]">
+	<h2 className="text-[30px] leading-[36px] font-bold tracking-[-0.4px]">
 		High fidelity
 		<br />
 		sound

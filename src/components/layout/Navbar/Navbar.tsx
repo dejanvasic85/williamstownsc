@@ -51,8 +51,8 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 	return (
 		<>
 			{/* Mobile Bottom Navigation */}
-			<nav className="fixed bottom-4 left-4 right-4 z-50 lg:hidden">
-				<div className="mx-auto max-w-md rounded-full bg-primary px-6 py-3 shadow-2xl backdrop-blur-md">
+			<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
+				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-2xl backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
@@ -79,8 +79,8 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 			</nav>
 
 			{/* Desktop Navigation */}
-			<nav className="fixed top-4 left-0 right-0 z-50 hidden lg:block">
-				<div className="container mx-auto rounded-full bg-primary px-8 py-4 shadow-2xl backdrop-blur-md">
+			<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
+				<div className="bg-primary container mx-auto rounded-full px-8 py-4 shadow-2xl backdrop-blur-md">
 					<div className="flex items-center justify-between">
 						{/* Logo/Brand */}
 						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
@@ -94,7 +94,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 								/>
 							)}
 
-							<span className="font-bold text-neutral-content hidden xl:text-xl lg:block invisible xl:visible">
+							<span className="text-neutral-content invisible hidden font-bold lg:block xl:visible xl:text-xl">
 								{clubName}
 							</span>
 						</Link>
@@ -107,10 +107,10 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 									<li key={item.name}>
 										<Link
 											href={item.href}
-											className={`md:text-sm xl:text-base px-4 py-2 transition-colors ${
+											className={`px-4 py-2 transition-colors md:text-sm xl:text-base ${
 												isActive
-													? 'text-secondary font-bold border-b-2 border-b-secondary'
-													: 'rounded-lg text-neutral-content font-medium hover:bg-neutral-content/10'
+													? 'text-secondary border-b-secondary border-b-2 font-bold'
+													: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
 											}`}
 											aria-current={isActive ? 'page' : undefined}
 										>
@@ -124,7 +124,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 						{/* Search & Social Links */}
 						<div className="flex items-center gap-2">
 							<button
-								className="rounded-full p-2 text-neutral-content transition-colors hover:bg-neutral-content/10"
+								className="text-neutral-content hover:bg-neutral-content/10 rounded-full p-2 transition-colors"
 								aria-label="Search"
 							>
 								<Search className="h-5 w-5" />
@@ -135,7 +135,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 									href={social.href}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="rounded-full p-2 text-neutral-content transition-colors hover:bg-neutral-content/10"
+									className="text-neutral-content hover:bg-neutral-content/10 rounded-full p-2 transition-colors"
 									aria-label={social.name}
 								>
 									{social.icon === 'mapPin' ? (

@@ -181,19 +181,19 @@ module.exports = {
 ```jsx
 <div className="card bg-base-100 shadow-xl">
 	<div className="card-body">
-		<div className="flex justify-between items-center">
+		<div className="flex items-center justify-between">
 			<h3 className="card-title text-lg">Round 5</h3>
 			<div className="badge badge-primary">Home</div>
 		</div>
-		<div className="flex justify-between items-center my-4">
-			<div className="text-center flex-1">
-				<p className="font-bold text-xl">Williamstown SC</p>
+		<div className="my-4 flex items-center justify-between">
+			<div className="flex-1 text-center">
+				<p className="text-xl font-bold">Williamstown SC</p>
 			</div>
-			<div className="text-center px-4">
+			<div className="px-4 text-center">
 				<p className="text-3xl font-bold">2 - 1</p>
 			</div>
-			<div className="text-center flex-1">
-				<p className="font-bold text-xl">Opposition FC</p>
+			<div className="flex-1 text-center">
+				<p className="text-xl font-bold">Opposition FC</p>
 			</div>
 		</div>
 		<div className="card-actions justify-end">
@@ -217,8 +217,8 @@ module.exports = {
 		</div>
 		<h2 className="card-title">2026 Senior Men's Coaching Team</h2>
 		<p>Exciting announcement about our coaching lineup for the upcoming season...</p>
-		<div className="card-actions justify-between items-center mt-4">
-			<span className="text-sm text-base-content/70">2 days ago</span>
+		<div className="card-actions mt-4 items-center justify-between">
+			<span className="text-base-content/70 text-sm">2 days ago</span>
 			<button className="btn btn-primary btn-sm">Read More</button>
 		</div>
 	</div>
@@ -243,7 +243,7 @@ module.exports = {
 			</button>
 			<ul
 				tabIndex={0}
-				className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+				className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
 			>
 				<li>
 					<a>HOME</a>
@@ -303,17 +303,17 @@ module.exports = {
 ```jsx
 <div className="card card-compact bg-base-100 shadow-xl">
 	<figure>
-		<img src="/player-photo.jpg" alt="Player name" className="w-full h-64 object-cover" />
+		<img src="/player-photo.jpg" alt="Player name" className="h-64 w-full object-cover" />
 	</figure>
 	<div className="card-body">
-		<div className="flex justify-between items-start">
+		<div className="flex items-start justify-between">
 			<div>
 				<h3 className="card-title">John Smith</h3>
-				<p className="text-sm text-base-content/70">Midfielder</p>
+				<p className="text-base-content/70 text-sm">Midfielder</p>
 			</div>
 			<div className="badge badge-lg badge-primary">15</div>
 		</div>
-		<div className="stats stats-vertical shadow mt-2">
+		<div className="stats stats-vertical mt-2 shadow">
 			<div className="stat p-2">
 				<div className="stat-title text-xs">Appearances</div>
 				<div className="stat-value text-lg">24</div>
@@ -334,14 +334,14 @@ module.exports = {
 	<div className="card-body">
 		<div className="flex items-start gap-4">
 			<div className="text-center">
-				<div className="text-4xl font-bold text-primary">15</div>
-				<div className="text-sm text-base-content/70">NOV</div>
+				<div className="text-primary text-4xl font-bold">15</div>
+				<div className="text-base-content/70 text-sm">NOV</div>
 			</div>
 			<div className="flex-1">
 				<h3 className="card-title">Season Launch Event</h3>
-				<p className="text-sm text-base-content/70 mb-2">6:00 PM - 9:00 PM</p>
+				<p className="text-base-content/70 mb-2 text-sm">6:00 PM - 9:00 PM</p>
 				<p>Join us for the official 2026 season launch with the new coaching team...</p>
-				<div className="card-actions justify-end mt-4">
+				<div className="card-actions mt-4 justify-end">
 					<button className="btn btn-primary btn-sm">RSVP</button>
 				</div>
 			</div>
@@ -566,7 +566,7 @@ module.exports = {
 // Fixture list with stats
 const FixtureList = () => (
 	<div className="overflow-x-auto">
-		<table className="table table-zebra">
+		<table className="table-zebra table">
 			<thead>
 				<tr>
 					<th>Date</th>
