@@ -1,19 +1,10 @@
 'use client';
 
-import {
-	Home,
-	Newspaper,
-	Volleyball,
-	Menu,
-	Search,
-	Facebook,
-	Instagram,
-	Youtube,
-	MapPin
-} from 'lucide-react';
+import { Home, Newspaper, Volleyball, Menu, Search, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { BrandIcon } from '@/components/BrandIcon';
 
 const mobileNavItems = [
 	{ name: 'Home', href: '/', icon: Home },
@@ -49,12 +40,12 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 	const pathname = usePathname();
 
 	const socialLinks = [
-		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: MapPin }] : []),
-		...(socials?.facebook ? [{ name: 'Facebook', href: socials.facebook, icon: Facebook }] : []),
+		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: 'mapPin' }] : []),
 		...(socials?.instagram
-			? [{ name: 'Instagram', href: socials.instagram, icon: Instagram }]
+			? [{ name: 'Instagram', href: socials.instagram, icon: 'instagram' }]
 			: []),
-		...(socials?.youtube ? [{ name: 'YouTube', href: socials.youtube, icon: Youtube }] : [])
+		...(socials?.facebook ? [{ name: 'Facebook', href: socials.facebook, icon: 'facebook' }] : []),
+		...(socials?.youtube ? [{ name: 'YouTube', href: socials.youtube, icon: 'youtube' }] : [])
 	];
 
 	return (
@@ -138,21 +129,25 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 							>
 								<Search className="h-5 w-5" />
 							</button>
-							{socialLinks.map((social) => {
-								const Icon = social.icon;
-								return (
-									<a
-										key={social.name}
-										href={social.href}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="rounded-full p-2 text-neutral-content transition-colors hover:bg-neutral-content/10"
-										aria-label={social.name}
-									>
-										<Icon className="h-5 w-5" />
-									</a>
-								);
-							})}
+							{socialLinks.map((social) => (
+								<a
+									key={social.name}
+									href={social.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="rounded-full p-2 text-neutral-content transition-colors hover:bg-neutral-content/10"
+									aria-label={social.name}
+								>
+									{social.icon === 'mapPin' ? (
+										<MapPin className="h-5 w-5" />
+									) : (
+										<BrandIcon
+											name={social.icon as 'facebook' | 'instagram' | 'youtube'}
+											className="h-5 w-5"
+										/>
+									)}
+								</a>
+							))}
 						</div>
 					</div>
 				</div>

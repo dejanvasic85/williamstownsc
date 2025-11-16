@@ -4,7 +4,8 @@ import { NewsCard } from '@/components/NewsCard';
 import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Facebook, Instagram, Youtube, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import { BrandIcon } from '@/components/BrandIcon';
 
 export default async function Home() {
 	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([
@@ -23,15 +24,15 @@ export default async function Home() {
 			: null;
 
 	const socialLinks = [
-		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: MapPin }] : []),
+		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: 'mapPin' }] : []),
 		...(siteSettings?.socials?.facebook
-			? [{ name: 'Facebook', href: siteSettings.socials.facebook, icon: Facebook }]
+			? [{ name: 'Facebook', href: siteSettings.socials.facebook, icon: 'facebook' }]
 			: []),
 		...(siteSettings?.socials?.instagram
-			? [{ name: 'Instagram', href: siteSettings.socials.instagram, icon: Instagram }]
+			? [{ name: 'Instagram', href: siteSettings.socials.instagram, icon: 'instagram' }]
 			: []),
 		...(siteSettings?.socials?.youtube
-			? [{ name: 'YouTube', href: siteSettings.socials.youtube, icon: Youtube }]
+			? [{ name: 'YouTube', href: siteSettings.socials.youtube, icon: 'youtube' }]
 			: [])
 	];
 
@@ -54,21 +55,25 @@ export default async function Home() {
 
 				{socialLinks.length > 0 && (
 					<div className="flex items-center gap-1">
-						{socialLinks.map((social) => {
-							const Icon = social.icon;
-							return (
-								<a
-									key={social.name}
-									href={social.href}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="rounded-full p-2 text-base-content transition-colors hover:bg-base-300"
-									aria-label={social.name}
-								>
-									<Icon className="h-5 w-5" />
-								</a>
-							);
-						})}
+						{socialLinks.map((social) => (
+							<a
+								key={social.name}
+								href={social.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="rounded-full p-2 text-base-content transition-colors hover:bg-base-300"
+								aria-label={social.name}
+							>
+								{social.icon === 'mapPin' ? (
+									<MapPin className="h-5 w-5" />
+								) : (
+									<BrandIcon
+										name={social.icon as 'facebook' | 'instagram' | 'youtube'}
+										className="h-5 w-5"
+									/>
+								)}
+							</a>
+						))}
 					</div>
 				)}
 			</div>
