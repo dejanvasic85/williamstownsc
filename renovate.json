@@ -20,7 +20,7 @@
 	"semanticCommitType": "deps",
 	"packageRules": [
 		{
-			"extends": "monorepo:nextjs",
+			"extends": ["monorepo:nextjs"],
 			"groupName": "nextjs monorepo",
 			"matchUpdateTypes": ["digest", "patch", "minor", "major"]
 		}
