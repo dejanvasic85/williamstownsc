@@ -44,7 +44,7 @@ export function Navbar() {
 		<>
 			{/* Mobile Bottom Navigation */}
 			<nav className="fixed bottom-4 left-4 right-4 z-50 lg:hidden">
-				<div className="mx-auto max-w-md rounded-full bg-neutral-800/70 px-6 py-3 shadow-2xl backdrop-blur-md">
+				<div className="mx-auto max-w-md rounded-full bg-neutral-700/70 px-6 py-3 shadow-2xl backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
