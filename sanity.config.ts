@@ -7,8 +7,6 @@ import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './src/sanity/schema/index';
 import { structure } from './src/sanity/structure';
 import { getConfig } from './src/lib/config';
-import { config as loadEnv } from 'dotenv';
-loadEnv({ path: '.env.local' });
 
 const appConfig = getConfig();
 

@@ -90,6 +90,8 @@ export const siteSettings = defineType({
 				}
 			]
 		}),
+
+		// Main contacts
 		defineField({
 			name: 'contact',
 			title: 'Contact Information',
@@ -100,14 +102,11 @@ export const siteSettings = defineType({
 					title: 'Email',
 					type: 'string',
 					validation: (Rule) => Rule.email()
-				},
-				{
-					name: 'phone',
-					title: 'Phone',
-					type: 'string'
 				}
 			]
 		}),
+
+		// Socials
 		defineField({
 			name: 'socials',
 			title: 'Social Media',
@@ -124,46 +123,87 @@ export const siteSettings = defineType({
 					type: 'url'
 				},
 				{
-					name: 'twitter',
-					title: 'X (Twitter)',
-					type: 'url'
-				},
-				{
 					name: 'youtube',
 					title: 'YouTube',
 					type: 'url'
 				}
 			]
 		}),
+
+		// SEO Defaults
 		defineField({
-			name: 'seo',
-			title: 'SEO Defaults',
+			name: 'seoDefaults',
+			title: 'Default SEO Settings',
 			type: 'object',
 			fields: [
-				{
-					name: 'metaDescription',
-					title: 'Default Meta Description',
+				defineField({
+					name: 'siteTitle',
+					title: 'Default Site Title',
+					type: 'string',
+					validation: (Rule) => Rule.required()
+				}),
+				defineField({
+					name: 'siteDescription',
+					title: 'Default Site Description',
 					type: 'text',
-					rows: 3,
-					validation: (Rule) => Rule.max(160)
-				},
-				{
+					validation: (Rule) => Rule.required().max(160)
+				}),
+				defineField({
+					name: 'keywords',
+					title: 'Default Keywords',
+					type: 'array',
+					of: [{ type: 'string' }]
+				}),
+				defineField({
 					name: 'ogImage',
-					title: 'Default OG Image',
+					title: 'Default Social Share Image',
 					type: 'image',
-					description: 'Default image for social media sharing',
 					options: {
 						hotspot: true
 					}
-				}
+				})
 			]
 		}),
+
+		// Footer
 		defineField({
 			name: 'footerText',
 			title: 'Footer Text',
 			type: 'text',
 			rows: 2,
 			description: 'Copyright notice or additional footer text'
+		}),
+
+		// Analytics & Tracking
+		defineField({
+			name: 'analytics',
+			title: 'Analytics & Tracking',
+			type: 'object',
+			fields: [
+				defineField({
+					name: 'gtmId',
+					title: 'Google Tag Manager ID',
+					type: 'string',
+					description: 'Your GTM container ID (e.g., GTM-XXXXXXX)',
+					validation: (Rule) =>
+						Rule.regex(/^GTM-[A-Z0-9]+$/, {
+							name: 'GTM ID format',
+							invert: false
+						}).warning('GTM ID should be in format GTM-XXXXXXX')
+				}),
+				defineField({
+					name: 'ga4MeasurementId',
+					title: 'GA4 Measurement ID (Optional)',
+					type: 'string',
+					description:
+						'Your GA4 Measurement ID (e.g., G-XXXXXXXXXX) - only needed if not using GTM',
+					validation: (Rule) =>
+						Rule.regex(/^G-[A-Z0-9]+$/, {
+							name: 'GA4 ID format',
+							invert: false
+						}).warning('GA4 ID should be in format G-XXXXXXXXXX')
+				})
+			]
 		})
 	],
 	preview: {
