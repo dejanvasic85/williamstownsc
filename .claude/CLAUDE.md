@@ -3,10 +3,12 @@
 - Nextjs: Always check latest documentation when implementing features. You can use Tools like Nextjs MCP Tools
 - Sanity CMS
 - Tailwind CSS V4
-- DaisyUI use
+- DaisyUI for components like navbar, buttons, dialog and forms
+- Lucide for icons
 
 # Technical requirements
 
+- PWA
 - Accessibility (a11y) AA compliant
 - Responsive design (mobile-first)
 - Clean and maintainable code with re-usable Components

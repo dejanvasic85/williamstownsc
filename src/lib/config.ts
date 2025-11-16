@@ -16,9 +16,9 @@ export function getConfig(): Config {
 	}
 
 	const config = configSchema.parse({
-		sanityProjectId: process.env.SANITY_PROJECT_ID,
-		sanityDataset: process.env.SANITY_DATASET,
-		sanityApiVersion: process.env.SANITY_API_VERSION
+		sanityProjectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+		sanityDataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+		sanityApiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION
 	});
 
 	cachedConfig = config;

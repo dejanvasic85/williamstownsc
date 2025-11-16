@@ -1,28 +1,6 @@
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-base-200">
-			<div className="navbar bg-base-100 shadow-lg">
-				<div className="flex-1">
-					<a className="btn btn-ghost text-xl">Williamstown SC</a>
-				</div>
-				<div className="flex-none">
-					<ul className="menu menu-horizontal px-1">
-						<li>
-							<a>Home</a>
-						</li>
-						<li>
-							<a>Teams</a>
-						</li>
-						<li>
-							<a>Fixtures</a>
-						</li>
-						<li>
-							<a>Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
 			<div className="hero min-h-[60vh] bg-base-200">
 				<div className="hero-content text-center">
 					<div className="max-w-md">

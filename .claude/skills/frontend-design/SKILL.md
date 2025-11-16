@@ -10,6 +10,7 @@ The user provides frontend requirements: a component, page, application, or inte
 ## Design Thinking
 
 Before coding, understand the context and commit to a BOLD aesthetic direction:
+
 - **Purpose**: The purpose of this interface is to allow users to interact with a community football club's website to reach useful information efficiently.
 - **Tone**: Tone should be a mix between minimalist / clean design with glassmorphism lots of space and easy to read font.
 - **Constraints**: Technical requirements for building frontend includes tailwindcss and Nextjs targeting SSG (static site generation).
@@ -18,6 +19,7 @@ Before coding, understand the context and commit to a BOLD aesthetic direction:
 **CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
 
 Then implement working code (HTML/CSS/JS, React) that is:
+
 - Production-grade and functional
 - Visually striking and memorable
 - Cohesive with a clear aesthetic point-of-view
@@ -26,6 +28,7 @@ Then implement working code (HTML/CSS/JS, React) that is:
 ## Frontend Aesthetics Guidelines
 
 Focus on:
+
 - **Typography**: Choose fonts that are are simple to read so Inter could work but right sizing and text spacing is important to ensure it looks modern.
 - **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes. Stick to the team's primary colours, but don't be afraid to use nice greens to indicate soccer vibes as well as playful tones of gold which is the secondary colour.
 - **Motion**: Use animations for effects and micro-interactions. Prioritize tailwind animation solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
