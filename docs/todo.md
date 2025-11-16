@@ -9,7 +9,8 @@ The original website is at https://www.williamstownsc.com/
 - [x] Integrate Sanity CMS
 - [x] Configure Daisy theme for Williamstown (light and dark)
 - [ ] Layout
-- [ ] Navbar (mobile and desktop)
+- [x] Navbar (mobile and desktop)
+  - [] Submenu
 - [ ] Homepage
 - [ ] News
 - [ ] Football
