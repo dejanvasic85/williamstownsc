@@ -1,4 +1,5 @@
 import { BrandIcon } from '@/components/BrandIcon';
+import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { NewsCard } from '@/components/NewsCard';
 import { getFeaturedArticles, getLatestArticles, getSiteSettings } from '@/lib/content';
@@ -122,6 +123,9 @@ export default async function Home() {
 					</div>
 				</section>
 			)}
+
+			{/* Football Section */}
+			<FootballSection />
 
 			<footer className="footer footer-center bg-base-300 text-base-content p-10">
 				<aside>

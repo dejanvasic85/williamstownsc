@@ -103,3 +103,16 @@ h6 {
 .btn:hover {
 	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 50%, transparent);
 }
+
+[data-theme='williamstown-dark'] .btn-ghost:hover {
+	border-color: var(--color-secondary);
+	color: var(--color-secondary);
+}
+
+[data-theme='williamstown-dark'] .btn-link {
+	--btn-fg: white;
+}
+
+[data-theme='williamstown-dark'] .btn-link:hover {
+	--btn-fg: var(--color-secondary);
+}

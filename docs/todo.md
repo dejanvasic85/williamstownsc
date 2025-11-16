@@ -20,12 +20,12 @@ The original website is at https://www.williamstownsc.com/
   - [ ] Seniors, reserves + women with profiles
   - [ ] All other teams with coaches details and other useful information like start / end dates
   - [ ] Programs (Summer programs, Mino roos)
+- [ ] Sponsors
 - [ ] Club
-  - [ ] Org / committee members
-  - [ ] History
+  - [ ] About and History
+  - [ ] Org, committee members and contacts
   - [ ] Policies and regulations
   - [ ] Locations including JT Gray and Digman and their layouts
-- [ ] Sponsors
 - [ ] Contact
 - [ ] Events
   - [ ] Ticketing integration with Try Booking
@@ -39,7 +39,7 @@ The original website is at https://www.williamstownsc.com/
 
 The following is a list of things we may be not need on initial launch and can come later:
 
-- [ ] Social feeds from places like instagram or facebook
+- [ ] Publish news to facebook, instagram
 - [ ] Publishing schedule, results and tables
 - [ ] Senior team match reports with You Tube embed of highlights or full match
 - [ ] Space for links and general info on Regulations and rules
