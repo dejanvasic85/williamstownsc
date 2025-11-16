@@ -2,7 +2,12 @@ import { BrandIcon } from '@/components/BrandIcon';
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { NewsCard } from '@/components/NewsCard';
-import { getFeaturedArticles, getLatestArticles, getSiteSettings } from '@/lib/content';
+import {
+	getFeaturedArticles,
+	getLatestArticles,
+	getSiteSettings,
+	TransformedNewsArticle
+} from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
 import { MapPin } from 'lucide-react';
 import Image from 'next/image';
@@ -17,7 +22,9 @@ export default async function Home() {
 
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
-	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
+	const homeGround = siteSettings?.locations?.find(
+		(location: { facilityType?: string }) => location.facilityType === 'home'
+	);
 	const homeGroundLink = homeGround?.mapLink
 		? homeGround.mapLink
 		: homeGround?.address
@@ -110,7 +117,7 @@ export default async function Home() {
 						</Link>
 					</div>
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-						{latestArticles.map((article) => (
+						{latestArticles.map((article: TransformedNewsArticle) => (
 							<NewsCard
 								key={article._id}
 								slug={article.slug}

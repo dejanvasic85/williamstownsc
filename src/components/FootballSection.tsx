@@ -5,6 +5,7 @@ interface TeamCard {
 	title: string;
 	description: string;
 	icon: 'trophy' | 'users';
+	coach?: string;
 }
 
 const teamCardsValue: TeamCard[] = [

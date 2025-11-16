@@ -34,6 +34,7 @@ The original website is at https://www.williamstownsc.com/
 - [ ] Search
 - [x] Links to socials
 - [ ] SEO
+- [ ] PWA setup and install dialog
 
 ### Nice to have
 

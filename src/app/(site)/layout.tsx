@@ -22,7 +22,9 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 		: undefined;
 	const logoAlt = siteSettings?.logo?.alt;
 
-	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
+	const homeGround = siteSettings?.locations?.find(
+		(location: { facilityType?: string }) => location.facilityType === 'home'
+	);
 	const homeGroundLink = homeGround?.mapLink
 		? homeGround.mapLink
 		: homeGround?.address

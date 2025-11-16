@@ -1,23 +1,12 @@
 'use client';
 
+import { TransformedNewsArticle } from '@/lib/content';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-interface NewsArticle {
-	_id: string;
-	title: string;
-	slug: { current: string };
-	publishedAt: string;
-	featuredImage: {
-		url: string;
-		alt?: string;
-	};
-	excerpt: string;
-}
-
 interface HeroCarouselProps {
-	articles: NewsArticle[];
+	articles: TransformedNewsArticle[];
 	autoplayInterval?: number;
 }
 
@@ -83,7 +72,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 							index === currentSlide ? 'opacity-100' : 'opacity-0'
 						}`}
 					>
-						<Link href={`/news/${article.slug.current}`} className="relative h-full w-full">
+						<Link href={`/news/${article.slug}`} className="relative h-full w-full">
 							<Image
 								src={article.featuredImage.url}
 								alt={article.featuredImage.alt || article.title}
