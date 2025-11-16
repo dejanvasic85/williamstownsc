@@ -165,15 +165,6 @@ export const siteSettings = defineType({
 			]
 		}),
 
-		// Footer
-		defineField({
-			name: 'footerText',
-			title: 'Footer Text',
-			type: 'text',
-			rows: 2,
-			description: 'Copyright notice or additional footer text'
-		}),
-
 		// Analytics & Tracking
 		defineField({
 			name: 'analytics',
