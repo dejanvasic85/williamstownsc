@@ -1,18 +1,32 @@
-export default function Home() {
+import { getFeaturedArticles } from '@/lib/content';
+import { HeroCarousel } from '@/components/HeroCarousel';
+
+export default async function Home() {
+	const featuredArticles = await getFeaturedArticles();
+	console.log('featured', featuredArticles);
+
 	return (
 		<div className="min-h-screen bg-base-200">
-			<div className="hero min-h-[60vh] bg-base-200">
-				<div className="hero-content text-center">
-					<div className="max-w-md">
-						<h1 className="text-5xl font-bold">Welcome to Williamstown SC</h1>
-						<p className="py-6">
-							Building community through soccer. Join us for competitive play, skill development,
-							and lifelong friendships.
-						</p>
-						<button className="btn btn-primary">Get Started</button>
+			{featuredArticles.length > 0 && (
+				<div className="container mx-auto mb-12 px-4 pt-6 lg:pt-[var(--navbar-total-height-desktop)]">
+					<HeroCarousel articles={featuredArticles} />
+				</div>
+			)}
+
+			{featuredArticles.length === 0 && (
+				<div className="hero min-h-[60vh] bg-base-200">
+					<div className="hero-content text-center">
+						<div className="max-w-md">
+							<h1 className="text-5xl font-bold">Welcome to Williamstown SC</h1>
+							<p className="py-6">
+								Building community through soccer. Join us for competitive play, skill development,
+								and lifelong friendships.
+							</p>
+							<button className="btn btn-primary">Get Started</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 
 			<div className="container mx-auto px-4 py-12">
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">

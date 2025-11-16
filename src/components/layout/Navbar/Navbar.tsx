@@ -85,8 +85,8 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials }: NavbarProps) {
 			</nav>
 
 			{/* Desktop Navigation */}
-			<nav className="fixed top-4 left-4 right-4 z-50 hidden lg:block">
-				<div className="mx-auto max-w-7xl rounded-full bg-primary px-8 py-4 shadow-2xl backdrop-blur-md">
+			<nav className="fixed top-4 left-0 right-0 z-50 hidden lg:block">
+				<div className="container mx-auto rounded-full bg-primary px-8 py-4 shadow-2xl backdrop-blur-md">
 					<div className="flex items-center justify-between">
 						{/* Logo/Brand */}
 						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">

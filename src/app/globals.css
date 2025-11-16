@@ -73,6 +73,15 @@
 	--noise: 0;
 }
 
+:root {
+	--navbar-height-desktop: 5rem;
+	--navbar-offset-desktop: 1rem;
+	--navbar-spacing-desktop: 2rem;
+	--navbar-total-height-desktop: calc(
+		var(--navbar-height-desktop) + var(--navbar-offset-desktop) + var(--navbar-spacing-desktop)
+	);
+}
+
 body {
 	font-family: var(--font-inter), sans-serif;
 }
