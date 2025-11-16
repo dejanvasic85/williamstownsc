@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface NewsArticle {
 	_id: string;
@@ -23,27 +23,42 @@ interface HeroCarouselProps {
 
 export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarouselProps) {
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-	useEffect(() => {
+	const startInterval = () => {
 		if (articles.length <= 1) return;
 
-		const interval = setInterval(() => {
+		if (intervalRef.current) {
+			clearInterval(intervalRef.current);
+		}
+
+		intervalRef.current = setInterval(() => {
 			setCurrentSlide((prev) => (prev + 1) % articles.length);
 		}, autoplayInterval);
+	};
 
-		return () => clearInterval(interval);
+	useEffect(() => {
+		startInterval();
+		return () => {
+			if (intervalRef.current) {
+				clearInterval(intervalRef.current);
+			}
+		};
 	}, [articles.length, autoplayInterval]);
 
 	const handleSlideChange = (index: number) => {
 		setCurrentSlide(index);
+		startInterval();
 	};
 
 	const handlePrevious = () => {
 		setCurrentSlide((prev) => (prev - 1 + articles.length) % articles.length);
+		startInterval();
 	};
 
 	const handleNext = () => {
 		setCurrentSlide((prev) => (prev + 1) % articles.length);
+		startInterval();
 	};
 
 	if (articles.length === 0) {
