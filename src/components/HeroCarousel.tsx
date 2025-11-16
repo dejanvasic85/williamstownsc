@@ -51,7 +51,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 	}
 
 	const formatDate = (date: string) => {
-		return new Date(date).toLocaleDateString('en-US', {
+		return new Date(date).toLocaleDateString('en-AU', {
 			month: 'short',
 			day: 'numeric',
 			year: 'numeric'
@@ -77,7 +77,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 								priority={index === 0}
 								sizes="100vw"
 							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 
 							<div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
 								<div className="flex justify-start">
@@ -104,14 +104,14 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 				<>
 					<button
 						onClick={handlePrevious}
-						className="btn btn-circle absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
+						className="btn btn-circle text-secondary absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
 						aria-label="Previous slide"
 					>
 						❮
 					</button>
 					<button
 						onClick={handleNext}
-						className="btn btn-circle absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
+						className="btn btn-circle text-secondary absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
 						aria-label="Next slide"
 					>
 						❯
