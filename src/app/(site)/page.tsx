@@ -1,14 +1,77 @@
-import { getFeaturedArticles } from '@/lib/content';
+import { getFeaturedArticles, getSiteSettings } from '@/lib/content';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { urlFor } from '@/sanity/lib/image';
+import Image from 'next/image';
+import { Facebook, Instagram, Youtube, MapPin } from 'lucide-react';
 
 export default async function Home() {
-	const featuredArticles = await getFeaturedArticles();
-	console.log('featured', featuredArticles);
+	const [featuredArticles, siteSettings] = await Promise.all([
+		getFeaturedArticles(),
+		getSiteSettings()
+	]);
+
+	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
+
+	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
+	const homeGroundLink = homeGround?.mapLink
+		? homeGround.mapLink
+		: homeGround?.address
+			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGround.address)}`
+			: null;
+
+	const socialLinks = [
+		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: MapPin }] : []),
+		...(siteSettings?.socials?.facebook
+			? [{ name: 'Facebook', href: siteSettings.socials.facebook, icon: Facebook }]
+			: []),
+		...(siteSettings?.socials?.instagram
+			? [{ name: 'Instagram', href: siteSettings.socials.instagram, icon: Instagram }]
+			: []),
+		...(siteSettings?.socials?.youtube
+			? [{ name: 'YouTube', href: siteSettings.socials.youtube, icon: Youtube }]
+			: [])
+	];
 
 	return (
 		<div className="min-h-screen bg-base-200">
+			{/* Mobile Header */}
+			<div className="flex items-center justify-between px-4 pt-6 lg:hidden">
+				<div className="flex items-center gap-3">
+					{logoUrl && (
+						<Image
+							src={logoUrl}
+							alt={siteSettings?.logo?.alt || 'Club logo'}
+							width={48}
+							height={48}
+							className="h-12 w-auto"
+						/>
+					)}
+					<h1 className="text-2xl font-bold">{siteSettings?.clubName}</h1>
+				</div>
+
+				{socialLinks.length > 0 && (
+					<div className="flex items-center gap-1">
+						{socialLinks.map((social) => {
+							const Icon = social.icon;
+							return (
+								<a
+									key={social.name}
+									href={social.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="rounded-full p-2 text-base-content transition-colors hover:bg-base-300"
+									aria-label={social.name}
+								>
+									<Icon className="h-5 w-5" />
+								</a>
+							);
+						})}
+					</div>
+				)}
+			</div>
+
 			{featuredArticles.length > 0 && (
-				<div className="container mx-auto mb-12 px-4 pt-6 lg:pt-[var(--navbar-total-height-desktop)]">
+				<div className="container mx-auto mb-12 px-4 pt-6 lg:pt-(--navbar-total-height-desktop)">
 					<HeroCarousel articles={featuredArticles} />
 				</div>
 			)}

@@ -22,6 +22,13 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 		: undefined;
 	const logoAlt = siteSettings?.logo?.alt;
 
+	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
+	const homeGroundLink = homeGround?.mapLink
+		? homeGround.mapLink
+		: homeGround?.address
+			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGround.address)}`
+			: undefined;
+
 	return (
 		<>
 			<Navbar
@@ -29,6 +36,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 				logoAlt={logoAlt}
 				clubName={siteSettings?.clubName}
 				socials={siteSettings?.socials}
+				homeGroundLink={homeGroundLink}
 			/>
 			<main>{children}</main>
 		</>
