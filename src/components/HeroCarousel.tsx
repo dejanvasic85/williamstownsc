@@ -1,6 +1,7 @@
 'use client';
 
 import { TransformedNewsArticle } from '@/lib/content';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -68,9 +69,10 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 				{articles.map((article, index) => (
 					<div
 						key={article._id}
-						className={`carousel-item absolute h-full w-full transition-opacity duration-700 ${
+						className={clsx(
+							'carousel-item absolute h-full w-full transition-opacity duration-700',
 							index === currentSlide ? 'opacity-100' : 'opacity-0'
-						}`}
+						)}
 					>
 						<Link href={`/news/${article.slug}`} className="relative h-full w-full">
 							<Image
@@ -92,13 +94,14 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 
 								<div className="max-w-4xl px-12 sm:px-0">
 									<h2
-										className={`mb-3 font-bold text-white drop-shadow-lg md:leading-tight ${
-											article.title.length > 80
-												? 'text-xl sm:text-2xl md:text-3xl'
-												: article.title.length > 50
-													? 'text-2xl sm:text-3xl md:text-4xl'
-													: 'text-2xl sm:text-3xl md:text-5xl'
-										}`}
+										className={clsx(
+											'mb-3 font-bold text-white drop-shadow-lg md:leading-tight',
+											article.title.length > 80 && 'text-xl sm:text-2xl md:text-3xl',
+											article.title.length <= 80 &&
+												article.title.length > 50 &&
+												'text-2xl sm:text-3xl md:text-4xl',
+											article.title.length <= 50 && 'text-2xl sm:text-3xl md:text-5xl'
+										)}
 									>
 										{article.title}
 									</h2>
