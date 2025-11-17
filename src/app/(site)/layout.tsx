@@ -7,10 +7,31 @@ import type { Metadata } from 'next';
 export async function generateMetadata(): Promise<Metadata> {
 	const siteSettings = await getSiteSettings();
 
+	const ogImageUrl = siteSettings?.seoDefaults?.ogImage
+		? urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url()
+		: undefined;
+
+	const title = siteSettings?.seoDefaults?.siteTitle || 'Williamstown SC';
+	const description =
+		siteSettings?.seoDefaults?.siteDescription || 'Official website of Williamstown Soccer Club';
+
 	return {
-		title: siteSettings?.seoDefaults?.siteTitle,
-		description: siteSettings?.seoDefaults?.siteDescription,
-		keywords: siteSettings?.seoDefaults?.keywords
+		title,
+		description,
+		keywords: siteSettings?.seoDefaults?.keywords,
+		openGraph: {
+			title,
+			description,
+			images: ogImageUrl ? [{ url: ogImageUrl }] : [],
+			siteName: siteSettings?.clubName || 'Williamstown SC',
+			type: 'website'
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title,
+			description,
+			images: ogImageUrl ? [ogImageUrl] : []
+		}
 	};
 }
 
