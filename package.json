@@ -17,19 +17,19 @@
 		"type:check": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@sanity/client": "^7.12.1",
-		"@sanity/image-url": "^1.2.0",
-		"@sanity/vision": "^4.14.2",
+		"@sanity/client": "7.12.1",
+		"@sanity/image-url": "1.2.0",
+		"@sanity/vision": "4.14.2",
 		"daisyui": "5.4.7",
-		"date-fns": "^4.1.0",
-		"lucide-react": "^0.553.0",
+		"date-fns": "4.1.0",
+		"lucide-react": "0.553.0",
 		"next": "16.0.3",
-		"next-sanity": "^11.6.5",
+		"next-sanity": "11.6.5",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"sanity": "^4.14.2",
-		"styled-components": "^6.1.19",
-		"zod": "^4.1.12"
+		"sanity": "4.14.2",
+		"styled-components": "6.1.19",
+		"zod": "4.1.12"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",
