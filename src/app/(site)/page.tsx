@@ -46,7 +46,7 @@ export default async function Home() {
 
 	return (
 		<div className="bg-base-200 min-h-screen">
-			{/* Mobile Header */}
+			{/* Mobile Header - Only on home page */}
 			<div className="flex items-center justify-between px-4 pt-6 lg:hidden">
 				<div className="flex items-center gap-2">
 					{logoUrl && (
