@@ -140,12 +140,15 @@ export const siteSettings = defineType({
 					name: 'siteTitle',
 					title: 'Default Site Title',
 					type: 'string',
+					description: 'Shown in browser tabs and search results',
 					validation: (Rule) => Rule.required()
 				}),
 				defineField({
 					name: 'siteDescription',
 					title: 'Default Site Description',
 					type: 'text',
+					description:
+						'Brief description shown in search results and social media previews. Keep under 160 characters.',
 					validation: (Rule) => Rule.required().max(160)
 				}),
 				defineField({
@@ -158,6 +161,8 @@ export const siteSettings = defineType({
 					name: 'ogImage',
 					title: 'Default Social Share Image',
 					type: 'image',
+					description:
+						'Image shown when sharing your site on social media (Facebook, Twitter, LinkedIn, etc.). Recommended size: 1200×630px. Should include your club logo, name, and brand colors for recognition.',
 					options: {
 						hotspot: true
 					}
