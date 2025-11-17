@@ -1,6 +1,7 @@
 import { BrandIcon } from '@/components/BrandIcon';
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { Footer } from '@/components/layout';
 import { NewsCard } from '@/components/NewsCard';
 import {
 	getFeaturedArticles,
@@ -45,7 +46,7 @@ export default async function Home() {
 	];
 
 	return (
-		<div className="bg-base-200 min-h-screen">
+		<div className="bg-base-200 min-h-screen pb-36 lg:pb-12">
 			{/* Mobile Header - Only on home page */}
 			<div className="flex items-center justify-between px-4 pt-6 lg:hidden">
 				<div className="flex items-center gap-2">
@@ -134,12 +135,7 @@ export default async function Home() {
 			{/* Football Section */}
 			<FootballSection />
 
-			<footer className="footer footer-center bg-base-300 text-base-content p-10">
-				<aside>
-					<p className="font-bold">Williamstown SC</p>
-					<p>Building community through soccer since 2025</p>
-				</aside>
-			</footer>
+			<Footer />
 		</div>
 	);
 }
