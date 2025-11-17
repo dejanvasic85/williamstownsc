@@ -1,6 +1,7 @@
 import { BrandIcon } from '@/components/BrandIcon';
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { Footer } from '@/components/layout';
 import { NewsCard } from '@/components/NewsCard';
 import {
 	getFeaturedArticles,
@@ -45,39 +46,39 @@ export default async function Home() {
 	];
 
 	return (
-		<div className="bg-base-200 min-h-screen">
-			{/* Mobile Header */}
+		<div className="bg-base-200 min-h-screen pb-36 lg:pb-12">
+			{/* Mobile Header - Only on home page */}
 			<div className="flex items-center justify-between px-4 pt-6 lg:hidden">
-				<div className="flex items-center gap-3">
+				<div className="flex items-center gap-2">
 					{logoUrl && (
 						<Image
 							src={logoUrl}
 							alt={siteSettings?.logo?.alt || 'Club logo'}
-							width={48}
-							height={48}
-							className="h-12 w-auto"
+							width={40}
+							height={40}
+							className="h-10 w-auto shrink-0"
 						/>
 					)}
-					<h1 className="text-2xl font-bold">{siteSettings?.clubName}</h1>
+					<h1 className="text-lg font-bold sm:text-xl">{siteSettings?.clubName}</h1>
 				</div>
 
 				{socialLinks.length > 0 && (
-					<div className="flex items-center gap-1">
+					<div className="flex items-center gap-0">
 						{socialLinks.map((social) => (
 							<a
 								key={social.name}
 								href={social.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-base-content hover:bg-base-300 rounded-full p-2 transition-colors"
+								className="text-base-content hover:bg-base-300 rounded-full p-1.5 transition-colors sm:p-2"
 								aria-label={social.name}
 							>
 								{social.icon === 'mapPin' ? (
-									<MapPin className="h-5 w-5" />
+									<MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
 								) : (
 									<BrandIcon
 										name={social.icon as 'facebook' | 'instagram' | 'youtube'}
-										className="h-5 w-5"
+										className="h-4 w-4 sm:h-5 sm:w-5"
 									/>
 								)}
 							</a>
@@ -134,12 +135,7 @@ export default async function Home() {
 			{/* Football Section */}
 			<FootballSection />
 
-			<footer className="footer footer-center bg-base-300 text-base-content p-10">
-				<aside>
-					<p className="font-bold">Williamstown SC</p>
-					<p>Building community through soccer since 2025</p>
-				</aside>
-			</footer>
+			<Footer />
 		</div>
 	);
 }

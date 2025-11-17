@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${inter.variable} ${poppins.variable} antialiased`}>{children}</body>
+			<body className={clsx(inter.variable, poppins.variable, 'antialiased')}>{children}</body>
 		</html>
 	);
 }

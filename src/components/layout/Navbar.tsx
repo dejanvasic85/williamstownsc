@@ -1,6 +1,7 @@
 'use client';
 
 import { BrandIcon } from '@/components/BrandIcon';
+import clsx from 'clsx';
 import { Home, MapPin, Menu, Newspaper, Search, Volleyball } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -61,11 +62,12 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 								<li key={item.name}>
 									<Link
 										href={item.href}
-										className={`flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-colors ${
+										className={clsx(
+											'flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-colors',
 											isActive
 												? 'bg-secondary text-primary'
 												: 'text-neutral-content hover:bg-neutral-content/10'
-										}`}
+										)}
 										aria-label={item.name}
 										aria-current={isActive ? 'page' : undefined}
 									>
@@ -107,11 +109,12 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 									<li key={item.name}>
 										<Link
 											href={item.href}
-											className={`px-4 py-2 transition-colors md:text-sm xl:text-base ${
+											className={clsx(
+												'px-4 py-2 transition-colors md:text-sm xl:text-base',
 												isActive
 													? 'text-secondary border-b-secondary border-b-2 font-bold'
 													: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
-											}`}
+											)}
 											aria-current={isActive ? 'page' : undefined}
 										>
 											{item.name}

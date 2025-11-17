@@ -20,6 +20,7 @@
 		"@sanity/client": "7.12.1",
 		"@sanity/image-url": "1.2.0",
 		"@sanity/vision": "4.15.0",
+		"clsx": "2.1.1",
 		"daisyui": "5.5.5",
 		"date-fns": "4.1.0",
 		"lucide-react": "0.554.0",
