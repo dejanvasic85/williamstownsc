@@ -72,7 +72,9 @@ export default function FootballPage() {
 	return (
 		<PageContainer>
 			<div className="mb-12">
-				<h1 className="border-secondary mb-4 border-b-4 pb-4 text-5xl font-bold">Football Teams</h1>
+				<h1 className="border-secondary mb-4 border-b-4 pb-4 text-2xl font-bold lg:text-3xl">
+					Football
+				</h1>
 				<p className="text-base-content/70 text-lg">
 					Williamstown SC fields teams across all age groups and genders. Join us and be part of our
 					proud football tradition.

@@ -27,7 +27,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={clsx(inter.variable, poppins.variable, 'antialiased')}>{children}</body>
+			<body
+				data-theme="williamstown"
+				className={clsx(inter.variable, poppins.variable, 'antialiased')}
+			>
+				{children}
+			</body>
 		</html>
 	);
 }
