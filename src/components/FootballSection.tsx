@@ -62,14 +62,20 @@ function formatDate(dateString: string): string {
 
 export function FootballSection() {
 	return (
-		<section className="bg-base-100 py-16">
-			<div className="container mx-auto px-4">
-				<h2 className="border-secondary mb-12 border-b-4 pb-4 text-4xl font-bold">Football</h2>
+		<section className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-slate-950 py-16">
+			{/* Decorative gradient blobs */}
+			<div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-blue-800/20 blur-3xl" />
+			<div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-950/30 blur-3xl" />
+
+			<div className="relative container mx-auto px-4">
+				<h2 className="border-secondary mb-12 border-b-4 pb-4 text-4xl font-bold text-white">
+					Football
+				</h2>
 
 				{/* Programs */}
 				{mockProgramsValue.length > 0 && (
 					<div className="mb-16">
-						<h3 className="mb-6 text-2xl font-bold">Programs</h3>
+						<h3 className="mb-6 text-2xl font-bold text-white">Programs</h3>
 						<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 							{mockProgramsValue.map((program) => (
 								<div
@@ -115,7 +121,7 @@ export function FootballSection() {
 
 				{/* Teams */}
 				<div className="mb-12">
-					<h3 className="mb-6 text-2xl font-bold">Teams</h3>
+					<h3 className="mb-6 text-2xl font-bold text-white">Teams</h3>
 					<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 						{teamCardsValue.map((team) => (
 							<div
@@ -138,8 +144,8 @@ export function FootballSection() {
 				</div>
 
 				<div className="text-center">
-					<Link href="/football" className="btn btn-ghost btn-lg">
-						View all football
+					<Link href="/football" className="btn btn-secondary btn-lg">
+						View all teams
 					</Link>
 				</div>
 			</div>

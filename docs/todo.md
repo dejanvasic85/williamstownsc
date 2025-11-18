@@ -44,3 +44,11 @@ The following is a list of things we may be not need on initial launch and can c
 - [ ] Publishing schedule, results and tables
 - [ ] Senior team match reports with You Tube embed of highlights or full match
 - [ ] Space for links and general info on Regulations and rules
+
+---
+
+Data models that we need:
+
+- Soccer programs
+- Football team
+- Sponsor
