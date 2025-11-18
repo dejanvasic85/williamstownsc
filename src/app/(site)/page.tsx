@@ -1,4 +1,5 @@
 import { BrandIcon } from '@/components/BrandIcon';
+import { ExpressionOfInterestSection } from '@/components/ExpressionOfInterestSection';
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { Footer } from '@/components/layout';
@@ -134,6 +135,9 @@ export default async function Home() {
 
 			{/* Football Section */}
 			<FootballSection />
+
+			{/* Expression of Interest Section */}
+			<ExpressionOfInterestSection />
 
 			<Footer />
 		</div>
