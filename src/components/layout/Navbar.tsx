@@ -22,7 +22,7 @@ const desktopNavItems = [
 	{ name: 'Sponsors', href: '/sponsors' },
 	{ name: 'Contact', href: '/contact' },
 	{ name: 'Events', href: '/events' },
-	{ name: 'Play', href: '/play' }
+	{ name: 'Join us', href: '/join' }
 ];
 
 type NavbarProps = {

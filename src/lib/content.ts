@@ -1,6 +1,6 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { NewsArticle, SiteSettings } from '@/sanity/sanity.types';
+import { NewsArticle, Program, SiteSettings } from '@/sanity/sanity.types';
 
 export interface TransformedNewsArticle {
 	_id: string;
@@ -12,6 +12,21 @@ export interface TransformedNewsArticle {
 		alt?: string;
 	};
 	excerpt: string;
+}
+
+export interface TransformedProgram {
+	_id: string;
+	name: string;
+	slug: string;
+	startDate: string;
+	endDate: string;
+	minAge: number;
+	maxAge: number;
+	image?: {
+		url: string;
+		alt?: string;
+	};
+	description?: string;
 }
 
 export async function getSiteSettings() {
@@ -89,6 +104,41 @@ export async function getLatestArticles(limit: number = 3): Promise<TransformedN
 				alt: article.featuredImage?.alt
 			},
 			excerpt: article.excerpt || ''
+		})
+	);
+}
+
+export async function getActivePrograms(): Promise<TransformedProgram[]> {
+	const query = `*[_type == "program" && active == true] | order(startDate desc) {
+		_id,
+		name,
+		slug,
+		startDate,
+		endDate,
+		minAge,
+		maxAge,
+		image,
+		description
+	}`;
+
+	const programs = await client.fetch<Program[]>(query);
+
+	return programs.map(
+		(program): TransformedProgram => ({
+			_id: program._id,
+			name: program.name || '',
+			slug: program.slug?.current || '',
+			startDate: program.startDate || '',
+			endDate: program.endDate || '',
+			minAge: program.minAge || 0,
+			maxAge: program.maxAge || 0,
+			image: program.image
+				? {
+						url: urlFor(program.image).width(800).height(600).url(),
+						alt: program.image.alt
+					}
+				: undefined,
+			description: program.description
 		})
 	);
 }

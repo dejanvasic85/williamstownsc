@@ -1,8 +1,10 @@
 import { BrandIcon } from '@/components/BrandIcon';
+import { ExpressionOfInterestSection } from '@/components/ExpressionOfInterestSection';
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { Footer } from '@/components/layout';
 import { NewsCard } from '@/components/NewsCard';
+import { SponsorsSection } from '@/components/SponsorsSection';
 import {
 	getFeaturedArticles,
 	getLatestArticles,
@@ -134,6 +136,12 @@ export default async function Home() {
 
 			{/* Football Section */}
 			<FootballSection />
+
+			{/* Expression of Interest Section */}
+			<ExpressionOfInterestSection />
+
+			{/* Sponsors Section */}
+			<SponsorsSection />
 
 			<Footer />
 		</div>
