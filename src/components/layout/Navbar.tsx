@@ -40,6 +40,12 @@ type NavbarProps = {
 export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: NavbarProps) {
 	const pathname = usePathname();
 
+	const handleMobileNavClick = () => {
+		if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+			navigator.vibrate(50);
+		}
+	};
+
 	const socialLinks = [
 		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: 'mapPin' }] : []),
 		...(socials?.instagram
@@ -53,7 +59,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 		<>
 			{/* Mobile Bottom Navigation */}
 			<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
-				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-2xl backdrop-blur-md">
+				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_0_60px_rgba(0,0,0,0.6)] backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
@@ -62,10 +68,11 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 								<li key={item.name}>
 									<Link
 										href={item.href}
+										onClick={handleMobileNavClick}
 										className={clsx(
-											'flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-colors',
+											'relative flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-all duration-300',
 											isActive
-												? 'bg-secondary text-primary'
+												? 'bg-secondary text-primary animate-[navPop_0.4s_ease-out]'
 												: 'text-neutral-content hover:bg-neutral-content/10'
 										)}
 										aria-label={item.name}
@@ -82,7 +89,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 
 			{/* Desktop Navigation */}
 			<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
-				<div className="bg-primary container mx-auto rounded-full px-8 py-4 shadow-2xl backdrop-blur-md">
+				<div className="bg-primary container mx-auto rounded-full px-8 py-4 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-md">
 					<div className="flex items-center justify-between">
 						{/* Logo/Brand */}
 						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
@@ -110,7 +117,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 										<Link
 											href={item.href}
 											className={clsx(
-												'px-4 py-2 transition-colors md:text-sm xl:text-base',
+												'px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
 												isActive
 													? 'text-secondary border-b-secondary border-b-2 font-bold'
 													: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'

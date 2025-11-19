@@ -1,3 +1,4 @@
+import { GradientBackground } from '@/components/GradientBackground';
 import { Calendar, Trophy, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -62,12 +63,8 @@ function formatDate(dateString: string): string {
 
 export function FootballSection() {
 	return (
-		<section className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-slate-950 py-16">
-			{/* Decorative gradient blobs */}
-			<div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-blue-800/20 blur-3xl" />
-			<div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-950/30 blur-3xl" />
-
-			<div className="relative container mx-auto px-4">
+		<GradientBackground className="py-16">
+			<div className="container mx-auto px-4">
 				<h2 className="border-secondary mb-12 border-b-4 pb-4 text-4xl font-bold text-white">
 					Football
 				</h2>
@@ -89,7 +86,7 @@ export function FootballSection() {
 											fill
 											className="object-cover transition-transform duration-300 group-hover:scale-105"
 										/>
-										<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+										<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 										<div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
 											<h4 className="mb-2 text-2xl font-bold">{program.name}</h4>
 											<div className="flex items-center gap-4 text-sm">
@@ -149,6 +146,6 @@ export function FootballSection() {
 					</Link>
 				</div>
 			</div>
-		</section>
+		</GradientBackground>
 	);
 }
