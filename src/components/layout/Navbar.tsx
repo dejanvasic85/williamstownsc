@@ -110,7 +110,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 										<Link
 											href={item.href}
 											className={clsx(
-												'px-4 py-2 transition-colors md:text-sm xl:text-base',
+												'px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
 												isActive
 													? 'text-secondary border-b-secondary border-b-2 font-bold'
 													: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
