@@ -1,6 +1,7 @@
 # Tech stack
 
 - Nextjs: Always check latest documentation when implementing features. You can use Tools like Nextjs MCP Tools
+  - The project contains both the sanity study under /studio path and the main website available from /(site)/ directory
 - Sanity CMS
 - Tailwind CSS V4
 - DaisyUI for components like navbar, buttons, dialog and forms

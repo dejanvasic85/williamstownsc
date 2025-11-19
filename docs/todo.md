@@ -29,12 +29,14 @@ The original website is at https://www.williamstownsc.com/
 - [ ] Contact
 - [ ] Events
   - [ ] Ticketing integration with Try Booking
-- [ ] Play at Williamstown (expression of interest)
+- [ ] Join Us
   - [ ] Bot detection
 - [ ] Search
 - [x] Links to socials
 - [ ] SEO
 - [ ] PWA setup and install dialog
+- [ ] Custom not found page
+- [ ] Custom error page
 
 ### Nice to have
 

@@ -12,6 +12,7 @@ export interface TransformedNewsArticle {
 		alt?: string;
 	};
 	excerpt: string;
+	featured?: boolean;
 }
 
 export interface TransformedProgram {
@@ -104,6 +105,37 @@ export async function getLatestArticles(limit: number = 3): Promise<TransformedN
 				alt: article.featuredImage?.alt
 			},
 			excerpt: article.excerpt || ''
+		})
+	);
+}
+
+export async function getAllArticles(limit: number = 20): Promise<TransformedNewsArticle[]> {
+	const query = `*[_type == "newsArticle"] | order(publishedAt desc) [0...${limit}] {
+		_id,
+		title,
+		slug,
+		publishedAt,
+		featuredImage,
+		excerpt,
+		featured
+	}`;
+
+	const articles = await client.fetch<NewsArticle[]>(query);
+
+	return articles.map(
+		(article): TransformedNewsArticle => ({
+			_id: article._id,
+			title: article.title || '',
+			slug: article.slug?.current || '',
+			publishedAt: article.publishedAt || '',
+			featuredImage: {
+				url: article.featuredImage
+					? urlFor(article.featuredImage).width(800).height(600).url()
+					: '',
+				alt: article.featuredImage?.alt
+			},
+			excerpt: article.excerpt || '',
+			featured: article.featured || false
 		})
 	);
 }
