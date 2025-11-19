@@ -140,6 +140,41 @@ export async function getAllArticles(limit: number = 20): Promise<TransformedNew
 	);
 }
 
+export async function getArticleBySlug(slug: string) {
+	const query = `*[_type == "newsArticle" && slug.current == $slug][0] {
+		_id,
+		title,
+		slug,
+		publishedAt,
+		featuredImage,
+		excerpt,
+		content,
+		featured
+	}`;
+
+	const article = await client.fetch<NewsArticle>(query, { slug });
+
+	if (!article) {
+		return null;
+	}
+
+	return {
+		_id: article._id,
+		title: article.title || '',
+		slug: article.slug?.current || '',
+		publishedAt: article.publishedAt || '',
+		featuredImage: {
+			url: article.featuredImage
+				? urlFor(article.featuredImage).width(1920).height(1080).url()
+				: '',
+			alt: article.featuredImage?.alt
+		},
+		excerpt: article.excerpt || '',
+		content: article.content,
+		featured: article.featured || false
+	};
+}
+
 export async function getActivePrograms(): Promise<TransformedProgram[]> {
 	const query = `*[_type == "program" && active == true] | order(startDate desc) {
 		_id,
