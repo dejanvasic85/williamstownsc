@@ -40,6 +40,12 @@ type NavbarProps = {
 export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: NavbarProps) {
 	const pathname = usePathname();
 
+	const handleMobileNavClick = () => {
+		if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+			navigator.vibrate(50);
+		}
+	};
+
 	const socialLinks = [
 		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: 'mapPin' }] : []),
 		...(socials?.instagram
@@ -53,7 +59,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 		<>
 			{/* Mobile Bottom Navigation */}
 			<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
-				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-md">
+				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_0_60px_rgba(0,0,0,0.6)] backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
@@ -62,10 +68,11 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 								<li key={item.name}>
 									<Link
 										href={item.href}
+										onClick={handleMobileNavClick}
 										className={clsx(
-											'flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-colors',
+											'relative flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-all duration-300',
 											isActive
-												? 'bg-secondary text-primary'
+												? 'bg-secondary text-primary animate-[navPop_0.4s_ease-out]'
 												: 'text-neutral-content hover:bg-neutral-content/10'
 										)}
 										aria-label={item.name}

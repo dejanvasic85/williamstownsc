@@ -86,7 +86,7 @@ export function FootballSection() {
 											fill
 											className="object-cover transition-transform duration-300 group-hover:scale-105"
 										/>
-										<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+										<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 										<div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
 											<h4 className="mb-2 text-2xl font-bold">{program.name}</h4>
 											<div className="flex items-center gap-4 text-sm">
