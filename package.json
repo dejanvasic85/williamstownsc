@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@sanity/client": "7.13.0",
 		"@sanity/image-url": "1.2.0",
-		"@sanity/vision": "4.16.0",
+		"@sanity/vision": "4.17.0",
 		"clsx": "2.1.1",
 		"daisyui": "5.5.5",
 		"date-fns": "4.1.0",
@@ -28,7 +28,7 @@
 		"next-sanity": "11.6.8",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
-		"sanity": "4.16.0",
+		"sanity": "4.17.0",
 		"styled-components": "6.1.19",
 		"zod": "4.1.12"
 	},
