@@ -1,17 +1,17 @@
 'use client';
 
-import { BrandIcon } from '@/components/BrandIcon';
+import { Icon, type IconProps } from '@/components/Icon';
 import clsx from 'clsx';
-import { Home, MapPin, Menu, Newspaper, Search, Volleyball } from 'lucide-react';
+import { MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const mobileNavItems = [
-	{ name: 'Home', href: '/', icon: Home },
-	{ name: 'News', href: '/news', icon: Newspaper },
-	{ name: 'Football', href: '/football', icon: Volleyball },
-	{ name: 'Menu', href: '/menu', icon: Menu }
+const mobileNavItems: { name: string; href: string; icon: IconProps['name'] }[] = [
+	{ name: 'Home', href: '/', icon: 'home' },
+	{ name: 'News', href: '/news', icon: 'news' },
+	{ name: 'Football', href: '/football', icon: 'soccer' },
+	{ name: 'Menu', href: '/menu', icon: 'menu' }
 ];
 
 const desktopNavItems = [
@@ -62,7 +62,6 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_0_60px_rgba(26,75,166,0.6)] backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
-							const Icon = item.icon;
 							const isActive = pathname === item.href;
 							return (
 								<li key={item.name}>
@@ -78,7 +77,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 										aria-label={item.name}
 										aria-current={isActive ? 'page' : undefined}
 									>
-										<Icon className="h-6 w-6" />
+										<Icon name={item.icon} className="h-6 w-6" />
 									</Link>
 								</li>
 							);
@@ -151,7 +150,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 									{social.icon === 'mapPin' ? (
 										<MapPin className="h-5 w-5" />
 									) : (
-										<BrandIcon
+										<Icon
 											name={social.icon as 'facebook' | 'instagram' | 'youtube'}
 											className="h-5 w-5"
 										/>

@@ -1,7 +1,7 @@
-import { BrandIcon } from '@/components/BrandIcon';
 import { ExpressionOfInterestSection } from '@/components/ExpressionOfInterestSection';
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { Icon } from '@/components/Icon';
 import { Footer } from '@/components/layout';
 import { NewsCard } from '@/components/NewsCard';
 import { SponsorsSection } from '@/components/SponsorsSection';
@@ -78,7 +78,7 @@ export default async function Home() {
 								{social.icon === 'mapPin' ? (
 									<MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
 								) : (
-									<BrandIcon
+									<Icon
 										name={social.icon as 'facebook' | 'instagram' | 'youtube'}
 										className="h-4 w-4 sm:h-5 sm:w-5"
 									/>

@@ -8,7 +8,7 @@ The original website is at https://www.williamstownsc.com/
 
 - [x] Integrate Sanity CMS
 - [x] Configure Daisy theme for Williamstown (light and dark)
-- [ ] Layout
+- [x] Layout
   - [x] Navbar (mobile and desktop)
     - [] Submenu
   - [ ] Footer
