@@ -83,18 +83,7 @@ export function Footer({ clubName, socials }: FooterProps) {
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="/club/organizations"
-									className="hover:text-base-content transition-colors"
-								>
-									History
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/club/organizations"
-									className="hover:text-base-content transition-colors"
-								>
+								<Link href="/club/committee" className="hover:text-base-content transition-colors">
 									Committee
 								</Link>
 							</li>

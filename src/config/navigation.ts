@@ -15,7 +15,7 @@ export const navItems = [
 		href: '/club',
 		submenu: [
 			{ name: 'About', href: '/club/about' },
-			{ name: 'Organizations', href: '/club/organizations' },
+			{ name: 'Committee', href: '/club/committee' },
 			{ name: 'Policies and regulations', href: '/club/policies-and-regulations' },
 			{ name: 'Locations', href: '/club/locations' }
 		]
