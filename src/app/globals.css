@@ -100,8 +100,12 @@ h6 {
 	transition: box-shadow 0.2s ease-in-out;
 }
 
-.btn:hover {
+.btn-primary:hover {
 	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+.btn-secondary:hover {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 50%, transparent);
 }
 
 [data-theme='williamstown-dark'] .btn-ghost:hover {
@@ -128,5 +132,38 @@ h6 {
 	100% {
 		transform: scale(1);
 		opacity: 1;
+	}
+}
+
+@keyframes dropdownSlide {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes dropdownSlideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes dropdownItemSlide {
+	0% {
+		opacity: 0;
+		transform: translateX(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }

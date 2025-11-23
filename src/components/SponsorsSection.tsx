@@ -27,11 +27,8 @@ const sponsorsValue: Sponsor[] = [
 
 export function SponsorsSection() {
 	return (
-		<section className="from-primary/5 via-secondary/5 to-accent/5 relative overflow-hidden bg-gradient-to-br py-16">
+		<section className="relative overflow-hidden py-16">
 			{/* Decorative gradient blobs */}
-			<div className="bg-primary/10 absolute -top-20 -right-20 h-72 w-72 rounded-full blur-3xl" />
-			<div className="bg-secondary/10 absolute -bottom-20 -left-20 h-72 w-72 rounded-full blur-3xl" />
-
 			<div className="relative container mx-auto px-4">
 				<div className="mb-12 text-center">
 					<h2 className="mb-4 text-4xl font-bold">Our Sponsors</h2>
@@ -43,22 +40,19 @@ export function SponsorsSection() {
 				{/* Sponsors */}
 				{sponsorsValue.length > 0 && (
 					<div className="mb-16">
-						<div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+						<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:gap-8">
 							{sponsorsValue.map((sponsor) => (
 								<div
 									key={sponsor.name}
-									className="bg-base-100/80 group relative flex items-center justify-center overflow-hidden rounded-2xl p-8 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl md:p-10"
+									className="relative flex items-center justify-center overflow-hidden rounded-2xl border border-white/50 bg-white/30 p-8 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] backdrop-blur-md transition-all hover:shadow-xl md:p-10"
 								>
-									<div className="from-secondary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-									<div className="relative">
-										<Image
-											src={sponsor.logoUrl}
-											alt={`${sponsor.name} logo`}
-											width={250}
-											height={83}
-											className="h-auto w-full max-w-[200px] object-contain md:max-w-[250px]"
-										/>
-									</div>
+									<Image
+										src={sponsor.logoUrl}
+										alt={`${sponsor.name} logo`}
+										width={250}
+										height={83}
+										className="h-auto w-full max-w-[200px] object-contain md:max-w-[250px]"
+									/>
 								</div>
 							))}
 						</div>
@@ -66,16 +60,15 @@ export function SponsorsSection() {
 				)}
 
 				{/* Call to Action */}
-				<div className="bg-base-100/80 relative overflow-hidden rounded-2xl p-10 text-center shadow-xl backdrop-blur-sm md:p-12">
-					<div className="from-primary/10 via-secondary/10 to-accent/10 absolute inset-0 bg-gradient-to-br" />
+				<div className="relative overflow-hidden rounded-2xl p-10 text-center md:p-12">
 					<div className="relative">
-						<h3 className="mb-4 text-3xl font-bold">Become a Sponsor</h3>
+						<h3 className="mb-4 text-3xl font-bold">Become a sponsor</h3>
 						<p className="text-base-content/70 mx-auto mb-8 max-w-2xl text-lg">
 							Support our club and gain visibility in the local community. We offer various
 							sponsorship packages to suit your needs.
 						</p>
-						<Link href="/sponsors" className="btn btn-primary btn-lg shadow-lg">
-							Learn More About Sponsorship
+						<Link href="/sponsors" className="btn btn-outline btn-lg btn-primary">
+							Become a sponsor
 						</Link>
 					</div>
 				</div>

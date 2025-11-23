@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/layout';
+import { Footer, Navbar } from '@/components/layout';
 
 import { getSiteSettings } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
@@ -62,6 +62,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 				homeGroundLink={homeGroundLink}
 			/>
 			<main>{children}</main>
+			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
 		</>
 	);
 }
