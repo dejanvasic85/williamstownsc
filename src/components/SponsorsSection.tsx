@@ -68,7 +68,7 @@ export function SponsorsSection() {
 							sponsorship packages to suit your needs.
 						</p>
 						<Link href="/sponsors" className="btn btn-outline btn-lg btn-primary">
-							How to become a sponsor
+							Become a sponsor
 						</Link>
 					</div>
 				</div>

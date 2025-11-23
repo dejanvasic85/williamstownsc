@@ -2,7 +2,6 @@ import { ExpressionOfInterestSection } from '@/components/ExpressionOfInterestSe
 import { FootballSection } from '@/components/FootballSection';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { Icon } from '@/components/Icon';
-import { Footer } from '@/components/layout';
 import { NewsCard } from '@/components/NewsCard';
 import { SponsorsSection } from '@/components/SponsorsSection';
 import {
@@ -142,8 +141,6 @@ export default async function Home() {
 
 			{/* Sponsors Section */}
 			<SponsorsSection />
-
-			<Footer />
 		</div>
 	);
 }

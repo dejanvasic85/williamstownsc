@@ -13,6 +13,16 @@ The original website is at https://www.williamstownsc.com/
     - [] Submenu
   - [ ] Footer
   - [ ] Favicon
+- [x] Links to socials
+- [ ] SEO
+- [ ] PWA setup and install dialog
+- [ ] Custom not found page
+- [ ] Custom error page
+- [ ] Google structured data
+- [ ] Bot detection
+
+Pages:
+
 - [ ] Homepage
 - [ ] News
 - [ ] Football
@@ -20,6 +30,7 @@ The original website is at https://www.williamstownsc.com/
   - [ ] Seniors, reserves + women with profiles
   - [ ] All other teams with coaches details and other useful information like start / end dates
   - [ ] Programs (Summer programs, Mino roos)
+  - [ ] Merchandise - links to our apparel suppliers
 - [ ] Sponsors
 - [ ] Club
   - [ ] About and History
@@ -29,15 +40,7 @@ The original website is at https://www.williamstownsc.com/
 - [ ] Contact
 - [ ] Events
   - [ ] Ticketing integration with Try Booking
-- [ ] Join Us
-  - [ ] Bot detection
 - [ ] Search
-- [x] Links to socials
-- [ ] SEO
-- [ ] PWA setup and install dialog
-- [ ] Custom not found page
-- [ ] Custom error page
-- [ ] Google structured data
 
 ### Nice to have
 
@@ -59,3 +62,5 @@ Data models that we need:
 - Soccer programs
 - Football team
 - Sponsor
+
+Social websites like Insta/Facebook -> Push only
