@@ -2,10 +2,11 @@
 
 import { Icon, type IconProps } from '@/components/Icon';
 import clsx from 'clsx';
-import { MapPin, Search } from 'lucide-react';
+import { ChevronDown, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 const mobileNavItems: { name: string; href: string; icon: IconProps['name'] }[] = [
 	{ name: 'Home', href: '/', icon: 'home' },
@@ -17,7 +18,15 @@ const mobileNavItems: { name: string; href: string; icon: IconProps['name'] }[] 
 const desktopNavItems = [
 	{ name: 'Home', href: '/' },
 	{ name: 'News', href: '/news' },
-	{ name: 'Football', href: '/football' },
+	{
+		name: 'Football',
+		href: '/football',
+		submenu: [
+			{ name: 'Teams', href: '/football/teams' },
+			{ name: 'Programs', href: '/football/programs' },
+			{ name: 'Merchandise', href: '/football/merchandise' }
+		]
+	},
 	{ name: 'Club', href: '/club' },
 	{ name: 'Sponsors', href: '/sponsors' },
 	{ name: 'Contact', href: '/contact' },
@@ -38,12 +47,46 @@ type NavbarProps = {
 
 export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: NavbarProps) {
 	const pathname = usePathname();
+	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+	const dropdownRef = useRef<HTMLLIElement>(null);
 
 	const handleMobileNavClick = () => {
 		if (typeof window !== 'undefined' && 'vibrate' in navigator) {
 			navigator.vibrate(50);
 		}
 	};
+
+	const toggleDropdown = (itemName: string) => {
+		setOpenDropdown((prev) => (prev === itemName ? null : itemName));
+	};
+
+	const closeDropdown = () => {
+		setOpenDropdown(null);
+	};
+
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+				closeDropdown();
+			}
+		};
+
+		const handleEscape = (event: KeyboardEvent) => {
+			if (event.key === 'Escape') {
+				closeDropdown();
+			}
+		};
+
+		if (openDropdown) {
+			document.addEventListener('mousedown', handleClickOutside);
+			document.addEventListener('keydown', handleEscape);
+		}
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+			document.removeEventListener('keydown', handleEscape);
+		};
+	}, [openDropdown]);
 
 	const socialLinks = [
 		...(homeGroundLink ? [{ name: 'Home Ground', href: homeGroundLink, icon: 'mapPin' }] : []),
@@ -110,6 +153,73 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 						<ul className="flex items-center gap-1">
 							{desktopNavItems.map((item) => {
 								const isActive = pathname === item.href;
+								const hasSubmenu = 'submenu' in item && item.submenu;
+								const isSubmenuActive =
+									hasSubmenu && item.submenu?.some((sub) => pathname === sub.href);
+								const isDropdownOpen = openDropdown === item.name;
+
+								if (hasSubmenu) {
+									return (
+										<li key={item.name} className="relative" ref={dropdownRef}>
+											<button
+												onClick={() => toggleDropdown(item.name)}
+												className={clsx(
+													'flex items-center gap-1 px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
+													isActive || isSubmenuActive
+														? 'text-secondary border-b-secondary border-b-2 font-bold'
+														: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
+												)}
+												aria-expanded={isDropdownOpen}
+												aria-haspopup="true"
+												aria-current={isActive || isSubmenuActive ? 'page' : undefined}
+											>
+												{item.name}
+												<ChevronDown
+													className={clsx(
+														'h-4 w-4 transition-transform duration-200',
+														isDropdownOpen && 'rotate-180'
+													)}
+												/>
+											</button>
+
+											{isDropdownOpen && (
+												<ul
+													role="menu"
+													className="absolute top-full left-0 mt-6 flex min-w-40 animate-[dropdownSlide_0.2s_ease-out] flex-col gap-2"
+												>
+													{item.submenu?.map((subItem, index) => {
+														const isSubActive = pathname === subItem.href;
+														return (
+															<li
+																key={subItem.name}
+																role="none"
+																style={{
+																	animation: `dropdownItemSlide 0.2s ease-out ${index * 0.05}s both`
+																}}
+															>
+																<Link
+																	href={subItem.href}
+																	role="menuitem"
+																	onClick={closeDropdown}
+																	className={clsx(
+																		'bg-primary/80 block rounded-2xl px-4 py-3 whitespace-nowrap shadow-lg backdrop-blur-md transition-colors md:text-sm xl:text-base',
+																		isSubActive
+																			? 'text-secondary font-bold'
+																			: 'text-neutral-content hover:text-secondary font-medium'
+																	)}
+																	aria-current={isSubActive ? 'page' : undefined}
+																>
+																	{subItem.name}
+																</Link>
+															</li>
+														);
+													})}
+												</ul>
+											)}
+										</li>
+									);
+								}
+
 								return (
 									<li key={item.name}>
 										<Link
