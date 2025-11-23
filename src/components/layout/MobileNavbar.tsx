@@ -26,6 +26,17 @@ const mobileNavItems: NavItem[] = [
 			{ name: 'Merchandise', href: '/football/merchandise' }
 		]
 	},
+	{
+		name: 'Club',
+		href: '/club',
+		icon: 'club',
+		submenu: [
+			{ name: 'About', href: '/club/about' },
+			{ name: 'Organizations', href: '/club/organizations' },
+			{ name: 'Policies and regulations', href: '/club/policies-and-regulations' },
+			{ name: 'Locations', href: '/club/locations' }
+		]
+	},
 	{ name: 'Menu', href: '/menu', icon: 'menu' }
 ];
 

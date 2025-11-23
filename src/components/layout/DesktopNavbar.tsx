@@ -20,7 +20,16 @@ const desktopNavItems = [
 			{ name: 'Merchandise', href: '/football/merchandise' }
 		]
 	},
-	{ name: 'Club', href: '/club' },
+	{
+		name: 'Club',
+		href: '/club',
+		submenu: [
+			{ name: 'About', href: '/club/about' },
+			{ name: 'Organizations', href: '/club/organizations' },
+			{ name: 'Policies and regulations', href: '/club/policies-and-regulations' },
+			{ name: 'Locations', href: '/club/locations' }
+		]
+	},
 	{ name: 'Sponsors', href: '/sponsors' },
 	{ name: 'Contact', href: '/contact' },
 	{ name: 'Events', href: '/events' }
@@ -164,7 +173,7 @@ export function DesktopNavbar({
 																role="menuitem"
 																onClick={closeDropdown}
 																className={clsx(
-																	'bg-primary/90 block rounded-full px-4 py-3 whitespace-nowrap shadow-lg backdrop-blur-md transition-colors md:text-sm xl:text-base',
+																	'bg-primary/90 block rounded-full p-4 whitespace-nowrap shadow-lg backdrop-blur-md transition-colors md:text-sm xl:text-base',
 																	isSubActive
 																		? 'text-secondary font-bold'
 																		: 'text-neutral-content hover:text-secondary font-medium'

@@ -1,5 +1,5 @@
 export type IconProps = {
-	name: 'facebook' | 'instagram' | 'youtube' | 'soccer' | 'home' | 'news' | 'menu';
+	name: 'facebook' | 'instagram' | 'youtube' | 'soccer' | 'home' | 'news' | 'menu' | 'club';
 	className?: string;
 };
 
@@ -15,12 +15,13 @@ const iconPathsValue: Record<string, string | string[]> = {
 	],
 	home: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10',
 	news: 'M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2 M18 14h-8 M15 18h-5 M10 6h8v4h-8z',
-	menu: 'M3 12h18M3 6h18M3 18h18'
+	menu: 'M3 12h18M3 6h18M3 18h18',
+	club: 'M3 21h18 M6 21V9 M10 21V9 M14 21V9 M18 21V9 M2 9h20 M4 9V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3'
 };
 
 export function Icon({ name, className = '' }: IconProps) {
 	const paths = iconPathsValue[name];
-	const isLucideStyle = ['home', 'news', 'menu'].includes(name);
+	const isLucideStyle = ['home', 'news', 'menu', 'club'].includes(name);
 
 	return (
 		<svg
