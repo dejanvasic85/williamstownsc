@@ -27,7 +27,7 @@ const sponsorsValue: Sponsor[] = [
 
 export function SponsorsSection() {
 	return (
-		<section className="from-primary/5 via-secondary/5 to-accent/5 relative overflow-hidden bg-gradient-to-br py-16">
+		<section className="from-primary/5 via-secondary/5 to-accent/5 relative overflow-hidden bg-linear-to-br py-16">
 			{/* Decorative gradient blobs */}
 			<div className="bg-primary/10 absolute -top-20 -right-20 h-72 w-72 rounded-full blur-3xl" />
 			<div className="bg-secondary/10 absolute -bottom-20 -left-20 h-72 w-72 rounded-full blur-3xl" />
@@ -49,7 +49,7 @@ export function SponsorsSection() {
 									key={sponsor.name}
 									className="bg-base-100/80 group relative flex items-center justify-center overflow-hidden rounded-2xl p-8 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl md:p-10"
 								>
-									<div className="from-secondary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+									<div className="from-secondary/5 absolute inset-0 bg-linear-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 									<div className="relative">
 										<Image
 											src={sponsor.logoUrl}
@@ -67,7 +67,7 @@ export function SponsorsSection() {
 
 				{/* Call to Action */}
 				<div className="bg-base-100/80 relative overflow-hidden rounded-2xl p-10 text-center shadow-xl backdrop-blur-sm md:p-12">
-					<div className="from-primary/10 via-secondary/10 to-accent/10 absolute inset-0 bg-gradient-to-br" />
+					<div className="from-primary/10 via-secondary/10 to-accent/10 absolute inset-0 bg-linear-to-br" />
 					<div className="relative">
 						<h3 className="mb-4 text-3xl font-bold">Become a Sponsor</h3>
 						<p className="text-base-content/70 mx-auto mb-8 max-w-2xl text-lg">

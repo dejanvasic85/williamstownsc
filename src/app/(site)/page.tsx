@@ -72,15 +72,15 @@ export default async function Home() {
 								href={social.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-base-content hover:bg-base-300 rounded-full p-1.5 transition-colors sm:p-2"
+								className="text-base-content hover:bg-base-300 rounded-full p-1.5 transition-colors hover:ring-2 sm:p-2"
 								aria-label={social.name}
 							>
 								{social.icon === 'mapPin' ? (
-									<MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
+									<MapPin className="h-5 w-5 sm:h-5 sm:w-5" />
 								) : (
 									<Icon
 										name={social.icon as 'facebook' | 'instagram' | 'youtube'}
-										className="h-4 w-4 sm:h-5 sm:w-5"
+										className="h-5 w-5 sm:h-5 sm:w-5"
 									/>
 								)}
 							</a>
