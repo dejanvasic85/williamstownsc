@@ -62,12 +62,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 				homeGroundLink={homeGroundLink}
 			/>
 			<main>{children}</main>
-			<Footer
-				logoUrl={logoUrl}
-				logoAlt={logoAlt}
-				clubName={siteSettings?.clubName}
-				socials={siteSettings?.socials}
-			/>
+			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
 		</>
 	);
 }
