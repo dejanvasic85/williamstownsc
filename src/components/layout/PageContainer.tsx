@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
-import { Footer } from './Footer';
 
 type PageContainerProps = {
 	children: ReactNode;
@@ -16,7 +15,6 @@ export function PageContainer({ children }: PageContainerProps) {
 			)}
 		>
 			<div className="container mx-auto px-4">{children}</div>
-			<Footer />
 		</div>
 	);
 }
