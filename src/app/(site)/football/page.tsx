@@ -213,12 +213,12 @@ export default async function FootballPage() {
 				);
 			})}
 
-			<div className="bg-primary text-primary-content mt-16 rounded-lg p-8 text-center">
+			<div className="bg-primary text-primary-content mt-16 rounded-full p-8 text-center">
 				<h2 className="mb-4 text-3xl font-bold">Interested in Joining?</h2>
 				<p className="mb-6 text-lg">
 					Whether you&apos;re a player, parent, or supporter, we&apos;d love to hear from you.
 				</p>
-				<button className="btn btn-secondary btn-lg">Contact Us</button>
+				<button className="btn btn-secondary btn-lg btn-outline">Contact Us</button>
 			</div>
 		</PageContainer>
 	);

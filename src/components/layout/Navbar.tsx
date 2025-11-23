@@ -21,8 +21,7 @@ const desktopNavItems = [
 	{ name: 'Club', href: '/club' },
 	{ name: 'Sponsors', href: '/sponsors' },
 	{ name: 'Contact', href: '/contact' },
-	{ name: 'Events', href: '/events' },
-	{ name: 'Join us', href: '/join' }
+	{ name: 'Events', href: '/events' }
 ];
 
 type NavbarProps = {

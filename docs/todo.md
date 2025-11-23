@@ -23,8 +23,8 @@ The original website is at https://www.williamstownsc.com/
 
 Pages:
 
-- [ ] Homepage
-- [ ] News
+- [x] Homepage
+- [x] News
 - [ ] Football
   - [ ] Team listings
   - [ ] Seniors, reserves + women with profiles
