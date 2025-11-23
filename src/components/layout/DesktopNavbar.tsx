@@ -101,7 +101,7 @@ export function DesktopNavbar({
 
 	return (
 		<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
-			<div className="bg-primary/80 container mx-auto rounded-full px-8 py-4 shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)] backdrop-blur-md">
+			<div className="bg-primary/90 container mx-auto rounded-full px-8 py-4 shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)] backdrop-blur-md">
 				<div className="flex items-center justify-between">
 					{/* Logo/Brand */}
 					<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">

@@ -98,16 +98,18 @@ export function MobileNavbar() {
 											/>
 											<ul
 												role="menu"
-												className="absolute bottom-full left-1/2 mb-4 flex min-w-40 -translate-x-1/2 animate-[dropdownSlide_0.2s_ease-out] flex-col gap-2"
+												className="absolute bottom-full left-1/2 mb-4 flex min-w-40 -translate-x-1/2 flex-col gap-2"
 											>
 												{item.submenu?.map((subItem, index) => {
 													const isSubActive = pathname === subItem.href;
+													const totalItems = item.submenu?.length || 0;
+													const reverseIndex = totalItems - 1 - index;
 													return (
 														<li
 															key={subItem.name}
 															role="none"
 															style={{
-																animation: `dropdownItemSlide 0.2s ease-out ${index * 0.05}s both`
+																animation: `dropdownItemSlideUp 0.1s ease-out ${reverseIndex * 0.02}s both`
 															}}
 														>
 															<Link
