@@ -26,7 +26,7 @@ export function ExpressionOfInterestSection() {
 							Join our teams and be part of the action. All skill levels welcome.
 						</p>
 						<span className="btn btn-primary btn-outline group-hover:btn-primary-focus mt-auto">
-							Express Interest
+							Express interest
 						</span>
 					</Link>
 
@@ -42,7 +42,7 @@ export function ExpressionOfInterestSection() {
 							Share your passion and experience. Help develop future stars.
 						</p>
 						<span className="btn btn-secondary btn-outline group-hover:btn-secondary-focus mt-auto">
-							Express Interest
+							Express interest
 						</span>
 					</Link>
 				</div>

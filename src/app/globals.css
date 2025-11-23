@@ -100,8 +100,12 @@ h6 {
 	transition: box-shadow 0.2s ease-in-out;
 }
 
-.btn:hover {
+.btn-primary:hover {
 	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+.btn-secondary:hover {
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 50%, transparent);
 }
 
 [data-theme='williamstown-dark'] .btn-ghost:hover {
