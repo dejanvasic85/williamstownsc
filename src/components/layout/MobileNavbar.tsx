@@ -1,6 +1,7 @@
 'use client';
 
 import { Icon, type IconProps } from '@/components/Icon';
+import { navItems } from '@/config/navigation';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -20,22 +21,13 @@ const mobileNavItems: NavItem[] = [
 		name: 'Football',
 		href: '/football',
 		icon: 'soccer',
-		submenu: [
-			{ name: 'Teams', href: '/football/teams' },
-			{ name: 'Programs', href: '/football/programs' },
-			{ name: 'Merchandise', href: '/football/merchandise' }
-		]
+		submenu: navItems.find((item) => item.name === 'Football')?.submenu
 	},
 	{
 		name: 'Club',
 		href: '/club',
 		icon: 'club',
-		submenu: [
-			{ name: 'About', href: '/club/about' },
-			{ name: 'Organizations', href: '/club/organizations' },
-			{ name: 'Policies and regulations', href: '/club/policies-and-regulations' },
-			{ name: 'Locations', href: '/club/locations' }
-		]
+		submenu: navItems.find((item) => item.name === 'Club')?.submenu
 	},
 	{ name: 'Menu', href: '/menu', icon: 'menu' }
 ];

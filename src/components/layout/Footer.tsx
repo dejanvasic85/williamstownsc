@@ -50,17 +50,23 @@ export function Footer({ clubName, socials }: FooterProps) {
 						<h3 className="text-base-content mb-3 font-semibold">Football</h3>
 						<ul className="space-y-2">
 							<li>
-								<Link href="/teams" className="hover:text-base-content transition-colors">
+								<Link href="/football/teams" className="hover:text-base-content transition-colors">
 									Teams
 								</Link>
 							</li>
 							<li>
-								<Link href="/programs" className="hover:text-base-content transition-colors">
+								<Link
+									href="/football/programs"
+									className="hover:text-base-content transition-colors"
+								>
 									Programs
 								</Link>
 							</li>
 							<li>
-								<Link href="/merchandise" className="hover:text-base-content transition-colors">
+								<Link
+									href="/football/merchandise"
+									className="hover:text-base-content transition-colors"
+								>
 									Merchandise
 								</Link>
 							</li>
@@ -72,27 +78,36 @@ export function Footer({ clubName, socials }: FooterProps) {
 						<h3 className="text-base-content mb-3 font-semibold">Club</h3>
 						<ul className="space-y-2">
 							<li>
-								<Link href="/about" className="hover:text-base-content transition-colors">
+								<Link href="/club/about" className="hover:text-base-content transition-colors">
 									About
 								</Link>
 							</li>
 							<li>
-								<Link href="/history" className="hover:text-base-content transition-colors">
+								<Link
+									href="/club/organizations"
+									className="hover:text-base-content transition-colors"
+								>
 									History
 								</Link>
 							</li>
 							<li>
-								<Link href="/committee" className="hover:text-base-content transition-colors">
+								<Link
+									href="/club/organizations"
+									className="hover:text-base-content transition-colors"
+								>
 									Committee
 								</Link>
 							</li>
 							<li>
-								<Link href="/policies" className="hover:text-base-content transition-colors">
+								<Link
+									href="/club/policies-and-regulations"
+									className="hover:text-base-content transition-colors"
+								>
 									Policies
 								</Link>
 							</li>
 							<li>
-								<Link href="/locations" className="hover:text-base-content transition-colors">
+								<Link href="/club/locations" className="hover:text-base-content transition-colors">
 									Locations
 								</Link>
 							</li>

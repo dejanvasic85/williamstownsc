@@ -1,39 +1,13 @@
 'use client';
 
 import { Icon } from '@/components/Icon';
+import { navItems } from '@/config/navigation';
 import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-
-const desktopNavItems = [
-	{ name: 'Home', href: '/' },
-	{ name: 'News', href: '/news' },
-	{
-		name: 'Football',
-		href: '/football',
-		submenu: [
-			{ name: 'Teams', href: '/football/teams' },
-			{ name: 'Programs', href: '/football/programs' },
-			{ name: 'Merchandise', href: '/football/merchandise' }
-		]
-	},
-	{
-		name: 'Club',
-		href: '/club',
-		submenu: [
-			{ name: 'About', href: '/club/about' },
-			{ name: 'Organizations', href: '/club/organizations' },
-			{ name: 'Policies and regulations', href: '/club/policies-and-regulations' },
-			{ name: 'Locations', href: '/club/locations' }
-		]
-	},
-	{ name: 'Sponsors', href: '/sponsors' },
-	{ name: 'Contact', href: '/contact' },
-	{ name: 'Events', href: '/events' }
-];
 
 type DesktopNavbarProps = {
 	logoUrl?: string;
@@ -56,7 +30,7 @@ export function DesktopNavbar({
 }: DesktopNavbarProps) {
 	const pathname = usePathname();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-	const dropdownRef = useRef<HTMLLIElement>(null);
+	const dropdownRefs = useRef<Record<string, HTMLLIElement | null>>({});
 
 	const toggleDropdown = (itemName: string) => {
 		setOpenDropdown((prev) => (prev === itemName ? null : itemName));
@@ -68,8 +42,11 @@ export function DesktopNavbar({
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
-			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-				closeDropdown();
+			if (openDropdown && dropdownRefs.current[openDropdown]) {
+				const dropdown = dropdownRefs.current[openDropdown];
+				if (dropdown && !dropdown.contains(event.target as Node)) {
+					closeDropdown();
+				}
 			}
 		};
 
@@ -122,7 +99,7 @@ export function DesktopNavbar({
 
 					{/* Main Navigation */}
 					<ul className="flex items-center gap-1">
-						{desktopNavItems.map((item) => {
+						{navItems.map((item) => {
 							const isActive = pathname === item.href;
 							const hasSubmenu = 'submenu' in item && item.submenu;
 							const isSubmenuActive =
@@ -131,7 +108,11 @@ export function DesktopNavbar({
 
 							if (hasSubmenu) {
 								return (
-									<li key={item.name} className="relative" ref={dropdownRef}>
+									<li
+										key={item.name}
+										className="relative"
+										ref={(el) => (dropdownRefs.current[item.name] = el)}
+									>
 										<button
 											onClick={() => toggleDropdown(item.name)}
 											className={clsx(
