@@ -75,7 +75,7 @@ export function MobileNavbar() {
 									<button
 										onClick={() => toggleSubmenu(item.name)}
 										className={clsx(
-											'relative flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-all duration-300',
+											'relative flex flex-col items-center gap-0.5 rounded-full px-3 py-2.5 transition-all duration-300',
 											isActive || isSubmenuActive
 												? 'bg-secondary text-primary animate-[navPop_0.4s_ease-out]'
 												: 'text-neutral-content hover:bg-neutral-content/10'
@@ -85,7 +85,8 @@ export function MobileNavbar() {
 										aria-haspopup="true"
 										aria-current={isActive || isSubmenuActive ? 'page' : undefined}
 									>
-										<Icon name={item.icon} className="h-6 w-6" />
+										<Icon name={item.icon} className="h-5 w-5" />
+										<span className="text-[10px] leading-tight font-medium">{item.name}</span>
 									</button>
 
 									{isSubmenuOpen && (
@@ -142,7 +143,7 @@ export function MobileNavbar() {
 									href={item.href}
 									onClick={handleNavClick}
 									className={clsx(
-										'relative flex flex-col items-center gap-1 rounded-full px-4 py-4 transition-all duration-300',
+										'relative flex flex-col items-center gap-0.5 rounded-full px-3 py-2.5 transition-all duration-300',
 										isActive
 											? 'bg-secondary text-primary animate-[navPop_0.4s_ease-out]'
 											: 'text-neutral-content hover:bg-neutral-content/10'
@@ -150,7 +151,8 @@ export function MobileNavbar() {
 									aria-label={item.name}
 									aria-current={isActive ? 'page' : undefined}
 								>
-									<Icon name={item.icon} className="h-6 w-6" />
+									<Icon name={item.icon} className="h-5 w-5" />
+									<span className="text-[10px] leading-tight font-medium">{item.name}</span>
 								</Link>
 							</li>
 						);
