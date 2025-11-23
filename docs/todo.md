@@ -37,6 +37,7 @@ The original website is at https://www.williamstownsc.com/
 - [ ] PWA setup and install dialog
 - [ ] Custom not found page
 - [ ] Custom error page
+- [ ] Google structured data
 
 ### Nice to have
 
@@ -48,6 +49,10 @@ The following is a list of things we may be not need on initial launch and can c
 - [ ] Space for links and general info on Regulations and rules
 
 ---
+
+## Next meeting:
+
+Should we have featured news?
 
 Data models that we need:
 

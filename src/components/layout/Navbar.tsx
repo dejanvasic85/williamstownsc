@@ -59,7 +59,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 		<>
 			{/* Mobile Bottom Navigation */}
 			<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
-				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_0_60px_rgba(0,0,0,0.6)] backdrop-blur-md">
+				<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_0_60px_rgba(26,75,166,0.6)] backdrop-blur-md">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const Icon = item.icon;
@@ -89,7 +89,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 
 			{/* Desktop Navigation */}
 			<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
-				<div className="bg-primary container mx-auto rounded-full px-8 py-4 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-md">
+				<div className="bg-primary/80 container mx-auto rounded-full px-8 py-4 shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)] backdrop-blur-md">
 					<div className="flex items-center justify-between">
 						{/* Logo/Brand */}
 						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
