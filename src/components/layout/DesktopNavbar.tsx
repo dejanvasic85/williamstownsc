@@ -111,7 +111,9 @@ export function DesktopNavbar({
 									<li
 										key={item.name}
 										className="relative"
-										ref={(el) => (dropdownRefs.current[item.name] = el)}
+										ref={(el) => {
+											dropdownRefs.current[item.name] = el;
+										}}
 									>
 										<button
 											onClick={() => toggleDropdown(item.name)}
