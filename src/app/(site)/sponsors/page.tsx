@@ -85,7 +85,7 @@ export default async function SponsorsPage() {
 			</div>
 
 			{/* Become a Sponsor */}
-			<section className="from-primary/10 via-secondary/10 to-accent/10 relative overflow-hidden rounded-2xl bg-gradient-to-br p-8 shadow-xl md:p-12">
+			<section className="from-primary/10 via-secondary/10 to-accent/10 relative overflow-hidden rounded-2xl bg-linear-to-br p-8 shadow-xl md:p-12">
 				<div className="bg-primary/20 absolute -top-16 -right-16 h-64 w-64 rounded-full blur-3xl" />
 				<div className="bg-secondary/20 absolute -bottom-16 -left-16 h-64 w-64 rounded-full blur-3xl" />
 
