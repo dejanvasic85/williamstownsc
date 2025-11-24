@@ -67,7 +67,7 @@ export function SponsorsSection() {
 							Support our club and gain visibility in the local community. We offer various
 							sponsorship packages to suit your needs.
 						</p>
-						<Link href="/sponsors" className="btn btn-outline btn-lg btn-primary">
+						<Link href="/contact?type=sponsorship" className="btn btn-outline btn-lg btn-primary">
 							Become a sponsor
 						</Link>
 					</div>
