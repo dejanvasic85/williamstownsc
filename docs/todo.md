@@ -25,6 +25,10 @@ Pages:
 
 - [x] Homepage
 - [x] News
+  - [ ] Article page
+    - [ ] Similar news
+  - [ ] Match report page
+    - [ ] Previous / next week links
 - [ ] Football
   - [ ] Team listings
   - [ ] Seniors, reserves + women with profiles

@@ -1,49 +1,10 @@
 import { PageContainer } from '@/components/layout';
+import { getAllSponsors } from '@/lib/content';
 import clsx from 'clsx';
 import Image from 'next/image';
 
-interface Sponsor {
-	name: string;
-	logoUrl: string;
-	website?: string;
-	description?: string;
-	type: string;
-	location?: string;
-	contact?: string;
-}
-
-const sponsorsValue: Sponsor[] = [
-	{
-		name: 'Trek',
-		logoUrl: '/img/trek_bicycle_corporation.png',
-		website: 'https://www.trekbikes.com',
-		description:
-			'Trek Bicycle Corporation is a leading manufacturer of bicycles and cycling products.',
-		type: 'Principal',
-		location: 'Waterloo, Wisconsin',
-		contact: 'contact@trekbikes.com'
-	},
-	{
-		name: 'McDonalds',
-		logoUrl: '/img/mcdonalds-logo-1.webp',
-		website: 'https://www.mcdonalds.com.au',
-		description: 'Serving communities across Australia with quality food and local support.',
-		type: 'Major',
-		location: 'Williamstown, VIC',
-		contact: '(03) 9397 7777'
-	},
-	{
-		name: 'Specsavers',
-		logoUrl: '/img/specsavers logo.jpeg',
-		website: 'https://www.specsavers.com.au',
-		description: 'Leading optometry services focused on eye health and affordable eyewear.',
-		type: 'Major',
-		location: 'Williamstown, VIC',
-		contact: '(03) 9399 9744'
-	}
-];
-
-export default function SponsorsPage() {
+export default async function SponsorsPage() {
+	const sponsors = await getAllSponsors();
 	return (
 		<PageContainer>
 			<div className="mb-12">
@@ -57,11 +18,11 @@ export default function SponsorsPage() {
 
 			{/* All Sponsors */}
 			<div className="mb-16 flex flex-col items-center gap-8">
-				{sponsorsValue.map((sponsor, index) => {
+				{sponsors.map((sponsor, index) => {
 					const isEven = index % 2 === 0;
 					return (
 						<div
-							key={sponsor.name}
+							key={sponsor._id}
 							className="group relative w-full overflow-hidden rounded-3xl bg-white p-8 transition-all md:w-8/12"
 						>
 							<div className="relative flex flex-col items-start gap-8 md:flex-row">
@@ -80,13 +41,13 @@ export default function SponsorsPage() {
 									>
 										{sponsor.type}
 									</div>
-									{sponsor.description && (
-										<p className="text-base-content/70 mb-4 text-base">{sponsor.description}</p>
-									)}
+									<p className="text-base-content/70 mb-4 text-base">{sponsor.description}</p>
 
-									<p className="text-base-content/60 mb-2 text-sm">
-										{sponsor.location} {sponsor.contact}
-									</p>
+									{(sponsor.location || sponsor.contact) && (
+										<p className="text-base-content/60 mb-2 text-sm">
+											{sponsor.location} {sponsor.contact}
+										</p>
+									)}
 
 									{sponsor.website && (
 										<div>
@@ -110,8 +71,8 @@ export default function SponsorsPage() {
 								>
 									<div className="relative h-[200px] w-full overflow-hidden rounded-2xl bg-white">
 										<Image
-											src={sponsor.logoUrl}
-											alt={`${sponsor.name} logo`}
+											src={sponsor.logo.url}
+											alt={sponsor.logo.alt || `${sponsor.name} logo`}
 											fill
 											className="object-contain p-6"
 										/>
