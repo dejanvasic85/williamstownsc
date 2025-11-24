@@ -11,19 +11,16 @@ const menuLinks = [
 	{
 		name: 'Sponsors',
 		href: '/sponsors',
-		icon: 'handshake' as const,
 		description: 'View our sponsors'
 	},
 	{
 		name: 'Contact',
 		href: '/contact',
-		icon: 'mail' as const,
 		description: 'Get in touch with us'
 	},
 	{
 		name: 'Events',
 		href: '/events',
-		icon: 'calendar' as const,
 		description: 'Browse upcoming events'
 	}
 ];
@@ -46,12 +43,10 @@ export default function MenuPage() {
 							className="btn btn-lg btn-primary h-auto min-h-24 flex-col gap-2 py-6 text-left transition-transform hover:scale-[1.02] active:scale-[0.98]"
 						>
 							<div className="flex w-full items-center gap-4">
-								<Icon name={link.icon} className="h-8 w-8 flex-shrink-0" />
-								<div className="flex-1">
+								<div className="flex-1 px-6">
 									<span className="block text-xl font-bold">{link.name}</span>
 									<span className="block text-sm opacity-80">{link.description}</span>
 								</div>
-								<Icon name="chevron-right" className="h-6 w-6 flex-shrink-0" />
 							</div>
 						</Link>
 					))}

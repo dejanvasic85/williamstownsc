@@ -11,19 +11,16 @@ const footballLinks = [
 	{
 		name: 'Teams',
 		href: '/football/teams',
-		icon: 'users' as const,
 		description: 'View our football teams'
 	},
 	{
 		name: 'Programs',
 		href: '/football/programs',
-		icon: 'calendar' as const,
 		description: 'Explore our football programs'
 	},
 	{
 		name: 'Merchandise',
 		href: '/football/merchandise',
-		icon: 'shopping-bag' as const,
 		description: 'Shop our football merchandise'
 	}
 ];
@@ -48,12 +45,10 @@ export default function FootballPage() {
 							className="btn btn-lg btn-primary h-auto min-h-24 flex-col gap-2 py-6 text-left transition-transform hover:scale-[1.02] active:scale-[0.98]"
 						>
 							<div className="flex w-full items-center gap-4">
-								<Icon name={link.icon} className="h-8 w-8 flex-shrink-0" />
-								<div className="flex-1">
+								<div className="flex-1 px-6">
 									<span className="block text-xl font-bold">{link.name}</span>
 									<span className="block text-sm opacity-80">{link.description}</span>
 								</div>
-								<Icon name="chevron-right" className="h-6 w-6 flex-shrink-0" />
 							</div>
 						</Link>
 					))}

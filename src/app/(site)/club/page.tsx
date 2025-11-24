@@ -11,25 +11,21 @@ const clubLinks = [
 	{
 		name: 'About',
 		href: '/club/about',
-		icon: 'info' as const,
 		description: 'Learn about our club'
 	},
 	{
 		name: 'Committee',
 		href: '/club/committee',
-		icon: 'users' as const,
 		description: 'Meet our committee members'
 	},
 	{
 		name: 'Policies and regulations',
 		href: '/club/policies-and-regulations',
-		icon: 'file-text' as const,
 		description: 'Read our policies and regulations'
 	},
 	{
 		name: 'Locations',
 		href: '/club/locations',
-		icon: 'map-pin' as const,
 		description: 'Find our club locations'
 	}
 ];
@@ -54,12 +50,10 @@ export default function ClubPage() {
 							className="btn btn-lg btn-primary h-auto min-h-24 flex-col gap-2 py-6 text-left transition-transform hover:scale-[1.02] active:scale-[0.98]"
 						>
 							<div className="flex w-full items-center gap-4">
-								<Icon name={link.icon} className="h-8 w-8 flex-shrink-0" />
-								<div className="flex-1">
+								<div className="flex-1 px-6">
 									<span className="block text-xl font-bold">{link.name}</span>
 									<span className="block text-sm opacity-80">{link.description}</span>
 								</div>
-								<Icon name="chevron-right" className="h-6 w-6 flex-shrink-0" />
 							</div>
 						</Link>
 					))}
