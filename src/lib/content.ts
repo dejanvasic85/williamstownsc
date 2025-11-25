@@ -39,8 +39,6 @@ export interface TransformedSponsor {
 	};
 	type: string;
 	description: string;
-	location?: string;
-	contact?: string;
 	website?: string;
 }
 
@@ -224,6 +222,20 @@ export async function getActivePrograms(): Promise<TransformedProgram[]> {
 	);
 }
 
+function transformSponsor(sponsor: Sponsor): TransformedSponsor {
+	return {
+		_id: sponsor._id,
+		name: sponsor.name || '',
+		logo: {
+			url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).url() : '',
+			alt: sponsor.logo?.alt
+		},
+		type: sponsor.type || '',
+		description: sponsor.description || '',
+		website: sponsor.website
+	};
+}
+
 export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 	const query = `*[_type == "sponsor"] | order(order asc, name asc) {
 		_id,
@@ -238,25 +250,11 @@ export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 
 	const sponsors = await client.fetch<Sponsor[]>(query);
 
-	return sponsors.map(
-		(sponsor): TransformedSponsor => ({
-			_id: sponsor._id,
-			name: sponsor.name || '',
-			logo: {
-				url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).url() : '',
-				alt: sponsor.logo?.alt
-			},
-			type: sponsor.type || '',
-			description: sponsor.description || '',
-			location: sponsor.location,
-			contact: sponsor.contact,
-			website: sponsor.website
-		})
-	);
+	return sponsors.map(transformSponsor);
 }
 
 export async function getFeaturedSponsors(limit: number = 3): Promise<TransformedSponsor[]> {
-	const query = `*[_type == "sponsor"] | order(order asc, name asc) [0...${limit}] {
+	const query = `*[_type == "sponsor"] | order(order asc, name asc) [0...$limit] {
 		_id,
 		name,
 		logo,
@@ -267,21 +265,7 @@ export async function getFeaturedSponsors(limit: number = 3): Promise<Transforme
 		website
 	}`;
 
-	const sponsors = await client.fetch<Sponsor[]>(query);
+	const sponsors = await client.fetch<Sponsor[]>(query, { limit });
 
-	return sponsors.map(
-		(sponsor): TransformedSponsor => ({
-			_id: sponsor._id,
-			name: sponsor.name || '',
-			logo: {
-				url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).url() : '',
-				alt: sponsor.logo?.alt
-			},
-			type: sponsor.type || '',
-			description: sponsor.description || '',
-			location: sponsor.location,
-			contact: sponsor.contact,
-			website: sponsor.website
-		})
-	);
+	return sponsors.map(transformSponsor);
 }

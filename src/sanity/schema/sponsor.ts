@@ -22,7 +22,8 @@ export const sponsor = defineType({
 				{
 					name: 'alt',
 					type: 'string',
-					title: 'Alt Text'
+					title: 'Alt Text',
+					validation: (Rule) => Rule.required()
 				}
 			],
 			validation: (Rule) => Rule.required()
