@@ -1,6 +1,6 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { NewsArticle, Program, SiteSettings, Sponsor } from '@/sanity/sanity.types';
+import { NewsArticle } from '@/sanity/sanity.types';
 
 export interface TransformedNewsArticle {
 	_id: string;
@@ -13,52 +13,6 @@ export interface TransformedNewsArticle {
 	};
 	excerpt: string;
 	featured?: boolean;
-}
-
-export interface TransformedProgram {
-	_id: string;
-	name: string;
-	slug: string;
-	startDate: string;
-	endDate: string;
-	minAge: number;
-	maxAge: number;
-	image?: {
-		url: string;
-		alt?: string;
-	};
-	description?: string;
-}
-
-export interface TransformedSponsor {
-	_id: string;
-	name: string;
-	logo: {
-		url: string;
-		alt?: string;
-	};
-	type: string;
-	description: string;
-	website?: string;
-}
-
-export async function getSiteSettings() {
-	const siteSettings = await client.fetch<SiteSettings>(
-		`*[_type == "siteSettings"][0]{
-			_id,
-			clubName,
-			tagline,
-			description,
-			logo,
-			seoDefaults,
-			socials,
-			seoDefaults,
-			footerText,
-			analytics
-		}`
-	);
-
-	return siteSettings;
 }
 
 export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
@@ -183,87 +137,4 @@ export async function getArticleBySlug(slug: string) {
 		content: article.content,
 		featured: article.featured || false
 	};
-}
-
-export async function getActivePrograms(): Promise<TransformedProgram[]> {
-	const query = `*[_type == "program" && active == true] | order(startDate desc) {
-		_id,
-		name,
-		slug,
-		startDate,
-		endDate,
-		minAge,
-		maxAge,
-		image,
-		description
-	}`;
-
-	const programs = await client.fetch<Program[]>(query);
-
-	return programs.map(
-		(program): TransformedProgram => ({
-			_id: program._id,
-			name: program.name || '',
-			slug: program.slug?.current || '',
-			startDate: program.startDate || '',
-			endDate: program.endDate || '',
-			minAge: program.minAge || 0,
-			maxAge: program.maxAge || 0,
-			image: program.image
-				? {
-						url: urlFor(program.image).width(800).height(600).url(),
-						alt: program.image.alt
-					}
-				: undefined,
-			description: program.description
-		})
-	);
-}
-
-function transformSponsor(sponsor: Sponsor): TransformedSponsor {
-	return {
-		_id: sponsor._id,
-		name: sponsor.name || '',
-		logo: {
-			url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).url() : '',
-			alt: sponsor.logo?.alt
-		},
-		type: sponsor.type || '',
-		description: sponsor.description || '',
-		website: sponsor.website
-	};
-}
-
-export async function getAllSponsors(): Promise<TransformedSponsor[]> {
-	const query = `*[_type == "sponsor"] | order(order asc, name asc) {
-		_id,
-		name,
-		logo,
-		type,
-		description,
-		location,
-		contact,
-		website
-	}`;
-
-	const sponsors = await client.fetch<Sponsor[]>(query);
-
-	return sponsors.map(transformSponsor);
-}
-
-export async function getFeaturedSponsors(limit: number = 3): Promise<TransformedSponsor[]> {
-	const query = `*[_type == "sponsor"] | order(order asc, name asc) [0...$limit] {
-		_id,
-		name,
-		logo,
-		type,
-		description,
-		location,
-		contact,
-		website
-	}`;
-
-	const sponsors = await client.fetch<Sponsor[]>(query, { limit });
-
-	return sponsors.map(transformSponsor);
 }
