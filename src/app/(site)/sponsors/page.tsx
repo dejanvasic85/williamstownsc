@@ -23,31 +23,29 @@ export default async function SponsorsPage() {
 					return (
 						<div
 							key={sponsor._id}
-							className="group relative w-full overflow-hidden rounded-3xl bg-white p-8 transition-all md:w-8/12"
+							className="group relative w-full overflow-hidden rounded-3xl bg-white transition-all md:w-8/12"
 						>
-							<div className="relative flex flex-col items-start gap-8 md:flex-row">
+							<div className="relative flex flex-col items-start md:flex-row">
 								{/* Content - Always order-1 on mobile, alternates on desktop */}
 								<div
-									className={`order-1 flex w-full flex-col md:w-3/5 ${
+									className={`order-1 flex w-full flex-col p-8 md:w-3/5 ${
 										isEven ? 'md:order-2' : 'md:order-1'
 									}`}
 								>
-									<h3 className="mb-2 text-2xl font-bold">{sponsor.name}</h3>
-									<div
-										className={clsx(
-											'badge mb-4 text-sm font-semibold',
-											sponsor.type === 'Principal' && 'badge-secondary'
-										)}
-									>
-										{sponsor.type}
+									<div className="mb-2 flex items-center gap-3">
+										<h3 className="text-2xl font-bold md:text-xl xl:text-2xl">{sponsor.name}</h3>
+										<div
+											className={clsx(
+												'badge text-sm font-semibold',
+												sponsor.type === 'Principal' && 'badge-secondary'
+											)}
+										>
+											{sponsor.type}
+										</div>
 									</div>
-									<p className="text-base-content/70 mb-4 text-base">{sponsor.description}</p>
-
-									{(sponsor.location || sponsor.contact) && (
-										<p className="text-base-content/60 mb-2 text-sm">
-											{sponsor.location} {sponsor.contact}
-										</p>
-									)}
+									<p className="text-base-content/70 mb-4 text-base md:text-sm xl:text-base">
+										{sponsor.description}
+									</p>
 
 									{sponsor.website && (
 										<div>
@@ -65,18 +63,26 @@ export default async function SponsorsPage() {
 
 								{/* Image - Always order-2 on mobile (bottom), alternates on desktop */}
 								<div
-									className={`order-2 flex w-full items-start justify-center md:w-2/5 ${
+									className={`order-2 w-full md:h-full md:w-2/5 ${
 										isEven ? 'md:order-1' : 'md:order-2'
 									}`}
 								>
-									<div className="relative h-[200px] w-full overflow-hidden rounded-2xl bg-white">
+									<div className="mx-auto mb-4 aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:hidden">
 										<Image
 											src={sponsor.logo.url}
 											alt={sponsor.logo.alt || `${sponsor.name} logo`}
-											fill
-											className="object-contain p-6"
+											width={400}
+											height={400}
+											className="h-full w-full object-contain"
 										/>
 									</div>
+									<Image
+										src={sponsor.logo.url}
+										alt={sponsor.logo.alt || `${sponsor.name} logo`}
+										width={400}
+										height={300}
+										className="hidden h-full w-full object-cover md:block"
+									/>
 								</div>
 							</div>
 						</div>

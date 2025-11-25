@@ -22,14 +22,14 @@ export async function SponsorsSection() {
 							{sponsors.map((sponsor) => (
 								<div
 									key={sponsor._id}
-									className="relative flex items-center justify-center overflow-hidden rounded-2xl border border-white/50 bg-white/30 p-8 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] backdrop-blur-md transition-all hover:shadow-xl md:p-10"
+									className="relative overflow-hidden rounded-2xl border border-white/50 bg-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] backdrop-blur-md transition-all hover:shadow-xl"
 								>
 									<Image
 										src={sponsor.logo.url}
 										alt={sponsor.logo.alt || `${sponsor.name} logo`}
 										width={250}
-										height={83}
-										className="h-auto w-full max-w-[200px] object-contain md:max-w-[250px]"
+										height={200}
+										className="h-full w-full object-cover"
 									/>
 								</div>
 							))}

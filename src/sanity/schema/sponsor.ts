@@ -48,17 +48,6 @@ export const sponsor = defineType({
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
-			name: 'location',
-			title: 'Location',
-			type: 'string'
-		}),
-		defineField({
-			name: 'contact',
-			title: 'Contact',
-			type: 'string',
-			description: 'Phone number or email'
-		}),
-		defineField({
 			name: 'website',
 			title: 'Website URL',
 			type: 'url',

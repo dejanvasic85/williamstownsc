@@ -66,5 +66,6 @@ Data models that we need:
 - Soccer programs
 - Football team
 - Sponsor
+  - Do we need tiers/types? Like major or principal?
 
 Social websites like Insta/Facebook -> Push only
