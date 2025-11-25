@@ -50,8 +50,6 @@ export async function getSiteSettings() {
 			tagline,
 			description,
 			logo,
-			locations,
-			contact,
 			seoDefaults,
 			socials,
 			seoDefaults,

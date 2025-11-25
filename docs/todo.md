@@ -25,17 +25,17 @@ Pages:
 
 - [x] Homepage
 - [x] News
-  - [ ] Article page
+  - [x] Article page
     - [ ] Similar news
   - [ ] Match report page
     - [ ] Previous / next week links
-- [ ] Football
-  - [ ] Team listings
-  - [ ] Seniors, reserves + women with profiles
-  - [ ] All other teams with coaches details and other useful information like start / end dates
+- [x] Football
+  - [x] Team listings
+    - [ ] Seniors, reserves + women with profiles
+    - [ ] All other teams with coaches details and other useful information like start / end dates
   - [ ] Programs (Summer programs, Mino roos)
   - [ ] Merchandise - links to our apparel suppliers
-- [ ] Sponsors
+- [x] Sponsors
 - [ ] Club
   - [ ] About and History
   - [ ] Org, committee members and contacts
