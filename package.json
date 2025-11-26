@@ -18,7 +18,7 @@
 		"generate": "tsx bin/generateMockData.ts"
 	},
 	"dependencies": {
-		"@sanity/client": "7.13.0",
+		"@sanity/client": "7.13.1",
 		"@sanity/image-url": "1.2.0",
 		"@sanity/vision": "4.19.0",
 		"clsx": "2.1.1",
