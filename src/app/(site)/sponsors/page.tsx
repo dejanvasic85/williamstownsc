@@ -1,39 +1,10 @@
 import { PageContainer } from '@/components/layout';
+import { getAllSponsors } from '@/lib/content';
+import clsx from 'clsx';
 import Image from 'next/image';
 
-interface Sponsor {
-	name: string;
-	logoUrl: string;
-	website?: string;
-	description?: string;
-}
-
-const principalSponsorsValue: Sponsor[] = [
-	{
-		name: 'Trek',
-		logoUrl: '/img/trek_bicycle_corporation.png',
-		website: 'https://www.trekbikes.com',
-		description:
-			'Trek Bicycle Corporation is a leading manufacturer of bicycles and cycling products.'
-	}
-];
-
-const majorSponsorsValue: Sponsor[] = [
-	{
-		name: 'McDonalds',
-		logoUrl: '/img/mcdonalds-logo-1.webp',
-		website: 'https://www.mcdonalds.com.au',
-		description: 'Serving communities across Australia with quality food and local support.'
-	},
-	{
-		name: 'Specsavers',
-		logoUrl: '/img/specsavers logo.jpeg',
-		website: 'https://www.specsavers.com.au',
-		description: 'Leading optometry services focused on eye health and affordable eyewear.'
-	}
-];
-
-export default function SponsorsPage() {
+export default async function SponsorsPage() {
+	const sponsors = await getAllSponsors();
 	return (
 		<PageContainer>
 			<div className="mb-12">
@@ -45,96 +16,82 @@ export default function SponsorsPage() {
 				</p>
 			</div>
 
-			{/* Principal Sponsors */}
-			{principalSponsorsValue.length > 0 && (
-				<section className="mb-16">
-					<h2 className="mb-8 text-3xl font-bold">Principal Sponsor</h2>
-					<div className="grid grid-cols-1 gap-8">
-						{principalSponsorsValue.map((sponsor) => (
-							<div
-								key={sponsor.name}
-								className="bg-base-100 group relative overflow-hidden rounded-2xl shadow-xl transition-all hover:shadow-2xl"
-							>
-								<div className="from-primary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-								<div className="relative flex flex-col items-center p-8 md:flex-row md:gap-8 md:p-10">
-									<div className="mb-6 flex w-full items-center justify-center md:mb-0 md:w-1/3">
-										<Image
-											src={sponsor.logoUrl}
-											alt={`${sponsor.name} logo`}
-											width={350}
-											height={117}
-											className="h-auto w-full max-w-xs object-contain"
-										/>
+			{/* All Sponsors */}
+			<div className="mb-16 flex flex-col items-center gap-8">
+				{sponsors.map((sponsor, index) => {
+					const isEven = index % 2 === 0;
+					return (
+						<div
+							key={sponsor._id}
+							className="group relative w-full overflow-hidden rounded-3xl bg-white transition-all md:w-8/12"
+						>
+							<div className="relative flex flex-col items-start md:flex-row">
+								{/* Content - Always order-1 on mobile, alternates on desktop */}
+								<div
+									className={`order-1 flex w-full flex-col p-8 md:w-3/5 ${
+										isEven ? 'md:order-2' : 'md:order-1'
+									}`}
+								>
+									<div className="mb-2 flex items-center gap-3">
+										<h3 className="text-2xl font-bold md:text-xl xl:text-2xl">{sponsor.name}</h3>
+										<div
+											className={clsx(
+												'badge text-sm font-semibold',
+												sponsor.type === 'Principal' && 'badge-secondary'
+											)}
+										>
+											{sponsor.type}
+										</div>
 									</div>
-									<div className="w-full text-center md:w-2/3 md:text-left">
-										<h3 className="mb-3 text-2xl font-bold">{sponsor.name}</h3>
-										{sponsor.description && (
-											<p className="text-base-content/70 mb-6 text-lg">{sponsor.description}</p>
-										)}
-										{sponsor.website && (
-											<a
-												href={sponsor.website}
-												target="_blank"
-												rel="noopener noreferrer"
-												className="btn btn-primary shadow-lg"
-											>
-												Visit Website
-											</a>
-										)}
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</section>
-			)}
+									<p className="text-base-content/70 mb-4 text-base md:text-sm xl:text-base">
+										{sponsor.description}
+									</p>
 
-			{/* Major Sponsors */}
-			{majorSponsorsValue.length > 0 && (
-				<section className="mb-16">
-					<h2 className="mb-8 text-3xl font-bold">Major Sponsors</h2>
-					<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-						{majorSponsorsValue.map((sponsor) => (
-							<div
-								key={sponsor.name}
-								className="bg-base-100 group relative overflow-hidden rounded-2xl shadow-lg transition-all hover:shadow-xl"
-							>
-								<div className="from-secondary/5 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-								<div className="relative flex flex-col items-center p-8">
-									<div className="mb-6 flex w-full items-center justify-center">
-										<Image
-											src={sponsor.logoUrl}
-											alt={`${sponsor.name} logo`}
-											width={250}
-											height={83}
-											className="h-auto w-full max-w-[200px] object-contain"
-										/>
-									</div>
-									<div className="w-full text-center">
-										<h3 className="mb-3 text-xl font-bold">{sponsor.name}</h3>
-										{sponsor.description && (
-											<p className="text-base-content/70 mb-4">{sponsor.description}</p>
-										)}
-										{sponsor.website && (
+									{sponsor.website && (
+										<div>
 											<a
 												href={sponsor.website}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="btn btn-primary btn-sm shadow-md"
+												className="btn btn-primary btn-outline"
 											>
 												Visit Website
 											</a>
-										)}
+										</div>
+									)}
+								</div>
+
+								{/* Image - Always order-2 on mobile (bottom), alternates on desktop */}
+								<div
+									className={`order-2 w-full md:h-full md:w-2/5 ${
+										isEven ? 'md:order-1' : 'md:order-2'
+									}`}
+								>
+									<div className="mx-auto mb-4 aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:hidden">
+										<Image
+											src={sponsor.logo.url}
+											alt={sponsor.logo.alt || `${sponsor.name} logo`}
+											width={400}
+											height={400}
+											className="h-full w-full object-contain"
+										/>
 									</div>
+									<Image
+										src={sponsor.logo.url}
+										alt={sponsor.logo.alt || `${sponsor.name} logo`}
+										width={400}
+										height={300}
+										className="hidden h-full w-full object-cover md:block"
+									/>
 								</div>
 							</div>
-						))}
-					</div>
-				</section>
-			)}
+						</div>
+					);
+				})}
+			</div>
 
 			{/* Become a Sponsor */}
-			<section className="from-primary/10 via-secondary/10 to-accent/10 relative overflow-hidden rounded-2xl bg-gradient-to-br p-8 shadow-xl md:p-12">
+			<section className="from-primary/10 via-secondary/10 to-accent/10 relative overflow-hidden rounded-2xl bg-linear-to-br p-8 shadow-xl md:p-12">
 				<div className="bg-primary/20 absolute -top-16 -right-16 h-64 w-64 rounded-full blur-3xl" />
 				<div className="bg-secondary/20 absolute -bottom-16 -left-16 h-64 w-64 rounded-full blur-3xl" />
 
@@ -147,8 +104,8 @@ export default function SponsorsPage() {
 					</p>
 
 					<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-						<div className="bg-base-100/80 group relative overflow-hidden rounded-xl p-6 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl">
-							<div className="from-primary/10 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+						<div className="bg-base-100/80 group relative overflow-hidden rounded-xl p-6 shadow-lg backdrop-blur-sm transition-all">
+							<div className="from-primary/10 absolute inset-0 bg-linear-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 							<div className="relative">
 								<h3 className="mb-3 text-xl font-bold">Principal Sponsor</h3>
 								<p className="text-base-content/70">
@@ -157,7 +114,7 @@ export default function SponsorsPage() {
 							</div>
 						</div>
 						<div className="bg-base-100/80 group relative overflow-hidden rounded-xl p-6 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl">
-							<div className="from-secondary/10 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+							<div className="from-secondary/10 absolute inset-0 bg-linear-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 							<div className="relative">
 								<h3 className="mb-3 text-xl font-bold">Major Sponsor</h3>
 								<p className="text-base-content/70">
@@ -166,7 +123,7 @@ export default function SponsorsPage() {
 							</div>
 						</div>
 						<div className="bg-base-100/80 group relative overflow-hidden rounded-xl p-6 shadow-lg backdrop-blur-sm transition-all hover:shadow-xl">
-							<div className="from-accent/10 absolute inset-0 bg-gradient-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+							<div className="from-accent/10 absolute inset-0 bg-linear-to-br to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 							<div className="relative">
 								<h3 className="mb-3 text-xl font-bold">Community Partner</h3>
 								<p className="text-base-content/70">
@@ -182,7 +139,7 @@ export default function SponsorsPage() {
 							href="mailto:sponsorship@williamstownsc.com.au"
 							className="btn btn-primary btn-lg shadow-lg"
 						>
-							Contact Us About Sponsorship
+							Become a sponsor
 						</a>
 					</div>
 				</div>

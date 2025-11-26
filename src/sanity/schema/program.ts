@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 
 export const program = defineType({
 	name: 'program',
-	title: 'Program',
+	title: 'Football Program',
 	type: 'document',
 	fields: [
 		defineField({

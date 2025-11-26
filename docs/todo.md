@@ -25,13 +25,17 @@ Pages:
 
 - [x] Homepage
 - [x] News
-- [ ] Football
-  - [ ] Team listings
-  - [ ] Seniors, reserves + women with profiles
-  - [ ] All other teams with coaches details and other useful information like start / end dates
+  - [x] Article page
+    - [ ] Similar news
+  - [ ] Match report page
+    - [ ] Previous / next week links
+- [x] Football
+  - [x] Team listings
+    - [ ] Seniors, reserves + women with profiles
+    - [ ] All other teams with coaches details and other useful information like start / end dates
   - [ ] Programs (Summer programs, Mino roos)
   - [ ] Merchandise - links to our apparel suppliers
-- [ ] Sponsors
+- [x] Sponsors
 - [ ] Club
   - [ ] About and History
   - [ ] Org, committee members and contacts
@@ -62,5 +66,6 @@ Data models that we need:
 - Soccer programs
 - Football team
 - Sponsor
+  - Do we need tiers/types? Like major or principal?
 
 Social websites like Insta/Facebook -> Push only
