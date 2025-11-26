@@ -39,14 +39,12 @@ export const person = defineType({
 	preview: {
 		select: {
 			title: 'name',
-			media: 'photo',
-			order: 'order'
+			media: 'photo'
 		},
-		prepare({ title, media, order }) {
+		prepare({ title, media }) {
 			return {
 				title,
-				media,
-				subTitle: order.toString()
+				media
 			};
 		}
 	}
