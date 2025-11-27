@@ -31,9 +31,9 @@ export const person = defineType({
 		}),
 		defineField({
 			name: 'dateOfBirth',
-			title: 'Date of Birth',
+			title: 'Date of Birth (optional)',
 			type: 'date',
-			description: 'Used to calculate age for players'
+			description: 'Used to calculate and display age on the website. Useful for players.'
 		})
 	],
 	preview: {

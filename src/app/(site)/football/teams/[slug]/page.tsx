@@ -88,9 +88,9 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 			</div>
 			{team.players && team.players.length > 0 && <PlayerGrid players={team.players} />}
 			{team.coachingStaff && team.coachingStaff.length > 0 && (
-				<div className="space-y-8">
+				<div className="mt-10 space-y-8">
 					<h2 className="text-3xl font-black uppercase">Coaching Staff</h2>
-					<div className="flex flex-col gap-6">
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 						{team.coachingStaff.map((coach) => {
 							const nameParts = coach.person.name.trim().split(' ');
 							const firstName = nameParts.slice(0, -1).join(' ');

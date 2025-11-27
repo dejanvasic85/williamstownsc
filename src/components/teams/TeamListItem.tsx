@@ -71,7 +71,7 @@ export function TeamListItem({ team }: TeamListItemProps) {
 					)}
 
 					{team.players && team.players.length > 0 && (
-						<div>
+						<div className="lg:flex lg:justify-end">
 							<a
 								href={`/football/teams/${team.slug}`}
 								className="btn btn-primary btn-outline"
