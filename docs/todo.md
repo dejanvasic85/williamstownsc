@@ -11,8 +11,8 @@ The original website is at https://www.williamstownsc.com/
 - [x] Layout
   - [x] Navbar (mobile and desktop)
     - [] Submenu
-  - [ ] Footer
-  - [ ] Favicon
+  - [x] Footer
+  - [x] Favicon
 - [x] Links to socials
 - [ ] SEO
 - [ ] PWA setup and install dialog
@@ -35,6 +35,7 @@ Pages:
     - [ ] All other teams with coaches details and other useful information like start / end dates
   - [ ] Programs (Summer programs, Mino roos)
   - [ ] Merchandise - links to our apparel suppliers
+        Links to OnlySport and Ultra football
 - [x] Sponsors
 - [ ] Club
   - [ ] About and History

@@ -16,26 +16,120 @@ export const team = defineType({
 			name: 'photo',
 			title: 'Photo',
 			type: 'image',
-			description: 'Can be a generated image until we have a real team photo',
+			description:
+				'Can be a generated image until we have a real team photo. Please use wide shots for best results.',
 			options: {
 				hotspot: true
-			},
-			fields: [
-				{
-					name: 'alt',
-					type: 'string',
-					title: 'Alt Text',
-					validation: (Rule) => Rule.required()
-				}
-			],
-			validation: (Rule) => Rule.required()
+			}
+		}),
+		defineField({
+			name: 'gender',
+			title: 'Gender',
+			type: 'string',
+			options: {
+				list: [
+					{
+						title: 'Male',
+						value: 'male'
+					},
+					{
+						title: 'Female',
+						value: 'female'
+					},
+					{
+						title: 'Mixed',
+						value: 'mixed'
+					}
+				]
+			}
+		}),
+		defineField({
+			name: 'ageGroup',
+			title: 'Age group',
+			type: 'string',
+			options: {
+				list: [
+					{
+						title: 'Seniors',
+						value: 'seniors'
+					},
+					{
+						title: 'Reserves',
+						value: 'reserves'
+					},
+					{
+						title: 'Masters',
+						value: 'masters'
+					},
+					{
+						title: `Over 45's`,
+						value: 'over45'
+					},
+					{
+						title: 'Metros',
+						value: 'metros'
+					},
+					{
+						title: 'Under 18',
+						value: '18'
+					},
+					{
+						title: 'Under 17',
+						value: '17'
+					},
+					{
+						title: 'Under 16',
+						value: '16'
+					},
+					{
+						title: 'Under 15',
+						value: '15'
+					},
+					{
+						title: 'Under 14',
+						value: '14'
+					},
+					{
+						title: 'Under 13',
+						value: '13'
+					},
+					{
+						title: 'Under 12',
+						value: '12'
+					},
+					{
+						title: 'Under 11',
+						value: '11'
+					},
+					{
+						title: 'Under 10',
+						value: '10'
+					},
+					{
+						title: 'Under 9',
+						value: '9'
+					},
+					{
+						title: 'Under 8',
+						value: '8'
+					},
+					{
+						title: 'Under 7',
+						value: '7'
+					},
+					{
+						title: 'Under 6',
+						value: '6'
+					}
+				]
+			}
 		}),
 		defineField({
 			name: 'order',
-			title: 'Display Order',
+			title: 'Order',
 			type: 'number',
-			description: 'Lower numbers appear first',
-			initialValue: 100
+			description: 'Order in which the team should appear on the website within the same age group',
+			validation: (Rule) => Rule.required()
 		}),
 		defineField({
 			name: 'description',
