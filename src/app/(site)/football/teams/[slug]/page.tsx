@@ -96,25 +96,12 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 							const firstName = nameParts.slice(0, -1).join(' ');
 							const lastName = nameParts[nameParts.length - 1];
 
-							const role =
-								coach.title === 'headCoach'
-									? 'Head Coach'
-									: coach.title === 'assistantCoach'
-										? 'Assistant Coach'
-										: coach.title === 'goalkeeperCoach'
-											? 'Goalkeeper Coach'
-											: coach.title === 'teamManager'
-												? 'Team Manager'
-												: coach.title === 'physio'
-													? 'Physio'
-													: coach.title;
-
 							return (
 								<CoachCard
 									key={coach.person._id}
 									firstName={firstName}
 									lastName={lastName}
-									role={role}
+									role={coach.title}
 									photoUrl={coach.person.photo.asset.url}
 									photoAlt={coach.person.photo.alt || coach.person.name}
 								/>

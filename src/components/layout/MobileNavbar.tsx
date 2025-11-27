@@ -15,7 +15,6 @@ const mobileNavItems: NavItem[] = [
 	{ name: 'Home', href: '/', icon: 'home' },
 	{ name: 'News', href: '/news', icon: 'news' },
 	{ name: 'Football', href: '/football', icon: 'soccer' },
-	{ name: 'Club', href: '/club', icon: 'club' },
 	{ name: 'Menu', href: '/menu', icon: 'menu' }
 ];
 
@@ -37,7 +36,7 @@ export function MobileNavbar() {
 
 	return (
 		<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
-			<div className="bg-primary mx-auto max-w-md rounded-full px-6 py-3 shadow-[0_0_60px_rgba(26,75,166,0.6)] backdrop-blur-md">
+			<div className="bg-primary border-secondary mx-auto max-w-md rounded-full border-2 px-6 py-3 shadow-[0_0_30px_rgba(198,146,20,0.4)]">
 				<ul className="flex items-center justify-around gap-2">
 					{mobileNavItems.map((item) => {
 						const isActive = isItemActive(item);
@@ -48,7 +47,7 @@ export function MobileNavbar() {
 									href={item.href}
 									onClick={handleNavClick}
 									className={clsx(
-										'relative flex flex-col items-center gap-0.5 rounded-full px-3 py-2.5 transition-all duration-300',
+										'relative flex w-16 flex-col items-center gap-0.5 rounded-full py-2.5 transition-all duration-300',
 										isActive
 											? 'bg-secondary text-primary animate-[navPop_0.4s_ease-out]'
 											: 'text-neutral-content hover:bg-neutral-content/10'

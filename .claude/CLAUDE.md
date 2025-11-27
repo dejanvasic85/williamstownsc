@@ -10,6 +10,7 @@
 # Technical requirements
 
 - SEO friendly titles, descriptions and meta tags for search performance
+- Light and dark themes need to be considered
 - Ensure that this website can be installed and used as a PWA
 - Accessibility (a11y) AA compliant
 - Responsive design (mobile-first)
