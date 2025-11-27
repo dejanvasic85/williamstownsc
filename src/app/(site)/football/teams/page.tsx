@@ -32,14 +32,8 @@ export default async function FootballTeamsPage() {
 	const teamsByTab = groupTeamsByTab(teams);
 
 	return (
-		<PageContainer>
-			<div className="space-y-10">
-				<h1 className="border-secondary border-b-4 pb-6 text-3xl font-bold lg:text-4xl">
-					Football Teams
-				</h1>
-
-				<TeamTabs teamsByTab={teamsByTab} />
-			</div>
+		<PageContainer heading="Football Teams">
+			<TeamTabs teamsByTab={teamsByTab} />
 		</PageContainer>
 	);
 }

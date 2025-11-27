@@ -6,16 +6,10 @@ export default async function NewsPage() {
 	const articles = await getAllArticles(20);
 
 	return (
-		<PageContainer>
-			<div className="mb-12">
-				<h1 className="border-secondary mb-4 border-b-4 pb-4 text-2xl font-bold lg:text-3xl">
-					News & Match Reports
-				</h1>
-				<p className="text-base-content/70 text-lg">
-					Stay up to date with the latest news, match reports, and updates from Williamstown SC
-				</p>
-			</div>
-
+		<PageContainer
+			heading="News & Match Reports"
+			intro="Stay up to date with the latest news, match reports, and updates from Williamstown SC"
+		>
 			{articles.length > 0 && (
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{articles.map((article) => (

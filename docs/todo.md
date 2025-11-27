@@ -20,6 +20,8 @@ The original website is at https://www.williamstownsc.com/
 - [ ] Custom error page
 - [ ] Google structured data
 - [ ] Bot detection
+- [ ] Error handling (what happens if we cannot fetch content)
+- [ ] Cache invalidation on content publish
 
 Pages:
 

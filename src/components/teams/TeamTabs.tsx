@@ -2,7 +2,7 @@
 
 import type { TabCategory, TeamsByTab } from '@/types/team';
 import { useState } from 'react';
-import { TeamCard } from './TeamCard';
+import { TeamListItem } from './TeamListItem';
 
 interface TeamTabsProps {
 	teamsByTab: TeamsByTab;
@@ -51,15 +51,15 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 				))}
 			</div>
 
-			<div
-				role="tabpanel"
-				className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-				aria-labelledby={`tab-${activeTab}`}
-			>
+			<div role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
 				{activeTeams.length > 0 ? (
-					activeTeams.map((team) => <TeamCard key={team._id} team={team} />)
+					<ul className="bg-base-100 rounded-box w-full overflow-hidden">
+						{activeTeams.map((team) => (
+							<TeamListItem key={team._id} team={team} />
+						))}
+					</ul>
 				) : (
-					<div className="col-span-full py-16 text-center">
+					<div className="py-16 text-center">
 						<p className="text-base-content/60 text-lg">
 							No {tabLabels[activeTab].toLowerCase()} teams available.
 						</p>
