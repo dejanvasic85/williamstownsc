@@ -4,6 +4,7 @@ export const teamsQuery = groq`
   *[_type == "team"] | order(ageGroup asc, order asc) {
     _id,
     name,
+    "slug": slug.current,
     photo {
       asset-> {
         _ref,

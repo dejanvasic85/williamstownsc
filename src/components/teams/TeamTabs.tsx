@@ -31,16 +31,14 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 		);
 	}
 
-	const activeTeams = teamsByTab[activeTab];
-
 	return (
 		<div className="space-y-12">
-			<div role="tablist" className="tabs tabs-bordered gap-4">
+			<div role="tablist" className="tabs tabs-border gap-2">
 				{visibleTabs.map((tab) => (
 					<button
 						key={tab}
 						role="tab"
-						className={`tab text-lg font-semibold transition-colors ${
+						className={`tab text-sm font-semibold transition-colors lg:text-lg ${
 							activeTab === tab ? 'tab-active' : ''
 						}`}
 						onClick={() => setActiveTab(tab)}
@@ -51,21 +49,36 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 				))}
 			</div>
 
-			<div role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
-				{activeTeams.length > 0 ? (
-					<ul className="bg-base-100 rounded-box w-full overflow-hidden">
-						{activeTeams.map((team) => (
-							<TeamListItem key={team._id} team={team} />
-						))}
-					</ul>
-				) : (
-					<div className="py-16 text-center">
-						<p className="text-base-content/60 text-lg">
-							No {tabLabels[activeTab].toLowerCase()} teams available.
-						</p>
+			{visibleTabs.map((tab) => {
+				const teams = teamsByTab[tab];
+				const isActive = activeTab === tab;
+
+				return (
+					<div
+						key={tab}
+						role="tabpanel"
+						aria-labelledby={`tab-${tab}`}
+						aria-hidden={!isActive}
+						className={`transition-opacity duration-300 ${
+							isActive ? 'opacity-100' : 'pointer-events-none absolute opacity-0'
+						}`}
+					>
+						{teams.length > 0 ? (
+							<ul className="bg-base-100 rounded-box w-full overflow-hidden">
+								{teams.map((team) => (
+									<TeamListItem key={team._id} team={team} />
+								))}
+							</ul>
+						) : (
+							<div className="py-16 text-center">
+								<p className="text-base-content/60 text-lg">
+									No {tabLabels[tab].toLowerCase()} teams available.
+								</p>
+							</div>
+						)}
 					</div>
-				)}
-			</div>
+				);
+			})}
 		</div>
 	);
 }

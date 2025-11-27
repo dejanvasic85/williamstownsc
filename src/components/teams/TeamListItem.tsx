@@ -9,14 +9,14 @@ interface TeamListItemProps {
 export function TeamListItem({ team }: TeamListItemProps) {
 	return (
 		<li className="border-base-300 border-b last:border-b-0">
-			<div className="grid grid-cols-1 gap-8 px-6 py-8 lg:grid-cols-[300px_1fr]">
+			<div className="grid grid-cols-1 gap-8 px-6 py-8 lg:grid-cols-[500px_1fr]">
 				{team.photo && (
-					<figure className="relative aspect-video overflow-hidden rounded-lg lg:aspect-[4/3]">
+					<figure className="relative aspect-video overflow-hidden">
 						<Image
 							src={team.photo.asset.url}
 							alt={team.photo.alt || team.name}
 							fill
-							className="object-cover"
+							className="object-contain"
 							sizes="(max-width: 1024px) 100vw, 300px"
 						/>
 					</figure>
@@ -25,7 +25,6 @@ export function TeamListItem({ team }: TeamListItemProps) {
 				<div className="flex flex-col gap-6">
 					<div className="space-y-3">
 						<h3 className="text-2xl font-bold">{team.name}</h3>
-
 						{team.description && team.description.length > 0 && (
 							<div className="prose text-base-content/80 max-w-none">
 								{team.description.map((block, index) => {
@@ -69,6 +68,18 @@ export function TeamListItem({ team }: TeamListItemProps) {
 
 					{team.coachingStaff && team.coachingStaff.length > 0 && (
 						<CoachingStaffAvatars coaches={team.coachingStaff} />
+					)}
+
+					{team.players && team.players.length > 0 && (
+						<div>
+							<a
+								href={`/football/teams/${team.slug}`}
+								className="btn btn-primary btn-outline"
+								aria-label={`View ${team.name}`}
+							>
+								View Team
+							</a>
+						</div>
 					)}
 				</div>
 			</div>

@@ -13,6 +13,17 @@ export const team = defineType({
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			description: 'URL-friendly identifier for this team',
+			options: {
+				source: 'name',
+				maxLength: 96
+			},
+			validation: (Rule) => Rule.required()
+		}),
+		defineField({
 			name: 'photo',
 			title: 'Photo',
 			type: 'image',

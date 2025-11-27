@@ -42,14 +42,18 @@ export interface Coach {
 
 export interface Player {
 	person: Person;
-	jerseyNumber?: number;
+	shirtNumber?: number;
 	position?: string;
-	role?: 'captain' | 'viceCaptain' | 'player';
+	areaOfPitch?: 'goalkeeper' | 'defender' | 'midfielder' | 'forward';
+	isCaptain?: boolean;
+	isViceCaptain?: boolean;
+	intro?: PortableTextBlock[];
 }
 
 export interface Team {
 	_id: string;
 	name: string;
+	slug: string;
 	photo?: {
 		asset: {
 			_ref: string;

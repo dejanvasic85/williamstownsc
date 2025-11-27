@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon } from '@/components/Icon';
-import { navItems } from '@/config/navigation';
+import { navItems } from '@/lib/navigation';
 import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';

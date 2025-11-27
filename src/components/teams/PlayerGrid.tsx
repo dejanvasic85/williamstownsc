@@ -1,0 +1,85 @@
+import type { Player } from '@/types/team';
+import { PlayerCard } from './PlayerCard';
+
+interface PlayerGridProps {
+	players: Player[];
+}
+
+type AreaOfPitch = 'goalkeeper' | 'defender' | 'midfielder' | 'forward';
+
+const positionLabels: Record<AreaOfPitch, string> = {
+	goalkeeper: 'Goalkeepers',
+	defender: 'Defenders',
+	midfielder: 'Midfielders',
+	forward: 'Forwards'
+};
+
+const positionOrder: AreaOfPitch[] = ['goalkeeper', 'defender', 'midfielder', 'forward'];
+
+function splitName(fullName: string): { firstName: string; lastName: string } {
+	const parts = fullName.trim().split(' ');
+	if (parts.length === 1) {
+		return { firstName: '', lastName: parts[0] };
+	}
+	const lastName = parts[parts.length - 1];
+	const firstName = parts.slice(0, -1).join(' ');
+	return { firstName, lastName };
+}
+
+export function PlayerGrid({ players }: PlayerGridProps) {
+	const playersByPosition = players.reduce(
+		(acc, player) => {
+			const area = player.areaOfPitch;
+			if (area && positionOrder.includes(area as AreaOfPitch)) {
+				if (!acc[area]) {
+					acc[area] = [];
+				}
+				acc[area].push(player);
+			}
+			return acc;
+		},
+		{} as Record<string, Player[]>
+	);
+
+	positionOrder.forEach((position) => {
+		if (playersByPosition[position]) {
+			playersByPosition[position].sort((a, b) => (a.shirtNumber || 0) - (b.shirtNumber || 0));
+		}
+	});
+
+	return (
+		<div className="space-y-16">
+			{positionOrder.map((position) => {
+				const positionPlayers = playersByPosition[position];
+				if (!positionPlayers || positionPlayers.length === 0) {
+					return null;
+				}
+
+				return (
+					<section key={position} className="space-y-8">
+						<h2 className="text-3xl font-black uppercase">{positionLabels[position]}</h2>
+						<div className="flex flex-col gap-6">
+							{positionPlayers.map((player) => {
+								const { firstName, lastName } = splitName(player.person.name);
+								return (
+									<PlayerCard
+										key={player.person._id}
+										firstName={firstName}
+										lastName={lastName}
+										shirtNumber={player.shirtNumber || 0}
+										position={player.position || ''}
+										photoUrl={player.person.photo.asset.url}
+										photoAlt={player.person.photo.alt || player.person.name}
+										isCaptain={player.isCaptain || false}
+										isViceCaptain={player.isViceCaptain || false}
+										intro={player.intro}
+									/>
+								);
+							})}
+						</div>
+					</section>
+				);
+			})}
+		</div>
+	);
+}
