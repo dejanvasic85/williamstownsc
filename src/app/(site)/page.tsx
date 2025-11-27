@@ -89,7 +89,7 @@ export default async function Home() {
 			</div>
 
 			{featuredArticles.length > 0 && (
-				<div className="container mx-auto mb-12 px-4 pt-6 lg:pt-(--navbar-total-height-desktop)">
+				<div className="container mx-auto px-4 pt-6 lg:pt-(--navbar-total-height-desktop)">
 					<HeroCarousel articles={featuredArticles} />
 				</div>
 			)}
@@ -111,13 +111,7 @@ export default async function Home() {
 
 			{/* Latest News Section */}
 			{latestArticles.length > 0 && (
-				<section className="container mx-auto px-4 py-12">
-					<div className="mb-8 flex items-center justify-between">
-						<h2 className="text-3xl font-bold">Other news and match reports</h2>
-						<Link href="/news" className="btn btn-ghost btn-sm uppercase">
-							View all
-						</Link>
-					</div>
+				<section className="container mx-auto mb-8 px-4 py-12">
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 						{latestArticles.map((article: TransformedNewsArticle) => (
 							<NewsCard
@@ -129,6 +123,11 @@ export default async function Home() {
 								featuredImage={article.featuredImage}
 							/>
 						))}
+					</div>
+					<div className="flex justify-end pt-6">
+						<Link href="/news" className="btn btn-primary btn-outline">
+							View news & matches
+						</Link>
 					</div>
 				</section>
 			)}
