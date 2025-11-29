@@ -33,8 +33,8 @@ Pages:
     - [ ] Previous / next week links
 - [x] Football
   - [x] Team listings
-    - [ ] Seniors, reserves + women with profiles
-    - [ ] All other teams with coaches details and other useful information like start / end dates
+    - [x] Seniors, reserves + women with profiles
+    - [x] All other teams with coaches details and other useful information like start / end dates
   - [ ] Programs (Summer programs, Mino roos)
   - [ ] Merchandise - links to our apparel suppliers
         Links to OnlySport and Ultra football
