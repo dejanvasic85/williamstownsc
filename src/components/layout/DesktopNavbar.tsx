@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon } from '@/components/Icon';
-import { navItems } from '@/config/navigation';
+import { navItems } from '@/lib/navigation';
 import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
@@ -30,6 +30,7 @@ export function DesktopNavbar({
 }: DesktopNavbarProps) {
 	const pathname = usePathname();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+	const [isScrolled, setIsScrolled] = useState(false);
 	const dropdownRefs = useRef<Record<string, HTMLLIElement | null>>({});
 
 	const toggleDropdown = (itemName: string) => {
@@ -39,6 +40,19 @@ export function DesktopNavbar({
 	const closeDropdown = () => {
 		setOpenDropdown(null);
 	};
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 20);
+		};
+
+		handleScroll();
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
@@ -78,7 +92,14 @@ export function DesktopNavbar({
 
 	return (
 		<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
-			<div className="bg-primary/90 container mx-auto rounded-full px-8 py-4 shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)] backdrop-blur-md">
+			<div
+				className={clsx(
+					'bg-primary/90 container mx-auto rounded-full px-8 py-4 backdrop-blur-md transition-all duration-300',
+					isScrolled
+						? 'border-secondary border-2 shadow-[0_0_30px_rgba(198,146,20,0.4)]'
+						: 'border-2 border-transparent shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)]'
+				)}
+			>
 				<div className="flex items-center justify-between">
 					{/* Logo/Brand */}
 					<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">

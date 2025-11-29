@@ -9,13 +9,16 @@
 
 # Technical requirements
 
-- PWA
+- SEO friendly titles, descriptions and meta tags for search performance
+- Light and dark themes need to be considered
+- Ensure that this website can be installed and used as a PWA
 - Accessibility (a11y) AA compliant
 - Responsive design (mobile-first)
 - Clean and maintainable code with re-usable Components
 
 # Code style
 
+- Never create "helpers" or "utils" instead use services, mappers, transformers etc
 - Always use Nextjs Image component `<Image />` instead of `<img />`
 - Use ES modules (import/export) syntax, not CommonJS (require)
 - Destructure imports when possible (eg. import { foo } from 'bar')

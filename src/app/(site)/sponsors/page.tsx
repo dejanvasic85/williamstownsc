@@ -67,7 +67,7 @@ export default async function SponsorsPage() {
 										isEven ? 'md:order-1' : 'md:order-2'
 									}`}
 								>
-									<div className="mx-auto mb-4 aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:hidden">
+									<div className="mx-auto mb-8 aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:hidden">
 										<Image
 											src={sponsor.logo.url}
 											alt={sponsor.logo.alt || `${sponsor.name} logo`}

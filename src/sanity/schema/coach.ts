@@ -16,7 +16,9 @@ export const coach = defineType({
 			name: 'title',
 			title: 'Coaching Title',
 			type: 'string',
-			description: 'e.g. Head Coach, Assistant Coach, Goalkeeper Coach',
+			options: {
+				list: ['Head Coach', 'Assistant Coach', 'Goalkeeper Coach', 'Team Manager', 'Physio']
+			},
 			validation: (Rule) => Rule.required()
 		})
 	],
