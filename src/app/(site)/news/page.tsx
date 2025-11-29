@@ -1,5 +1,5 @@
 import { PageContainer } from '@/components/layout';
-import { NewsCard } from '@/components/NewsCard';
+import { NewsCard } from '@/components/news';
 import { getAllArticles } from '@/lib/content';
 
 export default async function NewsPage() {

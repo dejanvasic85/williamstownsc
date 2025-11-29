@@ -1,4 +1,4 @@
-import { GradientBackground } from '@/components/GradientBackground';
+import { GradientBackground } from '@/components/ui';
 import { seniorTeamsQuery } from '@/lib/content/seniorTeams';
 import { client } from '@/sanity/lib/client';
 import { getFeaturedPrograms } from '@/sanity/services/programService';
