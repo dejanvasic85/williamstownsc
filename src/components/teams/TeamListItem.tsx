@@ -1,5 +1,6 @@
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import type { Team } from '@/types/team';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
@@ -38,17 +39,41 @@ export function TeamListItem({ team }: TeamListItemProps) {
 						<CoachingStaffAvatars coaches={team.coachingStaff} />
 					)}
 
-					{team.players && team.players.length > 0 && (
-						<div className="lg:flex lg:justify-end">
+					<div className="flex flex-wrap gap-3 lg:justify-end">
+						{team.fixturesUrl && (
+							<a
+								href={team.fixturesUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="btn btn-primary btn-outline"
+								aria-label={`View ${team.name} fixtures`}
+							>
+								Fixtures
+								<ExternalLink className="h-4 w-4" aria-hidden="true" />
+							</a>
+						)}
+						{team.tableUrl && (
+							<a
+								href={team.tableUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="btn btn-primary btn-outline"
+								aria-label={`View ${team.name} table`}
+							>
+								Table
+								<ExternalLink className="h-4 w-4" aria-hidden="true" />
+							</a>
+						)}
+						{team.players && team.players.length > 0 && (
 							<Link
 								href={`/football/teams/${team.slug}`}
 								className="btn btn-primary btn-outline"
-								aria-label={`View ${team.name}`}
+								aria-label={`View ${team.name} players`}
 							>
-								View Team
+								Players
 							</Link>
-						</div>
-					)}
+						)}
+					</div>
 				</div>
 			</div>
 		</li>

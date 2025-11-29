@@ -67,6 +67,8 @@ export interface Team {
 	description: PortableTextBlock[];
 	coachingStaff: Coach[];
 	players?: Player[];
+	fixturesUrl?: string;
+	tableUrl?: string;
 }
 
 export interface TeamsByTab {
