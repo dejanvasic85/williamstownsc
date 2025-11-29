@@ -1,6 +1,7 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { Program, SiteSettings } from '@/sanity/sanity.types';
+import { toPlainText } from '@portabletext/toolkit';
 
 export interface TransformedProgram {
 	_id: string;
@@ -66,7 +67,7 @@ export async function getActivePrograms(): Promise<TransformedProgram[]> {
 						alt: program.image.alt
 					}
 				: undefined,
-			description: program.description
+			description: program.description ? toPlainText(program.description) : undefined
 		})
 	);
 }
