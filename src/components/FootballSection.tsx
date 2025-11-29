@@ -1,12 +1,23 @@
 import { GradientBackground } from '@/components/GradientBackground';
-import { Calendar, Trophy, Users } from 'lucide-react';
+import { seniorTeamsQuery } from '@/lib/content/seniorTeams';
+import { client } from '@/sanity/lib/client';
+import type { PortableTextBlock } from '@portabletext/types';
+import { Calendar, Users } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-interface TeamCard {
-	title: string;
-	description: string;
-	icon: 'trophy' | 'users';
-	coach?: string;
+interface SeniorTeam {
+	_id: string;
+	name: string;
+	slug: string;
+	photo?: {
+		asset: {
+			_ref: string;
+			url: string;
+		};
+		alt?: string;
+	};
+	description: PortableTextBlock[];
 }
 
 interface ProgramCard {
@@ -19,27 +30,6 @@ interface ProgramCard {
 	imageAlt: string;
 	description?: string;
 }
-
-const teamCardsValue: TeamCard[] = [
-	{
-		title: 'Senior Team',
-		description: 'Our mens team competes in the State League North West Division 2',
-		icon: 'trophy',
-		coach: 'John Smith'
-	},
-	{
-		title: "Reserves (Under 21's)",
-		description: 'Developing the next generation of talent',
-		icon: 'users',
-		coach: 'Jane Doe'
-	},
-	{
-		title: "Women's Team",
-		description: "Excellence in women's football",
-		icon: 'trophy',
-		coach: 'Emily Johnson'
-	}
-];
 
 const mockProgramsValue: ProgramCard[] = [
 	{
@@ -60,7 +50,31 @@ function formatDate(dateString: string): string {
 	return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
 }
 
-export function FootballSection() {
+function extractTextFromPortableText(blocks: PortableTextBlock[]): string {
+	if (!blocks || blocks.length === 0) return '';
+
+	return blocks
+		.map((block) => {
+			if (block._type === 'block') {
+				const children = block.children || [];
+				return children.map((child) => ('text' in child ? child.text : '')).join('');
+			}
+			return '';
+		})
+		.join(' ');
+}
+
+async function getSeniorTeams(): Promise<SeniorTeam[]> {
+	try {
+		return await client.fetch<SeniorTeam[]>(seniorTeamsQuery);
+	} catch (error) {
+		console.error('Error fetching senior teams:', error);
+		return [];
+	}
+}
+
+export async function FootballSection() {
+	const seniorTeams = await getSeniorTeams();
 	return (
 		<GradientBackground className="py-16">
 			<div className="container mx-auto px-4">
@@ -73,32 +87,46 @@ export function FootballSection() {
 				</div>
 
 				{/* Teams */}
-				<div className="mb-12">
-					<h3 className="mb-6 text-2xl font-bold text-white">Teams</h3>
-					<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-						{teamCardsValue.map((team) => (
-							<div
-								key={team.title}
-								className="group border-base-300 bg-base-100 rounded-lg border-2 p-6 shadow-md transition-all hover:shadow-xl"
-							>
-								<div className="mb-4 flex items-center gap-3">
-									{team.icon === 'trophy' ? (
-										<Trophy className="text-secondary h-8 w-8" />
-									) : (
-										<Users className="text-secondary h-8 w-8" />
+				{seniorTeams.length > 0 && (
+					<div className="mb-12">
+						<h3 className="mb-6 text-2xl font-bold text-white">Senior Teams</h3>
+						<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+							{seniorTeams.map((team) => (
+								<div
+									key={team._id}
+									className="card group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
+								>
+									{team.photo && (
+										<div className="relative h-64 w-full">
+											<Image
+												src={team.photo.asset.url}
+												alt={team.photo.alt || team.name}
+												fill
+												className="object-cover transition-transform duration-300 group-hover:scale-105"
+											/>
+											<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/30" />
+											<div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+												<h4 className="mb-2 text-2xl font-bold">{team.name}</h4>
+												<p className="line-clamp-3 text-sm text-white/90">
+													{extractTextFromPortableText(team.description)}
+												</p>
+											</div>
+										</div>
 									)}
-									<h4 className="text-xl font-bold">{team.title}</h4>
 								</div>
-								<p className="text-base-content/70">{team.description}</p>
-								{team.coach && <p className="text-base-content/70">Coach: {team.coach}</p>}
-							</div>
-						))}
+							))}
+						</div>
+						<div className="flex justify-end">
+							<Link href="/football/teams" className="btn btn-secondary">
+								View all teams
+							</Link>
+						</div>
 					</div>
-				</div>
+				)}
 
 				{/* Programs */}
 				{mockProgramsValue.length > 0 && (
-					<div className="mb-16">
+					<div className="mb-8">
 						<h3 className="mb-6 text-2xl font-bold text-white">Programs</h3>
 						<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 							{mockProgramsValue.map((program) => (
@@ -139,6 +167,11 @@ export function FootballSection() {
 									</div>
 								</div>
 							))}
+						</div>
+						<div className="flex justify-end">
+							<Link href="/football/programs" className="btn btn-secondary">
+								View all programs
+							</Link>
 						</div>
 					</div>
 				)}
