@@ -1,3 +1,4 @@
+export { CoachCard } from './CoachCard';
 export { CoachingStaffAvatars } from './CoachingStaffAvatars';
 export { PlayerCard } from './PlayerCard';
 export { PlayerGrid } from './PlayerGrid';

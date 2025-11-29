@@ -6,11 +6,11 @@ interface CoachingStaffAvatarsProps {
 }
 
 const coachTitleLabels: Record<string, string> = {
-	headCoach: 'Head Coach',
-	assistantCoach: 'Assistant Coach',
-	goalkeeperCoach: 'Goalkeeper Coach',
-	teamManager: 'Team Manager',
-	physio: 'Physio'
+	'Head Coach': 'Head Coach',
+	'Assistant Coach': 'Assistant Coach',
+	'Goalkeeper Coach': 'Goalkeeper Coach',
+	'Team Manager': 'Team Manager',
+	Physio: 'Physio'
 };
 
 export function CoachingStaffAvatars({ coaches }: CoachingStaffAvatarsProps) {

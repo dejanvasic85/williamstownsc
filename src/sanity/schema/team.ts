@@ -133,7 +133,8 @@ export const team = defineType({
 						value: '6'
 					}
 				]
-			}
+			},
+			validation: (Rule) => Rule.required()
 		}),
 		defineField({
 			name: 'order',

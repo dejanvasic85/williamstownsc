@@ -1,4 +1,3 @@
-import { Icon, type IconName } from '@/components/Icon';
 import clsx from 'clsx';
 import { ReactNode } from 'react';
 
@@ -6,10 +5,9 @@ type PageContainerProps = {
 	children: ReactNode;
 	heading?: string;
 	intro?: string;
-	icon?: IconName;
 };
 
-export function PageContainer({ children, heading, intro, icon }: PageContainerProps) {
+export function PageContainer({ children, heading, intro }: PageContainerProps) {
 	return (
 		<div
 			className={clsx(
@@ -22,7 +20,6 @@ export function PageContainer({ children, heading, intro, icon }: PageContainerP
 				{heading && (
 					<div className="mb-6">
 						<div className="border-secondary mb-4 flex items-center gap-3 border-b-4 pb-4">
-							{icon && <Icon name={icon} className="text-primary h-10 w-10" />}
 							<h1 className="text-3xl font-bold">{heading}</h1>
 						</div>
 						{intro && <p className="text-lg">{intro}</p>}

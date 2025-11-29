@@ -1,3 +1,4 @@
+import { splitPersonName } from '@/lib/transformers/personTransformer';
 import type { Player } from '@/types/team';
 import { PlayerCard } from './PlayerCard';
 
@@ -15,16 +16,6 @@ const positionLabels: Record<AreaOfPitch, string> = {
 };
 
 const positionOrder: AreaOfPitch[] = ['goalkeeper', 'defender', 'midfielder', 'forward'];
-
-function splitName(fullName: string): { firstName: string; lastName: string } {
-	const parts = fullName.trim().split(' ');
-	if (parts.length === 1) {
-		return { firstName: '', lastName: parts[0] };
-	}
-	const lastName = parts[parts.length - 1];
-	const firstName = parts.slice(0, -1).join(' ');
-	return { firstName, lastName };
-}
 
 export function PlayerGrid({ players }: PlayerGridProps) {
 	const playersByPosition = players.reduce(
@@ -60,7 +51,7 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 						<h2 className="text-3xl font-black uppercase">{positionLabels[position]}</h2>
 						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 							{positionPlayers.map((player) => {
-								const { firstName, lastName } = splitName(player.person.name);
+								const { firstName, lastName } = splitPersonName(player.person.name);
 								return (
 									<PlayerCard
 										key={player.person._id}

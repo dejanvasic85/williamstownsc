@@ -48,7 +48,7 @@ const menuLinks = [
 
 export default function MenuPage() {
 	return (
-		<PageContainer heading="Menu" intro="Navigate to all sections of our website" icon="menu">
+		<PageContainer heading="Menu" intro="Navigate to all sections of our website">
 			<div className="mx-auto max-w-2xl">
 				<nav className="grid gap-4">
 					{menuLinks.map((link) => (

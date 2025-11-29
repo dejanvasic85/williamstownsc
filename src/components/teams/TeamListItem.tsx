@@ -1,5 +1,7 @@
+import { PortableTextContent } from '@/components/content/PortableTextContent';
 import type { Team } from '@/types/team';
 import Image from 'next/image';
+import Link from 'next/link';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
 
 interface TeamListItemProps {
@@ -25,45 +27,11 @@ export function TeamListItem({ team }: TeamListItemProps) {
 				<div className="flex flex-col gap-6">
 					<div className="space-y-3">
 						<h3 className="text-2xl font-bold">{team.name}</h3>
-						{team.description && team.description.length > 0 && (
-							<div className="prose text-base-content/80 max-w-none">
-								{team.description.map((block, index) => {
-									if (block._type === 'block') {
-										const children = block.children || [];
-										const text = children.map((child) => child.text).join('');
-
-										if (block.style === 'h1') {
-											return (
-												<h4 key={block._key || index} className="mb-3 text-xl font-bold">
-													{text}
-												</h4>
-											);
-										}
-										if (block.style === 'h2') {
-											return (
-												<h5 key={block._key || index} className="mb-2 text-lg font-bold">
-													{text}
-												</h5>
-											);
-										}
-										if (block.style === 'h3') {
-											return (
-												<h6 key={block._key || index} className="mb-2 text-base font-bold">
-													{text}
-												</h6>
-											);
-										}
-
-										return (
-											<p key={block._key || index} className="mb-3 leading-relaxed">
-												{text}
-											</p>
-										);
-									}
-									return null;
-								})}
-							</div>
-						)}
+						<PortableTextContent
+							blocks={team.description}
+							className="prose text-base-content/80 max-w-none"
+							headingLevel="section"
+						/>
 					</div>
 
 					{team.coachingStaff && team.coachingStaff.length > 0 && (
@@ -72,13 +40,13 @@ export function TeamListItem({ team }: TeamListItemProps) {
 
 					{team.players && team.players.length > 0 && (
 						<div className="lg:flex lg:justify-end">
-							<a
+							<Link
 								href={`/football/teams/${team.slug}`}
 								className="btn btn-primary btn-outline"
 								aria-label={`View ${team.name}`}
 							>
 								View Team
-							</a>
+							</Link>
 						</div>
 					)}
 				</div>

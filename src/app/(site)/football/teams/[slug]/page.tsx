@@ -1,7 +1,9 @@
+import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { CoachCard } from '@/components/teams/CoachCard';
 import { PlayerGrid } from '@/components/teams/PlayerGrid';
 import { teamDetailQuery } from '@/lib/content/teamDetail';
+import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
 import type { Metadata } from 'next';
@@ -52,49 +54,14 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 
 	return (
 		<PageContainer heading={team.name}>
-			<div className="space-y-6">
-				{team.description && team.description.length > 0 && (
-					<div className="prose max-w-none">
-						{team.description.map((block, index) => {
-							if (block._type === 'block') {
-								const children = block.children || [];
-								const text = children.map((child) => child.text).join('');
-
-								if (block.style === 'h1') {
-									return (
-										<h2 key={block._key || index} className="mb-4 text-2xl font-bold">
-											{text}
-										</h2>
-									);
-								}
-								if (block.style === 'h2') {
-									return (
-										<h3 key={block._key || index} className="mb-3 text-xl font-bold">
-											{text}
-										</h3>
-									);
-								}
-
-								return (
-									<p key={block._key || index} className="mb-3 leading-relaxed">
-										{text}
-									</p>
-								);
-							}
-							return null;
-						})}
-					</div>
-				)}
-			</div>
+			<PortableTextContent blocks={team.description} />
 			{team.players && team.players.length > 0 && <PlayerGrid players={team.players} />}
 			{team.coachingStaff && team.coachingStaff.length > 0 && (
 				<div className="mt-10 space-y-8">
 					<h2 className="text-3xl font-black uppercase">Coaching Staff</h2>
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 						{team.coachingStaff.map((coach) => {
-							const nameParts = coach.person.name.trim().split(' ');
-							const firstName = nameParts.slice(0, -1).join(' ');
-							const lastName = nameParts[nameParts.length - 1];
+							const { firstName, lastName } = splitPersonName(coach.person.name);
 
 							return (
 								<CoachCard

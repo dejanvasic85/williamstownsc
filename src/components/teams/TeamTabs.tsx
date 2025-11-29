@@ -19,9 +19,11 @@ const tabLabels: Record<TabCategory, string> = {
 const tabOrder: TabCategory[] = ['seniors', 'reserves', 'juniors', 'masters', 'metros'];
 
 export function TeamTabs({ teamsByTab }: TeamTabsProps) {
-	const [activeTab, setActiveTab] = useState<TabCategory>('seniors');
-
 	const visibleTabs = tabOrder.filter((tab) => teamsByTab[tab].length > 0);
+	const [activeTab, setActiveTab] = useState<TabCategory>(() => {
+		const firstTab = tabOrder.find((tab) => teamsByTab[tab].length > 0);
+		return firstTab || 'seniors';
+	});
 
 	if (visibleTabs.length === 0) {
 		return (
@@ -37,12 +39,14 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 				{visibleTabs.map((tab) => (
 					<button
 						key={tab}
+						id={`tab-${tab}`}
 						role="tab"
 						className={`tab text-sm font-semibold transition-colors lg:text-lg ${
 							activeTab === tab ? 'tab-active' : ''
 						}`}
 						onClick={() => setActiveTab(tab)}
 						aria-selected={activeTab === tab}
+						aria-controls={`tabpanel-${tab}`}
 					>
 						{tabLabels[tab]}
 					</button>
@@ -56,6 +60,7 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 				return (
 					<div
 						key={tab}
+						id={`tabpanel-${tab}`}
 						role="tabpanel"
 						aria-labelledby={`tab-${tab}`}
 						aria-hidden={!isActive}

@@ -28,11 +28,7 @@ const footballLinks = [
 
 export default function FootballPage() {
 	return (
-		<PageContainer
-			heading="Football"
-			intro="Explore our football teams, programs, and merchandise"
-			icon="soccer"
-		>
+		<PageContainer heading="Football" intro="Explore our football teams, programs, and merchandise">
 			<div className="mx-auto max-w-2xl">
 				<nav className="grid gap-4">
 					{footballLinks.map((link) => (

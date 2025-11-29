@@ -9,7 +9,6 @@ export default async function NewsPage() {
 		<PageContainer
 			heading="News & Matches"
 			intro="Stay up to date with the latest news, match reports, and updates from Williamstown SC"
-			icon="news"
 		>
 			{articles.length > 0 && (
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
