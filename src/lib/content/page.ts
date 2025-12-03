@@ -1,8 +1,18 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import type { AboutPage, SiteSettings } from '@/sanity/sanity.types';
+import type { SiteSettings } from '@/sanity/sanity.types';
 
-export interface AboutPageData {
+export type PageName =
+	| 'aboutPage'
+	| 'accessibilityPage'
+	| 'committeePage'
+	| 'contactPage'
+	| 'locationsPage'
+	| 'policiesPage'
+	| 'privacyPage'
+	| 'termsPage';
+
+export interface PageData {
 	heading: string;
 	introduction?: unknown[];
 	body?: unknown[];
@@ -23,6 +33,7 @@ export interface AboutPageData {
 		noIndex?: boolean;
 	};
 	published?: boolean;
+	lastUpdated?: string;
 }
 
 export interface PageMetadata {
@@ -43,17 +54,18 @@ export interface PageMetadata {
 	};
 }
 
-export async function getAboutPageData(): Promise<AboutPageData | null> {
-	const query = `*[_type == "aboutPage" && _id == "aboutPage"][0]{
+export async function getPageData(pageName: PageName): Promise<PageData | null> {
+	const query = `*[_type == "${pageName}" && _id == "${pageName}"][0]{
 		heading,
 		introduction,
 		body,
 		featuredImage,
 		seo,
-		published
+		published,
+		lastUpdated
 	}`;
 
-	const data = await client.fetch<AboutPage>(query);
+	const data = await client.fetch<PageData>(query);
 
 	if (!data || !data.published) {
 		return null;
@@ -66,7 +78,7 @@ export async function getAboutPageData(): Promise<AboutPageData | null> {
 		featuredImage: data.featuredImage
 			? {
 					url: urlFor(data.featuredImage).width(1200).height(600).url(),
-					alt: data.featuredImage.alt || ''
+					alt: (data.featuredImage as { alt?: string }).alt || ''
 				}
 			: undefined,
 		seo: data.seo
@@ -79,18 +91,19 @@ export async function getAboutPageData(): Promise<AboutPageData | null> {
 					ogImage: data.seo.ogImage
 						? {
 								url: urlFor(data.seo.ogImage).width(1200).height(630).url(),
-								alt: data.seo.ogImage.alt || ''
+								alt: (data.seo.ogImage as { alt?: string }).alt || ''
 							}
 						: undefined,
 					noIndex: data.seo.noIndex || false
 				}
-			: undefined
+			: undefined,
+		lastUpdated: data.lastUpdated
 	};
 }
 
-export async function getAboutPageMetadata(): Promise<PageMetadata> {
+export async function getPageMetadata(pageName: PageName): Promise<PageMetadata> {
 	const [pageData, siteSettings] = await Promise.all([
-		getAboutPageData(),
+		getPageData(pageName),
 		client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
 			clubName,
 			seoDefaults {
@@ -105,8 +118,8 @@ export async function getAboutPageMetadata(): Promise<PageMetadata> {
 
 	if (!pageData) {
 		return {
-			title: 'About',
-			description: 'About our club'
+			title: pageName.charAt(0).toUpperCase() + pageName.slice(1),
+			description: `${pageName} page`
 		};
 	}
 

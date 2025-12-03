@@ -1,11 +1,11 @@
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
-import { getAboutPageData, getAboutPageMetadata } from '@/lib/content/aboutPage';
+import { getPageData, getPageMetadata } from '@/lib/content/page';
 import { type Metadata } from 'next';
 import Image from 'next/image';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const metadata = await getAboutPageMetadata();
+	const metadata = await getPageMetadata('aboutPage');
 
 	return {
 		title: metadata.title,
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ClubAboutPage() {
-	const pageData = await getAboutPageData();
+	const pageData = await getPageData('aboutPage');
 
 	if (!pageData) {
 		return (
