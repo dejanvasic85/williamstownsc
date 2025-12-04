@@ -20,24 +20,11 @@ export default async function ClubAboutPage() {
 	const pageData = await getPageData('aboutPage');
 
 	if (!pageData) {
-		return (
-			<PageContainer>
-				<h1 className="border-secondary mb-8 border-b-4 pb-4 text-2xl font-bold lg:text-3xl">
-					About Our Club
-				</h1>
-				<p>Content coming soon.</p>
-			</PageContainer>
-		);
+		throw new Error('About page is missing critical content');
 	}
 
 	return (
-		<PageContainer>
-			{/* Page Heading */}
-			<h1 className="border-secondary mb-8 border-b-4 pb-4 text-2xl font-bold lg:text-3xl">
-				{pageData.heading}
-			</h1>
-
-			{/* Featured Image */}
+		<PageContainer heading={pageData.heading}>
 			{pageData.featuredImage && (
 				<div className="mb-8">
 					<Image
@@ -50,14 +37,12 @@ export default async function ClubAboutPage() {
 					/>
 				</div>
 			)}
-
 			{/* Introduction */}
 			{pageData.introduction && pageData.introduction.length > 0 && (
 				<div className="text-base-content/80 mb-6 text-lg">
 					<PortableTextContent blocks={pageData.introduction} />
 				</div>
 			)}
-
 			{/* Main Body Content */}
 			{pageData.body && pageData.body.length > 0 && <PortableTextContent blocks={pageData.body} />}
 		</PageContainer>

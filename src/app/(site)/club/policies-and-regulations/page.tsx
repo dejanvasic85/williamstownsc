@@ -1,11 +1,5 @@
 import { PageContainer } from '@/components/layout';
 
 export default function ClubPoliciesPage() {
-	return (
-		<PageContainer>
-			<h1 className="border-secondary mb-8 border-b-4 pb-4 text-2xl font-bold lg:text-3xl">
-				Policies and Regulations
-			</h1>
-		</PageContainer>
-	);
+	return <PageContainer heading="Policies and Regulations" />;
 }
