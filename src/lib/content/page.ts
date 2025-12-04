@@ -55,17 +55,26 @@ export interface PageMetadata {
 }
 
 export async function getPageData(pageName: PageName): Promise<PageData | null> {
-	const query = `*[_type == "${pageName}" && _id == "${pageName}"][0]{
+	const query = `*[_type == $pageName && _id == $pageId][0]{
 		heading,
 		introduction,
 		body,
-		featuredImage,
-		seo,
+		featuredImage {
+			...,
+			alt
+		},
+		seo {
+			...,
+			ogImage {
+				...,
+				alt
+			}
+		},
 		published,
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<PageData>(query);
+	const data = await client.fetch<PageData>(query, { pageName, pageId: pageName });
 
 	if (!data || !data.published) {
 		return null;
@@ -78,7 +87,7 @@ export async function getPageData(pageName: PageName): Promise<PageData | null> 
 		featuredImage: data.featuredImage
 			? {
 					url: urlFor(data.featuredImage).width(1200).height(600).url(),
-					alt: (data.featuredImage as { alt?: string }).alt || ''
+					alt: data.featuredImage.alt || ''
 				}
 			: undefined,
 		seo: data.seo
@@ -91,7 +100,7 @@ export async function getPageData(pageName: PageName): Promise<PageData | null> 
 					ogImage: data.seo.ogImage
 						? {
 								url: urlFor(data.seo.ogImage).width(1200).height(630).url(),
-								alt: (data.seo.ogImage as { alt?: string }).alt || ''
+								alt: data.seo.ogImage.alt || ''
 							}
 						: undefined,
 					noIndex: data.seo.noIndex || false

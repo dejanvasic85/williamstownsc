@@ -45,7 +45,7 @@ export const structure = (S: StructureBuilder) =>
 				),
 			S.divider(),
 
-			// Content types - filter out page schemas and siteSettings
+			// Content types - page schemas are organized separately above, siteSettings appears at the top
 			...S.documentTypeListItems().filter(
 				(listItem) =>
 					![

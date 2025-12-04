@@ -70,7 +70,7 @@ export function TeamListItem({ team }: TeamListItemProps) {
 								className="btn btn-primary btn-outline"
 								aria-label={`View ${team.name} players`}
 							>
-								Players
+								View Players
 							</Link>
 						)}
 					</div>

@@ -70,9 +70,9 @@ export function PortableTextContent({
 			if (child.marks && child.marks.length > 0) {
 				child.marks.forEach((mark: string) => {
 					if (mark === 'strong') {
-						content = <strong key={`strong-${idx}`}>{content}</strong>;
+						content = <strong key={`strong-${child._key || idx}`}>{content}</strong>;
 					} else if (mark === 'em') {
-						content = <em key={`em-${idx}`}>{content}</em>;
+						content = <em key={`em-${child._key || idx}`}>{content}</em>;
 					}
 				});
 			}

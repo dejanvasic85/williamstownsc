@@ -6,38 +6,42 @@ export interface ProgramWithImage extends Omit<Program, 'image'> {
 	imageAlt?: string;
 }
 
-export async function getActivePrograms(): Promise<ProgramWithImage[]> {
-	const query = `*[_type == "program" && active == true] | order(startDate asc) {
-		_id,
-		name,
-		slug,
-		startDate,
-		endDate,
-		minAge,
-		maxAge,
-		description,
-		"imageUrl": image.asset->url,
-		"imageAlt": image.alt,
-		active
-	}`;
+const DEFAULT_FEATURED_PROGRAM_LIMIT = 3;
 
-	return client.fetch(query);
+export async function getActivePrograms(limit?: number): Promise<ProgramWithImage[]> {
+	const query = limit
+		? `*[_type == "program" && active == true] | order(startDate asc) [0...$limit] {
+				_id,
+				name,
+				slug,
+				startDate,
+				endDate,
+				minAge,
+				maxAge,
+				description,
+				"imageUrl": image.asset->url,
+				"imageAlt": image.alt,
+				active
+			}`
+		: `*[_type == "program" && active == true] | order(startDate asc) {
+				_id,
+				name,
+				slug,
+				startDate,
+				endDate,
+				minAge,
+				maxAge,
+				description,
+				"imageUrl": image.asset->url,
+				"imageAlt": image.alt,
+				active
+			}`;
+
+	return limit ? client.fetch(query, { limit }) : client.fetch(query);
 }
 
-export async function getFeaturedPrograms(limit = 3): Promise<ProgramWithImage[]> {
-	const query = `*[_type == "program" && active == true] | order(startDate asc) [0...${limit}] {
-		_id,
-		name,
-		slug,
-		startDate,
-		endDate,
-		minAge,
-		maxAge,
-		description,
-		"imageUrl": image.asset->url,
-		"imageAlt": image.alt,
-		active
-	}`;
-
-	return client.fetch(query);
+export async function getFeaturedPrograms(
+	limit: number = DEFAULT_FEATURED_PROGRAM_LIMIT
+): Promise<ProgramWithImage[]> {
+	return getActivePrograms(limit);
 }
