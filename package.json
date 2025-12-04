@@ -21,7 +21,7 @@
 		"@portabletext/toolkit": "4.0.0",
 		"@sanity/client": "7.13.1",
 		"@sanity/image-url": "2.0.1",
-		"@sanity/vision": "4.20.0",
+		"@sanity/vision": "4.20.2",
 		"clsx": "2.1.1",
 		"daisyui": "5.5.8",
 		"date-fns": "4.1.0",
@@ -30,7 +30,7 @@
 		"next-sanity": "11.6.10",
 		"react": "19.2.1",
 		"react-dom": "19.2.1",
-		"sanity": "4.20.0",
+		"sanity": "4.20.2",
 		"styled-components": "6.1.19",
 		"zod": "4.1.13"
 	},
