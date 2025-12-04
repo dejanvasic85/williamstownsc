@@ -165,6 +165,18 @@ export const team = defineType({
 			type: 'array',
 			of: [{ type: 'player' }],
 			description: 'Team roster including captains and vice captains'
+		}),
+		defineField({
+			name: 'fixturesUrl',
+			title: 'Fixtures URL',
+			type: 'url',
+			description: 'External link to team fixtures'
+		}),
+		defineField({
+			name: 'tableUrl',
+			title: 'Table URL',
+			type: 'url',
+			description: 'External link to team table/ladder'
 		})
 	],
 	preview: {

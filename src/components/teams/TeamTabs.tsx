@@ -35,7 +35,22 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 
 	return (
 		<div className="space-y-12">
-			<div role="tablist" className="tabs tabs-border gap-2">
+			{/* Mobile select dropdown */}
+			<select
+				className="select select-bordered w-full md:hidden"
+				value={activeTab}
+				onChange={(e) => setActiveTab(e.target.value as TabCategory)}
+				aria-label="Select team category"
+			>
+				{visibleTabs.map((tab) => (
+					<option key={tab} value={tab}>
+						{tabLabels[tab]}
+					</option>
+				))}
+			</select>
+
+			{/* Desktop tabs */}
+			<div role="tablist" className="tabs tabs-border hidden gap-2 md:flex">
 				{visibleTabs.map((tab) => (
 					<button
 						key={tab}

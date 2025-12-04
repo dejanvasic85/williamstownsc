@@ -49,6 +49,8 @@ export const teamsQuery = groq`
       areaOfPitch,
       isCaptain,
       isViceCaptain
-    }
+    },
+    fixturesUrl,
+    tableUrl
   }
 `;

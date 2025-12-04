@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 
 export const program = defineType({
 	name: 'program',
-	title: 'Football Program',
+	title: 'Program',
 	type: 'document',
 	fields: [
 		defineField({
@@ -64,8 +64,27 @@ export const program = defineType({
 		defineField({
 			name: 'description',
 			title: 'Description',
-			type: 'text',
-			rows: 3
+			type: 'array',
+			of: [
+				{
+					type: 'block',
+					styles: [
+						{ title: 'Normal', value: 'normal' },
+						{ title: 'H2', value: 'h2' },
+						{ title: 'H3', value: 'h3' }
+					],
+					lists: [
+						{ title: 'Bullet', value: 'bullet' },
+						{ title: 'Numbered', value: 'number' }
+					],
+					marks: {
+						decorators: [
+							{ title: 'Strong', value: 'strong' },
+							{ title: 'Emphasis', value: 'em' }
+						]
+					}
+				}
+			]
 		}),
 		defineField({
 			name: 'active',

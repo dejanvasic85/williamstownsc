@@ -144,6 +144,14 @@ export const siteSettings = defineType({
 					validation: (Rule) => Rule.required()
 				}),
 				defineField({
+					name: 'titleSuffix',
+					title: 'Title Suffix',
+					type: 'string',
+					description:
+						'Added to all page titles (e.g., "About | Williamstown SC"). Defaults to club name if not set.',
+					placeholder: 'Williamstown SC'
+				}),
+				defineField({
 					name: 'siteDescription',
 					title: 'Default Site Description',
 					type: 'text',
