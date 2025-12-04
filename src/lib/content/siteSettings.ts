@@ -3,8 +3,7 @@ import { urlFor } from '@/sanity/lib/image';
 import { Program, SiteSettings } from '@/sanity/sanity.types';
 import { toPlainText } from '@portabletext/toolkit';
 
-export interface TransformedProgram {
-	_id: string;
+export type TransformedProgram = Pick<Program, '_id'> & {
 	name: string;
 	slug: string;
 	startDate: string;
@@ -16,7 +15,7 @@ export interface TransformedProgram {
 		alt?: string;
 	};
 	description?: string;
-}
+};
 
 export async function getSiteSettings() {
 	const siteSettings = await client.fetch<SiteSettings>(

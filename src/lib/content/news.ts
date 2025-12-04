@@ -2,8 +2,7 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { NewsArticle } from '@/sanity/sanity.types';
 
-export interface TransformedNewsArticle {
-	_id: string;
+export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	title: string;
 	slug: string;
 	publishedAt: string;
@@ -12,8 +11,7 @@ export interface TransformedNewsArticle {
 		alt?: string;
 	};
 	excerpt: string;
-	featured?: boolean;
-}
+};
 
 export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
 	const query = `*[_type == "newsArticle" && featured == true] | order(publishedAt desc) [0...3] {

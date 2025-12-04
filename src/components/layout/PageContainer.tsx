@@ -1,5 +1,4 @@
 import { PortableTextContent } from '@/components/content/PortableTextContent';
-import { type PortableTextBlock } from '@portabletext/types';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { ReactNode } from 'react';
@@ -7,7 +6,7 @@ import { ReactNode } from 'react';
 type PageContainerProps = {
 	children?: ReactNode;
 	heading?: string;
-	intro?: string | PortableTextBlock[];
+	intro?: string | unknown[];
 	featuredImage?: {
 		url: string;
 		alt?: string;
