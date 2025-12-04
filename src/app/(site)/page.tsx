@@ -1,11 +1,11 @@
-import { Icon } from '@/components/Icon';
-import { NewsCard } from '@/components/news';
 import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
 	SponsorsSection
-} from '@/components/sections';
+} from '@/components/home';
+import { Icon } from '@/components/Icon';
+import { NewsCard } from '@/components/news';
 import {
 	getFeaturedArticles,
 	getLatestArticles,
