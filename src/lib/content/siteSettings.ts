@@ -30,7 +30,8 @@ export async function getSiteSettings() {
 			socials,
 			seoDefaults,
 			footerText,
-			analytics
+			analytics,
+			locations
 		}`
 	);
 
