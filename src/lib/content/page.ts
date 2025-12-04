@@ -1,6 +1,7 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import type { SiteSettings } from '@/sanity/sanity.types';
+import { type PortableTextBlock } from '@portabletext/types';
 
 export type PageName =
 	| 'aboutPage'
@@ -14,8 +15,8 @@ export type PageName =
 
 export interface PageData {
 	heading: string;
-	introduction?: unknown[];
-	body?: unknown[];
+	introduction?: PortableTextBlock[];
+	body?: PortableTextBlock[];
 	featuredImage?: {
 		url: string;
 		alt?: string;
