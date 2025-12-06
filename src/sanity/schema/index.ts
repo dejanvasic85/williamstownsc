@@ -8,6 +8,7 @@ import { sponsor } from './sponsor';
 import { team } from './team';
 
 // Objects
+import { contactTypeContent } from './objects/contactTypeContent';
 import { seo } from './objects/seo';
 
 // Pages
@@ -22,6 +23,7 @@ import { termsPage } from './pages/termsPage';
 
 export const schemaTypes = [
 	// Objects
+	contactTypeContent,
 	seo,
 
 	// Pages
