@@ -1,3 +1,5 @@
+import { getClientConfig } from '@/lib/config';
+import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
@@ -25,13 +27,15 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const config = getClientConfig();
+
 	return (
 		<html lang="en">
 			<body
 				data-theme="williamstown"
 				className={clsx(inter.variable, poppins.variable, 'antialiased')}
 			>
-				{children}
+				<ConfigProvider config={config}>{children}</ConfigProvider>
 			</body>
 		</html>
 	);

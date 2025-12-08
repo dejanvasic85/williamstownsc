@@ -1,7 +1,7 @@
-import { getConfig } from '@/lib/config';
+import { getClientConfig } from '@/lib/config';
 import { createClient } from 'next-sanity';
 
-const config = getConfig();
+const config = getClientConfig();
 
 export const client = createClient({
 	projectId: config.sanityProjectId,

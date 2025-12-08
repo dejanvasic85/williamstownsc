@@ -126,6 +126,56 @@ export async function getPageData(pageName: PageName): Promise<PageData | null> 
 	};
 }
 
+export async function getContactPageData() {
+	const query = `*[_type == "contactPage" && _id == "contactPage"][0]{
+		heading,
+		introduction,
+		playerContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		coachContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		sponsorContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		programContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		generalContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		seo {
+			...,
+			ogImage { ..., alt }
+		},
+		published
+	}`;
+
+	const data = await client.fetch(query);
+
+	if (!data || !data.published) {
+		return null;
+	}
+
+	return data;
+}
+
 export async function getPageMetadata(pageName: PageName): Promise<PageMetadata> {
 	const [pageData, siteSettings] = await Promise.all([
 		getPageData(pageName),

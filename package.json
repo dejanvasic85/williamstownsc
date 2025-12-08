@@ -18,6 +18,8 @@
 		"generate": "tsx bin/generateMockData.ts"
 	},
 	"dependencies": {
+		"@aws-sdk/client-ses": "^3.946.0",
+		"@hookform/resolvers": "^5.2.2",
 		"@portabletext/toolkit": "4.0.0",
 		"@sanity/client": "7.13.1",
 		"@sanity/image-url": "2.0.1",
