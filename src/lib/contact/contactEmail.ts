@@ -42,6 +42,12 @@ async function sendConfirmationEmail(name: string, email: string, from: string) 
 	});
 }
 
+function createTableRow(name: string, value: string | undefined) {
+	return value
+		? `<tr><td style="padding: 8px 0; font-weight: bold;">${name}:</td><td style="padding: 8px 0;">${value}</td></tr>`
+		: '';
+}
+
 async function sendNotificationEmail(data: ContactFormData, recipientEmail: string, from: string) {
 	const subject = `New ${typeLabels[data.contactType]} - ${data.name}`;
 
@@ -49,24 +55,22 @@ async function sendNotificationEmail(data: ContactFormData, recipientEmail: stri
 
 	if (data.contactType === 'player') {
 		additionalDetailsHtml = `
-				${data.ageGroup ? `<tr><td style="padding: 8px 0; font-weight: bold;">Age Group:</td><td style="padding: 8px 0;">${data.ageGroup}</td></tr>` : ''}
-				${data.experience ? `<tr><td style="padding: 8px 0; font-weight: bold;">Experience:</td><td style="padding: 8px 0;">${data.experience}</td></tr>` : ''}
-				${data.position ? `<tr><td style="padding: 8px 0; font-weight: bold;">Position:</td><td style="padding: 8px 0;">${data.position}</td></tr>` : ''}`;
+				${createTableRow('Age Group', data.ageGroup)}
+				${createTableRow('Experience', data.experience)}
+				${createTableRow('Position', data.position)}`;
 	} else if (data.contactType === 'coach') {
 		additionalDetailsHtml = `
-				${data.qualifications ? `<tr><td style="padding: 8px 0; font-weight: bold;">Qualifications:</td><td style="padding: 8px 0;">${data.qualifications}</td></tr>` : ''}
-				${data.experience ? `<tr><td style="padding: 8px 0; font-weight: bold;">Experience:</td><td style="padding: 8px 0;">${data.experience}</td></tr>` : ''}
-				${data.ageGroupsInterest ? `<tr><td style="padding: 8px 0; font-weight: bold;">Age Groups of Interest:</td><td style="padding: 8px 0;">${data.ageGroupsInterest}</td></tr>` : ''}`;
+				${createTableRow('Qualifications', data.qualifications)}
+				${createTableRow('Experience', data.experience)}
+				${createTableRow('Age Groups of Interest', data.ageGroupsInterest)}`;
 	} else if (data.contactType === 'sponsor') {
 		additionalDetailsHtml = `
-				${data.organization ? `<tr><td style="padding: 8px 0; font-weight: bold;">Organization:</td><td style="padding: 8px 0;">${data.organization}</td></tr>` : ''}
-				${data.sponsorshipTier ? `<tr><td style="padding: 8px 0; font-weight: bold;">Sponsorship Tier:</td><td style="padding: 8px 0;">${data.sponsorshipTier}</td></tr>` : ''}`;
+				${createTableRow('Organization', data.organization)}
+				${createTableRow('Sponsorship Tier', data.sponsorshipTier)}`;
 	} else if (data.contactType === 'program') {
-		additionalDetailsHtml = `
-				${data.programId ? `<tr><td style="padding: 8px 0; font-weight: bold;">Program:</td><td style="padding: 8px 0;">${data.programId}</td></tr>` : ''}`;
+		additionalDetailsHtml = createTableRow('Program', data.programId);
 	} else if (data.contactType === 'general') {
-		additionalDetailsHtml = `
-				${data.subject ? `<tr><td style="padding: 8px 0; font-weight: bold;">Subject:</td><td style="padding: 8px 0;">${data.subject}</td></tr>` : ''}`;
+		additionalDetailsHtml = createTableRow('Subject', data.subject);
 	}
 
 	const bodyHtml = `<!DOCTYPE html>
@@ -79,18 +83,12 @@ async function sendNotificationEmail(data: ContactFormData, recipientEmail: stri
 		<div style="background-color: white; padding: 20px; border-radius: 8px;">
 			<h2 style="color: #2563eb; margin-top: 0;">New ${typeLabels[data.contactType]}</h2>
 			<table style="width: 100%; border-collapse: collapse;">
-				<tr>
-					<td style="padding: 8px 0; font-weight: bold;">Name:</td>
-					<td style="padding: 8px 0;">${data.name}</td>
-				</tr>
+				${createTableRow('Name', data.name)}
 				<tr>
 					<td style="padding: 8px 0; font-weight: bold;">Email:</td>
 					<td style="padding: 8px 0;"><a href="mailto:${data.email}">${data.email}</a></td>
 				</tr>
-				<tr>
-					<td style="padding: 8px 0; font-weight: bold;">Phone:</td>
-					<td style="padding: 8px 0;">${data.phone || 'Not provided'}</td>
-				</tr>
+				${createTableRow('Phone', data.phone || 'Not provided')}
 				${additionalDetailsHtml}
 			</table>
 			<div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e5e5;">
