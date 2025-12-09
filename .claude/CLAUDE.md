@@ -19,6 +19,7 @@
 # Code style
 
 - Never create "helpers" or "utils" instead use services, mappers, transformers etc
+- All Sanity CMS queries should be defined in `lib/content` modules, not inline in components or actions
 - Always use Nextjs Image component `<Image />` instead of `<img />`
 - Use ES modules (import/export) syntax, not CommonJS (require)
 - Destructure imports when possible (eg. import { foo } from 'bar')

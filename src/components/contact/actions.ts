@@ -2,8 +2,7 @@
 
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
-import { client } from '@/sanity/lib/client';
-import { groq } from 'next-sanity';
+import { getSiteSettings } from '@/lib/content/siteSettings';
 
 export type FormState = {
 	success: boolean;
@@ -16,30 +15,8 @@ export async function submitContactForm(
 	formData: FormData
 ): Promise<FormState> {
 	try {
-		// Extract form data
-		const rawData = {
-			contactType: formData.get('contactType'),
-			name: formData.get('name'),
-			email: formData.get('email'),
-			phone: formData.get('phone') || undefined,
-			message: formData.get('message'),
-			// Player fields
-			ageGroup: formData.get('ageGroup') || undefined,
-			experience: formData.get('experience') || undefined,
-			position: formData.get('position') || undefined,
-			// Coach fields
-			qualifications: formData.get('qualifications') || undefined,
-			ageGroupsInterest: formData.get('ageGroupsInterest') || undefined,
-			// Sponsor fields
-			organization: formData.get('organization') || undefined,
-			sponsorshipTier: formData.get('sponsorshipTier') || undefined,
-			// Program fields
-			programId: formData.get('programId') || undefined,
-			// General fields
-			subject: formData.get('subject') || undefined
-		};
-
-		// Validate the form data
+		// Convert FormData to object and let Zod handle parsing
+		const rawData = Object.fromEntries(formData);
 		const validationResult = contactFormSchema.safeParse(rawData);
 
 		if (!validationResult.success) {
@@ -52,12 +29,7 @@ export async function submitContactForm(
 
 		const data = validationResult.data;
 
-		// Fetch email configuration from Sanity
-		const query = groq`*[_type == "siteSettings"][0]{
-			contactEmails
-		}`;
-
-		const settings = await client.fetch(query);
+		const settings = await getSiteSettings();
 
 		if (!settings?.contactEmails) {
 			return {

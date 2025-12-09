@@ -4,7 +4,7 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { ContactType } from '@/lib/contact/contactEmail';
 import { useActionState, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FormState, submitContactForm } from '../../app/(site)/contact/actions';
+import { FormState, submitContactForm } from './actions';
 import { ContactTypeTabs } from './ContactTypeTabs';
 
 type TypeContent = {
