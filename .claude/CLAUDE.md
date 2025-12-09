@@ -24,6 +24,8 @@
 - Destructure imports when possible (eg. import { foo } from 'bar')
 - Do not re-export modules unless it's a barrel file (index.ts)
 - Follow DRY (Don't Repeat Yourself) principle - extract repeated code into functions or constants
+- Prefer functional coding style: extract logic into small, named functions rather than inline code
+- Use switch statements instead of long if/else chains when branching on a single value
 - Each Component should declare its own prop types using TypeScript within the same file
 - Component files should have constants declared outside the component function
 - Use camelCase for variable and function names
