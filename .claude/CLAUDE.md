@@ -34,7 +34,8 @@
 - Avoid use of inline styles, prefer Tailwind CSS classes
 - Avoid using `any` type in Typescript or casting with `as`
 - Declare constant values and objects using `const`
-- Constant values that are objects, do not use CAPS for the variable name, use camelCase instead suffixed with 'Value'
+- Never use SCREAMING_CASE for constants, always use camelCase instead (e.g. `contactTypes` not `CONTACT_TYPES`)
+- Constant values that are objects should be suffixed with 'Value' (e.g. `defaultConfigValue`)
 - Event handlers should be named with the `handle` prefix (e.g. `handleClick`)
 - Only write code comments when the code is not clear and keep it conscise, avoid commenting out code
 - Avoid magic numbers and strings, use constants instead
