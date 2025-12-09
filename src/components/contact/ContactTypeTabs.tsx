@@ -8,11 +8,11 @@ type ContactTypeTabsProps = {
 };
 
 const contactTypes: { value: ContactType; label: string }[] = [
+	{ value: 'general', label: 'General' },
 	{ value: 'player', label: 'Player' },
 	{ value: 'coach', label: 'Coach' },
 	{ value: 'sponsor', label: 'Sponsor' },
-	{ value: 'program', label: 'Program' },
-	{ value: 'general', label: 'General' }
+	{ value: 'program', label: 'Program' }
 ];
 
 export function ContactTypeTabs({ activeType, onChange }: ContactTypeTabsProps) {
@@ -33,7 +33,7 @@ export function ContactTypeTabs({ activeType, onChange }: ContactTypeTabsProps) 
 			</select>
 
 			{/* Desktop tabs */}
-			<div role="tablist" className="tabs tabs-bordered mb-8 hidden gap-2 md:flex">
+			<div role="tablist" className="tabs tabs-border mb-8 hidden gap-2 md:flex">
 				{contactTypes.map((type) => (
 					<button
 						key={type.value}
