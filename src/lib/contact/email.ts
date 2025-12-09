@@ -16,18 +16,32 @@ function getSESClient() {
 export interface Email {
 	to: string;
 	from: string;
-	body: string;
 	bodyHtml: string;
 	subject: string;
 	cc?: string;
 	bcc?: string;
 }
 
+function htmlToPlainText(html: string): string {
+	return html
+		.replace(/<br\s*\/?>/gi, '\n')
+		.replace(/<\/p>/gi, '\n\n')
+		.replace(/<[^>]+>/g, '')
+		.replace(/&nbsp;/g, ' ')
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"')
+		.trim();
+}
+
 export async function sendEmail(email: Email) {
+	const plainTextBody = htmlToPlainText(email.bodyHtml);
+
 	if (isLocal()) {
 		console.log('IsLocal is true, not sending emails');
 		console.log('to', email.to);
-		console.log('body', email.body);
+		console.log('body', plainTextBody);
 		return;
 	}
 
@@ -43,7 +57,7 @@ export async function sendEmail(email: Email) {
 			Message: {
 				Body: {
 					Text: {
-						Data: email.body
+						Data: plainTextBody
 					},
 					Html: {
 						Data: email.bodyHtml
@@ -57,8 +71,3 @@ export async function sendEmail(email: Email) {
 		})
 	);
 }
-
-// Re-export from contactEmail for convenience
-export { sendContactFormEmails } from './contactEmail';
-export type { ContactType } from './contactEmail';
-export type { ContactFormData } from './contactFormSchema';

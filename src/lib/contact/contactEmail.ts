@@ -16,7 +16,7 @@ async function sendConfirmationEmail(name: string, email: string, from: string) 
 	const siteSettings = await getSiteSettings();
 	const subject = `Thank you for contacting ${siteSettings.clubName}`;
 
-	const htmlBody = `<!DOCTYPE html>
+	const bodyHtml = `<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -34,87 +34,42 @@ async function sendConfirmationEmail(name: string, email: string, from: string) 
 </body>
 </html>`;
 
-	const textBody = `Dear ${name},
-
-Thank you for contacting ${siteSettings.clubName}!
-
-We have received your enquiry and someone from our team will get back to you as soon as possible.
-
-For urgent matters, you can also contact us directly via the contact details on our website.
-
-Best regards,
-${siteSettings.clubName} Team`;
-
 	await sendEmail({
 		from,
 		to: email,
 		subject,
-		body: textBody,
-		bodyHtml: htmlBody
+		bodyHtml
 	});
 }
 
 async function sendNotificationEmail(data: ContactFormData, recipientEmail: string, from: string) {
-	const siteSettings = await getSiteSettings();
 	const subject = `New ${typeLabels[data.contactType]} - ${data.name}`;
 
-	let additionalDetails = '';
 	let additionalDetailsHtml = '';
 
 	if (data.contactType === 'player') {
-		additionalDetails = `
-Age Group: ${data.ageGroup || 'Not provided'}
-Experience: ${data.experience || 'Not provided'}
-Position: ${data.position || 'Not provided'}`;
-
 		additionalDetailsHtml = `
 				${data.ageGroup ? `<tr><td style="padding: 8px 0; font-weight: bold;">Age Group:</td><td style="padding: 8px 0;">${data.ageGroup}</td></tr>` : ''}
 				${data.experience ? `<tr><td style="padding: 8px 0; font-weight: bold;">Experience:</td><td style="padding: 8px 0;">${data.experience}</td></tr>` : ''}
 				${data.position ? `<tr><td style="padding: 8px 0; font-weight: bold;">Position:</td><td style="padding: 8px 0;">${data.position}</td></tr>` : ''}`;
 	} else if (data.contactType === 'coach') {
-		additionalDetails = `
-Qualifications: ${data.qualifications || 'Not provided'}
-Experience: ${data.experience || 'Not provided'}
-Age Groups of Interest: ${data.ageGroupsInterest || 'Not provided'}`;
-
 		additionalDetailsHtml = `
 				${data.qualifications ? `<tr><td style="padding: 8px 0; font-weight: bold;">Qualifications:</td><td style="padding: 8px 0;">${data.qualifications}</td></tr>` : ''}
 				${data.experience ? `<tr><td style="padding: 8px 0; font-weight: bold;">Experience:</td><td style="padding: 8px 0;">${data.experience}</td></tr>` : ''}
 				${data.ageGroupsInterest ? `<tr><td style="padding: 8px 0; font-weight: bold;">Age Groups of Interest:</td><td style="padding: 8px 0;">${data.ageGroupsInterest}</td></tr>` : ''}`;
 	} else if (data.contactType === 'sponsor') {
-		additionalDetails = `
-Organization: ${data.organization || 'Not provided'}
-Sponsorship Tier: ${data.sponsorshipTier || 'Not provided'}`;
-
 		additionalDetailsHtml = `
 				${data.organization ? `<tr><td style="padding: 8px 0; font-weight: bold;">Organization:</td><td style="padding: 8px 0;">${data.organization}</td></tr>` : ''}
 				${data.sponsorshipTier ? `<tr><td style="padding: 8px 0; font-weight: bold;">Sponsorship Tier:</td><td style="padding: 8px 0;">${data.sponsorshipTier}</td></tr>` : ''}`;
 	} else if (data.contactType === 'program') {
-		additionalDetails = `
-Program: ${data.programId || 'Not provided'}`;
-
 		additionalDetailsHtml = `
 				${data.programId ? `<tr><td style="padding: 8px 0; font-weight: bold;">Program:</td><td style="padding: 8px 0;">${data.programId}</td></tr>` : ''}`;
 	} else if (data.contactType === 'general') {
-		additionalDetails = `
-Subject: ${data.subject || 'Not provided'}`;
-
 		additionalDetailsHtml = `
 				${data.subject ? `<tr><td style="padding: 8px 0; font-weight: bold;">Subject:</td><td style="padding: 8px 0;">${data.subject}</td></tr>` : ''}`;
 	}
 
-	const textBody = `New contact form submission received:
-
-Type: ${typeLabels[data.contactType]}
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone || 'Not provided'}
-${additionalDetails}
-
-Message:
-${data.message}`;
-
-	const htmlBody = `<!DOCTYPE html>
+	const bodyHtml = `<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -151,8 +106,7 @@ ${data.message}`;
 		from,
 		to: recipientEmail,
 		subject,
-		body: textBody,
-		bodyHtml: htmlBody
+		bodyHtml
 	});
 }
 

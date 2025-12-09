@@ -22,6 +22,7 @@
 - Always use Nextjs Image component `<Image />` instead of `<img />`
 - Use ES modules (import/export) syntax, not CommonJS (require)
 - Destructure imports when possible (eg. import { foo } from 'bar')
+- Do not re-export modules unless it's a barrel file (index.ts)
 - Each Component should declare its own prop types using TypeScript within the same file
 - Component files should have constants declared outside the component function
 - Use camelCase for variable and function names

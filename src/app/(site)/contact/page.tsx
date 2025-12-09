@@ -1,6 +1,6 @@
 import { ContactForm } from '@/components/contact/ContactForm';
 import { PageContainer } from '@/components/layout';
-import { ContactType } from '@/lib/contact/email';
+import { ContactType } from '@/lib/contact/contactEmail';
 import { getContactPageData, getPageMetadata } from '@/lib/content/page';
 import { getActivePrograms } from '@/sanity/services/programService';
 import { type Metadata } from 'next';

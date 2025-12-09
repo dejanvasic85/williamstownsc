@@ -1,7 +1,7 @@
 'use server';
 
+import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
-import { sendContactFormEmails } from '@/lib/contact/email';
 import { client } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 

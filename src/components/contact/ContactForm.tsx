@@ -1,7 +1,7 @@
 'use client';
 
 import { PortableTextContent } from '@/components/content/PortableTextContent';
-import { ContactType } from '@/lib/contact/email';
+import { ContactType } from '@/lib/contact/contactEmail';
 import { useActionState, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormState, submitContactForm } from '../../app/(site)/contact/actions';

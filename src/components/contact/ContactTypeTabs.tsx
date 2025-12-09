@@ -1,6 +1,6 @@
 'use client';
 
-import { ContactType } from '@/lib/contact/email';
+import { ContactType } from '@/lib/contact/contactEmail';
 
 type ContactTypeTabsProps = {
 	activeType: ContactType;
