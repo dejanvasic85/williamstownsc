@@ -48,30 +48,32 @@ function createTableRow(name: string, value: string | undefined) {
 		: '';
 }
 
-async function sendNotificationEmail(data: ContactFormData, recipientEmail: string, from: string) {
-	const subject = `New ${typeLabels[data.contactType]} - ${data.name}`;
-
-	let additionalDetailsHtml = '';
-
-	if (data.contactType === 'player') {
-		additionalDetailsHtml = `
+function createAdditionalDetails(data: ContactFormData) {
+	switch (data.contactType) {
+		case 'player':
+			return `
 				${createTableRow('Age Group', data.ageGroup)}
 				${createTableRow('Experience', data.experience)}
 				${createTableRow('Position', data.position)}`;
-	} else if (data.contactType === 'coach') {
-		additionalDetailsHtml = `
+		case 'coach':
+			return `
 				${createTableRow('Qualifications', data.qualifications)}
 				${createTableRow('Experience', data.experience)}
 				${createTableRow('Age Groups of Interest', data.ageGroupsInterest)}`;
-	} else if (data.contactType === 'sponsor') {
-		additionalDetailsHtml = `
+		case 'sponsor':
+			return `
 				${createTableRow('Organization', data.organization)}
 				${createTableRow('Sponsorship Tier', data.sponsorshipTier)}`;
-	} else if (data.contactType === 'program') {
-		additionalDetailsHtml = createTableRow('Program', data.programId);
-	} else if (data.contactType === 'general') {
-		additionalDetailsHtml = createTableRow('Subject', data.subject);
+		case 'program':
+			return createTableRow('Program', data.programId);
+		case 'general':
+			return createTableRow('Subject', data.subject);
 	}
+}
+
+async function sendNotificationEmail(data: ContactFormData, recipientEmail: string, from: string) {
+	const subject = `New ${typeLabels[data.contactType]} - ${data.name}`;
+	const additionalDetailsHtml = createAdditionalDetails(data);
 
 	const bodyHtml = `<!DOCTYPE html>
 <html>
