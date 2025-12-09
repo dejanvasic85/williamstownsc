@@ -2,7 +2,8 @@ import { getSiteSettings } from '@/lib/content';
 import type { ContactFormData } from './contactFormSchema';
 import { sendEmail } from './email';
 
-export type ContactType = 'player' | 'coach' | 'sponsor' | 'program' | 'general';
+export const contactTypes = ['player', 'coach', 'sponsor', 'program', 'general'] as const;
+export type ContactType = (typeof contactTypes)[number];
 
 const typeLabels: Record<ContactType, string> = {
 	player: 'Player Registration',

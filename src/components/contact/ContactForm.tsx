@@ -15,6 +15,7 @@ type TypeContent = {
 
 type ContactFormProps = {
 	initialType?: ContactType;
+	initialProgramName?: string;
 	programs?: { _id: string; name: string }[];
 	typeContentMap: {
 		player?: TypeContent;
@@ -43,6 +44,7 @@ type ContactFormData = {
 
 export function ContactForm({
 	initialType = 'general',
+	initialProgramName,
 	programs = [],
 	typeContentMap
 }: ContactFormProps) {
@@ -52,11 +54,19 @@ export function ContactForm({
 		null
 	);
 
+	const defaultProgramId = initialProgramName
+		? programs.find((p) => p.name === initialProgramName)?._id
+		: undefined;
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors }
-	} = useForm<ContactFormData>();
+	} = useForm<ContactFormData>({
+		defaultValues: {
+			programId: defaultProgramId
+		}
+	});
 
 	const handleTypeChange = (newType: ContactType) => {
 		setContactType(newType);

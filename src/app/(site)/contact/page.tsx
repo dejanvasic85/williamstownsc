@@ -1,6 +1,6 @@
 import { ContactForm } from '@/components/contact/ContactForm';
 import { PageContainer } from '@/components/layout';
-import { ContactType } from '@/lib/contact/contactEmail';
+import { contactTypes, type ContactType } from '@/lib/contact/contactEmail';
 import { getContactPageData, getPageMetadata } from '@/lib/content/page';
 import { getActivePrograms } from '@/sanity/services/programService';
 import { type Metadata } from 'next';
@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 type ContactPageProps = {
-	searchParams: Promise<{ type?: string }>;
+	searchParams: Promise<{ type?: string; name?: string }>;
 };
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
@@ -31,8 +31,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 	}
 
 	// Validate and get the contact type from URL
-	const validTypes: ContactType[] = ['player', 'coach', 'sponsor', 'program', 'general'];
-	const initialType: ContactType = validTypes.includes(params.type as ContactType)
+	const initialType: ContactType = contactTypes.includes(params.type as ContactType)
 		? (params.type as ContactType)
 		: 'general';
 
@@ -53,6 +52,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 		<PageContainer heading={pageData.heading} intro={pageData.introduction}>
 			<ContactForm
 				initialType={initialType}
+				initialProgramName={params.name}
 				programs={programsForForm}
 				typeContentMap={typeContentMap}
 			/>
