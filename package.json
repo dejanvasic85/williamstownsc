@@ -23,7 +23,7 @@
 		"@sanity/image-url": "2.0.2",
 		"@sanity/vision": "4.21.0",
 		"clsx": "2.1.1",
-		"daisyui": "5.5.8",
+		"daisyui": "5.5.11",
 		"date-fns": "4.1.0",
 		"lucide-react": "0.556.0",
 		"next": "16.0.8",
