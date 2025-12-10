@@ -39,7 +39,7 @@
 	"devDependencies": {
 		"@faker-js/faker": "^10.1.0",
 		"@tailwindcss/postcss": "^4",
-		"@types/node": "^24.0.0",
+		"@types/node": "^25.0.0",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"commander": "^14.0.2",
