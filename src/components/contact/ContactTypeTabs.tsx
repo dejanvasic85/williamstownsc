@@ -19,18 +19,23 @@ export function ContactTypeTabs({ activeType, onChange }: ContactTypeTabsProps) 
 	return (
 		<>
 			{/* Mobile select dropdown */}
-			<select
-				className="select select-bordered mb-8 w-full md:hidden"
-				value={activeType}
-				onChange={(e) => onChange(e.target.value as ContactType)}
-				aria-label="Select enquiry type"
-			>
-				{contactTypes.map((type) => (
-					<option key={type.value} value={type.value}>
-						{type.label}
-					</option>
-				))}
-			</select>
+			<div className="mb-8 md:hidden">
+				<label htmlFor="enquiry-type-select" className="label">
+					<span className="label-text">Select enquiry type</span>
+				</label>
+				<select
+					id="enquiry-type-select"
+					className="select select-bordered w-full"
+					value={activeType}
+					onChange={(e) => onChange(e.target.value as ContactType)}
+				>
+					{contactTypes.map((type) => (
+						<option key={type.value} value={type.value}>
+							{type.label}
+						</option>
+					))}
+				</select>
+			</div>
 
 			{/* Desktop tabs */}
 			<div role="tablist" className="tabs tabs-border mb-8 hidden gap-2 md:flex">

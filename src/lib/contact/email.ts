@@ -32,6 +32,10 @@ function htmlToPlainText(html: string): string {
 		.replace(/&lt;/g, '<')
 		.replace(/&gt;/g, '>')
 		.replace(/&quot;/g, '"')
+		.replace(/&apos;/g, "'")
+		.replace(/&#39;/g, "'")
+		.replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(parseInt(dec, 10)))
+		.replace(/&#x([0-9a-f]+);/gi, (match, hex) => String.fromCharCode(parseInt(hex, 16)))
 		.trim();
 }
 
@@ -51,8 +55,18 @@ export async function sendEmail(email: Email) {
 		new SendEmailCommand({
 			Destination: {
 				ToAddresses: [email.to],
-				CcAddresses: email.cc ? [email.cc] : [],
-				BccAddresses: email.bcc ? [email.bcc] : []
+				CcAddresses: email.cc
+					? email.cc
+							.split(',')
+							.map((addr) => addr.trim())
+							.filter((addr) => addr)
+					: undefined,
+				BccAddresses: email.bcc
+					? email.bcc
+							.split(',')
+							.map((addr) => addr.trim())
+							.filter((addr) => addr)
+					: undefined
 			},
 			Message: {
 				Body: {

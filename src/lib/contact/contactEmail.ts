@@ -13,6 +13,25 @@ const typeLabels: Record<ContactType, string> = {
 	general: 'General Enquiry'
 };
 
+function escapeHtml(text: string): string {
+	return text.replace(/[&<>"']/g, (char) => {
+		switch (char) {
+			case '&':
+				return '&amp;';
+			case '<':
+				return '&lt;';
+			case '>':
+				return '&gt;';
+			case '"':
+				return '&quot;';
+			case "'":
+				return '&#39;';
+			default:
+				return char;
+		}
+	});
+}
+
 async function sendConfirmationEmail(name: string, email: string, from: string) {
 	const siteSettings = await getSiteSettings();
 	const subject = `Thank you for contacting ${siteSettings.clubName}`;
@@ -25,7 +44,7 @@ async function sendConfirmationEmail(name: string, email: string, from: string) 
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
 	<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
 		<h2 style="color: #2563eb;">Thank you for contacting Williamstown SC</h2>
-		<p>Dear ${name},</p>
+		<p>Dear ${escapeHtml(name)},</p>
 		<p>Thank you for contacting ${siteSettings.clubName}!</p>
 		<p>We have received your enquiry and someone from our team will get back to you as soon as possible.</p>
 		<p>For urgent matters, you can also contact us directly via the contact details on our website.</p>
@@ -45,7 +64,7 @@ async function sendConfirmationEmail(name: string, email: string, from: string) 
 
 function createTableRow(name: string, value: string | undefined) {
 	return value
-		? `<tr><td style="padding: 8px 0; font-weight: bold;">${name}:</td><td style="padding: 8px 0;">${value}</td></tr>`
+		? `<tr><td style="padding: 8px 0; font-weight: bold;">${name}:</td><td style="padding: 8px 0;">${escapeHtml(value)}</td></tr>`
 		: '';
 }
 
@@ -89,14 +108,14 @@ async function sendNotificationEmail(data: ContactFormData, recipientEmail: stri
 				${createTableRow('Name', data.name)}
 				<tr>
 					<td style="padding: 8px 0; font-weight: bold;">Email:</td>
-					<td style="padding: 8px 0;"><a href="mailto:${data.email}">${data.email}</a></td>
+					<td style="padding: 8px 0;"><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></td>
 				</tr>
-				${createTableRow('Phone', data.phone || 'Not provided')}
+				${createTableRow('Phone', data.phone)}
 				${additionalDetailsHtml}
 			</table>
 			<div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e5e5;">
 				<p style="font-weight: bold; margin-bottom: 8px;">Message:</p>
-				<p style="margin: 0; white-space: pre-wrap;">${data.message}</p>
+				<p style="margin: 0; white-space: pre-wrap;">${escapeHtml(data.message)}</p>
 			</div>
 		</div>
 	</div>

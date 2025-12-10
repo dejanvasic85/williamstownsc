@@ -77,7 +77,7 @@ export async function submitContactForm(
 		return {
 			success: false,
 			message: 'Something went wrong. Please try again later.',
-			error: error instanceof Error ? error.message : 'Unknown error'
+			error: 'Internal server error'
 		};
 	}
 }

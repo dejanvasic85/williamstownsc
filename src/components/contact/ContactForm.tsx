@@ -2,7 +2,7 @@
 
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { ContactType } from '@/lib/contact/contactEmail';
-import { useActionState, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormState, submitContactForm } from './actions';
 import { ContactTypeTabs } from './ContactTypeTabs';
@@ -61,12 +61,19 @@ export function ContactForm({
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors }
 	} = useForm<ContactFormData>({
 		defaultValues: {
 			programId: defaultProgramId
 		}
 	});
+
+	useEffect(() => {
+		if (state?.success) {
+			reset();
+		}
+	}, [state?.success, reset]);
 
 	const handleTypeChange = (newType: ContactType) => {
 		setContactType(newType);
