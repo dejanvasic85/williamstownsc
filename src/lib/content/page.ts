@@ -1,6 +1,16 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import type { SiteSettings } from '@/sanity/sanity.types';
+import type {
+	AboutPage,
+	AccessibilityPage,
+	CommitteePage,
+	ContactPage,
+	LocationsPage,
+	PoliciesPage,
+	PrivacyPage,
+	SiteSettings,
+	TermsPage
+} from '@/sanity/sanity.types';
 
 export type PageName =
 	| 'aboutPage'
@@ -12,10 +22,17 @@ export type PageName =
 	| 'privacyPage'
 	| 'termsPage';
 
-export interface PageData {
-	heading: string;
-	introduction?: unknown[];
-	body?: unknown[];
+type PageType =
+	| AboutPage
+	| AccessibilityPage
+	| CommitteePage
+	| ContactPage
+	| LocationsPage
+	| PoliciesPage
+	| PrivacyPage
+	| TermsPage;
+
+export type PageData = Pick<PageType, 'heading' | 'introduction' | 'body' | 'published'> & {
 	featuredImage?: {
 		url: string;
 		alt?: string;
@@ -32,9 +49,8 @@ export interface PageData {
 		};
 		noIndex?: boolean;
 	};
-	published?: boolean;
 	lastUpdated?: string;
-}
+};
 
 export interface PageMetadata {
 	title: string;
@@ -108,6 +124,56 @@ export async function getPageData(pageName: PageName): Promise<PageData | null> 
 			: undefined,
 		lastUpdated: data.lastUpdated
 	};
+}
+
+export async function getContactPageData() {
+	const query = `*[_type == "contactPage" && _id == "contactPage"][0]{
+		heading,
+		introduction,
+		playerContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		coachContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		sponsorContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		programContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		generalContent {
+			heading,
+			introduction,
+			image { ..., alt },
+			ctaText
+		},
+		seo {
+			...,
+			ogImage { ..., alt }
+		},
+		published
+	}`;
+
+	const data = await client.fetch(query);
+
+	if (!data || !data.published) {
+		return null;
+	}
+
+	return data;
 }
 
 export async function getPageMetadata(pageName: PageName): Promise<PageMetadata> {

@@ -2,8 +2,7 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { Sponsor } from '@/sanity/sanity.types';
 
-export interface TransformedSponsor {
-	_id: string;
+export type TransformedSponsor = Pick<Sponsor, '_id' | 'website'> & {
 	name: string;
 	logo: {
 		url: string;
@@ -11,8 +10,7 @@ export interface TransformedSponsor {
 	};
 	type: string;
 	description: string;
-	website?: string;
-}
+};
 
 function transformSponsor(sponsor: Sponsor): TransformedSponsor {
 	return {

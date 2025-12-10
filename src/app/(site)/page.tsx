@@ -26,9 +26,8 @@ export default async function Home() {
 
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
-	const homeGround = siteSettings?.locations?.find(
-		(location: { facilityType?: string }) => location.facilityType === 'home'
-	);
+	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
+
 	const homeGroundLink = homeGround?.mapLink
 		? homeGround.mapLink
 		: homeGround?.address

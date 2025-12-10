@@ -19,9 +19,14 @@
 # Code style
 
 - Never create "helpers" or "utils" instead use services, mappers, transformers etc
+- All Sanity CMS queries should be defined in `lib/content` modules, not inline in components or actions
 - Always use Nextjs Image component `<Image />` instead of `<img />`
 - Use ES modules (import/export) syntax, not CommonJS (require)
 - Destructure imports when possible (eg. import { foo } from 'bar')
+- Do not re-export modules unless it's a barrel file (index.ts)
+- Follow DRY (Don't Repeat Yourself) principle - extract repeated code into functions or constants
+- Prefer functional coding style: extract logic into small, named functions rather than inline code
+- Use switch statements instead of long if/else chains when branching on a single value
 - Each Component should declare its own prop types using TypeScript within the same file
 - Component files should have constants declared outside the component function
 - Use camelCase for variable and function names
@@ -29,7 +34,8 @@
 - Avoid use of inline styles, prefer Tailwind CSS classes
 - Avoid using `any` type in Typescript or casting with `as`
 - Declare constant values and objects using `const`
-- Constant values that are objects, do not use CAPS for the variable name, use camelCase instead suffixed with 'Value'
+- Never use SCREAMING_CASE for constants, always use camelCase instead (e.g. `contactTypes` not `CONTACT_TYPES`)
+- Constant values that are objects should be suffixed with 'Value' (e.g. `defaultConfigValue`)
 - Event handlers should be named with the `handle` prefix (e.g. `handleClick`)
 - Only write code comments when the code is not clear and keep it conscise, avoid commenting out code
 - Avoid magic numbers and strings, use constants instead

@@ -13,6 +13,7 @@ export const newsArticle = defineType({
 		}),
 		defineField({
 			name: 'slug',
+			description: 'The slug is a section of the Page URL (address) that identifies the article.',
 			title: 'Slug',
 			type: 'slug',
 			options: {

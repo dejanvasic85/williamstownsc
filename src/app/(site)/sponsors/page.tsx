@@ -6,16 +6,10 @@ import Image from 'next/image';
 export default async function SponsorsPage() {
 	const sponsors = await getAllSponsors();
 	return (
-		<PageContainer>
-			<div className="mb-12">
-				<h1 className="border-secondary mb-4 border-b-4 pb-4 text-2xl font-bold lg:text-3xl">
-					Our Sponsors
-				</h1>
-				<p className="text-base-content/70 text-lg">
-					We are grateful for the support of our sponsors who help make our club possible.
-				</p>
-			</div>
-
+		<PageContainer
+			heading="Our Sponsors"
+			intro="We are grateful for the support of our sponsors who help make our club possible."
+		>
 			{/* All Sponsors */}
 			<div className="mb-16 flex flex-col items-center gap-8">
 				{sponsors.map((sponsor, index) => {

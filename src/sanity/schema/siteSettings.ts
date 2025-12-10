@@ -106,6 +106,58 @@ export const siteSettings = defineType({
 			]
 		}),
 
+		// Contact form email recipients
+		defineField({
+			name: 'contactEmails',
+			title: 'Contact Form Email Recipients',
+			type: 'object',
+			description: 'Email addresses where contact form submissions will be sent',
+			fields: [
+				{
+					name: 'from',
+					title: 'From Email Address',
+					type: 'string',
+					description: 'SES verified sender email address (e.g., noreply@williamstownsc.com)',
+					validation: (Rule) => Rule.required().email()
+				},
+				{
+					name: 'player',
+					title: 'Player Enquiries',
+					type: 'string',
+					description: 'Email address for player registration enquiries',
+					validation: (Rule) => Rule.email()
+				},
+				{
+					name: 'coach',
+					title: 'Coach Enquiries',
+					type: 'string',
+					description: 'Email address for coaching enquiries',
+					validation: (Rule) => Rule.email()
+				},
+				{
+					name: 'sponsor',
+					title: 'Sponsor Enquiries',
+					type: 'string',
+					description: 'Email address for sponsorship enquiries',
+					validation: (Rule) => Rule.email()
+				},
+				{
+					name: 'program',
+					title: 'Program Enquiries',
+					type: 'string',
+					description: 'Email address for program registration enquiries',
+					validation: (Rule) => Rule.email()
+				},
+				{
+					name: 'general',
+					title: 'General Enquiries',
+					type: 'string',
+					description: 'Email address for general enquiries',
+					validation: (Rule) => Rule.required().email()
+				}
+			]
+		}),
+
 		// Socials
 		defineField({
 			name: 'socials',

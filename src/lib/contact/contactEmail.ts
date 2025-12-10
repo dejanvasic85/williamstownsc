@@ -1,0 +1,142 @@
+import { getSiteSettings } from '@/lib/content';
+import type { ContactFormData } from './contactFormSchema';
+import { sendEmail } from './email';
+
+export const contactTypes = ['player', 'coach', 'sponsor', 'program', 'general'] as const;
+export type ContactType = (typeof contactTypes)[number];
+
+const typeLabels: Record<ContactType, string> = {
+	player: 'Player Registration',
+	coach: 'Coaching Enquiry',
+	sponsor: 'Sponsorship Enquiry',
+	program: 'Program Registration',
+	general: 'General Enquiry'
+};
+
+function escapeHtml(text: string): string {
+	return text.replace(/[&<>"']/g, (char) => {
+		switch (char) {
+			case '&':
+				return '&amp;';
+			case '<':
+				return '&lt;';
+			case '>':
+				return '&gt;';
+			case '"':
+				return '&quot;';
+			case "'":
+				return '&#39;';
+			default:
+				return char;
+		}
+	});
+}
+
+async function sendConfirmationEmail(name: string, email: string, from: string) {
+	const siteSettings = await getSiteSettings();
+	const subject = `Thank you for contacting ${siteSettings.clubName}`;
+
+	const bodyHtml = `<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+	<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+		<h2 style="color: #2563eb;">Thank you for contacting Williamstown SC</h2>
+		<p>Dear ${escapeHtml(name)},</p>
+		<p>Thank you for contacting ${siteSettings.clubName}!</p>
+		<p>We have received your enquiry and someone from our team will get back to you as soon as possible.</p>
+		<p>For urgent matters, you can also contact us directly via the contact details on our website.</p>
+		<p>Best regards,<br>
+		<strong>${siteSettings.clubName} Team</strong></p>
+	</div>
+</body>
+</html>`;
+
+	await sendEmail({
+		from,
+		to: email,
+		subject,
+		bodyHtml
+	});
+}
+
+function createTableRow(name: string, value: string | undefined) {
+	return value
+		? `<tr><td style="padding: 8px 0; font-weight: bold;">${name}:</td><td style="padding: 8px 0;">${escapeHtml(value)}</td></tr>`
+		: '';
+}
+
+function createAdditionalDetails(data: ContactFormData) {
+	switch (data.contactType) {
+		case 'player':
+			return `
+				${createTableRow('Age Group', data.ageGroup)}
+				${createTableRow('Experience', data.experience)}
+				${createTableRow('Position', data.position)}`;
+		case 'coach':
+			return `
+				${createTableRow('Qualifications', data.qualifications)}
+				${createTableRow('Experience', data.experience)}
+				${createTableRow('Age Groups of Interest', data.ageGroupsInterest)}`;
+		case 'sponsor':
+			return `
+				${createTableRow('Organization', data.organization)}
+				${createTableRow('Sponsorship Tier', data.sponsorshipTier)}`;
+		case 'program':
+			return createTableRow('Program', data.programId);
+		case 'general':
+			return createTableRow('Subject', data.subject);
+	}
+}
+
+async function sendNotificationEmail(data: ContactFormData, recipientEmail: string, from: string) {
+	const subject = `New ${typeLabels[data.contactType]} - ${data.name}`;
+	const additionalDetailsHtml = createAdditionalDetails(data);
+
+	const bodyHtml = `<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+	<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
+		<div style="background-color: white; padding: 20px; border-radius: 8px;">
+			<h2 style="color: #2563eb; margin-top: 0;">New ${typeLabels[data.contactType]}</h2>
+			<table style="width: 100%; border-collapse: collapse;">
+				${createTableRow('Name', data.name)}
+				<tr>
+					<td style="padding: 8px 0; font-weight: bold;">Email:</td>
+					<td style="padding: 8px 0;"><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></td>
+				</tr>
+				${createTableRow('Phone', data.phone)}
+				${additionalDetailsHtml}
+			</table>
+			<div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e5e5;">
+				<p style="font-weight: bold; margin-bottom: 8px;">Message:</p>
+				<p style="margin: 0; white-space: pre-wrap;">${escapeHtml(data.message)}</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>`;
+
+	await sendEmail({
+		from,
+		to: recipientEmail,
+		subject,
+		bodyHtml
+	});
+}
+
+export async function sendContactFormEmails(
+	data: ContactFormData,
+	emailFrom: string,
+	recipientEmail: string
+) {
+	await Promise.all([
+		sendConfirmationEmail(data.name, data.email, emailFrom),
+		sendNotificationEmail(data, recipientEmail, emailFrom)
+	]);
+}

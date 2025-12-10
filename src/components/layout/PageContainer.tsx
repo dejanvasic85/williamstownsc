@@ -1,13 +1,19 @@
+import { PortableTextContent } from '@/components/content/PortableTextContent';
 import clsx from 'clsx';
+import Image from 'next/image';
 import { ReactNode } from 'react';
 
 type PageContainerProps = {
-	children: ReactNode;
+	children?: ReactNode;
 	heading?: string;
-	intro?: string;
+	intro?: string | unknown[];
+	featuredImage?: {
+		url: string;
+		alt?: string;
+	};
 };
 
-export function PageContainer({ children, heading, intro }: PageContainerProps) {
+export function PageContainer({ children, heading, intro, featuredImage }: PageContainerProps) {
 	return (
 		<div
 			className={clsx(
@@ -22,7 +28,27 @@ export function PageContainer({ children, heading, intro }: PageContainerProps) 
 						<div className="border-secondary mb-4 flex items-center gap-3 border-b-4 pb-4">
 							<h1 className="text-3xl font-bold">{heading}</h1>
 						</div>
-						{intro && <p className="text-lg">{intro}</p>}
+						{intro && (
+							<div className="text-lg">
+								{typeof intro === 'string' ? (
+									<p>{intro}</p>
+								) : (
+									<PortableTextContent blocks={intro} />
+								)}
+							</div>
+						)}
+					</div>
+				)}
+				{featuredImage && (
+					<div className="mb-8">
+						<Image
+							src={featuredImage.url}
+							alt={featuredImage.alt || heading || ''}
+							width={1200}
+							height={600}
+							className="h-auto w-full rounded-lg"
+							priority
+						/>
 					</div>
 				)}
 				<main className="py-3">{children}</main>

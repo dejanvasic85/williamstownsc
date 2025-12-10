@@ -26,6 +26,8 @@ The original website is at https://www.williamstownsc.com/
 Pages:
 
 - [x] Homepage
+  - [ ] Key dates section
+  - [ ] Matche reports (seniors/reserves)
 - [x] News
   - [x] Article page
     - [ ] Similar news
@@ -48,6 +50,7 @@ Pages:
 - [ ] Events
   - [ ] Ticketing integration with Try Booking
 - [ ] Search
+- [ ] Communicating content structure with non-technical people
 
 ### Nice to have
 
@@ -59,16 +62,3 @@ The following is a list of things we may be not need on initial launch and can c
 - [ ] Space for links and general info on Regulations and rules
 
 ---
-
-## Next meeting:
-
-Should we have featured news?
-
-Data models that we need:
-
-- Soccer programs
-- Football team
-- Sponsor
-  - Do we need tiers/types? Like major or principal?
-
-Social websites like Insta/Facebook -> Push only
