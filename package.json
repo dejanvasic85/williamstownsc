@@ -20,7 +20,7 @@
 	"dependencies": {
 		"@aws-sdk/client-ses": "3.948.0",
 		"@portabletext/toolkit": "5.0.0",
-		"@sanity/client": "7.13.1",
+		"@sanity/client": "7.13.2",
 		"@sanity/image-url": "2.0.2",
 		"@sanity/vision": "4.21.0",
 		"clsx": "2.1.1",
