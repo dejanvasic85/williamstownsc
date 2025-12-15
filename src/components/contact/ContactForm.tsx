@@ -1,7 +1,9 @@
 'use client';
 
 import { PortableTextContent } from '@/components/content/PortableTextContent';
+import { executeReCaptcha, ReCaptcha } from '@/components/ReCaptcha';
 import { ContactType } from '@/lib/contact/contactEmail';
+import { useConfig } from '@/lib/hooks/useConfig';
 import { useActionState, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormState, submitContactForm } from './actions';
@@ -42,12 +44,15 @@ type ContactFormData = {
 	subject?: string;
 };
 
+const recaptchaAction = 'contact_form';
+
 export function ContactForm({
 	initialType = 'general',
 	initialProgramName,
 	programs = [],
 	typeContentMap
 }: ContactFormProps) {
+	const { recaptchaSiteKey } = useConfig();
 	const [contactType, setContactType] = useState<ContactType>(initialType);
 	const [state, formAction, isPending] = useActionState<FormState | null, FormData>(
 		submitContactForm,
@@ -79,7 +84,7 @@ export function ContactForm({
 		setContactType(newType);
 	};
 
-	const onSubmit = handleSubmit((data) => {
+	const onSubmit = handleSubmit(async (data) => {
 		const formData = new FormData();
 		formData.append('contactType', contactType);
 		Object.entries(data).forEach(([key, value]) => {
@@ -87,6 +92,14 @@ export function ContactForm({
 				formData.append(key, value.toString());
 			}
 		});
+
+		if (recaptchaSiteKey) {
+			const recaptchaToken = await executeReCaptcha(recaptchaAction, recaptchaSiteKey);
+			if (recaptchaToken) {
+				formData.append('recaptchaToken', recaptchaToken);
+			}
+		}
+
 		formAction(formData);
 	});
 
@@ -95,6 +108,7 @@ export function ContactForm({
 
 	return (
 		<div className="flex flex-col items-center">
+			<ReCaptcha />
 			<div className="w-full space-y-8 md:w-8/12">
 				<ContactTypeTabs activeType={contactType} onChange={handleTypeChange} />
 

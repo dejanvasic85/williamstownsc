@@ -3,12 +3,16 @@
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
+import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
+import { headers } from 'next/headers';
 
 export type FormState = {
 	success: boolean;
 	message: string;
 	error?: string;
 };
+
+const recaptchaAction = 'contact_form';
 
 export async function submitContactForm(
 	_prevState: FormState | null,
@@ -28,6 +32,32 @@ export async function submitContactForm(
 		}
 
 		const data = validationResult.data;
+
+		// Verify reCAPTCHA token if provided
+		const recaptchaToken = formData.get('recaptchaToken') as string | null;
+		if (recaptchaToken) {
+			const requestHeaders = await headers();
+			const userAgent = requestHeaders.get('user-agent') ?? undefined;
+			const ipAddress =
+				requestHeaders.get('x-forwarded-for')?.split(',')[0] ??
+				requestHeaders.get('x-real-ip') ??
+				undefined;
+
+			const recaptchaResult = await verifyRecaptchaToken(
+				recaptchaToken,
+				recaptchaAction,
+				userAgent,
+				ipAddress
+			);
+
+			if (!recaptchaResult.success) {
+				return {
+					success: false,
+					message: 'Security verification failed. Please try again.',
+					error: recaptchaResult.error
+				};
+			}
+		}
 
 		const settings = await getSiteSettings();
 

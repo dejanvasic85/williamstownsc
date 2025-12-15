@@ -4,7 +4,8 @@ import { z } from 'zod';
 const clientConfigSchema = z.object({
 	sanityProjectId: z.string().min(1, 'Sanity project ID is required'),
 	sanityDataset: z.string().min(1, 'Sanity dataset is required'),
-	sanityApiVersion: z.string().default('2024-01-01')
+	sanityApiVersion: z.string().default('2024-01-01'),
+	recaptchaSiteKey: z.string().optional()
 });
 
 // Server-only AWS config schema
@@ -14,8 +15,15 @@ const awsConfigSchema = z.object({
 	awsSecretAccessKey: z.string().min(1, 'AWS secret access key is required')
 });
 
+// Server-only reCAPTCHA config schema
+const recaptchaConfigSchema = z.object({
+	recaptchaSecretKey: z.string().min(1, 'reCAPTCHA secret key is required'),
+	googleCloudProjectId: z.string().min(1, 'Google Cloud project ID is required')
+});
+
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
+export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
 
 let cachedClientConfig: ClientConfig | null = null;
 
@@ -31,7 +39,8 @@ export function getClientConfig(): ClientConfig {
 	const config = clientConfigSchema.parse({
 		sanityProjectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
 		sanityDataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-		sanityApiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION
+		sanityApiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+		recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 	});
 
 	cachedClientConfig = config;
@@ -52,4 +61,15 @@ export function getAwsConfig(): AwsConfig {
 
 export function isLocal(): boolean {
 	return process.env.ENV === 'local';
+}
+
+/**
+ * Get reCAPTCHA config (server-only)
+ * Contains secret credentials for token verification
+ */
+export function getRecaptchaConfig(): RecaptchaConfig {
+	return recaptchaConfigSchema.parse({
+		recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
+		googleCloudProjectId: process.env.GOOGLE_CLOUD_PROJECT_ID
+	});
 }
