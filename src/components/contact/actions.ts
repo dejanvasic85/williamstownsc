@@ -33,9 +33,19 @@ export async function submitContactForm(
 
 		const data = validationResult.data;
 
-		// Verify reCAPTCHA token if provided
+		// Verify reCAPTCHA token - required when reCAPTCHA is configured
+		const recaptchaEnabled = !!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 		const recaptchaToken = formData.get('recaptchaToken') as string | null;
-		if (recaptchaToken) {
+
+		if (recaptchaEnabled) {
+			if (!recaptchaToken) {
+				return {
+					success: false,
+					message: 'Security verification failed. Please try again.',
+					error: 'Missing reCAPTCHA token'
+				};
+			}
+
 			const requestHeaders = await headers();
 			const userAgent = requestHeaders.get('user-agent') ?? undefined;
 			const ipAddress =
