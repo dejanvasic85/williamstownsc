@@ -18,7 +18,8 @@ const awsConfigSchema = z.object({
 // Server-only reCAPTCHA config schema
 const recaptchaConfigSchema = z.object({
 	recaptchaSecretKey: z.string().min(1, 'reCAPTCHA secret key is required'),
-	googleCloudProjectId: z.string().min(1, 'Google Cloud project ID is required')
+	googleCloudProjectId: z.string().min(1, 'Google Cloud project ID is required'),
+	riskScoreThreshold: z.number().min(0).max(1).default(0.5)
 });
 
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
@@ -68,8 +69,14 @@ export function isLocal(): boolean {
  * Contains secret credentials for token verification
  */
 export function getRecaptchaConfig(): RecaptchaConfig {
+	const riskScoreThreshold =
+		process.env.RECAPTCHA_RISK_SCORE_THRESHOLD !== undefined
+			? parseFloat(process.env.RECAPTCHA_RISK_SCORE_THRESHOLD)
+			: 0.5;
+
 	return recaptchaConfigSchema.parse({
 		recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
-		googleCloudProjectId: process.env.GOOGLE_CLOUD_PROJECT_ID
+		googleCloudProjectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
+		riskScoreThreshold
 	});
 }

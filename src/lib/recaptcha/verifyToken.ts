@@ -20,8 +20,27 @@ type VerificationResult = {
 	error?: string;
 };
 
-const riskScoreThreshold = 0.5;
-
+/**
+ * Verifies a reCAPTCHA Enterprise token with Google's API.
+ *
+ * This function validates the token against Google reCAPTCHA Enterprise API and performs
+ * risk analysis to detect potential bot traffic. It checks token validity, action matching,
+ * and evaluates the risk score against a threshold (0.5 by default).
+ *
+ * @param {string} token - The reCAPTCHA token to verify (obtained from client-side execution).
+ * @param {string} expectedAction - The action name that should match the token's action.
+ * This ensures the token was generated for the intended purpose (e.g., 'contact_form').
+ * @param {string} [userAgent] - Optional user agent string from the request headers.
+ * @param {string} [ipAddress] - Optional IP address of the client making the request.
+ * @returns {Promise<VerificationResult>} A promise that resolves to an object containing:
+ * - success: boolean indicating if verification passed
+ * - score: optional risk analysis score (0.0 = likely bot, 1.0 = likely human)
+ * - error: optional error message if verification failed
+ *
+ * @throws Never throws - all errors are caught and returned in the result object.
+ *
+ * Risk score threshold: Tokens with a score below 0.5 are considered suspicious and will fail verification.
+ */
 export async function verifyRecaptchaToken(
 	token: string,
 	expectedAction: string,
@@ -29,15 +48,16 @@ export async function verifyRecaptchaToken(
 	ipAddress?: string
 ): Promise<VerificationResult> {
 	try {
-		const { recaptchaSecretKey, googleCloudProjectId } = getRecaptchaConfig();
+		const { recaptchaSecretKey, googleCloudProjectId, riskScoreThreshold } = getRecaptchaConfig();
 		const { recaptchaSiteKey } = getClientConfig();
 
-		const assessmentUrl = `https://recaptchaenterprise.googleapis.com/v1/projects/${googleCloudProjectId}/assessments?key=${recaptchaSecretKey}`;
+		const assessmentUrl = `https://recaptchaenterprise.googleapis.com/v1/projects/${googleCloudProjectId}/assessments`;
 
 		const response = await fetch(assessmentUrl, {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${recaptchaSecretKey}`
 			},
 			body: JSON.stringify({
 				event: {

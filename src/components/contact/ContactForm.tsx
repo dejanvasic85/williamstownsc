@@ -4,6 +4,7 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { executeReCaptcha, ReCaptcha } from '@/components/ReCaptcha';
 import { ContactType } from '@/lib/contact/contactEmail';
 import { useConfig } from '@/lib/hooks/useConfig';
+import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { useActionState, useEffect, useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormState, submitContactForm } from './actions';
@@ -43,8 +44,6 @@ type ContactFormData = {
 	programId?: string;
 	subject?: string;
 };
-
-const recaptchaAction = 'contact_form';
 
 export function ContactForm({
 	initialType = 'general',
