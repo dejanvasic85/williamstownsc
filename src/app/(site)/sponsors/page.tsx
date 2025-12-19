@@ -61,12 +61,12 @@ export default async function SponsorsPage() {
 										isEven ? 'md:order-1' : 'md:order-2'
 									}`}
 								>
-									<div className="aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:w-56 xl:w-64">
+									<div className="flex h-40 w-full max-w-64 items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-md md:h-48">
 										<Image
 											src={sponsor.logo.url}
 											alt={sponsor.logo.alt || `${sponsor.name} logo`}
 											width={400}
-											height={400}
+											height={300}
 											className="h-full w-full object-contain"
 										/>
 									</div>
