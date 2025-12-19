@@ -1,8 +1,12 @@
 'use server';
 
+import { getClientConfig } from '@/lib/config';
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
+import { recaptchaAction } from '@/lib/recaptcha/constants';
+import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
+import { headers } from 'next/headers';
 
 export type FormState = {
 	success: boolean;
@@ -28,6 +32,42 @@ export async function submitContactForm(
 		}
 
 		const data = validationResult.data;
+
+		// Verify reCAPTCHA token - required when reCAPTCHA is configured
+		const clientConfig = getClientConfig();
+		const recaptchaEnabled = !!clientConfig.recaptchaSiteKey;
+
+		if (recaptchaEnabled) {
+			if (!data.recaptchaToken) {
+				return {
+					success: false,
+					message: 'Security verification failed. Please try again.',
+					error: 'Missing reCAPTCHA token'
+				};
+			}
+
+			const requestHeaders = await headers();
+			const userAgent = requestHeaders.get('user-agent') ?? undefined;
+			const ipAddress =
+				requestHeaders.get('x-forwarded-for')?.split(',')[0] ??
+				requestHeaders.get('x-real-ip') ??
+				undefined;
+
+			const recaptchaResult = await verifyRecaptchaToken(
+				data.recaptchaToken,
+				recaptchaAction,
+				userAgent,
+				ipAddress
+			);
+
+			if (!recaptchaResult.success) {
+				return {
+					success: false,
+					message: 'Security verification failed. Please try again.',
+					error: recaptchaResult.error
+				};
+			}
+		}
 
 		const settings = await getSiteSettings();
 

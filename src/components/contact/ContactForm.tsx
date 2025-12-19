@@ -1,8 +1,11 @@
 'use client';
 
 import { PortableTextContent } from '@/components/content/PortableTextContent';
+import { executeReCaptcha, ReCaptcha } from '@/components/ReCaptcha';
 import { ContactType } from '@/lib/contact/contactEmail';
-import { useActionState, useEffect, useState } from 'react';
+import { useConfig } from '@/lib/hooks/useConfig';
+import { recaptchaAction } from '@/lib/recaptcha/constants';
+import { useActionState, useEffect, useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormState, submitContactForm } from './actions';
 import { ContactTypeTabs } from './ContactTypeTabs';
@@ -48,11 +51,10 @@ export function ContactForm({
 	programs = [],
 	typeContentMap
 }: ContactFormProps) {
+	const { recaptchaSiteKey } = useConfig();
 	const [contactType, setContactType] = useState<ContactType>(initialType);
-	const [state, formAction, isPending] = useActionState<FormState | null, FormData>(
-		submitContactForm,
-		null
-	);
+	const [isPending, startTransition] = useTransition();
+	const [state, formAction] = useActionState<FormState | null, FormData>(submitContactForm, null);
 
 	const defaultProgramId = initialProgramName
 		? programs.find((p) => p.name === initialProgramName)?._id
@@ -79,7 +81,7 @@ export function ContactForm({
 		setContactType(newType);
 	};
 
-	const onSubmit = handleSubmit((data) => {
+	const onSubmit = handleSubmit(async (data) => {
 		const formData = new FormData();
 		formData.append('contactType', contactType);
 		Object.entries(data).forEach(([key, value]) => {
@@ -87,7 +89,19 @@ export function ContactForm({
 				formData.append(key, value.toString());
 			}
 		});
-		formAction(formData);
+
+		if (recaptchaSiteKey) {
+			const recaptchaToken = await executeReCaptcha(recaptchaAction, recaptchaSiteKey);
+			if (!recaptchaToken) {
+				alert('reCAPTCHA verification failed. Please try again.');
+				return;
+			}
+			formData.append('recaptchaToken', recaptchaToken);
+		}
+
+		startTransition(() => {
+			formAction(formData);
+		});
 	});
 
 	const typeContent = typeContentMap[contactType];
@@ -95,6 +109,7 @@ export function ContactForm({
 
 	return (
 		<div className="flex flex-col items-center">
+			<ReCaptcha />
 			<div className="w-full space-y-8 md:w-8/12">
 				<ContactTypeTabs activeType={contactType} onChange={handleTypeChange} />
 
@@ -143,7 +158,13 @@ export function ContactForm({
 							</label>
 							<input
 								type="text"
-								{...register('name', { required: 'Name is required' })}
+								{...register('name', {
+									required: 'Name is required',
+									maxLength: {
+										value: 100,
+										message: 'Name must be 100 characters or less'
+									}
+								})}
 								className={`input input-bordered w-full ${errors.name ? 'input-error' : ''}`}
 								disabled={isPending}
 							/>
@@ -166,7 +187,7 @@ export function ContactForm({
 									required: 'Email is required',
 									pattern: {
 										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-										message: 'Invalid email address'
+										message: 'Please enter a valid email address'
 									}
 								})}
 								className={`input input-bordered w-full ${errors.email ? 'input-error' : ''}`}
@@ -185,10 +206,20 @@ export function ContactForm({
 							</label>
 							<input
 								type="tel"
-								{...register('phone')}
-								className="input input-bordered w-full"
+								{...register('phone', {
+									maxLength: {
+										value: 20,
+										message: 'Phone must be 20 characters or less'
+									}
+								})}
+								className={`input input-bordered w-full ${errors.phone ? 'input-error' : ''}`}
 								disabled={isPending}
 							/>
+							{errors.phone && (
+								<label className="label">
+									<span className="label-text-alt text-error">{errors.phone.message}</span>
+								</label>
+							)}
 						</div>
 
 						{/* Player-specific fields */}
@@ -376,7 +407,17 @@ export function ContactForm({
 								</span>
 							</label>
 							<textarea
-								{...register('message', { required: 'Message is required' })}
+								{...register('message', {
+									required: 'Message is required',
+									minLength: {
+										value: 10,
+										message: 'Message must be at least 10 characters'
+									},
+									maxLength: {
+										value: 2000,
+										message: 'Message must be 2000 characters or less'
+									}
+								})}
 								className={`textarea textarea-bordered h-32 w-full ${errors.message ? 'textarea-error' : ''}`}
 								disabled={isPending}
 							></textarea>

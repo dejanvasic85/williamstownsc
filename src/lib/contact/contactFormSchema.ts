@@ -7,7 +7,8 @@ const commonFieldsSchema = z.object({
 	message: z
 		.string()
 		.min(10, 'Message must be at least 10 characters')
-		.max(2000, 'Message must be 2000 characters or less')
+		.max(2000, 'Message must be 2000 characters or less'),
+	recaptchaToken: z.string().optional()
 });
 
 export const playerFormSchema = commonFieldsSchema.extend({
