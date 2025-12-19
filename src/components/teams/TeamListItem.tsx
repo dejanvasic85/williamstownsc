@@ -1,8 +1,8 @@
-import { PortableTextContent } from '@/components/content/PortableTextContent';
-import type { Team } from '@/types/team';
-import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
+import { PortableTextContent } from '@/components/content/PortableTextContent';
+import type { Team } from '@/types/team';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
 
 interface TeamListItemProps {

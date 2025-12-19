@@ -1,7 +1,7 @@
+import Image from 'next/image';
+import clsx from 'clsx';
 import { PageContainer } from '@/components/layout';
 import { getAllSponsors } from '@/lib/content';
-import clsx from 'clsx';
-import Image from 'next/image';
 
 export default async function SponsorsPage() {
 	const sponsors = await getAllSponsors();

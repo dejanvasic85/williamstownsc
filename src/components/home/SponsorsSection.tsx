@@ -1,6 +1,6 @@
-import { getFeaturedSponsors } from '@/lib/content';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getFeaturedSponsors } from '@/lib/content';
 
 export async function SponsorsSection() {
 	const sponsors = await getFeaturedSponsors(3);

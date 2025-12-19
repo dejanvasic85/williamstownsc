@@ -1,9 +1,9 @@
 'use client';
 
-import { Icon, type IconProps } from '@/components/Icon';
-import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
+import { Icon, type IconProps } from '@/components/Icon';
 
 type NavItem = {
 	name: string;

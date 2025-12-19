@@ -1,12 +1,12 @@
 'use server';
 
+import { headers } from 'next/headers';
 import { getClientConfig } from '@/lib/config';
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
-import { headers } from 'next/headers';
 
 export type FormState = {
 	success: boolean;

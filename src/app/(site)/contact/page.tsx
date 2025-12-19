@@ -1,9 +1,9 @@
+import { type Metadata } from 'next';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { PageContainer } from '@/components/layout';
-import { contactTypes, type ContactType } from '@/lib/contact/contactEmail';
+import { type ContactType, contactTypes } from '@/lib/contact/contactEmail';
 import { getContactPageData, getPageMetadata } from '@/lib/content/page';
 import { getActivePrograms } from '@/sanity/services/programService';
-import { type Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const metadata = await getPageMetadata('contactPage');

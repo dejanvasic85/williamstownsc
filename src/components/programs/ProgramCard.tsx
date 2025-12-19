@@ -1,6 +1,6 @@
-import type { PortableTextBlock } from '@portabletext/types';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { PortableTextBlock } from '@portabletext/types';
 import { PortableTextContent } from '../content/PortableTextContent';
 
 interface ProgramCardProps {

@@ -1,5 +1,5 @@
-import { ShieldCheck, UserPlus } from 'lucide-react';
 import Link from 'next/link';
+import { ShieldCheck, UserPlus } from 'lucide-react';
 
 export function ExpressionOfInterestSection() {
 	return (

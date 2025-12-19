@@ -1,13 +1,13 @@
 'use client';
 
-import { Icon } from '@/components/Icon';
-import { navItems } from '@/lib/navigation';
-import clsx from 'clsx';
-import { ChevronDown, MapPin, Search } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+import { ChevronDown, MapPin, Search } from 'lucide-react';
+import { Icon } from '@/components/Icon';
+import { navItems } from '@/lib/navigation';
 
 type DesktopNavbarProps = {
 	logoUrl?: string;

@@ -668,6 +668,10 @@ const posts = await client.fetch<BlogPost[]>(query);
 ```typescript
 // lib/sanity/image.ts
 import imageUrlBuilder from '@sanity/image-url';
+
+// Usage:
+import { urlFor } from '@/lib/sanity/image';
+
 import { client } from './client';
 
 const builder = imageUrlBuilder(client);
@@ -675,9 +679,6 @@ const builder = imageUrlBuilder(client);
 export function urlFor(source: any) {
 	return builder.image(source);
 }
-
-// Usage:
-import { urlFor } from '@/lib/sanity/image';
 
 const imageUrl = urlFor(post.mainImage).width(800).height(600).fit('crop').url();
 ```
@@ -1065,6 +1066,9 @@ export const client = createClient({
 ### Next.js Caching
 
 ```typescript
+// On-demand revalidation
+import { revalidateTag } from 'next/cache';
+
 // Fetch with caching
 const posts = await client.fetch(
 	query,
@@ -1077,9 +1081,6 @@ const posts = await client.fetch(
 		}
 	}
 );
-
-// On-demand revalidation
-import { revalidateTag } from 'next/cache';
 
 export async function POST(request: Request) {
 	revalidateTag('posts');

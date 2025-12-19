@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, type ReactNode } from 'react';
+import { type ReactNode, createContext } from 'react';
 import type { ClientConfig } from '../config';
 
 const ConfigContext = createContext<ClientConfig | null>(null);

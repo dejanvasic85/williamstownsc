@@ -1,10 +1,10 @@
 'use client';
 
-import { TransformedNewsArticle } from '@/lib/content';
-import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+import { TransformedNewsArticle } from '@/lib/content';
 
 interface HeroCarouselProps {
 	articles: TransformedNewsArticle[];

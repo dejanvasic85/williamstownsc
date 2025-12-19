@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { CoachCard } from '@/components/teams/CoachCard';
@@ -6,8 +8,6 @@ import { teamDetailQuery } from '@/lib/content/teamDetail';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 
 interface TeamDetailPageProps {
 	params: Promise<{ slug: string }>;

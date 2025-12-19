@@ -1,4 +1,4 @@
-import { defineField, type Rule } from 'sanity';
+import { type Rule, defineField } from 'sanity';
 
 /**
  * Common page heading field (H1 displayed on page and used in Studio preview)

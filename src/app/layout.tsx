@@ -1,8 +1,8 @@
-import { getClientConfig } from '@/lib/config';
-import { ConfigProvider } from '@/lib/providers/ConfigProvider';
-import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
+import clsx from 'clsx';
+import { getClientConfig } from '@/lib/config';
+import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import './globals.css';
 
 const inter = Inter({
