@@ -17,6 +17,9 @@ declare global {
 let recaptchaReady = false;
 let readyPromise: Promise<void> | null = null;
 
+const maxAttempts = 100; // ~10 seconds with 100ms interval
+const pollIntervalMs = 100;
+
 function waitForRecaptcha(): Promise<void> {
 	if (recaptchaReady) {
 		return Promise.resolve();
@@ -26,16 +29,26 @@ function waitForRecaptcha(): Promise<void> {
 		return readyPromise;
 	}
 
-	readyPromise = new Promise((resolve) => {
+	readyPromise = new Promise((resolve, reject) => {
+		let attempts = 0;
+
 		const checkReady = () => {
 			if (window.grecaptcha?.enterprise) {
 				window.grecaptcha.enterprise.ready(() => {
 					recaptchaReady = true;
 					resolve();
 				});
-			} else {
-				setTimeout(checkReady, 100);
+				return;
 			}
+
+			attempts += 1;
+			if (attempts > maxAttempts) {
+				readyPromise = null;
+				reject(new Error('reCAPTCHA script failed to load within the expected time.'));
+				return;
+			}
+
+			setTimeout(checkReady, pollIntervalMs);
 		};
 		checkReady();
 	});

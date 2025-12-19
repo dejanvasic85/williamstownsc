@@ -74,7 +74,7 @@ export async function verifyRecaptchaToken(
 			console.error('reCAPTCHA API error:', response.status, response.statusText);
 			return {
 				success: false,
-				error: 'Failed to verify reCAPTCHA token'
+				error: 'reCAPTCHA service unavailable'
 			};
 		}
 
@@ -123,9 +123,15 @@ export async function verifyRecaptchaToken(
 		};
 	} catch (error) {
 		console.error('reCAPTCHA verification error:', error);
+
+		let errorMessage = 'reCAPTCHA verification failed';
+		if (error instanceof Error && error.message) {
+			errorMessage = `${errorMessage}: ${error.message}`;
+		}
+
 		return {
 			success: false,
-			error: 'reCAPTCHA verification failed'
+			error: errorMessage
 		};
 	}
 }

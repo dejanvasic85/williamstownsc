@@ -92,9 +92,11 @@ export function ContactForm({
 
 		if (recaptchaSiteKey) {
 			const recaptchaToken = await executeReCaptcha(recaptchaAction, recaptchaSiteKey);
-			if (recaptchaToken) {
-				formData.append('recaptchaToken', recaptchaToken);
+			if (!recaptchaToken) {
+				alert('reCAPTCHA verification failed. Please try again.');
+				return;
 			}
+			formData.append('recaptchaToken', recaptchaToken);
 		}
 
 		startTransition(() => {
