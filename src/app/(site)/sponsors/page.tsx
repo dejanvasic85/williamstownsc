@@ -55,13 +55,13 @@ export default async function SponsorsPage() {
 									)}
 								</div>
 
-								{/* Image - Always order-2 on mobile (bottom), alternates on desktop */}
+								{/* Logo - Always order-2 on mobile (bottom), alternates on desktop */}
 								<div
-									className={`order-2 w-full md:h-full md:w-2/5 ${
+									className={`order-2 flex w-full items-center justify-center p-6 md:w-2/5 md:p-8 ${
 										isEven ? 'md:order-1' : 'md:order-2'
 									}`}
 								>
-									<div className="mx-auto mb-8 aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:hidden">
+									<div className="aspect-square w-48 overflow-hidden rounded-full border-2 border-gray-200 bg-white p-6 shadow-lg md:w-56 xl:w-64">
 										<Image
 											src={sponsor.logo.url}
 											alt={sponsor.logo.alt || `${sponsor.name} logo`}
@@ -70,13 +70,6 @@ export default async function SponsorsPage() {
 											className="h-full w-full object-contain"
 										/>
 									</div>
-									<Image
-										src={sponsor.logo.url}
-										alt={sponsor.logo.alt || `${sponsor.name} logo`}
-										width={400}
-										height={300}
-										className="hidden h-full w-full object-cover md:block"
-									/>
 								</div>
 							</div>
 						</div>
