@@ -1,5 +1,6 @@
 'use server';
 
+import { getClientConfig } from '@/lib/config';
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
@@ -34,11 +35,11 @@ export async function submitContactForm(
 		const data = validationResult.data;
 
 		// Verify reCAPTCHA token - required when reCAPTCHA is configured
-		const recaptchaEnabled = !!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-		const recaptchaToken = formData.get('recaptchaToken') as string | null;
+		const clientConfig = getClientConfig();
+		const recaptchaEnabled = !!clientConfig.recaptchaSiteKey;
 
 		if (recaptchaEnabled) {
-			if (!recaptchaToken) {
+			if (!data.recaptchaToken) {
 				return {
 					success: false,
 					message: 'Security verification failed. Please try again.',
@@ -54,7 +55,7 @@ export async function submitContactForm(
 				undefined;
 
 			const recaptchaResult = await verifyRecaptchaToken(
-				recaptchaToken,
+				data.recaptchaToken,
 				recaptchaAction,
 				userAgent,
 				ipAddress

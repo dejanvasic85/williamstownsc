@@ -4,7 +4,7 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { executeReCaptcha, ReCaptcha } from '@/components/ReCaptcha';
 import { ContactType } from '@/lib/contact/contactEmail';
 import { useConfig } from '@/lib/hooks/useConfig';
-import { useActionState, useEffect, useState } from 'react';
+import { useActionState, useEffect, useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormState, submitContactForm } from './actions';
 import { ContactTypeTabs } from './ContactTypeTabs';
@@ -54,10 +54,8 @@ export function ContactForm({
 }: ContactFormProps) {
 	const { recaptchaSiteKey } = useConfig();
 	const [contactType, setContactType] = useState<ContactType>(initialType);
-	const [state, formAction, isPending] = useActionState<FormState | null, FormData>(
-		submitContactForm,
-		null
-	);
+	const [isPending, startTransition] = useTransition();
+	const [state, formAction] = useActionState<FormState | null, FormData>(submitContactForm, null);
 
 	const defaultProgramId = initialProgramName
 		? programs.find((p) => p.name === initialProgramName)?._id
@@ -100,7 +98,9 @@ export function ContactForm({
 			}
 		}
 
-		formAction(formData);
+		startTransition(() => {
+			formAction(formData);
+		});
 	});
 
 	const typeContent = typeContentMap[contactType];

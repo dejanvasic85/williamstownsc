@@ -1,4 +1,4 @@
-import { getRecaptchaConfig } from '@/lib/config';
+import { getClientConfig, getRecaptchaConfig } from '@/lib/config';
 
 type RecaptchaAssessmentResponse = {
 	tokenProperties?: {
@@ -30,6 +30,7 @@ export async function verifyRecaptchaToken(
 ): Promise<VerificationResult> {
 	try {
 		const { recaptchaSecretKey, googleCloudProjectId } = getRecaptchaConfig();
+		const { recaptchaSiteKey } = getClientConfig();
 
 		const assessmentUrl = `https://recaptchaenterprise.googleapis.com/v1/projects/${googleCloudProjectId}/assessments?key=${recaptchaSecretKey}`;
 
@@ -41,7 +42,7 @@ export async function verifyRecaptchaToken(
 			body: JSON.stringify({
 				event: {
 					token,
-					siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+					siteKey: recaptchaSiteKey,
 					expectedAction,
 					userAgent,
 					userIpAddress: ipAddress
