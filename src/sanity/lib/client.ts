@@ -1,5 +1,5 @@
-import { getClientConfig } from '@/lib/config';
 import { createClient } from 'next-sanity';
+import { getClientConfig } from '@/lib/config';
 
 const config = getClientConfig();
 

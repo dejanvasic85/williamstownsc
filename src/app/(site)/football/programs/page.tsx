@@ -1,8 +1,8 @@
+import type { Metadata } from 'next';
+import type { PortableTextBlock } from '@portabletext/types';
 import { PageContainer } from '@/components/layout';
 import { ProgramCard } from '@/components/programs/ProgramCard';
 import { getActivePrograms } from '@/sanity/services/programService';
-import type { PortableTextBlock } from '@portabletext/types';
-import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Football Programs | Williamstown SC',

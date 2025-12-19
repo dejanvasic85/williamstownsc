@@ -1,9 +1,9 @@
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { PortableText } from 'next-sanity';
 import { PageContainer } from '@/components/layout';
 import { getArticleBySlug } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
-import { PortableText } from 'next-sanity';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
 
 interface ArticlePageProps {
 	params: Promise<{ slug: string }>;

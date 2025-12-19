@@ -1,7 +1,7 @@
 'use client';
 
-import { useConfig } from '@/lib/hooks/useConfig';
 import Script from 'next/script';
+import { useConfig } from '@/lib/hooks/useConfig';
 
 declare global {
 	interface Window {

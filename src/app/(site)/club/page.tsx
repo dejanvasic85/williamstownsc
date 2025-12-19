@@ -1,6 +1,6 @@
-import { Icon } from '@/components/Icon';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Icon } from '@/components/Icon';
 
 export const metadata: Metadata = {
 	title: 'Club',

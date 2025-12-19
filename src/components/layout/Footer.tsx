@@ -1,5 +1,5 @@
-import { Icon } from '@/components/Icon';
 import Link from 'next/link';
+import { Icon } from '@/components/Icon';
 
 type FooterProps = {
 	clubName?: string;

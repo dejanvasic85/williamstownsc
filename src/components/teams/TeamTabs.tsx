@@ -1,7 +1,7 @@
 'use client';
 
-import type { TabCategory, TeamsByTab } from '@/types/team';
 import { useState } from 'react';
+import type { TabCategory, TeamsByTab } from '@/types/team';
 import { TeamListItem } from './TeamListItem';
 
 interface TeamTabsProps {

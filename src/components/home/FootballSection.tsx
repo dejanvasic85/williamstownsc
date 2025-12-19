@@ -1,11 +1,11 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import type { PortableTextBlock } from '@portabletext/types';
+import { Calendar, Users } from 'lucide-react';
 import { GradientBackground } from '@/components/ui';
 import { seniorTeamsQuery } from '@/lib/content/seniorTeams';
 import { client } from '@/sanity/lib/client';
 import { getFeaturedPrograms } from '@/sanity/services/programService';
-import type { PortableTextBlock } from '@portabletext/types';
-import { Calendar, Users } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 interface SeniorTeam {
 	_id: string;

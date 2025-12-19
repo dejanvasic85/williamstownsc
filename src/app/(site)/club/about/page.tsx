@@ -1,7 +1,7 @@
+import { type Metadata } from 'next';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
-import { type Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const metadata = await getPageMetadata('aboutPage');

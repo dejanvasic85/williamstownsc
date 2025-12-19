@@ -1,10 +1,10 @@
 'use client';
 
-import { schemaTypes } from '@/sanity/schema/index';
-import { structure } from '@/sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { NextStudio } from 'next-sanity/studio';
 import { structureTool } from 'sanity/structure';
+import { schemaTypes } from '@/sanity/schema/index';
+import { structure } from '@/sanity/structure';
 
 export default function StudioPage() {
 	return (

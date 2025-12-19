@@ -1,5 +1,5 @@
-import type { Coach } from '@/types/team';
 import Image from 'next/image';
+import type { Coach } from '@/types/team';
 
 interface CoachingStaffAvatarsProps {
 	coaches: Coach[];

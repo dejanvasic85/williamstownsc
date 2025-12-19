@@ -1,8 +1,7 @@
+import type { Metadata } from 'next';
 import { Footer, Navbar } from '@/components/layout';
-
 import { getSiteSettings } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
-import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
 	const siteSettings = await getSiteSettings();

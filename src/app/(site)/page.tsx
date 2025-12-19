@@ -1,21 +1,21 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { MapPin } from 'lucide-react';
+import { Icon } from '@/components/Icon';
 import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
 	SponsorsSection
 } from '@/components/home';
-import { Icon } from '@/components/Icon';
 import { NewsCard } from '@/components/news';
 import {
+	TransformedNewsArticle,
 	getFeaturedArticles,
 	getLatestArticles,
-	getSiteSettings,
-	TransformedNewsArticle
+	getSiteSettings
 } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
-import { MapPin } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export default async function Home() {
 	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([

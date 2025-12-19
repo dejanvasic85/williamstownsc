@@ -1,5 +1,5 @@
-import type { PortableTextBlock } from '@portabletext/types';
 import Image from 'next/image';
+import type { PortableTextBlock } from '@portabletext/types';
 
 interface PlayerCardProps {
 	firstName: string;

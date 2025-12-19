@@ -1,10 +1,10 @@
+import type { Metadata } from 'next';
 import { PageContainer } from '@/components/layout';
 import { TeamTabs } from '@/components/teams/TeamTabs';
 import { teamsQuery } from '@/lib/content/teams';
 import { groupTeamsByTab } from '@/lib/teamService';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
-import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Football Teams | Williamstown SC',

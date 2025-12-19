@@ -1,7 +1,7 @@
+import { toPlainText } from '@portabletext/toolkit';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { Program, SiteSettings } from '@/sanity/sanity.types';
-import { toPlainText } from '@portabletext/toolkit';
 
 export type TransformedProgram = Pick<Program, '_id'> & {
 	name: string;

@@ -1,5 +1,5 @@
-import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
+import { urlFor } from '@/sanity/lib/image';
 
 interface TextChild {
 	_key?: string;

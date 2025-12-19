@@ -1,5 +1,5 @@
-import type { Team } from '@/types/team';
 import Image from 'next/image';
+import type { Team } from '@/types/team';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
 
 interface TeamCardProps {
