@@ -157,7 +157,13 @@ export function ContactForm({
 							</label>
 							<input
 								type="text"
-								{...register('name', { required: 'Name is required' })}
+								{...register('name', {
+									required: 'Name is required',
+									maxLength: {
+										value: 100,
+										message: 'Name must be 100 characters or less'
+									}
+								})}
 								className={`input input-bordered w-full ${errors.name ? 'input-error' : ''}`}
 								disabled={isPending}
 							/>
@@ -180,7 +186,7 @@ export function ContactForm({
 									required: 'Email is required',
 									pattern: {
 										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-										message: 'Invalid email address'
+										message: 'Please enter a valid email address'
 									}
 								})}
 								className={`input input-bordered w-full ${errors.email ? 'input-error' : ''}`}
@@ -199,10 +205,20 @@ export function ContactForm({
 							</label>
 							<input
 								type="tel"
-								{...register('phone')}
-								className="input input-bordered w-full"
+								{...register('phone', {
+									maxLength: {
+										value: 20,
+										message: 'Phone must be 20 characters or less'
+									}
+								})}
+								className={`input input-bordered w-full ${errors.phone ? 'input-error' : ''}`}
 								disabled={isPending}
 							/>
+							{errors.phone && (
+								<label className="label">
+									<span className="label-text-alt text-error">{errors.phone.message}</span>
+								</label>
+							)}
 						</div>
 
 						{/* Player-specific fields */}
@@ -390,7 +406,17 @@ export function ContactForm({
 								</span>
 							</label>
 							<textarea
-								{...register('message', { required: 'Message is required' })}
+								{...register('message', {
+									required: 'Message is required',
+									minLength: {
+										value: 10,
+										message: 'Message must be at least 10 characters'
+									},
+									maxLength: {
+										value: 2000,
+										message: 'Message must be 2000 characters or less'
+									}
+								})}
 								className={`textarea textarea-bordered h-32 w-full ${errors.message ? 'textarea-error' : ''}`}
 								disabled={isPending}
 							></textarea>
