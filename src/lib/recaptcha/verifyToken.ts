@@ -51,13 +51,12 @@ export async function verifyRecaptchaToken(
 		const { recaptchaSecretKey, googleCloudProjectId, riskScoreThreshold } = getRecaptchaConfig();
 		const { recaptchaSiteKey } = getClientConfig();
 
-		const assessmentUrl = `https://recaptchaenterprise.googleapis.com/v1/projects/${googleCloudProjectId}/assessments`;
+		const assessmentUrl = `https://recaptchaenterprise.googleapis.com/v1/projects/${googleCloudProjectId}/assessments?key=${recaptchaSecretKey}`;
 
 		const response = await fetch(assessmentUrl, {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `Bearer ${recaptchaSecretKey}`
+				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
 				event: {
