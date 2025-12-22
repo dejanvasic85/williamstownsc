@@ -9,6 +9,7 @@ import { accessibilityPage } from './pages/accessibilityPage';
 import { committeePage } from './pages/committeePage';
 import { contactPage } from './pages/contactPage';
 import { locationsPage } from './pages/locationsPage';
+import { merchandisePage } from './pages/merchandisePage';
 import { policiesPage } from './pages/policiesPage';
 import { privacyPage } from './pages/privacyPage';
 import { termsPage } from './pages/termsPage';
@@ -30,6 +31,7 @@ export const schemaTypes = [
 	committeePage,
 	contactPage,
 	locationsPage,
+	merchandisePage,
 	policiesPage,
 	privacyPage,
 	termsPage,
