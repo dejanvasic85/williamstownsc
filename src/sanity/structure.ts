@@ -29,6 +29,9 @@ export const structure = (S: StructureBuilder) =>
 								.title('Locations')
 								.child(S.document().schemaType('locationsPage').documentId('locationsPage')),
 							S.listItem()
+								.title('Merchandise')
+								.child(S.document().schemaType('merchandisePage').documentId('merchandisePage')),
+							S.listItem()
 								.title('Policies & Regulations')
 								.child(S.document().schemaType('policiesPage').documentId('policiesPage')),
 							S.divider(),
@@ -54,6 +57,7 @@ export const structure = (S: StructureBuilder) =>
 						'contactPage',
 						'committeePage',
 						'locationsPage',
+						'merchandisePage',
 						'policiesPage',
 						'privacyPage',
 						'termsPage',

@@ -6,6 +6,7 @@ import type {
 	CommitteePage,
 	ContactPage,
 	LocationsPage,
+	MerchandisePage,
 	PoliciesPage,
 	PrivacyPage,
 	SiteSettings,
@@ -18,6 +19,7 @@ export type PageName =
 	| 'committeePage'
 	| 'contactPage'
 	| 'locationsPage'
+	| 'merchandisePage'
 	| 'policiesPage'
 	| 'privacyPage'
 	| 'termsPage';
@@ -28,6 +30,7 @@ type PageType =
 	| CommitteePage
 	| ContactPage
 	| LocationsPage
+	| MerchandisePage
 	| PoliciesPage
 	| PrivacyPage
 	| TermsPage;

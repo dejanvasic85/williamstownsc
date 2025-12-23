@@ -11,9 +11,16 @@ type PageContainerProps = {
 		url: string;
 		alt?: string;
 	};
+	layout?: 'full-width' | 'article';
 };
 
-export function PageContainer({ children, heading, intro, featuredImage }: PageContainerProps) {
+export function PageContainer({
+	children,
+	heading,
+	intro,
+	featuredImage,
+	layout = 'full-width'
+}: PageContainerProps) {
 	return (
 		<div
 			className={clsx(
@@ -22,7 +29,7 @@ export function PageContainer({ children, heading, intro, featuredImage }: PageC
 				'lg:py-12 lg:pt-(--navbar-total-height-desktop) lg:pb-12'
 			)}
 		>
-			<div className="container mx-auto px-4">
+			<div className={clsx('mx-auto px-4', layout === 'article' ? 'max-w-4xl' : 'container')}>
 				{heading && (
 					<div className="mb-6">
 						<div className="border-secondary mb-4 flex items-center gap-3 border-b-4 pb-4">
