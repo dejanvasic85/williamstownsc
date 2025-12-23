@@ -26,8 +26,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 	});
 
 	return (
-		<PageContainer>
-			<article className="mx-auto max-w-4xl">
+		<PageContainer layout="article">
+			<article>
 				<div className="mb-8">
 					<h1 className="mb-4 text-3xl font-bold lg:text-4xl">{article.title}</h1>
 					<time dateTime={publishedDate.toISOString()} className="text-base-content/60 text-lg">

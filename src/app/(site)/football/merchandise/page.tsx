@@ -27,6 +27,7 @@ export default async function FootballMerchandisePage() {
 			heading={pageData.heading}
 			featuredImage={pageData.featuredImage}
 			intro={pageData.introduction}
+			layout="article"
 		>
 			{pageData.body && pageData.body.length > 0 && <PortableTextContent blocks={pageData.body} />}
 		</PageContainer>
