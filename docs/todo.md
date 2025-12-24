@@ -17,7 +17,7 @@ The original website is at https://www.williamstownsc.com/
 - [ ] SEO
 - [ ] PWA setup and install dialog
 - [x] Custom not found page
-- [ ] Custom error page
+- [x] Custom error page
 - [ ] Google structured data
 - [ ] Bot detection
 - [ ] Error handling (what happens if we cannot fetch content)
