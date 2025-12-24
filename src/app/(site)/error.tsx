@@ -31,7 +31,7 @@ export default function Error({ error, reset }: ErrorProps) {
 				</div>
 
 				<div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-					<button onClick={() => reset()} className="btn btn-primary gap-2">
+					<button type="button" onClick={() => reset()} className="btn btn-primary gap-2">
 						<RotateCcw className="h-5 w-5" />
 						Try Again
 					</button>

@@ -1,6 +1,19 @@
 import type { Metadata } from 'next';
+import { Inter, Poppins } from 'next/font/google';
 import Link from 'next/link';
+import clsx from 'clsx';
 import { Home } from 'lucide-react';
+
+const inter = Inter({
+	variable: '--font-inter',
+	subsets: ['latin']
+});
+
+const poppins = Poppins({
+	variable: '--font-poppins',
+	weight: ['400', '500', '600', '700', '800'],
+	subsets: ['latin']
+});
 
 export const metadata: Metadata = {
 	title: '404 - Page Not Found | Williamstown SC',
@@ -10,7 +23,10 @@ export const metadata: Metadata = {
 export default function NotFound() {
 	return (
 		<html lang="en">
-			<body className="bg-base-200">
+			<body
+				data-theme="williamstown"
+				className={clsx(inter.variable, poppins.variable, 'bg-base-200 antialiased')}
+			>
 				<div className="flex min-h-screen items-center justify-center px-4 py-16">
 					<div className="text-center">
 						<div className="mb-8">

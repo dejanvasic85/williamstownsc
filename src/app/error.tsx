@@ -1,8 +1,21 @@
 'use client';
 
+import { Inter, Poppins } from 'next/font/google';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import clsx from 'clsx';
 import { Home, RotateCcw } from 'lucide-react';
+
+const inter = Inter({
+	variable: '--font-inter',
+	subsets: ['latin']
+});
+
+const poppins = Poppins({
+	variable: '--font-poppins',
+	weight: ['400', '500', '600', '700', '800'],
+	subsets: ['latin']
+});
 
 type ErrorProps = {
 	error: Error & { digest?: string };
@@ -17,7 +30,10 @@ export default function Error({ error, reset }: ErrorProps) {
 
 	return (
 		<html lang="en">
-			<body className="bg-base-200">
+			<body
+				data-theme="williamstown"
+				className={clsx(inter.variable, poppins.variable, 'bg-base-200 antialiased')}
+			>
 				<div className="flex min-h-screen items-center justify-center px-4 py-16">
 					<div className="text-center">
 						<div className="mb-8">
@@ -33,7 +49,7 @@ export default function Error({ error, reset }: ErrorProps) {
 						</div>
 
 						<div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-							<button onClick={() => reset()} className="btn btn-primary gap-2">
+							<button type="button" onClick={() => reset()} className="btn btn-primary gap-2">
 								<RotateCcw className="h-5 w-5" />
 								Try Again
 							</button>
