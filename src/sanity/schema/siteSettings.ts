@@ -260,6 +260,19 @@ export const siteSettings = defineType({
 						}).warning('GA4 ID should be in format G-XXXXXXXXXX')
 				})
 			]
+		}),
+
+		// Website URL for canonical
+		defineField({
+			name: 'canonicalUrl',
+			title: 'Canonical URL',
+			type: 'url',
+			description: 'The canonical URL of your site used for SEO and social sharing',
+			placeholder: 'https://www.williamstownsc.com/',
+			validation: (Rule) =>
+				Rule.uri({
+					scheme: ['https']
+				}).required()
 		})
 	],
 	preview: {

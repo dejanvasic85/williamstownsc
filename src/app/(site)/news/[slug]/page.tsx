@@ -1,20 +1,75 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { PortableText } from 'next-sanity';
 import { PageContainer } from '@/components/layout';
-import { getArticleBySlug } from '@/lib/content';
+import { getArticleBySlug, getSiteSettings } from '@/lib/content';
+import { buildUrl, getRequestBaseUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
 
 interface ArticlePageProps {
 	params: Promise<{ slug: string }>;
 }
 
-export default async function ArticlePage({ params }: ArticlePageProps) {
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
 	const { slug } = await params;
 	const article = await getArticleBySlug(slug);
+	const siteSettings = await getSiteSettings();
 
 	if (!article) {
 		notFound();
+	}
+
+	if (!siteSettings.canonicalUrl) {
+		throw new Error('canonicalUrl is required');
+	}
+
+	const articleCanonicalUrl = buildUrl(siteSettings.canonicalUrl, 'news', article.slug);
+	const requestBaseUrl = await getRequestBaseUrl();
+	const articleRequestUrl = buildUrl(requestBaseUrl, 'news', article.slug);
+
+	return {
+		title: article.title,
+		description: article.excerpt,
+		alternates: {
+			canonical: articleCanonicalUrl
+		},
+		openGraph: {
+			type: 'article',
+			siteName: siteSettings.clubName,
+			title: article.title,
+			description: article.excerpt,
+			url: articleRequestUrl,
+			publishedTime: article.publishedAt,
+			images: [
+				{
+					url: article.featuredImage.url,
+					width: 1920,
+					height: 1080,
+					alt: article.featuredImage.alt || article.title
+				}
+			]
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: article.title,
+			description: article.excerpt,
+			images: [article.featuredImage.url]
+		}
+	};
+}
+
+export default async function ArticlePage({ params }: ArticlePageProps) {
+	const { slug } = await params;
+	const article = await getArticleBySlug(slug);
+	const siteSettings = await getSiteSettings();
+
+	if (!article) {
+		notFound();
+	}
+
+	if (!siteSettings.canonicalUrl) {
+		throw new Error('canonicalUrl is required');
 	}
 
 	const publishedDate = new Date(article.publishedAt);
@@ -25,8 +80,34 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 		day: 'numeric'
 	});
 
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'NewsArticle',
+		headline: article.title,
+		description: article.excerpt,
+		image: article.featuredImage.url,
+		datePublished: article.publishedAt,
+		dateModified: article.publishedAt,
+		author: {
+			'@type': 'Organization',
+			name: siteSettings.clubName
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: siteSettings.clubName,
+			logo: {
+				'@type': 'ImageObject',
+				url: buildUrl(siteSettings.canonicalUrl, 'logo.png')
+			}
+		}
+	};
+
 	return (
 		<PageContainer layout="article">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			<article>
 				<div className="mb-8">
 					<h1 className="mb-4 text-3xl font-bold lg:text-4xl">{article.title}</h1>

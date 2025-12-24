@@ -61,7 +61,7 @@ export default function MenuPage() {
 								<span className="text-base-content block text-xl font-bold">{link.name}</span>
 								<span className="text-base-content/60 block text-sm">{link.description}</span>
 							</div>
-							<ArrowRight className="text-base-content/40 h-6 w-6 flex-shrink-0" />
+							<ArrowRight className="text-base-content/40 h-6 w-6 shrink-0" />
 						</Link>
 					))}
 				</nav>

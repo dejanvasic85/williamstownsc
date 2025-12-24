@@ -47,7 +47,7 @@ export function ProgramCard({
 
 	return (
 		<div
-			className={`overflow-hidden rounded-3xl bg-gradient-to-br ${gradientClass} text-white shadow-lg`}
+			className={`overflow-hidden rounded-3xl bg-linear-to-br ${gradientClass} text-white shadow-lg`}
 		>
 			{imageUrl && (
 				<div className="relative h-48 w-full">
