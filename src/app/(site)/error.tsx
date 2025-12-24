@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { Home, RotateCcw } from 'lucide-react';
 
 type ErrorProps = {
@@ -10,11 +9,6 @@ type ErrorProps = {
 };
 
 export default function Error({ error, reset }: ErrorProps) {
-	useEffect(() => {
-		// Log the error to an error reporting service
-		console.error('Error:', error);
-	}, [error]);
-
 	return (
 		<div className="bg-base-200 flex min-h-[calc(100vh-var(--navbar-total-height-desktop))] items-center justify-center px-4 py-16">
 			<div className="text-center">
