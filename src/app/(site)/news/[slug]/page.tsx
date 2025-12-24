@@ -68,6 +68,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 		notFound();
 	}
 
+	if (!siteSettings.canonicalUrl) {
+		throw new Error('canonicalUrl is required');
+	}
+
 	const publishedDate = new Date(article.publishedAt);
 	const formattedDate = publishedDate.toLocaleDateString('en-AU', {
 		weekday: 'long',
