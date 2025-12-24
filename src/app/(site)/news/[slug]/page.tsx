@@ -1,15 +1,17 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { PortableText } from 'next-sanity';
 import { PageContainer } from '@/components/layout';
 import { getArticleBySlug, getSiteSettings } from '@/lib/content';
+import { buildUrl, getRequestBaseUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
 
 interface ArticlePageProps {
 	params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: ArticlePageProps) {
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
 	const { slug } = await params;
 	const article = await getArticleBySlug(slug);
 	const siteSettings = await getSiteSettings();
@@ -18,20 +20,22 @@ export async function generateMetadata({ params }: ArticlePageProps) {
 		notFound();
 	}
 
-	const articleUrl = `https://williamstownsc.com/news/${article.slug}`;
+	const articleCanonicalUrl = buildUrl(siteSettings.canonicalUrl, 'news', article.slug);
+	const requestBaseUrl = await getRequestBaseUrl();
+	const articleRequestUrl = buildUrl(requestBaseUrl, 'news', article.slug);
 
 	return {
 		title: article.title,
 		description: article.excerpt,
 		alternates: {
-			canonical: articleUrl
+			canonical: articleCanonicalUrl
 		},
 		openGraph: {
 			type: 'article',
 			siteName: siteSettings.clubName,
 			title: article.title,
 			description: article.excerpt,
-			url: articleUrl,
+			url: articleRequestUrl,
 			publishedTime: article.publishedAt,
 			images: [
 				{
@@ -54,6 +58,7 @@ export async function generateMetadata({ params }: ArticlePageProps) {
 export default async function ArticlePage({ params }: ArticlePageProps) {
 	const { slug } = await params;
 	const article = await getArticleBySlug(slug);
+	const siteSettings = await getSiteSettings();
 
 	if (!article) {
 		notFound();
@@ -76,14 +81,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 		datePublished: article.publishedAt,
 		author: {
 			'@type': 'Organization',
-			name: 'Williamstown Soccer Club'
+			name: siteSettings.clubName
 		},
 		publisher: {
 			'@type': 'Organization',
-			name: 'Williamstown Soccer Club',
+			name: siteSettings.clubName,
 			logo: {
 				'@type': 'ImageObject',
-				url: 'https://williamstownsc.com/logo.png'
+				url: buildUrl(siteSettings.canonicalUrl, 'logo.png')
 			}
 		}
 	};

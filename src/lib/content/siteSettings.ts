@@ -31,7 +31,8 @@ export async function getSiteSettings() {
 			footerText,
 			analytics,
 			locations,
-			contactEmails
+			contactEmails,
+			canonicalUrl
 		}`
 	);
 
