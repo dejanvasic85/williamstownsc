@@ -12,7 +12,7 @@
  * buildUrl('https://example.com', '/news/', '/article-slug/')
  * // => 'https://example.com/news/article-slug'
  */
-export function buildUrl(baseUrl?: string, ...paths: string[]): string {
+export function buildUrl(baseUrl: string, ...paths: string[]): string {
 	if (!baseUrl) {
 		throw new Error('baseUrl is required');
 	}

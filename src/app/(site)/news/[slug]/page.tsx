@@ -20,6 +20,10 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 		notFound();
 	}
 
+	if (!siteSettings.canonicalUrl) {
+		throw new Error('canonicalUrl is required');
+	}
+
 	const articleCanonicalUrl = buildUrl(siteSettings.canonicalUrl, 'news', article.slug);
 	const requestBaseUrl = await getRequestBaseUrl();
 	const articleRequestUrl = buildUrl(requestBaseUrl, 'news', article.slug);
@@ -79,6 +83,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 		description: article.excerpt,
 		image: article.featuredImage.url,
 		datePublished: article.publishedAt,
+		dateModified: article.publishedAt,
 		author: {
 			'@type': 'Organization',
 			name: siteSettings.clubName
