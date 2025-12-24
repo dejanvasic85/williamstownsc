@@ -28,6 +28,7 @@
 - Prefer functional coding style: extract logic into small, named functions rather than inline code
 - Use switch statements instead of long if/else chains when branching on a single value
 - Each Component should declare its own prop types using TypeScript within the same file
+- Never use inline TypeScript types in function parameters - always declare a separate type or interface (e.g., `type MyProps = {...}` not `function MyComponent({ prop }: { prop: string })`)
 - Component files should have constants declared outside the component function
 - Use camelCase for variable and function names
 - Use PascalCase for React component file names
