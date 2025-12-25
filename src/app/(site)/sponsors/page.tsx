@@ -19,6 +19,7 @@ export default async function SponsorsPage() {
 		<PageContainer
 			heading="Our Sponsors"
 			intro="We are grateful for the support of our sponsors who help make our club possible."
+			layout="article"
 		>
 			{/* All Sponsors */}
 			<div className="mb-16 flex flex-col items-center gap-8">
