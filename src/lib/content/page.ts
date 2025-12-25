@@ -67,6 +67,12 @@ export interface PageMetadata {
 			alt?: string;
 		}>;
 	};
+	twitter?: {
+		card: string;
+		title: string;
+		description?: string;
+		images?: string[];
+	};
 	robots?: {
 		index: boolean;
 		follow: boolean;
@@ -233,6 +239,12 @@ export async function getPageMetadata(pageName: PageName): Promise<PageMetadata>
 			title: `${ogTitle} | ${titleSuffix}`,
 			description: ogDescription,
 			images: ogImages
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: `${ogTitle} | ${titleSuffix}`,
+			description: ogDescription,
+			images: ogImages?.map((img) => img.url)
 		},
 		robots: {
 			index: !pageData.seo?.noIndex,

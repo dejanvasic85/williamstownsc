@@ -10,6 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		description: metadata.description,
 		keywords: metadata.keywords,
 		openGraph: metadata.openGraph,
+		twitter: metadata.twitter,
 		robots: metadata.robots
 	};
 }

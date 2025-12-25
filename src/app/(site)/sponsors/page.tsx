@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	return generateStaticMetadata({
 		title: 'Our Sponsors',
 		description:
-			'Meet our valued sponsors and partners who support Williamstown Soccer Club. Explore sponsorship opportunities to connect with our community'
+			'Meet our valued sponsors and partners who support Williamstown Soccer Club. Explore sponsorship opportunities to connect with our community.'
 	});
 }
 

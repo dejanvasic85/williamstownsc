@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	return generateStaticMetadata({
 		title: 'News & Matches',
 		description:
-			'Stay up to date with the latest news, match reports, and updates from Williamstown Soccer Club'
+			'Stay up to date with the latest news, match reports, and updates from Williamstown Soccer Club.'
 	});
 }
 

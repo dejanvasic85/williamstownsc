@@ -6,7 +6,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	return generateStaticMetadata({
 		title: 'Events',
 		description:
-			'Discover upcoming events at Williamstown Soccer Club including community gatherings, fundraisers, and club celebrations'
+			'Discover upcoming events at Williamstown Soccer Club including community gatherings, fundraisers, and club celebrations.'
 	});
 }
 
