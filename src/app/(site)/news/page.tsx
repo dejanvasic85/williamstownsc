@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import { PageContainer } from '@/components/layout';
 import { NewsCard } from '@/components/news';
 import { getAllArticles } from '@/lib/content';
+import { generateStaticMetadata } from '@/lib/metadata/staticMetadata';
+
+export async function generateMetadata(): Promise<Metadata> {
+	return generateStaticMetadata({
+		title: 'News & Matches',
+		description:
+			'Stay up to date with the latest news, match reports, and updates from Williamstown Soccer Club.'
+	});
+}
 
 export default async function NewsPage() {
 	const articles = await getAllArticles(20);

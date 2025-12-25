@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import type {
@@ -54,24 +56,6 @@ export type PageData = Pick<PageType, 'heading' | 'introduction' | 'body' | 'pub
 	};
 	lastUpdated?: string;
 };
-
-export interface PageMetadata {
-	title: string;
-	description?: string;
-	keywords?: string[];
-	openGraph?: {
-		title: string;
-		description?: string;
-		images?: Array<{
-			url: string;
-			alt?: string;
-		}>;
-	};
-	robots?: {
-		index: boolean;
-		follow: boolean;
-	};
-}
 
 export async function getPageData(pageName: PageName): Promise<PageData | null> {
 	const query = `*[_type == $pageName && _id == $pageId][0]{
@@ -179,7 +163,7 @@ export async function getContactPageData() {
 	return data;
 }
 
-export async function getPageMetadata(pageName: PageName): Promise<PageMetadata> {
+export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 	const [pageData, siteSettings] = await Promise.all([
 		getPageData(pageName),
 		client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
@@ -202,41 +186,29 @@ export async function getPageMetadata(pageName: PageName): Promise<PageMetadata>
 	}
 
 	const titleSuffix = siteSettings?.seoDefaults?.titleSuffix || siteSettings?.clubName || '';
-	const title = pageData.seo?.metaTitle
-		? `${pageData.seo.metaTitle} | ${titleSuffix}`
-		: `${pageData.heading} | ${titleSuffix}`;
+	const title = pageData.seo?.metaTitle || pageData.heading || pageName;
+	const description = pageData.seo?.metaDescription || siteSettings?.seoDefaults?.siteDescription;
 
-	const description =
-		pageData.seo?.metaDescription || siteSettings?.seoDefaults?.siteDescription || undefined;
-
-	const ogTitle = pageData.seo?.ogTitle || pageData.seo?.metaTitle || pageData.heading;
-	const ogDescription = pageData.seo?.ogDescription || pageData.seo?.metaDescription || description;
-
-	const ogImages = pageData.seo?.ogImage
-		? [{ url: pageData.seo.ogImage.url, alt: pageData.seo.ogImage.alt }]
+	const ogImage = pageData.seo?.ogImage
+		? { url: pageData.seo.ogImage.url, alt: pageData.seo.ogImage.alt }
 		: pageData.featuredImage
-			? [{ url: pageData.featuredImage.url, alt: pageData.featuredImage.alt }]
+			? { url: pageData.featuredImage.url, alt: pageData.featuredImage.alt }
 			: siteSettings?.seoDefaults?.ogImage
-				? [
-						{
-							url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url(),
-							alt: ''
-						}
-					]
+				? {
+						url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url(),
+						alt: ''
+					}
 				: undefined;
 
-	return {
+	return buildMetadata({
 		title,
 		description,
 		keywords: pageData.seo?.keywords || siteSettings?.seoDefaults?.keywords || undefined,
-		openGraph: {
-			title: `${ogTitle} | ${titleSuffix}`,
-			description: ogDescription,
-			images: ogImages
-		},
+		ogImage,
+		titleSuffix,
 		robots: {
 			index: !pageData.seo?.noIndex,
 			follow: !pageData.seo?.noIndex
 		}
-	};
+	});
 }
