@@ -7,11 +7,17 @@ import type {
 	AccessibilityPage,
 	CommitteePage,
 	ContactPage,
+	EventsPage,
+	HomePage,
 	LocationsPage,
 	MerchandisePage,
+	NewsPage,
 	PoliciesPage,
 	PrivacyPage,
+	ProgramsPage,
 	SiteSettings,
+	SponsorsPage,
+	TeamsPage,
 	TermsPage
 } from '@/sanity/sanity.types';
 
@@ -20,10 +26,16 @@ export type PageName =
 	| 'accessibilityPage'
 	| 'committeePage'
 	| 'contactPage'
+	| 'eventsPage'
+	| 'homePage'
 	| 'locationsPage'
 	| 'merchandisePage'
+	| 'newsPage'
 	| 'policiesPage'
 	| 'privacyPage'
+	| 'programsPage'
+	| 'sponsorsPage'
+	| 'teamsPage'
 	| 'termsPage';
 
 type PageType =
@@ -31,17 +43,19 @@ type PageType =
 	| AccessibilityPage
 	| CommitteePage
 	| ContactPage
+	| EventsPage
+	| HomePage
 	| LocationsPage
 	| MerchandisePage
+	| NewsPage
 	| PoliciesPage
 	| PrivacyPage
+	| ProgramsPage
+	| SponsorsPage
+	| TeamsPage
 	| TermsPage;
 
-export type PageData = Pick<PageType, 'heading' | 'introduction' | 'body' | 'published'> & {
-	featuredImage?: {
-		url: string;
-		alt?: string;
-	};
+export type PageData = {
 	seo?: {
 		metaTitle?: string;
 		metaDescription?: string;
@@ -54,10 +68,20 @@ export type PageData = Pick<PageType, 'heading' | 'introduction' | 'body' | 'pub
 		};
 		noIndex?: boolean;
 	};
+};
+
+export type EditablePageData = PageData & {
+	heading?: string;
+	introduction?: unknown[];
+	body?: unknown[];
+	featuredImage?: {
+		url: string;
+		alt?: string;
+	};
 	lastUpdated?: string;
 };
 
-export async function getPageData(pageName: PageName): Promise<PageData | null> {
+export async function getPageData(pageName: PageName): Promise<EditablePageData | null> {
 	const query = `*[_type == $pageName && _id == $pageId][0]{
 		heading,
 		introduction,
@@ -73,13 +97,12 @@ export async function getPageData(pageName: PageName): Promise<PageData | null> 
 				alt
 			}
 		},
-		published,
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<PageData>(query, { pageName, pageId: pageName });
+	const data = await client.fetch<EditablePageData>(query, { pageName, pageId: pageName });
 
-	if (!data || !data.published) {
+	if (!data) {
 		return null;
 	}
 
@@ -150,13 +173,12 @@ export async function getContactPageData() {
 		seo {
 			...,
 			ogImage { ..., alt }
-		},
-		published
+		}
 	}`;
 
 	const data = await client.fetch(query);
 
-	if (!data || !data.published) {
+	if (!data) {
 		return null;
 	}
 
@@ -164,8 +186,30 @@ export async function getContactPageData() {
 }
 
 export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
+	// For SEO-only pages (like homePage), query only SEO fields
+	const isSeoOnlyPage = pageName === 'homePage';
+
+	const pageDataQuery = isSeoOnlyPage
+		? `*[_type == $pageName && _id == $pageId][0]{
+			seo {
+				...,
+				ogImage { ..., alt }
+			}
+		}`
+		: `*[_type == $pageName && _id == $pageId][0]{
+			heading,
+			introduction,
+			body,
+			featuredImage { ..., alt },
+			seo {
+				...,
+				ogImage { ..., alt }
+			},
+			lastUpdated
+		}`;
+
 	const [pageData, siteSettings] = await Promise.all([
-		getPageData(pageName),
+		client.fetch<PageData | EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
 		client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
 			clubName,
 			seoDefaults {
@@ -186,13 +230,14 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 	}
 
 	const titleSuffix = siteSettings?.seoDefaults?.titleSuffix || siteSettings?.clubName || '';
-	const title = pageData.seo?.metaTitle || pageData.heading || pageName;
+	const editablePageData = pageData as EditablePageData;
+	const title = pageData.seo?.metaTitle || editablePageData.heading || pageName;
 	const description = pageData.seo?.metaDescription || siteSettings?.seoDefaults?.siteDescription;
 
 	const ogImage = pageData.seo?.ogImage
 		? { url: pageData.seo.ogImage.url, alt: pageData.seo.ogImage.alt }
-		: pageData.featuredImage
-			? { url: pageData.featuredImage.url, alt: pageData.featuredImage.alt }
+		: editablePageData.featuredImage
+			? { url: editablePageData.featuredImage.url, alt: editablePageData.featuredImage.alt }
 			: siteSettings?.seoDefaults?.ogImage
 				? {
 						url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url(),

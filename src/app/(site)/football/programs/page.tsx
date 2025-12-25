@@ -2,14 +2,12 @@ import type { Metadata } from 'next';
 import type { PortableTextBlock } from '@portabletext/types';
 import { PageContainer } from '@/components/layout';
 import { ProgramCard } from '@/components/programs/ProgramCard';
+import { getPageMetadata } from '@/lib/content/page';
 import { getActivePrograms } from '@/sanity/services/programService';
 
-export const metadata: Metadata = {
-	title: 'Football Programs | Williamstown SC',
-	description:
-		'Explore our football programs for all ages. Join Williamstown Soccer Club and develop your skills with our experienced coaches.',
-	keywords: 'football programs, soccer training, youth football, Williamstown SC'
-};
+export async function generateMetadata(): Promise<Metadata> {
+	return getPageMetadata('programsPage');
+}
 
 const gradients = ['purple', 'blue', 'green', 'orange', 'red', 'teal'];
 

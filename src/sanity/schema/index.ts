@@ -4,15 +4,23 @@ import { newsArticle } from './newsArticle';
 import { contactTypeContent } from './objects/contactTypeContent';
 import { seo } from './objects/seo';
 // Pages
-import { aboutPage } from './pages/aboutPage';
-import { accessibilityPage } from './pages/accessibilityPage';
-import { committeePage } from './pages/committeePage';
-import { contactPage } from './pages/contactPage';
-import { locationsPage } from './pages/locationsPage';
-import { merchandisePage } from './pages/merchandisePage';
-import { policiesPage } from './pages/policiesPage';
-import { privacyPage } from './pages/privacyPage';
-import { termsPage } from './pages/termsPage';
+import {
+	aboutPage,
+	accessibilityPage,
+	committeePage,
+	contactPage,
+	eventsPage,
+	homePage,
+	locationsPage,
+	merchandisePage,
+	newsPage,
+	policiesPage,
+	privacyPage,
+	programsPage,
+	sponsorsPage,
+	teamsPage,
+	termsPage
+} from './pages';
 import { person } from './person';
 import { player } from './player';
 import { program } from './program';
@@ -30,10 +38,16 @@ export const schemaTypes = [
 	accessibilityPage,
 	committeePage,
 	contactPage,
+	eventsPage,
+	homePage,
 	locationsPage,
 	merchandisePage,
+	newsPage,
 	policiesPage,
 	privacyPage,
+	programsPage,
+	sponsorsPage,
+	teamsPage,
 	termsPage,
 
 	// Content types

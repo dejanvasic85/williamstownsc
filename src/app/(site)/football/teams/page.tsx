@@ -1,21 +1,15 @@
 import type { Metadata } from 'next';
 import { PageContainer } from '@/components/layout';
 import { TeamTabs } from '@/components/teams/TeamTabs';
+import { getPageMetadata } from '@/lib/content/page';
 import { teamsQuery } from '@/lib/content/teams';
 import { groupTeamsByTab } from '@/lib/teamService';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
 
-export const metadata: Metadata = {
-	title: 'Football Teams | Williamstown SC',
-	description:
-		'Discover all our football teams from seniors to juniors, masters, reserves, and metros. Meet our coaching staff and learn about each team.',
-	openGraph: {
-		title: 'Football Teams | Williamstown SC',
-		description:
-			'Discover all our football teams from seniors to juniors, masters, reserves, and metros. Meet our coaching staff and learn about each team.'
-	}
-};
+export async function generateMetadata(): Promise<Metadata> {
+	return getPageMetadata('teamsPage');
+}
 
 async function getTeams() {
 	try {
