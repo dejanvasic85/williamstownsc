@@ -50,60 +50,6 @@ To run the site locally, follow these steps:
 - Node.js 18+ installed
 - A Sanity account and project set up
 
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Set up environment variables
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```bash
-SANITY_PROJECT_ID=your_project_id
-SANITY_DATASET=production
-SANITY_API_VERSION=2024-01-01
-```
-
-You can find your Sanity project ID in your [Sanity project settings](https://www.sanity.io/manage).
-
-### 3. Run the development server
-
-```bash
-npm run dev
-```
-
-The site will be available at [http://localhost:3003](http://localhost:3003)
-
-### 4. Access Sanity Studio
-
-The Sanity Studio is available at [http://localhost:3003/studio](http://localhost:3003/studio) where you can manage content.
-
-### Available Scripts
-
-- `npm run dev` - Start the development server
-- `npm run build` - Build the production application
-- `npm start` - Start the production server
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run type:check` - Run TypeScript type checking
-- `npm run sanity:typegen` - Generate TypeScript types from Sanity schemas
-- `npm run sanity:deploy` - Deploy Sanity Studio
-- `npm run sanity:build` - Build Sanity Studio
-
-## Deploying
-
-The site is deployed on Vercel. To deploy your own version:
-
-1. Connect your GitHub repository to Vercel
-2. Set up the required environment variables in Vercel:
-   - `SANITY_PROJECT_ID`
-   - `SANITY_DATASET`
-   - `SANITY_API_VERSION` (optional, defaults to 2024-01-01)
-3. Deploy!
-
 ## Content Management
 
 ### Creating Blog Posts
@@ -127,17 +73,6 @@ npm run sanity:typegen
 ```
 
 This will update the TypeScript types to match your schema changes.
-
-## Code Style Guidelines
-
-- Use ES modules (import/export) syntax
-- Destructure imports when possible
-- Use TypeScript for type safety (avoid `any` types)
-- Follow mobile-first responsive design principles
-- Use Tailwind CSS classes instead of inline styles
-- Use camelCase for variables and functions, PascalCase for components
-- Event handlers should use the `handle` prefix (e.g., `handleClick`)
-- Limit components to ~200 lines; split into smaller components as needed
 
 ---
 
