@@ -17,8 +17,20 @@ export const structure = (S: StructureBuilder) =>
 						.title('Pages')
 						.items([
 							S.listItem()
+								.title('Home')
+								.child(S.document().schemaType('homePage').documentId('homePage')),
+							S.listItem()
+								.title('News')
+								.child(S.document().schemaType('newsPage').documentId('newsPage')),
+							S.listItem()
 								.title('About')
 								.child(S.document().schemaType('aboutPage').documentId('aboutPage')),
+							S.listItem()
+								.title('Teams')
+								.child(S.document().schemaType('teamsPage').documentId('teamsPage')),
+							S.listItem()
+								.title('Programs')
+								.child(S.document().schemaType('programsPage').documentId('programsPage')),
 							S.listItem()
 								.title('Contact')
 								.child(S.document().schemaType('contactPage').documentId('contactPage')),
@@ -34,6 +46,12 @@ export const structure = (S: StructureBuilder) =>
 							S.listItem()
 								.title('Policies & Regulations')
 								.child(S.document().schemaType('policiesPage').documentId('policiesPage')),
+							S.listItem()
+								.title('Sponsors')
+								.child(S.document().schemaType('sponsorsPage').documentId('sponsorsPage')),
+							S.listItem()
+								.title('Events')
+								.child(S.document().schemaType('eventsPage').documentId('eventsPage')),
 							S.divider(),
 							S.listItem()
 								.title('Privacy Policy')
@@ -54,14 +72,20 @@ export const structure = (S: StructureBuilder) =>
 					![
 						'siteSettings',
 						'aboutPage',
-						'contactPage',
+						'accessibilityPage',
 						'committeePage',
+						'contactPage',
+						'eventsPage',
+						'homePage',
 						'locationsPage',
 						'merchandisePage',
+						'newsPage',
 						'policiesPage',
 						'privacyPage',
-						'termsPage',
-						'accessibilityPage'
+						'programsPage',
+						'sponsorsPage',
+						'teamsPage',
+						'termsPage'
 					].includes(listItem.getId() ?? '')
 			)
 		]);

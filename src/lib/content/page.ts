@@ -7,11 +7,17 @@ import type {
 	AccessibilityPage,
 	CommitteePage,
 	ContactPage,
+	EventsPage,
+	HomePage,
 	LocationsPage,
 	MerchandisePage,
+	NewsPage,
 	PoliciesPage,
 	PrivacyPage,
+	ProgramsPage,
 	SiteSettings,
+	SponsorsPage,
+	TeamsPage,
 	TermsPage
 } from '@/sanity/sanity.types';
 
@@ -20,10 +26,16 @@ export type PageName =
 	| 'accessibilityPage'
 	| 'committeePage'
 	| 'contactPage'
+	| 'eventsPage'
+	| 'homePage'
 	| 'locationsPage'
 	| 'merchandisePage'
+	| 'newsPage'
 	| 'policiesPage'
 	| 'privacyPage'
+	| 'programsPage'
+	| 'sponsorsPage'
+	| 'teamsPage'
 	| 'termsPage';
 
 type PageType =
@@ -31,10 +43,16 @@ type PageType =
 	| AccessibilityPage
 	| CommitteePage
 	| ContactPage
+	| EventsPage
+	| HomePage
 	| LocationsPage
 	| MerchandisePage
+	| NewsPage
 	| PoliciesPage
 	| PrivacyPage
+	| ProgramsPage
+	| SponsorsPage
+	| TeamsPage
 	| TermsPage;
 
 export type PageData = Pick<PageType, 'heading' | 'introduction' | 'body' | 'published'> & {
