@@ -19,6 +19,7 @@ export default async function SponsorsPage() {
 		<PageContainer
 			heading="Our Sponsors"
 			intro="We are grateful for the support of our sponsors who help make our club possible."
+			layout="article"
 		>
 			{/* All Sponsors */}
 			<div className="mb-16 flex flex-col items-center gap-8">
@@ -27,7 +28,7 @@ export default async function SponsorsPage() {
 					return (
 						<div
 							key={sponsor._id}
-							className="group relative w-full overflow-hidden rounded-3xl bg-white transition-all md:w-8/12"
+							className="group relative w-full overflow-hidden rounded-3xl bg-white transition-all"
 						>
 							<div className="relative flex flex-col items-start md:flex-row">
 								{/* Content - Always order-1 on mobile, alternates on desktop */}
