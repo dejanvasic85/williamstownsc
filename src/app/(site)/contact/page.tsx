@@ -49,7 +49,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 	};
 
 	return (
-		<PageContainer heading={pageData.heading} intro={pageData.introduction} layout="article">
+		<PageContainer heading={pageData.heading} intro={pageData.introduction}>
 			<ContactForm
 				initialType={initialType}
 				initialProgramName={params.name}
