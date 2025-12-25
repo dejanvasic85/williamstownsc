@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getSiteSettings } from '@/lib/content';
+import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { urlFor } from '@/sanity/lib/image';
 
 type StaticMetadataOptions = {
@@ -12,28 +13,19 @@ export async function generateStaticMetadata(options: StaticMetadataOptions): Pr
 	const siteSettings = await getSiteSettings();
 
 	const titleSuffix = siteSettings?.seoDefaults?.titleSuffix || siteSettings?.clubName || '';
-	const fullTitle = `${options.title} | ${titleSuffix}`;
 
-	const ogImageUrl = siteSettings?.seoDefaults?.ogImage
-		? urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url()
+	const ogImage = siteSettings?.seoDefaults?.ogImage
+		? {
+				url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url(),
+				alt: ''
+			}
 		: undefined;
 
-	return {
-		title: fullTitle,
+	return buildMetadata({
+		title: options.title,
 		description: options.description,
 		keywords: options.keywords || siteSettings?.seoDefaults?.keywords,
-		openGraph: {
-			title: fullTitle,
-			description: options.description,
-			images: ogImageUrl ? [{ url: ogImageUrl }] : [],
-			siteName: siteSettings?.clubName || 'Williamstown SC',
-			type: 'website'
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title: fullTitle,
-			description: options.description,
-			images: ogImageUrl ? [ogImageUrl] : []
-		}
-	};
+		ogImage,
+		titleSuffix
+	});
 }
