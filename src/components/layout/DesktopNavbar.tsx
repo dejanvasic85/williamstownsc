@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { ChevronDown, ChevronRight, MapPin, Search } from 'lucide-react';
+import { ChevronDown, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 import { navItems } from '@/lib/navigation';
 
@@ -149,24 +149,12 @@ export function DesktopNavbar({
 											aria-current={isActive || isSubmenuActive ? 'page' : undefined}
 										>
 											{item.name}
-											<span className="relative h-4 w-4">
-												<ChevronRight
-													className={clsx(
-														'absolute h-4 w-4 transition-all duration-200',
-														isDropdownOpen
-															? 'scale-75 rotate-90 opacity-0'
-															: 'scale-100 rotate-0 opacity-100'
-													)}
-												/>
-												<ChevronDown
-													className={clsx(
-														'absolute h-4 w-4 transition-all duration-200',
-														isDropdownOpen
-															? 'scale-100 opacity-100'
-															: 'scale-75 -rotate-90 opacity-0'
-													)}
-												/>
-											</span>
+											<ChevronDown
+												className={clsx(
+													'ml-1 h-4 w-4 transition-transform duration-200',
+													isDropdownOpen ? 'rotate-180' : 'rotate-0'
+												)}
+											/>
 										</button>
 
 										{isDropdownOpen && (
