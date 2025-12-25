@@ -1,7 +1,17 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { PageContainer } from '@/components/layout';
 import { getAllSponsors } from '@/lib/content';
+import { generateStaticMetadata } from '@/lib/metadata/staticMetadata';
+
+export async function generateMetadata(): Promise<Metadata> {
+	return generateStaticMetadata({
+		title: 'Our Sponsors',
+		description:
+			'Meet our valued sponsors and partners who support Williamstown Soccer Club. Explore sponsorship opportunities to connect with our community'
+	});
+}
 
 export default async function SponsorsPage() {
 	const sponsors = await getAllSponsors();

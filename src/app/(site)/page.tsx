@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
@@ -16,6 +17,38 @@ import {
 	getSiteSettings
 } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
+
+export async function generateMetadata(): Promise<Metadata> {
+	const siteSettings = await getSiteSettings();
+
+	const ogImageUrl = siteSettings?.seoDefaults?.ogImage
+		? urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url()
+		: undefined;
+
+	const title = siteSettings?.seoDefaults?.siteTitle || 'Williamstown SC';
+	const description =
+		siteSettings?.seoDefaults?.siteDescription ||
+		'Official website of Williamstown Soccer Club - Building community through soccer with competitive play, skill development, and lifelong friendships';
+
+	return {
+		title,
+		description,
+		keywords: siteSettings?.seoDefaults?.keywords,
+		openGraph: {
+			title,
+			description,
+			images: ogImageUrl ? [{ url: ogImageUrl }] : [],
+			siteName: siteSettings?.clubName || 'Williamstown SC',
+			type: 'website'
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title,
+			description,
+			images: ogImageUrl ? [ogImageUrl] : []
+		}
+	};
+}
 
 export default async function Home() {
 	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([
