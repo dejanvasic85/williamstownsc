@@ -2,24 +2,7 @@ import type { Metadata } from 'next';
 import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import type {
-	AboutPage,
-	AccessibilityPage,
-	CommitteePage,
-	ContactPage,
-	EventsPage,
-	HomePage,
-	LocationsPage,
-	MerchandisePage,
-	NewsPage,
-	PoliciesPage,
-	PrivacyPage,
-	ProgramsPage,
-	SiteSettings,
-	SponsorsPage,
-	TeamsPage,
-	TermsPage
-} from '@/sanity/sanity.types';
+import type { SiteSettings } from '@/sanity/sanity.types';
 
 export type PageName =
 	| 'aboutPage'
@@ -37,23 +20,6 @@ export type PageName =
 	| 'sponsorsPage'
 	| 'teamsPage'
 	| 'termsPage';
-
-type PageType =
-	| AboutPage
-	| AccessibilityPage
-	| CommitteePage
-	| ContactPage
-	| EventsPage
-	| HomePage
-	| LocationsPage
-	| MerchandisePage
-	| NewsPage
-	| PoliciesPage
-	| PrivacyPage
-	| ProgramsPage
-	| SponsorsPage
-	| TeamsPage
-	| TermsPage;
 
 export type PageData = {
 	seo?: {

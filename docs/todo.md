@@ -10,17 +10,18 @@ The original website is at https://www.williamstownsc.com/
 - [x] Configure Daisy theme for Williamstown (light and dark)
 - [x] Layout
   - [x] Navbar (mobile and desktop)
-    - [] Submenu
+    - [x] Submenu
   - [x] Footer
   - [x] Favicon
 - [x] Links to socials
 - [ ] SEO
+- [ ] Accessibility
 - [x] Custom not found page
 - [x] Custom error page
 - Google structured data
-   - [ ] Add organisation  @type": "SportsOrganization" to the root layout
-   - [ ] Refactor the getMetadata because it's atrocious 
-   - [ ] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
+  - [ ] Add organisation @type": "SportsOrganization" to the root layout
+  - [ ] Refactor the getMetadata because it's atrocious
+  - [ ] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [ ] Cache invalidation on content publish
 
 Pages:
@@ -52,12 +53,12 @@ Pages:
   - [x] Bot detection
 - Events
   - [ ] Ticketing integration with Try Booking
-- [ ] Search
 
 ### Nice to have
 
 The following is a list of things we may be not need on initial launch and can come later:
 
+- [ ] Search
 - [ ] Publish news to facebook, instagram
 - [ ] Publishing schedule, results and tables
 - [ ] Senior team match reports with You Tube embed of highlights or full match
