@@ -31,10 +31,7 @@ export default function RootLayout({
 
 	return (
 		<html lang="en">
-			<body
-				data-theme="williamstown"
-				className={clsx(inter.variable, poppins.variable, 'antialiased')}
-			>
+			<body className={clsx(inter.variable, poppins.variable, 'antialiased')}>
 				<ConfigProvider config={config}>{children}</ConfigProvider>
 			</body>
 		</html>

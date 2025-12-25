@@ -42,7 +42,7 @@ export function PlayerCard({
 
 	return (
 		<div
-			className={`relative overflow-hidden rounded-3xl ${containerClass} transition-shadow hover:shadow-xl`}
+			className={`relative overflow-hidden rounded-xl ${containerClass} transition-shadow hover:shadow-xl`}
 		>
 			<div className="relative aspect-4/3 md:aspect-3/4">
 				<Image src={photoUrl} alt={photoAlt} fill className="object-cover" sizes="300px" />

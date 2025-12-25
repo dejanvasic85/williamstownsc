@@ -17,7 +17,10 @@ The original website is at https://www.williamstownsc.com/
 - [ ] SEO
 - [x] Custom not found page
 - [x] Custom error page
-- [ ] Google structured data
+- Google structured data
+   - [ ] Add organisation  @type": "SportsOrganization" to the root layout
+   - [ ] Refactor the getMetadata because it's atrocious 
+   - [ ] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [ ] Cache invalidation on content publish
 
 Pages:
@@ -40,9 +43,9 @@ Pages:
   - [x] Merchandise page
 - Club
   - [x] About and History
-  - [ ] Org, committee members and contacts
+  - [x] Org, committee members and contacts
   - [x] Policies and regulations
-  - [ ] Locations including JT Gray and Digman and their layouts
+  - [x] Locations including JT Gray and Digman and their layouts
   - [x] Sponsors
 - Contact
   - [x] Contact form

@@ -79,6 +79,12 @@ export const siteSettings = defineType({
 							title: 'Map Link',
 							type: 'url',
 							description: 'Google Maps or similar link'
+						},
+						{
+							name: 'mapEmbedUrl',
+							title: 'Map Embed URL',
+							type: 'url',
+							description: 'Google Maps embed URL (Get from Share → Embed a map)'
 						}
 					],
 					preview: {

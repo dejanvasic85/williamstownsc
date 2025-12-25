@@ -109,7 +109,7 @@ export async function FootballSection() {
 							{programs.map((program) => (
 								<div
 									key={program._id}
-									className="card bg-base-100 group relative overflow-hidden shadow-lg transition-all hover:shadow-xl"
+									className="bg-base-100 group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
 								>
 									{program.imageUrl && (
 										<div className="relative h-64 w-full">
