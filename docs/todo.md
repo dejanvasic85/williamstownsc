@@ -15,42 +15,41 @@ The original website is at https://www.williamstownsc.com/
   - [x] Favicon
 - [x] Links to socials
 - [ ] SEO
-- [ ] PWA setup and install dialog
 - [x] Custom not found page
 - [x] Custom error page
 - [ ] Google structured data
-- [ ] Bot detection
-- [ ] Error handling (what happens if we cannot fetch content)
 - [ ] Cache invalidation on content publish
 
 Pages:
 
-- [x] Homepage
+- Homepage
+  - [x] Hero section, news, football and sponsors
   - [ ] Key dates section
-  - [ ] Matche reports (seniors/reserves)
-- [x] News
+  - [ ] Important announcements like ground closures section
+  - [ ] Match reports (seniors/reserves)
+- News
   - [x] Article page
     - [ ] Similar news
   - [ ] Match report page
     - [ ] Previous / next week links
-- [x] Football
+- Football
   - [x] Team listings
     - [x] Seniors, reserves + women with profiles
     - [x] All other teams with coaches details and other useful information like start / end dates
-  - [ ] Programs (Summer programs, Mino roos)
-  - [ ] Merchandise - links to our apparel suppliers
-        Links to OnlySport and Ultra football
-- [x] Sponsors
-- [ ] Club
-  - [ ] About and History
+  - [x] Programs (Summer programs, Mino roos)
+  - [x] Merchandise page
+- Club
+  - [x] About and History
   - [ ] Org, committee members and contacts
-  - [ ] Policies and regulations
+  - [x] Policies and regulations
   - [ ] Locations including JT Gray and Digman and their layouts
-- [ ] Contact
-- [ ] Events
+  - [x] Sponsors
+- Contact
+  - [x] Contact form
+  - [x] Bot detection
+- Events
   - [ ] Ticketing integration with Try Booking
 - [ ] Search
-- [ ] Communicating content structure with non-technical people
 
 ### Nice to have
 
