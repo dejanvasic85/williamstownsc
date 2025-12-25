@@ -1,4 +1,5 @@
 import { coach } from './coach';
+import { committeeMember } from './committeeMember';
 import { newsArticle } from './newsArticle';
 // Objects
 import { contactTypeContent } from './objects/contactTypeContent';
@@ -30,6 +31,7 @@ import { team } from './team';
 
 export const schemaTypes = [
 	// Objects
+	committeeMember,
 	contactTypeContent,
 	seo,
 
