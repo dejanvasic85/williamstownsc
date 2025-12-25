@@ -64,7 +64,17 @@ export const homePage = createPage('homePage', 'Home Page');
 // Editable content pages
 export const aboutPage = createEditablePage('aboutPage', 'About Page');
 export const accessibilityPage = createEditablePage('accessibilityPage', 'Accessibility Statement');
-export const committeePage = createEditablePage('committeePage', 'Committee Page');
+export const committeePage = createEditablePage('committeePage', 'Committee Page', {
+	additionalFields: [
+		{
+			name: 'committeeMembers',
+			title: 'Committee Members',
+			type: 'array',
+			of: [{ type: 'committeeMember' }],
+			description: 'List of committee members'
+		}
+	]
+});
 export const eventsPage = createEditablePage('eventsPage', 'Events Page');
 export const locationsPage = createEditablePage('locationsPage', 'Locations Page');
 export const merchandisePage = createEditablePage('merchandisePage', 'Merchandise Page');
