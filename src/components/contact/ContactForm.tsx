@@ -110,12 +110,12 @@ export function ContactForm({
 	return (
 		<div className="flex flex-col items-center">
 			<ReCaptcha />
-			<div className="w-full space-y-8 md:w-8/12">
+			<div className="w-full space-y-8">
 				<ContactTypeTabs activeType={contactType} onChange={handleTypeChange} />
 
 				{typeContent && (
 					<div className="mb-6">
-						<h2 className="mb-4 text-2xl font-bold">{typeContent.heading}</h2>
+						<h2 className="mb-4 text-lg font-bold">{typeContent.heading}</h2>
 						{typeContent.introduction && <PortableTextContent blocks={typeContent.introduction} />}
 					</div>
 				)}

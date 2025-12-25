@@ -16,5 +16,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function ClubOrganizationsPage() {
-	return <PageContainer heading="Club committee" />;
+	return <PageContainer heading="Club committee" layout="article" />;
 }
