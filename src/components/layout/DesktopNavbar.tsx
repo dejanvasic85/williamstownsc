@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { ChevronDown, MapPin, Search } from 'lucide-react';
+import { ChevronDown, ChevronRight, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 import { navItems } from '@/lib/navigation';
 
@@ -94,7 +94,7 @@ export function DesktopNavbar({
 		<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
 			<div
 				className={clsx(
-					'bg-primary/90 container mx-auto rounded-full px-8 py-4 backdrop-blur-md transition-all duration-300',
+					'bg-primary container mx-auto rounded-full px-8 py-4 transition-all duration-300',
 					isScrolled
 						? 'border-secondary border-2 shadow-[0_0_30px_rgba(198,146,20,0.4)]'
 						: 'border-2 border-transparent shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)]'
@@ -149,38 +149,44 @@ export function DesktopNavbar({
 											aria-current={isActive || isSubmenuActive ? 'page' : undefined}
 										>
 											{item.name}
-											<ChevronDown
-												className={clsx(
-													'h-4 w-4 transition-transform duration-200',
-													isDropdownOpen && 'rotate-180'
-												)}
-											/>
+											<span className="relative h-4 w-4">
+												<ChevronRight
+													className={clsx(
+														'absolute h-4 w-4 transition-all duration-200',
+														isDropdownOpen
+															? 'scale-75 rotate-90 opacity-0'
+															: 'scale-100 rotate-0 opacity-100'
+													)}
+												/>
+												<ChevronDown
+													className={clsx(
+														'absolute h-4 w-4 transition-all duration-200',
+														isDropdownOpen
+															? 'scale-100 opacity-100'
+															: 'scale-75 -rotate-90 opacity-0'
+													)}
+												/>
+											</span>
 										</button>
 
 										{isDropdownOpen && (
 											<ul
 												role="menu"
-												className="absolute top-full left-0 mt-6 flex min-w-40 animate-[dropdownSlide_0.2s_ease-out] flex-col gap-2"
+												className="bg-primary absolute top-full left-0 mt-6 min-w-40 animate-[dropdownSlide_0.2s_ease-out] rounded-2xl p-2 shadow-xl"
 											>
-												{item.submenu?.map((subItem, index) => {
+												{item.submenu?.map((subItem) => {
 													const isSubActive = pathname === subItem.href;
 													return (
-														<li
-															key={subItem.name}
-															role="none"
-															style={{
-																animation: `dropdownItemSlide 0.2s ease-out ${index * 0.05}s both`
-															}}
-														>
+														<li key={subItem.name} role="none">
 															<Link
 																href={subItem.href}
 																role="menuitem"
 																onClick={closeDropdown}
 																className={clsx(
-																	'bg-primary/90 block rounded-full p-4 whitespace-nowrap shadow-lg backdrop-blur-md transition-colors md:text-sm xl:text-base',
+																	'block rounded-xl p-4 whitespace-nowrap transition-all duration-200 md:text-sm xl:text-base',
 																	isSubActive
-																		? 'text-secondary font-bold'
-																		: 'text-neutral-content hover:text-secondary font-medium'
+																		? 'bg-secondary/10 text-secondary font-bold'
+																		: 'text-neutral-content hover:bg-neutral-content/10 hover:text-secondary font-medium'
 																)}
 																aria-current={isSubActive ? 'page' : undefined}
 															>
