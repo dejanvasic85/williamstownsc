@@ -6,10 +6,18 @@ type MapEmbedProps = {
 function isValidMapUrl(url: string): boolean {
 	try {
 		const urlObj = new URL(url);
-		return (
-			urlObj.protocol === 'https:' &&
-			(urlObj.hostname.includes('google.com') || urlObj.hostname.includes('maps.google.com'))
-		);
+		const hostname = urlObj.hostname.toLowerCase();
+		const pathname = urlObj.pathname.toLowerCase();
+
+		const isValidGoogleDomain =
+			hostname === 'google.com' ||
+			hostname === 'www.google.com' ||
+			hostname === 'maps.google.com' ||
+			hostname.endsWith('.google.com');
+
+		const isValidPath = pathname.startsWith('/maps');
+
+		return urlObj.protocol === 'https:' && isValidGoogleDomain && isValidPath;
 	} catch {
 		return false;
 	}
