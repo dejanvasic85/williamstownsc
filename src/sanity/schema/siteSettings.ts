@@ -91,19 +91,25 @@ export const siteSettings = defineType({
 								}).custom((url: string | undefined) => {
 									if (!url) return true;
 
-									const allowedDomains = [
-										'google.com/maps',
-										'maps.google.com',
-										'www.google.com/maps'
-									];
-
 									try {
 										const urlObj = new URL(url);
-										const isAllowed = allowedDomains.some(
-											(domain) => urlObj.hostname.endsWith(domain) || urlObj.href.includes(domain)
-										);
+										const hostname = urlObj.hostname.toLowerCase();
+										const pathname = urlObj.pathname.toLowerCase();
 
-										return isAllowed || 'URL must be from Google Maps (google.com/maps)';
+										const isValidGoogleDomain =
+											hostname === 'google.com' ||
+											hostname === 'www.google.com' ||
+											hostname === 'maps.google.com' ||
+											hostname.endsWith('.google.com');
+
+										const isValidPath = pathname.startsWith('/maps');
+
+										const isValid = isValidGoogleDomain && isValidPath;
+
+										return (
+											isValid ||
+											'URL must be from Google Maps (e.g., https://www.google.com/maps/embed?...)'
+										);
 									} catch {
 										return 'Invalid URL format';
 									}
