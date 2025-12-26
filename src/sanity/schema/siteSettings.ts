@@ -88,7 +88,7 @@ export const siteSettings = defineType({
 							validation: (Rule) =>
 								Rule.uri({
 									scheme: ['https']
-								}).custom((url) => {
+								}).custom((url: string | undefined) => {
 									if (!url) return true;
 
 									const allowedDomains = [
