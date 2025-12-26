@@ -84,7 +84,7 @@ export function TeamTabs({ teamsByTab }: TeamTabsProps) {
 						}`}
 					>
 						{teams.length > 0 ? (
-							<ul className="bg-base-100 rounded-box w-full overflow-hidden">
+							<ul className="bg-base-100 w-full overflow-hidden rounded-xl">
 								{teams.map((team) => (
 									<TeamListItem key={team._id} team={team} />
 								))}

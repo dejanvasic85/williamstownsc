@@ -24,7 +24,7 @@ export default async function SponsorsPage() {
 					return (
 						<div
 							key={sponsor._id}
-							className="group relative w-full overflow-hidden rounded-3xl bg-white transition-all"
+							className="group relative w-full overflow-hidden rounded-xl bg-white transition-all"
 						>
 							<div className="relative flex flex-col items-start md:flex-row">
 								{/* Content - Always order-1 on mobile, alternates on desktop */}
