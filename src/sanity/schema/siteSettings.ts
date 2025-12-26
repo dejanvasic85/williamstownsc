@@ -84,7 +84,30 @@ export const siteSettings = defineType({
 							name: 'mapEmbedUrl',
 							title: 'Map Embed URL',
 							type: 'url',
-							description: 'Google Maps embed URL (Get from Share → Embed a map)'
+							description: 'Google Maps embed URL (Get from Share → Embed a map)',
+							validation: (Rule) =>
+								Rule.uri({
+									scheme: ['https']
+								}).custom((url) => {
+									if (!url) return true;
+
+									const allowedDomains = [
+										'google.com/maps',
+										'maps.google.com',
+										'www.google.com/maps'
+									];
+
+									try {
+										const urlObj = new URL(url);
+										const isAllowed = allowedDomains.some(
+											(domain) => urlObj.hostname.endsWith(domain) || urlObj.href.includes(domain)
+										);
+
+										return isAllowed || 'URL must be from Google Maps (google.com/maps)';
+									} catch {
+										return 'Invalid URL format';
+									}
+								})
 						}
 					],
 					preview: {

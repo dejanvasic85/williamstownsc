@@ -14,7 +14,7 @@ export default async function ClubLocationsPage() {
 	const siteSettings = await getSiteSettings();
 	const { locations = [] } = siteSettings;
 
-	if (!pageData || locations.length == 0) {
+	if (!pageData || locations.length === 0) {
 		throw new Error('Locations page is missing critical content');
 	}
 
