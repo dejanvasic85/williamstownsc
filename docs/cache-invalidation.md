@@ -13,14 +13,16 @@ The website uses Next.js cache tags to enable on-demand revalidation of cached c
 **Method:** `POST`
 
 **Headers:**
+
 - `x-content-type`: The content type to revalidate (e.g., `newsArticle`, `team`, `sponsor`, etc.)
 
 **Response:**
+
 ```json
 {
-  "revalidated": true,
-  "contentType": "newsArticle",
-  "timestamp": "2024-01-15T10:30:00.000Z"
+	"revalidated": true,
+	"contentType": "newsArticle",
+	"timestamp": "2024-01-15T10:30:00.000Z"
 }
 ```
 
@@ -79,11 +81,11 @@ For a more dynamic approach, you can use Sanity's webhook projection to extract 
 
 ```json
 {
-  "url": "https://your-domain.com/api/revalidate",
-  "method": "POST",
-  "headers": {
-    "x-content-type": "{{ _type }}"
-  }
+	"url": "https://your-domain.com/api/revalidate",
+	"method": "POST",
+	"headers": {
+		"x-content-type": "{{ _type }}"
+	}
 }
 ```
 
@@ -99,12 +101,12 @@ This will return information about the endpoint:
 
 ```json
 {
-  "message": "Revalidation API is working",
-  "endpoint": "/api/revalidate",
-  "method": "POST",
-  "expectedHeaders": {
-    "x-content-type": "content type to revalidate (e.g., newsArticle, siteSettings, page, etc.)"
-  }
+	"message": "Revalidation API is working",
+	"endpoint": "/api/revalidate",
+	"method": "POST",
+	"expectedHeaders": {
+		"x-content-type": "content type to revalidate (e.g., newsArticle, siteSettings, page, etc.)"
+	}
 }
 ```
 
@@ -115,11 +117,7 @@ This will return information about the endpoint:
 Each content fetching function uses Next.js cache tags to identify cached content:
 
 ```typescript
-const articles = await client.fetch<NewsArticle[]>(
-  query,
-  {},
-  { next: { tags: ['newsArticle'] } }
-);
+const articles = await client.fetch<NewsArticle[]>(query, {}, { next: { tags: ['newsArticle'] } });
 ```
 
 ### Revalidation

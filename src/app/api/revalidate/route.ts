@@ -7,10 +7,7 @@ export async function POST(request: NextRequest) {
 		console.log('Revalidation request received. Content Type', contentType);
 
 		if (!contentType) {
-			return NextResponse.json(
-				{ error: 'x-content-type header required' },
-				{ status: 400 }
-			);
+			return NextResponse.json({ error: 'x-content-type header required' }, { status: 400 });
 		}
 
 		revalidateTag(contentType);
