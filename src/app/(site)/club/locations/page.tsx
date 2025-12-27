@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { MapEmbed } from '@/components/ui';
+import { formatAddress } from '@/lib/address';
 import { getSiteSettings } from '@/lib/content';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
 
@@ -30,7 +31,7 @@ export default async function ClubLocationsPage() {
 				{locations.map((location, index) => (
 					<div className="bg-base-100 col-span-1 rounded-xl p-8" key={index}>
 						<h2 className="mb-4 text-2xl font-bold">{location.name}</h2>
-						<p className="my-4 text-gray-600">{location.address}</p>
+						<p className="my-4 text-gray-600">{formatAddress(location)}</p>
 						{location.mapEmbedUrl && (
 							<MapEmbed src={location.mapEmbedUrl} title={`Map of ${location.name}`} />
 						)}

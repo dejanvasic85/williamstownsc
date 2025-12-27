@@ -68,10 +68,51 @@ export const siteSettings = defineType({
 							}
 						},
 						{
-							name: 'address',
-							title: 'Address',
-							type: 'text',
-							rows: 2,
+							name: 'streetAddress',
+							title: 'Street Address',
+							type: 'string',
+							description: 'Street number and name (e.g., "1-99 Douglas Parade")',
+							validation: (Rule) => Rule.required()
+						},
+						{
+							name: 'addressLocality',
+							title: 'Suburb/City',
+							type: 'string',
+							description: 'e.g., "Williamstown"',
+							validation: (Rule) => Rule.required()
+						},
+						{
+							name: 'addressRegion',
+							title: 'State',
+							type: 'string',
+							description: 'e.g., "VIC"',
+							options: {
+								list: [
+									{ title: 'Australian Capital Territory', value: 'ACT' },
+									{ title: 'New South Wales', value: 'NSW' },
+									{ title: 'Northern Territory', value: 'NT' },
+									{ title: 'Queensland', value: 'QLD' },
+									{ title: 'South Australia', value: 'SA' },
+									{ title: 'Tasmania', value: 'TAS' },
+									{ title: 'Victoria', value: 'VIC' },
+									{ title: 'Western Australia', value: 'WA' }
+								]
+							},
+							validation: (Rule) => Rule.required()
+						},
+						{
+							name: 'postalCode',
+							title: 'Postcode',
+							type: 'string',
+							description: 'e.g., "3016"',
+							validation: (Rule) => Rule.required()
+						},
+						{
+							name: 'addressCountry',
+							title: 'Country Code',
+							type: 'string',
+							description: 'ISO 3166-1 alpha-2 country code',
+							initialValue: 'AU',
 							validation: (Rule) => Rule.required()
 						},
 						{
@@ -126,6 +167,13 @@ export const siteSettings = defineType({
 			]
 		}),
 
+		defineField({
+			name: 'foundingDate',
+			title: 'Founding Date',
+			type: 'date',
+			validation: (Rule) => Rule.required()
+		}),
+
 		// Main contacts
 		defineField({
 			name: 'contact',
@@ -137,6 +185,12 @@ export const siteSettings = defineType({
 					title: 'Email',
 					type: 'string',
 					validation: (Rule) => Rule.email()
+				},
+				{
+					name: 'phone',
+					title: 'Phone',
+					type: 'string',
+					validation: (Rule) => Rule.required()
 				}
 			]
 		}),

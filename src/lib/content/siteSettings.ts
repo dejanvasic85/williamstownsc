@@ -16,7 +16,9 @@ export async function getSiteSettings() {
 			analytics,
 			locations,
 			contactEmails,
-			canonicalUrl
+			canonicalUrl,
+			foundingDate,
+			contact
 		}`
 	);
 

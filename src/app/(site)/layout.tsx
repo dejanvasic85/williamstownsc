@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Footer, Navbar } from '@/components/layout';
+import { formatAddress } from '@/lib/address';
 import { getSiteSettings } from '@/lib/content';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -45,10 +46,12 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 	const homeGround = siteSettings?.locations?.find(
 		(location: { facilityType?: string }) => location.facilityType === 'home'
 	);
+
+	const homeGroundAddress = formatAddress(homeGround);
 	const homeGroundLink = homeGround?.mapLink
 		? homeGround.mapLink
-		: homeGround?.address
-			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGround.address)}`
+		: homeGroundAddress
+			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGroundAddress)}`
 			: undefined;
 
 	return (

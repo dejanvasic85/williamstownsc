@@ -10,6 +10,7 @@ import {
 	SponsorsSection
 } from '@/components/home';
 import { NewsCard } from '@/components/news';
+import { formatAddress } from '@/lib/address';
 import {
 	TransformedNewsArticle,
 	getFeaturedArticles,
@@ -33,11 +34,12 @@ export default async function Home() {
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
 	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
+	const homeGroundAddress = formatAddress(homeGround);
 
 	const homeGroundLink = homeGround?.mapLink
 		? homeGround.mapLink
-		: homeGround?.address
-			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGround.address)}`
+		: homeGroundAddress
+			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGroundAddress)}`
 			: null;
 
 	const socialLinks = [
