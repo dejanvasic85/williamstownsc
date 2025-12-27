@@ -23,6 +23,7 @@ The original website is at https://www.williamstownsc.com/
   - [ ] Refactor the getMetadata because it's atrocious
   - [ ] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [ ] Cache invalidation on content publish
+- [ ] Accessibility audit and fixes
 
 Pages:
 
@@ -51,13 +52,13 @@ Pages:
 - Contact
   - [x] Contact form
   - [x] Bot detection
-- Events
-  - [ ] Ticketing integration with Try Booking
 
 ### Nice to have
 
 The following is a list of things we may be not need on initial launch and can come later:
 
+- Events
+  - [ ] Ticketing integration with Try Booking
 - [ ] Search
 - [ ] Publish news to facebook, instagram
 - [ ] Publishing schedule, results and tables

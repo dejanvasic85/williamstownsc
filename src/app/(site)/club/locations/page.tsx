@@ -4,6 +4,20 @@ import { PageContainer } from '@/components/layout';
 import { MapEmbed } from '@/components/ui';
 import { getSiteSettings } from '@/lib/content';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
+import type { SiteSettings } from '@/sanity/sanity.types';
+
+type Location = NonNullable<SiteSettings['locations']>[number];
+
+function formatAddress(location: Location): string {
+	const parts = [
+		location.streetAddress,
+		location.addressLocality,
+		location.addressRegion,
+		location.postalCode
+	].filter(Boolean);
+
+	return parts.join(', ');
+}
 
 export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('locationsPage');
@@ -30,7 +44,7 @@ export default async function ClubLocationsPage() {
 				{locations.map((location, index) => (
 					<div className="bg-base-100 col-span-1 rounded-xl p-8" key={index}>
 						<h2 className="mb-4 text-2xl font-bold">{location.name}</h2>
-						<p className="my-4 text-gray-600">{location.address}</p>
+						<p className="my-4 text-gray-600">{formatAddress(location)}</p>
 						{location.mapEmbedUrl && (
 							<MapEmbed src={location.mapEmbedUrl} title={`Map of ${location.name}`} />
 						)}
