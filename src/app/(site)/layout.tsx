@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { PropsWithChildren } from 'react';
 import { Footer, Navbar } from '@/components/layout';
 import { formatAddress } from '@/lib/address';
@@ -61,7 +60,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 	return (
 		<>
 			{organizationSchema && (
-				<Script
+				<script
 					id="organization-schema"
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

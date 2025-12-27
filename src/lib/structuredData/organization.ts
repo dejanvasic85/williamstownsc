@@ -34,12 +34,6 @@ export function generateOrganizationSchema(
 		? urlFor(siteSettings.logo).width(800).height(800).url()
 		: undefined;
 
-	const sameAs = [
-		siteSettings.socials?.facebook,
-		siteSettings.socials?.instagram,
-		siteSettings.socials?.youtube
-	].filter((url): url is string => Boolean(url));
-
 	const schema: OrganizationSchema = {
 		'@context': 'https://schema.org',
 		'@type': 'SportsOrganization',
@@ -79,6 +73,9 @@ export function generateOrganizationSchema(
 		};
 	}
 
+	const sameAs = Object.values(siteSettings.socials ?? {}).filter(
+		(value): value is string => typeof value === 'string' && Boolean(value)
+	);
 	if (sameAs.length > 0) {
 		schema.sameAs = sameAs;
 	}

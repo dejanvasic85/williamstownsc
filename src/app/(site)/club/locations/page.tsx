@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { MapEmbed } from '@/components/ui';
@@ -26,7 +25,7 @@ export default async function ClubLocationsPage() {
 	return (
 		<>
 			{locationsSchema.map((schema, index) => (
-				<Script
+				<script
 					key={index}
 					id={`location-schema-${index}`}
 					type="application/ld+json"
