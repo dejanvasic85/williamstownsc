@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { SanityImageSource } from '@sanity/image-url';
 import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -164,6 +165,24 @@ async function getSiteSettings() {
 	}`);
 }
 
+function processImage(image: SanityImageSource & { alt?: string }, width: number, height: number) {
+	return {
+		url: urlFor(image).width(width).height(height).url(),
+		alt: image.alt
+	};
+}
+
+function processSeoWithOgImage(seo: PageData['seo']): PageData['seo'] {
+	if (!seo?.ogImage) {
+		return seo;
+	}
+
+	return {
+		...seo,
+		ogImage: processImage(seo.ogImage, 1200, 630)
+	};
+}
+
 function buildPageMetadata(
 	pageData: PageData | EditablePageData | null,
 	siteSettings: SiteSettings | null,
@@ -218,20 +237,21 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 		getSiteSettings()
 	]);
 
-	return buildPageMetadata(pageData, siteSettings, pageName);
+	const processedPageData: PageData | null = pageData
+		? { ...pageData, seo: processSeoWithOgImage(pageData.seo) }
+		: null;
+
+	return buildPageMetadata(processedPageData, siteSettings, pageName);
 }
 
 export async function getEditablePageMetadata(pageName: PageName): Promise<Metadata> {
 	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
 		heading,
-		introduction,
-		body,
 		featuredImage { ..., alt },
 		seo {
 			...,
 			ogImage { ..., alt }
-		},
-		lastUpdated
+		}
 	}`;
 
 	const [pageData, siteSettings] = await Promise.all([
@@ -239,5 +259,15 @@ export async function getEditablePageMetadata(pageName: PageName): Promise<Metad
 		getSiteSettings()
 	]);
 
-	return buildPageMetadata(pageData, siteSettings, pageName);
+	const processedPageData: EditablePageData | null = pageData
+		? {
+				...pageData,
+				featuredImage: pageData.featuredImage
+					? processImage(pageData.featuredImage, 1200, 630)
+					: undefined,
+				seo: processSeoWithOgImage(pageData.seo)
+			}
+		: null;
+
+	return buildPageMetadata(processedPageData, siteSettings, pageName);
 }
