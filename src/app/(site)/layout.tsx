@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
+import { PropsWithChildren } from 'react';
 import { Footer, Navbar } from '@/components/layout';
 import { formatAddress } from '@/lib/address';
 import { getSiteSettings } from '@/lib/content';
+import { generateOrganizationSchema } from '@/lib/structuredData';
 import { urlFor } from '@/sanity/lib/image';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,9 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
 		? urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url()
 		: undefined;
 
-	const title = siteSettings?.seoDefaults?.siteTitle || 'Williamstown SC';
-	const description =
-		siteSettings?.seoDefaults?.siteDescription || 'Official website of Williamstown Soccer Club';
+	const title = siteSettings?.seoDefaults?.siteTitle;
+	const description = siteSettings?.seoDefaults?.siteDescription;
 
 	return {
 		title,
@@ -23,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			title,
 			description,
 			images: ogImageUrl ? [{ url: ogImageUrl }] : [],
-			siteName: siteSettings?.clubName || 'Williamstown SC',
+			siteName: siteSettings?.clubName,
 			type: 'website'
 		},
 		twitter: {
@@ -35,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export default async function SiteLayout({ children }: { children: React.ReactNode }) {
+export default async function SiteLayout({ children }: PropsWithChildren) {
 	const siteSettings = await getSiteSettings();
 
 	const logoUrl = siteSettings?.logo
@@ -54,8 +56,17 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGroundAddress)}`
 			: undefined;
 
+	const organizationSchema = generateOrganizationSchema(siteSettings);
+
 	return (
 		<>
+			{organizationSchema && (
+				<Script
+					id="organization-schema"
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+				/>
+			)}
 			<Navbar
 				logoUrl={logoUrl}
 				logoAlt={logoAlt}

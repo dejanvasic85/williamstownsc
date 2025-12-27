@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { MapEmbed } from '@/components/ui';
 import { formatAddress } from '@/lib/address';
 import { getSiteSettings } from '@/lib/content';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
+import { generateLocationsSchema } from '@/lib/structuredData';
 
 export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('locationsPage');
@@ -19,25 +21,39 @@ export default async function ClubLocationsPage() {
 		throw new Error('Locations page is missing critical content');
 	}
 
+	const locationsSchema = generateLocationsSchema(locations);
+
 	return (
-		<PageContainer
-			heading={pageData.heading}
-			featuredImage={pageData.featuredImage}
-			intro={pageData.introduction}
-			layout="article"
-		>
-			{pageData.body && pageData.body.length > 0 && <PortableTextContent blocks={pageData.body} />}
-			<div className="grid grid-cols-1 gap-4">
-				{locations.map((location, index) => (
-					<div className="bg-base-100 col-span-1 rounded-xl p-8" key={index}>
-						<h2 className="mb-4 text-2xl font-bold">{location.name}</h2>
-						<p className="my-4 text-gray-600">{formatAddress(location)}</p>
-						{location.mapEmbedUrl && (
-							<MapEmbed src={location.mapEmbedUrl} title={`Map of ${location.name}`} />
-						)}
-					</div>
-				))}
-			</div>
-		</PageContainer>
+		<>
+			{locationsSchema.map((schema, index) => (
+				<Script
+					key={index}
+					id={`location-schema-${index}`}
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+				/>
+			))}
+			<PageContainer
+				heading={pageData.heading}
+				featuredImage={pageData.featuredImage}
+				intro={pageData.introduction}
+				layout="article"
+			>
+				{pageData.body && pageData.body.length > 0 && (
+					<PortableTextContent blocks={pageData.body} />
+				)}
+				<div className="grid grid-cols-1 gap-4">
+					{locations.map((location, index) => (
+						<div className="bg-base-100 col-span-1 rounded-xl p-8" key={index}>
+							<h2 className="mb-4 text-2xl font-bold">{location.name}</h2>
+							<p className="my-4 text-gray-600">{formatAddress(location)}</p>
+							{location.mapEmbedUrl && (
+								<MapEmbed src={location.mapEmbedUrl} title={`Map of ${location.name}`} />
+							)}
+						</div>
+					))}
+				</div>
+			</PageContainer>
+		</>
 	);
 }
