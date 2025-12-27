@@ -2,22 +2,9 @@ import type { Metadata } from 'next';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { MapEmbed } from '@/components/ui';
+import { formatAddress } from '@/lib/address';
 import { getSiteSettings } from '@/lib/content';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
-import type { SiteSettings } from '@/sanity/sanity.types';
-
-type Location = NonNullable<SiteSettings['locations']>[number];
-
-function formatAddress(location: Location): string {
-	const parts = [
-		location.streetAddress,
-		location.addressLocality,
-		location.addressRegion,
-		location.postalCode
-	].filter(Boolean);
-
-	return parts.join(', ');
-}
 
 export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('locationsPage');
