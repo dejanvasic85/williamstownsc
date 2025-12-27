@@ -23,7 +23,7 @@ export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
 		excerpt
 	}`;
 
-	const articles = await client.fetch<NewsArticle[]>(query);
+	const articles = await client.fetch<NewsArticle[]>(query, {}, { next: { tags: ['newsArticle'] } });
 
 	return articles.map(
 		(article): TransformedNewsArticle => ({
@@ -52,7 +52,7 @@ export async function getLatestArticles(limit: number = 3): Promise<TransformedN
 		excerpt
 	}`;
 
-	const articles = await client.fetch<NewsArticle[]>(query);
+	const articles = await client.fetch<NewsArticle[]>(query, {}, { next: { tags: ['newsArticle'] } });
 
 	return articles.map(
 		(article): TransformedNewsArticle => ({
@@ -82,7 +82,7 @@ export async function getAllArticles(limit: number = 20): Promise<TransformedNew
 		featured
 	}`;
 
-	const articles = await client.fetch<NewsArticle[]>(query);
+	const articles = await client.fetch<NewsArticle[]>(query, {}, { next: { tags: ['newsArticle'] } });
 
 	return articles.map(
 		(article): TransformedNewsArticle => ({
@@ -114,7 +114,7 @@ export async function getArticleBySlug(slug: string) {
 		featured
 	}`;
 
-	const article = await client.fetch<NewsArticle>(query, { slug });
+	const article = await client.fetch<NewsArticle>(query, { slug }, { next: { tags: ['newsArticle'] } });
 
 	if (!article) {
 		return null;

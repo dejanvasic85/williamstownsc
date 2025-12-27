@@ -66,7 +66,11 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<EditablePageData>(query, { pageName, pageId: pageName });
+	const data = await client.fetch<EditablePageData>(
+		query,
+		{ pageName, pageId: pageName },
+		{ next: { tags: ['page', pageName] } }
+	);
 
 	if (!data) {
 		return null;
@@ -142,7 +146,7 @@ export async function getContactPageData() {
 		}
 	}`;
 
-	const data = await client.fetch(query);
+	const data = await client.fetch(query, {}, { next: { tags: ['page', 'contactPage'] } });
 
 	if (!data) {
 		return null;
@@ -175,8 +179,13 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 		}`;
 
 	const [pageData, siteSettings] = await Promise.all([
-		client.fetch<PageData | EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
-		client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
+		client.fetch<PageData | EditablePageData>(
+			pageDataQuery,
+			{ pageName, pageId: pageName },
+			{ next: { tags: ['page', pageName] } }
+		),
+		client.fetch<SiteSettings>(
+			`*[_type == "siteSettings" && _id == "siteSettings"][0]{
 			clubName,
 			seoDefaults {
 				siteTitle,
@@ -185,7 +194,10 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 				keywords,
 				ogImage
 			}
-		}`)
+		}`,
+			{},
+			{ next: { tags: ['siteSettings'] } }
+		)
 	]);
 
 	if (!pageData) {
