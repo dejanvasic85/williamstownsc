@@ -3,19 +3,10 @@ import { CommitteeMemberGrid } from '@/components/committee';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { getCommitteePageData } from '@/lib/content/committeePage';
-import { getPageMetadata } from '@/lib/content/page';
+import { getEditablePageMetadata } from '@/lib/content/page';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const metadata = await getPageMetadata('committeePage');
-
-	return {
-		title: metadata.title,
-		description: metadata.description,
-		keywords: metadata.keywords,
-		openGraph: metadata.openGraph,
-		twitter: metadata.twitter,
-		robots: metadata.robots
-	};
+	return getEditablePageMetadata('committeePage');
 }
 
 export default async function ClubOrganizationsPage() {

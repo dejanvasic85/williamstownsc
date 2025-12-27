@@ -151,43 +151,24 @@ export async function getContactPageData() {
 	return data;
 }
 
-export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
-	// For SEO-only pages (like homePage), query only SEO fields
-	const isSeoOnlyPage = pageName === 'homePage';
+async function getSiteSettings() {
+	return client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
+		clubName,
+		seoDefaults {
+			siteTitle,
+			titleSuffix,
+			siteDescription,
+			keywords,
+			ogImage
+		}
+	}`);
+}
 
-	const pageDataQuery = isSeoOnlyPage
-		? `*[_type == $pageName && _id == $pageId][0]{
-			seo {
-				...,
-				ogImage { ..., alt }
-			}
-		}`
-		: `*[_type == $pageName && _id == $pageId][0]{
-			heading,
-			introduction,
-			body,
-			featuredImage { ..., alt },
-			seo {
-				...,
-				ogImage { ..., alt }
-			},
-			lastUpdated
-		}`;
-
-	const [pageData, siteSettings] = await Promise.all([
-		client.fetch<PageData | EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
-		client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
-			clubName,
-			seoDefaults {
-				siteTitle,
-				titleSuffix,
-				siteDescription,
-				keywords,
-				ogImage
-			}
-		}`)
-	]);
-
+function buildPageMetadata(
+	pageData: PageData | EditablePageData | null,
+	siteSettings: SiteSettings | null,
+	pageName: PageName
+): Metadata {
 	if (!pageData) {
 		return {
 			title: pageName.charAt(0).toUpperCase() + pageName.slice(1),
@@ -222,4 +203,41 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 			follow: !pageData.seo?.noIndex
 		}
 	});
+}
+
+export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
+	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
+		seo {
+			...,
+			ogImage { ..., alt }
+		}
+	}`;
+
+	const [pageData, siteSettings] = await Promise.all([
+		client.fetch<PageData>(pageDataQuery, { pageName, pageId: pageName }),
+		getSiteSettings()
+	]);
+
+	return buildPageMetadata(pageData, siteSettings, pageName);
+}
+
+export async function getEditablePageMetadata(pageName: PageName): Promise<Metadata> {
+	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
+		heading,
+		introduction,
+		body,
+		featuredImage { ..., alt },
+		seo {
+			...,
+			ogImage { ..., alt }
+		},
+		lastUpdated
+	}`;
+
+	const [pageData, siteSettings] = await Promise.all([
+		client.fetch<EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
+		getSiteSettings()
+	]);
+
+	return buildPageMetadata(pageData, siteSettings, pageName);
 }
