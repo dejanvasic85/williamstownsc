@@ -14,16 +14,15 @@ The original website is at https://www.williamstownsc.com/
   - [x] Footer
   - [x] Favicon
 - [x] Links to socials
-- [ ] SEO
-- [ ] Accessibility
 - [x] Custom not found page
 - [x] Custom error page
 - Google structured data
   - [x] Add organisation @type": "SportsOrganization" to the root layout
-  - [ ] Refactor the getMetadata because it's atrocious
-  - [ ] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
-- [ ] Cache invalidation on content publish
+  - [x] Refactor the getMetadata because it's atrocious
+  - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
+- [x] Cache invalidation on content publish
 - [ ] Accessibility audit and fixes
+- [ ] SEO
 
 Pages:
 
