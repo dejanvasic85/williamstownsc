@@ -2,19 +2,11 @@ import { type Metadata } from 'next';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { PageContainer } from '@/components/layout';
 import { type ContactType, contactTypes } from '@/lib/contact/contactEmail';
-import { getContactPageData, getPageMetadata } from '@/lib/content/page';
+import { getContactPageData, getEditablePageMetadata } from '@/lib/content/page';
 import { getActivePrograms } from '@/sanity/services/programService';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const metadata = await getPageMetadata('contactPage');
-
-	return {
-		title: metadata.title,
-		description: metadata.description,
-		keywords: metadata.keywords,
-		openGraph: metadata.openGraph,
-		robots: metadata.robots
-	};
+	return getEditablePageMetadata('contactPage');
 }
 
 type ContactPageProps = {

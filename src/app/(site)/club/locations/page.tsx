@@ -4,11 +4,11 @@ import { PageContainer } from '@/components/layout';
 import { MapEmbed } from '@/components/ui';
 import { formatAddress } from '@/lib/address';
 import { getSiteSettings } from '@/lib/content';
-import { getPageData, getPageMetadata } from '@/lib/content/page';
+import { getEditablePageMetadata, getPageData } from '@/lib/content/page';
 import { generateLocationsSchema } from '@/lib/structuredData';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getPageMetadata('locationsPage');
+	return getEditablePageMetadata('locationsPage');
 }
 
 export default async function ClubLocationsPage() {

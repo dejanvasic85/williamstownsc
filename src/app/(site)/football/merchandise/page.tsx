@@ -1,18 +1,10 @@
 import { type Metadata } from 'next';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
-import { getPageData, getPageMetadata } from '@/lib/content/page';
+import { getEditablePageMetadata, getPageData } from '@/lib/content/page';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const metadata = await getPageMetadata('merchandisePage');
-
-	return {
-		title: metadata.title,
-		description: metadata.description,
-		keywords: metadata.keywords,
-		openGraph: metadata.openGraph,
-		robots: metadata.robots
-	};
+	return getEditablePageMetadata('merchandisePage');
 }
 
 export default async function FootballMerchandisePage() {
