@@ -38,7 +38,7 @@ export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 		website
 	}`;
 
-	const sponsors = await client.fetch<Sponsor[]>(query);
+	const sponsors = await client.fetch<Sponsor[]>(query, {}, { next: { tags: ['sponsor'] } });
 
 	return sponsors.map(transformSponsor);
 }
@@ -55,7 +55,7 @@ export async function getFeaturedSponsors(limit: number = 3): Promise<Transforme
 		website
 	}`;
 
-	const sponsors = await client.fetch<Sponsor[]>(query, { limit });
+	const sponsors = await client.fetch<Sponsor[]>(query, { limit }, { next: { tags: ['sponsor'] } });
 
 	return sponsors.map(transformSponsor);
 }

@@ -37,7 +37,9 @@ export async function getActivePrograms(limit?: number): Promise<ProgramWithImag
 				active
 			}`;
 
-	return limit ? client.fetch(query, { limit }) : client.fetch(query);
+	return limit
+		? client.fetch(query, { limit }, { next: { tags: ['program'] } })
+		: client.fetch(query, {}, { next: { tags: ['program'] } });
 }
 
 export async function getFeaturedPrograms(

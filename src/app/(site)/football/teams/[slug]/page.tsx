@@ -15,7 +15,7 @@ interface TeamDetailPageProps {
 
 async function getTeam(slug: string): Promise<Team | null> {
 	try {
-		const team = await client.fetch<Team>(teamDetailQuery, { slug });
+		const team = await client.fetch<Team>(teamDetailQuery, { slug }, { next: { tags: ['team'] } });
 		return team;
 	} catch (error) {
 		console.error('Error fetching team:', error);

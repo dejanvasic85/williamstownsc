@@ -42,7 +42,7 @@ function extractTextFromPortableText(blocks: PortableTextBlock[]): string {
 
 async function getSeniorTeams(): Promise<SeniorTeam[]> {
 	try {
-		return await client.fetch<SeniorTeam[]>(seniorTeamsQuery);
+		return await client.fetch<SeniorTeam[]>(seniorTeamsQuery, {}, { next: { tags: ['team'] } });
 	} catch (error) {
 		console.error('Error fetching senior teams:', error);
 		return [];

@@ -22,9 +22,15 @@ const recaptchaConfigSchema = z.object({
 	riskScoreThreshold: z.number().min(0).max(1).default(0.5)
 });
 
+// Server-only revalidation config schema
+const revalidationConfigSchema = z.object({
+	revalidateSecret: z.string().min(1, 'Revalidation secret is required')
+});
+
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
+export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
 
 let cachedClientConfig: ClientConfig | null = null;
 
@@ -78,5 +84,15 @@ export function getRecaptchaConfig(): RecaptchaConfig {
 		recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
 		googleCloudProjectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
 		riskScoreThreshold
+	});
+}
+
+/**
+ * Get revalidation config (server-only)
+ * Contains secret for cache revalidation endpoint
+ */
+export function getRevalidationConfig(): RevalidationConfig {
+	return revalidationConfigSchema.parse({
+		revalidateSecret: process.env.REVALIDATE_SECRET
 	});
 }

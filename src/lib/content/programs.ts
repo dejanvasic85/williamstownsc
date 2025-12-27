@@ -30,7 +30,7 @@ export async function getActivePrograms(): Promise<TransformedProgram[]> {
 		description
 	}`;
 
-	const programs = await client.fetch<Program[]>(query);
+	const programs = await client.fetch<Program[]>(query, {}, { next: { tags: ['program'] } });
 
 	return programs.map(
 		(program): TransformedProgram => ({

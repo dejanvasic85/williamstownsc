@@ -4,6 +4,7 @@ import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import type { SiteSettings } from '@/sanity/sanity.types';
+import { getSiteSettings } from './siteSettings';
 
 export type PageName =
 	| 'aboutPage'
@@ -67,7 +68,11 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<EditablePageData>(query, { pageName, pageId: pageName });
+	const data = await client.fetch<EditablePageData>(
+		query,
+		{ pageName, pageId: pageName },
+		{ next: { tags: ['page', pageName] } }
+	);
 
 	if (!data) {
 		return null;
@@ -143,26 +148,13 @@ export async function getContactPageData() {
 		}
 	}`;
 
-	const data = await client.fetch(query);
+	const data = await client.fetch(query, {}, { next: { tags: ['page', 'contactPage'] } });
 
 	if (!data) {
 		return null;
 	}
 
 	return data;
-}
-
-async function getSiteSettings() {
-	return client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
-		clubName,
-		seoDefaults {
-			siteTitle,
-			titleSuffix,
-			siteDescription,
-			keywords,
-			ogImage
-		}
-	}`);
 }
 
 function processImage(image: SanityImageSource & { alt?: string }, width: number, height: number) {
@@ -255,7 +247,11 @@ export async function getEditablePageMetadata(pageName: PageName): Promise<Metad
 	}`;
 
 	const [pageData, siteSettings] = await Promise.all([
-		client.fetch<EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
+		client.fetch<EditablePageData>(
+			pageDataQuery,
+			{ pageName, pageId: pageName },
+			{ next: { tags: ['page', pageName] } }
+		),
 		getSiteSettings()
 	]);
 

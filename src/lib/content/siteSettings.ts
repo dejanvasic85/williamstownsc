@@ -19,7 +19,9 @@ export async function getSiteSettings() {
 			canonicalUrl,
 			foundingDate,
 			contact
-		}`
+		}`,
+		{},
+		{ next: { tags: ['siteSettings'] } }
 	);
 
 	return siteSettings;
