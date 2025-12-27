@@ -19,7 +19,7 @@ The original website is at https://www.williamstownsc.com/
 - [x] Custom not found page
 - [x] Custom error page
 - Google structured data
-  - [ ] Add organisation @type": "SportsOrganization" to the root layout
+  - [x] Add organisation @type": "SportsOrganization" to the root layout
   - [ ] Refactor the getMetadata because it's atrocious
   - [ ] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [ ] Cache invalidation on content publish
