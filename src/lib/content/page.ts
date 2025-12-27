@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { SanityImageSource } from '@sanity/image-url';
 import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -151,43 +152,42 @@ export async function getContactPageData() {
 	return data;
 }
 
-export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
-	// For SEO-only pages (like homePage), query only SEO fields
-	const isSeoOnlyPage = pageName === 'homePage';
+async function getSiteSettings() {
+	return client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
+		clubName,
+		seoDefaults {
+			siteTitle,
+			titleSuffix,
+			siteDescription,
+			keywords,
+			ogImage
+		}
+	}`);
+}
 
-	const pageDataQuery = isSeoOnlyPage
-		? `*[_type == $pageName && _id == $pageId][0]{
-			seo {
-				...,
-				ogImage { ..., alt }
-			}
-		}`
-		: `*[_type == $pageName && _id == $pageId][0]{
-			heading,
-			introduction,
-			body,
-			featuredImage { ..., alt },
-			seo {
-				...,
-				ogImage { ..., alt }
-			},
-			lastUpdated
-		}`;
+function processImage(image: SanityImageSource & { alt?: string }, width: number, height: number) {
+	return {
+		url: urlFor(image).width(width).height(height).url(),
+		alt: image.alt
+	};
+}
 
-	const [pageData, siteSettings] = await Promise.all([
-		client.fetch<PageData | EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
-		client.fetch<SiteSettings>(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
-			clubName,
-			seoDefaults {
-				siteTitle,
-				titleSuffix,
-				siteDescription,
-				keywords,
-				ogImage
-			}
-		}`)
-	]);
+function processSeoWithOgImage(seo: PageData['seo']): PageData['seo'] {
+	if (!seo?.ogImage) {
+		return seo;
+	}
 
+	return {
+		...seo,
+		ogImage: processImage(seo.ogImage, 1200, 630)
+	};
+}
+
+function buildPageMetadata(
+	pageData: PageData | EditablePageData | null,
+	siteSettings: SiteSettings | null,
+	pageName: PageName
+): Metadata {
 	if (!pageData) {
 		return {
 			title: pageName.charAt(0).toUpperCase() + pageName.slice(1),
@@ -222,4 +222,52 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 			follow: !pageData.seo?.noIndex
 		}
 	});
+}
+
+export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
+	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
+		seo {
+			...,
+			ogImage { ..., alt }
+		}
+	}`;
+
+	const [pageData, siteSettings] = await Promise.all([
+		client.fetch<PageData>(pageDataQuery, { pageName, pageId: pageName }),
+		getSiteSettings()
+	]);
+
+	const processedPageData: PageData | null = pageData
+		? { ...pageData, seo: processSeoWithOgImage(pageData.seo) }
+		: null;
+
+	return buildPageMetadata(processedPageData, siteSettings, pageName);
+}
+
+export async function getEditablePageMetadata(pageName: PageName): Promise<Metadata> {
+	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
+		heading,
+		featuredImage { ..., alt },
+		seo {
+			...,
+			ogImage { ..., alt }
+		}
+	}`;
+
+	const [pageData, siteSettings] = await Promise.all([
+		client.fetch<EditablePageData>(pageDataQuery, { pageName, pageId: pageName }),
+		getSiteSettings()
+	]);
+
+	const processedPageData: EditablePageData | null = pageData
+		? {
+				...pageData,
+				featuredImage: pageData.featuredImage
+					? processImage(pageData.featuredImage, 1200, 630)
+					: undefined,
+				seo: processSeoWithOgImage(pageData.seo)
+			}
+		: null;
+
+	return buildPageMetadata(processedPageData, siteSettings, pageName);
 }
