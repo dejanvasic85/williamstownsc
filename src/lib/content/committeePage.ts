@@ -61,7 +61,11 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<CommitteePageData>(query);
+	const data = await client.fetch<CommitteePageData>(
+		query,
+		{},
+		{ next: { tags: ['page', 'committeePage'] } }
+	);
 
 	if (!data) {
 		return null;

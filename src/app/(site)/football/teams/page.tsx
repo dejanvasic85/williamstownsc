@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function getTeams() {
 	try {
-		const teams = await client.fetch<Team[]>(teamsQuery);
+		const teams = await client.fetch<Team[]>(teamsQuery, {}, { next: { tags: ['team'] } });
 		return teams;
 	} catch (error) {
 		console.error('Error fetching teams:', error);
