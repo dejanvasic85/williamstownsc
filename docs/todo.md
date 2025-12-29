@@ -51,6 +51,10 @@ Pages:
 - Contact
   - [x] Contact form
   - [x] Bot detection
+- General
+  - [ ] Accessibility statement (what should we aim for? Double A?)
+  - [ ] Privacy policy
+  - [ ] Terms and conditions
 
 ### Nice to have
 
