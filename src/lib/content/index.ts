@@ -1,6 +1,14 @@
 export { getAllArticles, getArticleBySlug, getFeaturedArticles, getLatestArticles } from './news';
 export type { TransformedNewsArticle } from './news';
 
+export {
+	getUpcomingEvents,
+	getFeaturedEvents,
+	getEventsByCategory,
+	getEventBySlug
+} from './events';
+export type { TransformedEvent, EventDetail } from './events';
+
 export { getAllSponsors, getFeaturedSponsors } from './sponsors';
 export type { TransformedSponsor } from './sponsors';
 

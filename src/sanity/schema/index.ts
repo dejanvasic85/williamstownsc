@@ -1,5 +1,6 @@
 import { coach } from './coach';
 import { committeeMember } from './committeeMember';
+import { event } from './event';
 import { newsArticle } from './newsArticle';
 // Objects
 import { contactTypeContent } from './objects/contactTypeContent';
@@ -53,6 +54,7 @@ export const schemaTypes = [
 	termsPage,
 
 	// Content types
+	event,
 	newsArticle,
 	person,
 	team,
