@@ -19,7 +19,7 @@ export function NewsListItem({ slug, title, publishedAt }: NewsListItemProps) {
 	return (
 		<Link
 			href={`/news/${slug}`}
-			className="group block border-base-300 border-b py-4 transition-colors hover:bg-base-200/50"
+			className="group border-base-300 hover:bg-base-200/50 block border-b py-4 transition-colors"
 		>
 			<div className="flex flex-col gap-1">
 				<time
@@ -29,7 +29,7 @@ export function NewsListItem({ slug, title, publishedAt }: NewsListItemProps) {
 				>
 					{formattedDate}
 				</time>
-				<h3 className="text-base-content font-medium transition-colors group-hover:text-primary">
+				<h3 className="text-base-content group-hover:text-primary font-medium transition-colors">
 					{title}
 				</h3>
 			</div>
