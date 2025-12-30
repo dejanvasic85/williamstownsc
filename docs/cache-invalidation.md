@@ -15,7 +15,10 @@ The website uses Next.js cache tags to enable on-demand revalidation of cached c
 **Headers:**
 
 - `x-revalidate-secret`: Secret token for authentication (must match `REVALIDATE_SECRET` env var)
-- `x-content-type`: The content type to revalidate (e.g., `newsArticle`, `team`, `sponsor`, etc.)
+
+**Request Body:**
+
+- `_type`: The content type to revalidate (e.g., `newsArticle`, `team`, `sponsor`, etc.)`
 
 **Response:**
 
@@ -33,24 +36,27 @@ The website uses Next.js cache tags to enable on-demand revalidation of cached c
 
 ```bash
 curl -X POST http://localhost:3003/api/revalidate \
+  -H "Content-Type: application/json" \
   -H "x-revalidate-secret: your-secret-token-here" \
-  -H "x-content-type: newsArticle"
+  -d '{"_type": "newsArticle"}'
 ```
 
 ### Revalidate Teams
 
 ```bash
 curl -X POST http://localhost:3003/api/revalidate \
+  -H "Content-Type: application/json" \
   -H "x-revalidate-secret: your-secret-token-here" \
-  -H "x-content-type: team"
+  -d '{"_type": "team"}'
 ```
 
 ### Revalidate Site Settings
 
 ```bash
 curl -X POST http://localhost:3003/api/revalidate \
+  -H "Content-Type: application/json" \
   -H "x-revalidate-secret: your-secret-token-here" \
-  -H "x-content-type: siteSettings"
+  -d '{"_type": "siteSettings"}'
 ```
 
 ## Available Content Types
@@ -116,34 +122,22 @@ For production deployments with high traffic, consider implementing rate limitin
 
 ## Integration with Sanity CMS
 
-To automatically trigger cache invalidation when content is published in Sanity, you can set up a webhook:
+To automatically trigger cache invalidation when content is published in Sanity, set up a webhook in your Sanity project. See [Sanity's webhook documentation](https://www.sanity.io/docs/webhooks) for detailed setup instructions.
 
-1. Go to your Sanity project dashboard
-2. Navigate to **API** → **Webhooks**
-3. Create a new webhook with the following settings:
-   - **URL:** `https://your-domain.com/api/revalidate`
-   - **Trigger on:** Document changes
-   - **HTTP method:** POST
-   - **Headers:**
-     - `x-revalidate-secret`: Your secret token (same value as `REVALIDATE_SECRET` env var)
-     - `x-content-type`: `{{ _type }}` (dynamic content type from webhook payload)
+### Required Configuration
 
-### Webhook Configuration Example
+When creating your Sanity webhook, use these settings:
 
-For a dynamic approach that automatically uses the document type:
+- **URL:** `https://your-domain.com/api/revalidate`
+- **HTTP method:** POST
+- **Custom Headers:**
+  - `x-revalidate-secret`: Your secret token (must match your `REVALIDATE_SECRET` environment variable)
 
-```json
-{
-	"url": "https://your-domain.com/api/revalidate",
-	"method": "POST",
-	"headers": {
-		"x-revalidate-secret": "your-secret-token-here",
-		"x-content-type": "{{ _type }}"
-	}
-}
-```
+### How It Works
 
-**Note:** Replace `your-secret-token-here` with the same secret value configured in your `REVALIDATE_SECRET` environment variable.
+Our API automatically extracts the `_type` field from the Sanity webhook payload. You don't need to set any additional headers - Sanity includes the full document data in the webhook body by default.
+
+**Optional:** Use a GROQ projection `{_type}` to reduce payload size if desired.
 
 ## Testing
 
@@ -161,8 +155,10 @@ This will return information about the endpoint:
 	"endpoint": "/api/revalidate",
 	"method": "POST",
 	"expectedHeaders": {
-		"x-revalidate-secret": "secret token for authentication",
-		"x-content-type": "content type to revalidate (e.g., newsArticle, siteSettings, page, etc.)"
+		"x-revalidate-secret": "secret token for authentication"
+	},
+	"expectedBody": {
+		"_type": "content type to revalidate (e.g., newsArticle, siteSettings, page, etc.)"
 	}
 }
 ```

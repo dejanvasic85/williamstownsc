@@ -29,19 +29,24 @@ export async function POST(request: NextRequest) {
 			return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 		}
 
-		// Validate content type header
-		const contentType = request.headers.get('x-content-type');
-		console.log('Revalidation request received. Content Type:', contentType);
+		// Extract content type from request body
+		const body = await request.json();
+		console.log('Revalidation request received. Body:', JSON.stringify(body, null, 2));
+
+		const contentType = body._type;
 
 		if (!contentType) {
-			return NextResponse.json({ error: 'x-content-type header required' }, { status: 400 });
+			return NextResponse.json(
+				{ error: 'Content type required in request body (_type field)' },
+				{ status: 400 }
+			);
 		}
 
 		// Validate content type against allowlist
 		if (!isValidContentType(contentType)) {
 			return NextResponse.json(
 				{
-					error: 'Invalid x-content-type header value',
+					error: 'Invalid content type',
 					allowedContentTypes: Array.from(allowedContentTypes),
 					allowedPageNamePattern: pageNamePattern.source
 				},
@@ -78,8 +83,10 @@ export async function GET() {
 		endpoint: '/api/revalidate',
 		method: 'POST',
 		expectedHeaders: {
-			'x-revalidate-secret': 'secret token for authentication',
-			'x-content-type': 'content type to revalidate (e.g., newsArticle, siteSettings, page, etc.)'
+			'x-revalidate-secret': 'secret token for authentication'
+		},
+		expectedBody: {
+			_type: 'content type to revalidate (e.g., newsArticle, team, sponsor, etc.)'
 		}
 	});
 }
