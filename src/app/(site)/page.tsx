@@ -9,7 +9,7 @@ import {
 	HeroCarousel,
 	SponsorsSection
 } from '@/components/home';
-import { NewsCard, NewsListItem } from '@/components/news';
+import { NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
 import {
 	TransformedNewsArticle,
@@ -155,22 +155,25 @@ export default async function Home() {
 			{/* Latest News Section */}
 			{latestArticles.length > 0 && (
 				<section className="container mx-auto mb-8 px-4 py-12">
-					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-						{latestArticles.map((article: TransformedNewsArticle) => (
-							<NewsCard
-								key={article._id}
-								slug={article.slug}
-								title={article.title}
-								excerpt={article.excerpt}
-								publishedAt={article.publishedAt}
-								featuredImage={article.featuredImage}
-							/>
-						))}
-					</div>
-					<div className="flex justify-end pt-6">
-						<Link href="/news" className="btn btn-primary btn-outline">
-							View news & matches
-						</Link>
+					<div className="card bg-base-100 shadow-lg">
+						<div className="card-body p-0">
+							<h2 className="card-title border-base-300 border-b px-6 py-4 text-xl">Recent News</h2>
+							<div className="px-6">
+								{latestArticles.map((article: TransformedNewsArticle) => (
+									<NewsListItem
+										key={article._id}
+										slug={article.slug}
+										title={article.title}
+										publishedAt={article.publishedAt}
+									/>
+								))}
+							</div>
+							<div className="border-base-300 border-t p-4">
+								<Link href="/news" className="btn btn-primary btn-outline btn-block">
+									View all news
+								</Link>
+							</div>
+						</div>
 					</div>
 				</section>
 			)}
