@@ -9,7 +9,7 @@ import {
 	HeroCarousel,
 	SponsorsSection
 } from '@/components/home';
-import { NewsCard } from '@/components/news';
+import { NewsCard, NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
 import {
 	TransformedNewsArticle,
@@ -25,9 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([
+	const [featuredArticles, latestArticles, olderArticles, siteSettings] = await Promise.all([
 		getFeaturedArticles(),
 		getLatestArticles(3),
+		getLatestArticles(8),
 		getSiteSettings()
 	]);
 
@@ -99,7 +100,40 @@ export default async function Home() {
 
 			{featuredArticles.length > 0 && (
 				<div className="container mx-auto px-4 pt-6 lg:pt-(--navbar-total-height-desktop)">
-					<HeroCarousel articles={featuredArticles} />
+					<div className="flex flex-col gap-6 lg:flex-row">
+						{/* Hero Carousel - Left Side */}
+						<div className="lg:w-2/3">
+							<HeroCarousel articles={featuredArticles} />
+						</div>
+
+						{/* Older News List - Right Side */}
+						{olderArticles.length > 0 && (
+							<div className="lg:w-1/3">
+								<div className="card bg-base-100 h-full shadow-lg">
+									<div className="card-body p-0">
+										<h2 className="card-title border-base-300 border-b px-6 py-4 text-lg">
+											Latest News
+										</h2>
+										<div className="max-h-[60vh] overflow-y-auto px-6 lg:max-h-[75vh]">
+											{olderArticles.map((article: TransformedNewsArticle) => (
+												<NewsListItem
+													key={article._id}
+													slug={article.slug}
+													title={article.title}
+													publishedAt={article.publishedAt}
+												/>
+											))}
+										</div>
+										<div className="border-base-300 border-t p-4">
+											<Link href="/news" className="btn btn-primary btn-outline btn-block btn-sm">
+												View all news
+											</Link>
+										</div>
+									</div>
+								</div>
+							</div>
+						)}
+					</div>
 				</div>
 			)}
 
