@@ -34,7 +34,7 @@
 		"react-hook-form": "7.69.0",
 		"sanity": "5.1.0",
 		"styled-components": "6.1.19",
-		"zod": "4.3.0"
+		"zod": "4.3.2"
 	},
 	"devDependencies": {
 		"@faker-js/faker": "^10.1.0",
