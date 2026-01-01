@@ -74,9 +74,9 @@ export default async function Home() {
 						{/* News List - Right Side */}
 						{latestNews.length > 0 && (
 							<div className="lg:w-1/3">
-								<div className="card bg-base-100 h-full shadow-lg">
+								<div className="card h-full">
 									<div className="card-body p-0">
-										<h2 className="card-title px-6 pt-8">News</h2>
+										<h2 className="card-title px-6 pt-8 text-2xl">News</h2>
 										<div className="max-h-[60vh] overflow-y-auto px-6 lg:max-h-[75vh]">
 											{latestNews.map((article: TransformedNewsArticle) => (
 												<NewsListItem

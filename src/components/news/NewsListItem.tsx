@@ -22,7 +22,7 @@ export function NewsListItem({ slug, title, publishedAt }: NewsListItemProps) {
 				<time
 					dateTime={publishedDate.toISOString()}
 					title={relativeDate}
-					className="text-base-content/60 text-sm"
+					className="text-base-content/60"
 				>
 					{formattedDate}
 				</time>
