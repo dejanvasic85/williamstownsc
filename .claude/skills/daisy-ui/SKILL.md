@@ -197,7 +197,7 @@ module.exports = {
 			</div>
 		</div>
 		<div className="card-actions justify-end">
-			<button className="btn btn-ghost btn-sm">Match Report</button>
+			<button className="btn btn-ghost">Match Report</button>
 		</div>
 	</div>
 </div>
@@ -219,7 +219,7 @@ module.exports = {
 		<p>Exciting announcement about our coaching lineup for the upcoming season...</p>
 		<div className="card-actions mt-4 items-center justify-between">
 			<span className="text-base-content/70 text-sm">2 days ago</span>
-			<button className="btn btn-primary btn-sm">Read More</button>
+			<button className="btn btn-primary">Read More</button>
 		</div>
 	</div>
 </div>
@@ -342,7 +342,7 @@ module.exports = {
 				<p className="text-base-content/70 mb-2 text-sm">6:00 PM - 9:00 PM</p>
 				<p>Join us for the official 2026 season launch with the new coaching team...</p>
 				<div className="card-actions mt-4 justify-end">
-					<button className="btn btn-primary btn-sm">RSVP</button>
+					<button className="btn btn-primary">RSVP</button>
 				</div>
 			</div>
 		</div>

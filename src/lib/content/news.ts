@@ -47,7 +47,7 @@ export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
 }
 
 export async function getLatestArticles(limit: number = 3): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && featured != true] | order(publishedAt desc) [0...${limit}] {
+	const query = `*[_type == "newsArticle"] | order(publishedAt desc) [0...${limit}] {
 		_id,
 		title,
 		slug,

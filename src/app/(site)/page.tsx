@@ -1,22 +1,16 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin } from 'lucide-react';
-import { Icon } from '@/components/Icon';
 import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
+	SocialLinks,
 	SponsorsSection
 } from '@/components/home';
-import { NewsCard } from '@/components/news';
+import { NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
-import {
-	TransformedNewsArticle,
-	getFeaturedArticles,
-	getLatestArticles,
-	getSiteSettings
-} from '@/lib/content';
+import { TransformedNewsArticle, getLatestArticles, getSiteSettings } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -25,14 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const [featuredArticles, latestArticles, siteSettings] = await Promise.all([
-		getFeaturedArticles(),
-		getLatestArticles(3),
-		getSiteSettings()
-	]);
-
+	const [news, siteSettings] = await Promise.all([getLatestArticles(7), getSiteSettings()]);
+	const [featuredArticle, ...latestNews] = news;
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
-
 	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
 	const homeGroundAddress = formatAddress(homeGround);
 
@@ -71,39 +60,47 @@ export default async function Home() {
 					)}
 					<h1 className="text-lg font-bold sm:text-xl">{siteSettings?.clubName}</h1>
 				</div>
-
-				{socialLinks.length > 0 && (
-					<div className="flex items-center gap-0">
-						{socialLinks.map((social) => (
-							<a
-								key={social.name}
-								href={social.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-base-content hover:bg-base-300 rounded-full p-1.5 transition-colors hover:ring-2 sm:p-2"
-								aria-label={social.name}
-							>
-								{social.icon === 'mapPin' ? (
-									<MapPin className="h-5 w-5 sm:h-5 sm:w-5" />
-								) : (
-									<Icon
-										name={social.icon as 'facebook' | 'instagram' | 'youtube'}
-										className="h-5 w-5 sm:h-5 sm:w-5"
-									/>
-								)}
-							</a>
-						))}
-					</div>
-				)}
+				<SocialLinks links={socialLinks} />
 			</div>
 
-			{featuredArticles.length > 0 && (
-				<div className="container mx-auto px-4 pt-6 lg:pt-(--navbar-total-height-desktop)">
-					<HeroCarousel articles={featuredArticles} />
+			{featuredArticle && (
+				<div className="container mx-auto mb-10 lg:pt-(--navbar-total-height-desktop)">
+					<div className="flex flex-col gap-6 lg:flex-row">
+						{/* Hero Carousel - Left Side */}
+						<div className="lg:w-2/3">
+							<HeroCarousel articles={[featuredArticle]} />
+						</div>
+
+						{/* News List - Right Side */}
+						{latestNews.length > 0 && (
+							<div className="lg:w-1/3">
+								<div className="card h-full">
+									<div className="card-body p-0">
+										<h2 className="card-title px-6 pt-8 text-2xl">News</h2>
+										<div className="max-h-[60vh] overflow-y-auto px-6 lg:max-h-[75vh]">
+											{latestNews.map((article: TransformedNewsArticle) => (
+												<NewsListItem
+													key={article._id}
+													slug={article.slug}
+													title={article.title}
+													publishedAt={article.publishedAt}
+												/>
+											))}
+										</div>
+										<div className="p-4">
+											<Link href="/news" className="btn btn-primary btn-outline btn-block">
+												View all news
+											</Link>
+										</div>
+									</div>
+								</div>
+							</div>
+						)}
+					</div>
 				</div>
 			)}
 
-			{featuredArticles.length === 0 && (
+			{!featuredArticle && (
 				<div className="hero bg-base-200 min-h-[60vh]">
 					<div className="hero-content text-center">
 						<div className="max-w-md">
@@ -116,29 +113,6 @@ export default async function Home() {
 						</div>
 					</div>
 				</div>
-			)}
-
-			{/* Latest News Section */}
-			{latestArticles.length > 0 && (
-				<section className="container mx-auto mb-8 px-4 py-12">
-					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-						{latestArticles.map((article: TransformedNewsArticle) => (
-							<NewsCard
-								key={article._id}
-								slug={article.slug}
-								title={article.title}
-								excerpt={article.excerpt}
-								publishedAt={article.publishedAt}
-								featuredImage={article.featuredImage}
-							/>
-						))}
-					</div>
-					<div className="flex justify-end pt-6">
-						<Link href="/news" className="btn btn-primary btn-outline">
-							View news & matches
-						</Link>
-					</div>
-				</section>
 			)}
 
 			{/* Football Section */}
