@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Exo, Montserrat, Poppins } from 'next/font/google';
 import clsx from 'clsx';
 import { getClientConfig } from '@/lib/config';
 import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import './globals.css';
 
-const inter = Inter({
-	variable: '--font-inter',
+const montserrat = Montserrat({
+	variable: '--font-montserrat',
 	subsets: ['latin']
 });
 
-const poppins = Poppins({
-	variable: '--font-poppins',
+const exo = Exo({
+	variable: '--font-exo',
 	weight: ['400', '500', '600', '700', '800'],
 	subsets: ['latin']
 });
@@ -31,7 +31,7 @@ export default function RootLayout({
 
 	return (
 		<html lang="en">
-			<body className={clsx(inter.variable, poppins.variable, 'antialiased')}>
+			<body className={clsx(montserrat.variable, exo.variable, 'antialiased')}>
 				<ConfigProvider config={config}>{children}</ConfigProvider>
 			</body>
 		</html>
