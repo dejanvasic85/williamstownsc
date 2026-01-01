@@ -64,7 +64,7 @@ export default async function Home() {
 			</div>
 
 			{featuredArticle && (
-				<div className="container mx-auto mb-24 lg:pt-(--navbar-total-height-desktop)">
+				<div className="container mx-auto mb-10 lg:pt-(--navbar-total-height-desktop)">
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className="lg:w-2/3">
@@ -76,7 +76,7 @@ export default async function Home() {
 							<div className="lg:w-1/3">
 								<div className="card bg-base-100 h-full shadow-lg">
 									<div className="card-body p-0">
-										<h2 className="card-title px-6 py-4 text-lg">News</h2>
+										<h2 className="card-title px-6 pt-8">News</h2>
 										<div className="max-h-[60vh] overflow-y-auto px-6 lg:max-h-[75vh]">
 											{latestNews.map((article: TransformedNewsArticle) => (
 												<NewsListItem
