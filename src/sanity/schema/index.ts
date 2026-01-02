@@ -3,6 +3,7 @@ import { committeeMember } from './committeeMember';
 import { newsArticle } from './newsArticle';
 // Objects
 import { contactTypeContent } from './objects/contactTypeContent';
+import { keyDateItem } from './objects/keyDateItem';
 import { seo } from './objects/seo';
 // Pages
 import {
@@ -12,6 +13,7 @@ import {
 	contactPage,
 	eventsPage,
 	homePage,
+	keyDatesPage,
 	locationsPage,
 	merchandisePage,
 	newsPage,
@@ -33,6 +35,7 @@ export const schemaTypes = [
 	// Objects
 	committeeMember,
 	contactTypeContent,
+	keyDateItem,
 	seo,
 
 	// Pages
@@ -42,6 +45,7 @@ export const schemaTypes = [
 	contactPage,
 	eventsPage,
 	homePage,
+	keyDatesPage,
 	locationsPage,
 	merchandisePage,
 	newsPage,

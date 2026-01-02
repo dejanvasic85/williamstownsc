@@ -93,7 +93,7 @@ export async function FootballSection() {
 								</div>
 							))}
 						</div>
-						<div className="flex justify-end">
+						<div className="flex justify-center md:justify-end">
 							<Link href="/football/teams" className="btn btn-secondary">
 								View all teams
 							</Link>
@@ -153,7 +153,7 @@ export async function FootballSection() {
 								</div>
 							))}
 						</div>
-						<div className="flex justify-end">
+						<div className="flex justify-center md:justify-end">
 							<Link href="/football/programs" className="btn btn-secondary">
 								View all programs
 							</Link>

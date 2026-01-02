@@ -52,6 +52,9 @@ export const structure = (S: StructureBuilder) =>
 							S.listItem()
 								.title('Events')
 								.child(S.document().schemaType('eventsPage').documentId('eventsPage')),
+							S.listItem()
+								.title('Key Dates')
+								.child(S.document().schemaType('keyDatesPage').documentId('keyDatesPage')),
 							S.divider(),
 							S.listItem()
 								.title('Privacy Policy')
@@ -77,6 +80,7 @@ export const structure = (S: StructureBuilder) =>
 						'contactPage',
 						'eventsPage',
 						'homePage',
+						'keyDatesPage',
 						'locationsPage',
 						'merchandisePage',
 						'newsPage',

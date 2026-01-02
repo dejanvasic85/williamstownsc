@@ -5,12 +5,18 @@ import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
+	KeyDatesSection,
 	SocialLinks,
 	SponsorsSection
 } from '@/components/home';
 import { NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
-import { TransformedNewsArticle, getLatestArticles, getSiteSettings } from '@/lib/content';
+import {
+	TransformedNewsArticle,
+	getHomePageData,
+	getLatestArticles,
+	getSiteSettings
+} from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -19,7 +25,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const [news, siteSettings] = await Promise.all([getLatestArticles(7), getSiteSettings()]);
+	const [news, siteSettings, homePageData] = await Promise.all([
+		getLatestArticles(7),
+		getSiteSettings(),
+		getHomePageData()
+	]);
+
 	const [featuredArticle, ...latestNews] = news;
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
@@ -87,7 +98,7 @@ export default async function Home() {
 												/>
 											))}
 										</div>
-										<div className="flex justify-end p-4">
+										<div className="flex justify-center p-4 md:justify-end">
 											<Link href="/news" className="btn btn-primary btn-outline">
 												View all news
 											</Link>
@@ -113,6 +124,14 @@ export default async function Home() {
 						</div>
 					</div>
 				</div>
+			)}
+
+			{/* Key Dates Section */}
+			{homePageData?.keyDatesSection?.show !== false && (
+				<KeyDatesSection
+					heading={homePageData?.keyDatesSection?.heading}
+					leadingText={homePageData?.keyDatesSection?.leadingText}
+				/>
 			)}
 
 			{/* Football Section */}

@@ -13,6 +13,7 @@ export type PageName =
 	| 'contactPage'
 	| 'eventsPage'
 	| 'homePage'
+	| 'keyDatesPage'
 	| 'locationsPage'
 	| 'merchandisePage'
 	| 'newsPage'

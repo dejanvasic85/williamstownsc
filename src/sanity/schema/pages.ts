@@ -59,10 +59,50 @@ function createPage(name: string, title: string, options?: PageOptions) {
 }
 
 // SEO-only pages (content is hardcoded in app)
-export const homePage = createPage('homePage', 'Home Page');
+export const homePage = createPage('homePage', 'Home Page', {
+	additionalFields: [
+		{
+			name: 'keyDatesSection',
+			title: 'Key Dates Section',
+			type: 'object',
+			description: 'Configuration for the key dates section on the homepage',
+			fields: [
+				{
+					name: 'show',
+					title: 'Show Key Dates Section',
+					type: 'boolean',
+					initialValue: true
+				},
+				{
+					name: 'heading',
+					title: 'Heading',
+					type: 'string',
+					description: 'Section heading (e.g., "Key Dates 2026")'
+				},
+				{
+					name: 'leadingText',
+					title: 'Leading Text',
+					type: 'string',
+					description: 'Brief description shown below the heading'
+				}
+			]
+		}
+	]
+});
 
 // Editable content pages
 export const aboutPage = createEditablePage('aboutPage', 'About Page');
+export const keyDatesPage = createEditablePage('keyDatesPage', 'Key Dates Page', {
+	additionalFields: [
+		{
+			name: 'keyDates',
+			title: 'Key Dates',
+			type: 'array',
+			of: [{ type: 'keyDateItem' }],
+			description: 'List of important dates for the season'
+		}
+	]
+});
 export const accessibilityPage = createEditablePage('accessibilityPage', 'Accessibility Statement');
 export const committeePage = createEditablePage('committeePage', 'Committee Page', {
 	additionalFields: [
