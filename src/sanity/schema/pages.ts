@@ -63,6 +63,17 @@ export const homePage = createPage('homePage', 'Home Page');
 
 // Editable content pages
 export const aboutPage = createEditablePage('aboutPage', 'About Page');
+export const keyDatesPage = createEditablePage('keyDatesPage', 'Key Dates Page', {
+	additionalFields: [
+		{
+			name: 'keyDates',
+			title: 'Key Dates',
+			type: 'array',
+			of: [{ type: 'keyDateItem' }],
+			description: 'List of important dates for the season'
+		}
+	]
+});
 export const accessibilityPage = createEditablePage('accessibilityPage', 'Accessibility Statement');
 export const committeePage = createEditablePage('committeePage', 'Committee Page', {
 	additionalFields: [

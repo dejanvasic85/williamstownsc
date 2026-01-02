@@ -5,6 +5,7 @@ import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
+	KeyDatesSection,
 	SocialLinks,
 	SponsorsSection
 } from '@/components/home';
@@ -87,7 +88,7 @@ export default async function Home() {
 												/>
 											))}
 										</div>
-										<div className="flex justify-end p-4">
+										<div className="flex justify-center p-4 md:justify-end">
 											<Link href="/news" className="btn btn-primary btn-outline">
 												View all news
 											</Link>
@@ -114,6 +115,9 @@ export default async function Home() {
 					</div>
 				</div>
 			)}
+
+			{/* Key Dates Section */}
+			<KeyDatesSection />
 
 			{/* Football Section */}
 			<FootballSection />

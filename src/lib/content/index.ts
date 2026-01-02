@@ -7,4 +7,7 @@ export type { TransformedSponsor } from './sponsors';
 export { getActivePrograms } from './programs';
 export type { TransformedProgram } from './programs';
 
+export { getKeyDatesPageData } from './keyDates';
+export type { KeyDateItem } from './keyDates';
+
 export { getSiteSettings } from './siteSettings';
