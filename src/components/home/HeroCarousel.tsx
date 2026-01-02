@@ -65,7 +65,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 
 	return (
 		<div className="group relative w-full">
-			<div className="carousel rounded-box relative h-[60vh] w-full overflow-hidden lg:h-[70vh]">
+			<div className="carousel md:rounded-box relative h-[60vh] w-full overflow-hidden lg:h-[70vh]">
 				{articles.map((article, index) => (
 					<div
 						key={article._id}
