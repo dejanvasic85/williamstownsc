@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import { Calendar } from 'lucide-react';
 
-export function KeyDatesSection() {
+type KeyDatesSectionProps = {
+	heading?: string;
+	leadingText?: string;
+};
+
+const defaultHeading = 'Key Dates 2026';
+const defaultLeadingText = 'See all the important dates for the upcoming season.';
+
+export function KeyDatesSection({ heading, leadingText }: KeyDatesSectionProps) {
 	return (
 		<section className="container mx-auto px-4 py-8">
 			<div className="bg-secondary/10 border-secondary/30 rounded-2xl border p-8 md:p-10">
@@ -10,10 +18,8 @@ export function KeyDatesSection() {
 						<Calendar className="text-secondary h-10 w-10" />
 					</div>
 					<div className="flex-1">
-						<h2 className="mb-2 text-2xl font-bold md:text-3xl">Key Dates 2026</h2>
-						<p className="text-base-content/70 text-lg">
-							See all the important dates for the upcoming season.
-						</p>
+						<h2 className="mb-2 text-2xl font-bold md:text-3xl">{heading || defaultHeading}</h2>
+						<p className="text-base-content/70 text-lg">{leadingText || defaultLeadingText}</p>
 					</div>
 					<div className="shrink-0">
 						<Link href="/key-dates" className="btn btn-secondary">

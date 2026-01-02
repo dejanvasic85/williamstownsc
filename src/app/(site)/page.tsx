@@ -11,7 +11,12 @@ import {
 } from '@/components/home';
 import { NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
-import { TransformedNewsArticle, getLatestArticles, getSiteSettings } from '@/lib/content';
+import {
+	TransformedNewsArticle,
+	getHomePageData,
+	getLatestArticles,
+	getSiteSettings
+} from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -20,7 +25,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const [news, siteSettings] = await Promise.all([getLatestArticles(7), getSiteSettings()]);
+	const [news, siteSettings, homePageData] = await Promise.all([
+		getLatestArticles(7),
+		getSiteSettings(),
+		getHomePageData()
+	]);
+
 	const [featuredArticle, ...latestNews] = news;
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
@@ -117,7 +127,12 @@ export default async function Home() {
 			)}
 
 			{/* Key Dates Section */}
-			<KeyDatesSection />
+			{homePageData?.keyDatesSection?.show !== false && (
+				<KeyDatesSection
+					heading={homePageData?.keyDatesSection?.heading}
+					leadingText={homePageData?.keyDatesSection?.leadingText}
+				/>
+			)}
 
 			{/* Football Section */}
 			<FootballSection />
