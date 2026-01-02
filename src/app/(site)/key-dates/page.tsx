@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Calendar } from 'lucide-react';
+import { AddToCalendarButton } from '@/components/KeyDates';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { KeyDateItem, getKeyDatesPageData } from '@/lib/content';
@@ -22,17 +23,20 @@ function KeyDateCard({ item }: { item: KeyDateItem }) {
 	const { day, month, year } = formatDate(item.date);
 
 	return (
-		<div className="bg-base-100 flex gap-6 rounded-xl p-6 shadow-md">
+		<div className="bg-base-100 flex items-center gap-6 rounded-xl p-6 shadow-md">
 			<div className="bg-secondary/10 flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-lg">
 				<span className="text-secondary text-2xl font-bold">{day}</span>
 				<span className="text-secondary text-sm font-medium uppercase">{month}</span>
 			</div>
-			<div className="flex flex-col justify-center">
+			<div className="flex min-w-0 flex-1 flex-col justify-center">
 				<h3 className="text-lg font-semibold">{item.title}</h3>
 				{item.description && (
 					<p className="text-base-content/70 mt-1 text-sm">{item.description}</p>
 				)}
 				<p className="text-base-content/50 mt-1 text-xs">{year}</p>
+			</div>
+			<div className="shrink-0">
+				<AddToCalendarButton title={item.title} date={item.date} description={item.description} />
 			</div>
 		</div>
 	);
