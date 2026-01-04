@@ -12,6 +12,7 @@ interface HeroCarouselProps {
 }
 
 export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarouselProps) {
+	console.log('HeroCarousel', articles);
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -65,7 +66,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 
 	return (
 		<div className="group relative w-full">
-			<div className="carousel md:rounded-box relative h-[60vh] w-full overflow-hidden lg:h-[60vh]">
+			<div className="carousel md:rounded-box relative h-[60vh] w-full overflow-hidden">
 				{articles.map((article, index) => (
 					<div
 						key={article._id}
