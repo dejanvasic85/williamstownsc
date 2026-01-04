@@ -1,3 +1,6 @@
+export { getAnnouncements } from './announcement';
+export type { AnnouncementData, AnnouncementType } from './announcement';
+
 export { getAllArticles, getArticleBySlug, getFeaturedArticles, getLatestArticles } from './news';
 export type { TransformedNewsArticle } from './news';
 

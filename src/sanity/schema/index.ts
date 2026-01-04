@@ -1,3 +1,4 @@
+import { announcement } from './announcement';
 import { coach } from './coach';
 import { committeeMember } from './committeeMember';
 import { newsArticle } from './newsArticle';
@@ -57,6 +58,7 @@ export const schemaTypes = [
 	termsPage,
 
 	// Content types
+	announcement,
 	newsArticle,
 	person,
 	team,

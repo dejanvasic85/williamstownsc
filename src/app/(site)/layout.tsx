@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import { Footer, Navbar } from '@/components/layout';
 import { formatAddress } from '@/lib/address';
-import { getSiteSettings } from '@/lib/content';
+import { getAnnouncements, getSiteSettings } from '@/lib/content';
 import { generateOrganizationSchema } from '@/lib/structuredData';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: PropsWithChildren) {
-	const siteSettings = await getSiteSettings();
+	const [siteSettings, announcements] = await Promise.all([getSiteSettings(), getAnnouncements()]);
 
 	const logoUrl = siteSettings?.logo
 		? urlFor(siteSettings.logo).width(80).height(80).url()
@@ -72,6 +72,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				clubName={siteSettings?.clubName}
 				socials={siteSettings?.socials}
 				homeGroundLink={homeGroundLink}
+				announcements={announcements}
 			/>
 			<main>{children}</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
