@@ -27,7 +27,7 @@ export const announcement = defineType({
 			type: 'text',
 			rows: 2,
 			description: 'Keep it short and concise up to 45 characters for best mobile view',
-			validation: (Rule) => Rule.required().max(20)
+			validation: (Rule) => Rule.required().max(45)
 		}),
 		defineField({
 			name: 'endDate',

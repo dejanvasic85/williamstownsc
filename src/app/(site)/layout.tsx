@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import { getDismissedBanners } from '@/actions/bannerActions';
 import { Banner, Footer, Navbar } from '@/components/layout';
 import { formatAddress } from '@/lib/address';
 import { getAnnouncements, getSiteSettings } from '@/lib/content';
@@ -37,7 +38,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: PropsWithChildren) {
-	const [siteSettings, announcements] = await Promise.all([getSiteSettings(), getAnnouncements()]);
+	const [siteSettings, announcements, dismissedBanners] = await Promise.all([
+		getSiteSettings(),
+		getAnnouncements(),
+		getDismissedBanners()
+	]);
+
+	console.log('announcements', announcements);
+	const activeAnnouncements = announcements.filter(
+		(announcement) => !dismissedBanners.includes(announcement._id)
+	);
 
 	const logoUrl = siteSettings?.logo
 		? urlFor(siteSettings.logo).width(80).height(80).url()
@@ -67,7 +77,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				/>
 			)}
 			<Banner
-				messages={announcements.map(({ _id, message, type }) => ({
+				messages={activeAnnouncements.map(({ _id, message, type }) => ({
 					id: _id,
 					message,
 					type
@@ -80,7 +90,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				socials={siteSettings?.socials}
 				homeGroundLink={homeGroundLink}
 			/>
-			<main>{children}</main>
+			<main className="mt-(--banner-height) lg:mt-0">{children}</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
 		</>
 	);

@@ -12,7 +12,6 @@ interface HeroCarouselProps {
 }
 
 export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarouselProps) {
-	console.log('HeroCarousel', articles);
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
