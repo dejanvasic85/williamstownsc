@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 import clsx from 'clsx';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
+import { getActiveAnnouncements } from '@/lib/announcements';
 
 type PageContainerProps = {
 	children?: ReactNode;
@@ -14,19 +15,21 @@ type PageContainerProps = {
 	layout?: 'full-width' | 'article';
 };
 
-export function PageContainer({
+export async function PageContainer({
 	children,
 	heading,
 	intro,
 	featuredImage,
 	layout = 'full-width'
 }: PageContainerProps) {
+	const { hasAnnouncements } = await getActiveAnnouncements();
+
 	return (
 		<div
 			className={clsx(
 				'bg-base-100 min-h-screen',
 				'py-6 pb-36',
-				'lg:py-12 lg:pt-(--navbar-total-height-desktop) lg:pb-12'
+				hasAnnouncements ? 'lg:pt-(--navbar-with-banner-height)' : 'lg:pt-(--navbar-with-offset)'
 			)}
 		>
 			<div className={clsx('mx-auto px-4', layout === 'article' ? 'max-w-4xl' : 'container')}>
