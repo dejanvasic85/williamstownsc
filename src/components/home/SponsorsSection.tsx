@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { SponsorCard } from '@/components/sponsors';
 import { getFeaturedSponsors } from '@/lib/content';
 
 export async function SponsorsSection() {
@@ -11,18 +11,12 @@ export async function SponsorsSection() {
 				{sponsors.length > 0 && (
 					<div className="flex w-full flex-wrap justify-center gap-12">
 						{sponsors.map((sponsor) => (
-							<div
+							<SponsorCard
 								key={sponsor._id}
-								className="flex h-60 w-60 items-center justify-center overflow-hidden rounded-2xl border border-white/50 bg-white/30 p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] backdrop-blur-md transition-all hover:shadow-xl"
-							>
-								<Image
-									src={sponsor.logo.url}
-									alt={sponsor.logo.alt || `${sponsor.name} logo`}
-									width={250}
-									height={200}
-									className="h-auto w-full object-contain"
-								/>
-							</div>
+								logoUrl={sponsor.logo.url}
+								logoAlt={sponsor.logo.alt}
+								name={sponsor.name}
+							/>
 						))}
 					</div>
 				)}
