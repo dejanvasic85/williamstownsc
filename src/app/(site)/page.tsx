@@ -135,7 +135,7 @@ export default async function Home() {
 			<div className="container mx-auto">
 				<div className="grid items-stretch gap-4 lg:grid-cols-2">
 					{/* Featured Sponsors */}
-					<div className="flex h-full flex-col justify-between gap-4 rounded-2xl border border-gray-200 bg-white p-6 md:flex-row md:items-start md:p-8">
+					<div className="flex h-full flex-col justify-between gap-4 border border-gray-200 bg-white p-6 md:flex-row md:items-start md:rounded-2xl md:p-8">
 						<div>
 							<h2 className="mb-2 text-2xl font-bold md:text-3xl">Our Sponsors</h2>
 							<p className="text-base-content/70 text-base md:text-lg">
