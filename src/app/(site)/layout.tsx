@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
-import { Footer, Navbar } from '@/components/layout';
+import { Banner, Footer, Navbar } from '@/components/layout';
 import { formatAddress } from '@/lib/address';
 import { getAnnouncements, getSiteSettings } from '@/lib/content';
 import { generateOrganizationSchema } from '@/lib/structuredData';
@@ -66,13 +66,19 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
 				/>
 			)}
+			<Banner
+				messages={announcements.map(({ _id, message, type }) => ({
+					id: _id,
+					message,
+					type
+				}))}
+			/>
 			<Navbar
 				logoUrl={logoUrl}
 				logoAlt={logoAlt}
 				clubName={siteSettings?.clubName}
 				socials={siteSettings?.socials}
 				homeGroundLink={homeGroundLink}
-				announcements={announcements}
 			/>
 			<main>{children}</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />

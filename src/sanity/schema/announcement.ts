@@ -6,28 +6,6 @@ export const announcement = defineType({
 	type: 'document',
 	fields: [
 		defineField({
-			name: 'title',
-			title: 'Title',
-			type: 'string',
-			description: "Internal title for organization (optional - won't be displayed)",
-			validation: (Rule) => Rule.max(100)
-		}),
-		defineField({
-			name: 'enabled',
-			title: 'Show Announcement',
-			type: 'boolean',
-			description: 'Toggle to show or hide this announcement banner',
-			initialValue: false
-		}),
-		defineField({
-			name: 'order',
-			title: 'Display Order',
-			type: 'number',
-			description: 'Lower numbers appear first (1 = highest priority)',
-			initialValue: 1,
-			validation: (Rule) => Rule.min(1).max(100).required()
-		}),
-		defineField({
 			name: 'type',
 			title: 'Announcement Type',
 			type: 'string',
@@ -52,28 +30,11 @@ export const announcement = defineType({
 			validation: (Rule) => Rule.required().max(200)
 		}),
 		defineField({
-			name: 'link',
-			title: 'Link (Optional)',
-			type: 'object',
-			description: 'Optional link for more information',
-			fields: [
-				{
-					name: 'text',
-					title: 'Link Text',
-					type: 'string',
-					description: 'e.g., "Learn more", "View details"'
-				},
-				{
-					name: 'url',
-					title: 'URL',
-					type: 'url',
-					validation: (Rule) =>
-						Rule.uri({
-							allowRelative: true,
-							scheme: ['http', 'https', 'mailto', 'tel']
-						})
-				}
-			]
+			name: 'endDate',
+			title: 'End Date',
+			type: 'date',
+			description: 'The date when the announcement should end',
+			validation: (Rule) => Rule.required()
 		})
 	],
 	preview: {

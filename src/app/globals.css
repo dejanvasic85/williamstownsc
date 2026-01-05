@@ -74,8 +74,9 @@
 }
 
 :root {
+	--banner-height: 2rem;
 	--navbar-height-desktop: 5rem;
-	--navbar-offset-desktop: 1rem;
+	--navbar-offset-desktop: var(--banner-height);
 	--navbar-spacing-desktop: 2rem;
 	--navbar-total-height-desktop: calc(
 		var(--navbar-height-desktop) + var(--navbar-offset-desktop) + var(--navbar-spacing-desktop)

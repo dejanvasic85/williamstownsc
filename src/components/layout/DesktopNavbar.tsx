@@ -100,7 +100,7 @@ export function DesktopNavbar({
 	};
 
 	return (
-		<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
+		<nav className="fixed top-(--banner-height) right-0 left-0 z-50 hidden lg:block">
 			<div className="container mx-auto flex flex-col items-center">
 				<div
 					className={clsx(

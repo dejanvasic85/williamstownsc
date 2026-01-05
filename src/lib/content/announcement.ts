@@ -1,34 +1,28 @@
+import { parse } from 'date-fns';
 import { client } from '@/sanity/lib/client';
 
 export type AnnouncementType = 'info' | 'warning' | 'alert';
 
 export interface AnnouncementData {
 	_id: string;
-	title?: string;
-	enabled: boolean;
 	type: AnnouncementType;
-	order: number;
 	message: string;
-	link?: {
-		text?: string;
-		url?: string;
-	};
+	endDate: string;
 }
 
 export async function getAnnouncements(): Promise<AnnouncementData[]> {
 	const announcements = await client.fetch<AnnouncementData[]>(
-		`*[_type == "announcement" && enabled == true && defined(message)] | order(order asc){
+		`*[_type == "announcement"]{
 			_id,
-			title,
-			enabled,
 			type,
-			order,
 			message,
-			link
+			endDate
 		}`,
 		{},
 		{ next: { tags: ['announcement'] } }
 	);
 
-	return announcements || [];
+	return announcements.filter(
+		(announcement) => parse(announcement.endDate, 'yyyy-MM-dd', new Date()) >= new Date()
+	);
 }
