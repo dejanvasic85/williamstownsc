@@ -40,10 +40,9 @@ export const announcement = defineType({
 	preview: {
 		select: {
 			message: 'message',
-			type: 'type',
-			enabled: 'enabled'
+			type: 'type'
 		},
-		prepare({ message, type, enabled }) {
+		prepare({ message, type }) {
 			const typeLabels: Record<string, string> = {
 				info: 'Info',
 				warning: 'Warning',
@@ -51,7 +50,7 @@ export const announcement = defineType({
 			};
 			return {
 				title: message || 'No message set',
-				subtitle: `${typeLabels[type] || type} - ${enabled ? 'Visible' : 'Hidden'}`
+				subtitle: `${typeLabels[type] || type}`
 			};
 		}
 	}
