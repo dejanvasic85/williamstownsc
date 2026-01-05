@@ -26,8 +26,8 @@ export const announcement = defineType({
 			title: 'Message',
 			type: 'text',
 			rows: 2,
-			description: 'The announcement message to display (keep it short and concise)',
-			validation: (Rule) => Rule.required().max(200)
+			description: 'Keep it short and concise up to 45 characters for best mobile view',
+			validation: (Rule) => Rule.required().max(20)
 		}),
 		defineField({
 			name: 'endDate',
