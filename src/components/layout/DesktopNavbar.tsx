@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
-import type { AnnouncementData } from '@/lib/content';
 import { navItems } from '@/lib/navigation';
 
 type DesktopNavbarProps = {
@@ -20,7 +19,7 @@ type DesktopNavbarProps = {
 		youtube?: string;
 	};
 	homeGroundLink?: string;
-	announcements?: AnnouncementData[];
+	hasAnnouncements?: boolean;
 };
 
 export function DesktopNavbar({
@@ -29,7 +28,7 @@ export function DesktopNavbar({
 	clubName,
 	socials,
 	homeGroundLink,
-	announcements
+	hasAnnouncements
 }: DesktopNavbarProps) {
 	const pathname = usePathname();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -93,14 +92,13 @@ export function DesktopNavbar({
 		...(socials?.youtube ? [{ name: 'YouTube', href: socials.youtube, icon: 'youtube' }] : [])
 	];
 
-	const announcementStyles = {
-		info: 'bg-info text-info-content',
-		warning: 'bg-warning text-warning-content',
-		alert: 'bg-error text-error-content'
-	};
-
 	return (
-		<nav className="fixed top-(--banner-height) right-0 left-0 z-50 hidden lg:block">
+		<nav
+			className={clsx(
+				'fixed right-0 left-0 z-50 hidden lg:block',
+				hasAnnouncements ? 'top-(--banner-height)' : 'top-4'
+			)}
+		>
 			<div className="container mx-auto flex flex-col items-center">
 				<div
 					className={clsx(
@@ -248,33 +246,6 @@ export function DesktopNavbar({
 						</div>
 					</div>
 				</div>
-
-				{/* Announcement Banners - stacked below navbar */}
-				{announcements && announcements.length > 0 && (
-					<div className="mt-2 flex flex-col gap-2">
-						{announcements.map((announcement) => (
-							<div
-								key={announcement._id}
-								className={clsx(
-									announcementStyles[announcement.type],
-									'animate-in fade-in slide-in-from-top-2 flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold shadow-lg duration-300'
-								)}
-								role="alert"
-								aria-live="polite"
-							>
-								<span>{announcement.message}</span>
-								{announcement.link?.url && announcement.link?.text && (
-									<Link
-										href={announcement.link.url}
-										className="underline underline-offset-2 hover:no-underline"
-									>
-										{announcement.link.text}
-									</Link>
-								)}
-							</div>
-						))}
-					</div>
-				)}
 			</div>
 		</nav>
 	);

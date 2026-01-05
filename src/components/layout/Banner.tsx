@@ -24,6 +24,8 @@ export const Banner = ({ messages }: BannerProps) => {
 		});
 	};
 
+	if (!messages.length) return null;
+
 	return (
 		<div className="bg-base-100 fixed top-0 right-0 left-0 z-50 flex h-(--banner-height)">
 			<div className="mx-auto flex w-full text-sm lg:container">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import clsx from 'clsx';
 import { getDismissedBanners } from '@/actions/bannerActions';
 import { Banner, Footer, Navbar } from '@/components/layout';
 import { formatAddress } from '@/lib/address';
@@ -44,10 +45,10 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 		getDismissedBanners()
 	]);
 
-	console.log('announcements', announcements);
 	const activeAnnouncements = announcements.filter(
 		(announcement) => !dismissedBanners.includes(announcement._id)
 	);
+	const hasAnnouncements = activeAnnouncements.length > 0;
 
 	const logoUrl = siteSettings?.logo
 		? urlFor(siteSettings.logo).width(80).height(80).url()
@@ -89,8 +90,16 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				clubName={siteSettings?.clubName}
 				socials={siteSettings?.socials}
 				homeGroundLink={homeGroundLink}
+				hasAnnouncements={hasAnnouncements}
 			/>
-			<main className="mt-(--banner-height) lg:mt-0">{children}</main>
+			<main
+				className={clsx(
+					'mt-(--banner-height) lg:mt-0',
+					hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0'
+				)}
+			>
+				{children}
+			</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
 		</>
 	);

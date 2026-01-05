@@ -35,7 +35,7 @@ export function NewsCard({
 		<Link href={`/news/${slug}`} className="group">
 			<div
 				className={`card h-full overflow-hidden shadow-lg transition-all hover:shadow-xl ${
-					featured ? 'relative bg-linear-to-br from-blue-900 to-slate-950' : 'bg-base-100'
+					featured ? 'relative bg-linear-to-br from-blue-900 to-slate-950' : 'bg-white'
 				}`}
 			>
 				{featured && (

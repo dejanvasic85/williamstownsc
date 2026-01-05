@@ -11,9 +11,17 @@ type NavbarProps = {
 		youtube?: string;
 	};
 	homeGroundLink?: string;
+	hasAnnouncements?: boolean;
 };
 
-export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: NavbarProps) {
+export function Navbar({
+	logoUrl,
+	logoAlt,
+	clubName,
+	socials,
+	homeGroundLink,
+	hasAnnouncements
+}: NavbarProps) {
 	return (
 		<>
 			<MobileNavbar />
@@ -23,6 +31,7 @@ export function Navbar({ logoUrl, logoAlt, clubName, socials, homeGroundLink }: 
 				clubName={clubName}
 				socials={socials}
 				homeGroundLink={homeGroundLink}
+				hasAnnouncements={hasAnnouncements}
 			/>
 		</>
 	);
