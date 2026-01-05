@@ -25,7 +25,7 @@ export function ExpressionOfInterestSection() {
 						<p className="text-base-content/70 mb-4">
 							Join our teams and be part of the action. All skill levels welcome.
 						</p>
-						<span className="btn btn-primary btn-lg btn-outline group-hover:btn-primary-focus mt-auto">
+						<span className="btn btn-primary btn-outline group-hover:btn-primary-focus mt-auto">
 							Express interest in playing
 						</span>
 					</Link>
@@ -41,7 +41,7 @@ export function ExpressionOfInterestSection() {
 						<p className="text-base-content/90 mb-4">
 							Share your passion and experience. Help develop future stars.
 						</p>
-						<span className="btn btn-secondary btn-lg group-hover:btn-secondary-focus mt-auto">
+						<span className="btn btn-secondary group-hover:btn-secondary-focus mt-auto">
 							Express interest in coaching
 						</span>
 					</Link>

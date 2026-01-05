@@ -92,7 +92,9 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				homeGroundLink={homeGroundLink}
 				hasAnnouncements={hasAnnouncements}
 			/>
-			<main className={clsx(hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}>{children}</main>
+			<main className={clsx('mb-8', hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}>
+				{children}
+			</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
 		</>
 	);

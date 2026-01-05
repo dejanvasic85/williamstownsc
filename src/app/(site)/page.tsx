@@ -57,9 +57,9 @@ export default async function Home() {
 	];
 
 	return (
-		<div className="bg-base-100 min-h-screen pb-36 lg:pb-12">
+		<div className="bg-base-100 gap- grid min-h-screen gap-6">
 			{/* Mobile Header - Only on home page */}
-			<div className="flex items-center justify-between px-4 pt-6 lg:hidden">
+			<div className="flex items-center justify-between px-4 pt-4 lg:hidden">
 				<div className="flex items-center gap-2">
 					{logoUrl && (
 						<Image
@@ -76,7 +76,7 @@ export default async function Home() {
 			</div>
 
 			{featuredArticle && (
-				<div className="lg:mt- container mx-auto my-4 lg:mb-4 lg:pt-(--navbar-total-height-desktop)">
+				<div className="lg:mt- container mx-auto lg:mb-4 lg:pt-(--navbar-total-height-desktop)">
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className="lg:w-2/3">
@@ -113,21 +113,6 @@ export default async function Home() {
 								</div>
 							</div>
 						)}
-					</div>
-				</div>
-			)}
-
-			{!featuredArticle && (
-				<div className="hero bg-base-200 min-h-[60vh]">
-					<div className="hero-content text-center">
-						<div className="max-w-md">
-							<h1 className="text-5xl font-bold">Welcome to Williamstown SC</h1>
-							<p className="py-6">
-								Building community through soccer. Join us for competitive play, skill development,
-								and lifelong friendships.
-							</p>
-							<button className="btn btn-primary">Get Started</button>
-						</div>
 					</div>
 				</div>
 			)}
