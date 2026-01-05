@@ -9,7 +9,6 @@ import {
 } from '@/components/home';
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
 import { NewsListItem } from '@/components/news';
-import { SponsorCard } from '@/components/sponsors';
 import { formatAddress } from '@/lib/address';
 import {
 	TransformedNewsArticle,
@@ -133,27 +132,39 @@ export default async function Home() {
 				</div>
 			)}
 
-			<div className="container mx-auto h-40">
-				<div className="grid gap-4 lg:grid-cols-2">
-					{/*List of sponsors*/}
-					<div className="flex gap-4">
-						{featuredSponsors.map((sponsor) => (
-							<SponsorCard
-								key={sponsor._id}
-								logoUrl={sponsor.logo.url}
-								logoAlt={sponsor.logo.alt}
-								name={sponsor.name}
-								size="medium"
-							/>
-						))}
+			<div className="container mx-auto">
+				<div className="grid items-stretch gap-4 lg:grid-cols-2">
+					{/* Featured Sponsors */}
+					<div className="flex h-full flex-col rounded-2xl border border-gray-300 bg-white p-8">
+						<h2 className="mb-2 text-2xl font-bold md:text-3xl">Our Sponsors</h2>
+						<p className="text-base-content/70 mb-6 flex-1 text-lg">
+							Thank you to our partners for supporting the club.
+						</p>
+						<div className="flex items-center gap-6">
+							{featuredSponsors.map((sponsor) => (
+								<div key={sponsor._id} className="flex h-16 w-24 items-center justify-center">
+									<Image
+										src={sponsor.logo.url}
+										alt={sponsor.logo.alt || `${sponsor.name} logo`}
+										width={120}
+										height={100}
+										className="h-auto max-h-14 w-auto object-contain"
+									/>
+								</div>
+							))}
+							<div className="ml-auto">
+								<Link href="/sponsors" className="btn btn-outline">
+									View All
+								</Link>
+							</div>
+						</div>
 					</div>
 					{/* Key Dates Section */}
-					{homePageData?.keyDatesSection?.show && (
-						<KeyDatesSection
-							heading={homePageData?.keyDatesSection?.heading}
-							leadingText={homePageData?.keyDatesSection?.leadingText}
-						/>
-					)}
+
+					<KeyDatesSection
+						heading={homePageData?.keyDatesSection?.heading}
+						leadingText={homePageData?.keyDatesSection?.leadingText}
+					/>
 				</div>
 			</div>
 
