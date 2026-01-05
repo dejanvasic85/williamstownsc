@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getRevalidationConfig } from '@/lib/config';
 
 const allowedContentTypes = new Set([
+	'announcement',
 	'newsArticle',
 	'team',
 	'sponsor',

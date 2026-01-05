@@ -19,6 +19,7 @@ type DesktopNavbarProps = {
 		youtube?: string;
 	};
 	homeGroundLink?: string;
+	hasAnnouncements?: boolean;
 };
 
 export function DesktopNavbar({
@@ -26,7 +27,8 @@ export function DesktopNavbar({
 	logoAlt,
 	clubName,
 	socials,
-	homeGroundLink
+	homeGroundLink,
+	hasAnnouncements
 }: DesktopNavbarProps) {
 	const pathname = usePathname();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -91,150 +93,157 @@ export function DesktopNavbar({
 	];
 
 	return (
-		<nav className="fixed top-4 right-0 left-0 z-50 hidden lg:block">
-			<div
-				className={clsx(
-					'bg-primary container mx-auto rounded-full px-8 py-4 transition-all duration-300',
-					isScrolled
-						? 'border-secondary border-2 shadow-[0_0_30px_rgba(198,146,20,0.4)]'
-						: 'border-2 border-transparent shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)]'
-				)}
-			>
-				<div className="flex items-center justify-between">
-					{/* Logo/Brand */}
-					<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-						{logoUrl && (
-							<Image
-								src={logoUrl}
-								alt={logoAlt || 'Club logo'}
-								width={40}
-								height={40}
-								className="h-10 w-auto"
-							/>
-						)}
+		<nav
+			className={clsx(
+				'fixed right-0 left-0 z-50 hidden lg:block',
+				hasAnnouncements ? 'top-(--banner-height)' : 'top-4'
+			)}
+		>
+			<div className="container mx-auto flex flex-col items-center">
+				<div
+					className={clsx(
+						'bg-primary w-full rounded-full px-8 py-4 transition-all duration-300',
+						isScrolled
+							? 'border-secondary border-2 shadow-[0_0_30px_rgba(198,146,20,0.4)]'
+							: 'border-2 border-transparent shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)]'
+					)}
+				>
+					<div className="flex items-center justify-between">
+						{/* Logo/Brand */}
+						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+							{logoUrl && (
+								<Image
+									src={logoUrl}
+									alt={logoAlt || 'Club logo'}
+									width={40}
+									height={40}
+									className="h-10 w-auto"
+								/>
+							)}
 
-						<span className="text-neutral-content invisible hidden font-bold lg:block xl:visible xl:text-xl">
-							{clubName}
-						</span>
-					</Link>
+							<span className="text-neutral-content invisible hidden font-bold lg:block xl:visible xl:text-xl">
+								{clubName}
+							</span>
+						</Link>
 
-					{/* Main Navigation */}
-					<ul className="flex items-center gap-1">
-						{navItems.map((item) => {
-							const isActive = pathname === item.href;
-							const hasSubmenu = 'submenu' in item && item.submenu;
-							const isSubmenuActive =
-								hasSubmenu && item.submenu?.some((sub) => pathname === sub.href);
-							const isDropdownOpen = openDropdown === item.name;
+						{/* Main Navigation */}
+						<ul className="flex items-center gap-1">
+							{navItems.map((item) => {
+								const isActive = pathname === item.href;
+								const hasSubmenu = 'submenu' in item && item.submenu;
+								const isSubmenuActive =
+									hasSubmenu && item.submenu?.some((sub) => pathname === sub.href);
+								const isDropdownOpen = openDropdown === item.name;
 
-							if (hasSubmenu) {
+								if (hasSubmenu) {
+									return (
+										<li
+											key={item.name}
+											className="relative"
+											ref={(el) => {
+												dropdownRefs.current[item.name] = el;
+											}}
+										>
+											<button
+												onClick={() => toggleDropdown(item.name)}
+												className={clsx(
+													'flex items-center gap-1 px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
+													isActive || isSubmenuActive
+														? 'text-secondary border-b-secondary border-b-2 font-bold'
+														: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
+												)}
+												aria-expanded={isDropdownOpen}
+												aria-haspopup="true"
+												aria-current={isActive || isSubmenuActive ? 'page' : undefined}
+											>
+												{item.name}
+												<ChevronDown
+													className={clsx(
+														'ml-1 h-4 w-4 transition-transform duration-200',
+														isDropdownOpen ? 'rotate-180' : 'rotate-0'
+													)}
+												/>
+											</button>
+
+											{isDropdownOpen && (
+												<ul
+													role="menu"
+													className="bg-primary absolute top-full left-0 mt-6 min-w-40 animate-[dropdownSlide_0.2s_ease-out] rounded-2xl p-2 shadow-xl"
+												>
+													{item.submenu?.map((subItem) => {
+														const isSubActive = pathname === subItem.href;
+														return (
+															<li key={subItem.name} role="none">
+																<Link
+																	href={subItem.href}
+																	role="menuitem"
+																	onClick={closeDropdown}
+																	className={clsx(
+																		'block rounded-xl p-4 whitespace-nowrap transition-all duration-200 md:text-sm xl:text-base',
+																		isSubActive
+																			? 'bg-secondary/10 text-secondary font-bold'
+																			: 'text-neutral-content hover:bg-neutral-content/10 hover:text-secondary font-medium'
+																	)}
+																	aria-current={isSubActive ? 'page' : undefined}
+																>
+																	{subItem.name}
+																</Link>
+															</li>
+														);
+													})}
+												</ul>
+											)}
+										</li>
+									);
+								}
+
 								return (
-									<li
-										key={item.name}
-										className="relative"
-										ref={(el) => {
-											dropdownRefs.current[item.name] = el;
-										}}
-									>
-										<button
-											onClick={() => toggleDropdown(item.name)}
+									<li key={item.name}>
+										<Link
+											href={item.href}
 											className={clsx(
-												'flex items-center gap-1 px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
-												isActive || isSubmenuActive
+												'px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
+												isActive
 													? 'text-secondary border-b-secondary border-b-2 font-bold'
 													: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
 											)}
-											aria-expanded={isDropdownOpen}
-											aria-haspopup="true"
-											aria-current={isActive || isSubmenuActive ? 'page' : undefined}
+											aria-current={isActive ? 'page' : undefined}
 										>
 											{item.name}
-											<ChevronDown
-												className={clsx(
-													'ml-1 h-4 w-4 transition-transform duration-200',
-													isDropdownOpen ? 'rotate-180' : 'rotate-0'
-												)}
-											/>
-										</button>
-
-										{isDropdownOpen && (
-											<ul
-												role="menu"
-												className="bg-primary absolute top-full left-0 mt-6 min-w-40 animate-[dropdownSlide_0.2s_ease-out] rounded-2xl p-2 shadow-xl"
-											>
-												{item.submenu?.map((subItem) => {
-													const isSubActive = pathname === subItem.href;
-													return (
-														<li key={subItem.name} role="none">
-															<Link
-																href={subItem.href}
-																role="menuitem"
-																onClick={closeDropdown}
-																className={clsx(
-																	'block rounded-xl p-4 whitespace-nowrap transition-all duration-200 md:text-sm xl:text-base',
-																	isSubActive
-																		? 'bg-secondary/10 text-secondary font-bold'
-																		: 'text-neutral-content hover:bg-neutral-content/10 hover:text-secondary font-medium'
-																)}
-																aria-current={isSubActive ? 'page' : undefined}
-															>
-																{subItem.name}
-															</Link>
-														</li>
-													);
-												})}
-											</ul>
-										)}
+										</Link>
 									</li>
 								);
-							}
+							})}
+						</ul>
 
-							return (
-								<li key={item.name}>
-									<Link
-										href={item.href}
-										className={clsx(
-											'px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
-											isActive
-												? 'text-secondary border-b-secondary border-b-2 font-bold'
-												: 'text-neutral-content hover:bg-neutral-content/10 rounded-lg font-medium'
-										)}
-										aria-current={isActive ? 'page' : undefined}
-									>
-										{item.name}
-									</Link>
-								</li>
-							);
-						})}
-					</ul>
-
-					{/* Search & Social Links */}
-					<div className="flex items-center gap-2">
-						<button
-							className="text-neutral-content hover:bg-neutral-content/10 rounded-full p-2 transition-colors"
-							aria-label="Search"
-						>
-							<Search className="h-5 w-5" />
-						</button>
-						{socialLinks.map((social) => (
-							<a
-								key={social.name}
-								href={social.href}
-								target="_blank"
-								rel="noopener noreferrer"
+						{/* Search & Social Links */}
+						<div className="flex items-center gap-2">
+							<button
 								className="text-neutral-content hover:bg-neutral-content/10 rounded-full p-2 transition-colors"
-								aria-label={social.name}
+								aria-label="Search"
 							>
-								{social.icon === 'mapPin' ? (
-									<MapPin className="h-5 w-5" />
-								) : (
-									<Icon
-										name={social.icon as 'facebook' | 'instagram' | 'youtube'}
-										className="h-5 w-5"
-									/>
-								)}
-							</a>
-						))}
+								<Search className="h-5 w-5" />
+							</button>
+							{socialLinks.map((social) => (
+								<a
+									key={social.name}
+									href={social.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-neutral-content hover:bg-neutral-content/10 rounded-full p-2 transition-colors"
+									aria-label={social.name}
+								>
+									{social.icon === 'mapPin' ? (
+										<MapPin className="h-5 w-5" />
+									) : (
+										<Icon
+											name={social.icon as 'facebook' | 'instagram' | 'youtube'}
+											className="h-5 w-5"
+										/>
+									)}
+								</a>
+							))}
+						</div>
 					</div>
 				</div>
 			</div>

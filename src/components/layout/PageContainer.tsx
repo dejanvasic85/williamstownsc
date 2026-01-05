@@ -24,7 +24,7 @@ export function PageContainer({
 	return (
 		<div
 			className={clsx(
-				'bg-base-200 min-h-screen',
+				'bg-base-100 min-h-screen',
 				'py-6 pb-36',
 				'lg:py-12 lg:pt-(--navbar-total-height-desktop) lg:pb-12'
 			)}
@@ -33,7 +33,7 @@ export function PageContainer({
 				{heading && (
 					<div className="mb-6">
 						<div className="border-secondary mb-4 flex items-center gap-3 border-b-4 pb-4">
-							<h1 className="text-3xl font-bold">{heading}</h1>
+							<h1 className="text-2xl font-bold lg:text-3xl">{heading}</h1>
 						</div>
 						{intro && (
 							<div className="text-lg">

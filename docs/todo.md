@@ -23,14 +23,15 @@ The original website is at https://www.williamstownsc.com/
 - [x] Cache invalidation on content publish
 - [ ] Accessibility audit and fixes
 - [ ] SEO
+- [ ] Dark theme
 
 Pages:
 
 - Homepage
   - [x] Hero section, news, football and sponsors
   - [ ] Key dates section
-  - [ ] Important announcements like ground closures section
-  - [ ] Match reports (seniors/reserves)
+  - [x] Important announcements like ground closures section
+
 - News
   - [x] Article page
     - [ ] Similar news
@@ -63,6 +64,8 @@ The following is a list of things we may be not need on initial launch and can c
 
 - Events
   - [ ] Ticketing integration with Try Booking
+- [ ] Automatic team Fixtures
+- [ ] Match reports
 - [ ] Search
 - [ ] Publish news to facebook, instagram
 - [ ] Publishing schedule, results and tables

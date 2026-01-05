@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
-import { Footer, Navbar } from '@/components/layout';
+import clsx from 'clsx';
+import { Banner, Footer, Navbar } from '@/components/layout';
+import { getDismissedBanners } from '@/components/layout/Banner/actions';
 import { formatAddress } from '@/lib/address';
-import { getSiteSettings } from '@/lib/content';
+import { getAnnouncements, getSiteSettings } from '@/lib/content';
 import { generateOrganizationSchema } from '@/lib/structuredData';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -37,7 +39,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: PropsWithChildren) {
-	const siteSettings = await getSiteSettings();
+	const [siteSettings, announcements, dismissedBanners] = await Promise.all([
+		getSiteSettings(),
+		getAnnouncements(),
+		getDismissedBanners()
+	]);
+
+	const activeAnnouncements = announcements.filter(
+		(announcement) => !dismissedBanners.includes(announcement._id)
+	);
+	const hasAnnouncements = activeAnnouncements.length > 0;
 
 	const logoUrl = siteSettings?.logo
 		? urlFor(siteSettings.logo).width(80).height(80).url()
@@ -66,14 +77,22 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
 				/>
 			)}
+			<Banner
+				messages={activeAnnouncements.map(({ _id, message, type }) => ({
+					id: _id,
+					message,
+					type
+				}))}
+			/>
 			<Navbar
 				logoUrl={logoUrl}
 				logoAlt={logoAlt}
 				clubName={siteSettings?.clubName}
 				socials={siteSettings?.socials}
 				homeGroundLink={homeGroundLink}
+				hasAnnouncements={hasAnnouncements}
 			/>
-			<main>{children}</main>
+			<main className={clsx(hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}>{children}</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
 		</>
 	);

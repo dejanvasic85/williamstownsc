@@ -55,7 +55,7 @@ export default function MenuPage() {
 						<Link
 							key={link.href}
 							href={link.href}
-							className="bg-base-100 flex items-center justify-between rounded-lg p-6 shadow-lg transition-all hover:shadow-xl active:scale-[0.98]"
+							className="bg-base-200 flex items-center justify-between rounded-lg p-6 shadow-lg transition-all hover:shadow-xl active:scale-[0.98]"
 						>
 							<div>
 								<span className="text-base-content block text-xl font-bold">{link.name}</span>
