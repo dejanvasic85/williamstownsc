@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import clsx from 'clsx';
 import {
 	ExpressionOfInterestSection,
 	FootballSection,
@@ -10,6 +11,7 @@ import {
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
 import { NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
+import { getActiveAnnouncements } from '@/lib/announcements';
 import {
 	TransformedNewsArticle,
 	getFeaturedSponsors,
@@ -25,12 +27,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const [allNews, siteSettings, homePageData, featuredSponsors] = await Promise.all([
-		getLatestArticles(7),
-		getSiteSettings(),
-		getHomePageData(),
-		getFeaturedSponsors(3)
-	]);
+	const [allNews, siteSettings, homePageData, featuredSponsors, { hasAnnouncements }] =
+		await Promise.all([
+			getLatestArticles(7),
+			getSiteSettings(),
+			getHomePageData(),
+			getFeaturedSponsors(3),
+			getActiveAnnouncements()
+		]);
 
 	const [featuredArticle, ...news] = allNews;
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
@@ -75,47 +79,50 @@ export default async function Home() {
 				<SocialLinks links={socialLinks} />
 			</div>
 
-			{featuredArticle && (
-				<div className="lg:mt- container mx-auto lg:mb-4 lg:pt-(--navbar-total-height-desktop)">
-					<div className="flex flex-col gap-6 lg:flex-row">
-						{/* Hero Carousel - Left Side */}
-						<div className="lg:w-2/3">
-							<HeroCarousel articles={[featuredArticle]} />
-						</div>
+			<div
+				className={clsx(
+					'container mx-auto lg:mb-4',
+					hasAnnouncements ? 'lg:pt-(--navbar-with-banner-height)' : 'lg:pt-(--navbar-with-offset)'
+				)}
+			>
+				<div className="flex flex-col gap-6 lg:flex-row">
+					{/* Hero Carousel - Left Side */}
+					<div className="lg:w-2/3">
+						<HeroCarousel articles={[featuredArticle]} />
+					</div>
 
-						{/* News & Key Dates - Right Side */}
-						{news.length > 0 && (
-							<div className="lg:w-1/3">
-								<div className="card h-full">
-									<div className="card-body p-0">
-										{/* News Section */}
-										{news.length > 0 && (
-											<>
-												<h2 className="card-title px-6 text-2xl">News</h2>
-												<div className="px-6">
-													{news.map((article: TransformedNewsArticle) => (
-														<NewsListItem
-															key={article._id}
-															slug={article.slug}
-															title={article.title}
-															publishedAt={article.publishedAt}
-														/>
-													))}
-												</div>
-												<div className="flex justify-center px-6 pt-2 pb-4 md:justify-end">
-													<Link href="/news" className="btn btn-primary btn-outline">
-														View all news
-													</Link>
-												</div>
-											</>
-										)}
-									</div>
+					{/* News & Key Dates - Right Side */}
+					{news.length > 0 && (
+						<div className="lg:w-1/3">
+							<div className="card h-full">
+								<div className="card-body p-0">
+									{/* News Section */}
+									{news.length > 0 && (
+										<>
+											<h2 className="card-title px-6 text-2xl">News</h2>
+											<div className="px-6">
+												{news.map((article: TransformedNewsArticle) => (
+													<NewsListItem
+														key={article._id}
+														slug={article.slug}
+														title={article.title}
+														publishedAt={article.publishedAt}
+													/>
+												))}
+											</div>
+											<div className="flex justify-center px-6 pt-2 pb-4 md:justify-end">
+												<Link href="/news" className="btn btn-primary btn-outline">
+													View all news
+												</Link>
+											</div>
+										</>
+									)}
 								</div>
 							</div>
-						)}
-					</div>
+						</div>
+					)}
 				</div>
-			)}
+			</div>
 
 			<div className="container mx-auto">
 				<div className="grid items-stretch gap-4 lg:grid-cols-2">
