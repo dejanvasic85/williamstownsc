@@ -12,7 +12,6 @@ import { NewsListItem } from '@/components/news';
 import { formatAddress } from '@/lib/address';
 import {
 	TransformedNewsArticle,
-	getHomePageData,
 	getKeyDatesPageData,
 	getLatestArticles,
 	getSiteSettings
@@ -30,10 +29,9 @@ function formatKeyDate(dateString: string): string {
 }
 
 export default async function Home() {
-	const [news, siteSettings, homePageData, keyDatesData] = await Promise.all([
+	const [news, siteSettings, keyDatesData] = await Promise.all([
 		getLatestArticles(7),
 		getSiteSettings(),
-		getHomePageData(),
 		getKeyDatesPageData()
 	]);
 
@@ -141,7 +139,7 @@ export default async function Home() {
 														/>
 													))}
 												</div>
-												<div className="flex justify-center p-4 md:justify-end">
+												<div className="flex justify-center px-6 pt-2 pb-4 md:justify-end">
 													<Link href="/news" className="btn btn-primary btn-outline">
 														View all news
 													</Link>
@@ -152,22 +150,16 @@ export default async function Home() {
 										{/* Key Dates Section */}
 										{keyDatesToShow.length > 0 && (
 											<>
-												{newsToShow.length > 0 && <div className="divider mx-6 my-0"></div>}
 												<h2 className="card-title px-6 text-2xl">Key dates</h2>
 												<div className="px-6">
 													{keyDatesToShow.map((keyDate, index) => (
-														<div
-															key={index}
-															className="border-base-content/10 border-b py-4 last:border-b-0"
-														>
-															<h3 className="text-base font-semibold">{keyDate.title}</h3>
-															<p className="text-base-content/60 mt-1 text-sm">
-																{formatKeyDate(keyDate.date)}
-															</p>
+														<div key={index} className="py-4">
+															<p className="text-base-content/60">{formatKeyDate(keyDate.date)}</p>
+															<h3 className="mt-1 font-medium">{keyDate.title}</h3>
 														</div>
 													))}
 												</div>
-												<div className="flex justify-center p-4 md:justify-end">
+												<div className="flex justify-center px-6 pt-2 pb-6 md:justify-end">
 													<Link href="/key-dates" className="btn btn-primary btn-outline">
 														View all key dates
 													</Link>
