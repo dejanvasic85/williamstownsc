@@ -5,35 +5,33 @@ import { getFeaturedSponsors } from '@/lib/content';
 export async function SponsorsSection() {
 	const sponsors = await getFeaturedSponsors(3);
 	return (
-		<section className="relative overflow-hidden py-16">
+		<section className="relative overflow-hidden">
 			{/* Decorative gradient blobs */}
 			<div className="relative container mx-auto px-4">
-				<div className="mb-12 text-center">
+				{/*<div className="mb-12 text-center">
 					<h2 className="mb-4 text-4xl font-bold">Our Sponsors</h2>
 					<p className="text-base-content/70 mx-auto max-w-2xl text-lg">
 						Thank you to our valued sponsors who make our programs possible
 					</p>
-				</div>
+				</div>*/}
 
 				{/* Sponsors */}
 				{sponsors.length > 0 && (
-					<div className="mb-16">
-						<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:gap-8">
-							{sponsors.map((sponsor) => (
-								<div
-									key={sponsor._id}
-									className="relative overflow-hidden rounded-2xl border border-white/50 bg-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] backdrop-blur-md transition-all hover:shadow-xl"
-								>
-									<Image
-										src={sponsor.logo.url}
-										alt={sponsor.logo.alt || `${sponsor.name} logo`}
-										width={250}
-										height={200}
-										className="h-full w-full object-cover"
-									/>
-								</div>
-							))}
-						</div>
+					<div className="flex w-full flex-wrap justify-center gap-12">
+						{sponsors.map((sponsor) => (
+							<div
+								key={sponsor._id}
+								className="relative flex h-60 w-60 items-center justify-center overflow-hidden rounded-2xl border border-white/50 bg-white/30 p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] backdrop-blur-md transition-all hover:shadow-xl"
+							>
+								<Image
+									src={sponsor.logo.url}
+									alt={sponsor.logo.alt || `${sponsor.name} logo`}
+									width={250}
+									height={200}
+									className="h-auto w-full object-contain"
+								/>
+							</div>
+						))}
 					</div>
 				)}
 
