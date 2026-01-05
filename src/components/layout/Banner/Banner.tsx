@@ -3,7 +3,7 @@
 import { useTransition } from 'react';
 import clsx from 'clsx';
 import { LucideX } from 'lucide-react';
-import { dismissBanner } from '@/actions/bannerActions';
+import { dismissBanner } from './actions';
 
 interface BannerMessage {
 	message: string;

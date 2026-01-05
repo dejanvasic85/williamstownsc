@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import { getDismissedBanners } from '@/actions/bannerActions';
 import { Banner, Footer, Navbar } from '@/components/layout';
+import { getDismissedBanners } from '@/components/layout/Banner/actions';
 import { formatAddress } from '@/lib/address';
 import { getAnnouncements, getSiteSettings } from '@/lib/content';
 import { generateOrganizationSchema } from '@/lib/structuredData';
