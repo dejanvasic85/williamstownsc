@@ -5,14 +5,16 @@ import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
-	SocialLinks,
-	SponsorsSection
+	SocialLinks
 } from '@/components/home';
+import { KeyDatesSection } from '@/components/home/KeyDatesSection';
 import { NewsListItem } from '@/components/news';
+import { SponsorCard } from '@/components/sponsors';
 import { formatAddress } from '@/lib/address';
 import {
 	TransformedNewsArticle,
-	getKeyDatesPageData,
+	getFeaturedSponsors,
+	getHomePageData,
 	getLatestArticles,
 	getSiteSettings
 } from '@/lib/content';
@@ -23,53 +25,15 @@ export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('homePage');
 }
 
-function formatKeyDate(dateString: string): string {
-	const date = new Date(dateString);
-	return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
-}
-
 export default async function Home() {
-	const [news, siteSettings, keyDatesData] = await Promise.all([
+	const [allNews, siteSettings, homePageData, featuredSponsors] = await Promise.all([
 		getLatestArticles(7),
 		getSiteSettings(),
-		getKeyDatesPageData()
+		getHomePageData(),
+		getFeaturedSponsors(3)
 	]);
 
-	const [featuredArticle, ...latestNews] = news;
-	const allKeyDates = keyDatesData?.keyDates || [];
-
-	// Determine what to show: max 4 items if both types exist, max 6 if only one type
-	const hasKeyDates = allKeyDates.length > 0;
-	const hasNews = latestNews.length > 0;
-
-	let newsToShow: TransformedNewsArticle[] = [];
-	let keyDatesToShow: typeof allKeyDates = [];
-
-	if (hasNews && hasKeyDates) {
-		// Show max 4 total, try to show 2 of each if possible
-		const availableNews = latestNews.length;
-		const availableKeyDates = allKeyDates.length;
-
-		if (availableNews >= 2 && availableKeyDates >= 2) {
-			newsToShow = latestNews.slice(0, 2);
-			keyDatesToShow = allKeyDates.slice(0, 2);
-		} else if (availableNews < 2) {
-			newsToShow = latestNews;
-			const remaining = 4 - availableNews;
-			keyDatesToShow = allKeyDates.slice(0, Math.min(remaining, availableKeyDates));
-		} else {
-			keyDatesToShow = allKeyDates;
-			const remaining = 4 - availableKeyDates;
-			newsToShow = latestNews.slice(0, Math.min(remaining, availableNews));
-		}
-	} else if (hasNews) {
-		// Only news, show up to 6
-		newsToShow = latestNews.slice(0, 6);
-	} else if (hasKeyDates) {
-		// Only key dates, show up to 6
-		keyDatesToShow = allKeyDates.slice(0, 6);
-	}
-
+	const [featuredArticle, ...news] = allNews;
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 	const homeGround = siteSettings?.locations?.find((location) => location.facilityType === 'home');
 	const homeGroundAddress = formatAddress(homeGround);
@@ -113,7 +77,7 @@ export default async function Home() {
 			</div>
 
 			{featuredArticle && (
-				<div className="container mx-auto my-4 lg:mt-0 lg:mb-10 lg:pt-(--navbar-total-height-desktop)">
+				<div className="lg:mt- container mx-auto my-4 lg:mb-4 lg:pt-(--navbar-total-height-desktop)">
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className="lg:w-2/3">
@@ -121,16 +85,16 @@ export default async function Home() {
 						</div>
 
 						{/* News & Key Dates - Right Side */}
-						{(newsToShow.length > 0 || keyDatesToShow.length > 0) && (
+						{news.length > 0 && (
 							<div className="lg:w-1/3">
 								<div className="card h-full">
 									<div className="card-body p-0">
 										{/* News Section */}
-										{newsToShow.length > 0 && (
+										{news.length > 0 && (
 											<>
 												<h2 className="card-title px-6 text-2xl">News</h2>
 												<div className="px-6">
-													{newsToShow.map((article: TransformedNewsArticle) => (
+													{news.map((article: TransformedNewsArticle) => (
 														<NewsListItem
 															key={article._id}
 															slug={article.slug}
@@ -142,26 +106,6 @@ export default async function Home() {
 												<div className="flex justify-center px-6 pt-2 pb-4 md:justify-end">
 													<Link href="/news" className="btn btn-primary btn-outline">
 														View all news
-													</Link>
-												</div>
-											</>
-										)}
-
-										{/* Key Dates Section */}
-										{keyDatesToShow.length > 0 && (
-											<>
-												<h2 className="card-title px-6 text-2xl">Key dates</h2>
-												<div className="px-6">
-													{keyDatesToShow.map((keyDate, index) => (
-														<div key={index} className="py-4">
-															<p className="text-base-content/60">{formatKeyDate(keyDate.date)}</p>
-															<h3 className="mt-1 font-medium">{keyDate.title}</h3>
-														</div>
-													))}
-												</div>
-												<div className="flex justify-center px-6 pt-2 pb-6 md:justify-end">
-													<Link href="/key-dates" className="btn btn-primary btn-outline">
-														View all key dates
 													</Link>
 												</div>
 											</>
@@ -189,8 +133,29 @@ export default async function Home() {
 				</div>
 			)}
 
-			{/* Sponsors Section */}
-			<SponsorsSection />
+			<div className="container mx-auto h-40">
+				<div className="grid gap-4 lg:grid-cols-2">
+					{/*List of sponsors*/}
+					<div className="flex gap-4">
+						{featuredSponsors.map((sponsor) => (
+							<SponsorCard
+								key={sponsor._id}
+								logoUrl={sponsor.logo.url}
+								logoAlt={sponsor.logo.alt}
+								name={sponsor.name}
+								size="medium"
+							/>
+						))}
+					</div>
+					{/* Key Dates Section */}
+					{homePageData?.keyDatesSection?.show && (
+						<KeyDatesSection
+							heading={homePageData?.keyDatesSection?.heading}
+							leadingText={homePageData?.keyDatesSection?.leadingText}
+						/>
+					)}
+				</div>
+			</div>
 
 			{/* Football Section */}
 			<FootballSection />

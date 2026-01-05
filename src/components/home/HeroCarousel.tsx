@@ -65,7 +65,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 
 	return (
 		<div className="group relative w-full">
-			<div className="carousel md:rounded-box relative h-[60vh] w-full overflow-hidden">
+			<div className="carousel md:rounded-box relative h-[55vh] w-full overflow-hidden">
 				{articles.map((article, index) => (
 					<div
 						key={article._id}
@@ -84,7 +84,6 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 								sizes="100vw"
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
-
 							<div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
 								<div className="flex justify-start">
 									<div className="badge badge-primary badge-lg bg-primary/90 gap-2 px-4 py-3 font-semibold backdrop-blur-sm">

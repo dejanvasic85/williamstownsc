@@ -13,7 +13,7 @@
 		"format": "prettier . --write .",
 		"format:check": "prettier . --check",
 		"prepare": "husky",
-		"typegen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
+		"type:gen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
 		"type:check": "tsc --noEmit",
 		"generate": "tsx bin/generateMockData.ts"
 	},
