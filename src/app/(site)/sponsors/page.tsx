@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import clsx from 'clsx';
 import { PageContainer } from '@/components/layout';
+import { SponsorCard } from '@/components/sponsors';
 import { getAllSponsors } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
 
@@ -68,15 +68,11 @@ export default async function SponsorsPage() {
 										isEven ? 'md:order-1' : 'md:order-2'
 									}`}
 								>
-									<div className="flex h-40 w-full max-w-64 items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-md md:h-48">
-										<Image
-											src={sponsor.logo.url}
-											alt={sponsor.logo.alt || `${sponsor.name} logo`}
-											width={400}
-											height={300}
-											className="h-full w-full object-contain"
-										/>
-									</div>
+									<SponsorCard
+										logoUrl={sponsor.logo.url}
+										logoAlt={sponsor.logo.alt}
+										name={sponsor.name}
+									/>
 								</div>
 							</div>
 						</div>

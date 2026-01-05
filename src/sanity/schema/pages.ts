@@ -68,12 +68,6 @@ export const homePage = createPage('homePage', 'Home Page', {
 			description: 'Configuration for the key dates section on the homepage',
 			fields: [
 				{
-					name: 'show',
-					title: 'Show Key Dates Section',
-					type: 'boolean',
-					initialValue: true
-				},
-				{
 					name: 'heading',
 					title: 'Heading',
 					type: 'string',

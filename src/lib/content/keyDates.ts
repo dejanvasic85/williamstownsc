@@ -32,30 +32,28 @@ type KeyDatesPageData = {
 };
 
 export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
-	const query = groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0]{
-		heading,
-		introduction,
-		body,
-		featuredImage {
-			...,
-			alt
-		},
-		keyDates[] {
-			title,
-			date,
-			description
-		},
-		seo {
-			...,
-			ogImage {
-				...,
-				alt
-			}
-		}
-	}`;
-
 	const data = await client.fetch<KeyDatesPageData>(
-		query,
+		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0]{
+  		heading,
+  		introduction,
+  		body,
+  		featuredImage {
+  			...,
+  			alt
+  		},
+  		keyDates[] {
+  			title,
+  			date,
+  			description
+  		},
+  		seo {
+  			...,
+  			ogImage {
+  				...,
+  				alt
+  			}
+  		}
+  	}`,
 		{},
 		{ next: { tags: ['page', 'keyDatesPage'] } }
 	);
