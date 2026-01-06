@@ -1,11 +1,27 @@
 import type { Metadata } from 'next';
+import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
-import { getPageMetadata } from '@/lib/content/page';
+import { getEditablePageMetadata, getPageData } from '@/lib/content/page';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getPageMetadata('privacyPage');
+	return getEditablePageMetadata('privacyPage');
 }
 
-export default function PrivacyPolicyPage() {
-	return <PageContainer heading="Privacy Policy" />;
+export default async function PrivacyPolicyPage() {
+	const pageData = await getPageData('privacyPage');
+
+	if (!pageData) {
+		throw new Error('Privacy Policy page is missing critical content');
+	}
+
+	return (
+		<PageContainer
+			heading={pageData.heading}
+			featuredImage={pageData.featuredImage}
+			intro={pageData.introduction}
+			layout="article"
+		>
+			{pageData.body && pageData.body.length > 0 && <PortableTextContent blocks={pageData.body} />}
+		</PageContainer>
+	);
 }
