@@ -1,7 +1,7 @@
 import { MapPin } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 
-interface SocialLink {
+export interface SocialLink {
 	name: string;
 	href: string;
 	icon: string;
