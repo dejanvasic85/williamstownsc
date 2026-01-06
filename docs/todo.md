@@ -22,7 +22,10 @@ The original website is at https://www.williamstownsc.com/
   - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [x] Cache invalidation on content publish
 - [ ] Accessibility audit and fixes
-- [ ] SEO
+- SEO
+  - [ ] Remove the Keywords because it creates confusion
+  - [ ] Social Share Title falls back to meta Title
+  - [ ] Social Share Description – Same logic, the fallback is fine
 - [ ] Dark theme
 
 Pages:
