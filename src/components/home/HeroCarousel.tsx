@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { TransformedNewsArticle } from '@/lib/content';
 
 interface HeroCarouselProps {
@@ -64,14 +65,27 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 	};
 
 	return (
-		<div className="group relative w-full">
-			<div className="carousel md:rounded-box relative h-[55vh] w-full overflow-hidden">
+		<section
+			className="group relative w-full"
+			role="region"
+			aria-roledescription="carousel"
+			aria-label="Featured news"
+		>
+			<div
+				className="carousel md:rounded-box relative h-[55vh] w-full overflow-hidden"
+				aria-live="polite"
+				aria-atomic="true"
+			>
 				{articles.map((article, index) => (
 					<div
 						key={article._id}
+						role="group"
+						aria-roledescription="slide"
+						aria-label={`Slide ${index + 1} of ${articles.length}: ${article.title}`}
+						aria-hidden={index !== currentSlide}
 						className={clsx(
 							'carousel-item absolute h-full w-full transition-opacity duration-700',
-							index === currentSlide ? 'opacity-100' : 'opacity-0'
+							index === currentSlide ? 'opacity-100' : 'pointer-events-none opacity-0'
 						)}
 					>
 						<Link href={`/news/${article.slug}`} className="relative h-full w-full">
@@ -92,7 +106,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 								</div>
 
 								<div className="max-w-4xl sm:px-0">
-									<h2
+									<h1
 										className={clsx(
 											'mb-3 font-bold text-white drop-shadow-lg group-hover:underline md:leading-tight',
 											article.title.length > 80 && 'text-xl sm:text-2xl md:text-3xl',
@@ -103,7 +117,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 										)}
 									>
 										{article.title}
-									</h2>
+									</h1>
 									<p className="hidden text-lg text-white/90 drop-shadow-md md:block">
 										{article.excerpt}
 									</p>
@@ -119,32 +133,38 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 					<button
 						onClick={handlePrevious}
 						className="btn btn-circle text-secondary absolute top-1/2 left-4 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
-						aria-label="Previous slide"
+						aria-label="Go to previous slide"
 					>
-						❮
+						<ChevronLeft className="h-6 w-6" aria-hidden="true" />
 					</button>
 					<button
 						onClick={handleNext}
 						className="btn btn-circle text-secondary absolute top-1/2 right-4 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
-						aria-label="Next slide"
+						aria-label="Go to next slide"
 					>
-						❯
+						<ChevronRight className="h-6 w-6" aria-hidden="true" />
 					</button>
 
-					<div className="absolute right-6 bottom-6 flex gap-2">
-						{articles.map((_, index) => (
+					<div
+						className="absolute right-6 bottom-6 flex gap-2"
+						role="tablist"
+						aria-label="Slide controls"
+					>
+						{articles.map((article, index) => (
 							<button
 								key={index}
+								role="tab"
 								onClick={() => handleSlideChange(index)}
 								className={`h-3 w-3 rounded-full transition-all ${
 									index === currentSlide ? 'w-8 bg-white' : 'bg-white/50 hover:bg-white/75'
 								}`}
-								aria-label={`Go to slide ${index + 1}`}
+								aria-label={`Go to slide ${index + 1}: ${article.title}`}
+								aria-selected={index === currentSlide}
 							/>
 						))}
 					</div>
 				</>
 			)}
-		</div>
+		</section>
 	);
 }
