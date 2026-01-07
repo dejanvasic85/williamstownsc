@@ -41,23 +41,25 @@ function generateICSContent({ title, date, description }: CalendarEvent): string
 	return lines.join('\r\n');
 }
 
-function downloadICS(content: string, filename: string) {
-	const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
-	const url = URL.createObjectURL(blob);
+function openCalendar(content: string, filename: string) {
+	// Use data URI instead of blob to trigger calendar app on mobile
+	const dataUri = `data:text/calendar;charset=utf-8,${encodeURIComponent(content)}`;
 	const link = document.createElement('a');
-	link.href = url;
+	link.href = dataUri;
+
+	// Set download attribute as fallback for desktop browsers
 	link.download = filename;
+
 	document.body.appendChild(link);
 	link.click();
 	document.body.removeChild(link);
-	URL.revokeObjectURL(url);
 }
 
 export function AddToCalendarButton({ title, date, description }: AddToCalendarButtonProps) {
 	const handleClick = () => {
 		const icsContent = generateICSContent({ title, date, description });
 		const filename = `${title.replace(/\s+/g, '-').toLowerCase()}.ics`;
-		downloadICS(icsContent, filename);
+		openCalendar(icsContent, filename);
 	};
 
 	return (
