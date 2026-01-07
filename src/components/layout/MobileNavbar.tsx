@@ -38,7 +38,7 @@ export function MobileNavbar() {
 		<>
 			{/* Bottom Navigation */}
 			<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
-				<div className="bg-primary border-secondary mx-auto max-w-md rounded-full border-2 px-6 py-3 shadow-[0_0_30px_rgba(198,146,20,0.4)]">
+				<div className="bg-brand border-secondary mx-auto max-w-md rounded-full border-2 px-6 py-3 shadow-[0_0_30px_rgba(198,146,20,0.4)]">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {
 							const isActive = isItemActive(item);

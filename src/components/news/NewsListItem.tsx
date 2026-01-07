@@ -17,7 +17,7 @@ export function NewsListItem({ slug, title, publishedAt }: NewsListItemProps) {
 	const relativeDate = formatDistanceToNow(publishedDate, { addSuffix: true });
 
 	return (
-		<Link href={`/news/${slug}`} className="group block py-4 transition-colors hover:underline">
+		<Link href={`/news/${slug}`} className="group block py-4 hover:underline">
 			<div className="flex flex-col gap-1">
 				<time
 					dateTime={publishedDate.toISOString()}
@@ -26,9 +26,7 @@ export function NewsListItem({ slug, title, publishedAt }: NewsListItemProps) {
 				>
 					{formattedDate}
 				</time>
-				<h3 className="text-base-content group-hover:text-primary font-medium transition-colors">
-					{title}
-				</h3>
+				<h3 className="text-base-content font-medium">{title}</h3>
 			</div>
 		</Link>
 	);

@@ -102,7 +102,7 @@ export function DesktopNavbar({
 			<div className="container mx-auto flex flex-col items-center">
 				<div
 					className={clsx(
-						'bg-primary w-full rounded-full px-8 py-4 transition-all duration-300',
+						'bg-brand w-full rounded-full px-8 py-4 transition-all duration-300',
 						isScrolled
 							? 'border-secondary border-2 shadow-[0_0_30px_rgba(198,146,20,0.4)]'
 							: 'border-2 border-transparent shadow-[0_20px_60px_-15px_rgba(26,75,166,0.5)]'
@@ -168,7 +168,7 @@ export function DesktopNavbar({
 											{isDropdownOpen && (
 												<ul
 													role="menu"
-													className="bg-primary absolute top-full left-0 mt-6 min-w-40 animate-[dropdownSlide_0.2s_ease-out] rounded-2xl p-2 shadow-xl"
+													className="bg-brand absolute top-full left-0 mt-6 min-w-40 animate-[dropdownSlide_0.2s_ease-out] rounded-2xl p-2 shadow-xl"
 												>
 													{item.submenu?.map((subItem) => {
 														const isSubActive = pathname === subItem.href;

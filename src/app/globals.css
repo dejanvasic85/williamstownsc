@@ -3,6 +3,11 @@
 	themes: light, dark, cupcake;
 }
 
+/* Brand color - the signature Williamstown royal blue, same in both themes */
+@theme inline {
+	--color-brand: #1a4ba6;
+}
+
 @plugin 'daisyui/theme' {
 	name: 'williamstown';
 	default: true;
@@ -49,8 +54,8 @@
 	--color-base-300: oklch(17.86% 0.034 265.754);
 	--color-base-content: oklch(84.153% 0.007 265.754);
 	--color-base-content-secondary: oklch(65% 0.007 265.754);
-	--color-primary: #062074;
-	--color-primary-content: oklch(93% 0.034 272.788);
+	--color-primary: oklch(60% 0.18 260);
+	--color-primary-content: oklch(15% 0.05 260);
 	--color-secondary: #deb100;
 	--color-secondary-content: oklch(0% 0 0);
 	--color-accent: #00dba5;
@@ -108,17 +113,22 @@ h6 {
 	box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-secondary) 50%, transparent);
 }
 
-[data-theme='williamstown-dark'] .btn-ghost:hover {
-	border-color: var(--color-secondary);
-	color: var(--color-secondary);
-}
+/* Dark mode button overrides */
+[data-theme='williamstown-dark'] {
+	/* Ghost buttons use secondary color for better visibility */
+	& .btn-ghost:hover {
+		border-color: var(--color-secondary);
+		color: var(--color-secondary);
+	}
 
-[data-theme='williamstown-dark'] .btn-link {
-	--btn-fg: white;
-}
+	/* Link buttons need light text on dark backgrounds */
+	& .btn-link {
+		--btn-fg: var(--color-base-content);
+	}
 
-[data-theme='williamstown-dark'] .btn-link:hover {
-	--btn-fg: var(--color-secondary);
+	& .btn-link:hover {
+		--btn-fg: var(--color-secondary);
+	}
 }
 
 @keyframes navPop {
