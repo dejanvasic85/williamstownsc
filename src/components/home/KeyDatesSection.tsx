@@ -9,7 +9,7 @@ const defaultLeadingText = 'See all the important dates for the upcoming season.
 
 export function KeyDatesSection({ heading, leadingText }: KeyDatesSectionProps) {
 	return (
-		<div className="bg-secondary/10 border-secondary/30 flex h-full flex-col justify-between gap-4 border p-6 md:flex-row md:items-start md:rounded-2xl md:p-8">
+		<div className="bg-secondary/10 border-secondary/30 dark:bg-surface dark:border-secondary flex h-full flex-col justify-between gap-4 border p-6 md:flex-row md:items-start md:rounded-2xl md:p-8">
 			<div>
 				<h2 className="mb-2 text-2xl font-bold md:text-3xl">{heading}</h2>
 				<p className="text-base-content/70 text-base md:text-lg">

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { PortableTextBlock } from '@portabletext/types';
+import clsx from 'clsx';
 
 interface PlayerCardProps {
 	firstName: string;
@@ -26,7 +27,7 @@ export function PlayerCard({
 }: PlayerCardProps) {
 	const containerClass = isCaptain
 		? 'bg-primary text-primary-content'
-		: 'bg-white text-base-content';
+		: 'bg-surface text-base-content';
 
 	const introText =
 		intro && intro.length > 0
@@ -42,10 +43,10 @@ export function PlayerCard({
 
 	return (
 		<div
-			className={`relative overflow-hidden rounded-xl ${containerClass} transition-shadow hover:shadow-xl`}
+			className={`border-base-300 dark:border-primary relative max-w-64 overflow-hidden rounded-xl border ${containerClass} transition-shadow hover:shadow-xl`}
 		>
-			<div className="relative aspect-4/3 md:aspect-3/4">
-				<Image src={photoUrl} alt={photoAlt} fill className="object-cover" sizes="300px" />
+			<div className="relative aspect-square">
+				<Image src={photoUrl} alt={photoAlt} fill className="object-cover" sizes="256px" />
 			</div>
 
 			<div className="space-y-3 p-4">
@@ -66,7 +67,14 @@ export function PlayerCard({
 								Vice Captain
 							</div>
 						)}
-						<div className="text-5xl font-black opacity-20">{shirtNumber}</div>
+						<div
+							className={clsx(
+								'text-5xl font-black opacity-50 dark:opacity-100',
+								isCaptain ? 'text-secondary' : 'text-primary'
+							)}
+						>
+							{shirtNumber}
+						</div>
 					</div>
 				</div>
 				{introText && <p className="text-sm leading-relaxed opacity-70">{introText}</p>}

@@ -32,7 +32,7 @@ export function ExpressionOfInterestSection() {
 
 					<Link
 						href="/contact?type=coach"
-						className="group bg-secondary/5 hover:bg-secondary/10 border-secondary/20 hover:border-secondary/40 flex flex-col items-center rounded-xl border-2 p-8 text-center transition-all duration-300"
+						className="group dark:bg-surface dark:border-secondary bg-secondary/5 dark:hover:bg-surface hover:bg-secondary/10 border-secondary/20 hover:border-secondary/40 flex flex-col items-center rounded-xl border p-8 text-center transition-all duration-300"
 					>
 						<div className="bg-secondary/10 group-hover:bg-secondary/20 mb-4 rounded-full p-4 transition-colors">
 							<ShieldCheck className="text-secondary h-10 w-10" />

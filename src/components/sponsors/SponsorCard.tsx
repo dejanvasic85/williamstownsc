@@ -12,7 +12,7 @@ export function SponsorCard({ logoUrl, logoAlt, name, size = 'large' }: SponsorC
 	return (
 		<div
 			className={clsx(
-				'flex items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition-all hover:shadow-xl',
+				'border-base-300 bg-surface flex items-center justify-center overflow-hidden rounded-2xl border p-6 shadow-md transition-all hover:shadow-xl',
 				size === 'medium' ? 'size-40' : 'size-60'
 			)}
 		>
