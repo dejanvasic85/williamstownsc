@@ -35,7 +35,7 @@ export const Banner = ({ messages }: BannerProps) => {
 				<div
 					key={message.id}
 					className={clsx(
-						'flex w-full items-center justify-between gap-1 px-2 lg:mx-auto lg:w-11/12 lg:justify-center lg:rounded-lg',
+						'dark:text-base-100 flex w-full items-center justify-between gap-1 px-2 lg:mx-auto lg:w-11/12 lg:justify-center lg:rounded-lg',
 						{
 							'bg-blue-300': message.type === 'info',
 							'bg-amber-400': message.type === 'warning',
