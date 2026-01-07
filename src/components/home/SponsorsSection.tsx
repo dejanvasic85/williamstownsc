@@ -20,7 +20,7 @@ export function SponsorsSection({ sponsors }: SponsorsSectionProps) {
 	}
 
 	return (
-		<div className="border-base-300 bg-surface flex h-full flex-col justify-between gap-4 border p-6 md:flex-row md:items-start md:rounded-2xl md:p-8">
+		<div className="border-base-300 dark:border-primary bg-surface flex h-full flex-col justify-between gap-4 border p-6 md:flex-row md:items-start md:rounded-2xl md:p-8">
 			<div>
 				<h2 className="mb-2 text-2xl font-bold md:text-3xl">Our Sponsors</h2>
 				<p className="text-base-content/70 text-base md:text-lg">
