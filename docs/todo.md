@@ -21,24 +21,24 @@ The original website is at https://www.williamstownsc.com/
   - [x] Refactor the getMetadata because it's atrocious
   - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [x] Cache invalidation on content publish
+- [ ] Dark theme
 - [ ] Accessibility audit and fixes
 - SEO
   - [ ] Remove the Keywords because it creates confusion
   - [ ] Social Share Title falls back to meta Title
   - [ ] Social Share Description – Same logic, the fallback is fine
-- [ ] Dark theme
 
 Pages:
 
 - Homepage
   - [x] Hero section, news, football and sponsors
-  - [ ] Key dates section
+  - [x] Key dates section
   - [x] Important announcements like ground closures section
 
 - News
   - [x] Article page
     - [ ] Similar news
-  - [ ] Match report page
+  - [ ] Match report page?
     - [ ] Previous / next week links
 - Football
   - [x] Team listings
@@ -57,9 +57,9 @@ Pages:
   - [x] Contact form
   - [x] Bot detection
 - General
+  - [x] Terms and conditions
+  - [x] Privacy policy
   - [ ] Accessibility statement (what should we aim for? Double A?)
-  - [ ] Privacy policy
-  - [ ] Terms and conditions
 
 ### Nice to have
 
