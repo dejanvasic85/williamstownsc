@@ -106,7 +106,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 								</div>
 
 								<div className="max-w-4xl sm:px-0">
-									<h1
+									<h2
 										className={clsx(
 											'mb-3 font-bold text-white drop-shadow-lg group-hover:underline md:leading-tight',
 											article.title.length > 80 && 'text-xl sm:text-2xl md:text-3xl',
@@ -117,7 +117,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 										)}
 									>
 										{article.title}
-									</h1>
+									</h2>
 									<p className="hidden text-lg text-white/90 drop-shadow-md md:block">
 										{article.excerpt}
 									</p>

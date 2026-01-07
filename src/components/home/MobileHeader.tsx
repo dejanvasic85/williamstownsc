@@ -21,7 +21,7 @@ export function MobileHeader({ logoUrl, logoAlt, clubName, socialLinks }: Mobile
 						className="h-10 w-auto shrink-0"
 					/>
 				)}
-				{clubName && <p className="text-lg font-bold sm:text-xl">{clubName}</p>}
+				{clubName && <h1 className="text-lg font-bold sm:text-xl">{clubName}</h1>}
 			</div>
 			<SocialLinks links={socialLinks} />
 		</div>

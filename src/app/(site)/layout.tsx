@@ -21,7 +21,6 @@ export async function generateMetadata(): Promise<Metadata> {
 	return {
 		title,
 		description,
-		keywords: siteSettings?.seoDefaults?.keywords,
 		openGraph: {
 			title,
 			description,

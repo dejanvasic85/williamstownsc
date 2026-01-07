@@ -44,6 +44,7 @@ export default async function Home() {
 
 	return (
 		<div className="bg-base-100 min-h-screen">
+			<h1 className="sr-only">{siteSettings.clubName} Homepage</h1>
 			<MobileHeader
 				logoUrl={logoUrl}
 				logoAlt={siteSettings?.logo?.alt}
