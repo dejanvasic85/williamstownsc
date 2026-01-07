@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 type BuildMetadataOptions = {
 	title: string;
 	description?: string;
-	keywords?: string[];
 	ogImage?: {
 		url: string;
 		alt?: string;
@@ -16,14 +15,13 @@ type BuildMetadataOptions = {
 };
 
 export function buildMetadata(options: BuildMetadataOptions): Metadata {
-	const { title, description, keywords, ogImage, titleSuffix, robots } = options;
+	const { title, description, ogImage, titleSuffix, robots } = options;
 
 	const fullTitle = `${title} | ${titleSuffix}`;
 
 	return {
 		title: fullTitle,
 		description,
-		keywords,
 		openGraph: {
 			title: fullTitle,
 			description,
