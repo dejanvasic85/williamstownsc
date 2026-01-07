@@ -207,7 +207,6 @@ function buildPageMetadata(
 	return buildMetadata({
 		title,
 		description,
-		keywords: pageData.seo?.keywords || siteSettings?.seoDefaults?.keywords || undefined,
 		ogImage,
 		titleSuffix,
 		robots: {

@@ -21,7 +21,6 @@ export async function generateMetadata(): Promise<Metadata> {
 	return {
 		title,
 		description,
-		keywords: siteSettings?.seoDefaults?.keywords,
 		openGraph: {
 			title,
 			description,
@@ -71,6 +70,12 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
 				/>
 			)}
+			<a
+				href="#main-content"
+				className="bg-primary text-primary-content fixed top-0 left-1/2 z-[100] -translate-x-1/2 -translate-y-full rounded-b-lg px-4 py-2 font-medium transition-transform focus:translate-y-0"
+			>
+				Skip to main content
+			</a>
 			<Banner
 				messages={activeAnnouncements.map(({ _id, message, type }) => ({
 					id: _id,
@@ -86,7 +91,10 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				homeGroundLink={homeGroundLink}
 				hasAnnouncements={hasAnnouncements}
 			/>
-			<main className={clsx('mb-8', hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}>
+			<main
+				id="main-content"
+				className={clsx('mb-8', hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}
+			>
 				{children}
 			</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />

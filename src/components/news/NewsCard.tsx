@@ -60,14 +60,16 @@ export function NewsCard({
 						</div>
 					)}
 					<h3 className="card-title line-clamp-2 text-xl font-bold">{title}</h3>
-					<p className={`line-clamp-3 ${featured ? 'text-white/90' : 'text-base-content/70'}`}>
+					<p
+						className={`line-clamp-3 ${featured ? 'text-white/90' : 'text-[color:var(--color-base-content-secondary)]'}`}
+					>
 						{excerpt}
 					</p>
 					<div className="mt-2">
 						<time
 							dateTime={publishedDate.toISOString()}
 							title={fullDate}
-							className={`text-sm font-bold ${featured ? 'text-white/80' : 'text-base-content/60'}`}
+							className={`text-sm font-bold ${featured ? 'text-white/80' : 'text-[color:var(--color-base-content-secondary)]'}`}
 						>
 							{relativeDate}
 						</time>
