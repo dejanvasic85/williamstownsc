@@ -21,7 +21,7 @@ The original website is at https://www.williamstownsc.com/
   - [x] Refactor the getMetadata because it's atrocious
   - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [x] Cache invalidation on content publish
-- [ ] Dark theme
+- [x] Dark theme
 - [ ] Accessibility audit and fixes
 - SEO
   - [ ] Remove the Keywords because it creates confusion
