@@ -26,7 +26,7 @@ export function PlayerCard({
 }: PlayerCardProps) {
 	const containerClass = isCaptain
 		? 'bg-primary text-primary-content'
-		: 'bg-white text-base-content';
+		: 'bg-surface text-base-content';
 
 	const introText =
 		intro && intro.length > 0

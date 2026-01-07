@@ -10,7 +10,7 @@ interface CoachCardProps {
 
 export function CoachCard({ firstName, lastName, role, photoUrl, photoAlt }: CoachCardProps) {
 	return (
-		<div className="text-base-content relative overflow-hidden rounded-xl bg-white transition-shadow hover:shadow-xl">
+		<div className="text-base-content bg-surface relative overflow-hidden rounded-xl transition-shadow hover:shadow-xl">
 			<div className="relative aspect-4/3 md:aspect-3/4">
 				<Image src={photoUrl} alt={photoAlt} fill className="object-cover" sizes="300px" />
 			</div>

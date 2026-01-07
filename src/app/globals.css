@@ -3,9 +3,11 @@
 	themes: light, dark, cupcake;
 }
 
-/* Brand color - the signature Williamstown royal blue, same in both themes */
 @theme inline {
+	/* Brand color - the signature Williamstown royal blue, same in both themes */
 	--color-brand: #1a4ba6;
+	/* Surface color - white in light mode, dark in dark mode (fills the gap above base-100) */
+	--color-surface: var(--color-surface);
 }
 
 @plugin 'daisyui/theme' {
@@ -20,6 +22,7 @@
 	--color-base-content-secondary: oklch(40% 0.006 285.885);
 	--color-primary: #1a4ba6;
 	--color-primary-content: oklch(98% 0.003 247.858);
+	--color-surface: #ffffff;
 	--color-secondary: #c9a900;
 	--color-secondary-content: oklch(0% 0 0);
 	--color-accent: #00dba5;
@@ -56,6 +59,7 @@
 	--color-base-content-secondary: oklch(65% 0.007 265.754);
 	--color-primary: oklch(60% 0.18 260);
 	--color-primary-content: oklch(15% 0.05 260);
+	--color-surface: oklch(24% 0.04 265);
 	--color-secondary: #deb100;
 	--color-secondary-content: oklch(0% 0 0);
 	--color-accent: #00dba5;
