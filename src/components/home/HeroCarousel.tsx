@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { TransformedNewsArticle } from '@/lib/content';
 
 interface HeroCarouselProps {
@@ -14,10 +14,11 @@ interface HeroCarouselProps {
 
 export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarouselProps) {
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const [isPaused, setIsPaused] = useState(false);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
 	const startInterval = useCallback(() => {
-		if (articles.length <= 1) return;
+		if (articles.length <= 1 || isPaused) return;
 
 		if (intervalRef.current) {
 			clearInterval(intervalRef.current);
@@ -26,7 +27,7 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 		intervalRef.current = setInterval(() => {
 			setCurrentSlide((prev) => (prev + 1) % articles.length);
 		}, autoplayInterval);
-	}, [articles.length, autoplayInterval]);
+	}, [articles.length, autoplayInterval, isPaused]);
 
 	useEffect(() => {
 		startInterval();
@@ -52,6 +53,34 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 		startInterval();
 	};
 
+	const handleTogglePause = () => {
+		setIsPaused((prev) => {
+			const newPausedState = !prev;
+			if (!newPausedState) {
+				// Immediately restart when unpausing
+				if (intervalRef.current) {
+					clearInterval(intervalRef.current);
+				}
+				intervalRef.current = setInterval(() => {
+					setCurrentSlide((prevSlide) => (prevSlide + 1) % articles.length);
+				}, autoplayInterval);
+			}
+			return newPausedState;
+		});
+	};
+
+	const handleMouseEnter = () => {
+		if (intervalRef.current) {
+			clearInterval(intervalRef.current);
+		}
+	};
+
+	const handleMouseLeave = () => {
+		if (!isPaused) {
+			startInterval();
+		}
+	};
+
 	if (articles.length === 0) {
 		return null;
 	}
@@ -70,6 +99,10 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 			role="region"
 			aria-roledescription="carousel"
 			aria-label="Featured news"
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+			onFocusCapture={handleMouseEnter}
+			onBlurCapture={handleMouseLeave}
 		>
 			<div
 				className="carousel md:rounded-box relative h-[55vh] w-full overflow-hidden"
@@ -145,23 +178,37 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 						<ChevronRight className="h-6 w-6" aria-hidden="true" />
 					</button>
 
-					<div
-						className="absolute right-6 bottom-6 flex gap-2"
-						role="tablist"
-						aria-label="Slide controls"
-					>
-						{articles.map((article, index) => (
-							<button
-								key={index}
-								role="tab"
-								onClick={() => handleSlideChange(index)}
-								className={`h-3 w-3 rounded-full transition-all ${
-									index === currentSlide ? 'w-8 bg-white' : 'bg-white/50 hover:bg-white/75'
-								}`}
-								aria-label={`Go to slide ${index + 1}: ${article.title}`}
-								aria-selected={index === currentSlide}
-							/>
-						))}
+					<div className="absolute right-6 bottom-6 flex items-center gap-3">
+						<button
+							onClick={handleTogglePause}
+							className="btn btn-circle btn-sm text-secondary bg-white/10 backdrop-blur-sm hover:bg-white/20"
+							aria-label={isPaused ? 'Play carousel' : 'Pause carousel'}
+							aria-pressed={isPaused}
+						>
+							{isPaused ? (
+								<Play className="h-4 w-4" aria-hidden="true" />
+							) : (
+								<Pause className="h-4 w-4" aria-hidden="true" />
+							)}
+						</button>
+						<span className="sr-only" aria-live="polite" role="status">
+							{isPaused ? 'Carousel paused' : 'Carousel playing'}
+						</span>
+
+						<div className="flex gap-2" role="tablist" aria-label="Slide controls">
+							{articles.map((article, index) => (
+								<button
+									key={index}
+									role="tab"
+									onClick={() => handleSlideChange(index)}
+									className={`h-3 w-3 rounded-full transition-all ${
+										index === currentSlide ? 'w-8 bg-white' : 'bg-white/50 hover:bg-white/75'
+									}`}
+									aria-label={`Go to slide ${index + 1}: ${article.title}`}
+									aria-selected={index === currentSlide}
+								/>
+							))}
+						</div>
 					</div>
 				</>
 			)}

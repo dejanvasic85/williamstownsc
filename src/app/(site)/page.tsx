@@ -34,7 +34,7 @@ export default async function Home() {
 			getActiveAnnouncements()
 		]);
 
-	const [featuredArticle, ...news] = allNews;
+	const [featuredArticle, secondArticle, ...news] = allNews;
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
 	const socialLinks = buildSocialLinks({
@@ -64,7 +64,7 @@ export default async function Home() {
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className="lg:w-2/3">
-							<HeroCarousel articles={[featuredArticle]} />
+							<HeroCarousel articles={[featuredArticle, secondArticle].filter(Boolean)} />
 						</div>
 
 						{/* News Panel - Right Side */}
