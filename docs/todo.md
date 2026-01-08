@@ -24,9 +24,9 @@ The original website is at https://www.williamstownsc.com/
 - [x] Dark theme
 - [ ] Accessibility audit and fixes
 - SEO
-  - [ ] Remove the Keywords because it creates confusion
-  - [ ] Social Share Title falls back to meta Title
-  - [ ] Social Share Description – Same logic, the fallback is fine
+  - [x] Remove the Keywords because it creates confusion
+  - [x] Social Share Title falls back to meta Title
+  - [x] Social Share Description – Same logic, the fallback is fine
 
 Pages:
 
