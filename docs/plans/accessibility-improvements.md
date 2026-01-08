@@ -53,19 +53,23 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
   - Lines 170-181: Added pause/play toggle button with proper ARIA labels (`aria-label`, `aria-pressed`)
 - **WCAG Compliance**: Now meets WCAG 2.2.2 (Pause, Stop, Hide) requirement
 
+### 6. Desktop Navbar Keyboard Navigation
+
+- **File**: `src/components/layout/DesktopNavbar.tsx`
+- **Changes**:
+  - Line 36: Added `focusedItemIndex` state for tracking focused menu item
+  - Line 38: Added `menuItemRefs` ref for managing focus on menu items
+  - Lines 50-124: Added `handleDropdownKeyDown` function for dropdown button keyboard events (Enter, Space, ArrowDown, ArrowUp)
+  - Lines 92-124: Added `handleMenuItemKeyDown` function for menu item navigation (ArrowDown, ArrowUp, Home, End)
+  - Line 234: Added `onKeyDown` handler to dropdown button
+  - Lines 261-266: Added refs to menu items for focus management
+  - Line 268: Added `onKeyDown` handler to menu items
+- **WCAG Compliance**: Now meets WCAG 2.1.1 (Keyboard) requirement for dropdown navigation
+
 ---
 
 ## Remaining Tasks
-
-### High Priority
-
-#### 1. Desktop Navbar Keyboard Navigation
-
-- **File**: `src/components/layout/DesktopNavbar.tsx`
-- **Issue**: Dropdown menus lack arrow key navigation
-- **Fix**: Add `onKeyDown` handler to dropdown buttons for ArrowUp/ArrowDown/Enter/Escape
-- **Reference**: Lines 147-166 (dropdown button), 169-195 (dropdown menu)
-
+˝
 ### Medium Priority
 
 #### 3. Additional Color Contrast Fixes
@@ -145,7 +149,7 @@ Files using `text-base-content/XX` or `opacity-XX` patterns:
 
 - 1.3.1 Info and Relationships (semantic HTML) ✅ Partial
 - 1.4.3 Contrast Minimum (4.5:1) ✅ Partial
-- 2.1.1 Keyboard (all functionality) ⏳ Needs dropdown fix
+- 2.1.1 Keyboard (all functionality) ✅ Done
 - 2.2.2 Pause, Stop, Hide (carousel) ✅ Done
 - 2.4.1 Bypass Blocks (skip link) ✅ Done
 - 2.4.6 Headings and Labels ✅ Done
