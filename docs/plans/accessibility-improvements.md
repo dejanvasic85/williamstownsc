@@ -41,6 +41,18 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
 - **File**: `src/components/news/NewsCard.tsx:64,72`
 - **Change**: Replaced `text-base-content/70` and `text-base-content/60` with `text-[color:var(--color-base-content-secondary)]`
 
+### 5. Carousel Pause Control
+
+- **File**: `src/components/home/HeroCarousel.tsx`
+- **Changes**:
+  - Line 7: Added `Pause` and `Play` icons from lucide-react
+  - Line 17: Added `isPaused` state
+  - Line 21, 30: Updated `startInterval` to check `isPaused` state
+  - Lines 56-70: Added `handleTogglePause`, `handleMouseEnter`, `handleMouseLeave` functions
+  - Lines 90-93: Added `onMouseEnter`, `onMouseLeave`, `onFocus`, `onBlur` to pause on hover/focus
+  - Lines 170-181: Added pause/play toggle button with proper ARIA labels (`aria-label`, `aria-pressed`)
+- **WCAG Compliance**: Now meets WCAG 2.2.2 (Pause, Stop, Hide) requirement
+
 ---
 
 ## Remaining Tasks
@@ -53,13 +65,6 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
 - **Issue**: Dropdown menus lack arrow key navigation
 - **Fix**: Add `onKeyDown` handler to dropdown buttons for ArrowUp/ArrowDown/Enter/Escape
 - **Reference**: Lines 147-166 (dropdown button), 169-195 (dropdown menu)
-
-#### 2. Carousel Pause Control
-
-- **File**: `src/components/home/HeroCarousel.tsx`
-- **Issue**: No way to pause autoplay (WCAG 2.2.2)
-- **Fix**: Add pause/play button, pause on hover/focus
-- **Reference**: Lines 18-28 (interval logic), 117-152 (controls area)
 
 ### Medium Priority
 
@@ -141,7 +146,7 @@ Files using `text-base-content/XX` or `opacity-XX` patterns:
 - 1.3.1 Info and Relationships (semantic HTML) ✅ Partial
 - 1.4.3 Contrast Minimum (4.5:1) ✅ Partial
 - 2.1.1 Keyboard (all functionality) ⏳ Needs dropdown fix
-- 2.2.2 Pause, Stop, Hide (carousel) ⏳ Needs pause control
+- 2.2.2 Pause, Stop, Hide (carousel) ✅ Done
 - 2.4.1 Bypass Blocks (skip link) ✅ Done
 - 2.4.6 Headings and Labels ✅ Done
 - 4.1.2 Name, Role, Value (ARIA) ✅ Partial
