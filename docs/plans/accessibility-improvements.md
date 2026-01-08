@@ -9,17 +9,20 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
 ## Completed
 
 ### 1. Skip Link
+
 - **File**: `src/app/(site)/layout.tsx:74-79`
 - **Change**: Added skip-to-main-content link before Banner
 - **Target**: `#main-content` on `<main>` element (line 95-100)
 
 ### 2. Heading Hierarchy (Homepage)
+
 - **File**: `src/components/home/MobileHeader.tsx:24`
 - **Change**: `<h1>` → `<p>` for club name (branding only)
 - **File**: `src/components/home/HeroCarousel.tsx:95-106`
 - **Change**: `<h2>` → `<h1>` for featured article title (main page heading)
 
 ### 3. Carousel Accessibility
+
 - **File**: `src/components/home/HeroCarousel.tsx`
 - **Changes**:
   - Line 67-72: Added `role="region"`, `aria-roledescription="carousel"`, `aria-label="Featured news"`
@@ -31,6 +34,7 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
   - Line 142, 148: Added `role="tab"`, `aria-selected` to dot buttons
 
 ### 4. Color Contrast
+
 - **File**: `src/app/globals.css`
   - Line 15: Added `--color-base-content-secondary: oklch(40% 0.006 285.885)` (light theme)
   - Line 50: Added `--color-base-content-secondary: oklch(65% 0.007 265.754)` (dark theme)
@@ -44,12 +48,14 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
 ### High Priority
 
 #### 1. Desktop Navbar Keyboard Navigation
+
 - **File**: `src/components/layout/DesktopNavbar.tsx`
 - **Issue**: Dropdown menus lack arrow key navigation
 - **Fix**: Add `onKeyDown` handler to dropdown buttons for ArrowUp/ArrowDown/Enter/Escape
 - **Reference**: Lines 147-166 (dropdown button), 169-195 (dropdown menu)
 
 #### 2. Carousel Pause Control
+
 - **File**: `src/components/home/HeroCarousel.tsx`
 - **Issue**: No way to pause autoplay (WCAG 2.2.2)
 - **Fix**: Add pause/play button, pause on hover/focus
@@ -58,7 +64,9 @@ Branch: `claude/improve-homepage-accessibility-MQnUH`
 ### Medium Priority
 
 #### 3. Additional Color Contrast Fixes
+
 Files using `text-base-content/XX` or `opacity-XX` patterns:
+
 - `src/components/layout/Footer.tsx` - Check for opacity text
 - `src/components/home/SocialLinks.tsx` - Line 23 area
 - `src/components/teams/PlayerCard.tsx` - Opacity backgrounds
@@ -67,11 +75,13 @@ Files using `text-base-content/XX` or `opacity-XX` patterns:
 **Fix pattern**: Replace with `text-[color:var(--color-base-content-secondary)]`
 
 #### 4. Tab Panel Focus Management
+
 - **File**: `src/components/contact/ContactTypeTabs.tsx`
 - **Issue**: Tab switches don't announce changes or manage focus
 - **Fix**: Add `aria-labelledby` to panels, move focus on tab change
 
 #### 5. Banner Alert Role
+
 - **File**: `src/components/layout/Banner/Banner.tsx`
 - **Issue**: Important announcements not marked as alerts
 - **Fix**: Add `role="alert"` or `aria-live="assertive"` for urgent messages
@@ -79,16 +89,19 @@ Files using `text-base-content/XX` or `opacity-XX` patterns:
 ### Low Priority
 
 #### 6. Image Alt Text Improvements
+
 - `src/components/layout/DesktopNavbar.tsx:117` - "Club logo" → "Williamstown SC logo"
 - `src/components/home/MobileHeader.tsx:18` - Same improvement
 - `src/components/layout/PageContainer.tsx:56` - Review fallback logic
 
 #### 7. Footer Decorative Elements
+
 - **File**: `src/components/layout/Footer.tsx:162`
 - **Issue**: Pipe separators ("|") read by screen readers
 - **Fix**: Add `aria-hidden="true"` to decorative separators
 
 #### 8. Hidden Panel Accessibility
+
 - **File**: `src/components/teams/TeamTabs.tsx:81-84`
 - **Issue**: Uses `pointer-events-none opacity-0` instead of proper hiding
 - **Fix**: Add `aria-hidden="true"` and consider `inert` attribute
@@ -109,17 +122,17 @@ Files using `text-base-content/XX` or `opacity-XX` patterns:
 
 ## Key Files Reference
 
-| Component | Path | Purpose |
-|-----------|------|---------|
-| Site Layout | `src/app/(site)/layout.tsx` | Skip link, main structure |
-| Homepage | `src/app/(site)/page.tsx` | Page composition |
-| Hero Carousel | `src/components/home/HeroCarousel.tsx` | Featured news slider |
-| Desktop Nav | `src/components/layout/DesktopNavbar.tsx` | Main navigation |
-| Mobile Header | `src/components/home/MobileHeader.tsx` | Mobile branding |
-| Theme CSS | `src/app/globals.css` | Color variables |
-| News Card | `src/components/news/NewsCard.tsx` | Article cards |
-| Footer | `src/components/layout/Footer.tsx` | Site footer |
-| Contact Tabs | `src/components/contact/ContactTypeTabs.tsx` | Form tabs |
+| Component     | Path                                         | Purpose                   |
+| ------------- | -------------------------------------------- | ------------------------- |
+| Site Layout   | `src/app/(site)/layout.tsx`                  | Skip link, main structure |
+| Homepage      | `src/app/(site)/page.tsx`                    | Page composition          |
+| Hero Carousel | `src/components/home/HeroCarousel.tsx`       | Featured news slider      |
+| Desktop Nav   | `src/components/layout/DesktopNavbar.tsx`    | Main navigation           |
+| Mobile Header | `src/components/home/MobileHeader.tsx`       | Mobile branding           |
+| Theme CSS     | `src/app/globals.css`                        | Color variables           |
+| News Card     | `src/components/news/NewsCard.tsx`           | Article cards             |
+| Footer        | `src/components/layout/Footer.tsx`           | Site footer               |
+| Contact Tabs  | `src/components/contact/ContactTypeTabs.tsx` | Form tabs                 |
 
 ---
 
