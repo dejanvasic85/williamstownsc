@@ -41,15 +41,23 @@ function generateICSContent({ title, date, description }: CalendarEvent): string
 	return lines.join('\r\n');
 }
 
+function isMobileDevice(): boolean {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function openCalendar(content: string, filename: string) {
-	// Use data URI instead of blob to trigger calendar app on mobile
 	const dataUri = `data:text/calendar;charset=utf-8,${encodeURIComponent(content)}`;
+
+	// On mobile, navigate directly to trigger calendar app
+	if (isMobileDevice()) {
+		window.location.href = dataUri;
+		return;
+	}
+
+	// On desktop, download the file
 	const link = document.createElement('a');
 	link.href = dataUri;
-
-	// Set download attribute as fallback for desktop browsers
 	link.download = filename;
-
 	document.body.appendChild(link);
 	link.click();
 	document.body.removeChild(link);
