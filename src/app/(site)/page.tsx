@@ -64,7 +64,7 @@ export default async function Home() {
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className="lg:w-2/3">
-							<HeroCarousel articles={[featuredArticle, secondArticle]} />
+							<HeroCarousel articles={[featuredArticle, secondArticle].filter(Boolean)} />
 						</div>
 
 						{/* News Panel - Right Side */}

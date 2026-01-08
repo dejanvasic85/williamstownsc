@@ -54,7 +54,19 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 	};
 
 	const handleTogglePause = () => {
-		setIsPaused((prev) => !prev);
+		setIsPaused((prev) => {
+			const newPausedState = !prev;
+			if (!newPausedState) {
+				// Immediately restart when unpausing
+				if (intervalRef.current) {
+					clearInterval(intervalRef.current);
+				}
+				intervalRef.current = setInterval(() => {
+					setCurrentSlide((prevSlide) => (prevSlide + 1) % articles.length);
+				}, autoplayInterval);
+			}
+			return newPausedState;
+		});
 	};
 
 	const handleMouseEnter = () => {
@@ -89,8 +101,8 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 			aria-label="Featured news"
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			onFocus={handleMouseEnter}
-			onBlur={handleMouseLeave}
+			onFocusCapture={handleMouseEnter}
+			onBlurCapture={handleMouseLeave}
 		>
 			<div
 				className="carousel md:rounded-box relative h-[55vh] w-full overflow-hidden"
@@ -179,6 +191,9 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 								<Pause className="h-4 w-4" aria-hidden="true" />
 							)}
 						</button>
+						<span className="sr-only" aria-live="polite" role="status">
+							{isPaused ? 'Carousel paused' : 'Carousel playing'}
+						</span>
 
 						<div className="flex gap-2" role="tablist" aria-label="Slide controls">
 							{articles.map((article, index) => (
