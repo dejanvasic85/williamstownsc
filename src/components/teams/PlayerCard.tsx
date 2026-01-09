@@ -52,9 +52,27 @@ export function PlayerCard({
 			<div className="space-y-3 p-4">
 				<div className="flex items-center justify-between gap-4">
 					<div className="flex-1 space-y-1">
-						<div className="text-sm font-medium uppercase opacity-80">{firstName}</div>
+						<div
+							className={clsx(
+								'text-sm font-medium uppercase',
+								isCaptain
+									? 'text-primary-content opacity-80'
+									: 'text-(--color-base-content-secondary)'
+							)}
+						>
+							{firstName}
+						</div>
 						<div className="text-2xl leading-tight font-black uppercase">{lastName}</div>
-						<div className="text-sm opacity-70">{position}</div>
+						<div
+							className={clsx(
+								'text-sm',
+								isCaptain
+									? 'text-primary-content opacity-70'
+									: 'text-(--color-base-content-secondary)'
+							)}
+						>
+							{position}
+						</div>
 					</div>
 					<div className="flex flex-col items-end gap-2">
 						{isCaptain && (
@@ -77,7 +95,18 @@ export function PlayerCard({
 						</div>
 					</div>
 				</div>
-				{introText && <p className="text-sm leading-relaxed opacity-70">{introText}</p>}
+				{introText && (
+					<p
+						className={clsx(
+							'text-sm leading-relaxed',
+							isCaptain
+								? 'text-primary-content opacity-70'
+								: 'text-(--color-base-content-secondary)'
+						)}
+					>
+						{introText}
+					</p>
+				)}
 			</div>
 		</div>
 	);

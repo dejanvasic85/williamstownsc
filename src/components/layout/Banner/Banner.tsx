@@ -34,6 +34,8 @@ export const Banner = ({ messages }: BannerProps) => {
 			<div className="mx-auto flex w-full text-sm lg:container">
 				<div
 					key={message.id}
+					role={message.type === 'alert' ? 'alert' : 'status'}
+					aria-live={message.type === 'alert' ? 'assertive' : 'polite'}
 					className={clsx(
 						'dark:text-base-100 flex w-full items-center justify-between gap-1 px-2 lg:mx-auto lg:w-11/12 lg:justify-center lg:rounded-lg',
 						{

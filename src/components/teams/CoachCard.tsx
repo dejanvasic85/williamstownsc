@@ -16,9 +16,11 @@ export function CoachCard({ firstName, lastName, role, photoUrl, photoAlt }: Coa
 			</div>
 
 			<div className="space-y-1 p-4">
-				<div className="text-sm font-medium uppercase opacity-80">{firstName}</div>
+				<div className="text-sm font-medium text-(--color-base-content-secondary) uppercase">
+					{firstName}
+				</div>
 				<div className="text-2xl leading-tight font-black uppercase">{lastName}</div>
-				<div className="text-sm opacity-70">{role}</div>
+				<div className="text-sm text-(--color-base-content-secondary)">{role}</div>
 			</div>
 		</div>
 	);

@@ -113,358 +113,367 @@ export function ContactForm({
 			<div className="w-full space-y-8">
 				<ContactTypeTabs activeType={contactType} onChange={handleTypeChange} />
 
-				{typeContent && (
-					<div className="mb-6">
-						<h2 className="mb-4 text-lg font-bold">{typeContent.heading}</h2>
-						{typeContent.introduction && <PortableTextContent blocks={typeContent.introduction} />}
-					</div>
-				)}
+				<div
+					id={`tabpanel-${contactType}`}
+					role="tabpanel"
+					aria-labelledby={`tab-${contactType}`}
+					tabIndex={0}
+				>
+					{typeContent && (
+						<div className="mb-6">
+							<h2 className="mb-4 text-lg font-bold">{typeContent.heading}</h2>
+							{typeContent.introduction && (
+								<PortableTextContent blocks={typeContent.introduction} />
+							)}
+						</div>
+					)}
 
-				{/* Success Message */}
-				{state?.success ? (
-					<div className="alert alert-success">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="h-6 w-6 shrink-0 stroke-current"
-							fill="none"
-							viewBox="0 0 24 24"
+					{/* Success Message */}
+					{state?.success ? (
+						<div className="alert alert-success">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-6 w-6 shrink-0 stroke-current"
+								fill="none"
+								viewBox="0 0 24 24"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="2"
+									d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+								/>
+							</svg>
+							<div>
+								<h3 className="font-bold">Thank you!</h3>
+								<div className="text-sm">{state.message}</div>
+							</div>
+						</div>
+					) : (
+						<form
+							onSubmit={onSubmit}
+							className="bg-base-100 space-y-4 rounded-lg p-6 shadow-xl lg:p-8"
 						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-							/>
-						</svg>
-						<div>
-							<h3 className="font-bold">Thank you!</h3>
-							<div className="text-sm">{state.message}</div>
-						</div>
-					</div>
-				) : (
-					<form
-						onSubmit={onSubmit}
-						className="bg-base-100 space-y-4 rounded-lg p-6 shadow-xl lg:p-8"
-					>
-						{/* Hidden contact type field */}
-						<input type="hidden" name="contactType" value={contactType} />
+							{/* Hidden contact type field */}
+							<input type="hidden" name="contactType" value={contactType} />
 
-						{/* Common Fields */}
-						<div className="form-control w-full">
-							<label className="label">
-								<span className="label-text">
-									Name <span className="text-error">*</span>
-								</span>
-							</label>
-							<input
-								type="text"
-								{...register('name', {
-									required: 'Name is required',
-									maxLength: {
-										value: 100,
-										message: 'Name must be 100 characters or less'
-									}
-								})}
-								className={`input input-bordered w-full ${errors.name ? 'input-error' : ''}`}
-								disabled={isPending}
-							/>
-							{errors.name && (
+							{/* Common Fields */}
+							<div className="form-control w-full">
 								<label className="label">
-									<span className="label-text-alt text-error">{errors.name.message}</span>
+									<span className="label-text">
+										Name <span className="text-error">*</span>
+									</span>
 								</label>
-							)}
-						</div>
+								<input
+									type="text"
+									{...register('name', {
+										required: 'Name is required',
+										maxLength: {
+											value: 100,
+											message: 'Name must be 100 characters or less'
+										}
+									})}
+									className={`input input-bordered w-full ${errors.name ? 'input-error' : ''}`}
+									disabled={isPending}
+								/>
+								{errors.name && (
+									<label className="label">
+										<span className="label-text-alt text-error">{errors.name.message}</span>
+									</label>
+								)}
+							</div>
 
-						<div className="form-control w-full">
-							<label className="label">
-								<span className="label-text">
-									Email <span className="text-error">*</span>
-								</span>
-							</label>
-							<input
-								type="email"
-								{...register('email', {
-									required: 'Email is required',
-									pattern: {
-										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-										message: 'Please enter a valid email address'
-									}
-								})}
-								className={`input input-bordered w-full ${errors.email ? 'input-error' : ''}`}
-								disabled={isPending}
-							/>
-							{errors.email && (
+							<div className="form-control w-full">
 								<label className="label">
-									<span className="label-text-alt text-error">{errors.email.message}</span>
+									<span className="label-text">
+										Email <span className="text-error">*</span>
+									</span>
 								</label>
-							)}
-						</div>
+								<input
+									type="email"
+									{...register('email', {
+										required: 'Email is required',
+										pattern: {
+											value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+											message: 'Please enter a valid email address'
+										}
+									})}
+									className={`input input-bordered w-full ${errors.email ? 'input-error' : ''}`}
+									disabled={isPending}
+								/>
+								{errors.email && (
+									<label className="label">
+										<span className="label-text-alt text-error">{errors.email.message}</span>
+									</label>
+								)}
+							</div>
 
-						<div className="form-control w-full">
-							<label className="label">
-								<span className="label-text">Phone</span>
-							</label>
-							<input
-								type="tel"
-								{...register('phone', {
-									maxLength: {
-										value: 20,
-										message: 'Phone must be 20 characters or less'
-									}
-								})}
-								className={`input input-bordered w-full ${errors.phone ? 'input-error' : ''}`}
-								disabled={isPending}
-							/>
-							{errors.phone && (
+							<div className="form-control w-full">
 								<label className="label">
-									<span className="label-text-alt text-error">{errors.phone.message}</span>
+									<span className="label-text">Phone</span>
 								</label>
-							)}
-						</div>
+								<input
+									type="tel"
+									{...register('phone', {
+										maxLength: {
+											value: 20,
+											message: 'Phone must be 20 characters or less'
+										}
+									})}
+									className={`input input-bordered w-full ${errors.phone ? 'input-error' : ''}`}
+									disabled={isPending}
+								/>
+								{errors.phone && (
+									<label className="label">
+										<span className="label-text-alt text-error">{errors.phone.message}</span>
+									</label>
+								)}
+							</div>
 
-						{/* Player-specific fields */}
-						{contactType === 'player' && (
-							<>
-								<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+							{/* Player-specific fields */}
+							{contactType === 'player' && (
+								<>
+									<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Age Group</span>
+											</label>
+											<input
+												type="text"
+												{...register('ageGroup')}
+												className="input input-bordered w-full"
+												placeholder="e.g., Under 12"
+												disabled={isPending}
+											/>
+										</div>
+
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Experience Level</span>
+											</label>
+											<select
+												{...register('experience')}
+												className="select select-bordered w-full"
+												disabled={isPending}
+											>
+												<option value="">Select...</option>
+												<option value="beginner">Beginner</option>
+												<option value="intermediate">Intermediate</option>
+												<option value="advanced">Advanced</option>
+											</select>
+										</div>
+
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Preferred Position</span>
+											</label>
+											<input
+												type="text"
+												{...register('position')}
+												className="input input-bordered w-full"
+												placeholder="e.g., Striker"
+												disabled={isPending}
+											/>
+										</div>
+									</div>
+								</>
+							)}
+
+							{/* Coach-specific fields */}
+							{contactType === 'coach' && (
+								<>
+									<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Coaching Qualifications</span>
+											</label>
+											<input
+												type="text"
+												{...register('qualifications')}
+												className="input input-bordered w-full"
+												placeholder="e.g., FFA Level 1"
+												disabled={isPending}
+											/>
+										</div>
+
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Experience Level</span>
+											</label>
+											<select
+												{...register('experience')}
+												className="select select-bordered w-full"
+												disabled={isPending}
+											>
+												<option value="">Select...</option>
+												<option value="new">New to coaching</option>
+												<option value="some">Some experience</option>
+												<option value="experienced">Experienced coach</option>
+											</select>
+										</div>
+									</div>
+
 									<div className="form-control w-full">
 										<label className="label">
-											<span className="label-text">Age Group</span>
+											<span className="label-text">Age Groups of Interest</span>
 										</label>
 										<input
 											type="text"
-											{...register('ageGroup')}
+											{...register('ageGroupsInterest')}
 											className="input input-bordered w-full"
-											placeholder="e.g., Under 12"
+											placeholder="e.g., Juniors, Seniors"
 											disabled={isPending}
 										/>
 									</div>
+								</>
+							)}
 
-									<div className="form-control w-full">
-										<label className="label">
-											<span className="label-text">Experience Level</span>
-										</label>
-										<select
-											{...register('experience')}
-											className="select select-bordered w-full"
-											disabled={isPending}
-										>
-											<option value="">Select...</option>
-											<option value="beginner">Beginner</option>
-											<option value="intermediate">Intermediate</option>
-											<option value="advanced">Advanced</option>
-										</select>
+							{/* Sponsor-specific fields */}
+							{contactType === 'sponsor' && (
+								<>
+									<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Organization Name</span>
+											</label>
+											<input
+												type="text"
+												{...register('organization')}
+												className="input input-bordered w-full"
+												disabled={isPending}
+											/>
+										</div>
+
+										<div className="form-control w-full">
+											<label className="label">
+												<span className="label-text">Sponsorship Tier of Interest</span>
+											</label>
+											<select
+												{...register('sponsorshipTier')}
+												className="select select-bordered w-full"
+												disabled={isPending}
+											>
+												<option value="">Select...</option>
+												<option value="bronze">Bronze</option>
+												<option value="silver">Silver</option>
+												<option value="gold">Gold</option>
+												<option value="platinum">Platinum</option>
+												<option value="custom">Custom Package</option>
+											</select>
+										</div>
 									</div>
+								</>
+							)}
 
-									<div className="form-control w-full">
-										<label className="label">
-											<span className="label-text">Preferred Position</span>
-										</label>
-										<input
-											type="text"
-											{...register('position')}
-											className="input input-bordered w-full"
-											placeholder="e.g., Striker"
-											disabled={isPending}
-										/>
-									</div>
-								</div>
-							</>
-						)}
-
-						{/* Coach-specific fields */}
-						{contactType === 'coach' && (
-							<>
-								<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-									<div className="form-control w-full">
-										<label className="label">
-											<span className="label-text">Coaching Qualifications</span>
-										</label>
-										<input
-											type="text"
-											{...register('qualifications')}
-											className="input input-bordered w-full"
-											placeholder="e.g., FFA Level 1"
-											disabled={isPending}
-										/>
-									</div>
-
-									<div className="form-control w-full">
-										<label className="label">
-											<span className="label-text">Experience Level</span>
-										</label>
-										<select
-											{...register('experience')}
-											className="select select-bordered w-full"
-											disabled={isPending}
-										>
-											<option value="">Select...</option>
-											<option value="new">New to coaching</option>
-											<option value="some">Some experience</option>
-											<option value="experienced">Experienced coach</option>
-										</select>
-									</div>
-								</div>
-
+							{/* Program-specific fields */}
+							{contactType === 'program' && (
 								<div className="form-control w-full">
 									<label className="label">
-										<span className="label-text">Age Groups of Interest</span>
+										<span className="label-text">Program of Interest</span>
 									</label>
-									<input
-										type="text"
-										{...register('ageGroupsInterest')}
-										className="input input-bordered w-full"
-										placeholder="e.g., Juniors, Seniors"
+									<select
+										{...register('programId')}
+										className="select select-bordered w-full"
 										disabled={isPending}
-									/>
+									>
+										<option value="">Select a program...</option>
+										{programs.map((program) => (
+											<option key={program._id} value={program._id}>
+												{program.name}
+											</option>
+										))}
+									</select>
 								</div>
-							</>
-						)}
-
-						{/* Sponsor-specific fields */}
-						{contactType === 'sponsor' && (
-							<>
-								<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-									<div className="form-control w-full">
-										<label className="label">
-											<span className="label-text">Organization Name</span>
-										</label>
-										<input
-											type="text"
-											{...register('organization')}
-											className="input input-bordered w-full"
-											disabled={isPending}
-										/>
-									</div>
-
-									<div className="form-control w-full">
-										<label className="label">
-											<span className="label-text">Sponsorship Tier of Interest</span>
-										</label>
-										<select
-											{...register('sponsorshipTier')}
-											className="select select-bordered w-full"
-											disabled={isPending}
-										>
-											<option value="">Select...</option>
-											<option value="bronze">Bronze</option>
-											<option value="silver">Silver</option>
-											<option value="gold">Gold</option>
-											<option value="platinum">Platinum</option>
-											<option value="custom">Custom Package</option>
-										</select>
-									</div>
-								</div>
-							</>
-						)}
-
-						{/* Program-specific fields */}
-						{contactType === 'program' && (
-							<div className="form-control w-full">
-								<label className="label">
-									<span className="label-text">Program of Interest</span>
-								</label>
-								<select
-									{...register('programId')}
-									className="select select-bordered w-full"
-									disabled={isPending}
-								>
-									<option value="">Select a program...</option>
-									{programs.map((program) => (
-										<option key={program._id} value={program._id}>
-											{program.name}
-										</option>
-									))}
-								</select>
-							</div>
-						)}
-
-						{/* General-specific fields */}
-						{contactType === 'general' && (
-							<div className="form-control w-full">
-								<label className="label">
-									<span className="label-text">Subject</span>
-								</label>
-								<select
-									{...register('subject')}
-									className="select select-bordered w-full"
-									disabled={isPending}
-								>
-									<option value="">Select...</option>
-									<option value="facilities">Facilities</option>
-									<option value="events">Events</option>
-									<option value="membership">Membership</option>
-									<option value="volunteering">Volunteering</option>
-									<option value="other">Other</option>
-								</select>
-							</div>
-						)}
-
-						{/* Message field */}
-						<div className="form-control w-full">
-							<label className="label">
-								<span className="label-text">
-									Message <span className="text-error">*</span>
-								</span>
-							</label>
-							<textarea
-								{...register('message', {
-									required: 'Message is required',
-									minLength: {
-										value: 10,
-										message: 'Message must be at least 10 characters'
-									},
-									maxLength: {
-										value: 2000,
-										message: 'Message must be 2000 characters or less'
-									}
-								})}
-								className={`textarea textarea-bordered h-32 w-full ${errors.message ? 'textarea-error' : ''}`}
-								disabled={isPending}
-							></textarea>
-							{errors.message && (
-								<label className="label">
-									<span className="label-text-alt text-error">{errors.message.message}</span>
-								</label>
 							)}
-						</div>
 
-						{/* Error message */}
-						{state && !state.success && (
-							<div className="alert alert-error">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									className="h-6 w-6 shrink-0 stroke-current"
-									fill="none"
-									viewBox="0 0 24 24"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="2"
-										d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-									/>
-								</svg>
-								<div>
-									<span className="font-bold">Error:</span> {state.message}
+							{/* General-specific fields */}
+							{contactType === 'general' && (
+								<div className="form-control w-full">
+									<label className="label">
+										<span className="label-text">Subject</span>
+									</label>
+									<select
+										{...register('subject')}
+										className="select select-bordered w-full"
+										disabled={isPending}
+									>
+										<option value="">Select...</option>
+										<option value="facilities">Facilities</option>
+										<option value="events">Events</option>
+										<option value="membership">Membership</option>
+										<option value="volunteering">Volunteering</option>
+										<option value="other">Other</option>
+									</select>
 								</div>
-							</div>
-						)}
+							)}
 
-						{/* Submit button */}
-						<div className="form-control mt-6">
-							<button type="submit" className="btn btn-primary" disabled={isPending}>
-								{isPending ? (
-									<>
-										<span className="loading loading-spinner"></span>
-										Sending...
-									</>
-								) : (
-									ctaText
+							{/* Message field */}
+							<div className="form-control w-full">
+								<label className="label">
+									<span className="label-text">
+										Message <span className="text-error">*</span>
+									</span>
+								</label>
+								<textarea
+									{...register('message', {
+										required: 'Message is required',
+										minLength: {
+											value: 10,
+											message: 'Message must be at least 10 characters'
+										},
+										maxLength: {
+											value: 2000,
+											message: 'Message must be 2000 characters or less'
+										}
+									})}
+									className={`textarea textarea-bordered h-32 w-full ${errors.message ? 'textarea-error' : ''}`}
+									disabled={isPending}
+								></textarea>
+								{errors.message && (
+									<label className="label">
+										<span className="label-text-alt text-error">{errors.message.message}</span>
+									</label>
 								)}
-							</button>
-						</div>
-					</form>
-				)}
+							</div>
+
+							{/* Error message */}
+							{state && !state.success && (
+								<div className="alert alert-error">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										className="h-6 w-6 shrink-0 stroke-current"
+										fill="none"
+										viewBox="0 0 24 24"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+										/>
+									</svg>
+									<div>
+										<span className="font-bold">Error:</span> {state.message}
+									</div>
+								</div>
+							)}
+
+							{/* Submit button */}
+							<div className="form-control mt-6">
+								<button type="submit" className="btn btn-primary" disabled={isPending}>
+									{isPending ? (
+										<>
+											<span className="loading loading-spinner"></span>
+											Sending...
+										</>
+									) : (
+										ctaText
+									)}
+								</button>
+							</div>
+						</form>
+					)}
+				</div>
 			</div>
 		</div>
 	);

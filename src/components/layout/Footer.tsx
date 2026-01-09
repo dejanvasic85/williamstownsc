@@ -14,7 +14,7 @@ const currentYear = new Date().getFullYear();
 
 export function Footer({ clubName, socials }: FooterProps) {
 	return (
-		<footer className="bg-base-300 text-base-content/80 mt-auto">
+		<footer className="bg-base-300 mt-auto text-(--color-base-content-secondary)">
 			<div className="mx-auto max-w-7xl px-4 py-12">
 				{/* Navigation Grid */}
 				<nav className="mb-8 grid grid-cols-2 gap-8 text-sm md:grid-cols-4">
@@ -159,11 +159,15 @@ export function Footer({ clubName, socials }: FooterProps) {
 					<Link href="/privacy" className="hover:text-base-content transition-colors">
 						Privacy Policy
 					</Link>
-					<span className="text-base-content/40">|</span>
+					<span className="text-(--color-base-content-secondary)" aria-hidden="true">
+						|
+					</span>
 					<Link href="/terms" className="hover:text-base-content transition-colors">
 						Terms & Conditions
 					</Link>
-					<span className="text-base-content/40">|</span>
+					<span className="text-(--color-base-content-secondary)" aria-hidden="true">
+						|
+					</span>
 					<Link href="/accessibility" className="hover:text-base-content transition-colors">
 						Accessibility
 					</Link>
