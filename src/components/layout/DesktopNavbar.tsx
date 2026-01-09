@@ -33,14 +33,94 @@ export function DesktopNavbar({
 	const pathname = usePathname();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [focusedItemIndex, setFocusedItemIndex] = useState<number>(-1);
 	const dropdownRefs = useRef<Record<string, HTMLLIElement | null>>({});
+	const menuItemRefs = useRef<Record<string, (HTMLAnchorElement | null)[]>>({});
 
 	const toggleDropdown = (itemName: string) => {
 		setOpenDropdown((prev) => (prev === itemName ? null : itemName));
+		setFocusedItemIndex(-1);
 	};
 
 	const closeDropdown = () => {
 		setOpenDropdown(null);
+		setFocusedItemIndex(-1);
+	};
+
+	const handleDropdownKeyDown = (event: React.KeyboardEvent, itemName: string) => {
+		const menuItems = menuItemRefs.current[itemName] || [];
+
+		switch (event.key) {
+			case 'Enter':
+			case ' ':
+				event.preventDefault();
+				if (!openDropdown) {
+					setOpenDropdown(itemName);
+					setFocusedItemIndex(0);
+					setTimeout(() => {
+						menuItems[0]?.focus();
+					}, 0);
+				} else {
+					closeDropdown();
+				}
+				break;
+			case 'ArrowDown':
+				event.preventDefault();
+				if (!openDropdown) {
+					setOpenDropdown(itemName);
+					setFocusedItemIndex(0);
+					setTimeout(() => {
+						menuItems[0]?.focus();
+					}, 0);
+				} else {
+					const nextIndex = Math.min(focusedItemIndex + 1, menuItems.length - 1);
+					setFocusedItemIndex(nextIndex);
+					menuItems[nextIndex]?.focus();
+				}
+				break;
+			case 'ArrowUp':
+				event.preventDefault();
+				if (openDropdown) {
+					const prevIndex = Math.max(focusedItemIndex - 1, 0);
+					setFocusedItemIndex(prevIndex);
+					menuItems[prevIndex]?.focus();
+				}
+				break;
+		}
+	};
+
+	const handleMenuItemKeyDown = (
+		event: React.KeyboardEvent,
+		itemName: string,
+		currentIndex: number
+	) => {
+		const menuItems = menuItemRefs.current[itemName] || [];
+
+		switch (event.key) {
+			case 'ArrowDown':
+				event.preventDefault();
+				const nextIndex = Math.min(currentIndex + 1, menuItems.length - 1);
+				setFocusedItemIndex(nextIndex);
+				menuItems[nextIndex]?.focus();
+				break;
+			case 'ArrowUp':
+				event.preventDefault();
+				const prevIndex = Math.max(currentIndex - 1, 0);
+				setFocusedItemIndex(prevIndex);
+				menuItems[prevIndex]?.focus();
+				break;
+			case 'Home':
+				event.preventDefault();
+				setFocusedItemIndex(0);
+				menuItems[0]?.focus();
+				break;
+			case 'End':
+				event.preventDefault();
+				const lastIndex = menuItems.length - 1;
+				setFocusedItemIndex(lastIndex);
+				menuItems[lastIndex]?.focus();
+				break;
+		}
 	};
 
 	useEffect(() => {
@@ -146,6 +226,7 @@ export function DesktopNavbar({
 										>
 											<button
 												onClick={() => toggleDropdown(item.name)}
+												onKeyDown={(e) => handleDropdownKeyDown(e, item.name)}
 												className={clsx(
 													'flex items-center gap-1 px-4 py-2 whitespace-nowrap transition-colors md:text-sm xl:text-base',
 													isActive || isSubmenuActive
@@ -170,14 +251,21 @@ export function DesktopNavbar({
 													role="menu"
 													className="bg-brand absolute top-full left-0 mt-6 min-w-40 animate-[dropdownSlide_0.2s_ease-out] rounded-2xl p-2 shadow-xl"
 												>
-													{item.submenu?.map((subItem) => {
+													{item.submenu?.map((subItem, subIndex) => {
 														const isSubActive = pathname === subItem.href;
 														return (
 															<li key={subItem.name} role="none">
 																<Link
 																	href={subItem.href}
 																	role="menuitem"
+																	ref={(el) => {
+																		if (!menuItemRefs.current[item.name]) {
+																			menuItemRefs.current[item.name] = [];
+																		}
+																		menuItemRefs.current[item.name][subIndex] = el;
+																	}}
 																	onClick={closeDropdown}
+																	onKeyDown={(e) => handleMenuItemKeyDown(e, item.name, subIndex)}
 																	className={clsx(
 																		'block rounded-xl p-4 whitespace-nowrap transition-all duration-200 md:text-sm xl:text-base',
 																		isSubActive

@@ -61,7 +61,7 @@ export function NewsCard({
 					)}
 					<h3 className="card-title line-clamp-2 text-xl font-bold">{title}</h3>
 					<p
-						className={`line-clamp-3 ${featured ? 'text-white/90' : 'text-[color:var(--color-base-content-secondary)]'}`}
+						className={`line-clamp-3 ${featured ? 'text-white/90' : 'text-(--color-base-content-secondary)'}`}
 					>
 						{excerpt}
 					</p>
@@ -69,7 +69,7 @@ export function NewsCard({
 						<time
 							dateTime={publishedDate.toISOString()}
 							title={fullDate}
-							className={`text-sm font-bold ${featured ? 'text-white/80' : 'text-[color:var(--color-base-content-secondary)]'}`}
+							className={`text-sm font-bold ${featured ? 'text-white/80' : 'text-(--color-base-content-secondary)'}`}
 						>
 							{relativeDate}
 						</time>
