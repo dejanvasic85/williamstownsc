@@ -18,7 +18,7 @@
 		"generate": "tsx bin/generateMockData.ts"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ses": "3.965.0",
+		"@aws-sdk/client-ses": "3.966.0",
 		"@portabletext/toolkit": "5.0.1",
 		"@sanity/client": "7.14.0",
 		"@sanity/image-url": "2.0.2",
