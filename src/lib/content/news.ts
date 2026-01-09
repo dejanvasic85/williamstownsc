@@ -152,3 +152,21 @@ export async function getArticleBySlug(slug: string) {
 		featured: article.featured || false
 	};
 }
+
+export async function getAllArticlesForSitemap() {
+	const query = `*[_type == "newsArticle"] | order(publishedAt desc) {
+		slug,
+		publishedAt
+	}`;
+
+	const articles = await client.fetch<Array<{ slug: { current: string }; publishedAt: string }>>(
+		query,
+		{},
+		{ next: { tags: ['newsArticle'] } }
+	);
+
+	return articles.map((article) => ({
+		slug: article.slug?.current || '',
+		publishedAt: article.publishedAt || ''
+	}));
+}
