@@ -1,0 +1,228 @@
+{
+	"competition": "VETO Sports State League Men's | State League 2 Men's - North-West",
+	"clubName": "Williamstown SC",
+	"season": 2026,
+	"totalFixtures": 22,
+	"fixtures": [
+		{
+			"round": 1,
+			"date": "2026-03-21",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 4,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 2,
+			"date": "2026-03-27",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": 3,
+			"awayTeamId": 12,
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "-37.759892,144.819492"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "18:00",
+			"homeTeamId": 12,
+			"awayTeamId": 1,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
+			"time": "18:30",
+			"homeTeamId": 10,
+			"awayTeamId": 12,
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "-37.770859,144.807385"
+		},
+		{
+			"round": 5,
+			"date": "2026-04-25",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 9,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-02",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 6,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 7,
+			"date": "2026-05-09",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 2,
+			"awayTeamId": 12,
+			"address": "Kevin Flint Reserve Main Pitch",
+			"coordinates": "-37.758429,144.79484"
+		},
+		{
+			"round": 8,
+			"date": "2026-05-16",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 7,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 9,
+			"date": "2026-05-22",
+			"day": "Friday",
+			"time": "20:15",
+			"homeTeamId": 5,
+			"awayTeamId": 12,
+			"address": "Strathnaver Reserve Pitch 1",
+			"coordinates": "-37.718302,144.909132"
+		},
+		{
+			"round": 10,
+			"date": "2026-05-30",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 11,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-13",
+			"day": "Saturday",
+			"time": "17:00",
+			"homeTeamId": 8,
+			"awayTeamId": 12,
+			"address": "Banyul Warri Reserve Pitch 2",
+			"coordinates": "-37.747779,145.088464"
+		},
+		{
+			"round": 12,
+			"date": "2026-06-20",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 4,
+			"awayTeamId": 12,
+			"address": "Hume Reserve Pitch 1",
+			"coordinates": "-38.106011,144.339988"
+		},
+		{
+			"round": 13,
+			"date": "2026-06-27",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 3,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 14,
+			"date": "2026-07-04",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 1,
+			"awayTeamId": 12,
+			"address": "Duane Reserve Main Pitch",
+			"coordinates": "-37.823133,144.842838"
+		},
+		{
+			"round": 15,
+			"date": "2026-07-11",
+			"day": "Saturday",
+			"time": "18:00",
+			"homeTeamId": 12,
+			"awayTeamId": 10,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 16,
+			"date": "2026-07-18",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 9,
+			"awayTeamId": 12,
+			"address": "Findon Reserve Pitch 1",
+			"coordinates": "-37.666285,145.04727"
+		},
+		{
+			"round": 17,
+			"date": "2026-07-25",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 6,
+			"awayTeamId": 12,
+			"address": "Myers Reserve Pitch 1",
+			"coordinates": "-38.09538,144.320027"
+		},
+		{
+			"round": 18,
+			"date": "2026-08-01",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 2,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 19,
+			"date": "2026-08-14",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": 7,
+			"awayTeamId": 12,
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "-37.663361,145.023019"
+		},
+		{
+			"round": 20,
+			"date": "2026-08-22",
+			"day": "Saturday",
+			"time": "18:00",
+			"homeTeamId": 12,
+			"awayTeamId": 5,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		},
+		{
+			"round": 21,
+			"date": "2026-08-28",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": 11,
+			"awayTeamId": 12,
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "-37.624625,145.024327"
+		},
+		{
+			"round": 22,
+			"date": "2026-09-05",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 12,
+			"awayTeamId": 8,
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559"
+		}
+	]
+}
