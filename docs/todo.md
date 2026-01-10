@@ -27,6 +27,7 @@ The original website is at https://www.williamstownsc.com/
   - [x] Remove the Keywords because it creates confusion
   - [x] Social Share Title falls back to meta Title
   - [x] Social Share Description – Same logic, the fallback is fine
+  - [x] Dynamic sitemap generation with static and CMS content
 
 Pages:
 
