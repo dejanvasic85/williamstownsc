@@ -23,15 +23,11 @@
 			"matchUpdateTypes": ["digest", "patch", "minor", "major"]
 		},
 		{
-			"description": "Update Volta Node only to LTS releases",
-			"matchManagers": ["volta"],
-			"allowedVersions": "/^(24|26)\\.\\d+\\.\\d+$/"
-		},
-		{
-			"description": "Node and types group",
+			"description": "Node and types - LTS versions only",
 			"matchPackageNames": ["node", "@types/node"],
 			"groupName": "node and types",
-			"matchManagers": ["volta", "npm"]
+			"matchManagers": ["volta", "npm"],
+			"allowedVersions": "/^(20|22|24|26|28|30|32|34|36|38|40)\\./"
 		}
 	]
 }
