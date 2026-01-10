@@ -4,16 +4,15 @@ import { getSiteSettings } from '@/lib/content/siteSettings';
 import { getAllTeamsForSitemap } from '@/lib/content/teams';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	let baseUrl = 'https://www.williamstownsc.com.au';
+	const siteSettings = await getSiteSettings();
 
-	try {
-		const siteSettings = await getSiteSettings();
-		if (siteSettings?.canonicalUrl) {
-			baseUrl = siteSettings.canonicalUrl;
-		}
-	} catch (error) {
-		console.warn('Could not fetch site settings for sitemap, using default domain:', error);
+	if (!siteSettings?.canonicalUrl) {
+		throw new Error(
+			'Canonical URL is not configured in site settings. Please configure it in Sanity CMS.'
+		);
 	}
+
+	const baseUrl = siteSettings.canonicalUrl;
 
 	const staticRoutesValue: MetadataRoute.Sitemap = [
 		{

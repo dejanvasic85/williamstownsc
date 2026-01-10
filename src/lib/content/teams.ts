@@ -69,7 +69,9 @@ export async function getAllTeamsForSitemap() {
 		{ next: { tags: ['team'] } }
 	);
 
-	return teams.map((team) => ({
-		slug: team.slug || ''
-	}));
+	return teams
+		.filter((team) => team.slug)
+		.map((team) => ({
+			slug: team.slug
+		}));
 }
