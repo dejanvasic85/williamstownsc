@@ -1,3 +1,4 @@
+import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { NewsArticle } from '@/sanity/sanity.types';
@@ -151,4 +152,24 @@ export async function getArticleBySlug(slug: string) {
 		content: article.content,
 		featured: article.featured || false
 	};
+}
+
+export async function getAllArticlesForSitemap() {
+	const query = groq`*[_type == "newsArticle"] | order(publishedAt desc) {
+		slug,
+		publishedAt
+	}`;
+
+	const articles = await client.fetch<Array<{ slug: { current: string }; publishedAt: string }>>(
+		query,
+		{},
+		{ next: { tags: ['newsArticle'] } }
+	);
+
+	return articles
+		.filter((article) => article.slug?.current)
+		.map((article) => ({
+			slug: article.slug.current,
+			publishedAt: article.publishedAt || ''
+		}));
 }

@@ -27,6 +27,16 @@ The original website is at https://www.williamstownsc.com/
   - [x] Remove the Keywords because it creates confusion
   - [x] Social Share Title falls back to meta Title
   - [x] Social Share Description – Same logic, the fallback is fine
+  - [x] Dynamic sitemap generation with static and CMS content
+  - [ ] robots.txt configuration for search engine crawlers
+  - [ ] RSS/Atom feed for news articles
+  - [ ] Breadcrumb navigation with BreadcrumbList schema
+  - [ ] Web Vitals monitoring and performance tracking
+  - [ ] URL redirects configuration for legacy paths
+  - [ ] Enhanced unique meta descriptions for all pages
+  - [ ] Structured data for Events (Event schema)
+  - [ ] Structured data for committee/staff (Person schema)
+  - [ ] Code splitting and lazy loading optimization
 
 Pages:
 
