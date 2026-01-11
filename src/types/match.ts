@@ -25,10 +25,11 @@ export type Fixture = {
 };
 
 export type FixtureData = {
-	competition: string;
-	clubName: string;
+	league: string;
 	season: number;
+	competition: string;
 	totalFixtures: number;
+	totalRounds: number;
 	fixtures: Fixture[];
 };
 
