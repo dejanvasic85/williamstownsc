@@ -5,8 +5,12 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import type { Team } from '@/types/team';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
 
+interface TeamWithFixtures extends Team {
+	hasLocalFixtures?: boolean;
+}
+
 interface TeamListItemProps {
-	team: Team;
+	team: TeamWithFixtures;
 }
 
 export function TeamListItem({ team }: TeamListItemProps) {
@@ -40,18 +44,27 @@ export function TeamListItem({ team }: TeamListItemProps) {
 					)}
 
 					<div className="flex flex-wrap gap-3 lg:justify-end">
-						{team.fixturesUrl && (
-							<a
-								href={team.fixturesUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="btn btn-primary btn-outline"
-								aria-label={`View ${team.name} fixtures`}
-							>
-								Fixtures
-								<ExternalLink className="h-4 w-4" aria-hidden="true" />
-							</a>
-						)}
+						{(team.hasLocalFixtures || team.fixturesUrl) &&
+							(team.hasLocalFixtures ? (
+								<Link
+									href={`/football/teams/${team.slug}/matches`}
+									className="btn btn-primary btn-outline"
+									aria-label={`View ${team.name} matches`}
+								>
+									Matches
+								</Link>
+							) : (
+								<a
+									href={team.fixturesUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="btn btn-primary btn-outline"
+									aria-label={`View ${team.name} matches`}
+								>
+									Matches
+									<ExternalLink className="h-4 w-4" aria-hidden="true" />
+								</a>
+							))}
 						{team.tableUrl && (
 							<a
 								href={team.tableUrl}

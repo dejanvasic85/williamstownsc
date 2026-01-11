@@ -5,14 +5,6 @@ export type Club = {
 	logoUrl: string;
 };
 
-export type ClubsData = {
-	league: string;
-	season: number;
-	competition: string;
-	totalClubs: number;
-	clubs: Club[];
-};
-
 export type Fixture = {
 	round: number;
 	date: string;
@@ -26,9 +18,10 @@ export type Fixture = {
 
 export type FixtureData = {
 	competition: string;
-	clubName: string;
+	clubName?: string;
 	season: number;
 	totalFixtures: number;
+	totalRounds?: number;
 	fixtures: Fixture[];
 };
 

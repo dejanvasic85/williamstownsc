@@ -71,10 +71,10 @@ export interface Team {
 	tableUrl?: string;
 }
 
-export interface TeamsByTab {
-	seniors: Team[];
-	reserves: Team[];
-	juniors: Team[];
-	masters: Team[];
-	metros: Team[];
-}
+export type TeamsByTab<T extends Team = Team> = {
+	seniors: T[];
+	reserves: T[];
+	juniors: T[];
+	masters: T[];
+	metros: T[];
+};
