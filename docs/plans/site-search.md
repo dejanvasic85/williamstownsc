@@ -17,6 +17,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### Architecture Decision
 
 **Chosen Approach**: GROQ-based search (native Sanity CMS)
+
 - No additional dependencies or costs
 - Works with existing Sanity client
 - Built-in relevance scoring
@@ -26,6 +27,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### UX Pattern
 
 **Modal/Dialog Search** (not dedicated search page)
+
 - Stays in context - users don't lose their place
 - Search-as-you-type with debouncing
 - Keyboard shortcut (Cmd/Ctrl+K) to open
@@ -41,6 +43,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### Phase 1: Backend Search API ✅
 
 #### 1.1 Search Query Service
+
 - **File**: `src/lib/content/search.ts`
 - **Implementation**:
   - Multi-type GROQ query with `match` operator
@@ -53,6 +56,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - **Status**: ✅ Complete
 
 #### 1.2 API Route
+
 - **File**: `app/api/search/route.ts`
 - **Implementation**:
   - Server-side search endpoint
@@ -65,6 +69,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### Phase 2: Frontend UI Components ⏳
 
 #### 2.1 Search Modal Component
+
 - **File**: `src/components/search/SearchModal.tsx`
 - **Features**:
   - DaisyUI modal component
@@ -76,6 +81,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - **Status**: ⏳ Pending
 
 #### 2.2 Search Input Component
+
 - **File**: `src/components/search/SearchInput.tsx`
 - **Features**:
   - Textbox with Lucide search icon
@@ -87,6 +93,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - **Status**: ⏳ Pending
 
 #### 2.3 Search Results Component
+
 - **File**: `src/components/search/SearchResults.tsx`
 - **Features**:
   - Results grouped by content type
@@ -100,6 +107,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### Phase 3: Integration ⏳
 
 #### 3.1 Navbar Integration
+
 - **File**: `src/components/layout/Navbar.tsx`
 - **Changes**:
   - Add search icon button (desktop)
@@ -109,6 +117,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - **Status**: ⏳ Pending
 
 #### 3.2 Global Keyboard Shortcut
+
 - **File**: `src/app/(site)/layout.tsx` or SearchModal
 - **Implementation**:
   - Listen for Cmd/Ctrl+K globally
@@ -130,12 +139,15 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 #### Search Service (`src/lib/content/search.ts`)
 
 **Exported Types**:
+
 - `SearchResult` - Unified result type with `_id`, `_type`, `title`, `excerpt`, `url`, `_score`
 
 **Functions**:
+
 - `searchContent(searchTerm: string): Promise<SearchResult[]>` - Main search function
 
 **Features Implemented**:
+
 - Multi-type GROQ query across news articles, teams, programs, and 15 page types
 - Text matching on multiple fields:
   - Direct fields: `title`, `name`, `heading`, `excerpt`
@@ -151,6 +163,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - Limited to top 20 results ordered by score
 
 **URL Generation Logic**:
+
 - News articles: `/news/{slug}`
 - Teams: `/teams#{slug}` (anchor link to team section)
 - Programs: `/programs#{slug}` (anchor link to program section)
@@ -161,43 +174,47 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 **Endpoint**: `GET /api/search?q={query}`
 
 **Request Parameters**:
+
 - `q` (required) - Search query string (minimum 2 characters)
 
 **Response Format**:
+
 ```json
 {
-  "results": [
-    {
-      "_id": "doc-id",
-      "_type": "newsArticle",
-      "title": "Article Title",
-      "excerpt": "First 150 characters...",
-      "url": "/news/article-slug",
-      "_score": 3.5
-    }
-  ],
-  "query": "search term",
-  "count": 5
+	"results": [
+		{
+			"_id": "doc-id",
+			"_type": "newsArticle",
+			"title": "Article Title",
+			"excerpt": "First 150 characters...",
+			"url": "/news/article-slug",
+			"_score": 3.5
+		}
+	],
+	"query": "search term",
+	"count": 5
 }
 ```
 
 **Error Responses**:
+
 - `400` - Missing query parameter or query too short
 - `500` - Server error (includes details in development mode)
 
 **Security Features**:
+
 - Input validation (trim, minimum length)
 - Server-side execution only
 - Error details hidden in production
 
 ---
 
-
 ---
 
 ## Searchable Content Types
 
 ### High Priority (Implemented)
+
 - ✅ `newsArticle` - title, excerpt, content (portable text)
 - ✅ `team` - teamName, description
 - ✅ `program` - title, description
@@ -205,11 +222,13 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
   - aboutPage, policiesPage, programsPage, teamsPage, etc.
 
 ### Medium Priority (Future)
+
 - ⏳ `person` / `player` / `coach` - names, bio
 - ⏳ `announcement` - title, content
 - ⏳ `sponsor` - name, description
 
 ### Excluded
+
 - ❌ `siteSettings` - not user-searchable
 - ❌ `keyDateItem` / `committeeMember` - too granular
 
@@ -218,6 +237,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ## Technical Considerations
 
 ### Performance
+
 - ✅ Server-side search (API route)
 - ⏳ Debouncing (400ms) - frontend
 - ✅ Minimum query length (2 chars)
@@ -225,17 +245,20 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - ✅ Limited result set (20 max)
 
 ### SEO
+
 - ✅ No dedicated search results page (modal only)
 - ✅ No duplicate content issues
 - ⏳ Optional: search analytics tracking
 
 ### Security
+
 - ✅ Input sanitization (trim, validation)
 - ✅ Server-side execution
 - ⏳ Rate limiting (future consideration)
 - ✅ Respects published content only
 
 ### Accessibility (AA Compliant)
+
 - ⏳ Keyboard navigation (arrow keys, enter, ESC)
 - ⏳ ARIA labels and live regions
 - ⏳ Focus management (focus trap in modal)
@@ -244,6 +267,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - ⏳ Works in light and dark themes
 
 ### PWA Compatibility
+
 - ✅ Works offline with cached data (Next.js ISR)
 - ⏳ Search shortcut works when installed
 
@@ -254,6 +278,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### Backend Testing ⏳ (Requires Environment Setup)
 
 **Prerequisites**:
+
 - Sanity environment variables must be set:
   - `NEXT_PUBLIC_SANITY_PROJECT_ID`
   - `NEXT_PUBLIC_SANITY_DATASET`
@@ -262,34 +287,43 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 **Test Commands** (run after `npm run dev`):
 
 1. **Test with no query parameter** (should return 400 error):
+
    ```bash
    curl "http://localhost:3003/api/search"
    ```
+
    Expected: `{"error":"Search query parameter \"q\" is required"}`
 
 2. **Test with query < 2 characters** (should return 400 error):
+
    ```bash
    curl "http://localhost:3003/api/search?q=a"
    ```
+
    Expected: `{"error":"Search query must be at least 2 characters long"}`
 
 3. **Test with valid query**:
+
    ```bash
    curl "http://localhost:3003/api/search?q=team" | jq
    ```
+
    Expected: JSON with `results`, `query`, and `count` fields
 
 4. **Test news articles search**:
+
    ```bash
    curl "http://localhost:3003/api/search?q=news" | jq
    ```
 
 5. **Test teams search**:
+
    ```bash
    curl "http://localhost:3003/api/search?q=under" | jq
    ```
 
 6. **Test programs search**:
+
    ```bash
    curl "http://localhost:3003/api/search?q=miniroos" | jq
    ```
@@ -300,6 +334,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
    ```
 
 **Manual Verification Checklist**:
+
 - [ ] Test API with query < 2 chars (should return 400)
 - [ ] Test API with missing query param (should return 400)
 - [ ] Test API with valid query (should return results)
@@ -315,6 +350,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - [ ] Verify search is case-insensitive
 
 ### Frontend Testing ⏳
+
 - [ ] Modal opens with Cmd/Ctrl+K
 - [ ] Search icon in navbar opens modal
 - [ ] Typing triggers debounced search
@@ -330,6 +366,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - [ ] Works in dark theme
 
 ### Accessibility Testing ⏳
+
 - [ ] Tab through search modal
 - [ ] Arrow keys navigate results
 - [ ] Enter selects result
@@ -344,14 +381,14 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 
 ## Key Files Reference
 
-| Component         | Path                              | Purpose                     | Status |
-| ----------------- | --------------------------------- | --------------------------- | ------ |
-| Search Service    | `src/lib/content/search.ts`       | GROQ query and transformer  | ✅     |
-| Search API        | `app/api/search/route.ts`         | Backend search endpoint     | ✅     |
-| Search Modal      | `src/components/search/...`       | Modal UI component          | ⏳     |
-| Search Input      | `src/components/search/...`       | Input with debounce         | ⏳     |
-| Search Results    | `src/components/search/...`       | Results display             | ⏳     |
-| Navbar Integration | `src/components/layout/Navbar.tsx` | Search trigger button       | ⏳     |
+| Component          | Path                               | Purpose                    | Status |
+| ------------------ | ---------------------------------- | -------------------------- | ------ |
+| Search Service     | `src/lib/content/search.ts`        | GROQ query and transformer | ✅     |
+| Search API         | `app/api/search/route.ts`          | Backend search endpoint    | ✅     |
+| Search Modal       | `src/components/search/...`        | Modal UI component         | ⏳     |
+| Search Input       | `src/components/search/...`        | Input with debounce        | ⏳     |
+| Search Results     | `src/components/search/...`        | Results display            | ⏳     |
+| Navbar Integration | `src/components/layout/Navbar.tsx` | Search trigger button      | ⏳     |
 
 ---
 
