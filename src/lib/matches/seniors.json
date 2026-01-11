@@ -156,6 +156,36 @@
 		},
 		{
 			"round": 16,
+			"date": "2026-07-17",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": 3,
+			"awayTeamId": 5,
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "-37.663361,145.023019"
+		},
+		{
+			"round": 16,
+			"date": "2026-07-18",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 1,
+			"awayTeamId": 7,
+			"address": "Duane Reserve Main Pitch",
+			"coordinates": "-37.823133,144.842838"
+		},
+		{
+			"round": 16,
+			"date": "2026-07-18",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 4,
+			"awayTeamId": 11,
+			"address": "Hume Reserve Pitch 1",
+			"coordinates": "-38.106011,144.339988"
+		},
+		{
+			"round": 16,
 			"date": "2026-07-18",
 			"day": "Saturday",
 			"time": "15:00",
@@ -163,6 +193,66 @@
 			"awayTeamId": 12,
 			"address": "Findon Reserve Pitch 1",
 			"coordinates": "-37.666285,145.04727"
+		},
+		{
+			"round": 16,
+			"date": "2026-07-18",
+			"day": "Saturday",
+			"time": "17:00",
+			"homeTeamId": 8,
+			"awayTeamId": 6,
+			"address": "Banyul Warri Reserve Pitch 2",
+			"coordinates": "-37.747779,145.088464"
+		},
+		{
+			"round": 16,
+			"date": "2026-07-18",
+			"day": "Saturday",
+			"time": "18:30",
+			"homeTeamId": 10,
+			"awayTeamId": 2,
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "-37.770859,144.807385"
+		},
+		{
+			"round": 17,
+			"date": "2026-07-24",
+			"day": "Friday",
+			"time": "20:15",
+			"homeTeamId": 5,
+			"awayTeamId": 1,
+			"address": "Strathnaver Reserve Pitch 1",
+			"coordinates": "-37.718302,144.909132"
+		},
+		{
+			"round": 17,
+			"date": "2026-07-24",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": 7,
+			"awayTeamId": 10,
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "-37.663361,145.023019"
+		},
+		{
+			"round": 17,
+			"date": "2026-07-24",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": 11,
+			"awayTeamId": 3,
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "-37.624625,145.024327"
+		},
+		{
+			"round": 17,
+			"date": "2026-07-25",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": 2,
+			"awayTeamId": 9,
+			"address": "Kevin Flint Reserve Main Pitch",
+			"coordinates": "-37.758429,144.79484"
 		},
 		{
 			"round": 17,
