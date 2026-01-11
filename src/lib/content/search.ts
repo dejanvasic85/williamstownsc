@@ -46,7 +46,12 @@ const pageTypeToSlugMap: Record<string, string> = {
 	termsPage: 'terms'
 };
 
+function sanitizeSearchTerm(term: string): string {
+	return term.replace(/[*\[\]{}()\\]/g, '\\$&').trim();
+}
+
 export async function searchContent(searchTerm: string): Promise<SearchResult[]> {
+	const sanitizedTerm = sanitizeSearchTerm(searchTerm);
 	const searchQuery = groq`
 		*[
 			_type in ["newsArticle", "team", "program", ${pageTypes.map((t) => `"${t}"`).join(', ')}]
@@ -105,7 +110,7 @@ export async function searchContent(searchTerm: string): Promise<SearchResult[]>
 			body?: unknown;
 			introduction?: unknown;
 		}>
-	>(searchQuery, { searchTerm }, { next: { tags: ['search'] } });
+	>(searchQuery, { searchTerm: sanitizedTerm }, { next: { tags: ['search'] } });
 
 	return results.map((result) => {
 		const title = result.title || result.name || result.heading || 'Untitled';
@@ -136,6 +141,38 @@ function generateUrl(type: string, slug?: string): string {
 	}
 }
 
+type PortableTextBlock = {
+	_type: string;
+	children?: unknown[];
+	[key: string]: unknown;
+};
+
+type PortableTextSpan = {
+	_type: string;
+	text?: string;
+	[key: string]: unknown;
+};
+
+function isPortableTextBlock(value: unknown): value is PortableTextBlock {
+	return (
+		typeof value === 'object' &&
+		value !== null &&
+		'_type' in value &&
+		value._type === 'block' &&
+		(!('children' in value) || Array.isArray(value.children))
+	);
+}
+
+function isPortableTextSpan(value: unknown): value is PortableTextSpan {
+	return (
+		typeof value === 'object' &&
+		value !== null &&
+		'_type' in value &&
+		value._type === 'span' &&
+		(!('text' in value) || typeof value.text === 'string')
+	);
+}
+
 function generateExcerpt(result: {
 	excerpt?: string;
 	description?: unknown;
@@ -150,17 +187,24 @@ function generateExcerpt(result: {
 	const portableTextContent =
 		result.description || result.introduction || result.content || result.body;
 
-	if (portableTextContent && Array.isArray(portableTextContent)) {
-		const firstBlock = portableTextContent.find((block) => block._type === 'block');
-		if (firstBlock?.children && Array.isArray(firstBlock.children)) {
-			const text = firstBlock.children
-				.filter((child: { _type: string }) => child._type === 'span')
-				.map((child: { text: string }) => child.text)
-				.join(' ');
-
-			return text.substring(0, 150) + (text.length > 150 ? '...' : '');
-		}
+	if (!Array.isArray(portableTextContent)) {
+		return undefined;
 	}
 
-	return undefined;
+	const firstBlock = portableTextContent.find(isPortableTextBlock);
+
+	if (!firstBlock?.children) {
+		return undefined;
+	}
+
+	const text = firstBlock.children
+		.filter(isPortableTextSpan)
+		.map((child) => child.text || '')
+		.join(' ');
+
+	if (!text) {
+		return undefined;
+	}
+
+	return text.substring(0, 150) + (text.length > 150 ? '...' : '');
 }

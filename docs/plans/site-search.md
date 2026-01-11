@@ -149,8 +149,9 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 **Features Implemented**:
 
 - Multi-type GROQ query across news articles, teams, programs, and 15 page types
+- Input sanitization with GROQ special character escaping
 - Text matching on multiple fields:
-  - Direct fields: `title`, `name`, `heading`, `excerpt`
+  - Direct fields: `title`, `name` (for teams/programs), `heading` (for pages), `excerpt`
   - Portable text fields: `description`, `content`, `body`, `introduction` (using `pt::text()`)
 - Relevance scoring with boosting:
   - Title/name/heading matches: 3x boost
@@ -158,6 +159,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
   - News articles: 1x boost
 - Result transformation:
   - Extracts first 150 characters from portable text for excerpts
+  - Type-safe portable text parsing with type guards
   - Generates proper URLs based on content type
   - Maps page types to URL slugs
 - Limited to top 20 results ordered by score
@@ -204,8 +206,10 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 **Security Features**:
 
 - Input validation (trim, minimum length)
+- GROQ special character sanitization (escapes `*`, `[`, `]`, `{`, `}`, `(`, `)`, `\`)
 - Server-side execution only
 - Error details hidden in production
+- Stack traces included in development mode for debugging
 
 ---
 
@@ -216,7 +220,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 ### High Priority (Implemented)
 
 - ✅ `newsArticle` - title, excerpt, content (portable text)
-- ✅ `team` - teamName, description
+- ✅ `team` - name, description
 - ✅ `program` - title, description
 - ✅ Pages - heading, introduction, body (portable text)
   - aboutPage, policiesPage, programsPage, teamsPage, etc.
@@ -252,9 +256,9 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 
 ### Security
 
-- ✅ Input sanitization (trim, validation)
+- ✅ Input sanitization (trim, validation, GROQ character escaping)
 - ✅ Server-side execution
-- ⏳ Rate limiting (future consideration)
+- ⏳ Rate limiting (future consideration - see Future Enhancements)
 - ✅ Respects published content only
 
 ### Accessibility (AA Compliant)
@@ -401,7 +405,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
   _type in ["newsArticle", "team", "program", ...pages]
   && (
     title match $searchTerm ||
-    teamName match $searchTerm ||
+    name match $searchTerm ||
     heading match $searchTerm ||
     excerpt match $searchTerm ||
     description match $searchTerm ||
@@ -411,10 +415,10 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
   )
 ] | score(
   title match $searchTerm,
-  teamName match $searchTerm,
+  name match $searchTerm,
   heading match $searchTerm,
   boost(title match $searchTerm, 3),
-  boost(teamName match $searchTerm, 3),
+  boost(name match $searchTerm, 3),
   boost(heading match $searchTerm, 3),
   boost(featured == true, 2),
   boost(_type == "newsArticle", 1)
@@ -494,6 +498,15 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
    - Add date range filters for news articles
    - Implement "search within results"
    - Add keyboard shortcuts for result navigation (j/k keys)
+
+8. **Security & Performance Hardening**
+   - **Rate Limiting**: Implement rate limiting on `/api/search` endpoint to prevent abuse
+     - Options: Vercel Edge Config, Upstash Redis, or custom middleware
+     - Recommended limits: 30 requests per minute per IP
+     - Return 429 (Too Many Requests) when limit exceeded
+     - Consider separate limits for authenticated vs anonymous users
+   - API key authentication for programmatic access (if needed)
+   - Request throttling based on user session
 
 ---
 

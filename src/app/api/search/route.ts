@@ -30,15 +30,22 @@ export async function GET(request: NextRequest) {
 			count: results.length
 		});
 	} catch (error) {
-		console.error('Search API error:', error);
-
 		const isDev = process.env.NODE_ENV !== 'production';
-		const responseBody: { error: string; details?: string } = {
+
+		if (isDev && error instanceof Error) {
+			console.error('Search API error:', error.message);
+			console.error('Stack trace:', error.stack);
+		} else {
+			console.error('Search API error:', error);
+		}
+
+		const responseBody: { error: string; details?: string; stack?: string } = {
 			error: 'Failed to perform search'
 		};
 
-		if (isDev) {
-			responseBody.details = error instanceof Error ? error.message : 'Unknown error';
+		if (isDev && error instanceof Error) {
+			responseBody.details = error.message;
+			responseBody.stack = error.stack;
 		}
 
 		return NextResponse.json(responseBody, { status: 500 });
