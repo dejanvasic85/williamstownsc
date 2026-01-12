@@ -11,7 +11,7 @@ import {
 	transformExternalClub
 } from '@/lib/schemas/clubSchema';
 
-const EXTERNAL_DATA_PATH = resolve(__dirname, '../data/clubs/clubs-external.json');
+const EXTERNAL_DATA_PATH = resolve(__dirname, '../data/external/clubs/clubs.json');
 const CLUBS_FILE_PATH = resolve(__dirname, '../data/clubs/clubs.json');
 
 function loadExternalData() {
@@ -22,7 +22,7 @@ function loadExternalData() {
 	} catch (error) {
 		if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
 			throw new Error(
-				`External data file not found at ${EXTERNAL_DATA_PATH}\nPlease paste the API response into data/clubs/clubs-external.json`
+				`External data file not found at ${EXTERNAL_DATA_PATH}\nPlease paste the API response into data/external/clubs/clubs.json`
 			);
 		}
 		throw error;

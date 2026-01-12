@@ -6,7 +6,7 @@ import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/match'
 import { parseClubsData, parseFixtureData } from './fixtureSchema';
 
 const clubs = parseClubsData(clubsData);
-const fixturesDirectory = path.join(process.cwd(), 'src/lib/matches');
+const fixturesDirectory = path.join(process.cwd(), 'data/matches');
 const fixtureSlugAliasValue: Record<string, string> = {
 	'senior-mens': 'seniors-mens'
 };

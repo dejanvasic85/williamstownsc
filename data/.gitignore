@@ -1,3 +1,6 @@
-# Keep external data files local (user pastes API responses here)
-*-external.json
+# Keep all external data files local (user pastes API responses here)
 external/
+
+# Keep generated club and match files
+!clubs/clubs.json
+!matches/*.json
