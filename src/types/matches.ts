@@ -288,7 +288,7 @@ export function transformExternalClub(externalClub: ExternalClub): Club {
 	const club: Club = {
 		externalId,
 		name: attributes.name,
-		displayName: `${attributes.name} Seniors`,
+		displayName: attributes.name,
 		logoUrl: attributes.image,
 		email: attributes.email || undefined,
 		phone: attributes.phone || undefined,
