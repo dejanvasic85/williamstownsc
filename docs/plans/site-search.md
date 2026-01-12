@@ -1,12 +1,17 @@
 # Site-Wide Search Plan
 
-## Status: Backend Complete ✅ | Frontend Pending ⏳
+## Status: Backend Complete ✅ | Modal Infrastructure Complete ✅ | Search UI Pending ⏳
 
-Backend search API fully implemented and ready for testing. Frontend UI components pending user testing and approval of backend.
+- ✅ Backend search API fully implemented and merged
+- ✅ Search modal infrastructure with keyboard shortcuts (⌘K/Ctrl+K) implemented
+- ✅ Desktop navbar integration complete
+- ⏳ Search input, results display, and API integration pending
 
-Branch: `claude/plan-site-search-EsdGm`
+**Merged PRs**:
+- #155 - Backend search API (branch: `claude/plan-site-search-EsdGm`)
+- #157 - Search modal infrastructure (branch: `claude/implement-site-search-Bf4Im`)
 
-**Next Step**: User should test the backend API with their Sanity data before proceeding with frontend implementation.
+**Next Step**: Implement search input with debouncing, results display, and integrate with backend API.
 
 ---
 
@@ -66,23 +71,29 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
   - JSON response format
 - **Status**: ✅ Complete
 
-### Phase 2: Frontend UI Components ⏳
+### Phase 2: Frontend UI Components (In Progress)
 
 #### 2.1 Search Modal Component
 
 - **File**: `src/components/search/SearchModal.tsx`
-- **Features**:
-  - DaisyUI modal component
+- **Features Implemented** ✅:
+  - Native HTML dialog element
   - Keyboard shortcut listener (Cmd/Ctrl+K)
-  - ESC and outside-click to close
-  - Focus trap within modal
-  - Dark theme support
-  - Mobile responsive
-- **Status**: ⏳ Pending
+  - ESC and backdrop click to close
+  - Focus management (saves/restores previous focus)
+  - DaisyUI styling with dark theme support
+  - Mobile responsive (full-width)
+  - Header with close button (X icon)
+  - Help text showing keyboard shortcuts
+- **Features Pending** ⏳:
+  - Actual search input field
+  - Integration with search API
+  - Results display
+- **Status**: ✅ Modal Infrastructure Complete | ⏳ Search Functionality Pending
 
 #### 2.2 Search Input Component
 
-- **File**: `src/components/search/SearchInput.tsx`
+- **File**: `src/components/search/SearchInput.tsx` (not yet created)
 - **Features**:
   - Textbox with Lucide search icon
   - Debounced input (400ms)
@@ -94,7 +105,7 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 
 #### 2.3 Search Results Component
 
-- **File**: `src/components/search/SearchResults.tsx`
+- **File**: `src/components/search/SearchResults.tsx` (not yet created)
 - **Features**:
   - Results grouped by content type
   - DaisyUI styled cards/list items
@@ -104,35 +115,112 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
   - Click result navigates and closes modal
 - **Status**: ⏳ Pending
 
-### Phase 3: Integration ⏳
+#### 2.4 Search Modal Provider
+
+- **File**: `src/components/search/SearchModalProvider.tsx`
+- **Features Implemented** ✅:
+  - React Context for modal state management
+  - `isOpen`, `open()`, `close()`, `toggle()` methods
+  - Custom hook `useSearchModal()` with error handling
+  - Type-safe context API
+- **Status**: ✅ Complete
+
+### Phase 3: Integration (In Progress)
 
 #### 3.1 Navbar Integration
 
-- **File**: `src/components/layout/Navbar.tsx`
-- **Changes**:
-  - Add search icon button (desktop)
-  - Add search icon button (mobile)
-  - Wire up to open SearchModal
-  - Keyboard shortcut hint on hover
-- **Status**: ⏳ Pending
+- **File**: `src/components/layout/DesktopNavbar.tsx`
+- **Changes Implemented** ✅:
+  - Search icon button added to desktop navbar
+  - Imported `useSearchModal` hook
+  - Wired up click handler to `openSearchModal()`
+  - Tooltip showing "Search (⌘K)" on hover
+  - Search icon from lucide-react
+  - Positioned with social links in navbar
+- **Changes Pending** ⏳:
+  - Add search icon button to mobile navbar
+- **Status**: ✅ Desktop Complete | ⏳ Mobile Pending
 
 #### 3.2 Global Keyboard Shortcut
 
-- **File**: `src/app/(site)/layout.tsx` or SearchModal
-- **Implementation**:
-  - Listen for Cmd/Ctrl+K globally
-  - Open SearchModal on shortcut
-  - Prevent default browser behavior
-- **Status**: ⏳ Pending
+- **File**: `src/components/search/SearchModal.tsx`
+- **Implementation** ✅:
+  - Global event listener for Cmd/Ctrl+K keyboard shortcut
+  - Prevents default browser behavior (e.g., browser search)
+  - Opens SearchModal on shortcut activation
+  - Works from anywhere in the application
+  - Supports both Mac (⌘K) and Windows/Linux (Ctrl+K)
+- **Status**: ✅ Complete
+
+#### 3.3 Layout Integration
+
+- **File**: `src/app/(site)/layout.tsx`
+- **Implementation** ✅:
+  - `SearchModalProvider` wraps entire site layout
+  - `SearchModal` rendered at root level (after Footer)
+  - Provides global access to search modal state
+  - Enables search functionality across all pages
+- **Status**: ✅ Complete
 
 ---
 
 ## Implementation Details
 
-### Files Created
+### Files Created/Modified
 
+**Backend (PR #155)** ✅:
 1. **`src/lib/content/search.ts`** - Search service with GROQ query and result transformation
 2. **`src/app/api/search/route.ts`** - GET endpoint for search API
+
+**Frontend Infrastructure (PR #157)** ✅:
+3. **`src/components/search/SearchModal.tsx`** - Modal component with keyboard shortcuts and focus management
+4. **`src/components/search/SearchModalProvider.tsx`** - React Context provider for modal state
+5. **`src/components/search/index.ts`** - Barrel export for search components
+
+**Modified Files (PR #157)** ✅:
+6. **`src/components/layout/DesktopNavbar.tsx`** - Added search button with icon
+7. **`src/app/(site)/layout.tsx`** - Integrated SearchModalProvider and SearchModal
+
+---
+
+### PR #157 Implementation Summary
+
+**What Was Built**:
+
+PR #157 implemented the foundational search modal infrastructure without the actual search functionality. The modal serves as a placeholder that can be opened and closed, demonstrating the UX pattern before integrating with the backend API.
+
+**Key Features**:
+- ✅ **Native HTML Dialog**: Uses the `<dialog>` element for proper modal semantics and accessibility
+- ✅ **Keyboard Shortcuts**: Global `⌘K` (Mac) / `Ctrl+K` (Windows/Linux) keyboard shortcut to open the modal
+- ✅ **Focus Management**: Saves and restores focus when opening/closing the modal
+- ✅ **Multiple Close Methods**:
+  - ESC key to close
+  - Click on backdrop (outside modal) to close
+  - Close button (X icon) in header
+  - Native dialog close event handling
+- ✅ **React Context Pattern**: `SearchModalProvider` manages global modal state with `useSearchModal()` hook
+- ✅ **Desktop Integration**: Search button added to desktop navbar with search icon and keyboard shortcut tooltip
+- ✅ **Theme Support**: Styled with DaisyUI classes for automatic light/dark theme compatibility
+- ✅ **Responsive Design**: Modal adapts to mobile (full-width) and desktop (centered, max-width)
+
+**What's NOT Implemented**:
+- ⏳ Search input field with debouncing
+- ⏳ API integration with `/api/search` endpoint
+- ⏳ Results display and grouping
+- ⏳ Loading and error states
+- ⏳ Mobile navbar search button
+- ⏳ Keyboard navigation for results (arrow keys, enter)
+
+**Current User Experience**:
+When users press `⌘K`/`Ctrl+K` or click the search icon in the desktop navbar, a modal opens with placeholder text: "Search functionality coming soon..." and help text showing the keyboard shortcuts. The modal demonstrates the full interaction pattern (open, close, focus management) but doesn't perform actual searches yet.
+
+**Technical Decisions**:
+1. **Native Dialog Element**: Chosen over DaisyUI modal component for better accessibility, native backdrop support, and simpler implementation
+2. **Event Target Comparison**: Backdrop clicks detected by comparing `event.target === dialogRef.current` (simplified from initial child node checking)
+3. **Global Keyboard Listener**: Implemented in SearchModal component rather than layout for co-location with modal logic
+4. **Placeholder-First Approach**: Modal infrastructure built first to validate UX pattern before adding search complexity
+
+---
 
 ### Code Overview
 
@@ -263,12 +351,19 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 
 ### Accessibility (AA Compliant)
 
-- ⏳ Keyboard navigation (arrow keys, enter, ESC)
-- ⏳ ARIA labels and live regions
-- ⏳ Focus management (focus trap in modal)
-- ⏳ Screen reader announcements
-- ⏳ Clear visual focus indicators
-- ⏳ Works in light and dark themes
+**Implemented** ✅:
+- ✅ Keyboard shortcuts (⌘K/Ctrl+K, ESC)
+- ✅ Focus management (saves/restores focus)
+- ✅ Native dialog semantics
+- ✅ ARIA labels on buttons
+- ✅ Works in light and dark themes
+
+**Pending** ⏳:
+- ⏳ Keyboard navigation within results (arrow keys, enter)
+- ⏳ ARIA live regions for results
+- ⏳ Focus trap in modal (prevent tab escape)
+- ⏳ Screen reader result announcements
+- ⏳ Clear visual focus indicators in results list
 
 ### PWA Compatibility
 
@@ -353,46 +448,74 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 - [ ] Verify search works with special characters
 - [ ] Verify search is case-insensitive
 
-### Frontend Testing ⏳
+### Frontend Testing
 
-- [ ] Modal opens with Cmd/Ctrl+K
-- [ ] Search icon in navbar opens modal
-- [ ] Typing triggers debounced search
+**Modal Infrastructure (PR #157)** ✅:
+
+- [x] Modal opens with Cmd/Ctrl+K
+- [x] Search icon in desktop navbar opens modal
+- [x] ESC closes modal
+- [x] Click outside (backdrop) closes modal
+- [x] Close button (X) closes modal
+- [x] Works on desktop (centered modal)
+- [x] Works in light theme
+- [x] Works in dark theme
+- [x] Focus is saved and restored when modal opens/closes
+- [x] Keyboard shortcut prevents default browser behavior
+
+**Search Functionality** ⏳ (Not Yet Implemented):
+
+- [ ] Search icon in mobile navbar opens modal
+- [ ] Typing triggers debounced search (400ms)
 - [ ] Results display grouped by type
 - [ ] Click result navigates and closes modal
-- [ ] ESC closes modal
-- [ ] Click outside closes modal
-- [ ] Works on mobile (full-screen)
-- [ ] Works on desktop (centered modal)
 - [ ] Loading state displays correctly
 - [ ] Empty state displays correctly
-- [ ] Works in light theme
-- [ ] Works in dark theme
+- [ ] Error state displays correctly
+- [ ] Minimum 2 characters validation works
+- [ ] Clear button clears search input
+- [ ] Results update as user types
 
-### Accessibility Testing ⏳
+### Accessibility Testing
 
-- [ ] Tab through search modal
+**Modal Infrastructure (PR #157)** ✅:
+
+- [x] ESC closes modal
+- [x] Focus management works (saves/restores previous focus)
+- [x] Works with keyboard only (⌘K/Ctrl+K to open, ESC to close)
+- [x] Native dialog semantics (role="dialog")
+- [x] Close button has proper aria-label ("Close search")
+- [x] Search button in navbar has aria-label and title
+
+**Search Functionality** ⏳ (Not Yet Implemented):
+
+- [ ] Tab through search modal elements (input, results)
 - [ ] Arrow keys navigate results
 - [ ] Enter selects result
-- [ ] ESC closes modal
-- [ ] Focus trapped in modal when open
-- [ ] Screen reader announces results
+- [ ] Focus trapped in modal when open (prevent tabbing out)
+- [ ] Screen reader announces results count
 - [ ] Screen reader announces "no results"
-- [ ] ARIA labels present and correct
-- [ ] Works with keyboard only
+- [ ] Search input has proper ARIA labels
+- [ ] Results list has proper ARIA roles (list/listitem)
+- [ ] Loading state announced to screen readers (aria-live)
+- [ ] Error state announced to screen readers
 
 ---
 
 ## Key Files Reference
 
-| Component          | Path                               | Purpose                    | Status |
-| ------------------ | ---------------------------------- | -------------------------- | ------ |
-| Search Service     | `src/lib/content/search.ts`        | GROQ query and transformer | ✅     |
-| Search API         | `app/api/search/route.ts`          | Backend search endpoint    | ✅     |
-| Search Modal       | `src/components/search/...`        | Modal UI component         | ⏳     |
-| Search Input       | `src/components/search/...`        | Input with debounce        | ⏳     |
-| Search Results     | `src/components/search/...`        | Results display            | ⏳     |
-| Navbar Integration | `src/components/layout/Navbar.tsx` | Search trigger button      | ⏳     |
+| Component              | Path                                           | Purpose                           | Status     |
+| ---------------------- | ---------------------------------------------- | --------------------------------- | ---------- |
+| Search Service         | `src/lib/content/search.ts`                    | GROQ query and transformer        | ✅         |
+| Search API             | `src/app/api/search/route.ts`                  | Backend search endpoint           | ✅         |
+| Search Modal           | `src/components/search/SearchModal.tsx`        | Modal infrastructure & shortcuts  | ✅         |
+| Search Modal Provider  | `src/components/search/SearchModalProvider.tsx`| Modal state management            | ✅         |
+| Search Input           | `src/components/search/SearchInput.tsx`        | Input with debounce (not created) | ⏳         |
+| Search Results         | `src/components/search/SearchResults.tsx`      | Results display (not created)     | ⏳         |
+| Desktop Navbar         | `src/components/layout/DesktopNavbar.tsx`      | Search button (desktop)           | ✅         |
+| Mobile Navbar          | `src/components/layout/MobileNavbar.tsx`       | Search button (mobile)            | ⏳         |
+| Layout Integration     | `src/app/(site)/layout.tsx`                    | Provider & modal placement        | ✅         |
+| Barrel Export          | `src/components/search/index.ts`               | Component exports                 | ✅         |
 
 ---
 
@@ -451,30 +574,56 @@ Implement site-wide search functionality using Sanity CMS GROQ queries with a mo
 
 ## Next Steps for Frontend Implementation
 
-### Immediate (After Backend Testing)
+### Completed ✅
 
-1. **User Testing of Backend** ✅ REQUIRED FIRST
-   - Set up Sanity environment variables
-   - Run `npm run dev`
-   - Test API endpoints with curl commands (see Testing Checklist above)
-   - Verify search results quality and relevance
-   - Confirm URL generation is correct for all content types
+1. ✅ **Backend Search API** (PR #155)
+   - Search service with GROQ queries
+   - API endpoint at `/api/search`
+   - Input validation and sanitization
+   - Relevance scoring and result transformation
 
-2. **Frontend Component Development** (only after backend approval)
-   - Create `src/components/search/` directory
-   - Implement `SearchModal.tsx` with DaisyUI modal
-   - Implement `SearchInput.tsx` with debouncing (400ms)
-   - Implement `SearchResults.tsx` with grouped results
-   - Add keyboard shortcut listener (Cmd/Ctrl+K)
-   - Implement focus management and accessibility
+2. ✅ **Modal Infrastructure** (PR #157)
+   - SearchModal component with native dialog
+   - SearchModalProvider with React Context
+   - Global keyboard shortcuts (⌘K/Ctrl+K)
+   - Focus management and accessibility basics
+   - Desktop navbar integration
+   - Layout integration with provider
 
-3. **Navbar Integration**
-   - Add search icon button to desktop navbar
+### Immediate Next Steps ⏳
+
+1. **Search Input Component**
+   - Create `src/components/search/SearchInput.tsx`
+   - Implement debounced input (400ms) using `useDebouncedValue` or similar
+   - Add search icon from lucide-react
+   - Loading state indicator
+   - Clear button when text present
+   - ARIA labels for accessibility
+   - Minimum 2 characters validation
+
+2. **Search Results Component**
+   - Create `src/components/search/SearchResults.tsx`
+   - Fetch results from `/api/search` endpoint
+   - Group results by content type (News, Teams, Programs, Pages)
+   - Display title, excerpt, and content type badge
+   - Empty state messaging ("No results found")
+   - Error state handling
+   - Click result navigates to URL and closes modal
+
+3. **Integrate Components into SearchModal**
+   - Replace placeholder content in SearchModal
+   - Add SearchInput component
+   - Add SearchResults component
+   - Wire up search state management
+   - Handle loading and error states
+
+4. **Mobile Navbar Integration**
    - Add search icon button to mobile navbar
-   - Wire up click handlers to open SearchModal
-   - Add visual hint for keyboard shortcut
+   - Wire up click handler to `openSearchModal()`
+   - Ensure responsive behavior
 
-4. **Testing & Polish**
+5. **Testing & Polish**
+   - Test search functionality end-to-end
    - Test on mobile devices (full-screen overlay)
    - Test on desktop (centered modal)
    - Verify dark theme compatibility
