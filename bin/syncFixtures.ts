@@ -8,8 +8,8 @@ import {
 	externalFixturesApiResponseSchema,
 	fixtureDataSchema,
 	transformExternalFixture
-} from '../src/lib/schemas/fixtureSchema';
-import type { Fixture, FixtureData } from '../src/types/match';
+} from '@/types/matches';
+import type { Fixture, FixtureData } from '@/types/matches';
 
 const EXTERNAL_DIR = path.resolve(__dirname, '../data/external');
 const OUTPUT_DIR = path.resolve(__dirname, '../data/matches');

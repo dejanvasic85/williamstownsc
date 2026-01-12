@@ -1,14 +1,84 @@
 import clubsData from '@data/clubs/clubs.json';
 import { z } from 'zod';
-import type { Fixture } from '@/types/match';
-import { clubsSchema } from './clubSchema';
 
-// External API Response Schema (JSON:API format from Dribl)
+const externalAddressSchema = z.object({
+	address_line_1: z.string().nullable(),
+	address_line_2: z.string().nullable(),
+	city: z.string().nullable(),
+	state: z.string().nullable(),
+	country: z.string().nullable(),
+	postcode: z.string().nullable()
+});
+
+const externalSocialSchema = z.object({
+	name: z.enum(['facebook', 'instagram', 'twitter']),
+	value: z.url()
+});
+
+const externalClubAttributesSchema = z.object({
+	name: z.string(),
+	slug: z.string().nullable(),
+	image: z.url(),
+	alt_image: z.string().nullable(),
+	phone: z.string().nullable(),
+	email: z.string().nullable(),
+	email_address: z.string().nullable(),
+	url: z.string().nullable(),
+	color: z.string().nullable(),
+	accent: z.string().nullable(),
+	address: externalAddressSchema.nullable(),
+	socials: z.array(externalSocialSchema).nullable(),
+	grounds: z.any().nullable()
+});
+
+const externalClubSchema = z.object({
+	type: z.literal('clubs'),
+	id: z.string(),
+	attributes: externalClubAttributesSchema,
+	links: z.object({
+		self: z.object({
+			href: z.url()
+		})
+	})
+});
+
+export const externalApiResponseSchema = z.object({
+	data: z.array(externalClubSchema)
+});
+
+const addressSchema = z.object({
+	street: z.string(),
+	city: z.string(),
+	state: z.string(),
+	postcode: z.string()
+});
+
+const socialSchema = z.object({
+	platform: z.enum(['facebook', 'instagram', 'twitter']),
+	url: z.url()
+});
+
+export const clubSchema = z.object({
+	externalId: z.string(),
+	name: z.string(),
+	displayName: z.string(),
+	logoUrl: z.url(),
+	email: z.string().email().optional(),
+	phone: z.string().optional(),
+	website: z.url().optional(),
+	address: addressSchema.optional(),
+	socials: z.array(socialSchema).optional()
+});
+
+export const clubsSchema = z.object({
+	clubs: z.array(clubSchema)
+});
+
 const externalFixtureAttributesSchema = z.object({
 	name: z.string(),
-	date: z.string(), // ISO 8601 timestamp
-	round: z.string(), // "R1", "R2", etc.
-	full_round: z.string(), // "Round 1", "Round 2", etc.
+	date: z.string(),
+	round: z.string(),
+	full_round: z.string(),
 	ground_name: z.string(),
 	ground_latitude: z.number(),
 	ground_longitude: z.number(),
@@ -75,16 +145,15 @@ export const externalFixturesApiResponseSchema = z.object({
 	})
 });
 
-// Internal fixture format schema
 const fixtureSchema = z.object({
 	round: z.number(),
-	date: z.string(), // ISO YYYY-MM-DD
+	date: z.string(),
 	day: z.string(),
 	time: z.string(),
-	homeTeamId: z.string(), // Club externalId
-	awayTeamId: z.string(), // Club externalId
+	homeTeamId: z.string(),
+	awayTeamId: z.string(),
 	address: z.string(),
-	coordinates: z.string() // "lat,lng"
+	coordinates: z.string()
 });
 
 export const fixtureDataSchema = z.object({
@@ -95,11 +164,27 @@ export const fixtureDataSchema = z.object({
 	fixtures: z.array(fixtureSchema)
 });
 
-// Types
+export type ExternalApiResponse = z.infer<typeof externalApiResponseSchema>;
+export type ExternalClub = z.infer<typeof externalClubSchema>;
+export type Club = z.infer<typeof clubSchema>;
+export type Clubs = z.infer<typeof clubsSchema>;
+
 export type ExternalFixturesApiResponse = z.infer<typeof externalFixturesApiResponseSchema>;
 export type ExternalFixture = z.infer<typeof externalFixtureSchema>;
+export type Fixture = z.infer<typeof fixtureSchema>;
+export type FixtureData = z.infer<typeof fixtureDataSchema>;
 
-// Helper functions for club lookup
+export type EnrichedFixture = {
+	round: number;
+	date: string;
+	day: string;
+	time: string;
+	homeTeam: Club;
+	awayTeam: Club;
+	address: string;
+	coordinates: string;
+};
+
 const clubs = clubsSchema.parse(clubsData);
 
 function findClubByLogoUrl(logoUrl: string): string | null {
@@ -108,7 +193,6 @@ function findClubByLogoUrl(logoUrl: string): string | null {
 }
 
 function findClubByName(teamName: string): string | null {
-	// Remove "Seniors" suffix for matching
 	const cleanName = teamName.replace(/\s+Seniors\s*$/, '').trim();
 
 	const club = clubs.clubs.find((c) => {
@@ -122,13 +206,11 @@ function findClubByName(teamName: string): string | null {
 }
 
 function findClubExternalId(teamName: string, logoUrl: string): string {
-	// Try logo URL first (more reliable)
 	const byLogo = findClubByLogoUrl(logoUrl);
 	if (byLogo) {
 		return byLogo;
 	}
 
-	// Fallback to name matching
 	const byName = findClubByName(teamName);
 	if (byName) {
 		return byName;
@@ -137,16 +219,13 @@ function findClubExternalId(teamName: string, logoUrl: string): string {
 	throw new Error(`Could not find club for team: ${teamName} (logo: ${logoUrl})`);
 }
 
-// Transformation function
 export function transformExternalFixture(externalFixture: ExternalFixture): Fixture {
 	const { attributes } = externalFixture;
 
-	// Parse round number from "R1" -> 1
 	const roundNumber = parseInt(attributes.round.replace(/^R/, ''), 10);
 
-	// Parse date/time from ISO 8601 timestamp
 	const fixtureDate = new Date(attributes.date);
-	const dateStr = fixtureDate.toISOString().split('T')[0]; // YYYY-MM-DD
+	const dateStr = fixtureDate.toISOString().split('T')[0];
 	const timeStr = fixtureDate.toLocaleTimeString('en-AU', {
 		hour: '2-digit',
 		minute: '2-digit',
@@ -158,15 +237,12 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 		timeZone: 'Australia/Melbourne'
 	});
 
-	// Combine ground and field name
 	const address = attributes.field_name
 		? `${attributes.ground_name} ${attributes.field_name}`
 		: attributes.ground_name;
 
-	// Format coordinates
 	const coordinates = `${attributes.ground_latitude},${attributes.ground_longitude}`;
 
-	// Find club external IDs
 	const homeTeamId = findClubExternalId(attributes.home_team_name, attributes.home_logo);
 	const awayTeamId = findClubExternalId(attributes.away_team_name, attributes.away_logo);
 
@@ -182,4 +258,44 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 	};
 
 	return fixtureSchema.parse(fixture);
+}
+
+export function transformExternalClub(externalClub: ExternalClub): Club {
+	const { id: externalId, attributes } = externalClub;
+
+	const street =
+		[attributes.address?.address_line_1, attributes.address?.address_line_2]
+			.filter(Boolean)
+			.join(' ') || undefined;
+
+	const address =
+		street && attributes.address?.city && attributes.address?.state && attributes.address?.postcode
+			? {
+					street,
+					city: attributes.address.city,
+					state: attributes.address.state,
+					postcode: attributes.address.postcode
+				}
+			: undefined;
+
+	const socials = attributes.socials
+		?.map((social) => ({
+			platform: social.name,
+			url: social.value
+		}))
+		.filter((s) => s.platform && s.url);
+
+	const club: Club = {
+		externalId,
+		name: attributes.name,
+		displayName: `${attributes.name} Seniors`,
+		logoUrl: attributes.image,
+		email: attributes.email || undefined,
+		phone: attributes.phone || undefined,
+		website: attributes.url || undefined,
+		address,
+		socials: socials && socials.length > 0 ? socials : undefined
+	};
+
+	return clubSchema.parse(club);
 }

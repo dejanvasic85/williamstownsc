@@ -9,7 +9,7 @@ import {
 	clubsSchema,
 	externalApiResponseSchema,
 	transformExternalClub
-} from '@/lib/schemas/clubSchema';
+} from '@/types/matches';
 
 const EXTERNAL_DATA_PATH = resolve(__dirname, '../data/external/clubs/clubs.json');
 const CLUBS_FILE_PATH = resolve(__dirname, '../data/clubs/clubs.json');

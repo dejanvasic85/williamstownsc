@@ -1,23 +1,19 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import clubsData from '@data/clubs/clubs.json';
-import { clubsSchema } from '@/lib/schemas/clubSchema';
-import type { Club as ClubSchema } from '@/lib/schemas/clubSchema';
-import { fixtureDataSchema } from '@/lib/schemas/fixtureSchema';
-import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/match';
+import { type Club as ClubSchema, clubsSchema, fixtureDataSchema } from '@/types/matches';
+import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
-const clubs = clubsSchema.parse(clubsData);
 const fixturesDirectory = path.join(process.cwd(), 'data/matches');
-const fixtureSlugAliasValue: Record<string, string> = {
-	'senior-mens': 'seniors-mens'
-};
 
 export function getClubs(): Club[] {
-	return clubs.clubs;
+	const parsed = clubsSchema.parse(clubsData);
+	return parsed.clubs;
 }
 
 export function getClubByExternalId(externalId: string): Club | undefined {
-	return clubs.clubs.find((club: ClubSchema) => club.externalId === externalId);
+	const parsedClubs = getClubs();
+	return parsedClubs.find((club: ClubSchema) => club.externalId === externalId);
 }
 
 function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
@@ -42,18 +38,15 @@ function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
 	});
 }
 
-async function loadFixtureDataBySlug(slug: string): Promise<FixtureData | null> {
-	const normalizedSlug = fixtureSlugAliasValue[slug] ?? slug;
-	const filePath = path.join(fixturesDirectory, `${normalizedSlug}.json`);
+async function loadFixture(leageName: string): Promise<FixtureData | null> {
+	const filePath = path.join(fixturesDirectory, `${leageName}.json`);
 
 	try {
 		const fileContents = await fs.readFile(filePath, 'utf-8');
 		const parsedJson = JSON.parse(fileContents);
 		return fixtureDataSchema.parse(parsedJson);
 	} catch (error) {
-		if (process.env.NODE_ENV !== 'production') {
-			console.warn(`No fixture data found for slug: ${normalizedSlug}`, error);
-		}
+		console.warn(`No fixture data found for slug: ${leageName}`, error);
 		return null;
 	}
 }
@@ -63,7 +56,7 @@ export async function getFixturesForTeam(slug: string): Promise<{
 	competition: string;
 	season: number;
 } | null> {
-	const fixtureData = await loadFixtureDataBySlug(slug);
+	const fixtureData = await loadFixture(slug);
 
 	if (!fixtureData) {
 		return null;
@@ -77,6 +70,6 @@ export async function getFixturesForTeam(slug: string): Promise<{
 }
 
 export async function hasFixtures(slug: string): Promise<boolean> {
-	const fixtureData = await loadFixtureDataBySlug(slug);
+	const fixtureData = await loadFixture(slug);
 	return Boolean(fixtureData?.fixtures.length);
 }
