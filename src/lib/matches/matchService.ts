@@ -1,11 +1,12 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import clubsData from '@data/clubs/clubs.json';
+import { clubsSchema } from '@/lib/schemas/clubSchema';
 import type { Club as ClubSchema } from '@/lib/schemas/clubSchema';
+import { fixtureDataSchema } from '@/lib/schemas/fixtureSchema';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/match';
-import { parseClubsData, parseFixtureData } from './fixtureSchema';
 
-const clubs = parseClubsData(clubsData);
+const clubs = clubsSchema.parse(clubsData);
 const fixturesDirectory = path.join(process.cwd(), 'data/matches');
 const fixtureSlugAliasValue: Record<string, string> = {
 	'senior-mens': 'seniors-mens'
@@ -48,7 +49,7 @@ async function loadFixtureDataBySlug(slug: string): Promise<FixtureData | null> 
 	try {
 		const fileContents = await fs.readFile(filePath, 'utf-8');
 		const parsedJson = JSON.parse(fileContents);
-		return parseFixtureData(parsedJson);
+		return fixtureDataSchema.parse(parsedJson);
 	} catch (error) {
 		if (process.env.NODE_ENV !== 'production') {
 			console.warn(`No fixture data found for slug: ${normalizedSlug}`, error);

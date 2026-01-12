@@ -1,7 +1,7 @@
 import clubsData from '@data/clubs/clubs.json';
 import { z } from 'zod';
-import type { Fixture, FixtureData } from '@/types/match';
-import type { Clubs } from './clubSchema';
+import type { Fixture } from '@/types/match';
+import { clubsSchema } from './clubSchema';
 
 // External API Response Schema (JSON:API format from Dribl)
 const externalFixtureAttributesSchema = z.object({
@@ -100,7 +100,7 @@ export type ExternalFixturesApiResponse = z.infer<typeof externalFixturesApiResp
 export type ExternalFixture = z.infer<typeof externalFixtureSchema>;
 
 // Helper functions for club lookup
-const clubs = clubsData as Clubs;
+const clubs = clubsSchema.parse(clubsData);
 
 function findClubByLogoUrl(logoUrl: string): string | null {
 	const club = clubs.clubs.find((c) => c.logoUrl === logoUrl);
@@ -182,13 +182,4 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 	};
 
 	return fixtureSchema.parse(fixture);
-}
-
-// Legacy parsing functions (kept for backward compatibility)
-export function parseClubsData(data: unknown): Clubs {
-	return data as Clubs;
-}
-
-export function parseFixtureData(data: unknown): FixtureData {
-	return data as FixtureData;
 }
