@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
 	getClubs as getClubsFromService
@@ -8,7 +7,7 @@ import {
 import { fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
-const fixturesDirectory = fileURLToPath(new URL('../../../data/matches', import.meta.url));
+const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
 
 export function getClubs(): Club[] {
 	return getClubsFromService();
