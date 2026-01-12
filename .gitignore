@@ -49,6 +49,3 @@ src/sanity/sanity.types.ts
 
 # playwright mcp output
 .playwright-mcp/
-
-# external data files (user pastes API responses here)
-data/clubs/clubs-external.json
