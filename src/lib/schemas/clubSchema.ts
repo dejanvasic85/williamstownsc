@@ -12,13 +12,13 @@ const externalAddressSchema = z.object({
 
 const externalSocialSchema = z.object({
 	name: z.enum(['facebook', 'instagram', 'twitter']),
-	value: z.string().url()
+	value: z.url()
 });
 
 const externalClubAttributesSchema = z.object({
 	name: z.string(),
 	slug: z.string().nullable(),
-	image: z.string().url(),
+	image: z.url(),
 	alt_image: z.string().nullable(),
 	phone: z.string().nullable(),
 	email: z.string().nullable(),
@@ -37,7 +37,7 @@ const externalClubSchema = z.object({
 	attributes: externalClubAttributesSchema,
 	links: z.object({
 		self: z.object({
-			href: z.string().url()
+			href: z.url()
 		})
 	})
 });
@@ -56,17 +56,17 @@ const addressSchema = z.object({
 
 const socialSchema = z.object({
 	platform: z.enum(['facebook', 'instagram', 'twitter']),
-	url: z.string().url()
+	url: z.url()
 });
 
 export const clubSchema = z.object({
 	externalId: z.string(),
 	name: z.string(),
 	displayName: z.string(),
-	logoUrl: z.string().url(),
+	logoUrl: z.url(),
 	email: z.string().email().optional(),
 	phone: z.string().optional(),
-	website: z.string().url().optional(),
+	website: z.url().optional(),
 	address: addressSchema.optional(),
 	socials: z.array(socialSchema).optional()
 });

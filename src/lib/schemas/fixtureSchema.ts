@@ -16,9 +16,9 @@ const externalFixtureAttributesSchema = z.object({
 	field_name: z.string(),
 	is_historic_field: z.boolean(),
 	home_team_name: z.string(),
-	home_logo: z.string().url(),
+	home_logo: z.url(),
 	away_team_name: z.string(),
-	away_logo: z.string().url(),
+	away_logo: z.url(),
 	competition_name: z.string(),
 	league_name: z.string(),
 	status: z.string(),
@@ -54,7 +54,7 @@ const externalFixtureSchema = z.object({
 	attributes: externalFixtureAttributesSchema,
 	links: z.object({
 		self: z.object({
-			href: z.string().url()
+			href: z.url()
 		})
 	})
 });
@@ -62,13 +62,13 @@ const externalFixtureSchema = z.object({
 export const externalFixturesApiResponseSchema = z.object({
 	data: z.array(externalFixtureSchema),
 	links: z.object({
-		first: z.string().url().nullable(),
-		last: z.string().url().nullable(),
-		prev: z.string().url().nullable(),
-		next: z.string().url().nullable()
+		first: z.url().nullable(),
+		last: z.url().nullable(),
+		prev: z.url().nullable(),
+		next: z.url().nullable()
 	}),
 	meta: z.object({
-		path: z.string().url(),
+		path: z.url(),
 		per_page: z.number(),
 		next_cursor: z.string().nullable(),
 		prev_cursor: z.string().nullable()
