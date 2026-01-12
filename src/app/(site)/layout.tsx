@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import { Banner, Footer, Navbar } from '@/components/layout';
+import { SearchModal, SearchModalProvider } from '@/components/search';
 import { formatAddress } from '@/lib/address';
 import { getActiveAnnouncements } from '@/lib/announcements';
 import { getSiteSettings } from '@/lib/content';
@@ -62,7 +63,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 	const organizationSchema = generateOrganizationSchema(siteSettings);
 
 	return (
-		<>
+		<SearchModalProvider>
 			{organizationSchema && (
 				<script
 					id="organization-schema"
@@ -98,6 +99,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				{children}
 			</main>
 			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
-		</>
+			<SearchModal />
+		</SearchModalProvider>
 	);
 }

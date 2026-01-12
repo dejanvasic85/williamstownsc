@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
+import { useSearchModal } from '@/components/search';
 import { navItems } from '@/lib/navigation';
 
 type DesktopNavbarProps = {
@@ -31,6 +32,7 @@ export function DesktopNavbar({
 	hasAnnouncements
 }: DesktopNavbarProps) {
 	const pathname = usePathname();
+	const { open: openSearchModal } = useSearchModal();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [focusedItemIndex, setFocusedItemIndex] = useState<number>(-1);
@@ -307,8 +309,10 @@ export function DesktopNavbar({
 						{/* Search & Social Links */}
 						<div className="flex items-center gap-2">
 							<button
+								onClick={openSearchModal}
 								className="text-neutral-content hover:bg-neutral-content/10 rounded-full p-2 transition-colors"
 								aria-label="Search"
+								title="Search (⌘K)"
 							>
 								<Search className="h-5 w-5" />
 							</button>
