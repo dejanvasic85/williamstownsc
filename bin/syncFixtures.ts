@@ -3,11 +3,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { ZodError } from 'zod';
+import { transformExternalFixture } from '@/lib/matches/fixtureTransformService';
 import {
 	type ExternalFixturesApiResponse,
 	externalFixturesApiResponseSchema,
-	fixtureDataSchema,
-	transformExternalFixture
+	fixtureDataSchema
 } from '@/types/matches';
 import type { Fixture, FixtureData } from '@/types/matches';
 

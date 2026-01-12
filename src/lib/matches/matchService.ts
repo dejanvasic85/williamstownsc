@@ -1,20 +1,21 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import clubsData from '@data/clubs/clubs.json';
-import { type Club as ClubSchema, clubsSchema, fixtureDataSchema } from '@/types/matches';
+import {
+	getClubByExternalId as getClubByExternalIdFromService,
+	getClubs as getClubsFromService
+} from '@/lib/clubService';
+import { fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
 const fixturesDirectory = fileURLToPath(new URL('../../../data/matches', import.meta.url));
 
 export function getClubs(): Club[] {
-	const parsed = clubsSchema.parse(clubsData);
-	return parsed.clubs;
+	return getClubsFromService();
 }
 
 export function getClubByExternalId(externalId: string): Club | undefined {
-	const parsedClubs = getClubs();
-	return parsedClubs.find((club: ClubSchema) => club.externalId === externalId);
+	return getClubByExternalIdFromService(externalId);
 }
 
 function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {

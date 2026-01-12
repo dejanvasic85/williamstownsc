@@ -3,13 +3,8 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { ZodError } from 'zod';
-import {
-	type Club,
-	type Clubs,
-	clubsSchema,
-	externalApiResponseSchema,
-	transformExternalClub
-} from '@/types/matches';
+import { transformExternalClub } from '@/lib/clubService';
+import { type Club, type Clubs, clubsSchema, externalApiResponseSchema } from '@/types/matches';
 
 const EXTERNAL_DATA_PATH = resolve(__dirname, '../data/external/clubs/clubs.json');
 const CLUBS_FILE_PATH = resolve(__dirname, '../data/clubs/clubs.json');

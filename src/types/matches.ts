@@ -1,4 +1,3 @@
-import clubsData from '@data/clubs/clubs.json';
 import { z } from 'zod';
 
 const externalAddressSchema = z.object({
@@ -145,7 +144,7 @@ export const externalFixturesApiResponseSchema = z.object({
 	})
 });
 
-const fixtureSchema = z.object({
+export const fixtureSchema = z.object({
 	round: z.number(),
 	date: z.string(),
 	day: z.string(),
@@ -184,118 +183,3 @@ export type EnrichedFixture = {
 	address: string;
 	coordinates: string;
 };
-
-const clubs = clubsSchema.parse(clubsData);
-
-function findClubByLogoUrl(logoUrl: string): string | null {
-	const club = clubs.clubs.find((c) => c.logoUrl === logoUrl);
-	return club?.externalId || null;
-}
-
-function findClubByName(teamName: string): string | null {
-	const cleanName = teamName.replace(/\s+Seniors\s*$/, '').trim();
-
-	const club = clubs.clubs.find((c) => {
-		const clubCleanName = c.name.trim();
-		const clubDisplayCleanName = c.displayName.replace(/\s+Seniors\s*$/, '').trim();
-
-		return clubCleanName === cleanName || clubDisplayCleanName === cleanName;
-	});
-
-	return club?.externalId || null;
-}
-
-function findClubExternalId(teamName: string, logoUrl: string): string {
-	const byLogo = findClubByLogoUrl(logoUrl);
-	if (byLogo) {
-		return byLogo;
-	}
-
-	const byName = findClubByName(teamName);
-	if (byName) {
-		return byName;
-	}
-
-	throw new Error(`Could not find club for team: ${teamName} (logo: ${logoUrl})`);
-}
-
-export function transformExternalFixture(externalFixture: ExternalFixture): Fixture {
-	const { attributes } = externalFixture;
-
-	const roundNumber = parseInt(attributes.round.replace(/^R/, ''), 10);
-
-	const fixtureDate = new Date(attributes.date);
-	const dateStr = fixtureDate.toISOString().split('T')[0];
-	const timeStr = fixtureDate.toLocaleTimeString('en-AU', {
-		hour: '2-digit',
-		minute: '2-digit',
-		hour12: false,
-		timeZone: 'Australia/Melbourne'
-	});
-	const dayStr = fixtureDate.toLocaleDateString('en-AU', {
-		weekday: 'long',
-		timeZone: 'Australia/Melbourne'
-	});
-
-	const address = attributes.field_name
-		? `${attributes.ground_name} ${attributes.field_name}`
-		: attributes.ground_name;
-
-	const coordinates = `${attributes.ground_latitude},${attributes.ground_longitude}`;
-
-	const homeTeamId = findClubExternalId(attributes.home_team_name, attributes.home_logo);
-	const awayTeamId = findClubExternalId(attributes.away_team_name, attributes.away_logo);
-
-	const fixture: Fixture = {
-		round: roundNumber,
-		date: dateStr,
-		day: dayStr,
-		time: timeStr,
-		homeTeamId,
-		awayTeamId,
-		address,
-		coordinates
-	};
-
-	return fixtureSchema.parse(fixture);
-}
-
-export function transformExternalClub(externalClub: ExternalClub): Club {
-	const { id: externalId, attributes } = externalClub;
-
-	const street =
-		[attributes.address?.address_line_1, attributes.address?.address_line_2]
-			.filter(Boolean)
-			.join(' ') || undefined;
-
-	const address =
-		street && attributes.address?.city && attributes.address?.state && attributes.address?.postcode
-			? {
-					street,
-					city: attributes.address.city,
-					state: attributes.address.state,
-					postcode: attributes.address.postcode
-				}
-			: undefined;
-
-	const socials = attributes.socials
-		?.map((social) => ({
-			platform: social.name,
-			url: social.value
-		}))
-		.filter((s) => s.platform && s.url);
-
-	const club: Club = {
-		externalId,
-		name: attributes.name,
-		displayName: attributes.name,
-		logoUrl: attributes.image,
-		email: attributes.email || undefined,
-		phone: attributes.phone || undefined,
-		website: attributes.url || undefined,
-		address,
-		socials: socials && socials.length > 0 ? socials : undefined
-	};
-
-	return clubSchema.parse(club);
-}
