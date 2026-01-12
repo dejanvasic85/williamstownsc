@@ -38,17 +38,7 @@ export function SearchModal() {
 	}, [open]);
 
 	const handleDialogClick = (event: React.MouseEvent<HTMLDialogElement>) => {
-		const dialog = dialogRef.current;
-		if (!dialog) return;
-
-		const rect = dialog.getBoundingClientRect();
-		const isClickOutside =
-			event.clientX < rect.left ||
-			event.clientX > rect.right ||
-			event.clientY < rect.top ||
-			event.clientY > rect.bottom;
-
-		if (isClickOutside) {
+		if (event.target === dialogRef.current) {
 			close();
 		}
 	};
@@ -82,7 +72,7 @@ export function SearchModal() {
 					<p className="text-base-content/60 text-sm">Search functionality coming soon...</p>
 					<p className="text-base-content/40 mt-2 text-xs">
 						Press <kbd className="kbd kbd-sm">ESC</kbd> to close or{' '}
-						<kbd className="kbd kbd-sm">⌘</kbd> <kbd className="kbd kbd-sm">K</kbd> to open
+						<kbd className="kbd kbd-sm">⌘K</kbd> / <kbd className="kbd kbd-sm">Ctrl+K</kbd> to open
 					</p>
 				</div>
 			</div>
