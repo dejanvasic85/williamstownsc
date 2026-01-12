@@ -184,7 +184,7 @@ async function main() {
 	if (!args) {
 		console.error('❌ Error: Missing required --league argument\n');
 		console.log('Usage: npm run sync:fixtures -- --league <league-slug>');
-		console.log('Example: npm run sync:fixtures -- --league senior-mens\n');
+		console.log('Example: npm run sync:fixtures -- --league seniors-mens\n');
 		process.exit(1);
 	}
 
