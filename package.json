@@ -15,7 +15,7 @@
 		"prepare": "husky",
 		"type:gen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
 		"type:check": "tsc --noEmit",
-		"generate": "tsx bin/generateMockData.ts"
+		"sync:clubs": "tsx bin/syncClubs.ts"
 	},
 	"dependencies": {
 		"@aws-sdk/client-ses": "3.966.0",

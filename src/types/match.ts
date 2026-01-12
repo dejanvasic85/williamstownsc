@@ -1,5 +1,5 @@
 export type Club = {
-	id: number;
+	externalId: string;
 	name: string;
 	displayName: string;
 	logoUrl: string;
@@ -10,8 +10,8 @@ export type Fixture = {
 	date: string;
 	day: string;
 	time: string;
-	homeTeamId: number;
-	awayTeamId: number;
+	homeTeamId: string;
+	awayTeamId: string;
 	address: string;
 	coordinates: string;
 };

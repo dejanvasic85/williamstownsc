@@ -1,5 +1,5 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
-import { getAwsConfig, isLocal } from '../config';
+import { getAwsConfig, isLocal } from '@/lib/config';
 
 function getSESClient() {
 	const config = getAwsConfig();

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { PortableTextBlock } from '@portabletext/types';
-import { PortableTextContent } from '../content/PortableTextContent';
+import { PortableTextContent } from '@/components/content/PortableTextContent';
 
 interface ProgramCardProps {
 	name: string;

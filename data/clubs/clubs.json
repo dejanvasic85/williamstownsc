@@ -1,0 +1,282 @@
+{
+	"clubs": [
+		{
+			"externalId": "3pmvQp0Ldv",
+			"name": "Albion Rovers FC",
+			"displayName": "Albion Rovers FC Seniors",
+			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
+			"email": "info@albionroversfc.com.au",
+			"website": "https://www.albionroversfc.com.au/",
+			"address": {
+				"street": "142A Furlong Rd",
+				"city": "Cairnlea",
+				"state": "VIC",
+				"postcode": "3023"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/albionroversfootballclub"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/albionofficalfc/"
+				}
+			]
+		},
+		{
+			"externalId": "6lNbpDlAdx",
+			"name": "Altona North SC",
+			"displayName": "Altona North SC Seniors",
+			"logoUrl": "https://ocean.dribl.com/f87efaf54d9c4c2696c327078ccdc7e7",
+			"email": "Secretary@altonanorthsc.com",
+			"address": {
+				"street": "44-64 Primula Avenue",
+				"city": "Brooklyn",
+				"state": "VIC",
+				"postcode": "3012"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/altonanorthsc"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/altonanorthsc/"
+				}
+			]
+		},
+		{
+			"externalId": "PydoLxGmD9",
+			"name": "Brimbank Stallions FC",
+			"displayName": "Brimbank Stallions FC Seniors",
+			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
+			"email": "eadam@clubitaliasportingclub.com.au",
+			"website": "https://www.brimbankstallionsfc.com.au/",
+			"address": {
+				"street": "128--152 Furlong Road",
+				"city": "Sunshine North",
+				"state": "VIC",
+				"postcode": "3020"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/BrimbankStallionsFC"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/brimbankstallionsfc/"
+				},
+				{
+					"platform": "twitter",
+					"url": "https://x.com/StallionsBSFC"
+				}
+			]
+		},
+		{
+			"externalId": "7MNGvxzpmA",
+			"name": "Corio SC",
+			"displayName": "Corio SC Seniors",
+			"logoUrl": "https://ocean.dribl.com/0e5506977eaf4897ab6a47e63ceb7a66",
+			"email": "coriosc2020@gmail.com",
+			"website": "https://coriosc.com.au/",
+			"address": {
+				"street": "Hume Reseve Court Hume Reserve (Off Thompson Road)",
+				"city": "Bell Park",
+				"state": "VIC",
+				"postcode": "3215"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/CorioSC"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/coriosoccerclub/?hl=en"
+				}
+			]
+		},
+		{
+			"externalId": "AnmYzyArNz",
+			"name": "FC Strathmore Split",
+			"displayName": "FC Strathmore Split Seniors",
+			"logoUrl": "https://ocean.dribl.com/eea604f0133145cfaa26c37f5c596ee5",
+			"email": "fcstrathmoresplit@gmail.com",
+			"website": "https://fcstrathmore.com.au",
+			"address": {
+				"street": "Strathnaver Reserve Mascoma Street",
+				"city": "Strathmore",
+				"state": "VIC",
+				"postcode": "3041"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/fcstrathmore"
+				}
+			]
+		},
+		{
+			"externalId": "7MNGvappmA",
+			"name": "Geelong Rangers SC",
+			"displayName": "Geelong Rangers SC Seniors",
+			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
+			"email": "secretary@geelongrangersfc.com",
+			"website": "https://www.geelongrangersfc.com",
+			"address": {
+				"street": "Myers Reserve",
+				"city": "Bell Post Hill",
+				"state": "VIC",
+				"postcode": "3215"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/geelongrangersfc"
+				}
+			]
+		},
+		{
+			"externalId": "bam1nQWrNw",
+			"name": "Mill Park SC",
+			"displayName": "Mill Park SC Seniors",
+			"logoUrl": "https://ocean.dribl.com/6e5cc0f97e4942e2a8b24cdbe74c187f",
+			"email": "millparksoccerclub@outlook.com",
+			"website": "https://millparkscaustralia.teamapp.com/?_webpage=v1",
+			"address": {
+				"street": "40-60 Partridge Street",
+				"city": "Lalor",
+				"state": "VIC",
+				"postcode": "3075"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/MillParkSoccerClub"
+				}
+			]
+		},
+		{
+			"externalId": "LBdDx0GQdb",
+			"name": "Surf Coast FC",
+			"displayName": "Surf Coast FC Seniors",
+			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
+			"email": "Admin@SurfCoastFC.com",
+			"website": "https://www.surfcoastfc.com/home",
+			"address": {
+				"street": "Merrijig Way",
+				"city": "Torquay",
+				"state": "VIC",
+				"postcode": "3228"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/surfcoastfc/"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/surfcoastfc"
+				}
+			]
+		},
+		{
+			"externalId": "Bjma0G87dR",
+			"name": "Unihill Eagles FC",
+			"displayName": "Unihill Eagles FC Seniors",
+			"logoUrl": "https://ocean.dribl.com/f6ee1164568a48acbf1095f9723768f8",
+			"email": "admin@unihilleaglesfc.com.au",
+			"address": {
+				"street": "14 Crampton Crescent",
+				"city": "Mill Park",
+				"state": "VIC",
+				"postcode": "3082"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/UniHillEaglesFC/"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/unihilleaglesfc/?hl=en"
+				}
+			]
+		},
+		{
+			"externalId": "3vmZv8JJmq",
+			"name": "Western Eagles SC",
+			"displayName": "Western Eagles SC Seniors",
+			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
+			"email": "westerneagles1950@gmail.com",
+			"website": "https://westerneaglesfc.com.au/",
+			"address": {
+				"street": "19 Carrington Drive",
+				"city": "Albion",
+				"state": "VIC",
+				"postcode": "3020"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/westerneaglesfc/"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/westerneagles1950/?hl=en"
+				}
+			]
+		},
+		{
+			"externalId": "7MNGgM7NAz",
+			"name": "Whittlesea Ranges FC",
+			"displayName": "Whittlesea Ranges FC Seniors",
+			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
+			"email": "admin@whittlesearanges.com.au",
+			"website": "https://www.whittlesearanges.com.au/",
+			"address": {
+				"street": "Harvest Home Reserve Northfields Street",
+				"city": "Epping",
+				"state": "VIC",
+				"postcode": "3076"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/thewhittlesearanges/"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/whittlesearangesfc/?hl=en"
+				}
+			]
+		},
+		{
+			"externalId": "6lNbpDpwdx",
+			"name": "Williamstown SC",
+			"displayName": "Williamstown SC Seniors",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"email": "admin@williamstownsc.com",
+			"website": "https://www.williamstownsc.com/",
+			"address": {
+				"street": "JT Gray Reserve Kororoit Creek Road",
+				"city": "Williamstown",
+				"state": "VIC",
+				"postcode": "3016"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/williamstownsc/"
+				},
+				{
+					"platform": "instagram",
+					"url": "https://www.instagram.com/williamstown_sc/?hl=en"
+				}
+			]
+		}
+	]
+}

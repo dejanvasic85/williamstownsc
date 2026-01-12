@@ -1,7 +1,8 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import clubsData from '@data/clubs/clubs.json';
+import type { Club as ClubSchema } from '@/lib/schemas/clubSchema';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/match';
-import clubsData from './clubs.json';
 import { parseClubsData, parseFixtureData } from './fixtureSchema';
 
 const clubs = parseClubsData(clubsData);
@@ -14,14 +15,14 @@ export function getClubs(): Club[] {
 	return clubs.clubs;
 }
 
-export function getClubById(id: number): Club | undefined {
-	return clubs.clubs.find((club) => club.id === id);
+export function getClubByExternalId(externalId: string): Club | undefined {
+	return clubs.clubs.find((club: ClubSchema) => club.externalId === externalId);
 }
 
 function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
 	return fixtures.map((fixture) => {
-		const homeTeam = getClubById(fixture.homeTeamId);
-		const awayTeam = getClubById(fixture.awayTeamId);
+		const homeTeam = getClubByExternalId(fixture.homeTeamId);
+		const awayTeam = getClubByExternalId(fixture.awayTeamId);
 
 		if (!homeTeam || !awayTeam) {
 			throw new Error(`Club not found for fixture round ${fixture.round}`);
