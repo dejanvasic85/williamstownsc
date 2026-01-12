@@ -49,9 +49,12 @@
 
 # Workflow
 
-- Be sure to run unit tests when you're done making a series of code changes
-- Prefer running single tests, and not the whole test suite, for example `npm run test -- Button.tsx`
-- Use `npm run format` whenever the format is not correct
+- After finishing code changes run:
+  - `npm run lint`
+  - `npm run format`
+  - `npm run type:check`
+- For larger change sets also ensure Next.js can build: `npm run build`
+- Prefer running targeted unit tests when relevant, e.g. `npm run test -- Button.tsx`
 
 # Dependency management
 
