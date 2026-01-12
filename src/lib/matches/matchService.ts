@@ -1,10 +1,11 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import clubsData from '@data/clubs/clubs.json';
 import { type Club as ClubSchema, clubsSchema, fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
-const fixturesDirectory = path.join(process.cwd(), 'data/matches');
+const fixturesDirectory = fileURLToPath(new URL('../../../data/matches', import.meta.url));
 
 export function getClubs(): Club[] {
 	const parsed = clubsSchema.parse(clubsData);
