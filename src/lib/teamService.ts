@@ -24,7 +24,7 @@ export function getTabCategory(ageGroup: AgeGroup): TabCategory {
 	return 'juniors';
 }
 
-export function sortTeams(teams: Team[]): Team[] {
+export function sortTeams<T extends Team>(teams: T[]): T[] {
 	return [...teams].sort((a, b) => {
 		const aIsJunior = juniorAgeGroups.includes(a.ageGroup);
 		const bIsJunior = juniorAgeGroups.includes(b.ageGroup);
@@ -42,8 +42,8 @@ export function sortTeams(teams: Team[]): Team[] {
 	});
 }
 
-export function groupTeamsByTab(teams: Team[]): TeamsByTab {
-	const grouped: TeamsByTab = {
+export function groupTeamsByTab<T extends Team>(teams: T[]): TeamsByTab<T> {
+	const grouped: TeamsByTab<T> = {
 		seniors: [],
 		reserves: [],
 		juniors: [],

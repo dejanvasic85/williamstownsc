@@ -1,22 +1,26 @@
-import type { Club, ClubsData, EnrichedFixture, FixtureData } from '@/types/match';
-import clubsData from './clubs.json';
-import seniorsData from './seniors.json';
+import { promises as fs } from 'fs';
+import path from 'path';
+import {
+	getClubByExternalId as getClubByExternalIdFromService,
+	getClubs as getClubsFromService
+} from '@/lib/clubService';
+import { fixtureDataSchema } from '@/types/matches';
+import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
-const clubs = clubsData as ClubsData;
-const seniors = seniorsData as FixtureData;
+const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
 
 export function getClubs(): Club[] {
-	return clubs.clubs;
+	return getClubsFromService();
 }
 
-export function getClubById(id: number): Club | undefined {
-	return clubs.clubs.find((club) => club.id === id);
+export function getClubByExternalId(externalId: string): Club | undefined {
+	return getClubByExternalIdFromService(externalId);
 }
 
-export function getSeniorsFixtures(): EnrichedFixture[] {
-	return seniors.fixtures.map((fixture) => {
-		const homeTeam = getClubById(fixture.homeTeamId);
-		const awayTeam = getClubById(fixture.awayTeamId);
+function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
+	return fixtures.map((fixture) => {
+		const homeTeam = getClubByExternalId(fixture.homeTeamId);
+		const awayTeam = getClubByExternalId(fixture.awayTeamId);
 
 		if (!homeTeam || !awayTeam) {
 			throw new Error(`Club not found for fixture round ${fixture.round}`);
@@ -35,10 +39,38 @@ export function getSeniorsFixtures(): EnrichedFixture[] {
 	});
 }
 
-export function getSeniorsCompetition(): string {
-	return seniors.competition;
+async function loadFixture(leageName: string): Promise<FixtureData | null> {
+	const filePath = path.join(fixturesDirectory, `${leageName}.json`);
+
+	try {
+		const fileContents = await fs.readFile(filePath, 'utf-8');
+		const parsedJson = JSON.parse(fileContents);
+		return fixtureDataSchema.parse(parsedJson);
+	} catch (error) {
+		console.warn(`No fixture data found for slug: ${leageName}`, error);
+		return null;
+	}
 }
 
-export function getSeniorsSeason(): number {
-	return seniors.season;
+export async function getFixturesForTeam(slug: string): Promise<{
+	fixtures: EnrichedFixture[];
+	competition: string;
+	season: number;
+} | null> {
+	const fixtureData = await loadFixture(slug);
+
+	if (!fixtureData) {
+		return null;
+	}
+
+	return {
+		fixtures: enrichFixtures(fixtureData.fixtures),
+		competition: fixtureData.competition,
+		season: fixtureData.season
+	};
+}
+
+export async function hasFixtures(slug: string): Promise<boolean> {
+	const fixtureData = await loadFixture(slug);
+	return Boolean(fixtureData?.fixtures.length);
 }

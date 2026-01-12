@@ -1,7 +1,7 @@
 'use client';
 
 import { use } from 'react';
-import { ConfigContext } from '../providers/ConfigProvider';
+import { ConfigContext } from '@/lib/providers/ConfigProvider';
 
 export function useConfig() {
 	const config = use(ConfigContext);

@@ -1,5 +1,5 @@
-import { client } from '../lib/client';
-import type { Program } from '../sanity.types';
+import { client } from '@/sanity/lib/client';
+import type { Program } from '@/sanity/sanity.types';
 
 export interface ProgramWithImage extends Omit<Program, 'image'> {
 	imageUrl?: string;

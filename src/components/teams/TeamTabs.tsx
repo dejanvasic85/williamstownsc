@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import type { TabCategory, TeamsByTab } from '@/types/team';
+import type { TabCategory, Team, TeamsByTab } from '@/types/team';
 import { TeamListItem } from './TeamListItem';
 
+type TeamWithFixtures = Team & { hasLocalFixtures?: boolean };
+
 interface TeamTabsProps {
-	teamsByTab: TeamsByTab;
+	teamsByTab: TeamsByTab<TeamWithFixtures>;
 }
 
 const tabLabels: Record<TabCategory, string> = {

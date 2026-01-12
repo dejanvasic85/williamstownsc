@@ -3,6 +3,7 @@ import { PageContainer } from '@/components/layout';
 import { TeamTabs } from '@/components/teams/TeamTabs';
 import { getPageMetadata } from '@/lib/content/page';
 import { teamsQuery } from '@/lib/content/teams';
+import { hasFixtures } from '@/lib/matches/matchService';
 import { groupTeamsByTab } from '@/lib/teamService';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
@@ -21,9 +22,14 @@ async function getTeams() {
 	}
 }
 
+type TeamWithFixturesFlag = Team & { hasLocalFixtures: boolean };
+
 export default async function FootballTeamsPage() {
 	const teams = await getTeams();
-	const teamsByTab = groupTeamsByTab(teams);
+	const teamsWithFixtures: TeamWithFixturesFlag[] = await Promise.all(
+		teams.map(async (team) => ({ ...team, hasLocalFixtures: await hasFixtures(team.slug) }))
+	);
+	const teamsByTab = groupTeamsByTab<TeamWithFixturesFlag>(teamsWithFixtures);
 
 	return (
 		<PageContainer heading="Football Teams">
