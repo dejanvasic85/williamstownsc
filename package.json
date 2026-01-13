@@ -19,7 +19,7 @@
 		"sync:fixtures": "tsx bin/syncFixtures.ts"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ses": "3.967.0",
+		"@aws-sdk/client-ses": "3.968.0",
 		"@portabletext/toolkit": "5.0.1",
 		"@sanity/client": "7.14.0",
 		"@sanity/image-url": "2.0.2",
