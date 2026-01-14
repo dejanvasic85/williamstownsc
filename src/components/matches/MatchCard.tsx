@@ -10,8 +10,11 @@ function formatMatchDate(dateStr: string, day: string): string {
 	const date = new Date(dateStr);
 	const dayOfMonth = date.getDate();
 	const month = date.toLocaleDateString('en-AU', { month: 'short' });
-	const year = date.getFullYear();
-	return `${day} ${dayOfMonth} ${month} ${year}`;
+	return `${day} ${dayOfMonth} ${month}`;
+}
+
+function formatMatchTime(time: string): string {
+	return time.replace(/\s+(AM|PM)/i, '$1');
 }
 
 export function MatchCard({ fixture }: MatchCardProps) {
@@ -21,10 +24,13 @@ export function MatchCard({ fixture }: MatchCardProps) {
 		<li className="border-base-200 list-row border-b py-4 last:border-b-0">
 			<div className="grid grid-cols-1 gap-4 md:gap-6">
 				{/* Date and Time */}
-				<div className="flex flex-col items-start gap-1">
-					<time className="text-sm font-semibold md:text-base">{formattedDate}</time>
-					<time className="text-base-content/70 text-sm">{fixture.time}</time>
-				</div>
+				<time
+					dateTime={`${fixture.date}T${fixture.time}`}
+					className="flex items-baseline gap-1.5 text-sm md:text-base"
+				>
+					<span className="font-semibold">{formattedDate}</span>
+					<span className="text-base-content/70">{formatMatchTime(fixture.time)}</span>
+				</time>
 
 				{/* Match Details */}
 				<div className="flex flex-col gap-2">
