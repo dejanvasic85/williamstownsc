@@ -68,7 +68,7 @@ export default async function TeamMatchesPage({ params }: TeamMatchesPageProps) 
 			heading={`${team.name} Fixtures`}
 			intro={`${fixtureData.competition} ${fixtureData.season}`}
 		>
-			<MatchList fixtures={fixtureData.fixtures} competition={fixtureData.competition} />
+			<MatchList fixtures={fixtureData.fixtures} />
 		</PageContainer>
 	);
 }

@@ -3,7 +3,6 @@ import { MatchCard } from './MatchCard';
 
 type MatchListProps = {
 	fixtures: EnrichedFixture[];
-	competition: string;
 };
 
 type FixturesByRound = {
@@ -33,24 +32,25 @@ function groupFixturesByRound(fixtures: EnrichedFixture[]): FixturesByRound[] {
 	return grouped.sort((a, b) => a.round - b.round);
 }
 
-export function MatchList({ fixtures, competition }: MatchListProps) {
+export function MatchList({ fixtures }: MatchListProps) {
 	const fixturesByRound = groupFixturesByRound(fixtures);
 
 	return (
-		<div className="space-y-8">
+		<div className="space-y-6">
 			{fixturesByRound.map(({ round, fixtures: roundFixtures }) => (
-				<section key={round} className="space-y-4">
-					<h2 className="text-xl font-bold md:text-2xl">Round {round}</h2>
-					<div className="space-y-3">
-						{roundFixtures.map((fixture, index) => (
-							<MatchCard
-								key={`${fixture.round}-${fixture.date}-${fixture.time}-${index}`}
-								fixture={fixture}
-								competition={competition}
-							/>
-						))}
+				<article key={round} className="card bg-base-200 shadow-sm">
+					<div className="card-body">
+						<h2 className="card-title text-xl md:text-2xl">Round {round}</h2>
+						<ul className="list">
+							{roundFixtures.map((fixture, index) => (
+								<MatchCard
+									key={`${fixture.round}-${fixture.date}-${fixture.time}-${index}`}
+									fixture={fixture}
+								/>
+							))}
+						</ul>
 					</div>
-				</section>
+				</article>
 			))}
 		</div>
 	);
