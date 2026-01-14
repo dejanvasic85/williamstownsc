@@ -14,7 +14,10 @@ Based on the design sample provided:
 - Show venue address with location icon
 - Handle teams with no local fixture data by showing external link
 - Mobile-first responsive design
-- SEO-friendly with proper metadata
+- SEO-friendly with proper metadata for the event/match
+
+See [Design](./design-fixtures.png) for an example of a match layout.
+We don't need a link to the match center at the moment.
 
 ## Data Flow
 
