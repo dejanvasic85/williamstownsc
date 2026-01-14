@@ -64,6 +64,7 @@ Pages:
   - [x] Policies and regulations
   - [x] Locations including JT Gray and Digman and their layouts
   - [x] Sponsors
+    - [ ] Convert sponsor type to a Sanity content model for sponsor type drop-down
 - Contact
   - [x] Contact form
   - [x] Bot detection
