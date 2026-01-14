@@ -22,52 +22,53 @@ export function MatchCard({ fixture }: MatchCardProps) {
 
 	return (
 		<li className="border-base-200 list-row border-b px-0 py-4 last:border-b-0">
-			<div className="grid grid-cols-1 gap-4 md:gap-6">
-				{/* Date and Time */}
-				<time
-					dateTime={`${fixture.date}T${fixture.time}`}
-					className="flex items-baseline gap-1.5 text-sm md:text-base"
-				>
-					<span className="font-semibold">{formattedDate}</span>
-					<span className="text-base-content/70">{formatMatchTime(fixture.time)}</span>
-				</time>
-
-				{/* Match Details */}
-				<div className="flex flex-col gap-2">
-					{/* Teams */}
-					<div className="flex flex-wrap items-center gap-2 md:gap-3">
-						<div className="flex items-center gap-2">
+			<div className="flex flex-col gap-3">
+				{/* Main content: Teams on left, Date/Time on right */}
+				<div className="flex items-start gap-4">
+					{/* Teams - Vertical Stack */}
+					<div className="flex flex-1 flex-col gap-3">
+						{/* Home Team */}
+						<div className="grid grid-cols-[auto_1fr] items-start gap-3">
 							<Image
 								src={fixture.homeTeam.logoUrl}
 								alt={fixture.homeTeam.displayName}
-								width={32}
-								height={32}
-								className="h-8 w-8 object-contain md:h-10 md:w-10"
+								width={40}
+								height={40}
+								className="h-10 w-10 object-contain"
 							/>
-							<span className="text-sm font-medium md:text-base">
-								{fixture.homeTeam.displayName}
-							</span>
+							<span className="text-base font-medium">{fixture.homeTeam.displayName}</span>
 						</div>
-						<span className="text-base-content/50">-</span>
-						<div className="flex items-center gap-2">
+
+						{/* Away Team */}
+						<div className="grid grid-cols-[auto_1fr] items-start gap-3">
 							<Image
 								src={fixture.awayTeam.logoUrl}
 								alt={fixture.awayTeam.displayName}
-								width={32}
-								height={32}
-								className="h-8 w-8 object-contain md:h-10 md:w-10"
+								width={40}
+								height={40}
+								className="h-10 w-10 object-contain"
 							/>
-							<span className="text-sm font-medium md:text-base">
-								{fixture.awayTeam.displayName}
-							</span>
+							<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
 						</div>
 					</div>
 
-					{/* Venue */}
-					<div className="text-base-content/70 flex items-center gap-1 text-sm">
-						<MapPin className="h-4 w-4" />
-						<span>{fixture.address}</span>
-					</div>
+					{/* Vertical Divider */}
+					<div className="bg-base-300 h-full w-px self-stretch" />
+
+					{/* Date and Time */}
+					<time
+						dateTime={`${fixture.date}T${fixture.time}`}
+						className="flex flex-col items-end gap-0.5 text-sm"
+					>
+						<span className="font-medium">{formattedDate}</span>
+						<span className="text-base-content/70">{formatMatchTime(fixture.time)}</span>
+					</time>
+				</div>
+
+				{/* Venue - Centered */}
+				<div className="text-base-content/60 flex items-center justify-center gap-1.5 text-sm">
+					<MapPin className="h-4 w-4" />
+					<span>{fixture.address}</span>
 				</div>
 			</div>
 		</li>
