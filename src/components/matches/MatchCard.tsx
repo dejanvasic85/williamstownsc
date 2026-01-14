@@ -21,7 +21,7 @@ export function MatchCard({ fixture }: MatchCardProps) {
 	const formattedDate = formatMatchDate(fixture.date, fixture.day);
 
 	return (
-		<li className="border-base-200 list-row border-b py-4 last:border-b-0">
+		<li className="border-base-200 list-row border-b px-0 py-4 last:border-b-0">
 			<div className="grid grid-cols-1 gap-4 md:gap-6">
 				{/* Date and Time */}
 				<time
