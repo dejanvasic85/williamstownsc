@@ -249,3 +249,57 @@ npm run build
 - Consider adding skeleton loading states for better UX
 - Team logo fallbacks should match existing brand guidelines
 - Ensure consistent spacing with other team pages (players, coaches)
+
+---
+
+## Implementation Status
+
+### ✅ Completed (2026-01-14)
+
+#### Components Created
+
+1. **MatchCard.tsx** (`src/components/matches/MatchCard.tsx`)
+   - Displays individual fixture with team logos, date, time, venue
+   - Responsive grid layout with mobile-first design
+   - Round badge shown on desktop view
+   - MapPin icon for venue location
+
+2. **MatchList.tsx** (`src/components/matches/MatchList.tsx`)
+   - Groups fixtures by round number
+   - Sorts fixtures by date/time within rounds
+   - Renders round headers and match cards in sections
+
+3. **Matches Page** (`src/app/(site)/football/teams/[slug]/matches/page.tsx`)
+   - Server component with async data fetching
+   - SEO metadata generation with team and competition info
+   - Uses PageContainer with `intro` prop for competition/season subtitle
+   - Returns 404 for missing teams or fixtures
+
+#### Design Decisions
+
+- **NoFixturesMessage component not implemented**: Teams without local fixtures should not have a "Matches" button in the Teams page. Navigation handles this at the team list level with external links only.
+- **PageContainer integration**: Used `intro` prop instead of creating a custom subheading, maintaining consistency with existing page layouts.
+- **Round display**: Desktop shows round badge on the right; mobile layouts omit it to save space.
+
+#### Validation
+
+- ✅ ESLint passes
+- ✅ Prettier formatting applied
+- ✅ TypeScript type checking passes
+- ✅ All components follow codebase style guide
+  - No helper/utils (used internal functions)
+  - Proper TypeScript types declared separately
+  - Functional coding style with extracted logic
+  - camelCase for variables and functions
+
+#### Testing
+
+- Available for testing at `/football/teams/seniors-mens/matches`
+- Fixture data loaded from `data/matches/seniors-mens.json` (132 fixtures, 22 rounds)
+
+### 📋 Remaining Tasks
+
+- [ ] Manual browser testing (responsive layouts, dark mode)
+- [ ] Build validation with `npm run build`
+- [ ] Test with additional teams when fixture data becomes available
+- [ ] Update team navigation to conditionally show "Matches" link only for teams with local fixtures
