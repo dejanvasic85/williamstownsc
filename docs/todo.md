@@ -11,6 +11,7 @@ The original website is at https://www.williamstownsc.com/
 - [x] Layout
   - [x] Navbar (mobile and desktop)
     - [x] Submenu
+    - [ ] Remove Events menu item and replace with Key Dates
   - [x] Footer
   - [x] Favicon
 - [x] Links to socials
@@ -34,7 +35,6 @@ The original website is at https://www.williamstownsc.com/
   - [ ] Web Vitals monitoring and performance tracking
   - [ ] URL redirects configuration for legacy paths
   - [ ] Enhanced unique meta descriptions for all pages
-  - [ ] Structured data for Events (Event schema)
   - [ ] Structured data for committee/staff (Person schema)
   - [ ] Code splitting and lazy loading optimization
 
@@ -50,6 +50,7 @@ Pages:
     - [ ] Similar news
   - [ ] Match report page?
     - [ ] Previous / next week links
+  - [ ] Add homepage carousel flag to news articles
 - Football
   - [x] Team listings
     - [x] Seniors, reserves + women with profiles
@@ -66,6 +67,8 @@ Pages:
 - Contact
   - [x] Contact form
   - [x] Bot detection
+- Admin
+  - [ ] Explore admin functionality for downloading expression of interest and contact form submissions (evaluate Sanity vs database/login/admin screens)
 - General
   - [x] Terms and conditions
   - [x] Privacy policy
@@ -75,8 +78,6 @@ Pages:
 
 The following is a list of things we may be not need on initial launch and can come later:
 
-- Events
-  - [ ] Ticketing integration with Try Booking
 - [ ] Automatic team Fixtures
 - [ ] Match reports
 - [ ] Search
