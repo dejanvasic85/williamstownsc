@@ -15,7 +15,7 @@ export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 };
 
 export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && featured == true && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...3] {
+	const query = `*[_type == "newsArticle" && featured == true && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...3] {
 		_id,
 		title,
 		slug,
@@ -48,7 +48,7 @@ export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
 }
 
 export async function getLatestArticles(limit: number = 3): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${limit}] {
+	const query = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${limit}] {
 		_id,
 		title,
 		slug,
@@ -81,7 +81,7 @@ export async function getLatestArticles(limit: number = 3): Promise<TransformedN
 }
 
 export async function getAllArticles(limit: number = 20): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${limit}] {
+	const query = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${limit}] {
 		_id,
 		title,
 		slug,
@@ -116,7 +116,7 @@ export async function getAllArticles(limit: number = 20): Promise<TransformedNew
 }
 
 export async function getArticleBySlug(slug: string) {
-	const query = `*[_type == "newsArticle" && slug.current == $slug && (!defined(expiryDate) || expiryDate > now())][0] {
+	const query = `*[_type == "newsArticle" && slug.current == $slug && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())][0] {
 		_id,
 		title,
 		slug,
@@ -155,7 +155,7 @@ export async function getArticleBySlug(slug: string) {
 }
 
 export async function getAllArticlesForSitemap() {
-	const query = groq`*[_type == "newsArticle" && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
+	const query = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
 		slug,
 		publishedAt
 	}`;
