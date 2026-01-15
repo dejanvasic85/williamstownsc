@@ -49,7 +49,7 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 
 			{/* Venue */}
 			<div className="text-base-content/60 grid grid-cols-[auto_1fr] items-start gap-1.5 text-sm">
-				<MapPin className="mt-0.5 h-4 w-4" />
+				<MapPin className="mt-0.5 h-4 w-4" aria-hidden="true" />
 				<span>{fixture.address}</span>
 			</div>
 		</div>
