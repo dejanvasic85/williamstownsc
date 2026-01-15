@@ -46,8 +46,7 @@ async function loadFixture(leageName: string): Promise<FixtureData | null> {
 		const fileContents = await fs.readFile(filePath, 'utf-8');
 		const parsedJson = JSON.parse(fileContents);
 		return fixtureDataSchema.parse(parsedJson);
-	} catch (error) {
-		console.warn(`No fixture data found for slug: ${leageName}`, error);
+	} catch {
 		return null;
 	}
 }

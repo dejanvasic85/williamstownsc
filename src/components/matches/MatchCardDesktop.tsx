@@ -17,13 +17,13 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 				<div className="flex flex-col gap-2">
 					<time
 						dateTime={`${fixture.date}T${fixture.time}`}
-						className="text-base-content/60 flex items-center gap-1"
+						className="text-base-content/80 flex items-center gap-1"
 					>
 						<span className="text-base font-medium">
 							{formattedDate} {formattedTime}
 						</span>
 					</time>
-					<div className="text-base-content/60 text-sm">
+					<div className="text-base-content/70 text-sm">
 						<span>{fixture.address}</span>
 					</div>
 				</div>

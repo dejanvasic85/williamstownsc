@@ -44,6 +44,16 @@ export function TeamListItem({ team }: TeamListItemProps) {
 					)}
 
 					<div className="flex flex-wrap gap-3 lg:justify-end">
+						{team.players && team.players.length > 0 && (
+							<Link
+								href={`/football/teams/${team.slug}`}
+								className="btn btn-primary btn-outline"
+								aria-label={`View ${team.name} players`}
+							>
+								Players
+							</Link>
+						)}
+
 						{(team.hasLocalFixtures || team.fixturesUrl) &&
 							(team.hasLocalFixtures ? (
 								<Link
@@ -76,15 +86,6 @@ export function TeamListItem({ team }: TeamListItemProps) {
 								Table
 								<ExternalLink className="h-4 w-4" aria-hidden="true" />
 							</a>
-						)}
-						{team.players && team.players.length > 0 && (
-							<Link
-								href={`/football/teams/${team.slug}`}
-								className="btn btn-primary btn-outline"
-								aria-label={`View ${team.name} players`}
-							>
-								Players
-							</Link>
 						)}
 					</div>
 				</div>
