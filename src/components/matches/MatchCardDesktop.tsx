@@ -11,19 +11,25 @@ type MatchCardDesktopProps = {
 export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: MatchCardDesktopProps) {
 	return (
 		<div className="flex flex-col gap-2">
-			{/* Teams Grid - 4 columns for perfect alignment */}
+			{/* Teams Grid */}
 			<div className="grid grid-cols-[20%_1fr_auto_1fr] items-center gap-6">
 				{/* Column 1: Date and Time (20%) */}
-				<time
-					dateTime={`${fixture.date}T${fixture.time}`}
-					className="text-base-content/60 flex flex-col gap-1"
-				>
-					<span className="text-base font-medium">{formattedDate}</span>
-					<span className="text-sm">{formattedTime}</span>
-				</time>
+				<div className="flex flex-col gap-2">
+					<time
+						dateTime={`${fixture.date}T${fixture.time}`}
+						className="text-base-content/60 flex items-center gap-1"
+					>
+						<span className="text-base font-medium">
+							{formattedDate} {formattedTime}
+						</span>
+					</time>
+					<div className="text-base-content/60 text-sm">
+						<span>{fixture.address}</span>
+					</div>
+				</div>
 
 				{/* Column 2: Home Team Name (right-aligned) */}
-				<div className="text-right">
+				<div className="flex items-center justify-end">
 					<span className="text-base font-medium">{fixture.homeTeam.displayName}</span>
 				</div>
 
@@ -47,16 +53,12 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 				</div>
 
 				{/* Column 4: Away Team Name (left-aligned) */}
-				<div className="text-left">
+				<div className="flex items-center justify-start">
 					<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
 				</div>
 			</div>
 
-			{/* Venue - Centered below */}
-			<div className="text-base-content/60 flex items-center justify-center gap-1.5 text-sm">
-				<MapPin className="h-4 w-4" />
-				<span>{fixture.address}</span>
-			</div>
+			{/* Venue - Centered below teams */}
 		</div>
 	);
 }

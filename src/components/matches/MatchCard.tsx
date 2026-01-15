@@ -6,10 +6,11 @@ type MatchCardProps = {
 	fixture: EnrichedFixture;
 };
 
-function formatMatchDate(dateStr: string, day: string): string {
+function formatMatchDate(dateStr: string): string {
 	const date = new Date(dateStr);
 	const dayOfMonth = date.getDate();
 	const month = date.toLocaleDateString('en-AU', { month: 'short' });
+	const day = date.toLocaleDateString('en-AU', { weekday: 'short' });
 	return `${day} ${dayOfMonth} ${month}`;
 }
 
@@ -18,11 +19,11 @@ function formatMatchTime(time: string): string {
 }
 
 export function MatchCard({ fixture }: MatchCardProps) {
-	const formattedDate = formatMatchDate(fixture.date, fixture.day);
+	const formattedDate = formatMatchDate(fixture.date);
 	const formattedTime = formatMatchTime(fixture.time);
 
 	return (
-		<li className="border-base-200 list-row border-b px-0 py-4 last:border-b-0">
+		<li className="border-base-200 list-row grid-cols-1 border-b px-0 py-4 last:border-b-0">
 			{/* Mobile */}
 			<div className="md:hidden">
 				<MatchCardMobile
