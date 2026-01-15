@@ -11,6 +11,7 @@ import {
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
 import { getActiveAnnouncements } from '@/lib/announcements';
 import {
+	getCarouselArticles,
 	getFeaturedSponsors,
 	getHomePageData,
 	getLatestArticles,
@@ -25,16 +26,21 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const [allNews, siteSettings, homePageData, featuredSponsors, { hasAnnouncements }] =
-		await Promise.all([
-			getLatestArticles(7),
-			getSiteSettings(),
-			getHomePageData(),
-			getFeaturedSponsors(3),
-			getActiveAnnouncements()
-		]);
-
-	const [featuredArticle, secondArticle, ...news] = allNews;
+	const [
+		carouselArticles,
+		generalNews,
+		siteSettings,
+		homePageData,
+		featuredSponsors,
+		{ hasAnnouncements }
+	] = await Promise.all([
+		getCarouselArticles(),
+		getLatestArticles(5),
+		getSiteSettings(),
+		getHomePageData(),
+		getFeaturedSponsors(3),
+		getActiveAnnouncements()
+	]);
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
 	const socialLinks = buildSocialLinks({
@@ -64,11 +70,11 @@ export default async function Home() {
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className="lg:w-2/3">
-							<HeroCarousel articles={[featuredArticle, secondArticle].filter(Boolean)} />
+							<HeroCarousel articles={carouselArticles} />
 						</div>
 
 						{/* News Panel - Right Side */}
-						<NewsPanel articles={news} />
+						<NewsPanel articles={generalNews} />
 					</div>
 				</div>
 

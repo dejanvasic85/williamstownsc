@@ -48,9 +48,7 @@ Pages:
 - News
   - [x] Article page
     - [ ] Similar news
-  - [ ] Match report page?
-    - [ ] Previous / next week links
-  - [ ] Add homepage carousel flag to news articles
+  - [x] Add homepage carousel flag to news articles
 - Football
   - [x] Team listings
     - [x] Seniors, reserves + women with profiles
