@@ -14,14 +14,15 @@ export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	excerpt: string;
 };
 
-export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && featured == true && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...3] {
+export async function getCarouselArticles(): Promise<TransformedNewsArticle[]> {
+	const query = `*[_type == "newsArticle" && featured == true && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
 		_id,
 		title,
 		slug,
 		publishedAt,
 		featuredImage,
-		excerpt
+		excerpt,
+		featured
 	}`;
 
 	const articles = await client.fetch<NewsArticle[]>(
@@ -42,7 +43,8 @@ export async function getFeaturedArticles(): Promise<TransformedNewsArticle[]> {
 					: '',
 				alt: article.featuredImage?.alt
 			},
-			excerpt: article.excerpt || ''
+			excerpt: article.excerpt || '',
+			featured: article.featured || false
 		})
 	);
 }
@@ -54,7 +56,8 @@ export async function getLatestArticles(limit: number = 3): Promise<TransformedN
 		slug,
 		publishedAt,
 		featuredImage,
-		excerpt
+		excerpt,
+		featured
 	}`;
 
 	const articles = await client.fetch<NewsArticle[]>(
@@ -75,7 +78,8 @@ export async function getLatestArticles(limit: number = 3): Promise<TransformedN
 					: '',
 				alt: article.featuredImage?.alt
 			},
-			excerpt: article.excerpt || ''
+			excerpt: article.excerpt || '',
+			featured: article.featured || false
 		})
 	);
 }
