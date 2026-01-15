@@ -14,10 +14,30 @@ export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	excerpt: string;
 };
 
-const CAROUSEL_ARTICLE_LIMIT = 10;
+export type NewsFilters = {
+	limit?: number;
+	featured?: boolean | 'exclude';
+	imageSize?: 'small' | 'large';
+};
 
-export async function getCarouselArticles(): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && featured == true && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${CAROUSEL_ARTICLE_LIMIT}] {
+const imageSizeConfigValue = {
+	small: { width: 800, height: 600 },
+	large: { width: 1920, height: 1080 }
+};
+
+export async function getNewsArticles(
+	filters: NewsFilters = {}
+): Promise<TransformedNewsArticle[]> {
+	const { limit = 20, featured, imageSize = 'small' } = filters;
+
+	let featuredFilter = '';
+	if (featured === true) {
+		featuredFilter = ' && featured == true';
+	} else if (featured === 'exclude') {
+		featuredFilter = ' && featured != true';
+	}
+
+	const query = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())${featuredFilter}] | order(publishedAt desc) [0...$limit] {
 		_id,
 		title,
 		slug,
@@ -29,9 +49,11 @@ export async function getCarouselArticles(): Promise<TransformedNewsArticle[]> {
 
 	const articles = await client.fetch<NewsArticle[]>(
 		query,
-		{},
+		{ limit },
 		{ next: { tags: ['newsArticle'] } }
 	);
+
+	const { width, height } = imageSizeConfigValue[imageSize];
 
 	return articles.map(
 		(article): TransformedNewsArticle => ({
@@ -41,77 +63,7 @@ export async function getCarouselArticles(): Promise<TransformedNewsArticle[]> {
 			publishedAt: article.publishedAt || '',
 			featuredImage: {
 				url: article.featuredImage
-					? urlFor(article.featuredImage).width(1920).height(1080).url()
-					: '',
-				alt: article.featuredImage?.alt
-			},
-			excerpt: article.excerpt || '',
-			featured: article.featured || false
-		})
-	);
-}
-
-export async function getLatestArticles(limit: number = 3): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${limit}] {
-		_id,
-		title,
-		slug,
-		publishedAt,
-		featuredImage,
-		excerpt,
-		featured
-	}`;
-
-	const articles = await client.fetch<NewsArticle[]>(
-		query,
-		{},
-		{ next: { tags: ['newsArticle'] } }
-	);
-
-	return articles.map(
-		(article): TransformedNewsArticle => ({
-			_id: article._id,
-			title: article.title || '',
-			slug: article.slug?.current || '',
-			publishedAt: article.publishedAt || '',
-			featuredImage: {
-				url: article.featuredImage
-					? urlFor(article.featuredImage).width(800).height(600).url()
-					: '',
-				alt: article.featuredImage?.alt
-			},
-			excerpt: article.excerpt || '',
-			featured: article.featured || false
-		})
-	);
-}
-
-export async function getAllArticles(limit: number = 20): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${limit}] {
-		_id,
-		title,
-		slug,
-		publishedAt,
-		featuredImage,
-		excerpt,
-		featured
-	}`;
-
-	const articles = await client.fetch<NewsArticle[]>(
-		query,
-		{},
-		{ next: { tags: ['newsArticle'] } }
-	);
-
-	return articles.map(
-		(article): TransformedNewsArticle => ({
-			_id: article._id,
-			title: article.title || '',
-			slug: article.slug?.current || '',
-			publishedAt: article.publishedAt || '',
-			featuredImage: {
-				url: article.featuredImage
-					? urlFor(article.featuredImage).width(800).height(600).url()
+					? urlFor(article.featuredImage).width(width).height(height).url()
 					: '',
 				alt: article.featuredImage?.alt
 			},

@@ -1,8 +1,8 @@
 export { getAnnouncements } from './announcement';
 export type { AnnouncementData, AnnouncementType } from './announcement';
 
-export { getAllArticles, getArticleBySlug, getCarouselArticles, getLatestArticles } from './news';
-export type { TransformedNewsArticle } from './news';
+export { getNewsArticles, getArticleBySlug } from './news';
+export type { TransformedNewsArticle, NewsFilters } from './news';
 
 export { getAllSponsors, getFeaturedSponsors } from './sponsors';
 export type { TransformedSponsor } from './sponsors';
