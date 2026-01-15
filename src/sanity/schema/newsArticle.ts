@@ -29,6 +29,13 @@ export const newsArticle = defineType({
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
+			name: 'expiryDate',
+			title: 'Expiry Date',
+			description:
+				'Optional date when this article should no longer be displayed. Leave empty for no expiration.',
+			type: 'datetime'
+		}),
+		defineField({
 			name: 'featuredImage',
 			title: 'Featured Image',
 			type: 'image',
