@@ -4,6 +4,7 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { CoachCard } from '@/components/teams/CoachCard';
 import { PlayerGrid } from '@/components/teams/PlayerGrid';
+import { getSiteSettings } from '@/lib/content';
 import { teamDetailQuery } from '@/lib/content/teamDetail';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { client } from '@/sanity/lib/client';
@@ -26,19 +27,20 @@ async function getTeam(slug: string): Promise<Team | null> {
 export async function generateMetadata({ params }: TeamDetailPageProps): Promise<Metadata> {
 	const { slug } = await params;
 	const team = await getTeam(slug);
+	const siteSettings = await getSiteSettings();
 
 	if (!team) {
 		return {
-			title: 'Team Not Found | Williamstown SC'
+			title: `Team Not Found | ${siteSettings.clubName}`
 		};
 	}
 
 	return {
-		title: `${team.name} | Williamstown SC`,
-		description: `Meet the ${team.name} squad, coaching staff, and players at Williamstown SC.`,
+		title: `${team.name} | ${siteSettings.clubName}`,
+		description: `Meet the ${team.name} squad, coaching staff, and players at ${siteSettings.clubName}.`,
 		openGraph: {
-			title: `${team.name} | Williamstown SC`,
-			description: `Meet the ${team.name} squad, coaching staff, and players at Williamstown SC.`,
+			title: `${team.name} | ${siteSettings.clubName}`,
+			description: `Meet the ${team.name} squad, coaching staff, and players at ${siteSettings.clubName}.`,
 			images: team.photo ? [{ url: team.photo.asset.url }] : []
 		}
 	};

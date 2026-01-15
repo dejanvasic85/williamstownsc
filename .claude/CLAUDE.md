@@ -60,3 +60,11 @@
 
 - Ensure to find the latest version of a package before adding it
 - Avoid using deprecated packages or APIs
+
+# Plan creation
+
+- Store plans as markdown files in `docs/plans/`.
+- Each plan must include:
+  - Purpose: clarify the intended outcome and scope.
+  - Requirements: list constraints, dependencies, and acceptance criteria.
+  - Todo list: ordered, actionable tasks (checkboxes encouraged) with owners/status when known.
