@@ -53,7 +53,8 @@ Pages:
   - [x] Team listings
     - [x] Seniors, reserves + women with profiles
     - [x] All other teams with coaches details and other useful information like start / end dates
-    - [ ] Fixtures
+    - [x] Matches page for teams showing the fixtures
+    - [ ] Next senior match fixture on the homepage
   - [x] Programs (Summer programs, Mino roos)
   - [x] Merchandise page
 - Club
