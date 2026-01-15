@@ -55,6 +55,7 @@ export async function searchContent(searchTerm: string): Promise<SearchResult[]>
 	const searchQuery = groq`
 		*[
 			_type in ["newsArticle", "team", "program", ${pageTypes.map((t) => `"${t}"`).join(', ')}]
+			&& (_type != "newsArticle" || (publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())))
 			&& (
 				title match $searchTerm ||
 				name match $searchTerm ||
