@@ -7,6 +7,12 @@
 - DaisyUI for components like navbar, buttons, dialog and forms
 - Lucide for icons
 
+## Plan Mode
+
+- Make the plan extremely concise. Sacrifice grammar for the sake of concision.
+- At the end of each plan, give me a list of unresolved questions to answer, if any.
+- Create plans in docs/plans as markdown files and ensure to update when completing tasks
+
 # Technical requirements
 
 - SEO friendly titles, descriptions and meta tags for search performance
