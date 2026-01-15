@@ -24,19 +24,21 @@ The original website is at https://www.williamstownsc.com/
 - [x] Cache invalidation on content publish
 - [x] Dark theme
 - [ ] Accessibility audit and fixes
-- SEO
-  - [x] Remove the Keywords because it creates confusion
-  - [x] Social Share Title falls back to meta Title
-  - [x] Social Share Description – Same logic, the fallback is fine
-  - [x] Dynamic sitemap generation with static and CMS content
-  - [ ] robots.txt configuration for search engine crawlers
-  - [ ] RSS/Atom feed for news articles
-  - [ ] Breadcrumb navigation with BreadcrumbList schema
-  - [ ] Web Vitals monitoring and performance tracking
-  - [ ] URL redirects configuration for legacy paths
-  - [ ] Enhanced unique meta descriptions for all pages
-  - [ ] Structured data for committee/staff (Person schema)
-  - [ ] Code splitting and lazy loading optimization
+
+SEO:
+
+- [x] Remove the Keywords because it creates confusion
+- [x] Social Share Title falls back to meta Title
+- [x] Social Share Description – Same logic, the fallback is fine
+- [x] Dynamic sitemap generation with static and CMS content
+- [ ] robots.txt configuration for search engine crawlers
+- [ ] RSS/Atom feed for news articles
+- [ ] Breadcrumb navigation with BreadcrumbList schema
+- [ ] Web Vitals monitoring and performance tracking
+- [ ] URL redirects configuration for legacy paths
+- [ ] Enhanced unique meta descriptions for all pages
+- [ ] Structured data for committee/staff (Person schema)
+- [ ] Code splitting and lazy loading optimization
 
 Pages:
 
@@ -47,7 +49,6 @@ Pages:
 
 - News
   - [x] Article page
-    - [ ] Similar news
   - [x] Add homepage carousel flag to news articles
 - Football
   - [x] Team listings
@@ -71,18 +72,14 @@ Pages:
 - General
   - [x] Terms and conditions
   - [x] Privacy policy
-  - [ ] Accessibility statement (what should we aim for? Double A?)
+  - [x] Accessibility statement
 
 ### Nice to have
 
 The following is a list of things we may be not need on initial launch and can come later:
 
-- [ ] Automatic team Fixtures
-- [ ] Match reports
 - [ ] Search
+- [ ] Automatic team Fixtures
 - [ ] Publish news to facebook, instagram
-- [ ] Publishing schedule, results and tables
-- [ ] Senior team match reports with You Tube embed of highlights or full match
-- [ ] Space for links and general info on Regulations and rules
 
 ---
