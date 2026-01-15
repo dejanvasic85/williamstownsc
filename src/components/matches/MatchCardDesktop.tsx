@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { MapPin } from 'lucide-react';
 import type { EnrichedFixture } from '@/types/matches';
 
 type MatchCardDesktopProps = {
