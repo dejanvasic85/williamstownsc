@@ -11,10 +11,9 @@ import {
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
 import { getActiveAnnouncements } from '@/lib/announcements';
 import {
-	getCarouselArticles,
 	getFeaturedSponsors,
 	getHomePageData,
-	getLatestArticles,
+	getNewsArticles,
 	getSiteSettings
 } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
@@ -34,8 +33,8 @@ export default async function Home() {
 		featuredSponsors,
 		{ hasAnnouncements }
 	] = await Promise.all([
-		getCarouselArticles(),
-		getLatestArticles(5),
+		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
+		getNewsArticles({ limit: 5, featured: 'exclude', imageSize: 'small' }),
 		getSiteSettings(),
 		getHomePageData(),
 		getFeaturedSponsors(3),

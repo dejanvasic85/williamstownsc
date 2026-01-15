@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { PageContainer } from '@/components/layout';
 import { NewsCard } from '@/components/news';
-import { getAllArticles } from '@/lib/content';
+import { getNewsArticles } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function NewsPage() {
-	const articles = await getAllArticles(20);
+	const articles = await getNewsArticles({ limit: 20 });
 
 	return (
 		<PageContainer
