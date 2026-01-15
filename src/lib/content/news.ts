@@ -14,8 +14,10 @@ export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	excerpt: string;
 };
 
+const CAROUSEL_ARTICLE_LIMIT = 10;
+
 export async function getCarouselArticles(): Promise<TransformedNewsArticle[]> {
-	const query = `*[_type == "newsArticle" && featured == true && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
+	const query = `*[_type == "newsArticle" && featured == true && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...${CAROUSEL_ARTICLE_LIMIT}] {
 		_id,
 		title,
 		slug,
