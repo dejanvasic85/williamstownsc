@@ -4,6 +4,7 @@ import {
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroCarousel,
+	MatchCountdownSection,
 	MobileHeader,
 	NewsPanel,
 	SponsorsSection
@@ -17,6 +18,7 @@ import {
 	getSiteSettings
 } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
+import { getNextMatch } from '@/lib/matches/matchService';
 import { buildSocialLinks } from '@/lib/socialLinks';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -31,14 +33,16 @@ export default async function Home() {
 		siteSettings,
 		homePageData,
 		featuredSponsors,
-		{ hasAnnouncements }
+		{ hasAnnouncements },
+		nextMatch
 	] = await Promise.all([
 		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
 		getNewsArticles({ limit: 5, featured: 'exclude', imageSize: 'small' }),
 		getSiteSettings(),
 		getHomePageData(),
 		getFeaturedSponsors(3),
-		getActiveAnnouncements()
+		getActiveAnnouncements(),
+		getNextMatch('seniors-mens')
 	]);
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
@@ -78,7 +82,8 @@ export default async function Home() {
 				</div>
 
 				<div className="container mx-auto">
-					<div className="grid items-stretch gap-12 lg:grid-cols-2">
+					<div className="grid items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3">
+						<MatchCountdownSection match={nextMatch} teamSlug="seniors-mens" />
 						<SponsorsSection sponsors={featuredSponsors} />
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}

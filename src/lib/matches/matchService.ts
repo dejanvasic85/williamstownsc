@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { isBefore, parseISO } from 'date-fns';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
 	getClubs as getClubsFromService
@@ -8,6 +9,10 @@ import { fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
+
+const teamExternalIds: Record<string, string> = {
+	'seniors-mens': '6lNbpDpwdx'
+} as const;
 
 export function getClubs(): Club[] {
 	return getClubsFromService();
@@ -72,4 +77,46 @@ export async function getFixturesForTeam(slug: string): Promise<{
 export async function hasFixtures(slug: string): Promise<boolean> {
 	const fixtureData = await loadFixture(slug);
 	return Boolean(fixtureData?.fixtures.length);
+}
+
+export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
+	const fixtureData = await loadFixture(teamSlug);
+
+	if (!fixtureData) {
+		return null;
+	}
+
+	const clubExternalId = teamExternalIds[teamSlug];
+	if (!clubExternalId) {
+		return null;
+	}
+
+	const now = new Date();
+
+	const upcomingFixturesWithDate = fixtureData.fixtures
+		.filter((fixture) => {
+			const isClubMatch =
+				fixture.homeTeamId === clubExternalId || fixture.awayTeamId === clubExternalId;
+
+			if (!isClubMatch) {
+				return false;
+			}
+
+			const matchDateTime = parseISO(`${fixture.date}T${fixture.time}`);
+			return isBefore(now, matchDateTime);
+		})
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseISO(`${fixture.date}T${fixture.time}`)
+		}));
+
+	if (upcomingFixturesWithDate.length === 0) {
+		return null;
+	}
+
+	upcomingFixturesWithDate.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
+
+	const nextFixture = upcomingFixturesWithDate[0].fixture;
+	const enriched = enrichFixtures([nextFixture]);
+	return enriched[0];
 }

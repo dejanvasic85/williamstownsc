@@ -32,7 +32,7 @@ Pages:
     - [x] Seniors, reserves + women with profiles
     - [x] All other teams with coaches details and other useful information like start / end dates
     - [x] Matches page for teams showing the fixtures
-    - [ ] Next senior match fixture on the homepage
+    - [x] Next senior match fixture on the homepage
   - [x] Programs (Summer programs, Mino roos)
   - [x] Merchandise page
 - Club
@@ -51,6 +51,11 @@ Pages:
   - [x] Terms and conditions
   - [x] Privacy policy
   - [x] Accessibility statement
+
+White label solution
+
+- [ ] Custom branding and logo
+- [ ] Remove all the hardcoded Williamstown data
 
 Technical Items:
 
