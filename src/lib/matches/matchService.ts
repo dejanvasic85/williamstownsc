@@ -10,8 +10,8 @@ import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matche
 
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
 
-const teamExternalIds = {
-	seniorsMens: '6lNbpDpwdx'
+const teamExternalIds: Record<string, string> = {
+	'seniors-mens': '6lNbpDpwdx'
 } as const;
 
 export function getClubs(): Club[] {
@@ -86,32 +86,37 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 		return null;
 	}
 
-	const clubExternalId = teamExternalIds.seniorsMens;
-	const now = new Date();
-
-	const upcomingFixtures = fixtureData.fixtures.filter((fixture) => {
-		const isClubMatch =
-			fixture.homeTeamId === clubExternalId || fixture.awayTeamId === clubExternalId;
-
-		if (!isClubMatch) {
-			return false;
-		}
-
-		const matchDateTime = parseISO(`${fixture.date}T${fixture.time}`);
-		return isBefore(now, matchDateTime);
-	});
-
-	if (upcomingFixtures.length === 0) {
+	const clubExternalId = teamExternalIds[teamSlug];
+	if (!clubExternalId) {
 		return null;
 	}
 
-	upcomingFixtures.sort((a, b) => {
-		const dateTimeA = parseISO(`${a.date}T${a.time}`);
-		const dateTimeB = parseISO(`${b.date}T${b.time}`);
-		return dateTimeA.getTime() - dateTimeB.getTime();
-	});
+	const now = new Date();
 
-	const nextFixture = upcomingFixtures[0];
+	const upcomingFixturesWithDate = fixtureData.fixtures
+		.filter((fixture) => {
+			const isClubMatch =
+				fixture.homeTeamId === clubExternalId || fixture.awayTeamId === clubExternalId;
+
+			if (!isClubMatch) {
+				return false;
+			}
+
+			const matchDateTime = parseISO(`${fixture.date}T${fixture.time}`);
+			return isBefore(now, matchDateTime);
+		})
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseISO(`${fixture.date}T${fixture.time}`)
+		}));
+
+	if (upcomingFixturesWithDate.length === 0) {
+		return null;
+	}
+
+	upcomingFixturesWithDate.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
+
+	const nextFixture = upcomingFixturesWithDate[0].fixture;
 	const enriched = enrichFixtures([nextFixture]);
 	return enriched[0];
 }

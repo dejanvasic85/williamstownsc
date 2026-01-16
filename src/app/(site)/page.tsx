@@ -82,8 +82,8 @@ export default async function Home() {
 				</div>
 
 				<div className="container mx-auto">
-					<div className="grid items-stretch gap-12 lg:grid-cols-3">
-						<MatchCountdownSection match={nextMatch} />
+					<div className="grid items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3">
+						<MatchCountdownSection match={nextMatch} teamSlug="seniors-mens" />
 						<SponsorsSection sponsors={featuredSponsors} />
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}
