@@ -10,6 +10,10 @@ import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matche
 
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
 
+const teamExternalIds = {
+	seniorsMens: '6lNbpDpwdx'
+} as const;
+
 export function getClubs(): Club[] {
 	return getClubsFromService();
 }
@@ -82,15 +86,14 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 		return null;
 	}
 
-	const williamstownExternalId = '6lNbpDpwdx';
+	const clubExternalId = teamExternalIds.seniorsMens;
 	const now = new Date();
 
 	const upcomingFixtures = fixtureData.fixtures.filter((fixture) => {
-		const isWilliamstownMatch =
-			fixture.homeTeamId === williamstownExternalId ||
-			fixture.awayTeamId === williamstownExternalId;
+		const isClubMatch =
+			fixture.homeTeamId === clubExternalId || fixture.awayTeamId === clubExternalId;
 
-		if (!isWilliamstownMatch) {
+		if (!isClubMatch) {
 			return false;
 		}
 
