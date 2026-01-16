@@ -11,34 +11,12 @@ The original website is at https://www.williamstownsc.com/
 - [x] Layout
   - [x] Navbar (mobile and desktop)
     - [x] Submenu
-    - [ ] Remove Events menu item and replace with Key Dates
+    - [x] Remove Events menu item and replace with Key Dates
   - [x] Footer
   - [x] Favicon
 - [x] Links to socials
 - [x] Custom not found page
 - [x] Custom error page
-- Google structured data
-  - [x] Add organisation @type": "SportsOrganization" to the root layout
-  - [x] Refactor the getMetadata because it's atrocious
-  - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
-- [x] Cache invalidation on content publish
-- [x] Dark theme
-- [ ] Accessibility audit and fixes
-
-SEO:
-
-- [x] Remove the Keywords because it creates confusion
-- [x] Social Share Title falls back to meta Title
-- [x] Social Share Description – Same logic, the fallback is fine
-- [x] Dynamic sitemap generation with static and CMS content
-- [ ] robots.txt configuration for search engine crawlers
-- [ ] RSS/Atom feed for news articles
-- [ ] Breadcrumb navigation with BreadcrumbList schema
-- [ ] Web Vitals monitoring and performance tracking
-- [ ] URL redirects configuration for legacy paths
-- [ ] Enhanced unique meta descriptions for all pages
-- [ ] Structured data for committee/staff (Person schema)
-- [ ] Code splitting and lazy loading optimization
 
 Pages:
 
@@ -46,7 +24,6 @@ Pages:
   - [x] Hero section, news, football and sponsors
   - [x] Key dates section
   - [x] Important announcements like ground closures section
-
 - News
   - [x] Article page
   - [x] Add homepage carousel flag to news articles
@@ -79,6 +56,30 @@ White label solution
 
 - [ ] Custom branding and logo
 - [ ] Remove all the hardcoded Williamstown data
+
+Technical Items:
+
+- [x] Cache invalidation on content publish
+- [x] Dark theme
+- [ ] Accessibility audit and fixes
+
+SEO:
+
+- [x] Remove the Keywords because it creates confusion
+- [x] Social Share Title falls back to meta Title
+- [x] Social Share Description – Same logic, the fallback is fine
+- [x] Dynamic sitemap generation with static and CMS content
+- [x] Add organisation @type": "SportsOrganization" to the root layout
+- [x] Refactor the getMetadata because it's atrocious
+- [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
+- [ ] robots.txt configuration for search engine crawlers
+- [ ] RSS/Atom feed for news articles
+- [ ] Breadcrumb navigation with BreadcrumbList schema
+- [ ] Web Vitals monitoring and performance tracking
+- [ ] URL redirects configuration for legacy paths
+- [ ] Enhanced unique meta descriptions for all pages
+- [ ] Structured data for committee/staff (Person schema)
+- [ ] Code splitting and lazy loading optimization
 
 ### Nice to have
 

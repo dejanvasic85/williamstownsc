@@ -34,7 +34,7 @@
 		"react-dom": "19.2.3",
 		"react-hook-form": "7.71.1",
 		"sanity": "5.4.0",
-		"styled-components": "6.3.6",
+		"styled-components": "6.3.8",
 		"zod": "4.3.5"
 	},
 	"devDependencies": {

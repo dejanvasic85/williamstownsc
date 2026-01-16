@@ -22,5 +22,5 @@ export const navItems = [
 	},
 	{ name: 'Sponsors', href: '/sponsors' },
 	{ name: 'Contact', href: '/contact' },
-	{ name: 'Events', href: '/events' }
+	{ name: 'Key Dates', href: '/key-dates' }
 ];
