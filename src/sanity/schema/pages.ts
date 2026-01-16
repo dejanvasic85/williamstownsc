@@ -109,7 +109,6 @@ export const committeePage = createEditablePage('committeePage', 'Committee Page
 		}
 	]
 });
-export const eventsPage = createEditablePage('eventsPage', 'Events Page');
 export const locationsPage = createEditablePage('locationsPage', 'Locations Page');
 export const merchandisePage = createEditablePage('merchandisePage', 'Merchandise Page');
 export const newsPage = createEditablePage('newsPage', 'News Page');

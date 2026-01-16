@@ -11,7 +11,6 @@ export type PageName =
 	| 'accessibilityPage'
 	| 'committeePage'
 	| 'contactPage'
-	| 'eventsPage'
 	| 'homePage'
 	| 'keyDatesPage'
 	| 'locationsPage'
