@@ -27,6 +27,7 @@ Pages:
 - News
   - [x] Article page
   - [x] Add homepage carousel flag to news articles
+  - [ ] Magazine-style hierarchical layout (see docs/plans/news-layout-improvements.md)
 - Football
   - [x] Team listings
     - [x] Seniors, reserves + women with profiles

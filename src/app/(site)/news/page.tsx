@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { PageContainer } from '@/components/layout';
-import { NewsCard } from '@/components/news';
+import { NewsCard, NewsHero } from '@/components/news';
 import { getNewsArticles } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
 
@@ -11,25 +11,60 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function NewsPage() {
 	const articles = await getNewsArticles({ limit: 20 });
 
+	const heroArticle = articles[0];
+	const secondaryArticles = articles.slice(1, 4);
+	const remainingArticles = articles.slice(4);
+
 	return (
 		<PageContainer
 			heading="News & Matches"
 			intro="Stay up to date with the latest news, match reports, and updates from Williamstown SC"
 		>
 			{articles.length > 0 && (
-				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-					{articles.map((article) => (
-						<NewsCard
-							key={article._id}
-							slug={article.slug}
-							title={article.title}
-							excerpt={article.excerpt}
-							publishedAt={article.publishedAt}
-							featuredImage={article.featuredImage}
-							featured={article.featured}
+				<>
+					{heroArticle && (
+						<NewsHero
+							key={heroArticle._id}
+							slug={heroArticle.slug}
+							title={heroArticle.title}
+							excerpt={heroArticle.excerpt}
+							publishedAt={heroArticle.publishedAt}
+							featuredImage={heroArticle.featuredImage}
 						/>
-					))}
-				</div>
+					)}
+
+					{secondaryArticles.length > 0 && (
+						<div className="mb-8 grid grid-cols-1 gap-6 md:mb-12 md:grid-cols-2">
+							{secondaryArticles.map((article) => (
+								<NewsCard
+									key={article._id}
+									slug={article.slug}
+									title={article.title}
+									excerpt={article.excerpt}
+									publishedAt={article.publishedAt}
+									featuredImage={article.featuredImage}
+									featured={article.featured}
+								/>
+							))}
+						</div>
+					)}
+
+					{remainingArticles.length > 0 && (
+						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+							{remainingArticles.map((article) => (
+								<NewsCard
+									key={article._id}
+									slug={article.slug}
+									title={article.title}
+									excerpt={article.excerpt}
+									publishedAt={article.publishedAt}
+									featuredImage={article.featuredImage}
+									featured={article.featured}
+								/>
+							))}
+						</div>
+					)}
+				</>
 			)}
 
 			{articles.length === 0 && (
