@@ -31,6 +31,22 @@ type KeyDatesPageData = {
 	};
 };
 
+export async function getNextKeyDate(): Promise<KeyDateItem | null> {
+	const today = new Date().toISOString().split('T')[0];
+
+	const data = await client.fetch<KeyDateItem | null>(
+		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0].keyDates[date >= $today] | order(date asc)[0]{
+			title,
+			date,
+			description
+		}`,
+		{ today },
+		{ next: { tags: ['page', 'keyDatesPage'] } }
+	);
+
+	return data;
+}
+
 export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
 	const data = await client.fetch<KeyDatesPageData>(
 		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0]{
