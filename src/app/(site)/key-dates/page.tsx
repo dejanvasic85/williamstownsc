@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Calendar } from 'lucide-react';
-import { AddToCalendarButton } from '@/components/KeyDates';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { KeyDateItem, getKeyDatesPageData } from '@/lib/content';
@@ -34,9 +33,6 @@ function KeyDateCard({ item }: { item: KeyDateItem }) {
 					<p className="text-base-content/70 mt-1 text-sm">{item.description}</p>
 				)}
 				<p className="text-base-content/50 mt-1 text-xs">{year}</p>
-			</div>
-			<div className="shrink-0">
-				<AddToCalendarButton title={item.title} date={item.date} description={item.description} />
 			</div>
 		</div>
 	);

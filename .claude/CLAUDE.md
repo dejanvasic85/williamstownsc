@@ -9,9 +9,10 @@
 
 ## Plan Mode
 
+- We use docs/todo.md for organising higher level features and tasks so we should keep this up to date when we complete work.
 - Make the plan extremely concise. Sacrifice grammar for the sake of concision.
 - At the end of each plan, give me a list of unresolved questions to answer, if any.
-- Create plans in docs/plans as markdown files and ensure to update when completing tasks
+- Create plans in docs/plans as markdown files and ensure to update when completing tasks.
 
 # Technical requirements
 
