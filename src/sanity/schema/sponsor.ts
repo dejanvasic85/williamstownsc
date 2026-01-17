@@ -31,14 +31,8 @@ export const sponsor = defineType({
 		defineField({
 			name: 'type',
 			title: 'Sponsor Type',
-			type: 'string',
-			options: {
-				list: [
-					{ title: 'Principal', value: 'Principal' },
-					{ title: 'Major', value: 'Major' },
-					{ title: 'Community Partner', value: 'Community Partner' }
-				]
-			},
+			type: 'reference',
+			to: [{ type: 'sponsorType' }],
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
