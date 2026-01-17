@@ -12,8 +12,7 @@ export default async function NewsPage() {
 	const articles = await getNewsArticles({ limit: 20 });
 
 	const heroArticle = articles[0];
-	const secondaryArticles = articles.slice(1, 4);
-	const remainingArticles = articles.slice(4);
+	const gridArticles = articles.slice(1);
 
 	return (
 		<PageContainer
@@ -33,25 +32,9 @@ export default async function NewsPage() {
 						/>
 					)}
 
-					{secondaryArticles.length > 0 && (
-						<div className="mb-8 grid grid-cols-1 gap-6 md:mb-12 md:grid-cols-2">
-							{secondaryArticles.map((article) => (
-								<NewsCard
-									key={article._id}
-									slug={article.slug}
-									title={article.title}
-									excerpt={article.excerpt}
-									publishedAt={article.publishedAt}
-									featuredImage={article.featuredImage}
-									featured={article.featured}
-								/>
-							))}
-						</div>
-					)}
-
-					{remainingArticles.length > 0 && (
-						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-							{remainingArticles.map((article) => (
+					{gridArticles.length > 0 && (
+						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+							{gridArticles.map((article) => (
 								<NewsCard
 									key={article._id}
 									slug={article.slug}

@@ -25,34 +25,30 @@ export function NewsHero({ slug, title, excerpt, publishedAt, featuredImage }: N
 
 	return (
 		<Link href={`/news/${slug}`} className="group mb-8 block md:mb-12">
-			<article className="relative overflow-hidden rounded-lg bg-linear-to-br from-blue-900 to-slate-950 shadow-2xl">
-				<div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-blue-800/20 blur-3xl" />
-				<div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-950/30 blur-3xl" />
-
-				<div className="relative grid gap-0 md:grid-cols-2">
-					<figure className="relative aspect-video overflow-hidden md:aspect-auto md:h-full">
+			<article className="bg-surface overflow-hidden rounded-lg shadow-lg transition-shadow hover:shadow-xl">
+				<div className="grid gap-0 md:grid-cols-5">
+					<figure className="relative aspect-video overflow-hidden md:col-span-2 md:aspect-auto md:h-full">
 						<Image
 							src={featuredImage.url}
 							alt={featuredImage.alt || title}
 							fill
 							className="object-cover transition-transform duration-500 group-hover:scale-105"
-							sizes="(max-width: 768px) 100vw, 50vw"
+							sizes="(max-width: 768px) 100vw, 40vw"
 							priority
 						/>
 					</figure>
 
-					<div className="relative flex flex-col justify-center p-8 text-white md:p-12">
-						<div className="bg-secondary mb-4 inline-block w-fit rounded px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
-							Featured
-						</div>
-						<h2 className="mb-4 text-3xl leading-tight font-bold md:text-4xl lg:text-5xl">
+					<div className="flex flex-col justify-center p-6 md:col-span-3 md:p-10">
+						<h2 className="mb-4 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl">
 							{title}
 						</h2>
-						<p className="mb-6 text-lg leading-relaxed text-white/90 md:text-xl">{excerpt}</p>
+						<p className="text-base-content-secondary mb-4 text-base leading-relaxed md:text-lg">
+							{excerpt}
+						</p>
 						<time
 							dateTime={publishedDate.toISOString()}
 							title={fullDate}
-							className="text-sm font-bold text-white/80"
+							className="text-base-content-secondary text-sm font-medium"
 						>
 							{relativeDate}
 						</time>
