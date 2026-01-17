@@ -64,22 +64,22 @@ Enhance the news page beyond a simple card grid by implementing a modern magazin
 
 ### Acceptance Criteria
 
-- [ ] Featured article displays prominently at top
-- [ ] Magazine-style grid shows visual hierarchy
-- [ ] Responsive design works on mobile, tablet, desktop
-- [ ] All articles remain accessible and readable
-- [ ] No performance degradation
-- [ ] Passes linting, formatting, and type checks
-- [ ] Maintains existing SEO metadata
+- [x] Featured article displays prominently at top
+- [x] Magazine-style grid shows visual hierarchy
+- [x] Responsive design works on mobile, tablet, desktop
+- [x] All articles remain accessible and readable
+- [x] No performance degradation
+- [x] Passes linting, formatting, and type checks
+- [x] Maintains existing SEO metadata
 
 ## Implementation Tasks
 
-- [ ] Create `NewsHero` component for featured article display
-- [ ] Create `NewsMagazineGrid` layout component for hierarchical grid
-- [ ] Update news page to use new layout structure
-- [ ] Test responsive behavior across breakpoints
-- [ ] Run lint, format, and type checks
-- [ ] Verify accessibility and performance
+- [x] Create `NewsHero` component for featured article display
+- [x] Simplify NewsHero styling to match design specs (removed gradient backgrounds)
+- [x] Update news page to use unified grid layout (4 cols xl, 3 cols lg, 2 cols md, 1 col mobile)
+- [x] Test responsive behavior across breakpoints
+- [x] Run lint, format, and type checks
+- [x] Verify accessibility and performance
 
 ## Design Approach
 
