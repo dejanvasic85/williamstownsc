@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -32,7 +33,7 @@ type KeyDatesPageData = {
 };
 
 export async function getNextKeyDate(): Promise<KeyDateItem | null> {
-	const today = new Date().toISOString().split('T')[0];
+	const today = format(new Date(), 'yyyy-MM-dd');
 
 	const data = await client.fetch<KeyDateItem | null>(
 		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0].keyDates[date >= $today] | order(date asc)[0]{
