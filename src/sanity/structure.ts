@@ -9,6 +9,79 @@ export const structure = (S: StructureBuilder) =>
 				.child(S.document().schemaType('siteSettings').documentId('siteSettings')),
 			S.divider(),
 
+			// Form Submissions section
+			S.listItem()
+				.title('Form Submissions')
+				.child(
+					S.list()
+						.title('Form Submissions')
+						.items([
+							S.listItem()
+								.title('All Submissions')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('All Submissions')
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								),
+							S.listItem()
+								.title('New Submissions')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('New Submissions')
+										.filter('status == $status')
+										.params({ status: 'new' })
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								),
+							S.divider(),
+							S.listItem()
+								.title('Player Enquiries')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('Player Enquiries')
+										.filter('contactType == $contactType')
+										.params({ contactType: 'player' })
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								),
+							S.listItem()
+								.title('Coach Enquiries')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('Coach Enquiries')
+										.filter('contactType == $contactType')
+										.params({ contactType: 'coach' })
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								),
+							S.listItem()
+								.title('Sponsorship Enquiries')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('Sponsorship Enquiries')
+										.filter('contactType == $contactType')
+										.params({ contactType: 'sponsor' })
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								),
+							S.listItem()
+								.title('Program Enquiries')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('Program Enquiries')
+										.filter('contactType == $contactType')
+										.params({ contactType: 'program' })
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								),
+							S.listItem()
+								.title('General Enquiries')
+								.child(
+									S.documentTypeList('formSubmission')
+										.title('General Enquiries')
+										.filter('contactType == $contactType')
+										.params({ contactType: 'general' })
+										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+								)
+						])
+				),
+			S.divider(),
+
 			// Pages section
 			S.listItem()
 				.title('Pages')
@@ -71,6 +144,7 @@ export const structure = (S: StructureBuilder) =>
 				(listItem) =>
 					![
 						'siteSettings',
+						'formSubmission',
 						'aboutPage',
 						'accessibilityPage',
 						'committeePage',
