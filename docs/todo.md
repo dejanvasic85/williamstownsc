@@ -62,7 +62,8 @@ Technical Items:
 
 - [x] Cache invalidation on content publish
 - [x] Dark theme
-- [ ] Accessibility audit and fixes
+- [x] Accessibility audit and fixes
+- [x] Google analytics integration
 
 SEO:
 
