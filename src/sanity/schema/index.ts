@@ -1,6 +1,7 @@
 import { announcement } from './announcement';
 import { coach } from './coach';
 import { committeeMember } from './committeeMember';
+import { formSubmission } from './formSubmission';
 import { newsArticle } from './newsArticle';
 // Objects
 import { contactTypeContent } from './objects/contactTypeContent';
@@ -57,6 +58,7 @@ export const schemaTypes = [
 
 	// Content types
 	announcement,
+	formSubmission,
 	newsArticle,
 	person,
 	team,

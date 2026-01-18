@@ -7,6 +7,7 @@ import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
+import { writeClient } from '@/sanity/lib/writeClient';
 
 export type FormState = {
 	success: boolean;
@@ -33,6 +34,14 @@ export async function submitContactForm(
 
 		const data = validationResult.data;
 
+		// Get request metadata (used for both reCAPTCHA and Sanity)
+		const requestHeaders = await headers();
+		const userAgent = requestHeaders.get('user-agent') ?? undefined;
+		const ipAddress =
+			requestHeaders.get('x-forwarded-for')?.split(',')[0] ??
+			requestHeaders.get('x-real-ip') ??
+			undefined;
+
 		// Verify reCAPTCHA token - required when reCAPTCHA is configured
 		const clientConfig = getClientConfig();
 		const recaptchaEnabled = !!clientConfig.recaptchaSiteKey;
@@ -45,13 +54,6 @@ export async function submitContactForm(
 					error: 'Missing reCAPTCHA token'
 				};
 			}
-
-			const requestHeaders = await headers();
-			const userAgent = requestHeaders.get('user-agent') ?? undefined;
-			const ipAddress =
-				requestHeaders.get('x-forwarded-for')?.split(',')[0] ??
-				requestHeaders.get('x-real-ip') ??
-				undefined;
 
 			const recaptchaResult = await verifyRecaptchaToken(
 				data.recaptchaToken,
@@ -101,6 +103,59 @@ export async function submitContactForm(
 				message: 'Sender email not configured. Please contact the administrator.',
 				error: 'Missing from email address in site settings'
 			};
+		}
+
+		// Save submission to Sanity
+		try {
+			const submissionData = {
+				_type: 'formSubmission',
+				contactType: data.contactType,
+				submittedAt: new Date().toISOString(),
+				status: 'new',
+				name: data.name,
+				email: data.email,
+				phone: data.phone || undefined,
+				message: data.message,
+				metadata: {
+					userAgent,
+					ipAddress
+				}
+			};
+
+			// Add type-specific fields based on contact type
+			const typeSpecificFields: Record<string, unknown> = {};
+
+			switch (data.contactType) {
+				case 'player':
+					if (data.ageGroup) typeSpecificFields.ageGroup = data.ageGroup;
+					if (data.experience) typeSpecificFields.experience = data.experience;
+					if (data.position) typeSpecificFields.position = data.position;
+					break;
+				case 'coach':
+					if (data.qualifications) typeSpecificFields.qualifications = data.qualifications;
+					if (data.experience) typeSpecificFields.coachExperience = data.experience;
+					if (data.ageGroupsInterest) typeSpecificFields.ageGroupsInterest = data.ageGroupsInterest;
+					break;
+				case 'sponsor':
+					if (data.organization) typeSpecificFields.organization = data.organization;
+					if (data.sponsorshipTier) typeSpecificFields.sponsorshipTier = data.sponsorshipTier;
+					break;
+				case 'program':
+					if (data.programId) typeSpecificFields.programId = data.programId;
+					break;
+				case 'general':
+					if (data.subject) typeSpecificFields.subject = data.subject;
+					break;
+			}
+
+			await writeClient.create({
+				...submissionData,
+				...typeSpecificFields
+			});
+		} catch (error) {
+			// Log the error but don't fail the submission
+			// Email notification is still the primary delivery method
+			console.error('Failed to save submission to Sanity:', error);
 		}
 
 		// Send emails
