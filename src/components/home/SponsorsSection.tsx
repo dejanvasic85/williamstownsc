@@ -26,18 +26,18 @@ export function SponsorsSection({ sponsors }: SponsorsSectionProps) {
 				<p className="text-base-content/70 text-base md:text-lg">
 					Thank you to our partners for supporting the club.
 				</p>
-				<div className="mt-4 flex flex-wrap items-center justify-center gap-4 md:justify-start md:gap-6">
+				<div className="mt-4 flex flex-wrap items-center justify-center gap-6 md:justify-start md:gap-8">
 					{sponsors.map((sponsor) => (
 						<div
 							key={sponsor._id}
-							className="flex h-14 w-20 items-center justify-center md:h-16 md:w-24"
+							className="flex h-20 w-28 items-center justify-center md:h-24 md:w-32"
 						>
 							<Image
 								src={sponsor.logo.url}
 								alt={sponsor.logo.alt || `${sponsor.name} logo`}
-								width={120}
-								height={100}
-								className="h-auto max-h-12 w-auto object-contain md:max-h-14"
+								width={160}
+								height={120}
+								className="h-auto max-h-16 w-auto rounded-lg object-contain md:max-h-20"
 							/>
 						</div>
 					))}

@@ -43,6 +43,7 @@ Pages:
   - [x] Locations including JT Gray and Digman and their layouts
   - [x] Sponsors
     - [ ] Convert sponsor type to a Sanity content model for sponsor type drop-down
+    - [ ] Allow sponsors to be selected for which should appear on the homepage and adjust the homepage query
 - Contact
   - [x] Contact form
   - [x] Bot detection
@@ -62,7 +63,8 @@ Technical Items:
 
 - [x] Cache invalidation on content publish
 - [x] Dark theme
-- [ ] Accessibility audit and fixes
+- [x] Accessibility audit and fixes
+- [x] Google analytics integration
 
 SEO:
 

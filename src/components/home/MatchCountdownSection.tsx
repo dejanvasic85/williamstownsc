@@ -32,7 +32,10 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 		<div className="border-accent/30 bg-accent/10 dark:border-accent dark:bg-surface relative flex h-full flex-col gap-6 border p-6 md:rounded-2xl md:p-8">
 			<div className="flex items-start justify-between">
 				<h2 className="text-2xl font-bold md:text-3xl">Next Match</h2>
-				<Link href={`/football/teams/${teamSlug}/matches`} className="btn btn-accent shrink-0">
+				<Link
+					href={`/football/teams/${teamSlug}/matches`}
+					className="btn btn-accent btn-outline shrink-0"
+				>
 					View Full Fixtures
 				</Link>
 			</div>
