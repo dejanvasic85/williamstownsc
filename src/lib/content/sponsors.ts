@@ -57,8 +57,8 @@ export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 	return sponsors.map(transformSponsor);
 }
 
-export async function getFeaturedSponsors(limit: number = 3): Promise<TransformedSponsor[]> {
-	const query = `*[_type == "sponsor"] | order(order asc, name asc) [0...$limit] {
+export async function getFeaturedSponsors(): Promise<TransformedSponsor[]> {
+	const query = `*[_type == "sponsor" && showOnHomepage == true] | order(order asc, name asc) {
 		_id,
 		name,
 		logo,
@@ -73,7 +73,7 @@ export async function getFeaturedSponsors(limit: number = 3): Promise<Transforme
 
 	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
 		query,
-		{ limit },
+		{},
 		{ next: { tags: ['sponsor', 'sponsorType'] } }
 	);
 
