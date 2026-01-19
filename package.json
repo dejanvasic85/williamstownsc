@@ -16,7 +16,11 @@
 		"type:gen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
 		"type:check": "tsc --noEmit",
 		"sync:clubs": "tsx bin/syncClubs.ts",
-		"sync:fixtures": "tsx bin/syncFixtures.ts"
+		"sync:fixtures": "tsx bin/syncFixtures.ts",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui",
+		"test:e2e:debug": "playwright test --debug",
+		"test:e2e:report": "playwright show-report"
 	},
 	"dependencies": {
 		"@aws-sdk/client-ses": "3.971.0",
@@ -39,6 +43,7 @@
 	},
 	"devDependencies": {
 		"@faker-js/faker": "^10.1.0",
+		"@playwright/test": "1.57.0",
 		"@tailwindcss/postcss": "^4",
 		"@trivago/prettier-plugin-sort-imports": "^6.0.0",
 		"@types/node": "^25.0.0",
