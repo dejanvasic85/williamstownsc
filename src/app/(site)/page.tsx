@@ -42,7 +42,7 @@ export default async function Home() {
 		getNewsArticles({ limit: 5, featured: 'exclude', imageSize: 'small' }),
 		getSiteSettings(),
 		getHomePageData(),
-		getFeaturedSponsors(3),
+		getFeaturedSponsors(),
 		getActiveAnnouncements(),
 		getNextMatch('seniors-mens'),
 		getNextKeyDate()
