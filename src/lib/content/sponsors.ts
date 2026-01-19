@@ -2,6 +2,14 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { Sponsor } from '@/sanity/sanity.types';
 
+type SponsorTypeReference = {
+	name?: string;
+};
+
+type SponsorWithExpandedType = Omit<Sponsor, 'type'> & {
+	type?: SponsorTypeReference | null;
+};
+
 export type TransformedSponsor = Pick<Sponsor, '_id' | 'website'> & {
 	name: string;
 	logo: {
@@ -12,7 +20,7 @@ export type TransformedSponsor = Pick<Sponsor, '_id' | 'website'> & {
 	description: string;
 };
 
-function transformSponsor(sponsor: Sponsor): TransformedSponsor {
+function transformSponsor(sponsor: SponsorWithExpandedType): TransformedSponsor {
 	return {
 		_id: sponsor._id,
 		name: sponsor.name || '',
@@ -20,7 +28,7 @@ function transformSponsor(sponsor: Sponsor): TransformedSponsor {
 			url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).url() : '',
 			alt: sponsor.logo?.alt
 		},
-		type: sponsor.type || '',
+		type: sponsor.type?.name ?? '',
 		description: sponsor.description || '',
 		website: sponsor.website
 	};
@@ -31,14 +39,20 @@ export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 		_id,
 		name,
 		logo,
-		type,
+		type->{
+			name
+		},
 		description,
 		location,
 		contact,
 		website
 	}`;
 
-	const sponsors = await client.fetch<Sponsor[]>(query, {}, { next: { tags: ['sponsor'] } });
+	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
+		query,
+		{},
+		{ next: { tags: ['sponsor', 'sponsorType'] } }
+	);
 
 	return sponsors.map(transformSponsor);
 }
@@ -48,14 +62,20 @@ export async function getFeaturedSponsors(limit: number = 3): Promise<Transforme
 		_id,
 		name,
 		logo,
-		type,
+		type->{
+			name
+		},
 		description,
 		location,
 		contact,
 		website
 	}`;
 
-	const sponsors = await client.fetch<Sponsor[]>(query, { limit }, { next: { tags: ['sponsor'] } });
+	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
+		query,
+		{ limit },
+		{ next: { tags: ['sponsor', 'sponsorType'] } }
+	);
 
 	return sponsors.map(transformSponsor);
 }
