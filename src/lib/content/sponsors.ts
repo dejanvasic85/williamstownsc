@@ -1,9 +1,13 @@
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { Sponsor, SponsorType } from '@/sanity/sanity.types';
+import { Sponsor } from '@/sanity/sanity.types';
+
+type SponsorTypeReference = {
+	name?: string;
+};
 
 type SponsorWithExpandedType = Omit<Sponsor, 'type'> & {
-	type?: Pick<SponsorType, 'name' | 'order'> | null;
+	type?: SponsorTypeReference | null;
 };
 
 export type TransformedSponsor = Pick<Sponsor, '_id' | 'website'> & {
@@ -24,7 +28,7 @@ function transformSponsor(sponsor: SponsorWithExpandedType): TransformedSponsor 
 			url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).url() : '',
 			alt: sponsor.logo?.alt
 		},
-		type: typeof sponsor.type === 'object' && sponsor.type?.name ? sponsor.type.name : '',
+		type: sponsor.type?.name ?? '',
 		description: sponsor.description || '',
 		website: sponsor.website
 	};
@@ -36,8 +40,7 @@ export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 		name,
 		logo,
 		type->{
-			name,
-			order
+			name
 		},
 		description,
 		location,
@@ -48,7 +51,7 @@ export async function getAllSponsors(): Promise<TransformedSponsor[]> {
 	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
-		{ next: { tags: ['sponsor'] } }
+		{ next: { tags: ['sponsor', 'sponsorType'] } }
 	);
 
 	return sponsors.map(transformSponsor);
@@ -60,8 +63,7 @@ export async function getFeaturedSponsors(limit: number = 3): Promise<Transforme
 		name,
 		logo,
 		type->{
-			name,
-			order
+			name
 		},
 		description,
 		location,
@@ -72,7 +74,7 @@ export async function getFeaturedSponsors(limit: number = 3): Promise<Transforme
 	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
 		query,
 		{ limit },
-		{ next: { tags: ['sponsor'] } }
+		{ next: { tags: ['sponsor', 'sponsorType'] } }
 	);
 
 	return sponsors.map(transformSponsor);
