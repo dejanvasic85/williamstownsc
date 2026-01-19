@@ -1,5 +1,4 @@
 import { defineField, defineType } from 'sanity';
-import { isTypedArray } from 'util/types';
 
 export const sponsor = defineType({
 	name: 'sponsor',
@@ -70,8 +69,7 @@ export const sponsor = defineType({
 	preview: {
 		select: {
 			title: 'name',
-			media: 'logo',
-			type: 'sponsorType'
+			media: 'logo'
 		},
 		prepare({ title, media }) {
 			return {
