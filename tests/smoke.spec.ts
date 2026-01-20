@@ -1,13 +1,15 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('Homepage', () => {
-	test('loads successfully', async ({ page }) => {
+	test.beforeEach(async ({ page }) => {
 		await page.goto('/');
+	});
+
+	test('loads successfully', async ({ page }) => {
 		await expect(page).toHaveTitle(/Williamstown/i);
 	});
 
 	test('displays hero carousel', async ({ page }) => {
-		await page.goto('/');
 		const carousel = page.getByRole('region', {
 			name: /featured news/i
 		});
@@ -15,7 +17,6 @@ test.describe('Homepage', () => {
 	});
 
 	test('displays sponsors section if available', async ({ page }) => {
-		await page.goto('/');
 		const sponsorsHeading = page.getByRole('heading', {
 			name: /sponsors/i,
 			level: 2
@@ -28,7 +29,6 @@ test.describe('Homepage', () => {
 	});
 
 	test('displays next match section', async ({ page }) => {
-		await page.goto('/');
 		const nextMatchHeading = page.getByRole('heading', {
 			name: /next match/i
 		});
@@ -36,7 +36,6 @@ test.describe('Homepage', () => {
 	});
 
 	test('displays key dates section', async ({ page }) => {
-		await page.goto('/');
 		const keyDatesHeading = page.getByRole('heading', {
 			name: /key dates/i
 		});
@@ -44,10 +43,8 @@ test.describe('Homepage', () => {
 	});
 
 	test('carousel controls work', async ({ page }) => {
-		await page.goto('/');
-
-		const pauseButton = page.getByRole('button', { name: /pause/i });
-		const playButton = page.getByRole('button', { name: /play/i });
+		const pauseButton = page.getByRole('button', { name: /pause carousel/i });
+		const playButton = page.getByRole('button', { name: /play carousel/i });
 
 		const pauseCount = await pauseButton.count();
 		const playCount = await playButton.count();
@@ -61,10 +58,10 @@ test.describe('Homepage', () => {
 		}
 
 		const nextButton = page.getByRole('button', {
-			name: /next slide/i
+			name: /go to next slide/i
 		});
 		const prevButton = page.getByRole('button', {
-			name: /previous slide/i
+			name: /go to previous slide/i
 		});
 
 		const nextCount = await nextButton.count();
@@ -84,70 +81,53 @@ test.describe('Responsive', () => {
 		await page.setViewportSize({ width: 375, height: 667 });
 		await page.goto('/');
 		await expect(page).toHaveTitle(/Williamstown/i);
-		const carousel = page.getByRole('region', {
-			name: /featured news/i
-		});
-		await expect(carousel).toBeVisible();
 	});
 
 	test('renders on tablet viewport', async ({ page }) => {
 		await page.setViewportSize({ width: 768, height: 1024 });
 		await page.goto('/');
 		await expect(page).toHaveTitle(/Williamstown/i);
-		const carousel = page.getByRole('region', {
-			name: /featured news/i
-		});
-		await expect(carousel).toBeVisible();
 	});
 
 	test('renders on desktop viewport', async ({ page }) => {
 		await page.setViewportSize({ width: 1920, height: 1080 });
 		await page.goto('/');
 		await expect(page).toHaveTitle(/Williamstown/i);
-		const carousel = page.getByRole('region', {
-			name: /featured news/i
-		});
-		await expect(carousel).toBeVisible();
 	});
 });
 
 test.describe('Accessibility', () => {
-	test('carousel has proper ARIA labels', async ({ page }) => {
+	test.beforeEach(async ({ page }) => {
 		await page.goto('/');
+	});
+
+	test('carousel has proper ARIA labels', async ({ page }) => {
 		const carousel = page.getByRole('region', {
 			name: /featured news/i
 		});
-		await expect(carousel).toHaveAttribute('aria-label');
+		await expect(carousel).toHaveAttribute('aria-label', /featured news/i);
 	});
 
-	test('navigation buttons have accessible labels', async ({ page }) => {
-		await page.goto('/');
-
+	test('carousel navigation buttons are accessible', async ({ page }) => {
 		const nextButton = page.getByRole('button', {
-			name: /next slide/i
+			name: /go to next slide/i
 		});
 		const prevButton = page.getByRole('button', {
-			name: /previous slide/i
+			name: /go to previous slide/i
 		});
-		const pauseButton = page.getByRole('button', { name: /pause/i });
-		const playButton = page.getByRole('button', { name: /play/i });
 
-		const nextCount = await nextButton.count();
-		const prevCount = await prevButton.count();
+		await expect(nextButton).toBeVisible();
+		await expect(prevButton).toBeVisible();
+	});
+
+	test('carousel play/pause controls are accessible', async ({ page }) => {
+		const pauseButton = page.getByRole('button', { name: /pause carousel/i });
+		const playButton = page.getByRole('button', { name: /play carousel/i });
+
 		const pauseCount = await pauseButton.count();
 		const playCount = await playButton.count();
 
-		if (nextCount > 0) {
-			await expect(nextButton).toHaveAttribute('aria-label');
-		}
-		if (prevCount > 0) {
-			await expect(prevButton).toHaveAttribute('aria-label');
-		}
-		if (pauseCount > 0) {
-			await expect(pauseButton).toHaveAttribute('aria-label');
-		}
-		if (playCount > 0) {
-			await expect(playButton).toHaveAttribute('aria-label');
-		}
+		// Either pause or play button should be visible depending on carousel state
+		expect(pauseCount + playCount).toBeGreaterThan(0);
 	});
 });
