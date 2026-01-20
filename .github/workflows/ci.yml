@@ -48,7 +48,7 @@ jobs:
         uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
         id: wait_for_vercel
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.VERCEL_TOKEN }}
           max_timeout: 300
           check_interval: 10
       - name: Run E2E tests
