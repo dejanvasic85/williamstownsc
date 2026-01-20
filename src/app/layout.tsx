@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { Exo, Outfit } from 'next/font/google';
+import { Suspense } from 'react';
 import clsx from 'clsx';
-import { getClientConfig } from '@/lib/config';
+import { GoogleTagManager, PageViewTracker } from '@/components/analytics';
+import { getClientConfig, isLocal } from '@/lib/config';
+import { getSiteSettings } from '@/lib/content';
 import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import './globals.css';
 
@@ -23,17 +26,28 @@ export const metadata: Metadata = {
 	manifest: '/favicon/site.webmanifest'
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	const config = getClientConfig();
+	const siteSettings = await getSiteSettings();
+
+	// Only load GTM in production with valid GTM ID
+	const gtmId = siteSettings?.analytics?.gtmId;
+	const shouldLoadGtm = !isLocal() && !!gtmId;
 
 	return (
 		<html lang="en">
+			{shouldLoadGtm && gtmId && <GoogleTagManager gtmId={gtmId} />}
 			<body className={clsx(outfit.variable, exo.variable, 'antialiased')}>
 				<ConfigProvider config={config}>{children}</ConfigProvider>
+				{shouldLoadGtm && (
+					<Suspense fallback={null}>
+						<PageViewTracker />
+					</Suspense>
+				)}
 			</body>
 		</html>
 	);

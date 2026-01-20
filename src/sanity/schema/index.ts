@@ -30,6 +30,7 @@ import { player } from './player';
 import { program } from './program';
 import { siteSettings } from './siteSettings';
 import { sponsor } from './sponsor';
+import { sponsorType } from './sponsorType';
 import { team } from './team';
 
 export const schemaTypes = [
@@ -66,5 +67,6 @@ export const schemaTypes = [
 	player,
 	program,
 	siteSettings,
-	sponsor
+	sponsor,
+	sponsorType
 ];

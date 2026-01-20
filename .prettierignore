@@ -12,3 +12,8 @@ package-lock.json
 # Nextjs
 .next
 next-end.d.ts
+
+# Playwright
+test-results
+playwright-report
+playwright/.cache

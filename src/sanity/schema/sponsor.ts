@@ -31,14 +31,8 @@ export const sponsor = defineType({
 		defineField({
 			name: 'type',
 			title: 'Sponsor Type',
-			type: 'string',
-			options: {
-				list: [
-					{ title: 'Principal', value: 'Principal' },
-					{ title: 'Major', value: 'Major' },
-					{ title: 'Community Partner', value: 'Community Partner' }
-				]
-			},
+			type: 'reference',
+			to: [{ type: 'sponsorType' }],
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
@@ -63,19 +57,24 @@ export const sponsor = defineType({
 			type: 'number',
 			description: 'Lower numbers appear first',
 			initialValue: 100
+		}),
+		defineField({
+			name: 'showOnHomepage',
+			title: 'Show on Homepage',
+			type: 'boolean',
+			description: 'Display this sponsor on the homepage',
+			initialValue: false
 		})
 	],
 	preview: {
 		select: {
 			title: 'name',
-			media: 'logo',
-			type: 'type'
+			media: 'logo'
 		},
-		prepare({ title, media, type }) {
+		prepare({ title, media }) {
 			return {
 				title,
-				media,
-				subtitle: type
+				media
 			};
 		}
 	}

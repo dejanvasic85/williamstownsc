@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
@@ -30,6 +31,22 @@ type KeyDatesPageData = {
 		noIndex?: boolean;
 	};
 };
+
+export async function getNextKeyDate(): Promise<KeyDateItem | null> {
+	const today = format(new Date(), 'yyyy-MM-dd');
+
+	const data = await client.fetch<KeyDateItem | null>(
+		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0].keyDates[date >= $today] | order(date asc)[0]{
+			title,
+			date,
+			description
+		}`,
+		{ today },
+		{ next: { tags: ['page', 'keyDatesPage'] } }
+	);
+
+	return data;
+}
 
 export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
 	const data = await client.fetch<KeyDatesPageData>(

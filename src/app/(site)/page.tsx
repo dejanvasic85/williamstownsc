@@ -17,6 +17,7 @@ import {
 	getNewsArticles,
 	getSiteSettings
 } from '@/lib/content';
+import { getNextKeyDate } from '@/lib/content/keyDates';
 import { getPageMetadata } from '@/lib/content/page';
 import { getNextMatch } from '@/lib/matches/matchService';
 import { buildSocialLinks } from '@/lib/socialLinks';
@@ -34,15 +35,17 @@ export default async function Home() {
 		homePageData,
 		featuredSponsors,
 		{ hasAnnouncements },
-		nextMatch
+		nextMatch,
+		nextKeyDate
 	] = await Promise.all([
 		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
 		getNewsArticles({ limit: 5, featured: 'exclude', imageSize: 'small' }),
 		getSiteSettings(),
 		getHomePageData(),
-		getFeaturedSponsors(3),
+		getFeaturedSponsors(),
 		getActiveAnnouncements(),
-		getNextMatch('seniors-mens')
+		getNextMatch('seniors-mens'),
+		getNextKeyDate()
 	]);
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
 
@@ -88,6 +91,7 @@ export default async function Home() {
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}
 							leadingText={homePageData?.keyDatesSection?.leadingText}
+							nextKeyDate={nextKeyDate}
 						/>
 					</div>
 				</div>
