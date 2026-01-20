@@ -9,6 +9,7 @@ export const formSubmission = defineType({
 			name: 'contactType',
 			title: 'Contact Type',
 			type: 'string',
+			readOnly: true,
 			options: {
 				list: [
 					{ title: 'Player Registration', value: 'player' },
@@ -25,6 +26,7 @@ export const formSubmission = defineType({
 			name: 'submittedAt',
 			title: 'Submitted At',
 			type: 'datetime',
+			readOnly: true,
 			validation: (Rule) => Rule.required(),
 			initialValue: () => new Date().toISOString()
 		}),
@@ -49,23 +51,27 @@ export const formSubmission = defineType({
 			name: 'name',
 			title: 'Name',
 			type: 'string',
+			readOnly: true,
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
 			name: 'email',
 			title: 'Email',
 			type: 'string',
+			readOnly: true,
 			validation: (Rule) => Rule.required().email()
 		}),
 		defineField({
 			name: 'phone',
 			title: 'Phone',
-			type: 'string'
+			type: 'string',
+			readOnly: true
 		}),
 		defineField({
 			name: 'message',
 			title: 'Message',
 			type: 'text',
+			readOnly: true,
 			rows: 5,
 			validation: (Rule) => Rule.required()
 		}),
@@ -75,18 +81,21 @@ export const formSubmission = defineType({
 			name: 'ageGroup',
 			title: 'Age Group',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'player'
 		}),
 		defineField({
 			name: 'experience',
 			title: 'Experience',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'player'
 		}),
 		defineField({
 			name: 'position',
 			title: 'Position',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'player'
 		}),
 
@@ -95,6 +104,7 @@ export const formSubmission = defineType({
 			name: 'qualifications',
 			title: 'Qualifications',
 			type: 'text',
+			readOnly: true,
 			rows: 3,
 			hidden: ({ document }) => document?.contactType !== 'coach'
 		}),
@@ -102,6 +112,7 @@ export const formSubmission = defineType({
 			name: 'coachExperience',
 			title: 'Coaching Experience',
 			type: 'text',
+			readOnly: true,
 			rows: 3,
 			hidden: ({ document }) => document?.contactType !== 'coach'
 		}),
@@ -109,6 +120,7 @@ export const formSubmission = defineType({
 			name: 'ageGroupsInterest',
 			title: 'Age Groups of Interest',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'coach'
 		}),
 
@@ -117,12 +129,14 @@ export const formSubmission = defineType({
 			name: 'organization',
 			title: 'Organization',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'sponsor'
 		}),
 		defineField({
 			name: 'sponsorshipTier',
 			title: 'Sponsorship Tier Interest',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'sponsor'
 		}),
 
@@ -131,6 +145,7 @@ export const formSubmission = defineType({
 			name: 'programId',
 			title: 'Program ID',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'program'
 		}),
 
@@ -139,6 +154,7 @@ export const formSubmission = defineType({
 			name: 'subject',
 			title: 'Subject',
 			type: 'string',
+			readOnly: true,
 			hidden: ({ document }) => document?.contactType !== 'general'
 		}),
 
@@ -147,6 +163,7 @@ export const formSubmission = defineType({
 			name: 'metadata',
 			title: 'Metadata',
 			type: 'object',
+			readOnly: true,
 			fields: [
 				{
 					name: 'userAgent',

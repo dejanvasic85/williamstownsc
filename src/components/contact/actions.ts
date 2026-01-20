@@ -7,7 +7,7 @@ import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
-import { writeClient } from '@/sanity/lib/writeClient';
+import { getWriteClient } from '@/sanity/lib/writeClient';
 
 export type FormState = {
 	success: boolean;
@@ -148,7 +148,7 @@ export async function submitContactForm(
 					break;
 			}
 
-			await writeClient.create({
+			await getWriteClient().create({
 				...submissionData,
 				...typeSpecificFields
 			});
