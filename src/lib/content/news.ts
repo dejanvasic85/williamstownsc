@@ -37,7 +37,7 @@ export async function getNewsArticles(
 		featuredFilter = ' && featured != true';
 	}
 
-	const query = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())${featuredFilter}] | order(publishedAt desc) [0...$limit] {
+	const newsArticlesQuery = `*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())${featuredFilter}] | order(publishedAt desc) [0...$limit] {
 		_id,
 		title,
 		slug,
@@ -48,7 +48,7 @@ export async function getNewsArticles(
 	}`;
 
 	const articles = await client.fetch<NewsArticle[]>(
-		query,
+		newsArticlesQuery,
 		{ limit },
 		{ next: { tags: ['newsArticle'] } }
 	);
@@ -74,7 +74,7 @@ export async function getNewsArticles(
 }
 
 export async function getArticleBySlug(slug: string) {
-	const query = `*[_type == "newsArticle" && slug.current == $slug && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())][0] {
+	const articleBySlugQuery = `*[_type == "newsArticle" && slug.current == $slug && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())][0] {
 		_id,
 		title,
 		slug,
@@ -86,7 +86,7 @@ export async function getArticleBySlug(slug: string) {
 	}`;
 
 	const article = await client.fetch<NewsArticle>(
-		query,
+		articleBySlugQuery,
 		{ slug },
 		{ next: { tags: ['newsArticle'] } }
 	);
@@ -113,13 +113,13 @@ export async function getArticleBySlug(slug: string) {
 }
 
 export async function getAllArticlesForSitemap() {
-	const query = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
+	const allArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
 		slug,
 		publishedAt
 	}`;
 
 	const articles = await client.fetch<Array<{ slug: { current: string }; publishedAt: string }>>(
-		query,
+		allArticlesQuery,
 		{},
 		{ next: { tags: ['newsArticle'] } }
 	);

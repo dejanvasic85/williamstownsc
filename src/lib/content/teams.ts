@@ -57,14 +57,14 @@ export const teamsQuery = groq`
 `;
 
 export async function getAllTeamsForSitemap() {
-	const query = groq`
+	const allTeamsQuery = groq`
 		*[_type == "team"] {
 			"slug": slug.current
 		}
 	`;
 
 	const teams = await client.fetch<Array<{ slug: string }>>(
-		query,
+		allTeamsQuery,
 		{},
 		{ next: { tags: ['team'] } }
 	);

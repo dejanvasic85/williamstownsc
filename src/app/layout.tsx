@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Exo, Outfit } from 'next/font/google';
+import { Suspense } from 'react';
 import clsx from 'clsx';
 import { GoogleTagManager, PageViewTracker } from '@/components/analytics';
 import { getClientConfig, isLocal } from '@/lib/config';
@@ -42,7 +43,11 @@ export default async function RootLayout({
 			{shouldLoadGtm && gtmId && <GoogleTagManager gtmId={gtmId} />}
 			<body className={clsx(outfit.variable, exo.variable, 'antialiased')}>
 				<ConfigProvider config={config}>{children}</ConfigProvider>
-				{shouldLoadGtm && <PageViewTracker />}
+				{shouldLoadGtm && (
+					<Suspense fallback={null}>
+						<PageViewTracker />
+					</Suspense>
+				)}
 			</body>
 		</html>
 	);
