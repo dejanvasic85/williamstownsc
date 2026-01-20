@@ -10,23 +10,6 @@ export type SearchResult = {
 	_score: number;
 };
 
-const pageTypes = [
-	'aboutPage',
-	'accessibilityPage',
-	'committeePage',
-	'contactPage',
-	'keyDatesPage',
-	'locationsPage',
-	'merchandisePage',
-	'newsPage',
-	'policiesPage',
-	'privacyPage',
-	'programsPage',
-	'sponsorsPage',
-	'teamsPage',
-	'termsPage'
-] as const;
-
 const pageTypeToSlugMap: Record<string, string> = {
 	aboutPage: 'about',
 	accessibilityPage: 'accessibility',
@@ -48,11 +31,28 @@ function sanitizeSearchTerm(term: string): string {
 	return term.replace(/[*\[\]{}()\\]/g, '\\$&').trim();
 }
 
+const searchablePageTypes = [
+	'aboutPage',
+	'accessibilityPage',
+	'committeePage',
+	'contactPage',
+	'keyDatesPage',
+	'locationsPage',
+	'merchandisePage',
+	'newsPage',
+	'policiesPage',
+	'privacyPage',
+	'programsPage',
+	'sponsorsPage',
+	'teamsPage',
+	'termsPage'
+] as const;
+
 export async function searchContent(searchTerm: string): Promise<SearchResult[]> {
 	const sanitizedTerm = sanitizeSearchTerm(searchTerm);
 	const searchQuery = groq`
 		*[
-			_type in ["newsArticle", "team", "program", ${pageTypes.map((t) => `"${t}"`).join(', ')}]
+			_type in ["newsArticle", "team", "program", "aboutPage", "accessibilityPage", "committeePage", "contactPage", "keyDatesPage", "locationsPage", "merchandisePage", "newsPage", "policiesPage", "privacyPage", "programsPage", "sponsorsPage", "teamsPage", "termsPage"]
 			&& (_type != "newsArticle" || (publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())))
 			&& (
 				title match $searchTerm ||
