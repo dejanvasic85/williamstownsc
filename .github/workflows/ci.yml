@@ -48,31 +48,28 @@ jobs:
         id: wait_for_vercel
         run: |
           echo "Waiting for Vercel deployment to be ready..."
+          # Use the branch alias URL which is predictable
+          BRANCH_ALIAS="williamstownsc-git-${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}-dejan-vasics-projects.vercel.app"
+          # Replace slashes and other special chars in branch name
+          BRANCH_ALIAS=$(echo "$BRANCH_ALIAS" | sed 's/\//-/g')
+          DEPLOYMENT_URL="https://$BRANCH_ALIAS"
+
+          echo "Expected deployment URL: $DEPLOYMENT_URL"
+
           max_attempts=60
           attempt=0
 
           while [ $attempt -lt $max_attempts ]; do
-            # Get the latest deployment for this commit
-            deployment=$(npx vercel ls williamstownsc --token=${{ secrets.VERCEL_TOKEN }} --yes --meta githubCommitSha=${{ github.sha }} --meta githubCommitRef=${{ github.ref_name }} 2>/dev/null | grep -m1 "https://" || echo "")
+            status_code=$(curl -s -o /dev/null -w "%{http_code}" "$DEPLOYMENT_URL" || echo "000")
+            echo "Attempt $((attempt + 1))/$max_attempts - Status: $status_code"
 
-            if [ -n "$deployment" ]; then
-              # Extract URL from the deployment line
-              url=$(echo "$deployment" | awk '{print $2}')
-              echo "Found deployment: $url"
-
-              # Check if deployment is ready by making a request
-              status_code=$(curl -s -o /dev/null -w "%{http_code}" "https://$url" || echo "000")
-              echo "Status: $status_code"
-
-              if [ "$status_code" = "200" ]; then
-                echo "Deployment is ready!"
-                echo "url=https://$url" >> $GITHUB_OUTPUT
-                exit 0
-              fi
+            if [ "$status_code" = "200" ]; then
+              echo "Deployment is ready!"
+              echo "url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+              exit 0
             fi
 
             attempt=$((attempt + 1))
-            echo "Attempt $attempt/$max_attempts - waiting 5 seconds..."
             sleep 5
           done
 
