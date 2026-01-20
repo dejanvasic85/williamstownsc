@@ -45,7 +45,7 @@ jobs:
       - name: Pull environment variables from Vercel
         run: npx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Wait for Vercel preview deployment
-        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.2
         id: wait_for_vercel
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
