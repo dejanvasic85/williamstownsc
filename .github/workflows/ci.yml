@@ -45,12 +45,39 @@ jobs:
       - name: Pull environment variables from Vercel
         run: npx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Wait for Vercel preview deployment
-        uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
         id: wait_for_vercel
-        with:
-          token: ${{ secrets.VERCEL_TOKEN }}
-          max_timeout: 300
-          check_interval: 10
+        run: |
+          echo "Waiting for Vercel deployment to be ready..."
+          max_attempts=60
+          attempt=0
+
+          while [ $attempt -lt $max_attempts ]; do
+            # Get the latest deployment for this commit
+            deployment=$(npx vercel ls williamstownsc --token=${{ secrets.VERCEL_TOKEN }} --yes --meta githubCommitSha=${{ github.sha }} --meta githubCommitRef=${{ github.ref_name }} 2>/dev/null | grep -m1 "https://" || echo "")
+
+            if [ -n "$deployment" ]; then
+              # Extract URL from the deployment line
+              url=$(echo "$deployment" | awk '{print $2}')
+              echo "Found deployment: $url"
+
+              # Check if deployment is ready by making a request
+              status_code=$(curl -s -o /dev/null -w "%{http_code}" "https://$url" || echo "000")
+              echo "Status: $status_code"
+
+              if [ "$status_code" = "200" ]; then
+                echo "Deployment is ready!"
+                echo "url=https://$url" >> $GITHUB_OUTPUT
+                exit 0
+              fi
+            fi
+
+            attempt=$((attempt + 1))
+            echo "Attempt $attempt/$max_attempts - waiting 5 seconds..."
+            sleep 5
+          done
+
+          echo "Timeout waiting for deployment"
+          exit 1
       - name: Run E2E tests
         run: npm run test:e2e
         env:
