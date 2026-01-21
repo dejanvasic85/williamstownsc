@@ -27,10 +27,16 @@ const revalidationConfigSchema = z.object({
 	revalidateSecret: z.string().min(1, 'Revalidation secret is required')
 });
 
+// Server-only Sanity write config schema
+const sanityWriteConfigSchema = z.object({
+	sanityWriteToken: z.string().min(1, 'Sanity write token is required')
+});
+
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
 export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
+export type SanityWriteConfig = z.infer<typeof sanityWriteConfigSchema>;
 
 let cachedClientConfig: ClientConfig | null = null;
 
@@ -94,5 +100,15 @@ export function getRecaptchaConfig(): RecaptchaConfig {
 export function getRevalidationConfig(): RevalidationConfig {
 	return revalidationConfigSchema.parse({
 		revalidateSecret: process.env.REVALIDATE_SECRET
+	});
+}
+
+/**
+ * Get Sanity write config (server-only)
+ * Contains write token for creating/updating Sanity documents
+ */
+export function getSanityWriteConfig(): SanityWriteConfig {
+	return sanityWriteConfigSchema.parse({
+		sanityWriteToken: process.env.SANITY_WRITE_TOKEN
 	});
 }
