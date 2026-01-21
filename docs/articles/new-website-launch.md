@@ -13,6 +13,7 @@ Every team now has its own dedicated page where you can see the full roster, mee
 ### Simple Sign-Up Process
 
 Getting involved with Williamstown SC is now just a few clicks away. Our new **Contact** page features easy-to-use forms for:
+
 - Player registrations
 - Coaching enquiries
 - Sponsorship opportunities
@@ -59,4 +60,4 @@ Thank you for your continued support of Williamstown SC. We can't wait to hear w
 
 ---
 
-*Have feedback about the new website? We'd love to hear from you! Get in touch through our Contact page.*
+_Have feedback about the new website? We'd love to hear from you! Get in touch through our Contact page._
