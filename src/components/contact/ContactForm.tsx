@@ -152,7 +152,7 @@ export function ContactForm({
 					) : (
 						<form
 							onSubmit={onSubmit}
-							className="bg-base-100 space-y-4 rounded-lg p-6 shadow-xl lg:p-8"
+							className="bg-base-200 space-y-4 rounded-lg p-6 shadow-xl lg:p-8"
 						>
 							{/* Hidden contact type field */}
 							<input type="hidden" name="contactType" value={contactType} />
