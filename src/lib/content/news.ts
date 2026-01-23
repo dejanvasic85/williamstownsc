@@ -131,3 +131,36 @@ export async function getAllArticlesForSitemap() {
 			publishedAt: article.publishedAt || ''
 		}));
 }
+
+export async function getAllArticlesForFeed() {
+	const allArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
+		_id,
+		title,
+		slug,
+		publishedAt,
+		excerpt,
+		featuredImage
+	}`;
+
+	const articles = await client.fetch<NewsArticle[]>(
+		allArticlesQuery,
+		{},
+		{ next: { tags: ['newsArticle'] } }
+	);
+
+	return articles
+		.filter((article) => article.slug?.current)
+		.map((article) => ({
+			_id: article._id,
+			title: article.title || '',
+			slug: article.slug.current,
+			publishedAt: article.publishedAt || '',
+			excerpt: article.excerpt || '',
+			featuredImage: article.featuredImage
+				? {
+						url: urlFor(article.featuredImage).width(1200).height(630).url(),
+						alt: article.featuredImage.alt
+					}
+				: undefined
+		}));
+}
