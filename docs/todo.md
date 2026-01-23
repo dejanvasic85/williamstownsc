@@ -75,7 +75,7 @@ SEO:
 - [x] Add organisation @type": "SportsOrganization" to the root layout
 - [x] Refactor the getMetadata because it's atrocious
 - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
-- [ ] robots.txt configuration for search engine crawlers
+- [x] robots.txt configuration for search engine crawlers
 - [ ] RSS/Atom feed for news articles
 - [ ] Breadcrumb navigation with BreadcrumbList schema
 - [ ] Web Vitals monitoring and performance tracking
