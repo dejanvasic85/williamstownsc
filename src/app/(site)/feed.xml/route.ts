@@ -11,10 +11,7 @@ function escapeXml(text: string): string {
 }
 
 export async function GET() {
-	const [articles, siteSettings] = await Promise.all([
-		getAllArticlesForFeed(),
-		getSiteSettings()
-	]);
+	const [articles, siteSettings] = await Promise.all([getAllArticlesForFeed(), getSiteSettings()]);
 
 	const siteUrl = siteSettings?.canonicalUrl || 'https://www.williamstownsc.com';
 	const siteTitle = siteSettings?.seoDefaults?.siteTitle || siteSettings?.clubName || '';
