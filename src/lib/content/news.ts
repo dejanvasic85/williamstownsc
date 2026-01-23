@@ -133,7 +133,7 @@ export async function getAllArticlesForSitemap() {
 }
 
 export async function getAllArticlesForFeed() {
-	const allArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
+	const feedArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
 		_id,
 		title,
 		slug,
@@ -143,7 +143,7 @@ export async function getAllArticlesForFeed() {
 	}`;
 
 	const articles = await client.fetch<NewsArticle[]>(
-		allArticlesQuery,
+		feedArticlesQuery,
 		{},
 		{ next: { tags: ['newsArticle'] } }
 	);
