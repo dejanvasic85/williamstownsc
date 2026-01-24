@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { NewsArticle, SanityImageAsset } from '@/sanity/sanity.types';
+import { NewsArticle } from '@/sanity/sanity.types';
 
 export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	title: string;
