@@ -11,6 +11,7 @@ export function SearchModal() {
 	const { isOpen, open, close } = useSearchModal();
 	const dialogRef = useRef<HTMLDialogElement>(null);
 	const previousActiveElement = useRef<HTMLElement | null>(null);
+	const abortControllerRef = useRef<AbortController | null>(null);
 	const [results, setResults] = useState<SearchResult[]>([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
@@ -51,6 +52,9 @@ export function SearchModal() {
 	};
 
 	const handleClose = () => {
+		if (abortControllerRef.current) {
+			abortControllerRef.current.abort();
+		}
 		close();
 		setResults([]);
 		setCurrentQuery('');
@@ -58,27 +62,54 @@ export function SearchModal() {
 	};
 
 	const handleSearch = useCallback(async (query: string) => {
+		if (abortControllerRef.current) {
+			abortControllerRef.current.abort();
+		}
+
 		if (!query || query.length < 2) {
 			setResults([]);
 			setCurrentQuery('');
 			setError(null);
+			setIsLoading(false);
 			return;
 		}
+
+		abortControllerRef.current = new AbortController();
+		const signal = abortControllerRef.current.signal;
 
 		setCurrentQuery(query);
 		setIsLoading(true);
 		setError(null);
 
 		try {
-			const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+			const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`, {
+				signal
+			});
 
 			if (!response.ok) {
-				throw new Error('Search failed');
+				let errorMessage = 'Search failed';
+
+				if (response.status === 400) {
+					errorMessage = 'Invalid search query. Please try different keywords.';
+				} else if (response.status === 404) {
+					errorMessage = 'Search service not found. Please try again later.';
+				} else if (response.status === 429) {
+					errorMessage = 'Too many requests. Please wait a moment and try again.';
+				} else if (response.status === 503 || response.status === 504) {
+					errorMessage = 'Search service is temporarily unavailable. Please try again later.';
+				} else if (response.status >= 500) {
+					errorMessage = 'Server error. Please try again later.';
+				}
+
+				throw new Error(errorMessage);
 			}
 
 			const data = await response.json();
 			setResults(data.results || []);
 		} catch (err) {
+			if (err instanceof Error && err.name === 'AbortError') {
+				return;
+			}
 			setError(err instanceof Error ? err.message : 'Failed to search');
 			setResults([]);
 		} finally {
@@ -98,6 +129,7 @@ export function SearchModal() {
 				<div className="border-base-300 flex items-center justify-between border-b px-6 py-4">
 					<h2 className="text-lg font-semibold">Search</h2>
 					<button
+						type="button"
 						onClick={handleClose}
 						className="hover:bg-base-300 rounded-lg p-2 transition-colors"
 						aria-label="Close search"

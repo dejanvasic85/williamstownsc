@@ -73,6 +73,7 @@ export function MobileNavbar() {
 						})}
 						<li>
 							<button
+								type="button"
 								onClick={handleSearchClick}
 								className="text-neutral-content hover:bg-neutral-content/10 relative flex w-16 flex-col items-center gap-0.5 rounded-full py-2.5 transition-all duration-300"
 								aria-label="Search"

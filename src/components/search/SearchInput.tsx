@@ -64,6 +64,7 @@ export function SearchInput({ onSearch, isLoading = false }: SearchInputProps) {
 			/>
 			{value && (
 				<button
+					type="button"
 					onClick={handleClear}
 					className="hover:bg-base-300 absolute inset-y-0 right-0 flex items-center pr-4 transition-colors"
 					aria-label="Clear search"
