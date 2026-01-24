@@ -18,10 +18,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	const title = siteSettings?.seoDefaults?.siteTitle;
 	const description = siteSettings?.seoDefaults?.siteDescription;
+	const siteUrl = siteSettings?.canonicalUrl || 'https://www.williamstownsc.com';
 
 	return {
 		title,
 		description,
+		alternates: {
+			types: {
+				'application/rss+xml': `${siteUrl}/feed.xml`
+			}
+		},
 		openGraph: {
 			title,
 			description,

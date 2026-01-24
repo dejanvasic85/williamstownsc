@@ -131,3 +131,53 @@ export async function getAllArticlesForSitemap() {
 			publishedAt: article.publishedAt || ''
 		}));
 }
+
+type FeedArticleQueryResult = Omit<NewsArticle, 'featuredImage'> & {
+	featuredImage?: {
+		alt?: string;
+		asset?: {
+			extension?: string;
+			mimeType?: string;
+		};
+	};
+};
+
+export async function getAllArticlesForFeed() {
+	const feedArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...50] {
+		_id,
+		title,
+		slug,
+		publishedAt,
+		excerpt,
+		featuredImage {
+			...,
+			asset-> {
+				extension,
+				mimeType
+			}
+		}
+	}`;
+
+	const articles = await client.fetch<FeedArticleQueryResult[]>(
+		feedArticlesQuery,
+		{},
+		{ next: { tags: ['newsArticle'] } }
+	);
+
+	return articles
+		.filter((article) => article.slug?.current)
+		.map((article) => ({
+			_id: article._id,
+			title: article.title || '',
+			slug: article.slug!.current,
+			publishedAt: article.publishedAt || '',
+			excerpt: article.excerpt || '',
+			featuredImage: article.featuredImage
+				? {
+						url: urlFor(article.featuredImage).width(1200).height(630).url(),
+						alt: article.featuredImage?.alt,
+						mimeType: article.featuredImage.asset?.mimeType
+					}
+				: undefined
+		}));
+}
