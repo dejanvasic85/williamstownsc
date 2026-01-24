@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { NewsArticle } from '@/sanity/sanity.types';
+import { NewsArticle, SanityImageAsset } from '@/sanity/sanity.types';
 
 export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	title: string;
@@ -132,6 +132,16 @@ export async function getAllArticlesForSitemap() {
 		}));
 }
 
+type FeedArticleQueryResult = Omit<NewsArticle, 'featuredImage'> & {
+	featuredImage?: {
+		alt?: string;
+		asset?: {
+			extension?: string;
+			mimeType?: string;
+		};
+	};
+};
+
 export async function getAllArticlesForFeed() {
 	const feedArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...50] {
 		_id,
@@ -148,7 +158,7 @@ export async function getAllArticlesForFeed() {
 		}
 	}`;
 
-	const articles = await client.fetch<NewsArticle[]>(
+	const articles = await client.fetch<FeedArticleQueryResult[]>(
 		feedArticlesQuery,
 		{},
 		{ next: { tags: ['newsArticle'] } }
@@ -159,7 +169,7 @@ export async function getAllArticlesForFeed() {
 		.map((article) => ({
 			_id: article._id,
 			title: article.title || '',
-			slug: article.slug.current,
+			slug: article.slug!.current,
 			publishedAt: article.publishedAt || '',
 			excerpt: article.excerpt || '',
 			featuredImage: article.featuredImage

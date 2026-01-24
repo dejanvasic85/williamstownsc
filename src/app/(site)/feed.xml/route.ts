@@ -1,6 +1,8 @@
 import { getAllArticlesForFeed } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 
+type FeedArticle = Awaited<ReturnType<typeof getAllArticlesForFeed>>[number];
+
 function escapeXml(text: string): string {
 	return text
 		.replace(/&/g, '&amp;')
@@ -25,7 +27,7 @@ export async function GET() {
 		const lastBuildDate = articles.length > 0 ? new Date(articles[0].publishedAt) : new Date();
 
 		const rssItems = articles
-			.map((article) => {
+			.map((article: FeedArticle) => {
 				const articleUrl = `${siteUrl}/news/${article.slug}`;
 				const pubDate = new Date(article.publishedAt).toUTCString();
 
