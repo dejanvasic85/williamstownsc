@@ -133,13 +133,19 @@ export async function getAllArticlesForSitemap() {
 }
 
 export async function getAllArticlesForFeed() {
-	const feedArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
+	const feedArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...50] {
 		_id,
 		title,
 		slug,
 		publishedAt,
 		excerpt,
-		featuredImage
+		featuredImage {
+			...,
+			asset-> {
+				extension,
+				mimeType
+			}
+		}
 	}`;
 
 	const articles = await client.fetch<NewsArticle[]>(
@@ -159,7 +165,8 @@ export async function getAllArticlesForFeed() {
 			featuredImage: article.featuredImage
 				? {
 						url: urlFor(article.featuredImage).width(1200).height(630).url(),
-						alt: article.featuredImage.alt
+						alt: article.featuredImage?.alt,
+						mimeType: article.featuredImage.asset?.mimeType
 					}
 				: undefined
 		}));

@@ -11,52 +11,65 @@ function escapeXml(text: string): string {
 }
 
 export async function GET() {
-	const [articles, siteSettings] = await Promise.all([getAllArticlesForFeed(), getSiteSettings()]);
+	try {
+		const [articles, siteSettings] = await Promise.all([
+			getAllArticlesForFeed(),
+			getSiteSettings()
+		]);
 
-	const siteUrl = siteSettings?.canonicalUrl || 'https://www.williamstownsc.com';
-	const siteTitle = siteSettings?.seoDefaults?.siteTitle || siteSettings?.clubName || '';
-	const siteDescription = siteSettings?.seoDefaults?.siteDescription || '';
+		const siteUrl = siteSettings?.canonicalUrl || 'https://www.williamstownsc.com';
+		const siteTitle = siteSettings?.seoDefaults?.siteTitle || siteSettings?.clubName || '';
+		const siteDescription = siteSettings?.seoDefaults?.siteDescription || '';
 
-	const feedUrl = `${siteUrl}/feed.xml`;
-	const lastBuildDate = articles.length > 0 ? new Date(articles[0].publishedAt) : new Date();
+		const feedUrl = `${siteUrl}/feed.xml`;
+		const lastBuildDate = articles.length > 0 ? new Date(articles[0].publishedAt) : new Date();
 
-	const rssItems = articles
-		.map((article) => {
-			const articleUrl = `${siteUrl}/news/${article.slug}`;
-			const pubDate = new Date(article.publishedAt).toUTCString();
+		const rssItems = articles
+			.map((article) => {
+				const articleUrl = `${siteUrl}/news/${article.slug}`;
+				const pubDate = new Date(article.publishedAt).toUTCString();
 
-			return `    <item>
+				return `    <item>
       <title>${escapeXml(article.title)}</title>
-      <link>${articleUrl}</link>
-      <guid isPermaLink="true">${articleUrl}</guid>
+      <link>${escapeXml(articleUrl)}</link>
+      <guid isPermaLink="true">${escapeXml(articleUrl)}</guid>
       <pubDate>${pubDate}</pubDate>
       <description>${escapeXml(article.excerpt)}</description>${
 				article.featuredImage
 					? `
-      <enclosure url="${escapeXml(article.featuredImage.url)}" type="image/jpeg" />`
+      <enclosure url="${escapeXml(article.featuredImage.url)}"${article.featuredImage.mimeType ? ` type="${article.featuredImage.mimeType}"` : ''} />`
 					: ''
 			}
     </item>`;
-		})
-		.join('\n');
+			})
+			.join('\n');
 
-	const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
+		const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml(siteTitle)}</title>
-    <link>${siteUrl}</link>
+    <link>${escapeXml(siteUrl)}</link>
     <description>${escapeXml(siteDescription)}</description>
     <language>en-AU</language>
     <lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
-    <atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />
+    <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />
 ${rssItems}
   </channel>
 </rss>`;
 
-	return new Response(rssFeed, {
-		headers: {
-			'Content-Type': 'application/xml; charset=utf-8',
-			'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400'
-		}
-	});
+		return new Response(rssFeed, {
+			headers: {
+				'Content-Type': 'application/xml; charset=utf-8',
+				'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400'
+			}
+		});
+	} catch (error) {
+		console.error('Error generating RSS feed:', error);
+		return new Response('Error generating RSS feed', {
+			status: 500,
+			headers: {
+				'Content-Type': 'text/plain'
+			}
+		});
+	}
 }
