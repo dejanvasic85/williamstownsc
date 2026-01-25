@@ -54,11 +54,6 @@ Pages:
   - [x] Privacy policy
   - [x] Accessibility statement
 
-White label solution
-
-- [ ] Custom branding and logo
-- [ ] Remove all the hardcoded Williamstown data
-
 Technical Items:
 
 - [x] Cache invalidation on content publish
@@ -77,18 +72,13 @@ SEO:
 - [x] Refactor each page to return getMetadata instead of redeclaring the object (unless required)
 - [x] robots.txt configuration for search engine crawlers
 - [x] RSS/Atom feed for news articles
-- [ ] Breadcrumb navigation with BreadcrumbList schema
 - [ ] Web Vitals monitoring and performance tracking
-- [ ] URL redirects configuration for legacy paths
-- [ ] Enhanced unique meta descriptions for all pages
-- [ ] Structured data for committee/staff (Person schema)
-- [ ] Code splitting and lazy loading optimization
 
 ### Nice to have
 
 The following is a list of things we may be not need on initial launch and can come later:
 
-- [ ] Search
+- [x] Search
 - [ ] Automatic team Fixtures
 - [ ] Publish news to facebook, instagram
 
