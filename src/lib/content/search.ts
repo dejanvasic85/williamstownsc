@@ -132,9 +132,9 @@ function generateUrl(type: string, slug?: string): string {
 		case 'newsArticle':
 			return `/news/${slug || ''}`;
 		case 'team':
-			return `/teams#${slug || ''}`;
+			return `/football/teams/${slug || ''}`;
 		case 'program':
-			return `/programs#${slug || ''}`;
+			return '/football/programs';
 		default:
 			return `/${pageTypeToSlugMap[type] || slug || ''}`;
 	}
