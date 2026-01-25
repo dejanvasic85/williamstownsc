@@ -7,6 +7,7 @@ Replace manual state management (4 useState hooks + AbortController) with TanSta
 ## Current State
 
 `SearchModal.tsx` manages:
+
 - `results`, `isLoading`, `error`, `currentQuery` via useState
 - Manual AbortController for request cancellation
 - Manual fetch + error handling (~35 lines)
@@ -17,19 +18,19 @@ Replace manual state management (4 useState hooks + AbortController) with TanSta
 
 ### Files to Create
 
-| File | Purpose |
-|------|---------|
+| File                                  | Purpose                                              |
+| ------------------------------------- | ---------------------------------------------------- |
 | `src/lib/providers/QueryProvider.tsx` | TanStack Query provider (Next.js App Router pattern) |
-| `src/lib/hooks/useDebouncedValue.ts` | Reusable debounce hook |
-| `src/lib/hooks/useSearch.ts` | Encapsulates query logic + debounce |
+| `src/lib/hooks/useDebouncedValue.ts`  | Reusable debounce hook                               |
+| `src/lib/hooks/useSearch.ts`          | Encapsulates query logic + debounce                  |
 
 ### Files to Modify
 
-| File | Change |
-|------|--------|
-| `package.json` | Add `@tanstack/react-query@5` + devtools |
-| `src/app/(site)/layout.tsx` | Wrap with QueryProvider |
-| `src/components/search/SearchModal.tsx` | Replace 4 useState + fetch with `useSearch` hook |
+| File                                    | Change                                             |
+| --------------------------------------- | -------------------------------------------------- |
+| `package.json`                          | Add `@tanstack/react-query@5` + devtools           |
+| `src/app/(site)/layout.tsx`             | Wrap with QueryProvider                            |
+| `src/components/search/SearchModal.tsx` | Replace 4 useState + fetch with `useSearch` hook   |
 | `src/components/search/SearchInput.tsx` | Simplify to controlled component (remove debounce) |
 
 ## Implementation Steps
@@ -54,6 +55,7 @@ Replace manual state management (4 useState hooks + AbortController) with TanSta
 ## Before/After Comparison
 
 **SearchModal.tsx Before:**
+
 ```typescript
 const abortControllerRef = useRef<AbortController | null>(null);
 const [results, setResults] = useState<SearchResult[]>([]);
@@ -64,6 +66,7 @@ const [currentQuery, setCurrentQuery] = useState('');
 ```
 
 **SearchModal.tsx After:**
+
 ```typescript
 const [inputValue, setInputValue] = useState('');
 const { results, isLoading, error, currentQuery } = useSearch(inputValue);
@@ -71,13 +74,13 @@ const { results, isLoading, error, currentQuery } = useSearch(inputValue);
 
 ## Configuration Defaults
 
-| Setting | Value | Rationale |
-|---------|-------|-----------|
-| `staleTime` | 60s | Cache recent searches, fewer API calls |
-| `retry` | false | Don't hammer failing API |
-| `debounce` | 400ms | Match current behavior |
-| `minChars` | 2 | Match current behavior |
-| DevTools | Yes (dev only) | Debugging queries/cache in browser |
+| Setting     | Value          | Rationale                              |
+| ----------- | -------------- | -------------------------------------- |
+| `staleTime` | 60s            | Cache recent searches, fewer API calls |
+| `retry`     | false          | Don't hammer failing API               |
+| `debounce`  | 400ms          | Match current behavior                 |
+| `minChars`  | 2              | Match current behavior                 |
+| DevTools    | Yes (dev only) | Debugging queries/cache in browser     |
 
 ## Verification
 
