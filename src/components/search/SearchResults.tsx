@@ -157,7 +157,7 @@ export function SearchResults({ results, isLoading, error, query }: SearchResult
 										>
 											<div className="mb-1 flex items-start justify-between gap-2">
 												<h4 className="text-base-content font-medium">{result.title}</h4>
-												<span className="badge badge-sm badge-outline shrink-0">
+												<span className="badge badge-sm badge-outline badge-secondary shrink-0">
 													{contentTypeLabels[result._type]}
 												</span>
 											</div>
