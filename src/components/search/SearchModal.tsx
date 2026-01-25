@@ -16,6 +16,7 @@ export function SearchModal() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const [currentQuery, setCurrentQuery] = useState('');
+	const [inputKey, setInputKey] = useState(0);
 
 	useEffect(() => {
 		const dialog = dialogRef.current;
@@ -59,6 +60,7 @@ export function SearchModal() {
 		setResults([]);
 		setCurrentQuery('');
 		setError(null);
+		setInputKey((prev) => prev + 1);
 	};
 
 	const handleSearch = useCallback(async (query: string) => {
@@ -140,7 +142,7 @@ export function SearchModal() {
 
 				{/* Search Input */}
 				<div className="border-base-300 border-b p-4">
-					<SearchInput onSearch={handleSearch} isLoading={isLoading} />
+					<SearchInput key={inputKey} onSearch={handleSearch} isLoading={isLoading} />
 				</div>
 
 				{/* Search Results */}
