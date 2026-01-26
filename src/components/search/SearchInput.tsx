@@ -1,45 +1,23 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Loader2, Search, X } from 'lucide-react';
 
 type SearchInputProps = {
+	value: string;
 	isLoading?: boolean;
-	onSearch: (query: string) => void;
+	onChange: (value: string) => void;
 };
 
-export function SearchInput({ onSearch, isLoading = false }: SearchInputProps) {
-	const [value, setValue] = useState('');
-	const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
+export function SearchInput({ value, onChange, isLoading = false }: SearchInputProps) {
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
 		inputRef.current?.focus();
 	}, []);
 
-	useEffect(() => {
-		if (debounceTimeout.current) {
-			clearTimeout(debounceTimeout.current);
-		}
-
-		if (value.trim().length < 2) {
-			onSearch('');
-			return;
-		}
-
-		debounceTimeout.current = setTimeout(() => {
-			onSearch(value.trim());
-		}, 400);
-
-		return () => {
-			if (debounceTimeout.current) {
-				clearTimeout(debounceTimeout.current);
-			}
-		};
-	}, [value, onSearch]);
-
 	const handleClear = () => {
-		setValue('');
+		onChange('');
 		inputRef.current?.focus();
 	};
 
@@ -56,7 +34,7 @@ export function SearchInput({ onSearch, isLoading = false }: SearchInputProps) {
 				ref={inputRef}
 				type="text"
 				value={value}
-				onChange={(e) => setValue(e.target.value)}
+				onChange={(e) => onChange(e.target.value)}
 				placeholder="Search news, teams, programs..."
 				className="input input-bordered w-full text-lg"
 				aria-label="Search content"
