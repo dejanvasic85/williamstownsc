@@ -5,8 +5,9 @@ import { Loader2, Search, X } from 'lucide-react';
 
 type SearchInputProps = {
 	value: string;
-	onChange: (value: string) => void;
 	isLoading?: boolean;
+	onChange: (value: string) => void;
+	onSearch: (query: string) => void;
 };
 
 export function SearchInput({ value, onChange, isLoading = false }: SearchInputProps) {
@@ -36,7 +37,7 @@ export function SearchInput({ value, onChange, isLoading = false }: SearchInputP
 				value={value}
 				onChange={(e) => onChange(e.target.value)}
 				placeholder="Search news, teams, programs..."
-				className="input input-bordered w-full pr-12 pl-12"
+				className="input input-bordered w-full text-lg"
 				aria-label="Search content"
 				aria-describedby="search-hint"
 			/>
@@ -44,10 +45,10 @@ export function SearchInput({ value, onChange, isLoading = false }: SearchInputP
 				<button
 					type="button"
 					onClick={handleClear}
-					className="hover:bg-base-300 absolute inset-y-0 right-0 flex items-center pr-4 transition-colors"
+					className="absolute inset-y-0 right-0 flex items-center pr-4 transition-colors"
 					aria-label="Clear search"
 				>
-					<X className="text-base-content/60 h-5 w-5" />
+					<X className="h-4 w-4" />
 				</button>
 			)}
 			<div id="search-hint" className="sr-only">

@@ -58,7 +58,7 @@ export function SearchModal() {
 			ref={dialogRef}
 			onClose={handleClose}
 			onClick={handleDialogClick}
-			className="bg-base-100 w-full max-w-2xl rounded-2xl p-0 shadow-2xl backdrop:bg-black/50 lg:mt-24"
+			className="bg-base-100 mx-auto w-full max-w-2xl rounded-2xl p-0 shadow-2xl backdrop:bg-black/50 lg:mt-24"
 		>
 			<div className="relative">
 				{/* Header */}
