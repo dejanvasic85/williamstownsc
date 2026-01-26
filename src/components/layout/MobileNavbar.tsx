@@ -3,9 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
-import { Search } from 'lucide-react';
 import { Icon, type IconProps } from '@/components/Icon';
-import { useSearchModal } from '@/components/search/SearchModalProvider';
 
 type NavItem = {
 	name: string;
@@ -22,17 +20,11 @@ const mobileNavItems: NavItem[] = [
 
 export function MobileNavbar() {
 	const pathname = usePathname();
-	const { open } = useSearchModal();
 
 	const handleNavClick = () => {
 		if (typeof window !== 'undefined' && 'vibrate' in navigator) {
 			navigator.vibrate(20);
 		}
-	};
-
-	const handleSearchClick = () => {
-		handleNavClick();
-		open();
 	};
 
 	const isItemActive = (item: NavItem) => {
@@ -71,17 +63,6 @@ export function MobileNavbar() {
 								</li>
 							);
 						})}
-						<li>
-							<button
-								type="button"
-								onClick={handleSearchClick}
-								className="text-neutral-content hover:bg-neutral-content/10 relative flex w-16 flex-col items-center gap-0.5 rounded-full py-2.5 transition-all duration-300"
-								aria-label="Search"
-							>
-								<Search className="h-5 w-5" />
-								<span className="text-[10px] leading-tight font-medium">Search</span>
-							</button>
-						</li>
 					</ul>
 				</div>
 			</nav>
