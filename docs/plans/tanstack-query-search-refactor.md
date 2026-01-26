@@ -1,5 +1,7 @@
 # Plan: Refactor Search to TanStack Query
 
+**Status: COMPLETED**
+
 ## Overview
 
 Replace manual state management (4 useState hooks + AbortController) with TanStack Query for cleaner, more maintainable search functionality.
@@ -35,20 +37,20 @@ Replace manual state management (4 useState hooks + AbortController) with TanSta
 
 ## Implementation Steps
 
-1. `npm install @tanstack/react-query@5` + `npm install -D @tanstack/react-query-devtools@5`
-2. Create `QueryProvider.tsx` - singleton QueryClient pattern + ReactQueryDevtools (dev only)
-3. Create `useDebouncedValue.ts` - value + delay -> debounced value
-4. Create `useSearch.ts`:
+- [x] `npm install @tanstack/react-query@5` + `npm install -D @tanstack/react-query-devtools@5`
+- [x] Create `QueryProvider.tsx` - singleton QueryClient pattern + ReactQueryDevtools (dev only)
+- [x] Create `useDebouncedValue.ts` - value + delay -> debounced value
+- [x] Create `useSearch.ts`:
    - Uses useDebouncedValue (400ms)
    - Uses useQuery with `enabled` option (min 2 chars)
    - Passes AbortSignal for cancellation
    - Maps HTTP status to user-friendly errors
    - Returns `{ results, isLoading, error, currentQuery }`
-5. Update layout.tsx - add QueryProvider
-6. Refactor SearchModal:
+- [x] Update layout.tsx - add QueryProvider
+- [x] Refactor SearchModal:
    - Replace `useState` x4 + handleSearch with `useSearch(inputValue)`
    - Keep modal open/close logic, keyboard shortcuts unchanged
-7. Simplify SearchInput:
+- [x] Simplify SearchInput:
    - Convert to controlled: `value` + `onChange` props
    - Remove internal debounce logic
 

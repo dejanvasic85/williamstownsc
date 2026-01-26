@@ -6,6 +6,7 @@ import { SearchModal, SearchModalProvider } from '@/components/search';
 import { formatAddress } from '@/lib/address';
 import { getActiveAnnouncements } from '@/lib/announcements';
 import { getSiteSettings } from '@/lib/content';
+import { QueryProvider } from '@/lib/providers/QueryProvider';
 import { generateOrganizationSchema } from '@/lib/structuredData';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -69,43 +70,45 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 	const organizationSchema = generateOrganizationSchema(siteSettings);
 
 	return (
-		<SearchModalProvider>
-			{organizationSchema && (
-				<script
-					id="organization-schema"
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+		<QueryProvider>
+			<SearchModalProvider>
+				{organizationSchema && (
+					<script
+						id="organization-schema"
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+					/>
+				)}
+				<a
+					href="#main-content"
+					className="bg-primary text-primary-content fixed top-0 left-1/2 z-[100] -translate-x-1/2 -translate-y-full rounded-b-lg px-4 py-2 font-medium transition-transform focus:translate-y-0"
+				>
+					Skip to main content
+				</a>
+				<Banner
+					messages={activeAnnouncements.map(({ _id, message, type }) => ({
+						id: _id,
+						message,
+						type
+					}))}
 				/>
-			)}
-			<a
-				href="#main-content"
-				className="bg-primary text-primary-content fixed top-0 left-1/2 z-[100] -translate-x-1/2 -translate-y-full rounded-b-lg px-4 py-2 font-medium transition-transform focus:translate-y-0"
-			>
-				Skip to main content
-			</a>
-			<Banner
-				messages={activeAnnouncements.map(({ _id, message, type }) => ({
-					id: _id,
-					message,
-					type
-				}))}
-			/>
-			<Navbar
-				logoUrl={logoUrl}
-				logoAlt={logoAlt}
-				clubName={siteSettings?.clubName}
-				socials={siteSettings?.socials}
-				homeGroundLink={homeGroundLink}
-				hasAnnouncements={hasAnnouncements}
-			/>
-			<main
-				id="main-content"
-				className={clsx('mb-8', hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}
-			>
-				{children}
-			</main>
-			<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
-			<SearchModal />
-		</SearchModalProvider>
+				<Navbar
+					logoUrl={logoUrl}
+					logoAlt={logoAlt}
+					clubName={siteSettings?.clubName}
+					socials={siteSettings?.socials}
+					homeGroundLink={homeGroundLink}
+					hasAnnouncements={hasAnnouncements}
+				/>
+				<main
+					id="main-content"
+					className={clsx('mb-8', hasAnnouncements ? 'mt-(--banner-height)' : 'mt-0')}
+				>
+					{children}
+				</main>
+				<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
+				<SearchModal />
+			</SearchModalProvider>
+		</QueryProvider>
 	);
 }
