@@ -7,7 +7,6 @@ type SearchInputProps = {
 	value: string;
 	isLoading?: boolean;
 	onChange: (value: string) => void;
-	onSearch: (query: string) => void;
 };
 
 export function SearchInput({ value, onChange, isLoading = false }: SearchInputProps) {
