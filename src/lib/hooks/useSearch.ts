@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { SearchResult } from '@/lib/content/search';
+import type { SearchResult } from '@/lib/content/search';
 import { useDebouncedValue } from './useDebouncedValue';
 
 type SearchResponse = {
@@ -50,14 +50,24 @@ type UseSearchResult = {
 
 export function useSearch(inputValue: string): UseSearchResult {
 	const trimmedValue = inputValue.trim();
+	const hasMinChars = trimmedValue.length >= minSearchChars;
 	const debouncedQuery = useDebouncedValue(trimmedValue, debounceDelayMs);
-	const isEnabled = debouncedQuery.length >= minSearchChars;
+	const isEnabled = hasMinChars && debouncedQuery.length >= minSearchChars;
 
 	const { data, isFetching, error } = useQuery({
 		queryKey: ['search', debouncedQuery],
 		queryFn: ({ signal }) => fetchSearchResults(debouncedQuery, signal),
 		enabled: isEnabled
 	});
+
+	if (!hasMinChars) {
+		return {
+			results: [],
+			isLoading: false,
+			error: null,
+			currentQuery: ''
+		};
+	}
 
 	return {
 		results: data ?? [],

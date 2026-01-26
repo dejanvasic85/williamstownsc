@@ -1,10 +1,18 @@
 'use client';
 
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, lazy, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const staleTimeMs = 60 * 1000;
+
+const ReactQueryDevtools =
+	process.env.NODE_ENV !== 'production'
+		? lazy(() =>
+				import('@tanstack/react-query-devtools').then((mod) => ({
+					default: mod.ReactQueryDevtools
+				}))
+			)
+		: () => null;
 
 function makeQueryClient() {
 	return new QueryClient({
