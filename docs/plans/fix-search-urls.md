@@ -6,9 +6,9 @@ Search results are pointing to incorrect URLs causing 404 errors. For example, "
 
 ## Problem Analysis
 
-The `pageTypeToSlugMap` in `/src/lib/content/search.ts` maps page types to simple slugs without considering the actual route structure:
+The `pageTypeToSlugMap` in `/src/lib/content/search.ts` mapped page types to simple slugs without considering the actual route structure. This created a maintenance burden - adding a new route required updating multiple files.
 
-| Content Type | Current URL | Correct URL |
+| Content Type | Old URL | Correct URL |
 |---|---|---|
 | `committeePage` | `/committee` | `/club/committee` |
 | `aboutPage` | `/about` | `/club/about` |
@@ -17,55 +17,39 @@ The `pageTypeToSlugMap` in `/src/lib/content/search.ts` maps page types to simpl
 | `merchandisePage` | `/merchandise` | `/football/merchandise` |
 | `teamsPage` | `/teams` | `/football/teams` |
 
-Root-level pages that are correct:
-- `accessibilityPage` → `/accessibility` ✓
-- `contactPage` → `/contact` ✓
-- `keyDatesPage` → `/key-dates` ✓
-- `newsPage` → `/news` ✓
-- `policiesPage` → `/policies` ✓
-- `privacyPage` → `/privacy` ✓
-- `sponsorsPage` → `/sponsors` ✓
-- `termsPage` → `/terms` ✓
-
 ## Solution
 
-Update `pageTypeToSlugMap` to include full paths instead of just slugs:
+Created a centralized routes config (`src/lib/routes.ts`) as the single source of truth for all routes:
 
 ```typescript
-const pageTypeToSlugMap: Record<string, string> = {
-  // Club pages
-  aboutPage: 'club/about',
-  committeePage: 'club/committee',
-  locationsPage: 'club/locations',
+export const routes = {
+  // Dynamic routes
+  newsArticle: (slug: string) => `/news/${slug}`,
+  team: (slug: string) => `/football/teams/${slug}`,
 
-  // Football pages
-  merchandisePage: 'football/merchandise',
-  programsPage: 'football/programs',
-  teamsPage: 'football/teams',
+  // Static routes
+  about: () => '/club/about',
+  committee: () => '/club/committee',
+  // ...
+};
 
-  // Root-level pages
-  accessibilityPage: 'accessibility',
-  contactPage: 'contact',
-  keyDatesPage: 'key-dates',
-  newsPage: 'news',
-  policiesPage: 'policies',
-  privacyPage: 'privacy',
-  sponsorsPage: 'sponsors',
-  termsPage: 'terms'
+export const contentTypeRoutes: Record<string, (slug?: string) => string> = {
+  newsArticle: (slug) => routes.newsArticle(slug || ''),
+  committeePage: () => routes.committee(),
+  // ...
 };
 ```
 
+Updated `search.ts` to import and use `contentTypeRoutes` instead of hardcoded mappings.
+
 ## Tasks
 
-- [ ] Update `pageTypeToSlugMap` in `src/lib/content/search.ts` with correct paths
-- [ ] Verify all page routes match their actual Next.js file structure
-- [ ] Run lint, format, and type-check
+- [x] Create centralized `src/lib/routes.ts` config file
+- [x] Update `src/lib/content/search.ts` to use routes config
+- [x] Remove unused `pageTypeToSlugMap` and `searchablePageTypes`
 - [ ] Test search functionality manually
 
-## Files to Modify
+## Files Modified
 
-- `src/lib/content/search.ts` - Update URL mapping
-
-## Unresolved Questions
-
-None - the solution is straightforward.
+- `src/lib/routes.ts` - New centralized route config
+- `src/lib/content/search.ts` - Uses routes config instead of hardcoded map
