@@ -34,7 +34,8 @@ export const routes = {
 };
 
 export const contentTypeRoutes: Record<string, (slug?: string) => string> = {
-  newsArticle: (slug) => routes.newsArticle(slug || ''),
+  // Falls back to list page when slug is missing
+  newsArticle: (slug) => (slug ? routes.newsArticle(slug) : routes.news()),
   committeePage: () => routes.committee(),
   // ...
 };

@@ -35,9 +35,9 @@ export const routes = {
  * Used by search to generate URLs for results.
  */
 export const contentTypeRoutes: Record<string, (slug?: string) => string> = {
-	// Dynamic content
-	newsArticle: (slug) => routes.newsArticle(slug || ''),
-	team: (slug) => routes.team(slug || ''),
+	// Dynamic content - fall back to list page when slug is missing
+	newsArticle: (slug) => (slug ? routes.newsArticle(slug) : routes.news()),
+	team: (slug) => (slug ? routes.team(slug) : routes.teams()),
 	program: () => routes.program(),
 
 	// Page types
