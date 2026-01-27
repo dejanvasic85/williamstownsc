@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
 import { contentTypeRoutes } from '@/lib/routes';
+import { client } from '@/sanity/lib/client';
 
 export type SearchResult = {
 	_id: string;

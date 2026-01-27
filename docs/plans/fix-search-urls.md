@@ -8,14 +8,15 @@ Search results are pointing to incorrect URLs causing 404 errors. For example, "
 
 The `pageTypeToSlugMap` in `/src/lib/content/search.ts` mapped page types to simple slugs without considering the actual route structure. This created a maintenance burden - adding a new route required updating multiple files.
 
-| Content Type | Old URL | Correct URL |
-|---|---|---|
-| `committeePage` | `/committee` | `/club/committee` |
-| `aboutPage` | `/about` | `/club/about` |
-| `locationsPage` | `/locations` | `/club/locations` |
-| `programsPage` | `/programs` | `/football/programs` |
-| `merchandisePage` | `/merchandise` | `/football/merchandise` |
-| `teamsPage` | `/teams` | `/football/teams` |
+| Content Type      | Old URL        | Correct URL                      |
+| ----------------- | -------------- | -------------------------------- |
+| `committeePage`   | `/committee`   | `/club/committee`                |
+| `aboutPage`       | `/about`       | `/club/about`                    |
+| `locationsPage`   | `/locations`   | `/club/locations`                |
+| `policiesPage`    | `/policies`    | `/club/policies-and-regulations` |
+| `programsPage`    | `/programs`    | `/football/programs`             |
+| `merchandisePage` | `/merchandise` | `/football/merchandise`          |
+| `teamsPage`       | `/teams`       | `/football/teams`                |
 
 ## Solution
 
@@ -23,21 +24,21 @@ Created a centralized routes config (`src/lib/routes.ts`) as the single source o
 
 ```typescript
 export const routes = {
-  // Dynamic routes
-  newsArticle: (slug: string) => `/news/${slug}`,
-  team: (slug: string) => `/football/teams/${slug}`,
+	// Dynamic routes
+	newsArticle: (slug: string) => `/news/${slug}`,
+	team: (slug: string) => `/football/teams/${slug}`,
 
-  // Static routes
-  about: () => '/club/about',
-  committee: () => '/club/committee',
-  // ...
+	// Static routes
+	about: () => '/club/about',
+	committee: () => '/club/committee'
+	// ...
 };
 
 export const contentTypeRoutes: Record<string, (slug?: string) => string> = {
-  // Falls back to list page when slug is missing
-  newsArticle: (slug) => (slug ? routes.newsArticle(slug) : routes.news()),
-  committeePage: () => routes.committee(),
-  // ...
+	// Falls back to list page when slug is missing
+	newsArticle: (slug) => (slug ? routes.newsArticle(slug) : routes.news()),
+	committeePage: () => routes.committee()
+	// ...
 };
 ```
 

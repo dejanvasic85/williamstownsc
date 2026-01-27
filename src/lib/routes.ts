@@ -18,13 +18,13 @@ export const routes = {
 	about: () => '/club/about',
 	committee: () => '/club/committee',
 	locations: () => '/club/locations',
+	policies: () => '/club/policies-and-regulations',
 
 	// Root-level pages
 	accessibility: () => '/accessibility',
 	contact: () => '/contact',
 	keyDates: () => '/key-dates',
 	news: () => '/news',
-	policies: () => '/policies',
 	privacy: () => '/privacy',
 	sponsors: () => '/sponsors',
 	terms: () => '/terms'
