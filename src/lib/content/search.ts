@@ -1,4 +1,5 @@
 import { groq } from 'next-sanity';
+import { contentTypeRoutes } from '@/lib/routes';
 import { client } from '@/sanity/lib/client';
 
 export type SearchResult = {
@@ -10,43 +11,9 @@ export type SearchResult = {
 	_score: number;
 };
 
-const pageTypeToSlugMap: Record<string, string> = {
-	aboutPage: 'about',
-	accessibilityPage: 'accessibility',
-	committeePage: 'committee',
-	contactPage: 'contact',
-	keyDatesPage: 'key-dates',
-	locationsPage: 'locations',
-	merchandisePage: 'merchandise',
-	newsPage: 'news',
-	policiesPage: 'policies',
-	privacyPage: 'privacy',
-	programsPage: 'programs',
-	sponsorsPage: 'sponsors',
-	teamsPage: 'teams',
-	termsPage: 'terms'
-};
-
 function sanitizeSearchTerm(term: string): string {
 	return term.replace(/[*\[\]{}()\\]/g, '\\$&').trim();
 }
-
-const searchablePageTypes = [
-	'aboutPage',
-	'accessibilityPage',
-	'committeePage',
-	'contactPage',
-	'keyDatesPage',
-	'locationsPage',
-	'merchandisePage',
-	'newsPage',
-	'policiesPage',
-	'privacyPage',
-	'programsPage',
-	'sponsorsPage',
-	'teamsPage',
-	'termsPage'
-] as const;
 
 export async function searchContent(searchTerm: string): Promise<SearchResult[]> {
 	const sanitizedTerm = sanitizeSearchTerm(searchTerm);
@@ -128,16 +95,11 @@ export async function searchContent(searchTerm: string): Promise<SearchResult[]>
 }
 
 function generateUrl(type: string, slug?: string): string {
-	switch (type) {
-		case 'newsArticle':
-			return `/news/${slug || ''}`;
-		case 'team':
-			return `/football/teams/${slug || ''}`;
-		case 'program':
-			return '/football/programs';
-		default:
-			return `/${pageTypeToSlugMap[type] || slug || ''}`;
+	const routeFunc = contentTypeRoutes[type];
+	if (routeFunc) {
+		return routeFunc(slug);
 	}
+	return `/${slug || ''}`;
 }
 
 type PortableTextBlock = {
