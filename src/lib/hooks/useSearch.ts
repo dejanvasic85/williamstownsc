@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { trackSearch } from '@/lib/analytics/searchEvents';
 import type { SearchResult } from '@/lib/content/search';
 import { useDebouncedValue } from './useDebouncedValue';
 
@@ -53,12 +55,28 @@ export function useSearch(inputValue: string): UseSearchResult {
 	const hasMinChars = trimmedValue.length >= minSearchChars;
 	const debouncedQuery = useDebouncedValue(trimmedValue, debounceDelayMs);
 	const isEnabled = hasMinChars && debouncedQuery.length >= minSearchChars;
+	const lastTrackedQuery = useRef<string>('');
 
 	const { data, isFetching, error } = useQuery({
 		queryKey: ['search', debouncedQuery],
 		queryFn: ({ signal }) => fetchSearchResults(debouncedQuery, signal),
 		enabled: isEnabled
 	});
+
+	useEffect(() => {
+		if (
+			!isFetching &&
+			data !== undefined &&
+			debouncedQuery &&
+			debouncedQuery !== lastTrackedQuery.current
+		) {
+			lastTrackedQuery.current = debouncedQuery;
+			trackSearch({
+				searchTerm: debouncedQuery,
+				resultCount: data.length
+			});
+		}
+	}, [isFetching, data, debouncedQuery]);
 
 	if (!hasMinChars) {
 		return {

@@ -7,7 +7,9 @@ Capture search analytics via GTM to understand user search behavior: what users 
 ## Requirements
 
 - Track search queries with keywords and result count
+- Track 0-result searches separately
 - Track result clicks with position index and result metadata
+- Track modal open/close as engagement events
 - Use existing GTM integration (`sendGTMEvent` from `@next/third-parties/google`)
 - Follow GA4 recommended event naming conventions
 - Only fire events in production (respect `isLocal()` check)
@@ -15,22 +17,40 @@ Capture search analytics via GTM to understand user search behavior: what users 
 ## Events to Implement
 
 ### 1. `search` Event
-Fires when search results are returned (debounced query completes).
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| search_term | string | User's search query |
+Fires when search returns results (debounced query completes).
+
+| Parameter    | Type   | Description            |
+| ------------ | ------ | ---------------------- |
+| search_term  | string | User's search query    |
 | result_count | number | Total results returned |
 
-### 2. `select_content` Event
+### 2. `search_no_results` Event
+
+Fires when search returns 0 results.
+
+| Parameter   | Type   | Description         |
+| ----------- | ------ | ------------------- |
+| search_term | string | User's search query |
+
+### 3. `select_content` Event
+
 Fires when user clicks a search result.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter    | Type   | Description                         |
+| ------------ | ------ | ----------------------------------- |
 | content_type | string | Result type: news/team/program/page |
-| item_id | string | Result slug or ID |
-| search_term | string | Original search query |
-| index | number | 0-based position in results |
+| item_id      | string | Result slug or ID                   |
+| search_term  | string | Original search query               |
+| index        | number | 0-based position in results         |
+
+### 4. `search_modal_open` Event
+
+Fires when search modal is opened.
+
+### 5. `search_modal_close` Event
+
+Fires when search modal is closed.
 
 ## Architecture
 
@@ -39,21 +59,18 @@ src/lib/analytics/
 └── searchEvents.ts    # Analytics event functions
 ```
 
-Create a dedicated analytics module that:
-- Wraps `sendGTMEvent` with type-safe event helpers
-- Checks `isLocal()` to prevent dev events
-- Exports: `trackSearch()`, `trackSearchResultClick()`
+Module exports:
+
+- `trackSearch(term, resultCount)` - fires `search` or `search_no_results`
+- `trackSearchResultClick(term, index, contentType, itemId)` - fires `select_content`
+- `trackSearchModalOpen()` - fires `search_modal_open`
+- `trackSearchModalClose()` - fires `search_modal_close`
 
 ## Todo
 
-- [ ] Create `src/lib/analytics/searchEvents.ts` with event functions
-- [ ] Update `SearchResults.tsx` to track result clicks with index
-- [ ] Update `useSearch.ts` or `SearchModal.tsx` to track search queries
+- [x] Create `src/lib/analytics/searchEvents.ts` with event functions
+- [x] Update `SearchModalProvider.tsx` to track modal open/close
+- [x] Update `SearchResults.tsx` to track result clicks with index
+- [x] Update `useSearch.ts` to track search queries
 - [ ] Test events in GTM preview mode
-- [ ] Document dataLayer schema for GTM setup
-
-## Unresolved Questions
-
-1. Should we track searches with 0 results separately (e.g., `search_no_results` event)?
-2. Debounce threshold for search event - fire on every debounced query or only after user pauses (e.g., 1s)?
-3. Should we track modal open/close as engagement events?
+- [ ] Configure GTM triggers and tags for new events

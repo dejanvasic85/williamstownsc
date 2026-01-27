@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
+import { trackSearchResultClick } from '@/lib/analytics/searchEvents';
 import { SearchResult } from '@/lib/content/search';
 import { useSearchModal } from './SearchModalProvider';
 
@@ -62,14 +63,20 @@ export function SearchResults({ results, isLoading, error, query }: SearchResult
 		resultRefs.current = resultRefs.current.slice(0, results.length);
 	}, [results.length]);
 
-	const handleResultClick = (url: string) => {
+	const handleResultClick = (result: SearchResult, index: number) => {
+		trackSearchResultClick({
+			searchTerm: query,
+			index,
+			contentType: contentTypeLabels[result._type] || result._type,
+			itemId: result._id
+		});
 		close();
-		router.push(url);
+		router.push(result.url);
 	};
 
-	const handleKeyDown = (event: React.KeyboardEvent, url: string, index: number) => {
+	const handleKeyDown = (event: React.KeyboardEvent, result: SearchResult, index: number) => {
 		if (event.key === 'Enter') {
-			handleResultClick(url);
+			handleResultClick(result, index);
 			return;
 		}
 
@@ -150,8 +157,8 @@ export function SearchResults({ results, isLoading, error, query }: SearchResult
 												resultRefs.current[currentIndex] = el;
 											}}
 											type="button"
-											onClick={() => handleResultClick(result.url)}
-											onKeyDown={(e) => handleKeyDown(e, result.url, currentIndex)}
+											onClick={() => handleResultClick(result, currentIndex)}
+											onKeyDown={(e) => handleKeyDown(e, result, currentIndex)}
 											className="hover:bg-base-200 focus:ring-primary w-full rounded-lg p-3 text-left transition-colors focus:ring-2 focus:outline-none"
 											aria-label={`${result.title} - ${type}`}
 										>
