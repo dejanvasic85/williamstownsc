@@ -54,15 +54,15 @@ Fires when search modal is closed.
 
 ## Architecture
 
-```
+```text
 src/lib/analytics/
 └── searchEvents.ts    # Analytics event functions
 ```
 
 Module exports:
 
-- `trackSearch(term, resultCount)` - fires `search` or `search_no_results`
-- `trackSearchResultClick(term, index, contentType, itemId)` - fires `select_content`
+- `trackSearch({ searchTerm, resultCount })` - fires `search` or `search_no_results`
+- `trackSearchResultClick({ searchTerm, index, contentType, itemId })` - fires `select_content`
 - `trackSearchModalOpen()` - fires `search_modal_open`
 - `trackSearchModalClose()` - fires `search_modal_close`
 

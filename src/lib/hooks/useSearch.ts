@@ -64,6 +64,10 @@ export function useSearch(inputValue: string): UseSearchResult {
 	});
 
 	useEffect(() => {
+		if (!isEnabled) {
+			lastTrackedQuery.current = '';
+			return;
+		}
 		if (
 			!isFetching &&
 			data !== undefined &&
@@ -76,7 +80,7 @@ export function useSearch(inputValue: string): UseSearchResult {
 				resultCount: data.length
 			});
 		}
-	}, [isFetching, data, debouncedQuery]);
+	}, [isEnabled, isFetching, data, debouncedQuery]);
 
 	if (!hasMinChars) {
 		return {

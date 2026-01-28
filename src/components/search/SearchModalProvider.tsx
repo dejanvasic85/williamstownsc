@@ -20,13 +20,17 @@ export function SearchModalProvider({ children }: SearchModalProviderProps) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const open = () => {
-		setIsOpen(true);
-		trackSearchModalOpen();
+		setIsOpen((prev) => {
+			if (!prev) trackSearchModalOpen();
+			return true;
+		});
 	};
 
 	const close = () => {
-		setIsOpen(false);
-		trackSearchModalClose();
+		setIsOpen((prev) => {
+			if (prev) trackSearchModalClose();
+			return false;
+		});
 	};
 
 	const toggle = () => {
