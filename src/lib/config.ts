@@ -73,7 +73,7 @@ export function getAwsConfig(): AwsConfig {
 }
 
 export function isLocal(): boolean {
-	return process.env.ENV === 'local';
+	return process.env.NEXT_PUBLIC_ENV === 'local';
 }
 
 /**
