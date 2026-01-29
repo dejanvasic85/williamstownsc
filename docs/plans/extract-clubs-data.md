@@ -6,23 +6,23 @@ Automate club data extraction from the Dribl API using Playwright browser automa
 
 ## Requirements
 
-- Single CLI command that crawls the webpage and extracts the club information from http response, validates, transforms, and saves external club data to /data/external/clubs.json
+- Single CLI command that crawls the webpage and extracts the club information from http response, validates, transforms, and saves external club data to `data/external/clubs/clubs.json`
 - Reuse existing Zod schemas and transform logic
 - No code duplication between `syncClubs.ts` and new extraction script
 - Optional `--url` override for different seasons
 - Backward compat: `sync:clubs` continues to work independently by using the extracted data
 - The job should use playwright core to drive the browser
 - The job should be available in package.json `crawl:clubs`
-- We don't need to change anything existing except for building a new
+- We don't need to change any existing functionality; just add the new crawl job and associated CLI/script wiring
 
 ## Inputs
 
 - `--url` e.g. Given the URL as an input:
-  https://fv.dribl.com/fixtures/?date_range=default&season=nPmrj2rmow&timezone=Australia%2FMelbourne. The specific api call we need to observe and get a response is https://mc-api.dribl.com/api/list/clubs?disable_paging=true
+  `https://fv.dribl.com/fixtures/?date_range=default&season=nPmrj2rmow&timezone=Australia%2FMelbourne`. The specific api call we need to observe and get a response is `https://mc-api.dribl.com/api/list/clubs?disable_paging=true`
 
 ## API Response
 
-It should be in the following format and we can store the raw value in `data/external/clubs.json`
+It should be in the following format and we can store the raw value in `data/external/clubs/clubs.json`
 
 ```json
 {

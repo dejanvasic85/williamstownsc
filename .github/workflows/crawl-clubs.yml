@@ -21,7 +21,7 @@ jobs:
       - name: Install Chrome
         run: npx playwright install --with-deps chrome
       - name: Crawl clubs
-        run: xvfb-run --auto-servernum npm run crawl:clubs -- ${{ inputs.url && format('--url "{0}"', inputs.url) || '' }}
+        run: npm run crawl:clubs:ci -- ${{ inputs.url && format('--url "{0}"', inputs.url) || '' }}
       - name: Upload clubs data
         uses: actions/upload-artifact@v6
         with:
