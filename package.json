@@ -16,6 +16,7 @@
 		"type:gen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
 		"type:check": "tsc --noEmit",
 		"crawl:clubs": "tsx bin/crawlClubs.ts",
+		"crawl:clubs:ci": "xvfb-run --auto-servernum tsx bin/crawlClubs.ts",
 		"sync:clubs": "tsx bin/syncClubs.ts",
 		"sync:fixtures": "tsx bin/syncFixtures.ts",
 		"test:e2e": "playwright test",
