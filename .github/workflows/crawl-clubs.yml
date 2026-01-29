@@ -1,0 +1,30 @@
+name: Crawl Clubs
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Dribl fixtures page URL (leave empty for default)'
+        required: false
+        type: string
+
+jobs:
+  crawl:
+    name: Crawl Clubs Data
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: volta-cli/action@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Chrome
+        run: npx playwright install --with-deps chrome
+      - name: Crawl clubs
+        run: xvfb-run --auto-servernum npm run crawl:clubs -- ${{ inputs.url && format('--url "{0}"', inputs.url) || '' }}
+      - name: Upload clubs data
+        uses: actions/upload-artifact@v6
+        with:
+          name: clubs-data
+          path: data/external/clubs/clubs.json
+          retention-days: 30
