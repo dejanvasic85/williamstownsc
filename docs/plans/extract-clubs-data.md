@@ -66,7 +66,7 @@ It should be in the following format and we can store the raw value in `data/ext
 
 ## Todo
 
-- [ ] Create `bin/crawlClubs.ts` (Playwright extraction + sync pipeline)
-- [ ] Add `crawl:clubs` npm script
-- [ ] Lint, format, type:check
-- [ ] Run `npm run crawl:clubs` to ensure success
+- [x] Create `bin/crawlClubs.ts` (Playwright extraction + sync pipeline)
+- [x] Add `crawl:clubs` npm script
+- [x] Lint, format, type:check
+- [x] Run `npm run crawl:clubs` to ensure success
