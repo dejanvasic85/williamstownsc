@@ -55,58 +55,79 @@ async function waitForNewResponse(
 	);
 }
 
-async function openFilterModal(page: Page): Promise<void> {
-	await page.getByRole('button', { name: 'Filter' }).click({ force: true });
-	await page.waitForTimeout(1500);
+async function getCurrentSeasonText(page: Page): Promise<string> {
+	const seasonText = await page.evaluate(() => {
+		const elements = Array.from(document.querySelectorAll('*'));
+		// Look for 4-digit year that's visible
+		const yearElement = elements.find((el) => {
+			const text = el.textContent?.trim() || '';
+			return /^\d{4}$/.test(text) && (el as HTMLElement).offsetParent !== null;
+		});
+		return yearElement?.textContent?.trim() || new Date().getFullYear().toString();
+	});
+	return seasonText;
 }
 
-async function selectFilterOption(
+async function clickFilterByText(
 	page: Page,
-	filterName: string,
-	optionText: string
+	filterLabel: string,
+	currentValueText: string,
+	newValueText: string
 ): Promise<boolean> {
 	try {
-		const trimmedFilterName = filterName.trim();
-		const trimmedOptionText = optionText.trim();
+		console.log(`   🔍 ${filterLabel}: Clicking "${currentValueText}"...`);
 
-		// Click filter listitem using page.evaluate() to bypass modal overlay
-		const filterClicked = await page.evaluate((name) => {
-			const listitems = Array.from(document.querySelectorAll('li'));
-			const li = listitems.find((el) => el.textContent?.includes(name));
-			if (li) {
-				(li as HTMLElement).click();
+		// STEP 1: Click on the current filter value text
+		const currentValueClicked = await page.evaluate((text) => {
+			const elements = Array.from(document.querySelectorAll('*'));
+			const element = elements.find((el) => {
+				const elementText = el.textContent?.trim() || '';
+				return elementText === text && (el as HTMLElement).offsetParent !== null;
+			});
+
+			if (element) {
+				(element as HTMLElement).click();
 				return true;
 			}
 			return false;
-		}, trimmedFilterName);
+		}, currentValueText);
 
-		if (!filterClicked) {
-			console.error(`   ❌ Filter "${trimmedFilterName}" not found in modal`);
+		if (!currentValueClicked) {
+			console.error(`   ❌ Could not find visible text: "${currentValueText}"`);
 			return false;
 		}
 
-		await page.waitForTimeout(1500);
+		// STEP 2: Wait for filter options to appear
+		await page.waitForTimeout(1000);
 
-		// Click option value using page.evaluate() with exact text match
+		// STEP 3: Click on the desired option text
+		console.log(`   🔍 ${filterLabel}: Clicking "${newValueText}"...`);
 		const optionClicked = await page.evaluate((text) => {
 			const elements = Array.from(document.querySelectorAll('*'));
-			const option = elements.find((el) => el.textContent?.trim() === text);
-			if (option) {
-				(option as HTMLElement).click();
+			const element = elements.find((el) => {
+				const elementText = el.textContent?.trim() || '';
+				return elementText === text && (el as HTMLElement).offsetParent !== null;
+			});
+
+			if (element) {
+				(element as HTMLElement).click();
 				return true;
 			}
 			return false;
-		}, trimmedOptionText);
+		}, newValueText);
 
 		if (!optionClicked) {
-			console.error(`   ❌ Option "${trimmedOptionText}" not found`);
+			console.error(`   ❌ Could not find visible text: "${newValueText}"`);
 			return false;
 		}
 
-		await page.waitForTimeout(2000);
+		// STEP 4: Wait for filter to apply
+		await page.waitForTimeout(1500);
+		console.log(`   ✓ ${filterLabel}: ${newValueText}`);
+
 		return true;
 	} catch (error) {
-		console.error(`   ❌ Error selecting ${filterName}: ${error}`);
+		console.error(`   ❌ Error setting ${filterLabel}: ${error}`);
 		return false;
 	}
 }
@@ -118,45 +139,32 @@ async function applyFilters(
 	console.log('🔧 Applying filters...');
 
 	await page.waitForLoadState('domcontentloaded');
-	await page.waitForTimeout(1000);
-
-	// Open the filter modal
-	await openFilterModal(page);
+	await page.waitForTimeout(2000);
 
 	const seasonValue = args.season || new Date().getFullYear().toString();
 	const competitionValue = args.competition || 'FFV';
 
 	// Apply Season filter
-	console.log(`   🔍 Setting season to: ${seasonValue}`);
-	const seasonSuccess = await selectFilterOption(page, 'Season', seasonValue);
-	if (seasonSuccess) {
-		console.log(`   ✓ Season: ${seasonValue}`);
-		await page.waitForLoadState('networkidle');
-		await openFilterModal(page); // Reopen modal for next filter
-	} else {
-		console.log(`   ⚠️  Season filter failed, using default`);
-	}
+	const currentSeasonText = await getCurrentSeasonText(page);
+	await clickFilterByText(page, 'Season', currentSeasonText, seasonValue);
+	await page.waitForLoadState('networkidle');
 
 	// Apply Competition filter
-	console.log(`   🔍 Setting competition to: ${competitionValue}`);
-	const competitionSuccess = await selectFilterOption(page, 'Competition', competitionValue);
-	if (competitionSuccess) {
-		console.log(`   ✓ Competition: ${competitionValue}`);
-		await page.waitForLoadState('networkidle');
-		await openFilterModal(page); // Reopen modal for next filter
-	} else {
-		console.log(`   ⚠️  Competition filter failed, using default`);
-	}
+	await clickFilterByText(page, 'Competition', 'All Competitions', competitionValue);
+	await page.waitForLoadState('networkidle');
 
-	// Apply League filter - this is required
-	console.log(`   🔍 Setting league to: ${args.league}`);
-	const leagueSuccess = await selectFilterOption(page, 'League', args.league);
-	if (leagueSuccess) {
-		console.log(`   ✓ League: ${args.league}`);
-		await page.waitForLoadState('networkidle');
-	} else {
+	// Wait longer for League options to populate after Competition change
+	console.log('   ⏳ Waiting for league options to populate...');
+	await page.waitForTimeout(3000);
+
+	// Apply League filter (required)
+	const leagueSuccess = await clickFilterByText(page, 'League', 'All Leagues', args.league);
+
+	if (!leagueSuccess) {
 		throw new Error(`Failed to select league "${args.league}". Please check the league name.`);
 	}
+
+	await page.waitForLoadState('networkidle');
 
 	return {
 		season: seasonValue,
@@ -200,17 +208,43 @@ async function crawlFixtures() {
 		await waitForNewResponse(responses, 0, 60_000);
 		console.log(`   ✓ Initial fixtures loaded`);
 
+		// Wait for page to stabilize and Load More button to appear
+		console.log('⏳ Waiting for page to stabilize...');
+		await page.waitForTimeout(3000);
+
 		// Pagination loop
 		let chunkIndex = 0;
-		while (await hasLoadMoreButton(page)) {
+		let hasMorePages = await hasLoadMoreButton(page);
+		console.log(`🔍 Load More button ${hasMorePages ? 'found' : 'not found'}`);
+
+		while (hasMorePages) {
 			const expectedIndex = chunkIndex + 1;
 			console.log(`🔄 Loading more fixtures (chunk ${expectedIndex})...`);
 
-			await page.getByRole('button', { name: /load more/i }).click();
-			await waitForNewResponse(responses, expectedIndex, 60_000);
+			// Scroll to bottom to make Load More button visible
+			await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+			await page.waitForTimeout(500);
 
+			// Click the Load More button
+			const loadMoreButton = page.getByRole('button', { name: /load more/i });
+			await loadMoreButton.scrollIntoViewIfNeeded();
+			await page.waitForTimeout(500);
+			await loadMoreButton.click();
+
+			// Wait for new API response
+			await waitForNewResponse(responses, expectedIndex, 60_000);
 			console.log(`   ✓ Chunk ${expectedIndex} loaded`);
+
+			// Wait for UI to update and next button to appear
+			await page.waitForTimeout(2000);
+
+			// Scroll to bottom again to reveal next Load More button (if exists)
+			await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+			await page.waitForTimeout(500);
+
 			chunkIndex++;
+			hasMorePages = await hasLoadMoreButton(page);
+			console.log(`🔍 Load More button ${hasMorePages ? 'found' : 'not found'}`);
 		}
 
 		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);

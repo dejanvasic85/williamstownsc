@@ -114,7 +114,7 @@ const externalFixtureAttributesSchema = z.object({
 	match_hash_id: z.string(),
 	forfeit_team_hash_id: z.string().nullable(),
 	home_team_hash_id: z.string(),
-	away_team_hash_id: z.string()
+	away_team_hash_id: z.string().nullable()
 });
 
 const externalFixtureSchema = z.object({
@@ -130,18 +130,22 @@ const externalFixtureSchema = z.object({
 
 export const externalFixturesApiResponseSchema = z.object({
 	data: z.array(externalFixtureSchema),
-	links: z.object({
-		first: z.url().nullable(),
-		last: z.url().nullable(),
-		prev: z.url().nullable(),
-		next: z.url().nullable()
-	}),
-	meta: z.object({
-		path: z.url(),
-		per_page: z.number(),
-		next_cursor: z.string().nullable(),
-		prev_cursor: z.string().nullable()
-	})
+	links: z
+		.object({
+			first: z.url().nullable(),
+			last: z.url().nullable(),
+			prev: z.url().nullable(),
+			next: z.url().nullable()
+		})
+		.optional(),
+	meta: z
+		.object({
+			path: z.url(),
+			per_page: z.number(),
+			next_cursor: z.string().nullable(),
+			prev_cursor: z.string().nullable()
+		})
+		.optional()
 });
 
 export const fixtureSchema = z.object({
