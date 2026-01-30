@@ -2,6 +2,7 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import { Command } from 'commander';
 import { ZodError } from 'zod';
 import { transformExternalFixture } from '@/lib/matches/fixtureTransformService';
 import {
@@ -14,19 +15,15 @@ import type { Fixture, FixtureData } from '@/types/matches';
 const EXTERNAL_DIR = path.resolve(__dirname, '../data/external');
 const OUTPUT_DIR = path.resolve(__dirname, '../data/matches');
 
-// Parse CLI arguments
-function parseArgs(): { league: string } | null {
-	const args = process.argv.slice(2);
-	const leagueIndex = args.indexOf('--league');
+const program = new Command();
 
-	if (leagueIndex === -1 || !args[leagueIndex + 1]) {
-		return null;
-	}
+program
+	.name('sync-fixtures')
+	.description('Transform external fixture chunks into canonical format')
+	.version('1.0.0')
+	.requiredOption('-l, --league <slug>', 'League slug to sync');
 
-	return {
-		league: args[leagueIndex + 1]
-	};
-}
+program.parse();
 
 // Read all external fixture files for a league
 async function readExternalFixtureFiles(league: string): Promise<ExternalFixturesApiResponse[]> {
@@ -179,16 +176,7 @@ async function writeFixtureData(league: string, data: FixtureData): Promise<void
 async function main() {
 	console.log('🏟️  Fixture Sync Tool\n');
 
-	const args = parseArgs();
-
-	if (!args) {
-		console.error('❌ Error: Missing required --league argument\n');
-		console.log('Usage: npm run sync:fixtures -- --league <league-slug>');
-		console.log('Example: npm run sync:fixtures -- --league seniors-mens\n');
-		process.exit(1);
-	}
-
-	const { league } = args;
+	const { league } = program.opts<{ league: string }>();
 
 	console.log(`📋 Syncing fixtures for league: ${league}`);
 

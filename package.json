@@ -18,6 +18,8 @@
 		"crawl:clubs": "tsx bin/crawlClubs.ts",
 		"crawl:clubs:ci": "xvfb-run --auto-servernum tsx bin/crawlClubs.ts",
 		"sync:clubs": "tsx bin/syncClubs.ts",
+		"crawl:fixtures": "tsx bin/crawlFixtures.ts",
+		"crawl:fixtures:ci": "xvfb-run --auto-servernum tsx bin/crawlFixtures.ts",
 		"sync:fixtures": "tsx bin/syncFixtures.ts",
 		"test:e2e": "playwright test",
 		"test:e2e:ui": "playwright test --ui",
