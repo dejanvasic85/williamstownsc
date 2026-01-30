@@ -29,7 +29,7 @@ program
 program.parse();
 
 async function hasLoadMoreButton(page: Page): Promise<boolean> {
-	const button = page.getByRole('button', { name: /load more/i });
+	const button = page.getByText('Load more...');
 	const isVisible = await button.isVisible().catch(() => false);
 	if (!isVisible) {
 		return false;
@@ -66,6 +66,28 @@ async function getCurrentSeasonText(page: Page): Promise<string> {
 		return yearElement?.textContent?.trim() || new Date().getFullYear().toString();
 	});
 	return seasonText;
+}
+
+async function waitForLoadMoreButton(page: Page, maxAttempts: number = 10): Promise<boolean> {
+	console.log('🔍 Scrolling to find Load More button...');
+
+	for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+		// Scroll to bottom
+		await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+		await page.waitForTimeout(300);
+
+		// Check if button is visible
+		const hasButton = await hasLoadMoreButton(page);
+		if (hasButton) {
+			console.log(`   ✓ Load More button found after ${attempt} scroll(s)`);
+			return true;
+		}
+
+		console.log(`   ⏳ Attempt ${attempt}/${maxAttempts}: Button not visible yet...`);
+	}
+
+	console.log('   ℹ️  Load More button not found after scrolling');
+	return false;
 }
 
 async function clickFilterByText(
@@ -139,7 +161,6 @@ async function applyFilters(
 	console.log('🔧 Applying filters...');
 
 	await page.waitForLoadState('domcontentloaded');
-	await page.waitForTimeout(2000);
 
 	const seasonValue = args.season || new Date().getFullYear().toString();
 	const competitionValue = args.competition || 'FFV';
@@ -155,7 +176,6 @@ async function applyFilters(
 
 	// Wait longer for League options to populate after Competition change
 	console.log('   ⏳ Waiting for league options to populate...');
-	await page.waitForTimeout(3000);
 
 	// Apply League filter (required)
 	const leagueSuccess = await clickFilterByText(page, 'League', 'All Leagues', args.league);
@@ -208,43 +228,30 @@ async function crawlFixtures() {
 		await waitForNewResponse(responses, 0, 60_000);
 		console.log(`   ✓ Initial fixtures loaded`);
 
-		// Wait for page to stabilize and Load More button to appear
-		console.log('⏳ Waiting for page to stabilize...');
-		await page.waitForTimeout(3000);
+		// Scroll until Load More button appears
+		let hasMorePages = await waitForLoadMoreButton(page);
 
 		// Pagination loop
 		let chunkIndex = 0;
-		let hasMorePages = await hasLoadMoreButton(page);
-		console.log(`🔍 Load More button ${hasMorePages ? 'found' : 'not found'}`);
 
 		while (hasMorePages) {
 			const expectedIndex = chunkIndex + 1;
 			console.log(`🔄 Loading more fixtures (chunk ${expectedIndex})...`);
 
-			// Scroll to bottom to make Load More button visible
-			await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-			await page.waitForTimeout(500);
-
-			// Click the Load More button
-			const loadMoreButton = page.getByRole('button', { name: /load more/i });
-			await loadMoreButton.scrollIntoViewIfNeeded();
-			await page.waitForTimeout(500);
+			// Click the Load More button (already scrolled into view by waitForLoadMoreButton)
+			const loadMoreButton = page.getByText('Load more...');
 			await loadMoreButton.click();
 
 			// Wait for new API response
 			await waitForNewResponse(responses, expectedIndex, 60_000);
 			console.log(`   ✓ Chunk ${expectedIndex} loaded`);
 
-			// Wait for UI to update and next button to appear
-			await page.waitForTimeout(2000);
+			// Wait for UI to update
+			await page.waitForTimeout(1000);
 
-			// Scroll to bottom again to reveal next Load More button (if exists)
-			await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-			await page.waitForTimeout(500);
-
+			// Scroll to find next Load More button
 			chunkIndex++;
-			hasMorePages = await hasLoadMoreButton(page);
-			console.log(`🔍 Load More button ${hasMorePages ? 'found' : 'not found'}`);
+			hasMorePages = await waitForLoadMoreButton(page, 5);
 		}
 
 		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);
