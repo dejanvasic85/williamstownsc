@@ -1,5 +1,7 @@
 # Site-Wide Search Plan
 
+**Created:** 2026-01-11
+
 ## Status: Backend ✅ | Modal Shell ✅ | Search Functionality ✅ | Testing Pending ⏳
 
 **What's Done**:

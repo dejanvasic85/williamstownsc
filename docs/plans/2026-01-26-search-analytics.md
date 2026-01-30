@@ -1,5 +1,7 @@
 # Search Analytics Events Plan
 
+**Created:** 2026-01-26
+
 ## Purpose
 
 Capture search analytics via GTM to understand user search behavior: what users search for, result effectiveness, and click-through patterns.

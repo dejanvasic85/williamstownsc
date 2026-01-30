@@ -1,5 +1,7 @@
 # Crawl Clubs Data via Playwright
 
+**Created:** 2026-01-29
+
 ## Purpose
 
 Automate club data extraction from the Dribl API using Playwright browser automation. The API has CORS restrictions preventing direct fetch, so a headless browser navigates to the fixtures page and intercepts the clubs API network response.
