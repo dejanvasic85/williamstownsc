@@ -12,7 +12,7 @@ import {
 } from '@/types/matches';
 import type { Fixture, FixtureData } from '@/types/matches';
 
-const EXTERNAL_DIR = path.resolve(__dirname, '../data/external');
+const EXTERNAL_DIR = path.resolve(__dirname, '../data/external/fixtures');
 const OUTPUT_DIR = path.resolve(__dirname, '../data/matches');
 
 const program = new Command();
@@ -21,16 +21,16 @@ program
 	.name('sync-fixtures')
 	.description('Transform external fixture chunks into canonical format')
 	.version('1.0.0')
-	.requiredOption('-l, --league <slug>', 'League slug to sync');
+	.requiredOption('-t, --team <slug>', 'Team slug to sync (e.g., "senior-mens")');
 
 program.parse();
 
-// Read all external fixture files for a league
-async function readExternalFixtureFiles(league: string): Promise<ExternalFixturesApiResponse[]> {
-	const leagueDir = path.join(EXTERNAL_DIR, league);
+// Read all external fixture files for a team
+async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesApiResponse[]> {
+	const teamDir = path.join(EXTERNAL_DIR, team);
 
 	try {
-		const files = await fs.readdir(leagueDir);
+		const files = await fs.readdir(teamDir);
 		const externalFiles = files
 			.filter((f) => f.match(/^chunk-\d+\.json$/))
 			.sort((a, b) => {
@@ -41,7 +41,7 @@ async function readExternalFixtureFiles(league: string): Promise<ExternalFixture
 
 		if (externalFiles.length === 0) {
 			throw new Error(
-				`No external fixture files found in ${leagueDir}\n` +
+				`No external fixture files found in ${teamDir}\n` +
 					`Expected files matching pattern: chunk-*.json`
 			);
 		}
@@ -52,7 +52,7 @@ async function readExternalFixtureFiles(league: string): Promise<ExternalFixture
 		const responses: ExternalFixturesApiResponse[] = [];
 
 		for (const file of externalFiles) {
-			const filePath = path.join(leagueDir, file);
+			const filePath = path.join(teamDir, file);
 			const content = await fs.readFile(filePath, 'utf-8');
 
 			try {
@@ -74,8 +74,8 @@ async function readExternalFixtureFiles(league: string): Promise<ExternalFixture
 	} catch (error) {
 		if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
 			throw new Error(
-				`League directory not found: ${leagueDir}\n` +
-					`Please create it and add fixture files: mkdir -p ${leagueDir}`
+				`Team directory not found: ${teamDir}\n` +
+					`Please create it and add fixture files: mkdir -p ${teamDir}`
 			);
 		}
 		throw error;
@@ -157,8 +157,8 @@ function calculateTotalRounds(fixtures: Fixture[]): number {
 }
 
 // Write fixture data to file
-async function writeFixtureData(league: string, data: FixtureData): Promise<void> {
-	const outputPath = path.join(OUTPUT_DIR, `${league}.json`);
+async function writeFixtureData(team: string, data: FixtureData): Promise<void> {
+	const outputPath = path.join(OUTPUT_DIR, `${team}.json`);
 
 	// Validate before writing
 	fixtureDataSchema.parse(data);
@@ -176,13 +176,13 @@ async function writeFixtureData(league: string, data: FixtureData): Promise<void
 async function main() {
 	console.log('🏟️  Fixture Sync Tool\n');
 
-	const { league } = program.opts<{ league: string }>();
+	const { team } = program.opts<{ team: string }>();
 
-	console.log(`📋 Syncing fixtures for league: ${league}`);
+	console.log(`📋 Syncing fixtures for team: ${team}`);
 
 	try {
 		// Read and validate all external files
-		const responses = await readExternalFixtureFiles(league);
+		const responses = await readExternalFixtureFiles(team);
 
 		// Transform and merge
 		console.log(`\n🔄 Transforming and merging fixtures...`);
@@ -209,7 +209,7 @@ async function main() {
 		};
 
 		// Write to file
-		await writeFixtureData(league, fixtureData);
+		await writeFixtureData(team, fixtureData);
 
 		console.log('\n✨ Sync completed successfully!\n');
 	} catch (error) {

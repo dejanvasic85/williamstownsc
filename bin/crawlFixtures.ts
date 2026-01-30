@@ -11,6 +11,13 @@ const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const fixturesApiUrlPrefix = 'https://mc-api.dribl.com/api/fixtures';
 
 type CliArgs = {
+	team: string;
+	league: string;
+	season?: string;
+	competition?: string;
+};
+
+type FilterArgs = {
 	league: string;
 	season?: string;
 	competition?: string;
@@ -22,7 +29,11 @@ program
 	.name('crawl-fixtures')
 	.description('Extract fixtures data from Dribl with filtering')
 	.version('1.0.0')
-	.requiredOption('-l, --league <slug>', 'League slug (e.g., "State League 2 Men\'s - North-West")')
+	.requiredOption('-t, --team <slug>', 'Team slug for output folder (e.g., "senior-mens")')
+	.requiredOption(
+		'-l, --league <slug>',
+		'League slug for filtering (e.g., "State League 2 Men\'s - North-West")'
+	)
 	.option('-s, --season <year>', 'Season year', new Date().getFullYear().toString())
 	.option('-c, --competition <id>', 'Competition ID', 'FFV');
 
@@ -156,7 +167,7 @@ async function clickFilterByText(
 
 async function applyFilters(
 	page: Page,
-	args: CliArgs
+	args: FilterArgs
 ): Promise<{ season: string; competition: string; league: string }> {
 	console.log('🔧 Applying filters...');
 
@@ -194,7 +205,7 @@ async function applyFilters(
 }
 
 async function crawlFixtures() {
-	const { league, season, competition } = program.opts<CliArgs>();
+	const { team, league, season, competition } = program.opts<CliArgs>();
 
 	console.log('🚀 Launching browser...');
 	let browser: Browser | undefined;
@@ -257,7 +268,7 @@ async function crawlFixtures() {
 		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);
 
 		// Validate and save chunks
-		const outputDir = resolve(__dirname, `../data/external/${filterValues.league}`);
+		const outputDir = resolve(__dirname, `../data/external/fixtures/${team}`);
 		mkdirSync(outputDir, { recursive: true });
 
 		console.log(`\n💾 Saving chunks to: ${outputDir}`);
@@ -283,6 +294,7 @@ async function crawlFixtures() {
 
 		console.log(`\n✨ Crawl completed successfully!`);
 		console.log(`   Total chunks: ${responses.length}`);
+		console.log(`   Team: ${team}`);
 		console.log(`   League: ${filterValues.league}`);
 		console.log(`   Season: ${filterValues.season}`);
 		console.log(`   Competition: ${filterValues.competition}\n`);

@@ -16,7 +16,8 @@ Extract clubs and fixtures data from https://fv.dribl.com/fixtures/ (SPA with Cl
 **Data flow:**
 
 ```
-dribl API → data/external/{entity}/ (raw) → transform → data/{entity}/ (validated)
+dribl API → data/external/fixtures/{team}/ (raw) → transform → data/matches/ (validated)
+dribl API → data/external/clubs/ (raw) → transform → data/clubs/ (validated)
 ```
 
 **Two-phase pattern:**
@@ -107,15 +108,16 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 
 **Output:**
 
-- Path: `data/external/{league}/chunk-0.json`, `chunk-1.json`, etc.
+- Path: `data/external/fixtures/{team}/chunk-0.json`, `chunk-1.json`, etc.
 - Format: Multiple JSON files (one per "Load more" click)
 - Naming: `chunk-{index}.json` where index starts at 0
 
-**CLI args (suggested):**
+**CLI args:**
 
-- `--league <league-slug>` (required)
-- `--season <season-id>` (optional, default to current)
-- `--competition <competition-id>` (optional, default to FFV)
+- `--team <slug>` (required) - Team slug for output folder (e.g., "senior-mens")
+- `--league <slug>` (required) - League slug for filtering (e.g., "State League 2 Men's - North-West")
+- `--season <year>` (optional, default to current year)
+- `--competition <id>` (optional, default to FFV)
 
 ## Clubs Transformation
 
@@ -171,14 +173,14 @@ writeFileSync(CLUBS_FILE_PATH, JSON.stringify({ clubs: mergedClubs }, null, '\t'
 
 ```typescript
 // Read all chunk files
-const leagueDir = path.join(EXTERNAL_DIR, league);
-const files = await fs.readdir(leagueDir);
+const teamDir = path.join(EXTERNAL_DIR, team);
+const files = await fs.readdir(teamDir);
 const chunkFiles = files.filter((f) => f.match(/^chunk-\d+\.json$/)).sort(); // natural number sort
 
 // Load and validate each chunk
 const responses: ExternalFixturesApiResponse[] = [];
 for (const file of chunkFiles) {
-	const content = await fs.readFile(path.join(leagueDir, file), 'utf-8');
+	const content = await fs.readFile(path.join(teamDir, file), 'utf-8');
 	const validated = externalFixturesApiResponseSchema.parse(JSON.parse(content));
 	responses.push(validated);
 }
@@ -232,12 +234,12 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 
 **Output:**
 
-- Path: `data/matches/{league}.json`
+- Path: `data/matches/{team}.json`
 - Format: `{ competition, season, totalFixtures, totalRounds, fixtures: Fixture[] }`
 
 **CLI args:**
 
-- `--league <league-slug>` (required)
+- `--team <slug>` (required) - Team slug to sync (e.g., "senior-mens")
 
 ## Validation Schemas
 
