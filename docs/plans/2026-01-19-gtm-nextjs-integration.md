@@ -1,5 +1,7 @@
 # GTM Integration for Next.js 16 App Router
 
+**Created:** 2026-01-19
+
 ## Purpose
 
 Integrate Google Tag Manager (GTM-K2893QQF) with Next.js 16 App Router using Server Components and latest best practices.

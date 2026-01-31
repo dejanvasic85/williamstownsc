@@ -1,5 +1,7 @@
 # Accessibility Improvements Plan
 
+**Created:** 2026-01-08
+
 ## Status: Complete ✅
 
 All high and medium priority accessibility improvements have been implemented and tested. Only optional low-priority enhancements remain.

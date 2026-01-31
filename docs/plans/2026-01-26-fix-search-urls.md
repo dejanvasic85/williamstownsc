@@ -1,5 +1,7 @@
 # Fix Search Result URLs
 
+**Created:** 2026-01-26
+
 ## Purpose
 
 Search results are pointing to incorrect URLs causing 404 errors. For example, "committee" goes to `/committee` instead of `/club/committee`.

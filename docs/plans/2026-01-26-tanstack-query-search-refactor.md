@@ -1,5 +1,7 @@
 # Plan: Refactor Search to TanStack Query
 
+**Created:** 2026-01-26
+
 **Status: COMPLETED**
 
 ## Overview

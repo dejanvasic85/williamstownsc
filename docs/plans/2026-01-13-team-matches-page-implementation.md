@@ -1,5 +1,7 @@
 # Team Matches Page Implementation Plan
 
+**Created:** 2026-01-13
+
 ## Overview
 
 Create a dynamic matches page at `/football/teams/[slug]/matches` that displays fixtures for a team in a clean, organized list grouped by round.

@@ -1,5 +1,7 @@
 # News Layout Improvements
 
+**Created:** 2026-01-16
+
 ## Purpose
 
 Enhance the news page beyond a simple card grid by implementing a modern magazine-style hierarchical layout that:

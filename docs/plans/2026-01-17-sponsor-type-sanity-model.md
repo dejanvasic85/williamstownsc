@@ -1,5 +1,7 @@
 # Sponsor Type Sanity Model
 
+**Created:** 2026-01-17
+
 ## Purpose
 
 Convert hardcoded sponsor types (Principal, Major, Community Partner) to a manageable Sanity content model allowing authors to add/edit sponsor types dynamically.

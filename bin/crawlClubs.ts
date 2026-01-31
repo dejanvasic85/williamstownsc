@@ -2,6 +2,7 @@
 
 import { mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
+import { Command } from 'commander';
 import { type Browser, chromium } from 'playwright-core';
 import { externalApiResponseSchema } from '@/types/matches';
 
@@ -10,15 +11,18 @@ const defaultFixturesUrl =
 const clubsApiUrl = 'https://mc-api.dribl.com/api/list/clubs?disable_paging=true';
 const outputPath = resolve(__dirname, '../data/external/clubs/clubs.json');
 
-function parseArgs(): { url: string } {
-	const args = process.argv.slice(2);
-	const urlIndex = args.indexOf('--url');
-	const url = urlIndex !== -1 && args[urlIndex + 1] ? args[urlIndex + 1] : defaultFixturesUrl;
-	return { url };
-}
+const program = new Command();
+
+program
+	.name('crawl-clubs')
+	.description('Crawl club data from Dribl fixtures page')
+	.version('1.0.0')
+	.option('-u, --url <url>', 'Dribl fixtures page URL', defaultFixturesUrl);
+
+program.parse();
 
 async function crawlClubs() {
-	const { url } = parseArgs();
+	const { url } = program.opts<{ url: string }>();
 
 	console.log('Launching browser...');
 	let browser: Browser | undefined;
