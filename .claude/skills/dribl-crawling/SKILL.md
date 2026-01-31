@@ -81,7 +81,7 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 
 ## Fixtures Extraction
 
-**Pattern (not yet implemented in bin/crawlFixtures.ts):**
+**Pattern (implemented in bin/crawlFixtures.ts):**
 
 **Steps:**
 
@@ -332,9 +332,10 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 
 **CLI arguments:**
 
-- Use simple argv parsing for small scripts
+- Use Commander library for consistent CLI parsing
+- Define options with `.option()` or `.requiredOption()`
 - Provide defaults for optional args
-- Print usage message on missing required args
+- Commander auto-generates help text and validates required args
 
 ## Common Patterns
 

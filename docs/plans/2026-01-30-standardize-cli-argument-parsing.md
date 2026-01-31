@@ -37,7 +37,7 @@ Use Commander library (already installed) to provide:
 
 - ✅ Removed `parseArgs()` function
 - ✅ Removed manual help text and validation
-- ✅ Added Commander setup with required `--league` option
+- ✅ Added Commander setup with required `--team` and `--league` options
 - ✅ Updated `crawlFixtures()` to use `program.opts()`
 - ✅ Kept `CliArgs` type for `applyFilters()` compatibility
 
@@ -45,7 +45,7 @@ Use Commander library (already installed) to provide:
 
 - ✅ Removed `parseArgs()` function
 - ✅ Removed manual help text and validation
-- ✅ Added Commander setup with required `--league` option
+- ✅ Added Commander setup with required `--team` option
 - ✅ Updated `main()` to use `program.opts()`
 
 ### 4. bin/syncClubs.ts

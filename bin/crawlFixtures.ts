@@ -178,11 +178,22 @@ async function applyFilters(
 
 	// Apply Season filter
 	const currentSeasonText = await getCurrentSeasonText(page);
-	await clickFilterByText(page, 'Season', currentSeasonText, seasonValue);
+	const seasonApplied = await clickFilterByText(page, 'Season', currentSeasonText, seasonValue);
+	if (!seasonApplied) {
+		throw new Error(`Failed to select season "${seasonValue}".`);
+	}
 	await page.waitForLoadState('networkidle');
 
 	// Apply Competition filter
-	await clickFilterByText(page, 'Competition', 'All Competitions', competitionValue);
+	const competitionApplied = await clickFilterByText(
+		page,
+		'Competition',
+		'All Competitions',
+		competitionValue
+	);
+	if (!competitionApplied) {
+		throw new Error(`Failed to select competition "${competitionValue}".`);
+	}
 	await page.waitForLoadState('networkidle');
 
 	// Wait longer for League options to populate after Competition change
@@ -233,6 +244,11 @@ async function crawlFixtures() {
 
 		// Apply filters
 		const filterValues = await applyFilters(page, { league, season, competition });
+
+		// Clear any pre-filter responses to avoid saving stale data
+		if (responses.length > 1) {
+			responses.splice(0, responses.length - 1);
+		}
 
 		// Wait for first API response
 		console.log('⏳ Waiting for initial fixtures...');

@@ -19,7 +19,7 @@
 
 - **IMPORTANT**: Dev server runs on port 3003 (not 3000): `npm run dev`
 - Node version: 24.12.0 (managed by Volta)
-- TypeScript path aliases: @/_ (src), @data/_ (data)
+- TypeScript path aliases: `@/*` (src), `@data/*` (data)
 - Required env vars: see .env.example (Sanity, AWS SES, reCAPTCHA)
 - Sanity Studio: separate at /studio path
 
@@ -59,7 +59,7 @@
 - Use switch statements instead of long if/else chains when branching on a single value
 - Never use SCREAMING_CASE for constants, always use camelCase instead (e.g. `contactTypes` not `CONTACT_TYPES`)
 - Constant values that are objects should be suffixed with 'Value' (e.g. `defaultConfigValue`)
-- Only write code comments when code is not clear and keep conscise, avoid commenting out code
+- Only write code comments when code is not clear and keep concise, avoid commenting out code
 - Avoid magic numbers and strings, use constants instead
 - Typescript files should be camelCase e.g. myService.ts
 - Application env variables should be declared in config using a zod schema for validation

@@ -18,7 +18,7 @@ Implement `bin/crawlFixtures.ts` to extract fixtures data from dribl.com (SPA wi
 - Navigate modal-based filters that intercept standard Playwright clicks
 - Collect paginated API responses via persistent listener
 - Validate data with Zod schema
-- Save validated chunks to `data/external/{league}/chunk-*.json`
+- Save validated chunks to `data/external/fixtures/{team}/chunk-*.json`
 
 ## Implementation Summary
 
@@ -32,9 +32,9 @@ Use `page.evaluate()` to directly manipulate DOM, bypassing actionability checks
 
 ### Key Files Modified
 
-- `bin/crawlFixtures.ts` - Main implementation (63-114)
-  - `openFilterModal()`: Added `{ force: true }` flag, increased wait to 1500ms
-  - `selectFilterOption()`: Rewrote using `page.evaluate()` for DOM manipulation
+- `bin/crawlFixtures.ts` - Main implementation of the fixtures crawler
+  - Added `clickFilterByText()` and related helpers using `page.evaluate()` to interact with modal filters despite overlay/animation issues
+  - Integrated CLI args, pagination loop, response listener, Zod validation, and chunked file writing into the crawler entrypoint
 - `package.json` - Scripts already present:
   - `crawl:fixtures`: Normal execution
   - `crawl:fixtures:ci`: CI execution with xvfb-run
@@ -49,7 +49,7 @@ npm run crawl:fixtures
 npm run crawl:fixtures -- --competition "VETO Sports State League Men's" --season 2026 --league "State League 2 Men's - North-West"
 
 # Verify output
-ls -la data/external/{league}/chunk-*.json
+ls -la data/external/fixtures/{team}/chunk-*.json
 ```
 
 ## Todo
