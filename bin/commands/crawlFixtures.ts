@@ -53,12 +53,46 @@ async function waitForNewResponse(
 async function getCurrentSeasonText(page: Page): Promise<string> {
 	const seasonText = await page.evaluate(() => {
 		const elements = Array.from(document.querySelectorAll('*'));
-		// Look for 4-digit year that's visible
-		const yearElement = elements.find((el) => {
+		const seasonButton = elements.find((el) => {
 			const text = el.textContent?.trim() || '';
-			return /^\d{4}$/.test(text) && (el as HTMLElement).offsetParent !== null;
+			return /^Season\s+\d{4}$/.test(text) && (el as HTMLElement).offsetParent !== null;
 		});
-		return yearElement?.textContent?.trim() || new Date().getFullYear().toString();
+		if (seasonButton) {
+			return seasonButton.textContent?.trim() || 'Season';
+		}
+
+		const labelEl = elements.find((el) => {
+			const text = el.textContent?.trim() || '';
+			return text === 'Season' && (el as HTMLElement).offsetParent !== null;
+		});
+
+		if (labelEl) {
+			const containers: Element[] = [];
+			let current: Element | null = labelEl.parentElement;
+			for (let i = 0; i < 3 && current; i++) {
+				containers.push(current);
+				current = current.parentElement;
+			}
+
+			for (const container of containers) {
+				const texts = Array.from(container.querySelectorAll('*'))
+					.filter((el) => (el as HTMLElement).offsetParent !== null)
+					.map((el) => el.textContent?.trim() || '')
+					.filter((text) => text && text !== 'Season');
+
+				const yearText = texts.find((text) => /^\d{4}$/.test(text));
+				if (yearText) {
+					return yearText;
+				}
+
+				const allSeasonsText = texts.find((text) => /all seasons/i.test(text));
+				if (allSeasonsText) {
+					return allSeasonsText;
+				}
+			}
+		}
+
+		return 'Season';
 	});
 	return seasonText;
 }
@@ -111,7 +145,26 @@ async function clickFilterByText(
 
 		if (!currentValueClicked) {
 			console.error(`   ❌ Could not find visible text: "${currentValueText}"`);
-			return false;
+
+			console.log(`   🔁 ${filterLabel}: Falling back to label click...`);
+			const labelClicked = await page.evaluate((labelText) => {
+				const elements = Array.from(document.querySelectorAll('*'));
+				const element = elements.find((el) => {
+					const elementText = el.textContent?.trim() || '';
+					return elementText === labelText && (el as HTMLElement).offsetParent !== null;
+				});
+
+				if (element) {
+					(element as HTMLElement).click();
+					return true;
+				}
+				return false;
+			}, filterLabel);
+
+			if (!labelClicked) {
+				console.error(`   ❌ Could not find visible text: "${filterLabel}"`);
+				return false;
+			}
 		}
 
 		// STEP 2: Wait for filter options to appear
@@ -156,6 +209,20 @@ async function applyFilters(
 	console.log('🔧 Applying filters...');
 
 	await page.waitForLoadState('domcontentloaded');
+	await page.waitForFunction(
+		() => {
+			const elements = Array.from(document.querySelectorAll('*'));
+			return elements.some((el) => {
+				const text = el.textContent?.trim() || '';
+				return (
+					(/Season\s+\d{4}/.test(text) || text === 'Season') &&
+					(el as HTMLElement).offsetParent !== null
+				);
+			});
+		},
+		null,
+		{ timeout: 15_000 }
+	);
 
 	const seasonValue = args.season || new Date().getFullYear().toString();
 	const competitionValue = args.competition || 'FFV';
