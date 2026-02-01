@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { type Browser, type Page, type Response, chromium } from 'playwright-core';
 import { ZodError } from 'zod';
 import { externalFixturesApiResponseSchema } from '@/types/matches';
@@ -13,6 +14,8 @@ export type CrawlFixturesOptions = {
 	season?: string;
 	competition?: string;
 };
+
+const currentDir = dirname(fileURLToPath(import.meta.url));
 
 type FilterArgs = {
 	league: string;
@@ -263,7 +266,7 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);
 
 		// Validate and save chunks
-		const outputDir = resolve(__dirname, `../../data/external/fixtures/${team}`);
+		const outputDir = resolve(currentDir, `../../data/external/fixtures/${team}`);
 		mkdirSync(outputDir, { recursive: true });
 
 		console.log(`\n💾 Saving chunks to: ${outputDir}`);

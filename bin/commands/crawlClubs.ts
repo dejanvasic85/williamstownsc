@@ -1,12 +1,14 @@
 import { mkdirSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { type Browser, chromium } from 'playwright-core';
 import { externalApiResponseSchema } from '@/types/matches';
 
 export const defaultFixturesUrl =
 	'https://fv.dribl.com/fixtures/?date_range=default&season=nPmrj2rmow&timezone=Australia%2FMelbourne';
 const clubsApiUrl = 'https://mc-api.dribl.com/api/list/clubs?disable_paging=true';
-const outputPath = resolve(__dirname, '../../data/external/clubs/clubs.json');
+const currentDir = dirname(fileURLToPath(import.meta.url));
+const outputPath = resolve(currentDir, '../../data/external/clubs/clubs.json');
 
 type CrawlClubsOptions = {
 	url: string;

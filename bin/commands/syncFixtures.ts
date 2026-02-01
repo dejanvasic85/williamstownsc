@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
-import path from 'path';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { ZodError } from 'zod';
 import { transformExternalFixture } from '@/lib/matches/fixtureTransformService';
 import {
@@ -9,8 +10,9 @@ import {
 } from '@/types/matches';
 import type { Fixture, FixtureData } from '@/types/matches';
 
-const EXTERNAL_DIR = path.resolve(__dirname, '../../data/external/fixtures');
-const OUTPUT_DIR = path.resolve(__dirname, '../../data/matches');
+const currentDir = path.dirname(fileURLToPath(import.meta.url));
+const EXTERNAL_DIR = path.resolve(currentDir, '../../data/external/fixtures');
+const OUTPUT_DIR = path.resolve(currentDir, '../../data/matches');
 
 type SyncFixturesOptions = {
 	team: string;
