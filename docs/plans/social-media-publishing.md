@@ -88,7 +88,7 @@ POST /v22.0/{ig-user-id}/media_publish
 
 ## Environment Variables
 
-Add `metaConfigSchema` to `lib/config.ts`:
+Add `metaConfigSchema` to `src/lib/config.ts` (imported as `@/lib/config`):
 
 | Variable                    | Description                                                            |
 | --------------------------- | ---------------------------------------------------------------------- |
