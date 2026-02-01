@@ -1,5 +1,3 @@
-#!/usr/bin/env tsx
-
 import { Command } from 'commander';
 import { crawlClubs, defaultFixturesUrl } from './commands/crawlClubs';
 import { crawlFixtures } from './commands/crawlFixtures';
