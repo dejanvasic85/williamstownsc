@@ -131,7 +131,7 @@ Note: Site base URL is already available via `canonicalUrl` in Sanity `siteSetti
 - [ ] Create `lib/services/socialPublishService.ts` -- `publishToFacebook()`, `publishToInstagram()`, `publishArticleToSocials()`
 - [ ] Add `getArticleForSocialPublish(id)` query to `lib/content/news.ts` (title, slug, excerpt, featuredImage)
 - [ ] Fetch `canonicalUrl` from Sanity `siteSettings` for article URL construction (reuse existing query)
-- [ ] Create `app/api/social-publish/route.ts` -- webhook validation, fetch article, orchestrate publish
+- [ ] Create `src/app/api/social-publish/route.ts` -- webhook validation, fetch article, orchestrate publish
 - [ ] Unit tests for service functions (mocked fetch) and route handler (mocked service)
 - [ ] Lint, format, type-check
 - [ ] Manual e2e test: publish article in Sanity → verify posts on Facebook + Instagram
