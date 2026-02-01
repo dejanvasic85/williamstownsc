@@ -1,13 +1,11 @@
-#!/usr/bin/env tsx
-
 import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { ZodError } from 'zod';
 import { transformExternalClub } from '@/lib/clubService';
 import { type Club, type Clubs, clubsSchema, externalApiResponseSchema } from '@/types/matches';
 
-const EXTERNAL_DATA_PATH = resolve(__dirname, '../data/external/clubs/clubs.json');
-const CLUBS_FILE_PATH = resolve(__dirname, '../data/clubs/clubs.json');
+const EXTERNAL_DATA_PATH = resolve(__dirname, '../../data/external/clubs/clubs.json');
+const CLUBS_FILE_PATH = resolve(__dirname, '../../data/clubs/clubs.json');
 
 function loadExternalData() {
 	try {
@@ -80,7 +78,7 @@ function saveClubsFile(clubsFile: Clubs) {
 	writeFileSync(CLUBS_FILE_PATH, content + '\n', 'utf-8');
 }
 
-async function syncClubs() {
+export async function syncClubs() {
 	try {
 		console.log('Reading external data from:', EXTERNAL_DATA_PATH);
 
@@ -130,5 +128,3 @@ async function syncClubs() {
 		process.exit(1);
 	}
 }
-
-syncClubs();

@@ -1,29 +1,18 @@
-#!/usr/bin/env tsx
-
 import { mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import { Command } from 'commander';
 import { type Browser, chromium } from 'playwright-core';
 import { externalApiResponseSchema } from '@/types/matches';
 
-const defaultFixturesUrl =
+export const defaultFixturesUrl =
 	'https://fv.dribl.com/fixtures/?date_range=default&season=nPmrj2rmow&timezone=Australia%2FMelbourne';
 const clubsApiUrl = 'https://mc-api.dribl.com/api/list/clubs?disable_paging=true';
-const outputPath = resolve(__dirname, '../data/external/clubs/clubs.json');
+const outputPath = resolve(__dirname, '../../data/external/clubs/clubs.json');
 
-const program = new Command();
+type CrawlClubsOptions = {
+	url: string;
+};
 
-program
-	.name('crawl-clubs')
-	.description('Crawl club data from Dribl fixtures page')
-	.version('1.0.0')
-	.option('-u, --url <url>', 'Dribl fixtures page URL', defaultFixturesUrl);
-
-program.parse();
-
-async function crawlClubs() {
-	const { url } = program.opts<{ url: string }>();
-
+export async function crawlClubs({ url }: CrawlClubsOptions) {
 	console.log('Launching browser...');
 	let browser: Browser | undefined;
 
@@ -60,8 +49,3 @@ async function crawlClubs() {
 		console.log('Browser closed');
 	}
 }
-
-crawlClubs().catch((error) => {
-	console.error(`\nError: ${error instanceof Error ? error.message : error}`);
-	process.exit(1);
-});

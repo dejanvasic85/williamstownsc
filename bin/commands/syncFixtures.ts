@@ -1,8 +1,5 @@
-#!/usr/bin/env tsx
-
 import { promises as fs } from 'fs';
 import path from 'path';
-import { Command } from 'commander';
 import { ZodError } from 'zod';
 import { transformExternalFixture } from '@/lib/matches/fixtureTransformService';
 import {
@@ -12,18 +9,12 @@ import {
 } from '@/types/matches';
 import type { Fixture, FixtureData } from '@/types/matches';
 
-const EXTERNAL_DIR = path.resolve(__dirname, '../data/external/fixtures');
-const OUTPUT_DIR = path.resolve(__dirname, '../data/matches');
+const EXTERNAL_DIR = path.resolve(__dirname, '../../data/external/fixtures');
+const OUTPUT_DIR = path.resolve(__dirname, '../../data/matches');
 
-const program = new Command();
-
-program
-	.name('sync-fixtures')
-	.description('Transform external fixture chunks into canonical format')
-	.version('1.0.0')
-	.requiredOption('-t, --team <slug>', 'Team slug to sync (e.g., "senior-mens")');
-
-program.parse();
+type SyncFixturesOptions = {
+	team: string;
+};
 
 // Read all external fixture files for a team
 async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesApiResponse[]> {
@@ -172,11 +163,8 @@ async function writeFixtureData(team: string, data: FixtureData): Promise<void> 
 	console.log(`   Total Rounds: ${data.totalRounds}`);
 }
 
-// Main function
-async function main() {
+export async function syncFixtures({ team }: SyncFixturesOptions) {
 	console.log('🏟️  Fixture Sync Tool\n');
-
-	const { team } = program.opts<{ team: string }>();
 
 	console.log(`📋 Syncing fixtures for team: ${team}`);
 
@@ -228,5 +216,3 @@ async function main() {
 		process.exit(1);
 	}
 }
-
-main();

@@ -1,8 +1,5 @@
-#!/usr/bin/env tsx
-
 import { mkdirSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
-import { Command } from 'commander';
 import { type Browser, type Page, type Response, chromium } from 'playwright-core';
 import { ZodError } from 'zod';
 import { externalFixturesApiResponseSchema } from '@/types/matches';
@@ -10,7 +7,7 @@ import { externalFixturesApiResponseSchema } from '@/types/matches';
 const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const fixturesApiUrlPrefix = 'https://mc-api.dribl.com/api/fixtures';
 
-type CliArgs = {
+export type CrawlFixturesOptions = {
 	team: string;
 	league: string;
 	season?: string;
@@ -22,22 +19,6 @@ type FilterArgs = {
 	season?: string;
 	competition?: string;
 };
-
-const program = new Command();
-
-program
-	.name('crawl-fixtures')
-	.description('Extract fixtures data from Dribl with filtering')
-	.version('1.0.0')
-	.requiredOption('-t, --team <slug>', 'Team slug for output folder (e.g., "senior-mens")')
-	.requiredOption(
-		'-l, --league <slug>',
-		'League slug for filtering (e.g., "State League 2 Men\'s - North-West")'
-	)
-	.option('-s, --season <year>', 'Season year', new Date().getFullYear().toString())
-	.option('-c, --competition <id>', 'Competition ID', 'FFV');
-
-program.parse();
 
 async function hasLoadMoreButton(page: Page): Promise<boolean> {
 	const button = page.getByText('Load more...');
@@ -215,9 +196,7 @@ async function applyFilters(
 	};
 }
 
-async function crawlFixtures() {
-	const { team, league, season, competition } = program.opts<CliArgs>();
-
+export async function crawlFixtures({ team, league, season, competition }: CrawlFixturesOptions) {
 	console.log('🚀 Launching browser...');
 	let browser: Browser | undefined;
 
@@ -284,7 +263,7 @@ async function crawlFixtures() {
 		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);
 
 		// Validate and save chunks
-		const outputDir = resolve(__dirname, `../data/external/fixtures/${team}`);
+		const outputDir = resolve(__dirname, `../../data/external/fixtures/${team}`);
 		mkdirSync(outputDir, { recursive: true });
 
 		console.log(`\n💾 Saving chunks to: ${outputDir}`);
@@ -341,8 +320,3 @@ async function crawlFixtures() {
 		}
 	}
 }
-
-crawlFixtures().catch((error) => {
-	console.error(`\nUnexpected error: ${error instanceof Error ? error.message : error}`);
-	process.exit(1);
-});
