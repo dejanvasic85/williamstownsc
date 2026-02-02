@@ -19,7 +19,7 @@ jobs:
         run: npx playwright install --with-deps chrome
 
       - name: Crawl clubs
-        run: npm run crawl:clubs:ci --
+        run: npm run crawl:clubs:ci
       - name: Crawl senior mens fixtures
         run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
 
