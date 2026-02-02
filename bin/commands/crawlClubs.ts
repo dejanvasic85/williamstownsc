@@ -28,7 +28,7 @@ export async function crawlClubs() {
 			page.waitForResponse((response) => response.url().startsWith(clubsApiUrl) && response.ok(), {
 				timeout: 60_000
 			}),
-			page.goto(url, { waitUntil: 'domcontentloaded' })
+			page.goto(fixturesBaseUrl, { waitUntil: 'domcontentloaded' })
 		]);
 		const rawData = await clubsResponse.json();
 
