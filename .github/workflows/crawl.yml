@@ -28,6 +28,9 @@ jobs:
       - name: Sync fixtures
         run: npm run sync:fixtures
 
+      - name: Format code
+        run: npm run format
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v8
