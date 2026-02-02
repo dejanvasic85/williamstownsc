@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 
 import { Command } from 'commander';
-import { crawlClubs, defaultFixturesUrl } from './commands/crawlClubs';
+import { crawlClubs } from './commands/crawlClubs';
 import { crawlFixtures } from './commands/crawlFixtures';
 import { syncClubs } from './commands/syncClubs';
 import { syncFixtures } from './commands/syncFixtures';
@@ -16,9 +16,8 @@ const sync = program.command('sync').description('Sync external data into canoni
 crawl
 	.command('clubs')
 	.description('Crawl club data from Dribl fixtures page')
-	.option('-u, --url <url>', 'Dribl fixtures page URL', defaultFixturesUrl)
-	.action(async (options: { url: string }) => {
-		await crawlClubs({ url: options.url });
+	.action(async () => {
+		await crawlClubs();
 	});
 
 crawl

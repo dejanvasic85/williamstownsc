@@ -5,7 +5,7 @@
   - Project contains both the Sanity Studio under /studio path and the main website available from /(site)/ directory
 - Tailwind CSS 4.x, DaisyUI 5.5.14 for components (navbar, buttons, dialog, forms)
 - Lucide for icons
-- Playwright 1.58.0 (E2E testing and web scraping)
+- Playwright 1.58.1 (E2E testing and web scraping)
 - TanStack Query 5.90.20, React Hook Form 7.71.1
 
 ## Plan Mode

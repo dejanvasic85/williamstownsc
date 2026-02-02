@@ -55,7 +55,7 @@ To run the site locally, follow these steps:
 The data CLI uses Playwright. Before running crawl commands, install the browser binaries:
 
 ```bash
-npx playwright install --with-deps chrome
+npx playwright install --with-deps chromium
 ```
 
 ## Content Management

@@ -4,17 +4,12 @@ import { fileURLToPath } from 'node:url';
 import { type Browser, chromium } from 'playwright-core';
 import { externalApiResponseSchema } from '@/types/matches';
 
-export const defaultFixturesUrl =
-	'https://fv.dribl.com/fixtures/?date_range=default&season=nPmrj2rmow&timezone=Australia%2FMelbourne';
+const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const clubsApiUrl = 'https://mc-api.dribl.com/api/list/clubs?disable_paging=true';
 const currentDir = dirname(fileURLToPath(import.meta.url));
 const outputPath = resolve(currentDir, '../../data/external/clubs/clubs.json');
 
-type CrawlClubsOptions = {
-	url: string;
-};
-
-export async function crawlClubs({ url }: CrawlClubsOptions) {
+export async function crawlClubs() {
 	console.log('Launching browser...');
 	let browser: Browser | undefined;
 
@@ -27,7 +22,7 @@ export async function crawlClubs({ url }: CrawlClubsOptions) {
 		});
 		const page = await context.newPage();
 
-		console.log(`Navigating to: ${url}`);
+		console.log(`Navigating to: ${fixturesBaseUrl}`);
 		console.log('Waiting for clubs API response...');
 		const [clubsResponse] = await Promise.all([
 			page.waitForResponse((response) => response.url().startsWith(clubsApiUrl) && response.ok(), {

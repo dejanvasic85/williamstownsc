@@ -2,11 +2,6 @@ name: Crawl Dribl Data
 
 on:
   workflow_dispatch:
-    inputs:
-      url:
-        description: 'Dribl fixtures page URL (leave empty for default)'
-        required: false
-        type: string
 
 jobs:
   crawl:
@@ -16,18 +11,23 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: volta-cli/action@v4
+
       - name: Install dependencies
         run: npm ci
+
       - name: Install Chrome
         run: npx playwright install --with-deps chrome
+
       - name: Crawl clubs
-        run: npm run crawl:clubs:ci -- ${{ inputs.url && format('--url "{0}"', inputs.url) || '' }}
-      - name: Crawl fixtures
-        run: npm run crawl:fixtures:ci -- ${{ inputs.url && format('--url "{0}"', inputs.url) || '' }}
+        run: npm run crawl:clubs:ci -- --url "https://fv.dribl.com/fixtures"
+      - name: Crawl senior mens fixtures
+        run: npm run crawl:fixtures:ci -- --url "https://fv.dribl.com/fixtures" -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
+
       - name: Sync clubs
         run: npm run sync:clubs
       - name: Sync fixtures
         run: npm run sync:fixtures
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v8
