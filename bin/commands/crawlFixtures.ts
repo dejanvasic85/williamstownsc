@@ -1,8 +1,6 @@
-#!/usr/bin/env tsx
-
 import { mkdirSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
-import { Command } from 'commander';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { type Browser, type Page, type Response, chromium } from 'playwright-core';
 import { ZodError } from 'zod';
 import { externalFixturesApiResponseSchema } from '@/types/matches';
@@ -10,34 +8,20 @@ import { externalFixturesApiResponseSchema } from '@/types/matches';
 const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const fixturesApiUrlPrefix = 'https://mc-api.dribl.com/api/fixtures';
 
-type CliArgs = {
+export type CrawlFixturesOptions = {
 	team: string;
 	league: string;
 	season?: string;
 	competition?: string;
 };
 
+const currentDir = dirname(fileURLToPath(import.meta.url));
+
 type FilterArgs = {
 	league: string;
 	season?: string;
 	competition?: string;
 };
-
-const program = new Command();
-
-program
-	.name('crawl-fixtures')
-	.description('Extract fixtures data from Dribl with filtering')
-	.version('1.0.0')
-	.requiredOption('-t, --team <slug>', 'Team slug for output folder (e.g., "senior-mens")')
-	.requiredOption(
-		'-l, --league <slug>',
-		'League slug for filtering (e.g., "State League 2 Men\'s - North-West")'
-	)
-	.option('-s, --season <year>', 'Season year', new Date().getFullYear().toString())
-	.option('-c, --competition <id>', 'Competition ID', 'FFV');
-
-program.parse();
 
 async function hasLoadMoreButton(page: Page): Promise<boolean> {
 	const button = page.getByText('Load more...');
@@ -69,12 +53,46 @@ async function waitForNewResponse(
 async function getCurrentSeasonText(page: Page): Promise<string> {
 	const seasonText = await page.evaluate(() => {
 		const elements = Array.from(document.querySelectorAll('*'));
-		// Look for 4-digit year that's visible
-		const yearElement = elements.find((el) => {
+		const seasonButton = elements.find((el) => {
 			const text = el.textContent?.trim() || '';
-			return /^\d{4}$/.test(text) && (el as HTMLElement).offsetParent !== null;
+			return /^Season\s+\d{4}$/.test(text) && (el as HTMLElement).offsetParent !== null;
 		});
-		return yearElement?.textContent?.trim() || new Date().getFullYear().toString();
+		if (seasonButton) {
+			return seasonButton.textContent?.trim() || 'Season';
+		}
+
+		const labelEl = elements.find((el) => {
+			const text = el.textContent?.trim() || '';
+			return text === 'Season' && (el as HTMLElement).offsetParent !== null;
+		});
+
+		if (labelEl) {
+			const containers: Element[] = [];
+			let current: Element | null = labelEl.parentElement;
+			for (let i = 0; i < 3 && current; i++) {
+				containers.push(current);
+				current = current.parentElement;
+			}
+
+			for (const container of containers) {
+				const texts = Array.from(container.querySelectorAll('*'))
+					.filter((el) => (el as HTMLElement).offsetParent !== null)
+					.map((el) => el.textContent?.trim() || '')
+					.filter((text) => text && text !== 'Season');
+
+				const yearText = texts.find((text) => /^\d{4}$/.test(text));
+				if (yearText) {
+					return yearText;
+				}
+
+				const allSeasonsText = texts.find((text) => /all seasons/i.test(text));
+				if (allSeasonsText) {
+					return allSeasonsText;
+				}
+			}
+		}
+
+		return 'Season';
 	});
 	return seasonText;
 }
@@ -127,7 +145,26 @@ async function clickFilterByText(
 
 		if (!currentValueClicked) {
 			console.error(`   ❌ Could not find visible text: "${currentValueText}"`);
-			return false;
+
+			console.log(`   🔁 ${filterLabel}: Falling back to label click...`);
+			const labelClicked = await page.evaluate((labelText) => {
+				const elements = Array.from(document.querySelectorAll('*'));
+				const element = elements.find((el) => {
+					const elementText = el.textContent?.trim() || '';
+					return elementText === labelText && (el as HTMLElement).offsetParent !== null;
+				});
+
+				if (element) {
+					(element as HTMLElement).click();
+					return true;
+				}
+				return false;
+			}, filterLabel);
+
+			if (!labelClicked) {
+				console.error(`   ❌ Could not find visible text: "${filterLabel}"`);
+				return false;
+			}
 		}
 
 		// STEP 2: Wait for filter options to appear
@@ -172,6 +209,20 @@ async function applyFilters(
 	console.log('🔧 Applying filters...');
 
 	await page.waitForLoadState('domcontentloaded');
+	await page.waitForFunction(
+		() => {
+			const elements = Array.from(document.querySelectorAll('*'));
+			return elements.some((el) => {
+				const text = el.textContent?.trim() || '';
+				return (
+					(/Season\s+\d{4}/.test(text) || text === 'Season') &&
+					(el as HTMLElement).offsetParent !== null
+				);
+			});
+		},
+		null,
+		{ timeout: 15_000 }
+	);
 
 	const seasonValue = args.season || new Date().getFullYear().toString();
 	const competitionValue = args.competition || 'FFV';
@@ -215,9 +266,7 @@ async function applyFilters(
 	};
 }
 
-async function crawlFixtures() {
-	const { team, league, season, competition } = program.opts<CliArgs>();
-
+export async function crawlFixtures({ team, league, season, competition }: CrawlFixturesOptions) {
 	console.log('🚀 Launching browser...');
 	let browser: Browser | undefined;
 
@@ -284,7 +333,7 @@ async function crawlFixtures() {
 		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);
 
 		// Validate and save chunks
-		const outputDir = resolve(__dirname, `../data/external/fixtures/${team}`);
+		const outputDir = resolve(currentDir, `../../data/external/fixtures/${team}`);
 		mkdirSync(outputDir, { recursive: true });
 
 		console.log(`\n💾 Saving chunks to: ${outputDir}`);
@@ -341,8 +390,3 @@ async function crawlFixtures() {
 		}
 	}
 }
-
-crawlFixtures().catch((error) => {
-	console.error(`\nUnexpected error: ${error instanceof Error ? error.message : error}`);
-	process.exit(1);
-});

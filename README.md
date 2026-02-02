@@ -50,19 +50,24 @@ To run the site locally, follow these steps:
 - Node.js 18+ installed
 - A Sanity account and project set up
 
+### CLI tools
+
+The data CLI uses Playwright. Before running crawl commands, install the browser binaries:
+
+```bash
+npx playwright install --with-deps chromium
+```
+
 ## Content Management
+
+Sanity URLs:
+
+- [http://localhost:3003/studio](http://localhost:3003/studio)
+- [Sanity cloud](https://www.sanity.io/@oYyCUFPtA/studio/q0zt4f7qoqrj6b19qxgnfu8e/default/structure)
 
 ### Creating Blog Posts
 
 1. Navigate to [http://localhost:3003/studio](http://localhost:3003/studio)
-2. Click on "Post" in the sidebar
-3. Create a new post with:
-   - Title
-   - Slug (auto-generated from title)
-   - Excerpt
-   - Main image with alt text
-   - Publication date
-   - Rich text body content
 
 ### Updating Schemas
 

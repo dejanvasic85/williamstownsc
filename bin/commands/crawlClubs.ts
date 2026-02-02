@@ -1,29 +1,15 @@
-#!/usr/bin/env tsx
-
 import { mkdirSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
-import { Command } from 'commander';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { type Browser, chromium } from 'playwright-core';
 import { externalApiResponseSchema } from '@/types/matches';
 
-const defaultFixturesUrl =
-	'https://fv.dribl.com/fixtures/?date_range=default&season=nPmrj2rmow&timezone=Australia%2FMelbourne';
+const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const clubsApiUrl = 'https://mc-api.dribl.com/api/list/clubs?disable_paging=true';
-const outputPath = resolve(__dirname, '../data/external/clubs/clubs.json');
+const currentDir = dirname(fileURLToPath(import.meta.url));
+const outputPath = resolve(currentDir, '../../data/external/clubs/clubs.json');
 
-const program = new Command();
-
-program
-	.name('crawl-clubs')
-	.description('Crawl club data from Dribl fixtures page')
-	.version('1.0.0')
-	.option('-u, --url <url>', 'Dribl fixtures page URL', defaultFixturesUrl);
-
-program.parse();
-
-async function crawlClubs() {
-	const { url } = program.opts<{ url: string }>();
-
+export async function crawlClubs() {
 	console.log('Launching browser...');
 	let browser: Browser | undefined;
 
@@ -36,13 +22,13 @@ async function crawlClubs() {
 		});
 		const page = await context.newPage();
 
-		console.log(`Navigating to: ${url}`);
+		console.log(`Navigating to: ${fixturesBaseUrl}`);
 		console.log('Waiting for clubs API response...');
 		const [clubsResponse] = await Promise.all([
 			page.waitForResponse((response) => response.url().startsWith(clubsApiUrl) && response.ok(), {
 				timeout: 60_000
 			}),
-			page.goto(url, { waitUntil: 'domcontentloaded' })
+			page.goto(fixturesBaseUrl, { waitUntil: 'domcontentloaded' })
 		]);
 		const rawData = await clubsResponse.json();
 
@@ -60,8 +46,3 @@ async function crawlClubs() {
 		console.log('Browser closed');
 	}
 }
-
-crawlClubs().catch((error) => {
-	console.error(`\nError: ${error instanceof Error ? error.message : error}`);
-	process.exit(1);
-});
