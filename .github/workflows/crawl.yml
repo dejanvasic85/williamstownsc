@@ -19,9 +19,9 @@ jobs:
         run: npx playwright install --with-deps chrome
 
       - name: Crawl clubs
-        run: npm run crawl:clubs:ci -- --url "https://fv.dribl.com/fixtures"
+        run: npm run crawl:clubs:ci --
       - name: Crawl senior mens fixtures
-        run: npm run crawl:fixtures:ci -- --url "https://fv.dribl.com/fixtures" -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
+        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
 
       - name: Sync clubs
         run: npm run sync:clubs
