@@ -26,7 +26,7 @@ jobs:
       - name: Sync clubs
         run: npm run sync:clubs
       - name: Sync seniors-mens fixtures
-        run: npm run sync:fixtures -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
+        run: npm run sync:fixtures -- -t "seniors-mens"
 
       - name: Format code
         run: npm run format
