@@ -1,4 +1,8 @@
-name: Crawl Dribl Data
+name: Crawl Data
+
+permissions:
+  contents: write
+  pull-requests: write
 
 on:
   workflow_dispatch:
@@ -20,13 +24,13 @@ jobs:
 
       - name: Crawl clubs
         run: npm run crawl:clubs:ci
-      - name: Crawl senior mens fixtures
+      - name: Crawl seniors-mens fixtures
         run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
 
       - name: Sync clubs
         run: npm run sync:clubs
-      - name: Sync fixtures
-        run: npm run sync:fixtures
+      - name: Sync seniors-mens fixtures
+        run: npm run sync:fixtures -- -t "seniors-mens"
 
       - name: Format code
         run: npm run format
