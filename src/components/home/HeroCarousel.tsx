@@ -10,9 +10,16 @@ import { TransformedNewsArticle } from '@/lib/content';
 interface HeroCarouselProps {
 	articles: TransformedNewsArticle[];
 	autoplayInterval?: number;
+	className?: string;
+	isFullWidth?: boolean;
 }
 
-export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarouselProps) {
+export function HeroCarousel({
+	articles,
+	autoplayInterval = 5000,
+	className,
+	isFullWidth = false
+}: HeroCarouselProps) {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [isPaused, setIsPaused] = useState(false);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -105,7 +112,10 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 			onBlurCapture={handleMouseLeave}
 		>
 			<div
-				className="carousel md:rounded-box relative h-[55vh] w-full overflow-hidden"
+				className={clsx(
+					'carousel md:rounded-box relative w-full overflow-hidden',
+					className || 'h-[55vh]'
+				)}
 				aria-live="polite"
 				aria-atomic="true"
 			>
@@ -128,7 +138,8 @@ export function HeroCarousel({ articles, autoplayInterval = 5000 }: HeroCarousel
 								fill
 								className="object-cover"
 								priority={index === 0}
-								sizes="100vw"
+								quality={90}
+								sizes={isFullWidth ? '100vw' : '(max-width: 1023px) 100vw, 67vw'}
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 							<div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
