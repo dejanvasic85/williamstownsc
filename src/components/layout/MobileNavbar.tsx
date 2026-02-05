@@ -51,7 +51,7 @@ export function MobileNavbar() {
 										className={clsx(
 											'relative flex w-16 flex-col items-center gap-0.5 rounded-full py-2.5 transition-all duration-300',
 											isActive
-												? 'bg-secondary text-primary animate-[navPop_0.4s_ease-out]'
+												? 'bg-secondary text-secondary-content animate-[navPop_0.4s_ease-out]'
 												: 'text-neutral-content hover:bg-neutral-content/10'
 										)}
 										aria-label={item.name}
