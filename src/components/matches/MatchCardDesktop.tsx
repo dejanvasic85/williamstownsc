@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { MapPin } from 'lucide-react';
 import type { EnrichedFixture } from '@/types/matches';
 
 type MatchCardDesktopProps = {
@@ -22,7 +23,8 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 							{formattedDate} {formattedTime}
 						</span>
 					</time>
-					<div className="text-base-content/70 text-sm">
+					<div className="text-base-content/70 flex items-center gap-1.5 text-sm">
+						<MapPin className="h-4 w-4" aria-hidden="true" />
 						<span>{fixture.address}</span>
 					</div>
 				</div>
