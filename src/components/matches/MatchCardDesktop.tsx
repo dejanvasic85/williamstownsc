@@ -23,7 +23,8 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 							{formattedDate} {formattedTime}
 						</span>
 					</time>
-					<div className="text-base-content/70 text-sm">
+					<div className="text-base-content/70 flex items-center gap-1.5 text-sm">
+						<MapPin className="h-4 w-4" aria-hidden="true" />
 						<span>{fixture.address}</span>
 					</div>
 				</div>
@@ -56,12 +57,6 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 				<div className="flex items-center justify-start">
 					<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
 				</div>
-			</div>
-
-			{/* Venue - Centered below teams */}
-			<div className="text-base-content/70 flex items-center justify-center gap-2 text-sm">
-				<MapPin className="h-4 w-4" aria-hidden="true" />
-				<span>{fixture.address}</span>
 			</div>
 		</div>
 	);
