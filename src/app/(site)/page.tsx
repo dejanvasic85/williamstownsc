@@ -76,7 +76,11 @@ export default async function Home() {
 					<div className="flex flex-col gap-6 lg:flex-row">
 						{/* Hero Carousel - Left Side */}
 						<div className={clsx(generalNews.length > 0 ? 'lg:w-2/3' : 'lg:w-full')}>
-							<HeroCarousel articles={carouselArticles} />
+							<HeroCarousel
+								articles={carouselArticles}
+								className={generalNews.length === 0 ? 'h-[70vh]' : 'h-[55vh]'}
+								isFullWidth={generalNews.length === 0}
+							/>
 						</div>
 
 						{/* News Panel - Right Side */}

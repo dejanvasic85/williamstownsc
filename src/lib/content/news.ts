@@ -63,7 +63,12 @@ export async function getNewsArticles(
 			publishedAt: article.publishedAt || '',
 			featuredImage: {
 				url: article.featuredImage
-					? urlFor(article.featuredImage).width(width).height(height).url()
+					? urlFor(article.featuredImage)
+							.width(width)
+							.height(height)
+							.quality(90)
+							.format('webp')
+							.url()
 					: '',
 				alt: article.featuredImage?.alt
 			},
@@ -102,7 +107,7 @@ export async function getArticleBySlug(slug: string) {
 		publishedAt: article.publishedAt || '',
 		featuredImage: {
 			url: article.featuredImage
-				? urlFor(article.featuredImage).width(1920).height(1080).url()
+				? urlFor(article.featuredImage).width(1920).height(1080).quality(90).format('webp').url()
 				: '',
 			alt: article.featuredImage?.alt
 		},

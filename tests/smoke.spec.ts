@@ -10,13 +10,11 @@ test.describe('Homepage', () => {
 	});
 
 	test('displays hero carousel if featured news available', async ({ page }) => {
-		const carousel = page.getByRole('region', {
-			name: /featured news/i
-		});
-		const carouselCount = await carousel.count();
-		if (carouselCount > 0) {
-			await expect(carousel).toBeVisible();
-		}
+		expect(
+			page.getByRole('region', {
+				name: /featured news/i
+			})
+		).toBeVisible();
 	});
 
 	test('displays sponsors section if available', async ({ page }) => {
@@ -105,13 +103,11 @@ test.describe('Accessibility', () => {
 	});
 
 	test('carousel has proper ARIA labels when present', async ({ page }) => {
-		const carousel = page.getByRole('region', {
-			name: /featured news/i
-		});
-		const carouselCount = await carousel.count();
-		if (carouselCount > 0) {
-			await expect(carousel).toHaveAttribute('aria-label', /featured news/i);
-		}
+		expect(
+			page.getByRole('region', {
+				name: /featured news/i
+			})
+		).toHaveAttribute('aria-label', /featured news/i);
 	});
 
 	test('carousel navigation buttons are accessible when multiple slides', async ({ page }) => {
