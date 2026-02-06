@@ -810,6 +810,12 @@
 			]
 		},
 		{
+			"externalId": "VAN0PQr7N6",
+			"name": "Berwick Churches",
+			"displayName": "Berwick Churches",
+			"logoUrl": "https://ocean.dribl.com/e2aa4488a91e49668709e516d67fad52"
+		},
+		{
 			"externalId": "7MNGgkQNAz",
 			"name": "Berwick City SC",
 			"displayName": "Berwick City SC",
@@ -2118,7 +2124,7 @@
 			"externalId": "2PmjOzX6NZ",
 			"name": "East Bentleigh SC",
 			"displayName": "East Bentleigh SC",
-			"logoUrl": "https://ocean.dribl.com/215a593b9ccc4944bfc27c699af44a15",
+			"logoUrl": "https://ocean.dribl.com/09a4e514b7734461867845165c336b16",
 			"email": "information@eastbentleighsc.com",
 			"website": "https://www.eastbentleighsc.com/",
 			"address": {
@@ -2393,6 +2399,18 @@
 					"url": "https://www.facebook.com/etabuffalo"
 				}
 			]
+		},
+		{
+			"externalId": "bam1jl3XNw",
+			"name": "Euroa SC",
+			"displayName": "Euroa SC",
+			"logoUrl": "https://ocean.dribl.com/7d15b659f0c94817b3265ae5172669c7",
+			"address": {
+				"street": "Gobur Street",
+				"city": "Euroa",
+				"state": "VIC",
+				"postcode": "3666"
+			}
 		},
 		{
 			"externalId": "OEN2Zn32Nq",
@@ -4278,6 +4296,18 @@
 			]
 		},
 		{
+			"externalId": "3vmZ1rARdq",
+			"name": "Mernda United SC",
+			"displayName": "Mernda United SC",
+			"logoUrl": "https://ocean.dribl.com/4bc8fbb9ff0b41ddbf40a1c4b033c57e",
+			"address": {
+				"street": "2 Heals Rd",
+				"city": "Mernda",
+				"state": "VIC",
+				"postcode": "3754"
+			}
+		},
+		{
 			"externalId": "08NOpe5WKZ",
 			"name": "Middle Park FC",
 			"displayName": "Middle Park FC",
@@ -5072,6 +5102,12 @@
 			]
 		},
 		{
+			"externalId": "A4KLXy20Kq",
+			"name": "Old Camberwell Grammarians",
+			"displayName": "Old Camberwell Grammarians",
+			"logoUrl": "https://ocean.dribl.com/3abfa1b47a6f40a2890c0eba481698e1"
+		},
+		{
 			"externalId": "gld4pzvrdW",
 			"name": "Old Ivanhoe SC",
 			"displayName": "Old Ivanhoe SC",
@@ -5579,6 +5615,18 @@
 					"url": "https://www.instagram.com/riversdalesoccer/"
 				}
 			]
+		},
+		{
+			"externalId": "kemA9o3MmB",
+			"name": "RMIT Redbacks SC",
+			"displayName": "RMIT Redbacks SC",
+			"logoUrl": "https://ocean.dribl.com/21dc656258fa437e808e73e7525528d2",
+			"address": {
+				"street": "Corner The Avenue & Old Poplar Road",
+				"city": "Carlton",
+				"state": "VIC",
+				"postcode": "3052"
+			}
 		},
 		{
 			"externalId": "AnmYzZkyNz",
@@ -6436,6 +6484,18 @@
 			]
 		},
 		{
+			"externalId": "b8Nq3q27d9",
+			"name": "Tarneit North FC",
+			"displayName": "Tarneit North FC",
+			"logoUrl": "https://ocean.dribl.com/fa35049410b0456ea6c3db7ad8a8d91a",
+			"address": {
+				"street": "55 Polly Parade",
+				"city": "Tarneit",
+				"state": "VIC",
+				"postcode": "3029"
+			}
+		},
+		{
 			"externalId": "bgdMXan2KE",
 			"name": "Tarneit United SC",
 			"displayName": "Tarneit United SC",
@@ -6908,6 +6968,18 @@
 			]
 		},
 		{
+			"externalId": "LBdDQp3Qmb",
+			"name": "West Hills FC",
+			"displayName": "West Hills FC",
+			"logoUrl": "https://ocean.dribl.com/2b1c25c950b04e0cb9aa1adf551fdb05",
+			"address": {
+				"street": "Dorchester Street",
+				"city": "Thornhill Park",
+				"state": "SA",
+				"postcode": "3335"
+			}
+		},
+		{
 			"externalId": "Bjma0RXqdR",
 			"name": "West Point SC",
 			"displayName": "West Point SC",
@@ -7336,6 +7408,18 @@
 					"url": "https://www.instagram.com/wonthaggi_soccer_club/"
 				}
 			]
+		},
+		{
+			"externalId": "AZNQ08DJmx",
+			"name": "Woodend Eagles SC",
+			"displayName": "Woodend Eagles SC",
+			"logoUrl": "https://ocean.dribl.com/710483869deb49159b36babd365c0007",
+			"address": {
+				"street": "1/29 Forest St",
+				"city": "Woodend",
+				"state": "VIC",
+				"postcode": "3442"
+			}
 		},
 		{
 			"externalId": "Bjma0G03dR",
