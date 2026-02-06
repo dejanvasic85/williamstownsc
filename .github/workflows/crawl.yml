@@ -33,6 +33,8 @@ jobs:
         run: npm run sync:clubs
       - name: Sync seniors-mens fixtures
         run: npm run sync:fixtures -- -t "seniors-mens"
+      - name: Sync reserves-mens fixtures
+        run: npm run sync:fixtures -- -t "reserves-mens"
 
       - name: Format code
         run: npm run format
