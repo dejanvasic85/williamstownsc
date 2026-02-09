@@ -142,7 +142,7 @@ export function HeroCarousel({
 								sizes={isFullWidth ? '100vw' : '(max-width: 1023px) 100vw, 67vw'}
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
-							<div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
+							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 md:flex-col md:p-10">
 								<div className="flex justify-start">
 									<div className="badge badge-primary badge-lg bg-primary/90 gap-2 px-4 py-3 font-semibold backdrop-blur-sm">
 										{formatDate(article.publishedAt)}
