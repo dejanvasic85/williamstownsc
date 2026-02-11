@@ -7,6 +7,7 @@
 		":timezone(Australia/Melbourne)",
 		":dependencyDashboard",
 		":pinDependencies",
+		":pinDevDependencies",
 		"group:allNonMajor"
 	],
 	"automerge": true,
@@ -16,6 +17,16 @@
 	"prNotPendingHours": 1,
 	"semanticCommitScope": "",
 	"semanticCommitType": "deps",
+	"lockFileMaintenance": {
+		"enabled": true,
+		"automerge": true,
+		"recreateWhen": "always",
+		"rebaseStalePrs": true,
+		"schedule": ["before 4am on monday"],
+		"prBodyDefinitions": {
+			"Change": "All locks refreshed"
+		}
+	},
 	"packageRules": [
 		{
 			"extends": ["monorepo:nextjs"],
