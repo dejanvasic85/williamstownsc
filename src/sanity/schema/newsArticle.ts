@@ -92,6 +92,13 @@ export const newsArticle = defineType({
 			type: 'boolean',
 			description: 'Show in hero carousel',
 			initialValue: false
+		}),
+		defineField({
+			name: 'publishToSocials',
+			title: 'Publish to Social Media',
+			type: 'boolean',
+			description: 'Automatically post to Facebook and Instagram when published',
+			initialValue: true
 		})
 	],
 	preview: {
