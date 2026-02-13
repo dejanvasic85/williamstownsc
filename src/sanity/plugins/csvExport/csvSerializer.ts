@@ -1,4 +1,6 @@
-type FormSubmissionRow = Record<string, string | undefined>;
+type FormSubmissionRow = Record<string, unknown>;
+
+const formulaPrefixes = ['=', '+', '-', '@'];
 
 const commonColumns = [
 	{ key: 'submittedAt', label: 'Submitted At' },
@@ -25,11 +27,30 @@ const typeSpecificColumns = [
 
 const allColumns = [...commonColumns, ...typeSpecificColumns];
 
-function escapeCsvField(value: string): string {
-	if (value.includes(',') || value.includes('"') || value.includes('\n') || value.includes('\r')) {
-		return `"${value.replace(/"/g, '""')}"`;
+function coerceToString(value: unknown): string {
+	if (value == null) return '';
+	if (Array.isArray(value)) return value.join('; ');
+	return String(value);
+}
+
+function sanitizeFormulaInjection(value: string): string {
+	if (value.length > 0 && formulaPrefixes.includes(value[0])) {
+		return `'${value}`;
 	}
 	return value;
+}
+
+function escapeCsvField(value: string): string {
+	const sanitized = sanitizeFormulaInjection(value);
+	if (
+		sanitized.includes(',') ||
+		sanitized.includes('"') ||
+		sanitized.includes('\n') ||
+		sanitized.includes('\r')
+	) {
+		return `"${sanitized.replace(/"/g, '""')}"`;
+	}
+	return sanitized;
 }
 
 function formatDate(isoDate: string): string {
@@ -52,8 +73,8 @@ export function serializeToCsv(rows: FormSubmissionRow[]): string {
 	const dataRows = rows.map((row) => {
 		return allColumns
 			.map((col) => {
-				const value = row[col.key] ?? '';
-				const formatted = col.key === 'submittedAt' && value ? formatDate(value) : value;
+				const raw = coerceToString(row[col.key]);
+				const formatted = col.key === 'submittedAt' && raw ? formatDate(raw) : raw;
 				return escapeCsvField(formatted);
 			})
 			.join(',');
@@ -69,5 +90,5 @@ export function downloadCsv(csvContent: string, filename: string): void {
 	link.href = url;
 	link.download = filename;
 	link.click();
-	URL.revokeObjectURL(url);
+	setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

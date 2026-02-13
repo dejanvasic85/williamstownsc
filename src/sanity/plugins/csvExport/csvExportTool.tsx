@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { type CSSProperties, useCallback, useState } from 'react';
 import { DownloadIcon } from '@sanity/icons';
 import { Box, Button, Card, Flex, Heading, Label, Select, Stack, Text } from '@sanity/ui';
 import { useClient } from 'sanity';
@@ -8,6 +8,8 @@ import { downloadCsv, serializeToCsv } from './csvSerializer';
 
 type ContactTypeFilter = 'all' | 'player' | 'coach' | 'sponsor' | 'program' | 'general';
 type StatusFilter = 'all' | 'new' | 'reviewed' | 'archived';
+
+const maxExportRows = 5000;
 
 const contactTypeOptions: { value: ContactTypeFilter; label: string }[] = [
 	{ value: 'all', label: 'All Types' },
@@ -24,6 +26,17 @@ const statusOptions: { value: StatusFilter; label: string }[] = [
 	{ value: 'reviewed', label: 'Reviewed' },
 	{ value: 'archived', label: 'Archived' }
 ];
+
+const dateInputStyle: CSSProperties = {
+	padding: '8px 12px',
+	border: '1px solid var(--card-border-color, #ccc)',
+	borderRadius: '4px',
+	background: 'var(--card-bg-color, #fff)',
+	color: 'var(--card-fg-color, #333)',
+	fontSize: '14px',
+	width: '100%',
+	boxSizing: 'border-box'
+};
 
 const groqProjection = `{
   submittedAt,
@@ -45,28 +58,41 @@ const groqProjection = `{
   subject
 }`;
 
+type QueryParams = {
+	contactType?: string;
+	status?: string;
+	dateFrom?: string;
+	dateTo?: string;
+};
+
 function buildQuery(
 	contactType: ContactTypeFilter,
 	status: StatusFilter,
 	dateFrom: string,
 	dateTo: string
-): string {
+): { query: string; params: QueryParams } {
 	const filters = ['_type == "formSubmission"'];
+	const params: QueryParams = {};
 
 	if (contactType !== 'all') {
-		filters.push(`contactType == "${contactType}"`);
+		filters.push('contactType == $contactType');
+		params.contactType = contactType;
 	}
 	if (status !== 'all') {
-		filters.push(`status == "${status}"`);
+		filters.push('status == $status');
+		params.status = status;
 	}
 	if (dateFrom) {
-		filters.push(`submittedAt >= "${dateFrom}T00:00:00Z"`);
+		filters.push('submittedAt >= $dateFrom');
+		params.dateFrom = `${dateFrom}T00:00:00Z`;
 	}
 	if (dateTo) {
-		filters.push(`submittedAt <= "${dateTo}T23:59:59Z"`);
+		filters.push('submittedAt <= $dateTo');
+		params.dateTo = `${dateTo}T23:59:59Z`;
 	}
 
-	return `*[${filters.join(' && ')}] | order(submittedAt desc) ${groqProjection}`;
+	const query = `*[${filters.join(' && ')}] | order(submittedAt desc) [0...${maxExportRows}] ${groqProjection}`;
+	return { query, params };
 }
 
 function buildFilename(contactType: ContactTypeFilter, status: StatusFilter): string {
@@ -94,8 +120,8 @@ export function CsvExportTool() {
 		setResultCount(null);
 
 		try {
-			const query = buildQuery(contactType, status, dateFrom, dateTo);
-			const results = await client.fetch(query);
+			const { query, params } = buildQuery(contactType, status, dateFrom, dateTo);
+			const results = await client.fetch(query, params);
 
 			if (!results || results.length === 0) {
 				setError('No submissions found matching the selected filters.');
@@ -175,16 +201,7 @@ export function CsvExportTool() {
 										type="date"
 										value={dateFrom}
 										onChange={(e) => setDateFrom(e.target.value)}
-										style={{
-											padding: '8px 12px',
-											border: '1px solid var(--card-border-color, #ccc)',
-											borderRadius: '4px',
-											background: 'var(--card-bg-color, #fff)',
-											color: 'var(--card-fg-color, #333)',
-											fontSize: '14px',
-											width: '100%',
-											boxSizing: 'border-box'
-										}}
+										style={dateInputStyle}
 									/>
 								</Stack>
 							</Box>
@@ -196,16 +213,7 @@ export function CsvExportTool() {
 										type="date"
 										value={dateTo}
 										onChange={(e) => setDateTo(e.target.value)}
-										style={{
-											padding: '8px 12px',
-											border: '1px solid var(--card-border-color, #ccc)',
-											borderRadius: '4px',
-											background: 'var(--card-bg-color, #fff)',
-											color: 'var(--card-fg-color, #333)',
-											fontSize: '14px',
-											width: '100%',
-											boxSizing: 'border-box'
-										}}
+										style={dateInputStyle}
 									/>
 								</Stack>
 							</Box>
