@@ -1,0 +1,30 @@
+name: Deploy Sanity Studio
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/sanity/**'
+      - 'sanity.config.ts'
+      - 'sanity.cli.ts'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Sanity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - uses: volta-cli/action@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Deploy to Sanity
+        run: npm run deploy:sanity -- --yes
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}

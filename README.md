@@ -74,10 +74,31 @@ Sanity URLs:
 After modifying Sanity schemas in `src/sanity/schema/`, run:
 
 ```bash
-npm run sanity:typegen
+npm run type:gen
 ```
 
 This will update the TypeScript types to match your schema changes.
+
+### Deploying Sanity Studio
+
+The Sanity Studio is automatically deployed to production when changes are pushed to the `main` branch that affect:
+
+- `src/sanity/**` (schema files)
+- `sanity.config.ts`
+- `sanity.cli.ts`
+
+You can also manually trigger a deployment from the Actions tab in GitHub.
+
+#### Setup GitHub Deployment
+
+To enable automated deployments, add a Sanity deploy token as a GitHub secret:
+
+1. Generate a deploy token at [Sanity Project Settings → API → Tokens](https://sanity.io/manage/project/1ougwkz1/api/tokens)
+2. Select "Deploy studio" permission
+3. Add the token to GitHub: Settings → Secrets and variables → Actions → New repository secret
+4. Name it `SANITY_AUTH_TOKEN`
+
+The studio will be available at [https://williamstownsc.sanity.studio](https://williamstownsc.sanity.studio)
 
 ---
 
