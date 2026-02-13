@@ -1,6 +1,7 @@
 # Fix Search Result URLs
 
 **Created:** 2026-01-26
+**Status:** ✅ Complete
 
 ## Purpose
 
@@ -51,7 +52,7 @@ Updated `search.ts` to import and use `contentTypeRoutes` instead of hardcoded m
 - [x] Create centralized `src/lib/routes.ts` config file
 - [x] Update `src/lib/content/search.ts` to use routes config
 - [x] Remove unused `pageTypeToSlugMap` and `searchablePageTypes`
-- [ ] Test search functionality manually
+- [x] Test search functionality manually
 
 ## Files Modified
 
