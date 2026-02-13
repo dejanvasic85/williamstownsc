@@ -36,6 +36,7 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
   - `description` (text, optional, short summary)
   - `effectiveDate` (date, optional)
   - `order` (number, for sorting within category)
+  - `published` (boolean, default true, controls visibility on the site)
   - Preview: show title + category
 - [ ] Register schema in `src/sanity/schema/index.ts`
 - [ ] Add `policyDocument` to Sanity Studio structure in `src/sanity/structure.ts`
@@ -43,7 +44,7 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
   - Or add dedicated section if preferred
 - [ ] Run `npm run type:gen` to regenerate Sanity types
 - [ ] Create content query module `src/lib/content/policyDocuments.ts`
-  - GROQ query fetching all published policy documents with file URL + metadata
+  - GROQ query fetching policy documents where `published == true`, with file URL + metadata
   - Transform/group by category, sorted by order within each category
   - Export types for the grouped result
 - [ ] Update `src/app/(site)/club/policies-and-regulations/page.tsx`
@@ -79,4 +80,3 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
 ## Unresolved Questions
 
 - Are the three proposed categories ("Club Policies", "Football Victoria Policies", "By-Laws & Constitutions") correct, or are there others? Can adjust the string list later.
-- Should documents have a "published" toggle, or are all uploaded documents visible? Leaning toward adding a `published` boolean for flexibility.
