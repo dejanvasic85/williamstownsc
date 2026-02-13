@@ -11,6 +11,7 @@ Populate the empty Policies & Regulations page with downloadable policy document
 Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type with metadata (title, category, description, effective date). The existing `policiesPage` singleton handles page-level intro text and SEO. Documents render grouped by category with download links.
 
 **Why files over HTML conversion:**
+
 - Policy docs are formal/governance — PDFs are the expected format
 - Some docs are federation-owned (FV) — club just hosts them, not authors them
 - Simpler workflow: committee produces PDF -> author uploads -> visitors download
@@ -59,13 +60,13 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
 
 ## File Changes
 
-| File | Action |
-|------|--------|
-| `src/sanity/schema/policyDocument.ts` | Create |
-| `src/sanity/schema/index.ts` | Edit - register new schema |
-| `src/sanity/structure.ts` | Edit - add to filter list if needed |
-| `src/lib/content/policyDocuments.ts` | Create |
-| `src/app/(site)/club/policies-and-regulations/page.tsx` | Edit - render documents |
+| File                                                    | Action                              |
+| ------------------------------------------------------- | ----------------------------------- |
+| `src/sanity/schema/policyDocument.ts`                   | Create                              |
+| `src/sanity/schema/index.ts`                            | Edit - register new schema          |
+| `src/sanity/structure.ts`                               | Edit - add to filter list if needed |
+| `src/lib/content/policyDocuments.ts`                    | Create                              |
+| `src/app/(site)/club/policies-and-regulations/page.tsx` | Edit - render documents             |
 
 ## UI Design Notes
 
