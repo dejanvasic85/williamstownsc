@@ -1,7 +1,7 @@
 # Contact Form Submissions CSV Export
 
 **Created:** 2026-02-11
-**Status:** In Progress
+**Status:** ✅ Complete
 
 ## Purpose
 
@@ -23,10 +23,10 @@ Custom Sanity Studio tool plugin using `definePlugin` + `tools` API. Renders a R
 ## Todo
 
 - [x] Create plan
-- [ ] Create `src/sanity/plugins/csvExport/` with tool component
-- [ ] Register plugin in `sanity.config.ts`
-- [ ] Run lint, format, type-check
-- [ ] Commit and push
+- [x] Create `src/sanity/plugins/csvExport/` with tool component
+- [x] Register plugin in `sanity.config.ts`
+- [x] Run lint, format, type-check
+- [x] Commit and push
 
 ## Technical Design
 
