@@ -57,3 +57,4 @@ src/sanity/sanity.types.ts
 
 # data
 data/external/
+.env*.local

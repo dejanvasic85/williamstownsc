@@ -152,3 +152,5 @@ Note: Site base URL is already available via `canonicalUrl` in Sanity `siteSetti
 2. **Opt-out per article** -- add a boolean toggle to `newsArticle` schema to skip social publishing?
 3. **Retry strategy** -- on Meta API failure, retry with backoff? Queue? Or log and move on?
 4. **Carousel support** -- single featured image for now; support multiple content images later?
+
+---

@@ -186,3 +186,43 @@ export async function getAllArticlesForFeed() {
 				: undefined
 		}));
 }
+
+export async function getArticleForSocialPublish(_id: string) {
+	const articleQuery = groq`*[_type == "newsArticle" && _id == $_id][0] {
+		_id,
+		title,
+		slug,
+		excerpt,
+		featuredImage,
+		publishToSocials
+	}`;
+
+	const article = await client.fetch<NewsArticle>(
+		articleQuery,
+		{ _id },
+		{ next: { tags: ['newsArticle'] } }
+	);
+
+	if (!article) {
+		return null;
+	}
+
+	return {
+		_id: article._id,
+		title: article.title || '',
+		slug: article.slug?.current || '',
+		excerpt: article.excerpt || '',
+		featuredImage: article.featuredImage
+			? {
+					url: urlFor(article.featuredImage)
+						.width(1200)
+						.height(630)
+						.quality(90)
+						.format('jpg')
+						.url(),
+					alt: article.featuredImage.alt
+				}
+			: null,
+		publishToSocials: article.publishToSocials ?? true
+	};
+}
