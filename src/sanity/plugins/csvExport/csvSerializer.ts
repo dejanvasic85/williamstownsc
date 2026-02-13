@@ -22,7 +22,8 @@ const typeSpecificColumns = [
 	{ key: 'organization', label: 'Organization' },
 	{ key: 'sponsorshipTier', label: 'Sponsorship Tier' },
 	{ key: 'programId', label: 'Program ID' },
-	{ key: 'subject', label: 'Subject' }
+	{ key: 'subject', label: 'Subject' },
+	{ key: 'notes', label: 'Notes' }
 ];
 
 const allColumns = [...commonColumns, ...typeSpecificColumns];
@@ -54,17 +55,19 @@ function escapeCsvField(value: string): string {
 }
 
 function formatDate(isoDate: string): string {
-	try {
-		return new Date(isoDate).toLocaleString('en-AU', {
-			year: 'numeric',
-			month: '2-digit',
-			day: '2-digit',
-			hour: '2-digit',
-			minute: '2-digit'
-		});
-	} catch {
+	const date = new Date(isoDate);
+
+	if (isNaN(date.getTime())) {
 		return isoDate;
 	}
+
+	return date.toLocaleString('en-AU', {
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		hour: '2-digit',
+		minute: '2-digit'
+	});
 }
 
 export function serializeToCsv(rows: FormSubmissionRow[]): string {

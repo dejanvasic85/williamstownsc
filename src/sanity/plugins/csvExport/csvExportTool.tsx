@@ -55,7 +55,8 @@ const groqProjection = `{
   organization,
   sponsorshipTier,
   programId,
-  subject
+  subject,
+  notes
 }`;
 
 type QueryParams = {
@@ -119,6 +120,12 @@ export function CsvExportTool() {
 		setError(null);
 		setResultCount(null);
 
+		if (dateFrom && dateTo && dateFrom > dateTo) {
+			setError('The "From Date" must be before or equal to the "To Date".');
+			setIsExporting(false);
+			return;
+		}
+
 		try {
 			const { query, params } = buildQuery(contactType, status, dateFrom, dateTo);
 			const results = await client.fetch(query, params);
@@ -126,6 +133,12 @@ export function CsvExportTool() {
 			if (!results || results.length === 0) {
 				setError('No submissions found matching the selected filters.');
 				return;
+			}
+
+			if (results.length === maxExportRows) {
+				setError(
+					`Export limited to ${maxExportRows} submissions. Use date range filters to narrow your results.`
+				);
 			}
 
 			setResultCount(results.length);
