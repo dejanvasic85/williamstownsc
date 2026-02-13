@@ -49,11 +49,23 @@ This token is short-lived (≈1 hour).
 
 Make a **GET** request to the OAuth endpoint:
 
-```bash
+```sh
 curl -G \
   -d "grant_type=fb_exchange_token" \
   -d "client_id=APP_ID" \
   -d "client_secret=APP_SECRET" \
   -d "fb_exchange_token=SHORT_LIVED_USER_TOKEN" \
   https://graph.facebook.com/v24.0/oauth/access_token
+```
+
+## Step 4 - Try call the API route to publish to the page
+
+```sh
+curl -X POST http://localhost:3003/api/social-publish \
+  -H "Content-Type: application/json" \
+  -H "x-social-publish-secret: xxx" \
+  -d '{
+    "_id": "af458bad-4473-47d5-8a82-f45fedb15114",
+    "_type": "newsArticle"
+  }'
 ```
