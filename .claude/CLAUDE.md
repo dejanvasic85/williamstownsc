@@ -76,7 +76,7 @@
 
 # Workflow
 
-- After finishing code changes run:
+- After finishing code changes and **before pushing**, always run:
   - `npm run lint`
   - `npm run format`
   - `npm run type:check`
