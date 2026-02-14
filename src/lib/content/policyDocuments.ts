@@ -29,14 +29,18 @@ type RawPolicyDocument = {
 			url: string;
 			size?: number;
 			extension?: string;
-		};
-	};
+		} | null;
+	} | null;
 	description?: string;
 	effectiveDate?: string;
-	order: number;
+	order?: number | null;
 };
 
-function transformPolicyDocument(doc: RawPolicyDocument): PolicyDocument {
+function transformPolicyDocument(doc: RawPolicyDocument): PolicyDocument | null {
+	if (!doc.file?.asset?.url) {
+		return null;
+	}
+
 	return {
 		_id: doc._id,
 		title: doc.title,
@@ -48,7 +52,7 @@ function transformPolicyDocument(doc: RawPolicyDocument): PolicyDocument {
 		},
 		description: doc.description,
 		effectiveDate: doc.effectiveDate,
-		order: doc.order
+		order: doc.order ?? 0
 	};
 }
 
@@ -93,6 +97,8 @@ export async function getPolicyDocuments(): Promise<PolicyDocumentsByCategory[]>
 		{ next: { tags: ['policyDocument'] } }
 	);
 
-	const documents = rawDocuments.map(transformPolicyDocument);
+	const documents = rawDocuments
+		.map(transformPolicyDocument)
+		.filter((doc): doc is PolicyDocument => doc !== null);
 	return groupByCategory(documents);
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { FileDown, FileText } from 'lucide-react';
 import { PageContainer } from '@/components/layout';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
@@ -25,10 +25,14 @@ export default async function ClubPoliciesPage() {
 		getPolicyDocuments()
 	]);
 
+	if (!pageData) {
+		throw new Error('Failed to load policies page data');
+	}
+
 	return (
 		<PageContainer
-			heading={pageData?.heading || 'Policies and Regulations'}
-			intro={pageData?.introduction}
+			heading={pageData.heading || 'Policies and Regulations'}
+			intro={pageData.introduction}
 			layout="article"
 		>
 			{policyDocumentsByCategory.length > 0 ? (
@@ -57,7 +61,7 @@ export default async function ClubPoliciesPage() {
 													</span>
 													{doc.effectiveDate && (
 														<span className="text-base-content/60 text-xs">
-															Effective: {format(new Date(doc.effectiveDate), 'dd MMM yyyy')}
+															Effective: {format(parseISO(doc.effectiveDate), 'dd MMM yyyy')}
 														</span>
 													)}
 												</div>
@@ -65,7 +69,7 @@ export default async function ClubPoliciesPage() {
 										</div>
 										<div className="flex-shrink-0">
 											<a
-												href={doc.file.url}
+												href={`${doc.file.url}?dl=${encodeURIComponent(doc.title)}.pdf`}
 												download
 												className="btn btn-primary btn-sm gap-2"
 												aria-label={`Download ${doc.title}`}
