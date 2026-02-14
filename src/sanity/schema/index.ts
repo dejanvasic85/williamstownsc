@@ -27,6 +27,7 @@ import {
 } from './pages';
 import { person } from './person';
 import { player } from './player';
+import { policyDocument } from './policyDocument';
 import { program } from './program';
 import { siteSettings } from './siteSettings';
 import { sponsor } from './sponsor';
@@ -62,6 +63,7 @@ export const schemaTypes = [
 	formSubmission,
 	newsArticle,
 	person,
+	policyDocument,
 	team,
 	coach,
 	player,

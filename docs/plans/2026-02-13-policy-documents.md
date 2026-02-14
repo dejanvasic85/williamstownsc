@@ -29,7 +29,7 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
 
 ## Implementation Tasks
 
-- [ ] Create `policyDocument` schema in `src/sanity/schema/policyDocument.ts`
+- [x] Create `policyDocument` schema in `src/sanity/schema/policyDocument.ts`
   - `title` (string, required)
   - `category` (string, required, predefined list: "Club Policies", "Football Victoria Policies", "By-Laws & Constitutions")
   - `file` (file, required, accept only PDF)
@@ -38,16 +38,16 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
   - `order` (number, for sorting within category)
   - `published` (boolean, default true, controls visibility on the site)
   - Preview: show title + category
-- [ ] Register schema in `src/sanity/schema/index.ts`
-- [ ] Add `policyDocument` to Sanity Studio structure in `src/sanity/structure.ts`
+- [x] Register schema in `src/sanity/schema/index.ts`
+- [x] Add `policyDocument` to Sanity Studio structure in `src/sanity/structure.ts`
   - Add as content type (will auto-appear via `documentTypeListItems` filter)
   - Or add dedicated section if preferred
-- [ ] Run `npm run type:gen` to regenerate Sanity types
-- [ ] Create content query module `src/lib/content/policyDocuments.ts`
+- [x] Run `npm run type:gen` to regenerate Sanity types
+- [x] Create content query module `src/lib/content/policyDocuments.ts`
   - GROQ query fetching policy documents where `published == true`, with file URL + metadata
   - Transform/group by category, sorted by order within each category
   - Export types for the grouped result
-- [ ] Update `src/app/(site)/club/policies-and-regulations/page.tsx`
+- [x] Update `src/app/(site)/club/policies-and-regulations/page.tsx`
   - Fetch page data (intro) + policy documents
   - Render intro section from `policiesPage`
   - Render document groups by category
@@ -55,9 +55,9 @@ Use Sanity's `file` type for PDF uploads. Create a `policyDocument` content type
   - Each document: title, description, effective date, file size badge, download button/link
   - Use DaisyUI components (cards or list items)
   - Download link uses `<a href={url} download>` pattern with appropriate icon (lucide `FileDown` or `Download`)
-- [ ] Run `npm run lint && npm run format && npm run type:check`
-- [ ] Run `npm run build` to verify
-- [ ] Commit and push
+- [x] Run `npm run lint && npm run format && npm run type:check`
+- [x] Run `npm run build` to verify
+- [x] Commit and push
 
 ## File Changes
 
