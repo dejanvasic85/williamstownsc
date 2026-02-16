@@ -90,7 +90,7 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 3. Apply filters (REQUIRED):
    - Season (e.g., "2025")
    - Competition (e.g., "FFV")
-   - League (e.g., "seniors-mens")
+   - League (e.g., "state-league-2-men-s-north-west")
 4. Intercept `/api/fixtures` responses
 5. Handle pagination:
    - Detect "Load more" button in DOM
@@ -114,7 +114,7 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 
 **CLI args:**
 
-- `--team <slug>` (required) - Team slug for output folder (e.g., "senior-mens")
+- `--team <slug>` (required) - Team slug for output folder (e.g., "state-league-2-men-s-north-west")
 - `--league <slug>` (required) - League slug for filtering (e.g., "State League 2 Men's - North-West")
 - `--season <year>` (optional, default to current year)
 - `--competition <id>` (optional, default to FFV)
@@ -239,7 +239,7 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 
 **CLI args:**
 
-- `--team <slug>` (required) - Team slug to sync (e.g., "senior-mens")
+- `--team <slug>` (required) - Team slug to sync (e.g., "state-league-2-men-s-north-west")
 
 ## Validation Schemas
 

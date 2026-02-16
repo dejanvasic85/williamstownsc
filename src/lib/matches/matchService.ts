@@ -11,7 +11,8 @@ import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matche
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
 
 const teamExternalIds: Record<string, string> = {
-	'seniors-mens': '6lNbpDpwdx'
+	'state-league-2-men-s-north-west': '6lNbpDpwdx',
+	'state-league-2-men-s-north-west-reserves': '6lNbpDpwdx'
 } as const;
 
 export function getClubs(): Club[] {
