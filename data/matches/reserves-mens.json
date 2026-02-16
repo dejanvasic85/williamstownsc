@@ -1068,21 +1068,21 @@
 			"round": 18,
 			"date": "2026-08-01",
 			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "LBdDx0GQdb",
-			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492"
+			"time": "14:30",
+			"homeTeamId": "3vmZv8JJmq",
+			"awayTeamId": "AnmYzyArNz",
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "-37.770859,144.807385"
 		},
 		{
 			"round": 18,
 			"date": "2026-08-01",
 			"day": "Saturday",
-			"time": "16:00",
-			"homeTeamId": "3vmZv8JJmq",
-			"awayTeamId": "AnmYzyArNz",
-			"address": "Polish Sports & Recreation Complex Pitch 1",
-			"coordinates": "-37.770859,144.807385"
+			"time": "15:00",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "LBdDx0GQdb",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "-37.759892,144.819492"
 		},
 		{
 			"round": 19,
