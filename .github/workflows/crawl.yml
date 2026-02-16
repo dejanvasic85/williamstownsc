@@ -26,17 +26,17 @@ jobs:
 
       - name: Crawl clubs
         run: npm run crawl:clubs:ci
-      - name: Crawl seniors-mens fixtures
-        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "seniors-mens"
-      - name: Crawl reserves-mens fixtures
-        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West Reserves" -t "reserves-mens"
+      - name: Crawl state-league-2-men-s-north-west fixtures
+        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "state-league-2-men-s-north-west"
+      - name: Crawl state-league-2-men-s-north-west-reserves fixtures
+        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West Reserves" -t "state-league-2-men-s-north-west-reserves"
 
       - name: Sync clubs
         run: npm run sync:clubs
-      - name: Sync seniors-mens fixtures
-        run: npm run sync:fixtures -- -t "seniors-mens"
-      - name: Sync reserves-mens fixtures
-        run: npm run sync:fixtures -- -t "reserves-mens"
+      - name: Sync state-league-2-men-s-north-west fixtures
+        run: npm run sync:fixtures -- -t "state-league-2-men-s-north-west"
+      - name: Sync state-league-2-men-s-north-west-reserves fixtures
+        run: npm run sync:fixtures -- -t "state-league-2-men-s-north-west-reserves"
 
       - name: Format code
         run: npm run format
