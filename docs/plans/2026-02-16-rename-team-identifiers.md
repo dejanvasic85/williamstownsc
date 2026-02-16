@@ -58,6 +58,7 @@ Rename two team identifiers to match actual team names:
 
 - [x] Update `bin/wsc.ts:26,54` - Update examples
 - [x] Update `.claude/skills/dribl-crawling/SKILL.md:93,117,242` - Update examples
+- [x] Update `tests/search.spec.ts:15,17` - Update E2E test to search for new team name
 
 ### 6. Verification
 
@@ -69,7 +70,7 @@ Rename two team identifiers to match actual team names:
   - Homepage match countdown works
   - `/football/teams/state-league-2-men-s-north-west` loads
   - `/football/teams/state-league-2-men-s-north-west/matches` shows fixtures
-- [ ] Run `npm run test:e2e`
+- [x] Run `npm run test:e2e` (14/14 passed - also fixed pre-existing search test issues)
 
 ### 7. Sanity CMS (Manual - Post Implementation)
 
@@ -89,6 +90,7 @@ Rename two team identifiers to match actual team names:
 | `.github/workflows/crawl.yml`            | Edit - update slugs (4 occurrences)                     |
 | `bin/wsc.ts`                             | Edit - update examples (2 places)                       |
 | `.claude/skills/dribl-crawling/SKILL.md` | Edit - update examples (3 places)                       |
+| `tests/search.spec.ts`                   | Edit - update E2E test (2 places)                       |
 
 ## Notes
 
