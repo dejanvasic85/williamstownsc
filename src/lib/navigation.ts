@@ -1,4 +1,10 @@
-export const navItems = [
+export interface NavItem {
+	name: string;
+	href: string;
+	submenu?: NavItem[];
+}
+
+export const navItems: NavItem[] = [
 	{ name: 'Home', href: '/' },
 	{ name: 'News', href: '/news' },
 	{

@@ -11,7 +11,8 @@ const allowedContentTypes = new Set([
 	'page',
 	'committeePage',
 	'contactPage',
-	'siteSettings'
+	'siteSettings',
+	'navigationSettings'
 ]);
 
 const pageNamePattern = /^[a-zA-Z]+Page$/;

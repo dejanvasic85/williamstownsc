@@ -5,7 +5,9 @@ import { Banner, Footer, Navbar } from '@/components/layout';
 import { SearchModal, SearchModalProvider } from '@/components/search';
 import { formatAddress } from '@/lib/address';
 import { getActiveAnnouncements } from '@/lib/announcements';
-import { getSiteSettings } from '@/lib/content';
+import { getNavigationVisibility, getSiteSettings } from '@/lib/content';
+import { navItems } from '@/lib/navigation';
+import { buildFooterNavLinks, filterNavItems } from '@/lib/navigationTransformer';
 import { QueryProvider } from '@/lib/providers/QueryProvider';
 import { generateOrganizationSchema } from '@/lib/structuredData';
 import { urlFor } from '@/sanity/lib/image';
@@ -46,10 +48,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: PropsWithChildren) {
-	const [siteSettings, { activeAnnouncements, hasAnnouncements }] = await Promise.all([
+	const [siteSettings, { activeAnnouncements, hasAnnouncements }, visibility] = await Promise.all([
 		getSiteSettings(),
-		getActiveAnnouncements()
+		getActiveAnnouncements(),
+		getNavigationVisibility()
 	]);
+
+	const filteredNavItems = filterNavItems(navItems, visibility);
+	const footerNavLinks = buildFooterNavLinks(visibility);
 
 	const logoUrl = siteSettings?.logo
 		? urlFor(siteSettings.logo).width(80).height(80).url()
@@ -93,6 +99,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 					}))}
 				/>
 				<Navbar
+					navItems={filteredNavItems}
 					logoUrl={logoUrl}
 					logoAlt={logoAlt}
 					clubName={siteSettings?.clubName}
@@ -106,7 +113,11 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 				>
 					{children}
 				</main>
-				<Footer clubName={siteSettings?.clubName} socials={siteSettings?.socials} />
+				<Footer
+					clubName={siteSettings?.clubName}
+					socials={siteSettings?.socials}
+					navLinks={footerNavLinks}
+				/>
 				<SearchModal />
 			</SearchModalProvider>
 		</QueryProvider>

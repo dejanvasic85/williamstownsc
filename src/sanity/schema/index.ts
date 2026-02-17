@@ -2,6 +2,7 @@ import { announcement } from './announcement';
 import { coach } from './coach';
 import { committeeMember } from './committeeMember';
 import { formSubmission } from './formSubmission';
+import { navigationSettings } from './navigationSettings';
 import { newsArticle } from './newsArticle';
 // Objects
 import { contactTypeContent } from './objects/contactTypeContent';
@@ -27,6 +28,7 @@ import {
 } from './pages';
 import { person } from './person';
 import { player } from './player';
+import { policyDocument } from './policyDocument';
 import { program } from './program';
 import { siteSettings } from './siteSettings';
 import { sponsor } from './sponsor';
@@ -60,8 +62,10 @@ export const schemaTypes = [
 	// Content types
 	announcement,
 	formSubmission,
+	navigationSettings,
 	newsArticle,
 	person,
+	policyDocument,
 	team,
 	coach,
 	player,

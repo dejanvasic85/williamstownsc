@@ -44,7 +44,7 @@ export default async function Home() {
 		getHomePageData(),
 		getFeaturedSponsors(),
 		getActiveAnnouncements(),
-		getNextMatch('seniors-mens'),
+		getNextMatch('state-league-2-men-s-north-west'),
 		getNextKeyDate()
 	]);
 	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
@@ -90,7 +90,7 @@ export default async function Home() {
 
 				<div className="container mx-auto">
 					<div className="grid items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3">
-						<MatchCountdownSection match={nextMatch} teamSlug="seniors-mens" />
+						<MatchCountdownSection match={nextMatch} teamSlug="state-league-2-men-s-north-west" />
 						<SponsorsSection sponsors={featuredSponsors} />
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}

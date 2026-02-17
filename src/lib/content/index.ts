@@ -16,3 +16,6 @@ export { getKeyDatesPageData } from './keyDates';
 export type { KeyDateItem } from './keyDates';
 
 export { getSiteSettings } from './siteSettings';
+
+export { getNavigationVisibility } from './navigationSettings';
+export type { NavigationVisibility } from './navigationSettings';

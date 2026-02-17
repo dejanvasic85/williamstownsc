@@ -23,7 +23,10 @@ crawl
 crawl
 	.command('fixtures')
 	.description('Extract fixtures data from Dribl with filtering')
-	.requiredOption('-t, --team <slug>', 'Team slug for output folder (e.g., "senior-mens")')
+	.requiredOption(
+		'-t, --team <slug>',
+		'Team slug for output folder (e.g., "state-league-2-men-s-north-west")'
+	)
 	.requiredOption(
 		'-l, --league <slug>',
 		'League slug for filtering (e.g., "State League 2 Men\'s - North-West")'
@@ -51,7 +54,10 @@ sync
 sync
 	.command('fixtures')
 	.description('Transform external fixture chunks into canonical format')
-	.requiredOption('-t, --team <slug>', 'Team slug to sync (e.g., "senior-mens")')
+	.requiredOption(
+		'-t, --team <slug>',
+		'Team slug to sync (e.g., "state-league-2-men-s-north-west")'
+	)
 	.action(async (options: { team: string }) => {
 		await syncFixtures({ team: options.team });
 	});

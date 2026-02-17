@@ -7,6 +7,9 @@ export const structure = (S: StructureBuilder) =>
 			S.listItem()
 				.title('Site Settings')
 				.child(S.document().schemaType('siteSettings').documentId('siteSettings')),
+			S.listItem()
+				.title('Navigation Settings')
+				.child(S.document().schemaType('navigationSettings').documentId('navigationSettings')),
 			S.divider(),
 
 			// Form Submissions section
@@ -144,6 +147,7 @@ export const structure = (S: StructureBuilder) =>
 				(listItem) =>
 					![
 						'siteSettings',
+						'navigationSettings',
 						'formSubmission',
 						'aboutPage',
 						'accessibilityPage',
