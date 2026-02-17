@@ -46,7 +46,7 @@ Scope is limited to menu/footer navigation only. Dynamic pages (Home, News, Foot
 - [ ] Create `src/sanity/schema/navigationSettings.ts` — singleton doc with 10 boolean fields, `initialValue: true`, descriptive labels
 - [ ] Register in `src/sanity/schema/index.ts`
 - [ ] Add singleton entry to `src/sanity/structure.ts` (below Site Settings; add `'navigationSettings'` to exclusion list)
-- [ ] Create `src/lib/content/navigationSettings.ts` — `getNavigationVisibility()`, `NavigationVisibility` type, revalidation tag `navigationSettings`
+- [ ] Create `src/lib/content/navigationSettings.ts` — `getNavigationVisibility()`, `NavigationVisibility` type, revalidation tag `navigationSettings` (see Cache Invalidation section below)
 - [ ] Export from `src/lib/content/index.ts`
 - [ ] Export `NavItem` type from `src/lib/navigation.ts`
 - [ ] Create `src/lib/navigationTransformer.ts` — `filterNavItems()`, `buildFooterNavLinks()`, `filterMenuLinks()`, href→visibility key mapping
@@ -58,6 +58,46 @@ Scope is limited to menu/footer navigation only. Dynamic pages (Home, News, Foot
 - [ ] `npm run type:gen`
 - [ ] `npm run lint && npm run format && npm run type:check`
 - [ ] `npm run build`
+
+## Cache Invalidation
+
+The `navigationSettings` document type uses the existing on-demand revalidation infrastructure:
+
+**Revalidation endpoint:** `src/app/api/revalidate/route.ts`
+
+**Required change:** Add `'navigationSettings'` to the `allowedContentTypes` Set on line 7:
+
+```/dev/null/route.ts#L7
+const allowedContentTypes = new Set([
+	'announcement',
+	'newsArticle',
+	'team',
+	'sponsor',
+	'program',
+	'page',
+	'committeePage',
+	'contactPage',
+	'siteSettings',
+	'navigationSettings'  // ADD THIS LINE
+]);
+```
+
+**How it works:**
+1. Content author toggles visibility in Sanity Studio → publishes changes
+2. Sanity webhook (configured at project API settings) POSTs to `/api/revalidate` with `{"_type": "navigationSettings"}`
+3. Endpoint validates secret header, calls `revalidateTag('navigationSettings', 'max')`
+4. Next.js invalidates all cached content tagged with `navigationSettings`
+5. Next page load fetches fresh visibility data, filters navigation accordingly
+
+**Webhook setup:** See `docs/cache-invalidation.md` for Sanity webhook configuration (URL, headers, authentication). Existing webhook should already be configured; just ensure `navigationSettings` is added to the allowed types list above.
+
+**Testing:** After publishing changes in Sanity, verify cache invalidation:
+```bash
+curl -X POST http://localhost:3003/api/revalidate \
+  -H "Content-Type: application/json" \
+  -H "x-revalidate-secret: your-secret-here" \
+  -d '{"_type": "navigationSettings"}'
+```
 
 ## Architecture
 
