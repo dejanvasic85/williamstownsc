@@ -11,7 +11,6 @@ export interface NavigationVisibility {
 	sponsors: boolean;
 	contact: boolean;
 	keyDates: boolean;
-	events: boolean;
 }
 
 export async function getNavigationVisibility(): Promise<NavigationVisibility> {
@@ -25,8 +24,7 @@ export async function getNavigationVisibility(): Promise<NavigationVisibility> {
 			locations,
 			sponsors,
 			contact,
-			keyDates,
-			events
+			keyDates
 		}`,
 		{},
 		{ next: { tags: ['navigationSettings'] } }
@@ -42,7 +40,6 @@ export async function getNavigationVisibility(): Promise<NavigationVisibility> {
 		locations: settings?.locations ?? true,
 		sponsors: settings?.sponsors ?? true,
 		contact: settings?.contact ?? true,
-		keyDates: settings?.keyDates ?? true,
-		events: settings?.events ?? true
+		keyDates: settings?.keyDates ?? true
 	};
 }
