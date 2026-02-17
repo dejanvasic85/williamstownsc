@@ -28,5 +28,5 @@ jobs:
         run: npm run deploy:sanity -- --yes
         env:
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
-          NEXT_PUBLIC_SANITY_PROJECT_ID: williamstown-sc
+          NEXT_PUBLIC_SANITY_PROJECT_ID: 1ougwkz1
           NEXT_PUBLIC_SANITY_DATASET: production
