@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PageContainer } from '@/components/layout';
+import { getNavigationVisibility } from '@/lib/content';
+import { filterMenuLinks } from '@/lib/navigationTransformer';
 
 export const metadata: Metadata = {
 	title: 'Menu',
@@ -46,12 +48,15 @@ const menuLinks = [
 	}
 ];
 
-export default function MenuPage() {
+export default async function MenuPage() {
+	const visibility = await getNavigationVisibility();
+	const filteredMenuLinks = filterMenuLinks(menuLinks, visibility);
+
 	return (
 		<PageContainer heading="Menu" intro="Navigate to all sections of our website">
 			<div className="mx-auto max-w-2xl">
 				<nav className="grid gap-4">
-					{menuLinks.map((link) => (
+					{filteredMenuLinks.map((link) => (
 						<Link
 							key={link.href}
 							href={link.href}

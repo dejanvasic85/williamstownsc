@@ -8,9 +8,10 @@ import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 import { useSearchModal } from '@/components/search';
-import { navItems } from '@/lib/navigation';
+import { NavItem } from '@/lib/navigation';
 
 type DesktopNavbarProps = {
+	navItems: NavItem[];
 	logoUrl?: string;
 	logoAlt?: string;
 	clubName?: string;
@@ -24,6 +25,7 @@ type DesktopNavbarProps = {
 };
 
 export function DesktopNavbar({
+	navItems,
 	logoUrl,
 	logoAlt,
 	clubName,

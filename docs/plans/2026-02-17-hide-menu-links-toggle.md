@@ -22,20 +22,21 @@ Scope is limited to menu/footer navigation only. Dynamic pages (Home, News, Foot
 
 ## Toggleable Items (10 total)
 
-| Toggle key    | Route                             | Surfaces                                    |
-|---------------|-----------------------------------|---------------------------------------------|
-| `programs`    | `/football/programs`              | desktop nav submenu, footer                 |
-| `merchandise` | `/football/merchandise`           | desktop nav submenu, footer                 |
-| `about`       | `/club/about`                     | desktop nav submenu, footer, menu page      |
-| `committee`   | `/club/committee`                 | desktop nav submenu, footer, menu page      |
-| `policies`    | `/club/policies-and-regulations`  | desktop nav submenu, footer, menu page      |
-| `locations`   | `/club/locations`                 | desktop nav submenu, footer, menu page      |
-| `sponsors`    | `/sponsors`                       | desktop nav, footer, menu page              |
-| `contact`     | `/contact`                        | desktop nav, footer, menu page              |
-| `keyDates`    | `/key-dates`                      | desktop nav                                 |
-| `events`      | `/events`                         | footer, menu page                           |
+| Toggle key    | Route                            | Surfaces                               |
+| ------------- | -------------------------------- | -------------------------------------- |
+| `programs`    | `/football/programs`             | desktop nav submenu, footer            |
+| `merchandise` | `/football/merchandise`          | desktop nav submenu, footer            |
+| `about`       | `/club/about`                    | desktop nav submenu, footer, menu page |
+| `committee`   | `/club/committee`                | desktop nav submenu, footer, menu page |
+| `policies`    | `/club/policies-and-regulations` | desktop nav submenu, footer, menu page |
+| `locations`   | `/club/locations`                | desktop nav submenu, footer, menu page |
+| `sponsors`    | `/sponsors`                      | desktop nav, footer, menu page         |
+| `contact`     | `/contact`                       | desktop nav, footer, menu page         |
+| `keyDates`    | `/key-dates`                     | desktop nav                            |
+| `events`      | `/events`                        | footer, menu page                      |
 
 **Submenu parent rules:**
+
 - Football: always visible (Teams always shown; hiding programs+merch leaves Teams only)
 - Club: hidden entirely if ALL 4 sub-items are hidden
 
@@ -43,21 +44,23 @@ Scope is limited to menu/footer navigation only. Dynamic pages (Home, News, Foot
 
 ## Tasks
 
-- [ ] Create `src/sanity/schema/navigationSettings.ts` — singleton doc with 10 boolean fields, `initialValue: true`, descriptive labels
-- [ ] Register in `src/sanity/schema/index.ts`
-- [ ] Add singleton entry to `src/sanity/structure.ts` (below Site Settings; add `'navigationSettings'` to exclusion list)
-- [ ] Create `src/lib/content/navigationSettings.ts` — `getNavigationVisibility()`, `NavigationVisibility` type, revalidation tag `navigationSettings` (see Cache Invalidation section below)
-- [ ] Export from `src/lib/content/index.ts`
-- [ ] Export `NavItem` type from `src/lib/navigation.ts`
-- [ ] Create `src/lib/navigationTransformer.ts` — `filterNavItems()`, `buildFooterNavLinks()`, `filterMenuLinks()`, href→visibility key mapping
-- [ ] Update `src/app/(site)/layout.tsx` — fetch visibility in parallel, filter navItems + footer links, pass to components
-- [ ] Update `src/components/layout/Navbar.tsx` — accept `navItems: NavItem[]` prop, pass to `DesktopNavbar`
-- [ ] Update `src/components/layout/DesktopNavbar.tsx` — remove direct import, accept `navItems` as prop
-- [ ] Update `src/components/layout/Footer.tsx` — accept `navLinks: FooterNavLinks` prop, render columns dynamically
-- [ ] Update `src/app/(site)/menu/page.tsx` — make async server component, fetch visibility, filter `menuLinks`
-- [ ] `npm run type:gen`
-- [ ] `npm run lint && npm run format && npm run type:check`
-- [ ] `npm run build`
+- [x] Create `src/sanity/schema/navigationSettings.ts` — singleton doc with 10 boolean fields, `initialValue: true`, descriptive labels
+- [x] Register in `src/sanity/schema/index.ts`
+- [x] Add singleton entry to `src/sanity/structure.ts` (below Site Settings; add `'navigationSettings'` to exclusion list)
+- [x] Create `src/lib/content/navigationSettings.ts` — `getNavigationVisibility()`, `NavigationVisibility` type, revalidation tag `navigationSettings` (see Cache Invalidation section below)
+- [x] Export from `src/lib/content/index.ts`
+- [x] Export `NavItem` type from `src/lib/navigation.ts`
+- [x] Create `src/lib/navigationTransformer.ts` — `filterNavItems()`, `buildFooterNavLinks()`, `filterMenuLinks()`, href→visibility key mapping
+- [x] Update `src/app/(site)/layout.tsx` — fetch visibility in parallel, filter navItems + footer links, pass to components
+- [x] Update `src/components/layout/Navbar.tsx` — accept `navItems: NavItem[]` prop, pass to `DesktopNavbar`
+- [x] Update `src/components/layout/DesktopNavbar.tsx` — remove direct import, accept `navItems` as prop
+- [x] Update `src/components/layout/Footer.tsx` — accept `navLinks: FooterNavLinks` prop, render columns dynamically
+- [x] Update `src/app/(site)/menu/page.tsx` — make async server component, fetch visibility, filter `menuLinks`
+- [x] Add `'navigationSettings'` to `allowedContentTypes` in `src/app/api/revalidate/route.ts`
+- [x] `npm run type:gen`
+- [x] `npm run lint && npm run format && npm run type:check`
+- [x] `npm run build`
+- [ ] **Verify Navigation Settings appears in Sanity Studio** — Clear browser cache, hard refresh Studio (`/studio`), verify "Navigation Settings" appears below "Site Settings" in sidebar
 
 ## Cache Invalidation
 
@@ -83,6 +86,7 @@ const allowedContentTypes = new Set([
 ```
 
 **How it works:**
+
 1. Content author toggles visibility in Sanity Studio → publishes changes
 2. Sanity webhook (configured at project API settings) POSTs to `/api/revalidate` with `{"_type": "navigationSettings"}`
 3. Endpoint validates secret header, calls `revalidateTag('navigationSettings', 'max')`
@@ -92,12 +96,37 @@ const allowedContentTypes = new Set([
 **Webhook setup:** See `docs/cache-invalidation.md` for Sanity webhook configuration (URL, headers, authentication). Existing webhook should already be configured; just ensure `navigationSettings` is added to the allowed types list above.
 
 **Testing:** After publishing changes in Sanity, verify cache invalidation:
+
 ```bash
 curl -X POST http://localhost:3003/api/revalidate \
   -H "Content-Type: application/json" \
   -H "x-revalidate-secret: your-secret-here" \
   -d '{"_type": "navigationSettings"}'
 ```
+
+## Sanity Studio Verification
+
+**Location:** The Navigation Settings singleton should appear in the Sanity Studio sidebar at `/studio`
+
+**Expected behavior:**
+- "Navigation Settings" appears as the second item in the sidebar (directly below "Site Settings")
+- Already added to `src/sanity/structure.ts` on lines 10-12
+- Already added to exclusion filter on line 150
+
+**Troubleshooting if not visible:**
+1. **Hard refresh the Studio** - The structure configuration is cached. Try:
+   - Clear browser cache
+   - Hard refresh (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
+   - Open Studio in incognito/private window
+2. **Restart dev server** - Kill and restart `npm run dev`
+3. **Verify schema registration** - Check `src/sanity/schema/index.ts` includes `navigationSettings` import and export (line 5 and 64)
+4. **Check browser console** - Look for any Sanity configuration errors
+5. **Verify Sanity config** - Ensure `sanity.config.ts` imports structure: `structureTool({ structure })`
+
+**Files modified for Studio integration:**
+- `src/sanity/schema/navigationSettings.ts` - Schema definition
+- `src/sanity/schema/index.ts` - Schema registration
+- `src/sanity/structure.ts` - Sidebar structure (lines 10-12, 150)
 
 ## Architecture
 
