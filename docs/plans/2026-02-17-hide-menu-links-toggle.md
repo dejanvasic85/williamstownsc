@@ -109,11 +109,13 @@ curl -X POST http://localhost:3003/api/revalidate \
 **Location:** The Navigation Settings singleton should appear in the Sanity Studio sidebar at `/studio`
 
 **Expected behavior:**
+
 - "Navigation Settings" appears as the second item in the sidebar (directly below "Site Settings")
 - Already added to `src/sanity/structure.ts` on lines 10-12
 - Already added to exclusion filter on line 150
 
 **Troubleshooting if not visible:**
+
 1. **Hard refresh the Studio** - The structure configuration is cached. Try:
    - Clear browser cache
    - Hard refresh (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
@@ -124,6 +126,7 @@ curl -X POST http://localhost:3003/api/revalidate \
 5. **Verify Sanity config** - Ensure `sanity.config.ts` imports structure: `structureTool({ structure })`
 
 **Files modified for Studio integration:**
+
 - `src/sanity/schema/navigationSettings.ts` - Schema definition
 - `src/sanity/schema/index.ts` - Schema registration
 - `src/sanity/structure.ts` - Sidebar structure (lines 10-12, 150)
