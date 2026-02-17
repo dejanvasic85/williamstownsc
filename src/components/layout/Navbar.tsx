@@ -1,7 +1,9 @@
+import { NavItem } from '@/lib/navigation';
 import { DesktopNavbar } from './DesktopNavbar';
 import { MobileNavbar } from './MobileNavbar';
 
 type NavbarProps = {
+	navItems: NavItem[];
 	logoUrl?: string;
 	logoAlt?: string;
 	clubName?: string;
@@ -15,6 +17,7 @@ type NavbarProps = {
 };
 
 export function Navbar({
+	navItems,
 	logoUrl,
 	logoAlt,
 	clubName,
@@ -26,6 +29,7 @@ export function Navbar({
 		<>
 			<MobileNavbar />
 			<DesktopNavbar
+				navItems={navItems}
 				logoUrl={logoUrl}
 				logoAlt={logoAlt}
 				clubName={clubName}
