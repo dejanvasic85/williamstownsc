@@ -32,11 +32,27 @@ const sanityWriteConfigSchema = z.object({
 	sanityWriteToken: z.string().min(1, 'Sanity write token is required')
 });
 
+// Server-only Meta API config schema
+const metaConfigSchema = z.object({
+	metaPageAccessToken: z.string().min(1, 'Meta page access token is required'),
+	metaFacebookPageId: z.string().min(1, 'Meta Facebook page ID is required'),
+	metaInstagramAccountId: z.string().min(1, 'Meta Instagram account ID is required'),
+	facebookEnabled: z.boolean().default(true),
+	instagramEnabled: z.boolean().default(true)
+});
+
+// Server-only social publish config schema
+const socialPublishConfigSchema = z.object({
+	socialPublishSecret: z.string().min(1, 'Social publish secret is required')
+});
+
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
 export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
 export type SanityWriteConfig = z.infer<typeof sanityWriteConfigSchema>;
+export type MetaConfig = z.infer<typeof metaConfigSchema>;
+export type SocialPublishConfig = z.infer<typeof socialPublishConfigSchema>;
 
 let cachedClientConfig: ClientConfig | null = null;
 
@@ -110,5 +126,29 @@ export function getRevalidationConfig(): RevalidationConfig {
 export function getSanityWriteConfig(): SanityWriteConfig {
 	return sanityWriteConfigSchema.parse({
 		sanityWriteToken: process.env.SANITY_WRITE_TOKEN
+	});
+}
+
+/**
+ * Get Meta API config (server-only)
+ * Contains credentials for Facebook and Instagram publishing
+ */
+export function getMetaConfig(): MetaConfig {
+	return metaConfigSchema.parse({
+		metaPageAccessToken: process.env.META_PAGE_ACCESS_TOKEN,
+		metaFacebookPageId: process.env.META_FACEBOOK_PAGE_ID,
+		metaInstagramAccountId: process.env.META_INSTAGRAM_ACCOUNT_ID,
+		facebookEnabled: process.env.META_FACEBOOK_ENABLED !== 'false',
+		instagramEnabled: process.env.META_INSTAGRAM_ENABLED !== 'false'
+	});
+}
+
+/**
+ * Get social publish config (server-only)
+ * Contains secret for social publishing webhook endpoint
+ */
+export function getSocialPublishConfig(): SocialPublishConfig {
+	return socialPublishConfigSchema.parse({
+		socialPublishSecret: process.env.SOCIAL_PUBLISH_SECRET
 	});
 }
