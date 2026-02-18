@@ -211,8 +211,8 @@ export async function publishArticleToSocials(
 	const config = getMetaConfig();
 
 	const results = await Promise.allSettled([
-		publishToFacebook(article, config)
-		//publishToInstagram(article, config)
+		publishToFacebook(article, config),
+		publishToInstagram(article, config)
 	]);
 
 	return results.map((result) => {

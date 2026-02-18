@@ -47,7 +47,7 @@ This token is short-lived (≈1 hour).
 
 ## Step 3 — Exchange for a long-lived User token
 
-Make a **GET** request to the OAuth endpoint:
+Make a **GET** request to the OAuth endpoint and use the environment variables from vercel.
 
 ```sh
 curl -G \
@@ -57,6 +57,17 @@ curl -G \
   -d "fb_exchange_token=SHORT_LIVED_USER_TOKEN" \
   https://graph.facebook.com/v24.0/oauth/access_token
 ```
+
+The access token is a short lived on which is about 2 months. Then we call this endpoint to get one that does NOT Expire:
+
+```sh
+curl "https://graph.facebook.com/v24.0/me/accounts?access_token=xxx"
+```
+
+Find the access token in that response for Williamstown Soccer Club page. You can put the token in the [debugger](https://developers.facebook.com/tools/debug/accesstoken/) to see the details. For example, is it a user token or a page token?
+
+But most importantly, it should not expire.
+Set the environment variable `META_PAGE_ACCESS_TOKEN` in .env.local or Vercel.
 
 ## Step 4 - Try call the API route to publish to the page
 
