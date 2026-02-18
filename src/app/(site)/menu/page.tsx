@@ -40,11 +40,6 @@ const menuLinks = [
 		name: 'Contact',
 		href: '/contact',
 		description: 'Get in touch with us'
-	},
-	{
-		name: 'Events',
-		href: '/events',
-		description: 'Browse upcoming events'
 	}
 ];
 
