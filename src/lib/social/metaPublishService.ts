@@ -37,6 +37,7 @@ const maxInstagramCaptionLength = 2200;
 const instagramPollIntervalMs = 2000;
 const instagramMaxPollAttempts = 30;
 const defaultHashtags = '#WilliamstownSC #WeAreWilliamstown';
+const platforms: Array<PublishResult['platform']> = ['facebook', 'instagram'];
 
 function buildCaption(article: SocialPublishArticle): string {
 	const parts = [article.title];
@@ -69,7 +70,8 @@ async function callMetaApi<T>(
 	const response = await fetch(url, {
 		...options,
 		headers: {
-			...options.headers
+			...options.headers,
+			Authorization: `Bearer ${accessToken}`
 		}
 	});
 
@@ -91,7 +93,7 @@ async function pollInstagramContainerStatus(
 
 	while (attempts < instagramMaxPollAttempts) {
 		const status = await callMetaApi<InstagramContainerStatusResponse>(
-			`/${containerId}?fields=status_code&access_token=${accessToken}`,
+			`/${containerId}?fields=status_code`,
 			accessToken,
 			{ method: 'GET' }
 		);
@@ -121,7 +123,6 @@ export async function publishToFacebook(
 		const formData = new URLSearchParams();
 		formData.append('url', article.imageUrl);
 		formData.append('message', caption);
-		formData.append('access_token', config.metaPageAccessToken);
 
 		const response = await callMetaApi<FacebookPhotoResponse>(
 			`/${config.metaFacebookPageId}/photos`,
@@ -159,7 +160,6 @@ export async function publishToInstagram(
 		const createParams = new URLSearchParams();
 		createParams.append('image_url', article.imageUrl);
 		createParams.append('caption', caption);
-		createParams.append('access_token', config.metaPageAccessToken);
 
 		const containerResponse = await callMetaApi<InstagramContainerResponse>(
 			`/${config.metaInstagramAccountId}/media`,
@@ -177,7 +177,6 @@ export async function publishToInstagram(
 
 		const publishParams = new URLSearchParams();
 		publishParams.append('creation_id', containerResponse.id);
-		publishParams.append('access_token', config.metaPageAccessToken);
 
 		const publishResponse = await callMetaApi<InstagramPublishResponse>(
 			`/${config.metaInstagramAccountId}/media_publish`,
@@ -215,12 +214,12 @@ export async function publishArticleToSocials(
 		publishToInstagram(article, config)
 	]);
 
-	return results.map((result) => {
+	return results.map((result, index) => {
 		if (result.status === 'fulfilled') {
 			return result.value;
 		}
 		return {
-			platform: 'facebook',
+			platform: platforms[index],
 			success: false,
 			error: result.reason instanceof Error ? result.reason.message : 'Promise rejected'
 		};
