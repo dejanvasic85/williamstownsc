@@ -37,7 +37,6 @@ const maxInstagramCaptionLength = 2200;
 const instagramPollIntervalMs = 2000;
 const instagramMaxPollAttempts = 30;
 const defaultHashtags = '#WilliamstownSC #WeAreWilliamstown';
-const platforms: Array<PublishResult['platform']> = ['facebook', 'instagram'];
 
 function buildCaption(article: SocialPublishArticle): string {
 	const parts = [article.title];
@@ -209,17 +208,31 @@ export async function publishArticleToSocials(
 ): Promise<PublishResult[]> {
 	const config = getMetaConfig();
 
-	const results = await Promise.allSettled([
-		publishToFacebook(article, config),
-		publishToInstagram(article, config)
-	]);
+	const tasks: Promise<PublishResult>[] = [];
+	const taskPlatforms: Array<PublishResult['platform']> = [];
+
+	if (config.facebookEnabled) {
+		tasks.push(publishToFacebook(article, config));
+		taskPlatforms.push('facebook');
+	}
+
+	if (config.instagramEnabled) {
+		tasks.push(publishToInstagram(article, config));
+		taskPlatforms.push('instagram');
+	}
+
+	if (tasks.length === 0) {
+		return [];
+	}
+
+	const results = await Promise.allSettled(tasks);
 
 	return results.map((result, index) => {
 		if (result.status === 'fulfilled') {
 			return result.value;
 		}
 		return {
-			platform: platforms[index],
+			platform: taskPlatforms[index],
 			success: false,
 			error: result.reason instanceof Error ? result.reason.message : 'Promise rejected'
 		};

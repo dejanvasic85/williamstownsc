@@ -36,7 +36,9 @@ const sanityWriteConfigSchema = z.object({
 const metaConfigSchema = z.object({
 	metaPageAccessToken: z.string().min(1, 'Meta page access token is required'),
 	metaFacebookPageId: z.string().min(1, 'Meta Facebook page ID is required'),
-	metaInstagramAccountId: z.string().min(1, 'Meta Instagram account ID is required')
+	metaInstagramAccountId: z.string().min(1, 'Meta Instagram account ID is required'),
+	facebookEnabled: z.boolean().default(true),
+	instagramEnabled: z.boolean().default(true)
 });
 
 // Server-only social publish config schema
@@ -135,7 +137,9 @@ export function getMetaConfig(): MetaConfig {
 	return metaConfigSchema.parse({
 		metaPageAccessToken: process.env.META_PAGE_ACCESS_TOKEN,
 		metaFacebookPageId: process.env.META_FACEBOOK_PAGE_ID,
-		metaInstagramAccountId: process.env.META_INSTAGRAM_ACCOUNT_ID
+		metaInstagramAccountId: process.env.META_INSTAGRAM_ACCOUNT_ID,
+		facebookEnabled: process.env.META_FACEBOOK_ENABLED !== 'false',
+		instagramEnabled: process.env.META_INSTAGRAM_ENABLED !== 'false'
 	});
 }
 
