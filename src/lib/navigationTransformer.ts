@@ -24,8 +24,7 @@ const hrefToVisibilityKey: Record<string, keyof NavigationVisibility> = {
 	'/club/locations': 'locations',
 	'/sponsors': 'sponsors',
 	'/contact': 'contact',
-	'/key-dates': 'keyDates',
-	'/events': 'events'
+	'/key-dates': 'keyDates'
 };
 
 function shouldShowItem(href: string, visibility: NavigationVisibility): boolean {
@@ -75,10 +74,6 @@ export function buildFooterNavLinks(visibility: NavigationVisibility): FooterNav
 
 	if (visibility.sponsors) {
 		navigation.push({ name: 'Sponsors', href: '/sponsors' });
-	}
-
-	if (visibility.events) {
-		navigation.push({ name: 'Events', href: '/events' });
 	}
 
 	const football: Array<{ name: string; href: string }> = [

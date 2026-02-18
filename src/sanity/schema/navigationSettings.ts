@@ -75,13 +75,6 @@ export const navigationSettings = defineType({
 			type: 'boolean',
 			description: 'Show "Key Dates" in desktop nav',
 			initialValue: true
-		}),
-		defineField({
-			name: 'events',
-			title: 'Show Events',
-			type: 'boolean',
-			description: 'Show "Events" in footer and menu page',
-			initialValue: true
 		})
 	],
 	preview: {
