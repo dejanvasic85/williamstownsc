@@ -1,4 +1,4 @@
-import { type MetaConfig, getMetaConfig } from '@/lib/config';
+import { type MetaConfig, getMetaConfig, isLocal } from '@/lib/config';
 
 export type PublishResult = {
 	platform: 'facebook' | 'instagram';
@@ -75,10 +75,14 @@ async function callMetaApi<T>(
 	});
 
 	if (!response.ok) {
-		const error = await response.json();
-		throw new Error(
-			`Meta API error: ${error.error?.message || response.statusText} (${response.status})`
-		);
+		let errorMessage = response.statusText;
+		try {
+			const error = await response.json();
+			errorMessage = error.error?.message || response.statusText;
+		} catch {
+			// response was not JSON (e.g. HTML error page)
+		}
+		throw new Error(`Meta API error: ${errorMessage} (${response.status})`);
 	}
 
 	return response.json();
@@ -206,6 +210,11 @@ export async function publishToInstagram(
 export async function publishArticleToSocials(
 	article: SocialPublishArticle
 ): Promise<PublishResult[]> {
+	if (isLocal()) {
+		console.log('isLocal is true, skipping social media publishing');
+		return [];
+	}
+
 	const config = getMetaConfig();
 
 	const tasks: Promise<PublishResult>[] = [];

@@ -97,7 +97,7 @@ export const newsArticle = defineType({
 			name: 'publishToSocials',
 			title: 'Publish to Social Media',
 			type: 'boolean',
-			description: 'Automatically post to Facebook and Instagram when published',
+			description: 'Automatically post to Facebook when published',
 			initialValue: true
 		})
 	],

@@ -6,6 +6,8 @@ import { getSiteSettings } from '@/lib/content/siteSettings';
 import { publishArticleToSocials } from '@/lib/social/metaPublishService';
 import { buildUrl } from '@/lib/url/buildUrl';
 
+export const maxDuration = 60;
+
 const webhookPayloadSchema = z.object({
 	_id: z.string().min(1, 'Article ID is required'),
 	_type: z.string().min(1, 'Content type is required'),
@@ -163,7 +165,7 @@ export async function GET() {
 		message: 'Social Publishing API',
 		endpoint: '/api/social-publish',
 		method: 'POST',
-		description: 'Webhook endpoint for publishing news articles to Facebook and Instagram',
+		description: 'Webhook endpoint for publishing news articles to Facebook',
 		expectedHeaders: {
 			'x-social-publish-secret': 'Secret token for webhook authentication',
 			'Content-Type': 'application/json'

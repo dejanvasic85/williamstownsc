@@ -55,13 +55,13 @@ curl -G \
   -d "client_id=APP_ID" \
   -d "client_secret=APP_SECRET" \
   -d "fb_exchange_token=SHORT_LIVED_USER_TOKEN" \
-  https://graph.facebook.com/v24.0/oauth/access_token
+  https://graph.facebook.com/v22.0/oauth/access_token
 ```
 
-The access token is a short lived on which is about 2 months. Then we call this endpoint to get one that does NOT Expire:
+The returned token is a long-lived User token (≈2 months). Then we call this endpoint to get one that does NOT expire:
 
 ```sh
-curl "https://graph.facebook.com/v24.0/me/accounts?access_token=xxx"
+curl "https://graph.facebook.com/v22.0/me/accounts?access_token=xxx"
 ```
 
 Find the access token in that response for Williamstown Soccer Club page. You can put the token in the [debugger](https://developers.facebook.com/tools/debug/accesstoken/) to see the details. For example, is it a user token or a page token?

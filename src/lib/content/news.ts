@@ -188,7 +188,7 @@ export async function getAllArticlesForFeed() {
 }
 
 export async function getArticleForSocialPublish(_id: string) {
-	const articleQuery = groq`*[_type == "newsArticle" && _id == $_id][0] {
+	const articleQuery = groq`*[_type == "newsArticle" && _id == $_id && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())][0] {
 		_id,
 		title,
 		slug,
