@@ -1,5 +1,7 @@
 # Error Tracking: Sentry Integration
 
+**Created:** 2026-02-18
+
 ## Purpose
 
 Integrate Sentry into the Next.js app to capture, aggregate, and alert on production errors across client, server, and edge runtimes.
@@ -23,7 +25,7 @@ Integrate Sentry into the Next.js app to capture, aggregate, and alert on produc
 
 - [ ] Run wizard: `npx @sentry/wizard@latest -i nextjs --saas --org vasic-org --project javascript-nextjs`
 - [ ] Review wizard-generated files (`sentry.*.config.ts`, `instrumentation.ts`, `next.config.ts`) for code style compliance — remove any example pages/routes it creates
-- [ ] Add env vars to `.env.example`: `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT`
+- [ ] Add env vars to `.env.example`: `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT`, `SENTRY_URL`
 - [ ] Update `src/app/(site)/error.tsx` — add `useEffect` to call `Sentry.captureException(error)` on mount
 - [ ] Create `src/app/global-error.tsx` — root-level boundary with Sentry capture (must include `<html>/<body>` tags per Next.js requirement)
 - [ ] Run `npm run lint && npm run format && npm run type:check`
