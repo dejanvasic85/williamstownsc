@@ -1,6 +1,7 @@
 # Error Tracking: Sentry Integration
 
 **Created:** 2026-02-18
+**Status:** ✅ Complete
 
 ## Purpose
 
@@ -129,8 +130,8 @@ Required for source map uploads on deploy — add in Vercel dashboard under Envi
 - [x] Update `src/app/(site)/error.tsx` — add `useEffect` to call `Sentry.captureException(error)` on mount
 - [x] Create `src/app/global-error.tsx` — root-level boundary with Sentry capture (must include `<html>/<body>` tags per Next.js requirement)
 - [x] Run `npm run lint && npm run format && npm run type:check`
-- [ ] Commit and push
-- [ ] **Manual (user):** Add `SENTRY_AUTH_TOKEN` to Vercel environment variables (required for source map uploads on deploy)
+- [x] Commit and push
+- [x] **Manual (user):** Add `SENTRY_AUTH_TOKEN` to Vercel environment variables (required for source map uploads on deploy)
 
 ## Critical Files
 

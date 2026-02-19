@@ -1,11 +1,6 @@
-import { notFound } from 'next/navigation';
 import ClientError from './ClientError';
 
 export default async function SentryTestPage() {
-	if (process.env.NODE_ENV === 'production') {
-		notFound();
-	}
-
 	const throwServerError = async () => {
 		'use server';
 		throw new Error('Sentry server-side test error');
