@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
 	return (
-		<div className="bg-base-100 flex min-h-[calc(100vh-var(--navbar-total-height-desktop))] items-center justify-center px-4 py-16">
+		<div className="bg-base-100 flex min-h-screen items-center justify-center px-4 pt-(--navbar-with-banner-height) pb-16">
 			<div className="text-center">
 				<div className="mb-8">
 					<h1 className="text-primary mb-4 text-7xl font-bold sm:text-9xl">404</h1>
