@@ -27,7 +27,7 @@
 		"test:e2e:report": "playwright show-report"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ses": "3.994.0",
+		"@aws-sdk/client-ses": "3.995.0",
 		"@next/third-parties": "16.1.6",
 		"@portabletext/toolkit": "5.0.1",
 		"@sanity/client": "7.15.0",
@@ -43,7 +43,7 @@
 		"next-sanity": "12.1.0",
 		"react": "19.2.4",
 		"react-dom": "19.2.4",
-		"react-hook-form": "7.71.1",
+		"react-hook-form": "7.71.2",
 		"sanity": "5.11.0",
 		"styled-components": "6.3.11",
 		"zod": "4.3.6"
