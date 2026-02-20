@@ -29,6 +29,11 @@
 	},
 	"packageRules": [
 		{
+			"description": "Pin eslint to 9.x until eslint-config-next supports eslint 10",
+			"matchPackageNames": ["eslint"],
+			"allowedVersions": "<10"
+		},
+		{
 			"extends": ["monorepo:nextjs"],
 			"groupName": "nextjs monorepo",
 			"matchUpdateTypes": ["digest", "patch", "minor", "major"]
