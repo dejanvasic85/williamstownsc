@@ -10,7 +10,7 @@ type ErrorProps = {
 
 export default function Error({ error, reset }: ErrorProps) {
 	return (
-		<div className="flex min-h-screen items-center justify-center px-4 pt-(--navbar-with-banner-height)">
+		<div className="flex min-h-screen items-center justify-center px-4 pt-(--navbar-with-banner-height) pb-16">
 			<div className="text-center">
 				<div className="mb-8">
 					<h1 className="text-primary mb-4 text-7xl font-bold sm:text-9xl">500</h1>
