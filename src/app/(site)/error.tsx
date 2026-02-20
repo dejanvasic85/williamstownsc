@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect } from 'react';
+import * as Sentry from '@sentry/nextjs';
 import { Home, RotateCcw } from 'lucide-react';
 
 type ErrorProps = {
@@ -9,6 +11,10 @@ type ErrorProps = {
 };
 
 export default function Error({ error, reset }: ErrorProps) {
+	useEffect(() => {
+		Sentry.captureException(error);
+	}, [error]);
+
 	return (
 		<div className="flex min-h-screen items-center justify-center px-4 pt-(--navbar-with-banner-height) pb-16">
 			<div className="text-center">
