@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: TeamDetailPageProps): Promise
 		openGraph: {
 			title: `${team.name} | ${siteSettings.clubName}`,
 			description: `Meet the ${team.name} squad, coaching staff, and players at ${siteSettings.clubName}.`,
-			images: team.photo ? [{ url: team.photo.asset.url }] : []
+			images: team.photo?.asset?.url ? [{ url: team.photo.asset.url }] : []
 		}
 	};
 }

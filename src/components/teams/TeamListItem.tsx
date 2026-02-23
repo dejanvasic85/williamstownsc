@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import type { Team } from '@/types/team';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
+import { TeamPhotoPlaceholder } from './TeamPhotoPlaceholder';
 
 interface TeamWithFixtures extends Team {
 	hasLocalFixtures?: boolean;
@@ -17,7 +18,7 @@ export function TeamListItem({ team }: TeamListItemProps) {
 	return (
 		<li className="border-base-300 border-b last:border-b-0">
 			<div className="grid grid-cols-1 gap-8 px-6 py-8 lg:grid-cols-[500px_1fr]">
-				{team.photo && (
+				{team.photo?.asset?.url ? (
 					<figure className="relative aspect-video overflow-hidden">
 						<Image
 							src={team.photo.asset.url}
@@ -27,6 +28,8 @@ export function TeamListItem({ team }: TeamListItemProps) {
 							sizes="(max-width: 1024px) 100vw, 300px"
 						/>
 					</figure>
+				) : (
+					<TeamPhotoPlaceholder name={team.name} />
 				)}
 
 				<div className="flex flex-col gap-6">

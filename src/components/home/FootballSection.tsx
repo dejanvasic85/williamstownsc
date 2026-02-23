@@ -73,7 +73,7 @@ export async function FootballSection() {
 									key={team._id}
 									className="card group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
 								>
-									{team.photo && (
+									{team.photo?.asset?.url && (
 										<div className="relative h-64 w-full">
 											<Image
 												src={team.photo.asset.url}

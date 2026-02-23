@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { Team } from '@/types/team';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
+import { TeamPhotoPlaceholder } from './TeamPhotoPlaceholder';
 
 interface TeamCardProps {
 	team: Team;
@@ -9,7 +10,7 @@ interface TeamCardProps {
 export function TeamCard({ team }: TeamCardProps) {
 	return (
 		<div className="card bg-base-100 overflow-hidden shadow-md transition-shadow hover:shadow-xl">
-			{team.photo && (
+			{team.photo?.asset?.url ? (
 				<figure className="relative aspect-video overflow-hidden">
 					<Image
 						src={team.photo.asset.url}
@@ -19,6 +20,8 @@ export function TeamCard({ team }: TeamCardProps) {
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					/>
 				</figure>
+			) : (
+				<TeamPhotoPlaceholder name={team.name} />
 			)}
 
 			<div className="card-body gap-8 p-8">
