@@ -59,8 +59,8 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 										lastName={lastName}
 										shirtNumber={player.shirtNumber || 0}
 										position={player.position || ''}
-										photoUrl={player.person.photo.asset.url}
-										photoAlt={player.person.photo.alt || player.person.name}
+										photoUrl={player.person?.photo?.asset?.url ?? '/img/player-alt.webp'}
+										photoAlt={player.person?.photo?.alt || player.person.name}
 										isCaptain={player.isCaptain || false}
 										isViceCaptain={player.isViceCaptain || false}
 										intro={player.intro}
