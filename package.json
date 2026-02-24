@@ -27,13 +27,13 @@
 		"test:e2e:report": "playwright show-report"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ses": "3.996.0",
+		"@aws-sdk/client-ses": "3.997.0",
 		"@next/third-parties": "16.1.6",
 		"@portabletext/toolkit": "5.0.1",
 		"@sanity/client": "7.16.0",
 		"@sanity/image-url": "2.0.3",
 		"@sentry/nextjs": "10.40.0",
-		"@sanity/vision": "5.11.0",
+		"@sanity/vision": "5.12.0",
 		"@tanstack/react-query": "5.90.21",
 		"clsx": "2.1.1",
 		"daisyui": "5.5.19",
@@ -44,7 +44,7 @@
 		"react": "19.2.4",
 		"react-dom": "19.2.4",
 		"react-hook-form": "7.71.2",
-		"sanity": "5.11.0",
+		"sanity": "5.12.0",
 		"styled-components": "6.3.11",
 		"zod": "4.3.6"
 	},
