@@ -144,6 +144,13 @@ export const team = defineType({
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
+			name: 'showOnHomepage',
+			title: 'Show on homepage',
+			type: 'boolean',
+			description: 'Display this team in the homepage Football section',
+			initialValue: false
+		}),
+		defineField({
 			name: 'description',
 			title: 'Description',
 			type: 'array',
