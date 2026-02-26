@@ -89,14 +89,16 @@ export default async function Home() {
 				</div>
 
 				<div className="container mx-auto">
-					<div className="grid items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3">
+					<div className="grid items-stretch gap-12 md:grid-cols-2">
 						<MatchCountdownSection match={nextMatch} teamSlug="state-league-2-men-s-north-west" />
-						<SponsorsSection sponsors={featuredSponsors} />
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}
 							leadingText={homePageData?.keyDatesSection?.leadingText}
 							nextKeyDate={nextKeyDate}
 						/>
+					</div>
+					<div className="mt-12">
+						<SponsorsSection sponsors={featuredSponsors} />
 					</div>
 				</div>
 
