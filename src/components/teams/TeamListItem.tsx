@@ -36,7 +36,7 @@ export function TeamListItem({ team }: TeamListItemProps) {
 					<div className="space-y-3">
 						<h3 className="text-2xl font-bold">{team.name}</h3>
 						<PortableTextContent
-							blocks={team.description}
+							blocks={team.description ?? []}
 							className="prose text-base-content/80 max-w-none"
 							headingLevel="section"
 						/>
