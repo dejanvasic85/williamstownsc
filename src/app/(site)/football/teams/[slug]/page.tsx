@@ -56,7 +56,7 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 
 	return (
 		<PageContainer heading={team.name}>
-			<PortableTextContent blocks={team.description} />
+			{team.description && <PortableTextContent blocks={team.description} />}
 			{team.players && team.players.length > 0 && <PlayerGrid players={team.players} />}
 			{team.coachingStaff && team.coachingStaff.length > 0 && (
 				<div className="mt-10 space-y-8">

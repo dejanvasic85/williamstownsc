@@ -2,12 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { PortableTextBlock } from '@portabletext/types';
 import { Calendar, Users } from 'lucide-react';
+import { TeamPhotoPlaceholder } from '@/components/teams/TeamPhotoPlaceholder';
 import { GradientBackground } from '@/components/ui';
-import { seniorTeamsQuery } from '@/lib/content/seniorTeams';
+import { homepageTeamsQuery } from '@/lib/content/homepageTeams';
 import { client } from '@/sanity/lib/client';
 import { getFeaturedPrograms } from '@/sanity/services/programService';
 
-interface SeniorTeam {
+interface HomepageTeam {
 	_id: string;
 	name: string;
 	slug: string;
@@ -40,17 +41,17 @@ function extractTextFromPortableText(blocks: PortableTextBlock[]): string {
 		.join(' ');
 }
 
-async function getSeniorTeams(): Promise<SeniorTeam[]> {
+async function getHomepageTeams(): Promise<HomepageTeam[]> {
 	try {
-		return await client.fetch<SeniorTeam[]>(seniorTeamsQuery, {}, { next: { tags: ['team'] } });
+		return await client.fetch<HomepageTeam[]>(homepageTeamsQuery, {}, { next: { tags: ['team'] } });
 	} catch (error) {
-		console.error('Error fetching senior teams:', error);
+		console.error('Error fetching homepage teams:', error);
 		return [];
 	}
 }
 
 export async function FootballSection() {
-	const [seniorTeams, programs] = await Promise.all([getSeniorTeams(), getFeaturedPrograms(3)]);
+	const [homepageTeams, programs] = await Promise.all([getHomepageTeams(), getFeaturedPrograms(3)]);
 
 	return (
 		<GradientBackground className="py-16">
@@ -64,16 +65,16 @@ export async function FootballSection() {
 				</div>
 
 				{/* Teams */}
-				{seniorTeams.length > 0 && (
+				{homepageTeams.length > 0 && (
 					<div className="mb-12">
 						<h3 className="mb-6 text-2xl font-bold text-white">Senior Teams</h3>
 						<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-							{seniorTeams.map((team) => (
+							{homepageTeams.map((team) => (
 								<div
 									key={team._id}
 									className="card group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
 								>
-									{team.photo?.asset?.url && (
+									{team.photo?.asset?.url ? (
 										<div className="relative h-64 w-full">
 											<Image
 												src={team.photo.asset.url}
@@ -84,6 +85,19 @@ export async function FootballSection() {
 											<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/30" />
 											<div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
 												<h4 className="mb-2 text-2xl font-bold">{team.name}</h4>
+												<p className="line-clamp-3 text-sm text-white/90">
+													{extractTextFromPortableText(team.description)}
+												</p>
+											</div>
+										</div>
+									) : (
+										<div className="relative h-64 w-full">
+											<TeamPhotoPlaceholder
+												name={team.name}
+												className="bg-primary/10 absolute inset-0 flex items-center justify-center overflow-hidden"
+											/>
+											<div className="absolute inset-0 flex flex-col justify-end p-6">
+												<h4 className="mb-2 text-2xl font-bold text-white">{team.name}</h4>
 												<p className="line-clamp-3 text-sm text-white/90">
 													{extractTextFromPortableText(team.description)}
 												</p>

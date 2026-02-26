@@ -8,13 +8,6 @@
 - Playwright 1.58.0 (E2E testing and web scraping)
 - TanStack Query 5.90.20, React Hook Form 7.71.1
 
-## Plan Mode
-
-- Use docs/todo.md for organizing higher level features and tasks - keep this up to date when completing work
-- Make plans extremely concise - sacrifice grammar for concision
-- At end of each plan, list unresolved questions if any
-- Create plans in docs/plans as markdown files and update when completing tasks
-
 # Environment & Commands
 
 - **IMPORTANT**: Dev server runs on port 3003 (not 3000): `npm run dev`
@@ -98,6 +91,11 @@
 # Plan Creation
 
 - Store plans as markdown files in `docs/plans/`
+- File naming: `YYYY-MM-DD-description.md` (e.g. `2026-02-26-homepage-sponsors-layout.md`)
+- Use docs/todo.md for organizing higher level features and tasks - keep this up to date when completing work
+- Make plans extremely concise - sacrifice grammar for concision
+- At end of each plan, list unresolved questions if any
+- Update plans when completing tasks
 - Each plan must include:
   - Purpose: clarify the intended outcome and scope
   - Requirements: list constraints, dependencies, and acceptance criteria

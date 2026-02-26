@@ -15,6 +15,8 @@ export const sponsor = defineType({
 			name: 'logo',
 			title: 'Logo',
 			type: 'image',
+			description:
+				'Upload a landscape logo at 4:3 ratio (recommended: 800×600px). PNG with transparent background preferred.',
 			options: {
 				hotspot: true
 			},

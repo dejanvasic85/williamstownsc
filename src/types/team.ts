@@ -64,7 +64,7 @@ export interface Team {
 	gender?: 'male' | 'female' | 'mixed';
 	ageGroup: AgeGroup;
 	order: number;
-	description: PortableTextBlock[];
+	description?: PortableTextBlock[];
 	coachingStaff: Coach[];
 	players?: Player[];
 	fixturesUrl?: string;

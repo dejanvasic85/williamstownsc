@@ -1,8 +1,13 @@
-type Props = { name: string };
+type Props = { name: string; className?: string };
 
-export function TeamPhotoPlaceholder({ name }: Props) {
+export function TeamPhotoPlaceholder({ name, className }: Props) {
 	return (
-		<figure className="bg-primary/10 relative flex aspect-video items-center justify-center overflow-hidden">
+		<figure
+			className={
+				className ??
+				'bg-primary/10 relative flex aspect-video items-center justify-center overflow-hidden'
+			}
+		>
 			<span className="text-primary/40 text-5xl font-black tracking-widest uppercase select-none">
 				{abbreviate(name)}
 			</span>
