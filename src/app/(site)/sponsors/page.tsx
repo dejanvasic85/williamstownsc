@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import NextLink from 'next/link';
 import clsx from 'clsx';
 import { PageContainer } from '@/components/layout';
 import { SponsorCard } from '@/components/sponsors';
@@ -125,12 +126,9 @@ export default async function SponsorsPage() {
 
 					<div className="text-center">
 						<p className="mb-4 text-lg font-semibold">Interested in sponsoring our club?</p>
-						<a
-							href="mailto:sponsorship@williamstownsc.com.au"
-							className="btn btn-primary btn-lg shadow-lg"
-						>
+						<NextLink href="/contact?type=sponsor" className="btn btn-primary btn-lg shadow-lg">
 							Become a sponsor
-						</a>
+						</NextLink>
 					</div>
 				</div>
 			</section>
