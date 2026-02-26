@@ -149,8 +149,7 @@ export const team = defineType({
 			type: 'array',
 			of: [{ type: 'block' }],
 			description:
-				'Promote the team here by listing achievements and/or when they usually train/play.',
-			validation: (Rule) => Rule.required()
+				'Promote the team here by listing achievements and/or when they usually train/play.'
 		}),
 		defineField({
 			name: 'coachingStaff',
