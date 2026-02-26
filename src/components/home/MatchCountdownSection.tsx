@@ -41,9 +41,9 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 			</div>
 
 			<div className="flex flex-col items-center gap-6">
-				<div className="flex items-center justify-center gap-4">
+				<div className="flex items-center justify-center gap-6">
 					<div className="flex flex-col items-center gap-2">
-						<div className="relative h-16 w-16 md:h-20 md:w-20">
+						<div className="relative h-20 w-20 md:h-28 md:w-28">
 							<Image
 								src={match.homeTeam.logoUrl}
 								alt={match.homeTeam.displayName}
@@ -51,15 +51,15 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 								className="object-contain"
 							/>
 						</div>
-						<p className="text-center text-xs font-medium md:text-sm">
+						<p className="text-center text-sm font-medium md:text-base">
 							{match.homeTeam.displayName}
 						</p>
 					</div>
 
-					<div className="text-base-content/50 text-2xl font-bold">vs</div>
+					<div className="text-base-content/50 text-3xl font-bold">vs</div>
 
 					<div className="flex flex-col items-center gap-2">
-						<div className="relative h-16 w-16 md:h-20 md:w-20">
+						<div className="relative h-20 w-20 md:h-28 md:w-28">
 							<Image
 								src={match.awayTeam.logoUrl}
 								alt={match.awayTeam.displayName}
@@ -67,19 +67,19 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 								className="object-contain"
 							/>
 						</div>
-						<p className="text-center text-xs font-medium md:text-sm">
+						<p className="text-center text-sm font-medium md:text-base">
 							{match.awayTeam.displayName}
 						</p>
 					</div>
 				</div>
 
 				<div className="flex flex-col gap-1 text-center">
-					<p className="text-base-content/90 text-sm">
+					<p className="text-base-content/90 text-base">
 						{formattedDate} • {formattedTime}
 					</p>
 					{match.address && (
-						<div className="text-base-content/70 flex items-center justify-center gap-1 text-sm">
-							<MapPin className="h-4 w-4" />
+						<div className="text-base-content/70 flex items-center justify-center gap-1 text-base">
+							<MapPin className="h-5 w-5" />
 							<span>{match.address}</span>
 						</div>
 					)}
