@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
 import { getSocialPublishConfig } from '@/lib/config';
 import { getArticleForSocialPublish } from '@/lib/content/news';
@@ -147,6 +148,7 @@ export async function POST(request: NextRequest) {
 			{ status: 207 }
 		);
 	} catch (error) {
+		Sentry.captureException(error);
 		console.error('Social publish error:', error);
 
 		const isDev = process.env.NODE_ENV !== 'production';

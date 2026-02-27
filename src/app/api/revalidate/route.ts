@@ -1,5 +1,6 @@
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
+import * as Sentry from '@sentry/nextjs';
 import { getRevalidationConfig } from '@/lib/config';
 
 const allowedContentTypes = new Set([
@@ -64,6 +65,7 @@ export async function POST(request: NextRequest) {
 			timestamp: new Date().toISOString()
 		});
 	} catch (error) {
+		Sentry.captureException(error);
 		console.error('Revalidation error:', error);
 
 		const isDev = process.env.NODE_ENV !== 'production';
