@@ -67,7 +67,6 @@ export async function FootballSection() {
 				{/* Teams */}
 				{homepageTeams.length > 0 && (
 					<div className="mb-12">
-						<h3 className="mb-6 text-2xl font-bold text-white">Senior Teams</h3>
 						<div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
 							{homepageTeams.map((team) => (
 								<div
@@ -97,10 +96,7 @@ export async function FootballSection() {
 												className="bg-primary/10 absolute inset-0 flex items-center justify-center overflow-hidden"
 											/>
 											<div className="absolute inset-0 flex flex-col justify-end p-6">
-												<h4 className="mb-2 text-2xl font-bold text-white">{team.name}</h4>
-												<p className="line-clamp-3 text-sm text-white/90">
-													{extractTextFromPortableText(team.description)}
-												</p>
+												<h4 className="text-2xl font-bold text-white">{team.name}</h4>
 											</div>
 										</div>
 									)}

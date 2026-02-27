@@ -16,8 +16,17 @@ export function TeamPhotoPlaceholder({ name, className }: Props) {
 }
 
 function abbreviate(name: string): string {
-	return name
-		.split(' ')
+	const words = name.split(' ');
+	const underIdx = words.findIndex((w) => w.toLowerCase() === 'under');
+	if (underIdx !== -1) {
+		const prefix = words
+			.slice(0, underIdx)
+			.map((w) => w[0].toUpperCase())
+			.join('');
+		const suffix = words.slice(underIdx + 1).join('');
+		return prefix ? `${prefix} U${suffix}` : `U${suffix}`;
+	}
+	return words
 		.map((w) => w[0])
 		.join('')
 		.toUpperCase()
