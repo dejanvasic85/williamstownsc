@@ -1,5 +1,5 @@
-import * as Sentry from '@sentry/nextjs';
 import { NextRequest, NextResponse } from 'next/server';
+import * as Sentry from '@sentry/nextjs';
 import { searchContent } from '@/lib/content/search';
 
 export async function GET(request: NextRequest) {

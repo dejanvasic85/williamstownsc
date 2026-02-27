@@ -1,6 +1,6 @@
-import * as Sentry from '@sentry/nextjs';
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
+import * as Sentry from '@sentry/nextjs';
 import { getRevalidationConfig } from '@/lib/config';
 
 const allowedContentTypes = new Set([
