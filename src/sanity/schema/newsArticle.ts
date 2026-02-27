@@ -94,10 +94,17 @@ export const newsArticle = defineType({
 			initialValue: false
 		}),
 		defineField({
-			name: 'publishToSocials',
-			title: 'Publish to Social Media',
+			name: 'publishToFacebook',
+			title: 'Publish to Facebook',
 			type: 'boolean',
-			description: 'Automatically post to Facebook when published',
+			description: 'Auto-post to Facebook when published',
+			initialValue: true
+		}),
+		defineField({
+			name: 'publishToInstagram',
+			title: 'Publish to Instagram',
+			type: 'boolean',
+			description: 'Auto-post to Instagram when published',
 			initialValue: true
 		})
 	],

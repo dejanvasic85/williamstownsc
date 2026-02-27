@@ -12,6 +12,8 @@ export type SocialPublishArticle = {
 	excerpt: string;
 	imageUrl: string;
 	articleUrl: string;
+	publishToFacebook?: boolean;
+	publishToInstagram?: boolean;
 };
 
 type FacebookPhotoResponse = {
@@ -220,12 +222,12 @@ export async function publishArticleToSocials(
 	const tasks: Promise<PublishResult>[] = [];
 	const taskPlatforms: Array<PublishResult['platform']> = [];
 
-	if (config.facebookEnabled) {
+	if (config.facebookEnabled && (article.publishToFacebook ?? true)) {
 		tasks.push(publishToFacebook(article, config));
 		taskPlatforms.push('facebook');
 	}
 
-	if (config.instagramEnabled) {
+	if (config.instagramEnabled && (article.publishToInstagram ?? true)) {
 		tasks.push(publishToInstagram(article, config));
 		taskPlatforms.push('instagram');
 	}

@@ -194,10 +194,22 @@ export async function getArticleForSocialPublish(_id: string) {
 		slug,
 		excerpt,
 		featuredImage,
-		publishToSocials
+		publishToFacebook,
+		publishToInstagram
 	}`;
 
-	const article = await client.fetch<NewsArticle>(
+	type SocialPublishQueryResult = Pick<
+		NewsArticle,
+		| '_id'
+		| 'title'
+		| 'slug'
+		| 'excerpt'
+		| 'featuredImage'
+		| 'publishToFacebook'
+		| 'publishToInstagram'
+	>;
+
+	const article = await client.fetch<SocialPublishQueryResult>(
 		articleQuery,
 		{ _id },
 		{ next: { tags: ['newsArticle'] } }
@@ -223,6 +235,7 @@ export async function getArticleForSocialPublish(_id: string) {
 					alt: article.featuredImage.alt
 				}
 			: null,
-		publishToSocials: article.publishToSocials ?? true
+		publishToFacebook: article.publishToFacebook ?? true,
+		publishToInstagram: article.publishToInstagram ?? true
 	};
 }
