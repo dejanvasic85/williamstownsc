@@ -28,7 +28,7 @@ type CommitteePageData = {
 };
 
 export async function getCommitteePageData(): Promise<CommitteePageData | null> {
-	const query = groq`*[_type == "committeePage" && _id == "committeePage"][0]{
+	const committeePageQuery = groq`*[_type == "committeePage" && _id == "committeePage"][0]{
 		heading,
 		introduction,
 		body,
@@ -62,7 +62,7 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 	}`;
 
 	const data = await client.fetch<CommitteePageData>(
-		query,
+		committeePageQuery,
 		{},
 		{ next: { tags: ['page', 'committeePage'] } }
 	);

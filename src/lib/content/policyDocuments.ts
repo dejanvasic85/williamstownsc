@@ -75,7 +75,7 @@ function groupByCategory(documents: PolicyDocument[]): PolicyDocumentsByCategory
 }
 
 export async function getPolicyDocuments(): Promise<PolicyDocumentsByCategory[]> {
-	const query = groq`*[_type == "policyDocument" && published == true] | order(category asc, order asc) {
+	const policyDocumentsQuery = groq`*[_type == "policyDocument" && published == true] | order(category asc, order asc) {
 		_id,
 		title,
 		category,
@@ -92,7 +92,7 @@ export async function getPolicyDocuments(): Promise<PolicyDocumentsByCategory[]>
 	}`;
 
 	const rawDocuments = await client.fetch<RawPolicyDocument[]>(
-		query,
+		policyDocumentsQuery,
 		{},
 		{ next: { tags: ['policyDocument'] } }
 	);
