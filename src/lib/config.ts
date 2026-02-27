@@ -92,6 +92,13 @@ export function isLocal(): boolean {
 	return process.env.NEXT_PUBLIC_ENV === 'local';
 }
 
+export function isSentryEnabled(): boolean {
+	if (process.env.NEXT_PUBLIC_SENTRY_ENABLED !== undefined) {
+		return process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true';
+	}
+	return process.env.NODE_ENV === 'production';
+}
+
 /**
  * Get reCAPTCHA config (server-only)
  * Contains secret credentials for token verification
