@@ -66,10 +66,10 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		if (!article.publishToSocials) {
+		if (!article.publishToFacebook && !article.publishToInstagram) {
 			return NextResponse.json({
 				skipped: true,
-				reason: 'Article has publishToSocials set to false',
+				reason: 'Article has both publishToFacebook and publishToInstagram set to false',
 				articleId: _id,
 				timestamp: new Date().toISOString()
 			});
@@ -103,7 +103,9 @@ export async function POST(request: NextRequest) {
 			title: article.title,
 			excerpt: article.excerpt,
 			imageUrl: article.featuredImage.url,
-			articleUrl
+			articleUrl,
+			publishToFacebook: article.publishToFacebook,
+			publishToInstagram: article.publishToInstagram
 		});
 
 		const successCount = results.filter((r) => r.success).length;
@@ -176,7 +178,7 @@ export async function GET() {
 			slug: 'Optional slug object with current property'
 		},
 		responseStatuses: {
-			200: 'All platforms published successfully or article skipped (publishToSocials=false)',
+			200: 'All platforms published successfully or article skipped (both platform flags false)',
 			207: 'Partial success - some platforms succeeded, others failed',
 			400: 'Invalid payload, wrong content type, or missing featured image',
 			401: 'Invalid authentication secret',
