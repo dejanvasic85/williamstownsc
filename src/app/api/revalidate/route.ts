@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/nextjs';
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import { getRevalidationConfig } from '@/lib/config';
@@ -64,6 +65,7 @@ export async function POST(request: NextRequest) {
 			timestamp: new Date().toISOString()
 		});
 	} catch (error) {
+		Sentry.captureException(error);
 		console.error('Revalidation error:', error);
 
 		const isDev = process.env.NODE_ENV !== 'production';

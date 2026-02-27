@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/nextjs';
 import { NextRequest, NextResponse } from 'next/server';
 import { searchContent } from '@/lib/content/search';
 
@@ -30,6 +31,7 @@ export async function GET(request: NextRequest) {
 			count: results.length
 		});
 	} catch (error) {
+		Sentry.captureException(error);
 		const isDev = process.env.NODE_ENV !== 'production';
 
 		if (isDev && error instanceof Error) {
