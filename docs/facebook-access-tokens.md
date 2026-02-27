@@ -45,20 +45,20 @@ This token is short-lived (≈1 hour).
 
 ---
 
-## Step 3 — Exchange for long-lived User token (should never expire)
+## Step 3 — Exchange for long-lived User token (should expire in 60 days)
 
 Make a **GET** request to the OAuth endpoint and use the environment variables from vercel.
 
 ```sh
 curl -G \
   -d "grant_type=fb_exchange_token" \
-  -d "client_id=xxx" \
-  -d "client_secret=xxx" \
-  -d "fb_exchange_token=xxx" \
+  -d "client_id=FACEBOOK_APP_ID" \
+  -d "client_secret=FACEBOOK_APP_SECRET" \
+  -d "fb_exchange_token=SHORT_LIVED_USER_TOKEN" \
   https://graph.facebook.com/v22.0/oauth/access_token
 ```
 
-Then we need to get access token for specific pages:
+Then we need to get an access token for specific pages:
 
 Williamstown testing Page Example:
 
