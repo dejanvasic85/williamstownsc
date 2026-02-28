@@ -70,7 +70,6 @@ function waitForRecaptcha(): Promise<void> {
  */
 export async function executeReCaptcha(action: string, siteKey: string): Promise<string | null> {
 	if (!siteKey) {
-		console.warn('reCAPTCHA site key not configured - bot protection disabled');
 		return null;
 	}
 
@@ -78,8 +77,7 @@ export async function executeReCaptcha(action: string, siteKey: string): Promise
 		await waitForRecaptcha();
 		const token = await window.grecaptcha.enterprise.execute(siteKey, { action });
 		return token;
-	} catch (error) {
-		console.error('reCAPTCHA execution failed:', error);
+	} catch {
 		return null;
 	}
 }
