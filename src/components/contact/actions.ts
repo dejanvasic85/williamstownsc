@@ -5,9 +5,12 @@ import { getClientConfig } from '@/lib/config';
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
 import { getSiteSettings } from '@/lib/content/siteSettings';
+import logger from '@/lib/logger';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
 import { getWriteClient } from '@/sanity/lib/writeClient';
+
+const log = logger.child({ module: 'contact-form' });
 
 export type FormState = {
 	success: boolean;
@@ -153,9 +156,7 @@ export async function submitContactForm(
 				...typeSpecificFields
 			});
 		} catch (error) {
-			// Log the error but don't fail the submission
-			// Email notification is still the primary delivery method
-			console.error('Failed to save submission to Sanity:', error);
+			log.error({ err: error }, 'failed to save submission to Sanity');
 		}
 
 		// Send emails
@@ -167,7 +168,7 @@ export async function submitContactForm(
 				'Thank you for your message! We have received your enquiry and will get back to you soon.'
 		};
 	} catch (error) {
-		console.error('Contact form submission error:', error);
+		log.error({ err: error }, 'contact form submission error');
 
 		return {
 			success: false,

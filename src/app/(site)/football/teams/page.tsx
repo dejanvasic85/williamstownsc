@@ -3,6 +3,7 @@ import { PageContainer } from '@/components/layout';
 import { TeamTabs } from '@/components/teams/TeamTabs';
 import { getPageMetadata } from '@/lib/content/page';
 import { teamsQuery } from '@/lib/content/teams';
+import logger from '@/lib/logger';
 import { hasFixtures } from '@/lib/matches/matchService';
 import { groupTeamsByTab } from '@/lib/teamService';
 import { client } from '@/sanity/lib/client';
@@ -17,7 +18,7 @@ async function getTeams() {
 		const teams = await client.fetch<Team[]>(teamsQuery, {}, { next: { tags: ['team'] } });
 		return teams;
 	} catch (error) {
-		console.error('Error fetching teams:', error);
+		logger.error({ err: error }, 'error fetching teams');
 		return [];
 	}
 }

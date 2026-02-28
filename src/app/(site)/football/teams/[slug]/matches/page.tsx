@@ -4,6 +4,7 @@ import { PageContainer } from '@/components/layout';
 import { MatchList } from '@/components/matches/MatchList';
 import { getSiteSettings } from '@/lib/content';
 import { teamDetailQuery } from '@/lib/content/teamDetail';
+import logger from '@/lib/logger';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
@@ -17,7 +18,7 @@ async function getTeam(slug: string): Promise<Team | null> {
 		const team = await client.fetch<Team>(teamDetailQuery, { slug }, { next: { tags: ['team'] } });
 		return team;
 	} catch (error) {
-		console.error('Error fetching team:', error);
+		logger.error({ err: error }, 'error fetching team');
 		return null;
 	}
 }

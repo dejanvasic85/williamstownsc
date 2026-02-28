@@ -4,8 +4,11 @@ import { z } from 'zod';
 import { getSocialPublishConfig } from '@/lib/config';
 import { getArticleForSocialPublish } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
+import logger from '@/lib/logger';
 import { publishArticleToSocials } from '@/lib/social/metaPublishService';
 import { buildUrl } from '@/lib/url/buildUrl';
+
+const log = logger.child({ route: '/api/social-publish' });
 
 export const maxDuration = 60;
 
@@ -29,7 +32,7 @@ export async function POST(request: NextRequest) {
 		}
 
 		const body = await request.json();
-		console.log('Social publish request received. Body:', JSON.stringify(body, null, 2));
+		log.info({ articleId: body._id, contentType: body._type }, 'social publish request received');
 
 		const validationResult = webhookPayloadSchema.safeParse(body);
 		if (!validationResult.success) {
@@ -112,7 +115,7 @@ export async function POST(request: NextRequest) {
 		const successCount = results.filter((r) => r.success).length;
 		const failureCount = results.filter((r) => !r.success).length;
 
-		console.log('Social publish results:', JSON.stringify(results, null, 2));
+		log.info({ articleId: _id, successCount, failureCount }, 'social publish completed');
 
 		if (failureCount === 0) {
 			return NextResponse.json({
@@ -149,7 +152,7 @@ export async function POST(request: NextRequest) {
 		);
 	} catch (error) {
 		Sentry.captureException(error);
-		console.error('Social publish error:', error);
+		log.error({ err: error }, 'social publish error');
 
 		const isDev = process.env.NODE_ENV !== 'production';
 		const responseBody: { error: string; details?: string } = {

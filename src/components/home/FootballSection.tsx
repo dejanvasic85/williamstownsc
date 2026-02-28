@@ -5,6 +5,7 @@ import { Calendar, Users } from 'lucide-react';
 import { TeamPhotoPlaceholder } from '@/components/teams/TeamPhotoPlaceholder';
 import { GradientBackground } from '@/components/ui';
 import { homepageTeamsQuery } from '@/lib/content/homepageTeams';
+import logger from '@/lib/logger';
 import { client } from '@/sanity/lib/client';
 import { getFeaturedPrograms } from '@/sanity/services/programService';
 
@@ -45,7 +46,7 @@ async function getHomepageTeams(): Promise<HomepageTeam[]> {
 	try {
 		return await client.fetch<HomepageTeam[]>(homepageTeamsQuery, {}, { next: { tags: ['team'] } });
 	} catch (error) {
-		console.error('Error fetching homepage teams:', error);
+		logger.error({ err: error }, 'error fetching homepage teams');
 		return [];
 	}
 }

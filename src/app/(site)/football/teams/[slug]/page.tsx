@@ -6,6 +6,7 @@ import { CoachCard } from '@/components/teams/CoachCard';
 import { PlayerGrid } from '@/components/teams/PlayerGrid';
 import { getSiteSettings } from '@/lib/content';
 import { teamDetailQuery } from '@/lib/content/teamDetail';
+import logger from '@/lib/logger';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
@@ -19,7 +20,7 @@ async function getTeam(slug: string): Promise<Team | null> {
 		const team = await client.fetch<Team>(teamDetailQuery, { slug }, { next: { tags: ['team'] } });
 		return team;
 	} catch (error) {
-		console.error('Error fetching team:', error);
+		logger.error({ err: error }, 'error fetching team');
 		return null;
 	}
 }

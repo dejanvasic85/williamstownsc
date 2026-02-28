@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
 import { searchContent } from '@/lib/content/search';
+import logger from '@/lib/logger';
+
+const log = logger.child({ route: '/api/search' });
 
 export async function GET(request: NextRequest) {
 	try {
@@ -32,15 +35,9 @@ export async function GET(request: NextRequest) {
 		});
 	} catch (error) {
 		Sentry.captureException(error);
+		log.error({ err: error }, 'search API error');
+
 		const isDev = process.env.NODE_ENV !== 'production';
-
-		if (isDev && error instanceof Error) {
-			console.error('Search API error:', error.message);
-			console.error('Stack trace:', error.stack);
-		} else {
-			console.error('Search API error:', error);
-		}
-
 		const responseBody: { error: string; details?: string; stack?: string } = {
 			error: 'Failed to perform search'
 		};

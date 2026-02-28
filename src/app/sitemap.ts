@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllArticlesForSitemap } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { getAllTeamsForSitemap } from '@/lib/content/teams';
+import logger from '@/lib/logger';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const siteSettings = await getSiteSettings();
@@ -143,13 +144,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 0.7
 		}));
 
-		console.log(
-			`Generated sitemap with ${staticRoutesValue.length} static routes, ${newsRoutes.length} news routes, and ${teamRoutes.length} team routes`
+		logger.info(
+			{
+				staticRoutes: staticRoutesValue.length,
+				newsRoutes: newsRoutes.length,
+				teamRoutes: teamRoutes.length
+			},
+			'sitemap generated'
 		);
 
 		return [...staticRoutesValue, ...newsRoutes, ...teamRoutes];
 	} catch (error) {
-		console.error('Error generating dynamic sitemap routes:', error);
+		logger.error({ err: error }, 'error generating dynamic sitemap routes');
 		return staticRoutesValue;
 	}
 }

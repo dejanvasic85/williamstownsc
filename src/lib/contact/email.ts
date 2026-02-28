@@ -1,5 +1,8 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 import { getAwsConfig, isLocal } from '@/lib/config';
+import logger from '@/lib/logger';
+
+const log = logger.child({ module: 'email' });
 
 function getSESClient() {
 	const config = getAwsConfig();
@@ -43,9 +46,7 @@ export async function sendEmail(email: Email) {
 	const plainTextBody = htmlToPlainText(email.bodyHtml);
 
 	if (isLocal()) {
-		console.log('IsLocal is true, not sending emails');
-		console.log('to', email.to);
-		console.log('body', plainTextBody);
+		log.debug({ to: email.to, subject: email.subject }, 'skipping email send in local environment');
 		return;
 	}
 
