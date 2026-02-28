@@ -5,29 +5,16 @@ import { PageContainer } from '@/components/layout';
 import { CoachCard } from '@/components/teams/CoachCard';
 import { PlayerGrid } from '@/components/teams/PlayerGrid';
 import { getSiteSettings } from '@/lib/content';
-import { teamDetailQuery } from '@/lib/content/teamDetail';
-import logger from '@/lib/logger';
+import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
-import { client } from '@/sanity/lib/client';
-import type { Team } from '@/types/team';
 
 interface TeamDetailPageProps {
 	params: Promise<{ slug: string }>;
 }
 
-async function getTeam(slug: string): Promise<Team | null> {
-	try {
-		const team = await client.fetch<Team>(teamDetailQuery, { slug }, { next: { tags: ['team'] } });
-		return team;
-	} catch (error) {
-		logger.error({ err: error }, 'error fetching team');
-		return null;
-	}
-}
-
 export async function generateMetadata({ params }: TeamDetailPageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const team = await getTeam(slug);
+	const team = await getTeamBySlug(slug);
 	const siteSettings = await getSiteSettings();
 
 	if (!team) {
@@ -49,7 +36,7 @@ export async function generateMetadata({ params }: TeamDetailPageProps): Promise
 
 export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 	const { slug } = await params;
-	const team = await getTeam(slug);
+	const team = await getTeamBySlug(slug);
 
 	if (!team) {
 		notFound();

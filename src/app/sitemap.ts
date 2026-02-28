@@ -1,8 +1,11 @@
 import { MetadataRoute } from 'next';
+import * as Sentry from '@sentry/nextjs';
 import { getAllArticlesForSitemap } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { getAllTeamsForSitemap } from '@/lib/content/teams';
 import logger from '@/lib/logger';
+
+const log = logger.child({ module: 'sitemap' });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const siteSettings = await getSiteSettings();
@@ -144,7 +147,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 0.7
 		}));
 
-		logger.info(
+		log.info(
 			{
 				staticRoutes: staticRoutesValue.length,
 				newsRoutes: newsRoutes.length,
@@ -155,7 +158,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 		return [...staticRoutesValue, ...newsRoutes, ...teamRoutes];
 	} catch (error) {
-		logger.error({ err: error }, 'error generating dynamic sitemap routes');
+		Sentry.captureException(error);
+		log.error({ err: error }, 'error generating dynamic sitemap routes');
 		return staticRoutesValue;
 	}
 }
