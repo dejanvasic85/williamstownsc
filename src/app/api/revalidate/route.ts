@@ -2,6 +2,9 @@ import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
 import { getRevalidationConfig } from '@/lib/config';
+import logger from '@/lib/logger';
+
+const log = logger.child({ route: '/api/revalidate' });
 
 const allowedContentTypes = new Set([
 	'announcement',
@@ -34,7 +37,7 @@ export async function POST(request: NextRequest) {
 
 		// Extract content type from request body
 		const body = await request.json();
-		console.log('Revalidation request received. Body:', JSON.stringify(body, null, 2));
+		log.info({ contentType: body._type }, 'revalidation request received');
 
 		const contentType = body._type;
 
@@ -66,7 +69,7 @@ export async function POST(request: NextRequest) {
 		});
 	} catch (error) {
 		Sentry.captureException(error);
-		console.error('Revalidation error:', error);
+		log.error({ err: error }, 'revalidation error');
 
 		const isDev = process.env.NODE_ENV !== 'production';
 		const responseBody: { error: string; details?: string } = {

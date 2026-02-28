@@ -3,7 +3,10 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { type Browser, type Page, type Response, chromium } from 'playwright-core';
 import { ZodError } from 'zod';
+import logger from '@/lib/logger';
 import { externalFixturesApiResponseSchema } from '@/types/matches';
+
+const log = logger.child({ module: 'crawl-fixtures' });
 
 const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const fixturesApiUrlPrefix = 'https://mc-api.dribl.com/api/fixtures';
@@ -98,7 +101,7 @@ async function getCurrentSeasonText(page: Page): Promise<string> {
 }
 
 async function waitForLoadMoreButton(page: Page, maxAttempts: number = 10): Promise<boolean> {
-	console.log('🔍 Scrolling to find Load More button...');
+	log.info('scrolling to find Load More button');
 
 	for (let attempt = 1; attempt <= maxAttempts; attempt++) {
 		// Scroll to bottom
@@ -108,14 +111,14 @@ async function waitForLoadMoreButton(page: Page, maxAttempts: number = 10): Prom
 		// Check if button is visible
 		const hasButton = await hasLoadMoreButton(page);
 		if (hasButton) {
-			console.log(`   ✓ Load More button found after ${attempt} scroll(s)`);
+			log.info({ scrollAttempts: attempt }, 'Load More button found');
 			return true;
 		}
 
-		console.log(`   ⏳ Attempt ${attempt}/${maxAttempts}: Button not visible yet...`);
+		log.debug({ attempt, maxAttempts }, 'button not visible yet');
 	}
 
-	console.log('   ℹ️  Load More button not found after scrolling');
+	log.info('Load More button not found after scrolling');
 	return false;
 }
 
@@ -126,7 +129,7 @@ async function clickFilterByText(
 	newValueText: string
 ): Promise<boolean> {
 	try {
-		console.log(`   🔍 ${filterLabel}: Clicking "${currentValueText}"...`);
+		log.info({ filter: filterLabel, current: currentValueText }, 'clicking filter');
 
 		// STEP 1: Click on the current filter value text
 		const currentValueClicked = await page.evaluate((text) => {
@@ -144,9 +147,9 @@ async function clickFilterByText(
 		}, currentValueText);
 
 		if (!currentValueClicked) {
-			console.error(`   ❌ Could not find visible text: "${currentValueText}"`);
+			log.warn({ filter: filterLabel, text: currentValueText }, 'could not find visible text');
 
-			console.log(`   🔁 ${filterLabel}: Falling back to label click...`);
+			log.info({ filter: filterLabel }, 'falling back to label click');
 			const labelClicked = await page.evaluate((labelText) => {
 				const elements = Array.from(document.querySelectorAll('*'));
 				const element = elements.find((el) => {
@@ -162,7 +165,7 @@ async function clickFilterByText(
 			}, filterLabel);
 
 			if (!labelClicked) {
-				console.error(`   ❌ Could not find visible text: "${filterLabel}"`);
+				log.error({ filter: filterLabel }, 'could not find filter label');
 				return false;
 			}
 		}
@@ -171,7 +174,7 @@ async function clickFilterByText(
 		await page.waitForTimeout(1000);
 
 		// STEP 3: Click on the desired option text
-		console.log(`   🔍 ${filterLabel}: Clicking "${newValueText}"...`);
+		log.info({ filter: filterLabel, value: newValueText }, 'selecting filter option');
 		const optionClicked = await page.evaluate((text) => {
 			const elements = Array.from(document.querySelectorAll('*'));
 			const element = elements.find((el) => {
@@ -187,17 +190,17 @@ async function clickFilterByText(
 		}, newValueText);
 
 		if (!optionClicked) {
-			console.error(`   ❌ Could not find visible text: "${newValueText}"`);
+			log.error({ filter: filterLabel, value: newValueText }, 'could not find option text');
 			return false;
 		}
 
 		// STEP 4: Wait for filter to apply
 		await page.waitForTimeout(1500);
-		console.log(`   ✓ ${filterLabel}: ${newValueText}`);
+		log.info({ filter: filterLabel, value: newValueText }, 'filter applied');
 
 		return true;
 	} catch (error) {
-		console.error(`   ❌ Error setting ${filterLabel}: ${error}`);
+		log.error({ err: error, filter: filterLabel }, 'error setting filter');
 		return false;
 	}
 }
@@ -206,7 +209,7 @@ async function applyFilters(
 	page: Page,
 	args: FilterArgs
 ): Promise<{ season: string; competition: string; league: string }> {
-	console.log('🔧 Applying filters...');
+	log.info('applying filters');
 
 	await page.waitForLoadState('domcontentloaded');
 	await page.waitForFunction(
@@ -248,7 +251,7 @@ async function applyFilters(
 	await page.waitForLoadState('networkidle');
 
 	// Wait longer for League options to populate after Competition change
-	console.log('   ⏳ Waiting for league options to populate...');
+	log.info('waiting for league options to populate');
 
 	// Apply League filter (required)
 	const leagueSuccess = await clickFilterByText(page, 'League', 'All Leagues', args.league);
@@ -267,7 +270,7 @@ async function applyFilters(
 }
 
 export async function crawlFixtures({ team, league, season, competition }: CrawlFixturesOptions) {
-	console.log('🚀 Launching browser...');
+	log.info('launching browser');
 	let browser: Browser | undefined;
 
 	try {
@@ -284,11 +287,11 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 		page.on('response', async (response) => {
 			if (response.url().startsWith(fixturesApiUrlPrefix) && response.ok()) {
 				responses.push(response);
-				console.log(`📥 API response captured (${responses.length})`);
+				log.info({ count: responses.length }, 'API response captured');
 			}
 		});
 
-		console.log(`🌐 Navigating to: ${fixturesBaseUrl}`);
+		log.info({ url: fixturesBaseUrl }, 'navigating to fixtures page');
 		await page.goto(fixturesBaseUrl, { waitUntil: 'domcontentloaded' });
 
 		// Apply filters
@@ -300,9 +303,9 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 		}
 
 		// Wait for first API response
-		console.log('⏳ Waiting for initial fixtures...');
+		log.info('waiting for initial fixtures');
 		await waitForNewResponse(responses, 0, 60_000);
-		console.log(`   ✓ Initial fixtures loaded`);
+		log.info('initial fixtures loaded');
 
 		// Scroll until Load More button appears
 		let hasMorePages = await waitForLoadMoreButton(page);
@@ -312,7 +315,7 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 
 		while (hasMorePages) {
 			const expectedIndex = chunkIndex + 1;
-			console.log(`🔄 Loading more fixtures (chunk ${expectedIndex})...`);
+			log.info({ chunk: expectedIndex }, 'loading more fixtures');
 
 			// Click the Load More button (already scrolled into view by waitForLoadMoreButton)
 			const loadMoreButton = page.getByText('Load more...');
@@ -320,7 +323,7 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 
 			// Wait for new API response
 			await waitForNewResponse(responses, expectedIndex, 60_000);
-			console.log(`   ✓ Chunk ${expectedIndex} loaded`);
+			log.info({ chunk: expectedIndex }, 'chunk loaded');
 
 			// Wait for UI to update
 			await page.waitForTimeout(1000);
@@ -330,13 +333,13 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 			hasMorePages = await waitForLoadMoreButton(page, 5);
 		}
 
-		console.log(`\n✅ All fixtures loaded (${responses.length} chunks)`);
+		log.info({ totalChunks: responses.length }, 'all fixtures loaded');
 
 		// Validate and save chunks
 		const outputDir = resolve(currentDir, `../../data/external/fixtures/${team}`);
 		mkdirSync(outputDir, { recursive: true });
 
-		console.log(`\n💾 Saving chunks to: ${outputDir}`);
+		log.info({ outputDir }, 'saving chunks');
 
 		for (let i = 0; i < responses.length; i++) {
 			try {
@@ -346,47 +349,44 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 				const chunkPath = resolve(outputDir, `chunk-${i}.json`);
 				writeFileSync(chunkPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
 
-				console.log(`📂 Saved chunk-${i}.json (${validated.data.length} fixtures)`);
+				log.info({ chunk: i, fixtures: validated.data.length }, 'saved chunk');
 			} catch (error) {
 				if (error instanceof ZodError) {
-					console.error(`\n❌ Validation Error in chunk-${i}:`);
-					console.error(error.issues);
+					log.error({ chunk: i, issues: error.issues }, 'validation error in chunk');
 					throw error;
 				}
 				throw error;
 			}
 		}
 
-		console.log(`\n✨ Crawl completed successfully!`);
-		console.log(`   Total chunks: ${responses.length}`);
-		console.log(`   Team: ${team}`);
-		console.log(`   League: ${filterValues.league}`);
-		console.log(`   Season: ${filterValues.season}`);
-		console.log(`   Competition: ${filterValues.competition}\n`);
+		log.info(
+			{
+				totalChunks: responses.length,
+				team,
+				league: filterValues.league,
+				season: filterValues.season,
+				competition: filterValues.competition
+			},
+			'crawl completed'
+		);
 	} catch (error) {
-		console.error('\n❌ Crawl failed:');
-
 		if (error instanceof ZodError) {
-			console.error('\nValidation Error:');
-			console.error(error.issues);
+			log.error({ issues: error.issues }, 'crawl failed: validation error');
 		} else if (error instanceof Error) {
-			console.error(error.message);
+			log.error({ err: error }, 'crawl failed');
 
 			if (error.message.includes("Executable doesn't exist")) {
-				console.error(
-					'\n💡 Tip: Install Playwright browsers with:\n   npx playwright install --with-deps chrome\n'
-				);
+				log.info('install Playwright browsers with: npx playwright install --with-deps chrome');
 			}
 		} else {
-			console.error(error);
+			log.error({ err: error }, 'crawl failed: unknown error');
 		}
 
-		console.log('');
 		process.exit(1);
 	} finally {
 		if (browser) {
 			await browser.close();
-			console.log('🔒 Browser closed');
+			log.info('browser closed');
 		}
 	}
 }

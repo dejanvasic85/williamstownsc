@@ -1,4 +1,7 @@
 import { getClientConfig, getRecaptchaConfig } from '@/lib/config';
+import logger from '@/lib/logger';
+
+const log = logger.child({ module: 'recaptcha' });
 
 type RecaptchaAssessmentResponse = {
 	tokenProperties?: {
@@ -70,7 +73,10 @@ export async function verifyRecaptchaToken(
 		});
 
 		if (!response.ok) {
-			console.error('reCAPTCHA API error:', response.status, response.statusText);
+			log.error(
+				{ status: response.status, statusText: response.statusText },
+				'reCAPTCHA API error'
+			);
 			return {
 				success: false,
 				error: 'reCAPTCHA service unavailable'
@@ -80,7 +86,7 @@ export async function verifyRecaptchaToken(
 		const data: RecaptchaAssessmentResponse = await response.json();
 
 		if (data.error) {
-			console.error('reCAPTCHA assessment error:', data.error);
+			log.error({ code: data.error.code }, 'reCAPTCHA assessment error: %s', data.error.message);
 			return {
 				success: false,
 				error: data.error.message
@@ -88,7 +94,7 @@ export async function verifyRecaptchaToken(
 		}
 
 		if (!data.tokenProperties?.valid) {
-			console.warn('Invalid reCAPTCHA token');
+			log.warn('invalid reCAPTCHA token');
 			return {
 				success: false,
 				error: 'Invalid reCAPTCHA token'
@@ -96,8 +102,9 @@ export async function verifyRecaptchaToken(
 		}
 
 		if (data.tokenProperties.action !== expectedAction) {
-			console.warn(
-				`reCAPTCHA action mismatch: expected ${expectedAction}, got ${data.tokenProperties.action}`
+			log.warn(
+				{ expectedAction, actualAction: data.tokenProperties.action },
+				'reCAPTCHA action mismatch'
 			);
 			return {
 				success: false,
@@ -108,7 +115,7 @@ export async function verifyRecaptchaToken(
 		const score = data.riskAnalysis?.score ?? 0;
 
 		if (score < riskScoreThreshold) {
-			console.warn(`reCAPTCHA score too low: ${score}`);
+			log.warn({ score, threshold: riskScoreThreshold }, 'reCAPTCHA score too low');
 			return {
 				success: false,
 				score,
@@ -121,7 +128,7 @@ export async function verifyRecaptchaToken(
 			score
 		};
 	} catch (error) {
-		console.error('reCAPTCHA verification error:', error);
+		log.error({ err: error }, 'reCAPTCHA verification error');
 
 		let errorMessage = 'reCAPTCHA verification failed';
 		if (error instanceof Error && error.message) {

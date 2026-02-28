@@ -37,13 +37,7 @@ function groupResultsByType(results: SearchResult[]) {
 	const groups: Record<string, SearchResult[]> = {};
 
 	results.forEach((result) => {
-		const label = contentTypeLabels[result._type];
-
-		if (!label) {
-			console.warn(`Unknown content type: ${result._type}`);
-		}
-
-		const groupLabel = label || 'Other';
+		const groupLabel = contentTypeLabels[result._type] || 'Other';
 		if (!groups[groupLabel]) {
 			groups[groupLabel] = [];
 		}

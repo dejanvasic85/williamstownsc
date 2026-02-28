@@ -5,5 +5,7 @@ Sentry.init({
 	dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
 	tracesSampleRate: 1,
 	debug: false,
-	enabled: isSentryEnabled()
+	enabled: isSentryEnabled(),
+	enableLogs: true,
+	integrations: [Sentry.pinoIntegration()]
 });

@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ZodError } from 'zod';
+import logger from '@/lib/logger';
 import { transformExternalFixture } from '@/lib/matches/fixtureTransformService';
 import {
 	type ExternalFixturesApiResponse,
@@ -9,6 +10,8 @@ import {
 	fixtureDataSchema
 } from '@/types/matches';
 import type { Fixture, FixtureData } from '@/types/matches';
+
+const log = logger.child({ module: 'sync-fixtures' });
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 const EXTERNAL_DIR = path.resolve(currentDir, '../../data/external/fixtures');
@@ -39,8 +42,7 @@ async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesA
 			);
 		}
 
-		console.log(`\n📂 Found ${externalFiles.length} external fixture file(s):`);
-		externalFiles.forEach((f, i) => console.log(`   ${i + 1}. ${f}`));
+		log.info({ count: externalFiles.length, files: externalFiles }, 'found external fixture files');
 
 		const responses: ExternalFixturesApiResponse[] = [];
 
@@ -52,11 +54,10 @@ async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesA
 				const json = JSON.parse(content);
 				const validated = externalFixturesApiResponseSchema.parse(json);
 				responses.push(validated);
-				console.log(`   ✓ ${file} - ${validated.data.length} fixtures`);
+				log.info({ file, fixtures: validated.data.length }, 'validated fixture file');
 			} catch (error) {
 				if (error instanceof ZodError) {
-					console.error(`\n❌ Validation Error in ${file}:`);
-					console.error(error.issues);
+					log.error({ file, issues: error.issues }, 'validation error in fixture file');
 					throw error;
 				}
 				throw new Error(`Failed to parse ${file}: ${error}`);
@@ -101,9 +102,7 @@ function mergeFixtures(responses: ExternalFixturesApiResponse[]): {
 					season = year;
 				}
 			} catch (error) {
-				console.warn(
-					`⚠️  Skipping fixture ${externalFixture.attributes.name}: ${(error as Error).message}`
-				);
+				log.warn({ fixture: externalFixture.attributes.name, err: error }, 'skipping fixture');
 			}
 		}
 	}
@@ -127,7 +126,7 @@ function deduplicateFixtures(fixtures: Fixture[]): Fixture[] {
 
 	const duplicateCount = fixtures.length - deduplicated.length;
 	if (duplicateCount > 0) {
-		console.log(`\n🔄 Removed ${duplicateCount} duplicate fixture(s)`);
+		log.info({ duplicateCount }, 'removed duplicate fixtures');
 	}
 
 	return deduplicated;
@@ -158,30 +157,33 @@ async function writeFixtureData(team: string, data: FixtureData): Promise<void> 
 
 	await fs.writeFile(outputPath, JSON.stringify(data, null, '\t'), 'utf-8');
 
-	console.log(`\n✅ Fixture data written to: ${outputPath}`);
-	console.log(`   Competition: ${data.competition}`);
-	console.log(`   Season: ${data.season}`);
-	console.log(`   Total Fixtures: ${data.totalFixtures}`);
-	console.log(`   Total Rounds: ${data.totalRounds}`);
+	log.info(
+		{
+			outputPath,
+			competition: data.competition,
+			season: data.season,
+			totalFixtures: data.totalFixtures,
+			totalRounds: data.totalRounds
+		},
+		'fixture data written'
+	);
 }
 
 export async function syncFixtures({ team }: SyncFixturesOptions) {
-	console.log('🏟️  Fixture Sync Tool\n');
-
-	console.log(`📋 Syncing fixtures for team: ${team}`);
+	log.info({ team }, 'starting fixture sync');
 
 	try {
 		// Read and validate all external files
 		const responses = await readExternalFixtureFiles(team);
 
 		// Transform and merge
-		console.log(`\n🔄 Transforming and merging fixtures...`);
+		log.info('transforming and merging fixtures');
 		const { fixtures: rawFixtures, competition, season } = mergeFixtures(responses);
-		console.log(`   Raw fixtures: ${rawFixtures.length}`);
+		log.info({ rawCount: rawFixtures.length }, 'raw fixtures merged');
 
 		// Deduplicate
 		const uniqueFixtures = deduplicateFixtures(rawFixtures);
-		console.log(`   Unique fixtures: ${uniqueFixtures.length}`);
+		log.info({ uniqueCount: uniqueFixtures.length }, 'fixtures deduplicated');
 
 		// Sort
 		const sortedFixtures = sortFixtures(uniqueFixtures);
@@ -201,20 +203,16 @@ export async function syncFixtures({ team }: SyncFixturesOptions) {
 		// Write to file
 		await writeFixtureData(team, fixtureData);
 
-		console.log('\n✨ Sync completed successfully!\n');
+		log.info('sync completed');
 	} catch (error) {
-		console.error('\n❌ Sync failed:');
-
 		if (error instanceof ZodError) {
-			console.error('\nValidation Error:');
-			console.error(error.issues);
+			log.error({ issues: error.issues }, 'sync failed: validation error');
 		} else if (error instanceof Error) {
-			console.error(error.message);
+			log.error({ err: error }, 'sync failed');
 		} else {
-			console.error(error);
+			log.error({ err: error }, 'sync failed: unknown error');
 		}
 
-		console.log('');
 		process.exit(1);
 	}
 }

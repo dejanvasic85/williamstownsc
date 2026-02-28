@@ -1,5 +1,9 @@
+import * as Sentry from '@sentry/nextjs';
 import { getAllArticlesForFeed } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
+import logger from '@/lib/logger';
+
+const log = logger.child({ route: '/feed.xml' });
 
 type FeedArticle = Awaited<ReturnType<typeof getAllArticlesForFeed>>[number];
 
@@ -66,7 +70,8 @@ ${rssItems}
 			}
 		});
 	} catch (error) {
-		console.error('Error generating RSS feed:', error);
+		Sentry.captureException(error);
+		log.error({ err: error }, 'error generating RSS feed');
 		return new Response('Error generating RSS feed', {
 			status: 500,
 			headers: {

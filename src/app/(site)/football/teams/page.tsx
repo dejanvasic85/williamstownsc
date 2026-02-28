@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
+import * as Sentry from '@sentry/nextjs';
 import { PageContainer } from '@/components/layout';
 import { TeamTabs } from '@/components/teams/TeamTabs';
 import { getPageMetadata } from '@/lib/content/page';
 import { teamsQuery } from '@/lib/content/teams';
+import logger from '@/lib/logger';
 import { hasFixtures } from '@/lib/matches/matchService';
 import { groupTeamsByTab } from '@/lib/teamService';
 import { client } from '@/sanity/lib/client';
 import type { Team } from '@/types/team';
+
+const log = logger.child({ module: 'teams-page' });
 
 export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('teamsPage');
@@ -17,7 +21,8 @@ async function getTeams() {
 		const teams = await client.fetch<Team[]>(teamsQuery, {}, { next: { tags: ['team'] } });
 		return teams;
 	} catch (error) {
-		console.error('Error fetching teams:', error);
+		Sentry.captureException(error);
+		log.error({ err: error }, 'error fetching teams');
 		return [];
 	}
 }

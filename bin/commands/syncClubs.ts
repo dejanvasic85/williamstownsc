@@ -3,7 +3,10 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ZodError } from 'zod';
 import { transformExternalClub } from '@/lib/clubService';
+import logger from '@/lib/logger';
 import { type Club, type Clubs, clubsSchema, externalApiResponseSchema } from '@/types/matches';
+
+const log = logger.child({ module: 'sync-clubs' });
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 const EXTERNAL_DATA_PATH = resolve(currentDir, '../../data/external/clubs/clubs.json');
@@ -82,11 +85,11 @@ function saveClubsFile(clubsFile: Clubs) {
 
 export async function syncClubs() {
 	try {
-		console.log('Reading external data from:', EXTERNAL_DATA_PATH);
+		log.info({ path: EXTERNAL_DATA_PATH }, 'reading external data');
 
 		// Load and validate external data
 		const externalResponse = loadExternalData();
-		console.log(`✓ Loaded ${externalResponse.data.length} clubs from external data`);
+		log.info({ count: externalResponse.data.length }, 'loaded clubs from external data');
 
 		// Transform external clubs to our format
 		const apiClubs = externalResponse.data.map((externalClub) =>
@@ -95,10 +98,9 @@ export async function syncClubs() {
 
 		// Load existing clubs
 		const existingFile = loadExistingClubs();
-		console.log(
-			existingFile
-				? `✓ Loaded ${existingFile.clubs.length} existing clubs`
-				: '✓ No existing clubs file found'
+		log.info(
+			existingFile ? { count: existingFile.clubs.length } : {},
+			existingFile ? 'loaded existing clubs' : 'no existing clubs file found'
 		);
 
 		// Merge clubs
@@ -108,25 +110,28 @@ export async function syncClubs() {
 		saveClubsFile(file);
 
 		const totalClubs = file.clubs.length;
-		console.log(`\n✅ Successfully synced ${totalClubs} clubs!`);
-		console.log(`   - ${newCount} new clubs added`);
-		console.log(`   - ${updatedCount} clubs updated`);
-		console.log(`   - ${totalClubs - newCount - updatedCount} clubs preserved`);
-		console.log(`\nSaved to: ${CLUBS_FILE_PATH}`);
+		log.info(
+			{
+				total: totalClubs,
+				new: newCount,
+				updated: updatedCount,
+				preserved: totalClubs - newCount - updatedCount,
+				outputPath: CLUBS_FILE_PATH
+			},
+			'clubs sync completed'
+		);
 	} catch (error) {
 		if (error instanceof ZodError) {
-			console.error('\n❌ Validation Error:');
-			console.error(error.issues);
+			log.error({ issues: error.issues }, 'validation error');
 			process.exit(1);
 		}
 
 		if (error instanceof Error) {
-			console.error(`\n❌ Error: ${error.message}`);
+			log.error({ err: error }, 'sync failed');
 			process.exit(1);
 		}
 
-		console.error('\n❌ Unknown error occurred');
-		console.error(error);
+		log.error({ err: error }, 'unknown error occurred');
 		process.exit(1);
 	}
 }

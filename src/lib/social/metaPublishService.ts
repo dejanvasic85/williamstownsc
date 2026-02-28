@@ -1,4 +1,7 @@
 import { type MetaConfig, getMetaConfig, isLocal } from '@/lib/config';
+import logger from '@/lib/logger';
+
+const log = logger.child({ module: 'social-publish' });
 
 export type PublishResult = {
 	platform: 'facebook' | 'instagram';
@@ -213,7 +216,7 @@ export async function publishArticleToSocials(
 	article: SocialPublishArticle
 ): Promise<PublishResult[]> {
 	if (isLocal()) {
-		console.log('isLocal is true, skipping social media publishing');
+		log.debug('skipping social media publishing in local environment');
 		return [];
 	}
 
