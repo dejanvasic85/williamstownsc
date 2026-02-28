@@ -5,10 +5,10 @@ export function TeamPhotoPlaceholder({ name, className }: Props) {
 		<figure
 			className={
 				className ??
-				'bg-primary/10 relative flex aspect-video items-center justify-center overflow-hidden'
+				'bg-primary relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl'
 			}
 		>
-			<span className="text-primary/40 text-5xl font-black tracking-widest uppercase select-none">
+			<span className="text-accent/90 text-5xl font-black tracking-widest uppercase select-none">
 				{abbreviate(name)}
 			</span>
 		</figure>

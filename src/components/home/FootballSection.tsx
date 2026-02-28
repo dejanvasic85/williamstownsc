@@ -93,7 +93,7 @@ export async function FootballSection() {
 										<div className="relative h-64 w-full">
 											<TeamPhotoPlaceholder
 												name={team.name}
-												className="bg-primary/10 absolute inset-0 flex items-center justify-center overflow-hidden"
+												className="bg-primary/90 absolute inset-0 flex items-center justify-center overflow-hidden"
 											/>
 											<div className="absolute inset-0 flex flex-col justify-end p-6">
 												<h4 className="text-2xl font-bold text-white">{team.name}</h4>
