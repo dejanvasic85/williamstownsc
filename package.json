@@ -54,7 +54,7 @@
 		"@playwright/test": "1.58.2",
 		"@tailwindcss/postcss": "4.2.1",
 		"@tanstack/react-query-devtools": "5.91.3",
-		"@trivago/prettier-plugin-sort-imports": "6.0.2",
+		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
 		"@types/node": "25.0.5",
 		"@types/react": "19.2.14",
 		"@types/react-dom": "19.2.3",
