@@ -49,7 +49,7 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 				return (
 					<section key={position} className="space-y-8">
 						<h2 className="text-3xl font-black uppercase">{positionLabels[position]}</h2>
-						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+						<div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 							{positionPlayers.map((player) => {
 								const { firstName, lastName } = splitPersonName(player.person.name);
 								return (
