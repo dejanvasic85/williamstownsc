@@ -43,7 +43,7 @@ export function PlayerCard({
 
 	return (
 		<div
-			className={`border-base-300 dark:border-primary relative max-w-64 overflow-hidden rounded-xl border ${containerClass} transition-shadow hover:shadow-xl`}
+			className={`border-base-300 dark:border-primary relative mx-auto w-full max-w-64 overflow-hidden rounded-xl border ${containerClass} transition-shadow hover:shadow-xl`}
 		>
 			<div className="relative aspect-square">
 				<Image src={photoUrl} alt={photoAlt} fill className="object-cover" sizes="256px" />
