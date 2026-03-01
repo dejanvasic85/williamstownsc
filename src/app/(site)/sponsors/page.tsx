@@ -20,7 +20,7 @@ export default async function SponsorsPage() {
 			{/* Sponsor Tiers */}
 			<div className="mb-16 flex flex-col gap-10">
 				{tiers.map((tier) => (
-					<SponsorTierGroup key={tier.name} tier={tier} />
+					<SponsorTierGroup key={tier._id} tier={tier} />
 				))}
 			</div>
 

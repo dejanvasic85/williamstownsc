@@ -5,6 +5,7 @@ import { Sponsor } from '@/sanity/sanity.types';
 type CardSize = 'large' | 'medium' | 'small';
 
 type SponsorTypeReference = {
+	_id?: string;
 	name?: string;
 	order?: number;
 	description?: string;
@@ -26,6 +27,7 @@ export type TransformedSponsor = Pick<Sponsor, '_id' | 'website'> & {
 };
 
 export type SponsorTier = {
+	_id: string;
 	name: string;
 	order: number;
 	description: string;
@@ -57,14 +59,15 @@ function groupSponsorsByTier(sponsors: SponsorWithExpandedType[]): SponsorTier[]
 	const tierMap = new Map<string, SponsorTier>();
 
 	for (const sponsor of sponsors) {
-		const tierName = sponsor.type?.name ?? 'Other';
-		const existing = tierMap.get(tierName);
+		const tierId = sponsor.type?._id ?? 'other';
+		const existing = tierMap.get(tierId);
 
 		if (existing) {
 			existing.sponsors.push(transformSponsor(sponsor));
 		} else {
-			tierMap.set(tierName, {
-				name: tierName,
+			tierMap.set(tierId, {
+				_id: tierId,
+				name: sponsor.type?.name ?? 'Other',
 				order: sponsor.type?.order ?? 999,
 				description: sponsor.type?.description ?? '',
 				cardSize: sponsor.type?.cardSize ?? 'medium',
@@ -81,6 +84,7 @@ const sponsorFields = `
 	name,
 	logo,
 	type->{
+		_id,
 		name,
 		order,
 		description,
