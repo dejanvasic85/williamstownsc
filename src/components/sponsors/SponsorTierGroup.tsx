@@ -26,12 +26,12 @@ export function SponsorTierGroup({ tier }: SponsorTierGroupProps) {
 	return (
 		<section
 			className={clsx(
-				'border-secondary/30 relative rounded-xl border-2 p-6 pt-8 md:p-8 md:pt-10',
+				'border-primary/30 bg-primary/10 relative rounded-xl border-2 p-6 pt-8 md:p-8 md:pt-10',
 				'shadow-[0_0_15px_color-mix(in_srgb,var(--color-secondary)_15%,transparent)]'
 			)}
 		>
-			<div className="absolute -top-3 right-4">
-				<span className="badge badge-secondary font-semibold">{tier.name}</span>
+			<div className="absolute -top-5 right-4">
+				<span className="badge badge-primary badge-xl font-semibold">{tier.name}</span>
 			</div>
 			<div className={clsx('grid gap-6', gridByVariant[variant])}>
 				{tier.sponsors.map((sponsor) => (
