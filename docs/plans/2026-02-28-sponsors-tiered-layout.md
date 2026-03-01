@@ -27,27 +27,27 @@ Redesign sponsors page to group sponsors by tier (sponsorType), with gold-border
 
 ## Tasks
 
-- [ ] 1. Add `cardSize` to `sponsorType` schema (`large` / `medium` / `small`, default `medium`)
-- [ ] 2. Run `npm run type:gen` to regenerate Sanity types
-- [ ] 3. Update `src/lib/content/sponsors.ts`:
+- [x] 1. Add `cardSize` to `sponsorType` schema (`large` / `medium` / `small`, default `medium`)
+- [x] 2. Run `npm run type:gen` to regenerate Sanity types
+- [x] 3. Update `src/lib/content/sponsors.ts`:
   - Expand query to include `type->{ name, order, description, cardSize }`
   - Add `SponsorTier` type: `{ name, order, description?, cardSize, sponsors[] }`
   - Add `getSponsorsGroupedByTier()` - fetch, group by type, sort by type order
   - Add `getAllSponsorTypes()` - fetch all sponsorTypes (for CTA section)
-- [ ] 4. Export new types/functions from `src/lib/content/index.ts`
-- [ ] 5. Rework `SponsorCard.tsx`:
+- [x] 4. Export new types/functions from `src/lib/content/index.ts`
+- [x] 5. Rework `SponsorCard.tsx`:
   - `variant` prop: `featured` (large: logo + name + description + website), `standard` (medium: logo + name + website), `compact` (small: logo + name)
   - Featured: horizontal layout (logo left, details right)
   - Standard/compact: vertical card (logo top, details below)
-- [ ] 6. Create `SponsorTierGroup.tsx`:
+- [x] 6. Create `SponsorTierGroup.tsx`:
   - Gold border + glow: `border-2 border-secondary/30 shadow-[0_0_15px_color-mix(in_srgb,var(--color-secondary)_15%,transparent)]`
   - Tier label: `badge badge-secondary` absolute top-right
   - Responsive grid of SponsorCards: cols based on variant
-- [ ] 7. Restructure `sponsors/page.tsx`:
+- [x] 7. Restructure `sponsors/page.tsx`:
   - Use `getSponsorsGroupedByTier()` for main content
   - Use `getAllSponsorTypes()` for CTA section (replaces hardcoded cards)
-- [ ] 8. Export from `components/sponsors/index.ts`
-- [ ] 9. Verify: `npm run lint && npm run format && npm run type:check && npm run build`
+- [x] 8. Export from `components/sponsors/index.ts`
+- [x] 9. Verify: `npm run lint && npm run format && npm run type:check && npm run build`
 
 ## Styling Details
 
