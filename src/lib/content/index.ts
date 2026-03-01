@@ -4,8 +4,13 @@ export type { AnnouncementData, AnnouncementType } from './announcement';
 export { getNewsArticles, getArticleBySlug } from './news';
 export type { TransformedNewsArticle, NewsFilters } from './news';
 
-export { getAllSponsors, getFeaturedSponsors } from './sponsors';
-export type { TransformedSponsor } from './sponsors';
+export {
+	getAllSponsors,
+	getFeaturedSponsors,
+	getSponsorsGroupedByTier,
+	getAllSponsorTypes
+} from './sponsors';
+export type { TransformedSponsor, SponsorTier, SponsorTypeData } from './sponsors';
 
 export { getActivePrograms } from './programs';
 export type { TransformedProgram } from './programs';

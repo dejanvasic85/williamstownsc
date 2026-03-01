@@ -20,6 +20,22 @@ export const sponsorType = defineType({
 			description: 'Brief description of this sponsor type and its benefits'
 		}),
 		defineField({
+			name: 'cardSize',
+			title: 'Card Size',
+			type: 'string',
+			description: 'Controls how sponsor cards are displayed for this tier',
+			options: {
+				list: [
+					{ title: 'Large - logo, name, description and website', value: 'large' },
+					{ title: 'Medium - logo, name and website', value: 'medium' },
+					{ title: 'Small - logo and name only', value: 'small' }
+				],
+				layout: 'radio'
+			},
+			initialValue: 'medium',
+			validation: (Rule) => Rule.required()
+		}),
+		defineField({
 			name: 'order',
 			title: 'Display Order',
 			type: 'number',
