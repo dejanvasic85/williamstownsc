@@ -1,6 +1,15 @@
+type AspectRatio = 'video' | '4/3' | 'square';
+
+const aspectClassValue: Record<AspectRatio, string> = {
+	video: 'aspect-video',
+	'4/3': 'aspect-[4/3]',
+	square: 'aspect-square'
+};
+
 type MapEmbedProps = {
 	src: string;
 	title?: string;
+	aspectRatio?: AspectRatio;
 };
 
 function isValidMapUrl(url: string): boolean {
@@ -23,13 +32,13 @@ function isValidMapUrl(url: string): boolean {
 	}
 }
 
-export function MapEmbed({ src, title = 'Location map' }: MapEmbedProps) {
+export function MapEmbed({ src, title = 'Location map', aspectRatio = 'video' }: MapEmbedProps) {
 	if (!isValidMapUrl(src)) {
 		return null;
 	}
 
 	return (
-		<div className="relative aspect-video w-full overflow-hidden rounded-lg">
+		<div className={`relative ${aspectClassValue[aspectRatio]} w-full overflow-hidden rounded-lg`}>
 			<iframe
 				src={src}
 				title={title}
