@@ -35,9 +35,6 @@ export default withSentryConfig(nextConfig, {
 	widenClientFileUpload: true,
 	sourcemaps: { deleteSourcemapsAfterUpload: true },
 	webpack: {
-		reactComponentAnnotation: { enabled: true },
-		treeshake: {
-			removeDebugLogging: true
-		}
+		reactComponentAnnotation: { enabled: true }
 	}
 });
