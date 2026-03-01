@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
 
 export default withSentryConfig(nextConfig, {
 	org: 'vasic-org',
-	project: 'javascript-nextjs',
+	project: 'williamstown-sc',
 	silent: !process.env.CI,
 	widenClientFileUpload: true,
 	sourcemaps: { deleteSourcemapsAfterUpload: true },
