@@ -71,11 +71,13 @@ export const sponsor = defineType({
 	preview: {
 		select: {
 			title: 'name',
-			media: 'logo'
+			media: 'logo',
+			order: 'order'
 		},
-		prepare({ title, media }) {
+		prepare({ title, media, order }) {
 			return {
 				title,
+				subtitle: `Order: ${order}`,
 				media
 			};
 		}
