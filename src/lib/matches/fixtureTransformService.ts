@@ -19,11 +19,15 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 		timeZone: 'Australia/Melbourne'
 	});
 
-	const address = attributes.field_name
-		? `${attributes.ground_name} ${attributes.field_name}`
-		: attributes.ground_name;
+	const address =
+		attributes.ground_name && attributes.field_name
+			? `${attributes.ground_name} ${attributes.field_name}`
+			: (attributes.ground_name ?? '');
 
-	const coordinates = `${attributes.ground_latitude},${attributes.ground_longitude}`;
+	const coordinates =
+		attributes.ground_latitude != null && attributes.ground_longitude != null
+			? `${attributes.ground_latitude},${attributes.ground_longitude}`
+			: '';
 
 	const homeTeamId = findClubExternalId(attributes.home_team_name, attributes.home_logo);
 	const awayTeamId = findClubExternalId(attributes.away_team_name, attributes.away_logo);
