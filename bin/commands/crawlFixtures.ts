@@ -10,7 +10,7 @@ const log = logger.child({ module: 'crawl-fixtures' });
 
 const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const resultsBaseUrl = 'https://fv.dribl.com/results/';
-const fixturesApiUrlPrefix = 'https://mc-api.dribl.com/api/fixtures';
+const driblApiBaseUrl = 'https://mc-api.dribl.com/api/';
 
 export type CrawlFixturesOptions = {
 	team: string;
@@ -329,19 +329,21 @@ async function crawlPage({
 	mkdirSync(outputDir, { recursive: true });
 	log.info({ outputDir }, 'saving chunks');
 
+	let savedChunks = 0;
 	for (let i = 0; i < responses.length; i++) {
 		try {
 			const rawData = await responses[i].json();
 			const validated = externalFixturesApiResponseSchema.parse(rawData);
 
-			const chunkPath = resolve(outputDir, `chunk-${i}.json`);
+			const chunkPath = resolve(outputDir, `chunk-${savedChunks}.json`);
 			writeFileSync(chunkPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
 
-			log.info({ chunk: i, fixtures: validated.data.length }, 'saved chunk');
+			log.info({ chunk: savedChunks, fixtures: validated.data.length }, 'saved chunk');
+			savedChunks++;
 		} catch (error) {
 			if (error instanceof ZodError) {
-				log.error({ chunk: i, issues: error.issues }, 'validation error in chunk');
-				throw error;
+				log.debug({ chunk: i, url: responses[i].url() }, 'skipping non-fixture response');
+				continue;
 			}
 			throw error;
 		}
@@ -363,7 +365,7 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 
 		const responses: Response[] = [];
 		page.on('response', async (response) => {
-			if (response.url().startsWith(fixturesApiUrlPrefix) && response.ok()) {
+			if (response.url().startsWith(driblApiBaseUrl) && response.ok()) {
 				responses.push(response);
 				log.info({ count: responses.length }, 'API response captured');
 			}
