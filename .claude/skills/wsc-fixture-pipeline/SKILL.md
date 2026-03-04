@@ -41,9 +41,9 @@ npm run sync:fixtures -- -t "<team-slug>"
 
 Known WSC teams (slugs match `data/matches/` filenames):
 
-| Team                    | Slug                                       | League                                        | Competition   |
-| ----------------------- | ------------------------------------------ | --------------------------------------------- | ------------- |
-| Seniors Men             | `seniors-mens`                             | `Senol NPL Victoria Men`                      | `NPL VIC Men` |
+| Team                    | Slug                                       | `-l` League (3rd filter)                      | `-c` Competition (2nd filter)      |
+| ----------------------- | ------------------------------------------ | --------------------------------------------- | ---------------------------------- |
+| Seniors Men             | `seniors-mens`                             | `NPL VIC Men`                                 | `Senol NPL Victoria Men`           |
 | Reserves Men            | `reserves-mens`                            | Varies                                        | Varies        |
 | State League North-West | `state-league-2-men-s-north-west`          | `VETO Sports State League Men's - North West` | `FFV`         |
 | State League Reserves   | `state-league-2-men-s-north-west-reserves` | Varies                                        | `FFV`         |
@@ -111,7 +111,7 @@ When WSC doesn't have results yet (e.g. early season), use a test team to verify
 
 ```bash
 # Example: Green Gully Seniors (NPL) — externalId: OVdz1bpKGr in data/clubs/clubs.json
-npm run crawl:fixtures -- -t "green-gully-seniors" -l "Senol NPL Victoria Men" -c "NPL VIC Men"
+npm run crawl:fixtures -- -t "green-gully-seniors" -l "NPL VIC Men" -c "Senol NPL Victoria Men"
 npm run sync:fixtures -- -t "green-gully-seniors"
 ```
 
