@@ -40,7 +40,12 @@ function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
 			homeTeam,
 			awayTeam,
 			address: fixture.address,
-			coordinates: fixture.coordinates
+			coordinates: fixture.coordinates,
+			homeScore: fixture.homeScore,
+			awayScore: fixture.awayScore,
+			homeScoreHalf: fixture.homeScoreHalf,
+			awayScoreHalf: fixture.awayScoreHalf,
+			status: fixture.status
 		};
 	});
 }

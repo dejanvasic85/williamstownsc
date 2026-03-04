@@ -9,6 +9,7 @@ import { externalFixturesApiResponseSchema } from '@/types/matches';
 const log = logger.child({ module: 'crawl-fixtures' });
 
 const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
+const resultsBaseUrl = 'https://fv.dribl.com/results/';
 const fixturesApiUrlPrefix = 'https://mc-api.dribl.com/api/fixtures';
 
 export type CrawlFixturesOptions = {
@@ -269,6 +270,84 @@ async function applyFilters(
 	};
 }
 
+type CrawlPageOptions = {
+	page: Page;
+	responses: Response[];
+	url: string;
+	outputDir: string;
+	filterArgs: FilterArgs;
+};
+
+async function crawlPage({
+	page,
+	responses,
+	url,
+	outputDir,
+	filterArgs
+}: CrawlPageOptions): Promise<void> {
+	log.info({ url }, 'navigating to page');
+	await page.goto(url, { waitUntil: 'domcontentloaded' });
+
+	// Apply filters
+	await applyFilters(page, filterArgs);
+
+	// Clear any pre-filter responses to avoid saving stale data
+	if (responses.length > 1) {
+		responses.splice(0, responses.length - 1);
+	}
+
+	// Wait for first API response
+	log.info('waiting for initial data');
+	await waitForNewResponse(responses, 0, 60_000);
+	log.info('initial data loaded');
+
+	// Scroll until Load More button appears
+	let hasMorePages = await waitForLoadMoreButton(page);
+
+	// Pagination loop
+	let chunkIndex = 0;
+
+	while (hasMorePages) {
+		const expectedIndex = chunkIndex + 1;
+		log.info({ chunk: expectedIndex }, 'loading more');
+
+		const loadMoreButton = page.getByText('Load more...');
+		await loadMoreButton.click();
+
+		await waitForNewResponse(responses, expectedIndex, 60_000);
+		log.info({ chunk: expectedIndex }, 'chunk loaded');
+
+		await page.waitForTimeout(1000);
+
+		chunkIndex++;
+		hasMorePages = await waitForLoadMoreButton(page, 5);
+	}
+
+	log.info({ totalChunks: responses.length }, 'all data loaded');
+
+	// Validate and save chunks
+	mkdirSync(outputDir, { recursive: true });
+	log.info({ outputDir }, 'saving chunks');
+
+	for (let i = 0; i < responses.length; i++) {
+		try {
+			const rawData = await responses[i].json();
+			const validated = externalFixturesApiResponseSchema.parse(rawData);
+
+			const chunkPath = resolve(outputDir, `chunk-${i}.json`);
+			writeFileSync(chunkPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
+
+			log.info({ chunk: i, fixtures: validated.data.length }, 'saved chunk');
+		} catch (error) {
+			if (error instanceof ZodError) {
+				log.error({ chunk: i, issues: error.issues }, 'validation error in chunk');
+				throw error;
+			}
+			throw error;
+		}
+	}
+}
+
 export async function crawlFixtures({ team, league, season, competition }: CrawlFixturesOptions) {
 	log.info('launching browser');
 	let browser: Browser | undefined;
@@ -282,7 +361,6 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 		});
 		const page = await context.newPage();
 
-		// Set up persistent response listener
 		const responses: Response[] = [];
 		page.on('response', async (response) => {
 			if (response.url().startsWith(fixturesApiUrlPrefix) && response.ok()) {
@@ -291,84 +369,32 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 			}
 		});
 
-		log.info({ url: fixturesBaseUrl }, 'navigating to fixtures page');
-		await page.goto(fixturesBaseUrl, { waitUntil: 'domcontentloaded' });
+		const filterArgs: FilterArgs = { league, season, competition };
 
-		// Apply filters
-		const filterValues = await applyFilters(page, { league, season, competition });
+		// Crawl fixtures (upcoming)
+		const fixturesOutputDir = resolve(currentDir, `../../data/external/fixtures/${team}`);
+		await crawlPage({
+			page,
+			responses,
+			url: fixturesBaseUrl,
+			outputDir: fixturesOutputDir,
+			filterArgs
+		});
 
-		// Clear any pre-filter responses to avoid saving stale data
-		if (responses.length > 1) {
-			responses.splice(0, responses.length - 1);
-		}
+		// Reset responses before crawling results
+		responses.length = 0;
 
-		// Wait for first API response
-		log.info('waiting for initial fixtures');
-		await waitForNewResponse(responses, 0, 60_000);
-		log.info('initial fixtures loaded');
+		// Crawl results (past + scores)
+		const resultsOutputDir = resolve(currentDir, `../../data/external/results/${team}`);
+		await crawlPage({
+			page,
+			responses,
+			url: resultsBaseUrl,
+			outputDir: resultsOutputDir,
+			filterArgs
+		});
 
-		// Scroll until Load More button appears
-		let hasMorePages = await waitForLoadMoreButton(page);
-
-		// Pagination loop
-		let chunkIndex = 0;
-
-		while (hasMorePages) {
-			const expectedIndex = chunkIndex + 1;
-			log.info({ chunk: expectedIndex }, 'loading more fixtures');
-
-			// Click the Load More button (already scrolled into view by waitForLoadMoreButton)
-			const loadMoreButton = page.getByText('Load more...');
-			await loadMoreButton.click();
-
-			// Wait for new API response
-			await waitForNewResponse(responses, expectedIndex, 60_000);
-			log.info({ chunk: expectedIndex }, 'chunk loaded');
-
-			// Wait for UI to update
-			await page.waitForTimeout(1000);
-
-			// Scroll to find next Load More button
-			chunkIndex++;
-			hasMorePages = await waitForLoadMoreButton(page, 5);
-		}
-
-		log.info({ totalChunks: responses.length }, 'all fixtures loaded');
-
-		// Validate and save chunks
-		const outputDir = resolve(currentDir, `../../data/external/fixtures/${team}`);
-		mkdirSync(outputDir, { recursive: true });
-
-		log.info({ outputDir }, 'saving chunks');
-
-		for (let i = 0; i < responses.length; i++) {
-			try {
-				const rawData = await responses[i].json();
-				const validated = externalFixturesApiResponseSchema.parse(rawData);
-
-				const chunkPath = resolve(outputDir, `chunk-${i}.json`);
-				writeFileSync(chunkPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
-
-				log.info({ chunk: i, fixtures: validated.data.length }, 'saved chunk');
-			} catch (error) {
-				if (error instanceof ZodError) {
-					log.error({ chunk: i, issues: error.issues }, 'validation error in chunk');
-					throw error;
-				}
-				throw error;
-			}
-		}
-
-		log.info(
-			{
-				totalChunks: responses.length,
-				team,
-				league: filterValues.league,
-				season: filterValues.season,
-				competition: filterValues.competition
-			},
-			'crawl completed'
-		);
+		log.info({ team, league }, 'crawl completed');
 	} catch (error) {
 		if (error instanceof ZodError) {
 			log.error({ issues: error.issues }, 'crawl failed: validation error');

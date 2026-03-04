@@ -14,19 +14,20 @@ import type { Fixture, FixtureData } from '@/types/matches';
 const log = logger.child({ module: 'sync-fixtures' });
 
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
-const EXTERNAL_DIR = path.resolve(currentDir, '../../data/external/fixtures');
+const EXTERNAL_FIXTURES_DIR = path.resolve(currentDir, '../../data/external/fixtures');
+const EXTERNAL_RESULTS_DIR = path.resolve(currentDir, '../../data/external/results');
 const OUTPUT_DIR = path.resolve(currentDir, '../../data/matches');
 
 type SyncFixturesOptions = {
 	team: string;
 };
 
-// Read all external fixture files for a team
-async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesApiResponse[]> {
-	const teamDir = path.join(EXTERNAL_DIR, team);
-
+async function readExternalFixtureFiles(
+	dir: string,
+	required: boolean
+): Promise<ExternalFixturesApiResponse[]> {
 	try {
-		const files = await fs.readdir(teamDir);
+		const files = await fs.readdir(dir);
 		const externalFiles = files
 			.filter((f) => f.match(/^chunk-\d+\.json$/))
 			.sort((a, b) => {
@@ -36,8 +37,12 @@ async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesA
 			});
 
 		if (externalFiles.length === 0) {
+			if (!required) {
+				log.info({ dir }, 'no files found, skipping optional directory');
+				return [];
+			}
 			throw new Error(
-				`No external fixture files found in ${teamDir}\n` +
+				`No external fixture files found in ${dir}\n` +
 					`Expected files matching pattern: chunk-*.json`
 			);
 		}
@@ -47,7 +52,7 @@ async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesA
 		const responses: ExternalFixturesApiResponse[] = [];
 
 		for (const file of externalFiles) {
-			const filePath = path.join(teamDir, file);
+			const filePath = path.join(dir, file);
 			const content = await fs.readFile(filePath, 'utf-8');
 
 			try {
@@ -67,16 +72,19 @@ async function readExternalFixtureFiles(team: string): Promise<ExternalFixturesA
 		return responses;
 	} catch (error) {
 		if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+			if (!required) {
+				log.info({ dir }, 'directory not found, skipping optional directory');
+				return [];
+			}
 			throw new Error(
-				`Team directory not found: ${teamDir}\n` +
-					`Please create it and add fixture files: mkdir -p ${teamDir}`
+				`Team directory not found: ${dir}\n` +
+					`Please create it and add fixture files: mkdir -p ${dir}`
 			);
 		}
 		throw error;
 	}
 }
 
-// Transform and merge all fixtures
 function mergeFixtures(responses: ExternalFixturesApiResponse[]): {
 	fixtures: Fixture[];
 	competition: string;
@@ -92,12 +100,10 @@ function mergeFixtures(responses: ExternalFixturesApiResponse[]): {
 				const fixture = transformExternalFixture(externalFixture);
 				allFixtures.push(fixture);
 
-				// Extract metadata from first fixture
 				if (!competition) {
 					competition = externalFixture.attributes.competition_name;
 				}
 				if (!season) {
-					// Extract year from date
 					const year = new Date(externalFixture.attributes.date).getFullYear();
 					season = year;
 				}
@@ -110,7 +116,6 @@ function mergeFixtures(responses: ExternalFixturesApiResponse[]): {
 	return { fixtures: allFixtures, competition, season };
 }
 
-// Deduplicate fixtures
 function deduplicateFixtures(fixtures: Fixture[]): Fixture[] {
 	const seen = new Set<string>();
 	const deduplicated: Fixture[] = [];
@@ -132,7 +137,6 @@ function deduplicateFixtures(fixtures: Fixture[]): Fixture[] {
 	return deduplicated;
 }
 
-// Sort fixtures by round, then date
 function sortFixtures(fixtures: Fixture[]): Fixture[] {
 	return fixtures.sort((a, b) => {
 		if (a.round !== b.round) {
@@ -142,17 +146,14 @@ function sortFixtures(fixtures: Fixture[]): Fixture[] {
 	});
 }
 
-// Calculate total rounds
 function calculateTotalRounds(fixtures: Fixture[]): number {
 	const rounds = fixtures.map((f) => f.round);
 	return Math.max(...rounds, 0);
 }
 
-// Write fixture data to file
 async function writeFixtureData(team: string, data: FixtureData): Promise<void> {
 	const outputPath = path.join(OUTPUT_DIR, `${team}.json`);
 
-	// Validate before writing
 	fixtureDataSchema.parse(data);
 
 	await fs.writeFile(outputPath, JSON.stringify(data, null, '\t'), 'utf-8');
@@ -173,12 +174,23 @@ export async function syncFixtures({ team }: SyncFixturesOptions) {
 	log.info({ team }, 'starting fixture sync');
 
 	try {
-		// Read and validate all external files
-		const responses = await readExternalFixtureFiles(team);
+		// Read results first (they win deduplication)
+		const resultResponses = await readExternalFixtureFiles(
+			path.join(EXTERNAL_RESULTS_DIR, team),
+			false
+		);
+		const fixtureResponses = await readExternalFixtureFiles(
+			path.join(EXTERNAL_FIXTURES_DIR, team),
+			true
+		);
 
-		// Transform and merge
+		// Transform and merge — results first so they win deduplication
 		log.info('transforming and merging fixtures');
-		const { fixtures: rawFixtures, competition, season } = mergeFixtures(responses);
+		const {
+			fixtures: rawFixtures,
+			competition,
+			season
+		} = mergeFixtures([...resultResponses, ...fixtureResponses]);
 		log.info({ rawCount: rawFixtures.length }, 'raw fixtures merged');
 
 		// Deduplicate

@@ -36,7 +36,12 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 		homeTeamId,
 		awayTeamId,
 		address,
-		coordinates
+		coordinates,
+		homeScore: attributes.home_score ?? undefined,
+		awayScore: attributes.away_score ?? undefined,
+		homeScoreHalf: attributes.home_score_half ?? undefined,
+		awayScoreHalf: attributes.away_score_half ?? undefined,
+		status: attributes.status || undefined
 	};
 
 	return fixtureSchema.parse(fixture);
