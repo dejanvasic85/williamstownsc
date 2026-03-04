@@ -181,6 +181,7 @@ scripts/quick_validate.py <path/to/skill-folder>
 ```
 
 The script checks:
+
 - YAML frontmatter format and required fields
 - Skill naming conventions and directory structure
 - Description completeness and quality
