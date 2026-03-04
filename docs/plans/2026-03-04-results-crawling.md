@@ -1,7 +1,7 @@
 # Results Crawling & Score Data
 
 **Created:** 2026-03-04
-**Status:** Pending
+**Status:** Completed 2026-03-04
 
 ## Purpose
 
@@ -29,13 +29,13 @@ fv.dribl.com/results/   -->  data/external/results/{team}/chunk-N.json
 
 ## Todo
 
-- [ ] Add score/status fields to `fixtureSchema` and `EnrichedFixture` in `src/types/matches.ts`
-- [ ] Map score fields in `transformExternalFixture` in `src/lib/matches/fixtureTransformService.ts`
-- [ ] Extract `crawlPage()` function in `bin/commands/crawlFixtures.ts`, call for both `/fixtures/` and `/results/`
-- [ ] Update `bin/commands/syncFixtures.ts` to read both dirs, results-first merge
-- [ ] Pass through scores in `enrichFixtures` in `src/lib/matches/matchService.ts`
-- [ ] Increase CI timeout from 5 to 15 min in `.github/workflows/crawl.yml`
-- [ ] Run type:check, lint, format, build
+- [x] Add score/status fields to `fixtureSchema` and `EnrichedFixture` in `src/types/matches.ts`
+- [x] Map score fields in `transformExternalFixture` in `src/lib/matches/fixtureTransformService.ts`
+- [x] Extract `crawlPage()` function in `bin/commands/crawlFixtures.ts`, call for both `/fixtures/` and `/results/`
+- [x] Update `bin/commands/syncFixtures.ts` to read both dirs, results-first merge
+- [x] Pass through scores in `enrichFixtures` in `src/lib/matches/matchService.ts`
+- [x] Increase CI timeout from 5 to 15 min in `.github/workflows/crawl.yml`
+- [x] Run type:check, lint, format, build — all passed
 
 ## Files
 
