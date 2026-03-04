@@ -172,31 +172,24 @@ To complete SKILL.md, answer the following questions:
 2. When should the skill be used?
 3. In practice, how should Claude use the skill? All reusable skill contents developed above should be referenced so that Claude knows how to use them.
 
-### Step 5: Packaging a Skill
+### Step 5: Validating a Skill
 
-Once the skill is ready, it should be packaged into a distributable zip file that gets shared with the user. The packaging process automatically validates the skill first to ensure it meets all requirements:
-
-```bash
-scripts/package_skill.py <path/to/skill-folder>
-```
-
-Optional output directory specification:
+Once the skill is ready, validate it using the `quick_validate.py` script to ensure it meets all requirements before use:
 
 ```bash
-scripts/package_skill.py <path/to/skill-folder> ./dist
+scripts/quick_validate.py <path/to/skill-folder>
 ```
 
-The packaging script will:
+The script checks:
 
-1. **Validate** the skill automatically, checking:
-   - YAML frontmatter format and required fields
-   - Skill naming conventions and directory structure
-   - Description completeness and quality
-   - File organization and resource references
+- YAML frontmatter format and required fields
+- Skill naming conventions and directory structure
+- Description completeness and quality
+- File organization and resource references
 
-2. **Package** the skill if validation passes, creating a zip file named after the skill (e.g., `my-skill.zip`) that includes all files and maintains the proper directory structure for distribution.
+Fix any reported errors and re-run until validation passes.
 
-If validation fails, the script will report the errors and exit without creating a package. Fix any validation errors and run the packaging command again.
+**Note:** Do not use `package_skill.py` — it creates a zip file that must be manually extracted, leaving temporary files. The skill directory is already in the correct location and needs no packaging.
 
 ### Step 6: Iterate
 

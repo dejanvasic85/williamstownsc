@@ -78,12 +78,12 @@ const externalFixtureAttributesSchema = z.object({
 	date: z.string(),
 	round: z.string(),
 	full_round: z.string(),
-	ground_name: z.string(),
-	ground_latitude: z.number(),
-	ground_longitude: z.number(),
-	ground_address: z.string().nullable(),
-	field_name: z.string(),
-	is_historic_field: z.boolean(),
+	ground_name: z.string().optional(),
+	ground_latitude: z.number().optional(),
+	ground_longitude: z.number().optional(),
+	ground_address: z.string().nullable().optional(),
+	field_name: z.string().optional(),
+	is_historic_field: z.boolean().optional(),
 	home_team_name: z.string(),
 	home_logo: z.url(),
 	away_team_name: z.string(),
@@ -91,7 +91,7 @@ const externalFixtureAttributesSchema = z.object({
 	competition_name: z.string(),
 	league_name: z.string(),
 	status: z.string(),
-	bye_flag: z.boolean(),
+	bye_flag: z.union([z.boolean(), z.number()]).transform((v) => Boolean(v)),
 	is_unstructured: z.boolean(),
 	league_result_access: z.string(),
 	home_score: z.number().nullable(),
@@ -118,7 +118,7 @@ const externalFixtureAttributesSchema = z.object({
 });
 
 const externalFixtureSchema = z.object({
-	type: z.literal('fixtures'),
+	type: z.union([z.literal('fixtures'), z.literal('results')]),
 	hash_id: z.string(),
 	attributes: externalFixtureAttributesSchema,
 	links: z.object({
@@ -156,7 +156,12 @@ export const fixtureSchema = z.object({
 	homeTeamId: z.string(),
 	awayTeamId: z.string(),
 	address: z.string(),
-	coordinates: z.string()
+	coordinates: z.string(),
+	homeScore: z.number().optional(),
+	awayScore: z.number().optional(),
+	homeScoreHalf: z.number().optional(),
+	awayScoreHalf: z.number().optional(),
+	status: z.string().optional()
 });
 
 export const fixtureDataSchema = z.object({
@@ -186,4 +191,9 @@ export type EnrichedFixture = {
 	awayTeam: Club;
 	address: string;
 	coordinates: string;
+	homeScore?: number;
+	awayScore?: number;
+	homeScoreHalf?: number;
+	awayScoreHalf?: number;
+	status?: string;
 };
