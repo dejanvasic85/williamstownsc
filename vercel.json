@@ -1,4 +1,21 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"buildCommand": "npm run build"
+	"buildCommand": "npm run build",
+	"redirects": [
+		{ "source": "/about", "destination": "/club/about", "permanent": true },
+		{ "source": "/contact", "destination": "/contact", "permanent": true },
+		{ "source": "/calendar", "destination": "/key-dates", "permanent": true },
+		{ "source": "/members", "destination": "/football/programs", "permanent": true },
+		{
+			"source": "/member-documents",
+			"destination": "/club/policies-and-regulations",
+			"permanent": true
+		},
+		{ "source": "/registration-form", "destination": "/football/programs", "permanent": true },
+		{ "source": "/shop", "destination": "/football/merchandise", "permanent": true },
+		{ "source": "/shop-1", "destination": "/football/merchandise", "permanent": true },
+		{ "source": "/book-online", "destination": "/football/programs", "permanent": true },
+		{ "source": "/jr-gala-day", "destination": "/football/programs", "permanent": true },
+		{ "source": "/home-1/:path*", "destination": "/", "permanent": true }
+	]
 }
