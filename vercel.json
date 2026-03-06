@@ -3,7 +3,6 @@
 	"buildCommand": "npm run build",
 	"redirects": [
 		{ "source": "/about", "destination": "/club/about", "permanent": true },
-		{ "source": "/contact", "destination": "/contact", "permanent": true },
 		{ "source": "/calendar", "destination": "/key-dates", "permanent": true },
 		{ "source": "/members", "destination": "/football/programs", "permanent": true },
 		{
