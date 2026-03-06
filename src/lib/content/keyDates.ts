@@ -58,7 +58,7 @@ export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
   			...,
   			alt
   		},
-  		keyDates[] {
+  		keyDates[] | order(date desc) {
   			title,
   			date,
   			description
