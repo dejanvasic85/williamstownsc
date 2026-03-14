@@ -13,7 +13,7 @@
 		"format": "prettier . --write .",
 		"format:check": "prettier . --check",
 		"prepare": "husky",
-		"type:gen": "sanity schema extract --path src/sanity/schema.json && sanity typegen generate",
+		"type:gen": "sanity schema extract --path src/sanity && sanity typegen generate",
 		"type:check": "tsc --noEmit",
 		"crawl:clubs": "tsx bin/wsc.ts crawl clubs",
 		"crawl:clubs:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl clubs",
