@@ -1,7 +1,7 @@
 # Shop Feature — Custom Cart + Stripe Checkout
 
 **Created:** 2026-03-15
-**Status:** Pending
+**Status:** ⏳ Pending
 
 ## Purpose
 
@@ -23,7 +23,7 @@ Add an online shop to sell club merchandise (jerseys, shorts, socks, etc). Produ
 
 ## Architecture
 
-```
+```text
 Sanity CMS (products)  →  /football/merchandise (catalogue)
                           /football/merchandise/[slug] (product detail)
                               ↓
@@ -42,8 +42,8 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 
 ### Phase 1: Sanity Schema + Content Module
 
-- [ ] Create `product` schema — name, slug, description (portable text), price (number, cents), images (array), category (string: jersey/shorts/socks/accessories), sizes (array of strings), inStock (boolean), order (number)
-- [ ] Create `productCategory` object schema — name, slug, order
+- [ ] Create `productCategory` document schema — name, slug, order (used as reference in products)
+- [ ] Create `product` schema — name, slug, description (portable text), price (number, cents), images (array), category (reference to productCategory), sizes (array of strings), inStock (boolean), order (number)
 - [ ] Register schemas in `src/sanity/schema/index.ts`
 - [ ] Run `npm run type:gen` to generate types
 - [ ] Create `src/lib/content/products.ts` — queries: `getProducts`, `getProductBySlug`, `getProductCategories`
@@ -53,7 +53,7 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 - [ ] Create `src/lib/cart/cartContext.tsx` — React context with useReducer (add, remove, update qty, clear)
 - [ ] Persist cart to localStorage, hydrate on mount
 - [ ] Create `src/lib/cart/cartTypes.ts` — CartItem, CartState types
-- [ ] Add CartProvider to site layout
+- [ ] Add CartProvider to site layout (hydrate localStorage reads in useEffect to avoid SSR hydration mismatch)
 
 ### Phase 3: Product Catalogue UI
 
@@ -74,7 +74,7 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 
 - [ ] Create `src/components/shop/CartDrawer.tsx` — slide-out drawer with cart items, qty controls, total, checkout button
 - [ ] Create `src/components/shop/CartIcon.tsx` — navbar cart icon with item count badge
-- [ ] Add CartIcon to site navbar
+- [ ] Add CartIcon to `DesktopNavbar` and `MobileNavbar` client components (not server Navbar.tsx)
 - [ ] Create `src/components/shop/CartItemRow.tsx` — line item display with remove/qty controls
 
 ### Phase 6: Stripe Integration
@@ -83,15 +83,22 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 - [ ] Add Stripe config to `src/lib/config.ts` — stripeSecretKey, stripePublishableKey, stripeWebhookSecret
 - [ ] Add env vars to `.env.example`: `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`
 - [ ] Create `src/lib/stripe/stripeClient.ts` — server-side Stripe instance
-- [ ] Create server action `src/app/(site)/football/merchandise/actions.ts` — `createCheckoutSession`: validate cart items against Sanity prices, create Stripe session, redirect
-- [ ] Create `src/app/api/webhooks/stripe/route.ts` — verify signature, handle `checkout.session.completed`
-- [ ] Create success page `/football/merchandise/checkout/success/page.tsx`
+- [ ] Create server action `src/app/(site)/football/merchandise/actions.ts` — `createCheckoutSession`: verify stock availability, validate cart items against Sanity prices, create Stripe session, redirect. Handle out-of-stock with user-facing error. Handle price changes between cart and checkout (show warning)
+- [ ] Create `src/app/api/webhooks/stripe/route.ts` — verify signature, handle `checkout.session.completed`, ensure idempotency (deduplicate by session ID), log errors with session IDs for debugging
+- [ ] Create success page `/football/merchandise/checkout/success/page.tsx` — clear cart client-side on mount (webhooks cannot access localStorage)
 - [ ] Create cancel page `/football/merchandise/checkout/cancel/page.tsx`
 
 ### Phase 7: Order Confirmation
 
-- [ ] Send order confirmation email via AWS SES on webhook receipt
+- [ ] Send order confirmation email via AWS SES on webhook receipt. Log failure with session ID; add retry with exponential backoff
 - [ ] Create email template in `src/lib/contact/` (reuse existing SES setup)
+
+### Phase 8: Testing
+
+- [ ] E2E tests: product catalogue page loads, filtering works, product detail renders
+- [ ] E2E tests: add to cart, update qty, remove item, cart persists on reload
+- [ ] E2E tests: checkout flow redirects to Stripe (mock or test mode)
+- [ ] E2E tests: success page clears cart
 
 ### Verification
 
@@ -105,7 +112,7 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 
 ### New Files
 - `src/sanity/schema/product.ts` — product document schema
-- `src/sanity/schema/objects/productCategory.ts` — category object
+- `src/sanity/schema/productCategory.ts` — category document
 - `src/lib/content/products.ts` — Sanity queries for products
 - `src/lib/cart/cartContext.tsx` — cart React context + provider
 - `src/lib/cart/cartTypes.ts` — cart type definitions
@@ -138,8 +145,8 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 ## Key Design Decisions
 
 - **Hosted Checkout over Embedded**: simpler, no PCI concerns, Stripe handles all payment UI. Trade-off: user leaves site briefly but returns to success page
-- **localStorage cart over DB**: no user accounts needed, keeps it simple. Cart clears after checkout via webhook-triggered clear
-- **Price in cents in Sanity**: avoids floating point issues, matches Stripe's expected format
+- **localStorage cart over DB**: no user accounts needed, keeps it simple. Cart clears client-side on success page. Multi-tab sync via storage event listener
+- **Price in cents in Sanity**: avoids floating-point issues, matches Stripe's expected format
 - **Server action validates prices**: never trust client cart prices — re-fetch from Sanity before creating Stripe session
 - **Guest checkout only**: no order history, no accounts. Email confirmation is the receipt
 
