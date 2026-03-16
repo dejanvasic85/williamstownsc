@@ -163,10 +163,10 @@
 			"date": "2026-04-11",
 			"day": "Saturday",
 			"time": "13:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "7MNGgM7NAz",
-			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
+			"homeTeamId": "7MNGgM7NAz",
+			"awayTeamId": "7MNGvappmA",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "-37.624625,145.024327",
 			"status": "pending"
 		},
 		{
@@ -889,10 +889,10 @@
 			"date": "2026-07-04",
 			"day": "Saturday",
 			"time": "12:45",
-			"homeTeamId": "7MNGgM7NAz",
-			"awayTeamId": "7MNGvappmA",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "7MNGgM7NAz",
+			"address": "Myers Reserve Pitch 1",
+			"coordinates": "-38.09538,144.320027",
 			"status": "pending"
 		},
 		{
