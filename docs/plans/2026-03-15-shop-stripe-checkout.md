@@ -111,6 +111,7 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 ## Files
 
 ### New Files
+
 - `src/sanity/schema/product.ts` — product document schema
 - `src/sanity/schema/productCategory.ts` — category document
 - `src/lib/content/products.ts` — Sanity queries for products
@@ -133,6 +134,7 @@ Sanity CMS (products)  →  /football/merchandise (catalogue)
 - `src/app/api/webhooks/stripe/route.ts`
 
 ### Modified Files
+
 - `src/sanity/schema/index.ts` — register product + productCategory schemas
 - `src/lib/content/index.ts` — export product queries
 - `src/lib/config.ts` — add Stripe config schema
