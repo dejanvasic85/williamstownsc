@@ -5,9 +5,16 @@ test.describe('Search', () => {
 		await page.goto('/');
 	});
 
-	test('opens search modal with keyboard shortcut and navigates to team page', async ({ page }) => {
+	test('opens search modal with keyboard shortcut and navigates to result page', async ({
+		page
+	}) => {
 		// Wait for page to be fully loaded
 		await page.waitForLoadState('networkidle');
+
+		// Intercept search API to capture results
+		const searchResponsePromise = page.waitForResponse(
+			(resp) => resp.url().includes('/api/search') && resp.status() === 200
+		);
 
 		await page.keyboard.press('Meta+k');
 
@@ -17,11 +24,15 @@ test.describe('Search', () => {
 		const searchInput = page.getByRole('textbox', { name: /search content/i });
 		await searchInput.fill('north west');
 
+		const searchResponse = await searchResponsePromise;
+		const { results } = await searchResponse.json();
+		const firstResultUrl = results[0].url;
+
 		const firstResult = page.getByRole('button', { name: /north.?west/i }).first();
 		await expect(firstResult).toBeVisible({ timeout: 10000 });
 		await firstResult.click();
 
-		await expect(page).toHaveURL(/\/football\/teams\//);
+		await expect(page).toHaveURL(firstResultUrl);
 	});
 
 	test('clears search input when modal is reopened after closing', async ({ page }) => {
