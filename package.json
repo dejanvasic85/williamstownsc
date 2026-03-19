@@ -46,7 +46,7 @@
 		"react-dom": "19.2.4",
 		"react-hook-form": "7.71.2",
 		"sanity": "5.17.1",
-		"styled-components": "6.3.11",
+		"styled-components": "6.3.12",
 		"zod": "4.3.6"
 	},
 	"devDependencies": {
