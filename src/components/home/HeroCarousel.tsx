@@ -133,13 +133,22 @@ export function HeroCarousel({
 					>
 						<Link href={`/news/${article.slug}`} className="relative h-full w-full">
 							<Image
+								src={article.mobileImage?.url || article.featuredImage.url}
+								alt={article.mobileImage?.alt || article.featuredImage.alt || article.title}
+								fill
+								className="object-cover md:hidden"
+								priority={index === 0}
+								quality={90}
+								sizes="100vw"
+							/>
+							<Image
 								src={article.featuredImage.url}
 								alt={article.featuredImage.alt || article.title}
 								fill
-								className="object-cover"
+								className="hidden object-cover md:block"
 								priority={index === 0}
 								quality={90}
-								sizes={isFullWidth ? '100vw' : '(max-width: 1023px) 100vw, 67vw'}
+								sizes={isFullWidth ? '100vw' : '67vw'}
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 md:flex-col md:p-10">

@@ -84,7 +84,7 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 		body: data.body,
 		featuredImage: data.featuredImage
 			? {
-					url: urlFor(data.featuredImage).width(1200).height(600).url(),
+					url: urlFor(data.featuredImage).width(1200).height(600).fit('crop').url(),
 					alt: data.featuredImage.alt || ''
 				}
 			: undefined,
@@ -97,7 +97,7 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 					ogDescription: data.seo.ogDescription || undefined,
 					ogImage: data.seo.ogImage
 						? {
-								url: urlFor(data.seo.ogImage).width(1200).height(630).url(),
+								url: urlFor(data.seo.ogImage).width(1200).height(630).fit('crop').url(),
 								alt: data.seo.ogImage.alt || ''
 							}
 						: undefined,
@@ -159,7 +159,7 @@ export async function getContactPageData() {
 
 function processImage(image: SanityImageSource & { alt?: string }, width: number, height: number) {
 	return {
-		url: urlFor(image).width(width).height(height).url(),
+		url: urlFor(image).width(width).height(height).fit('crop').url(),
 		alt: image.alt
 	};
 }
@@ -198,7 +198,7 @@ function buildPageMetadata(
 			? { url: editablePageData.featuredImage.url, alt: editablePageData.featuredImage.alt }
 			: siteSettings?.seoDefaults?.ogImage
 				? {
-						url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url(),
+						url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).fit('crop').url(),
 						alt: ''
 					}
 				: undefined;

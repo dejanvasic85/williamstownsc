@@ -11,6 +11,10 @@ export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 		url: string;
 		alt?: string;
 	};
+	mobileImage?: {
+		url: string;
+		alt?: string;
+	};
 	excerpt: string;
 };
 
@@ -43,6 +47,7 @@ export async function getNewsArticles(
 		slug,
 		publishedAt,
 		featuredImage,
+		mobileImage,
 		excerpt,
 		featured
 	}`;
@@ -66,12 +71,26 @@ export async function getNewsArticles(
 					? urlFor(article.featuredImage)
 							.width(width)
 							.height(height)
+							.fit('crop')
 							.quality(90)
 							.format('webp')
 							.url()
 					: '',
 				alt: article.featuredImage?.alt
 			},
+			mobileImage:
+				imageSize === 'large' && article.mobileImage
+					? {
+							url: urlFor(article.mobileImage)
+								.width(1080)
+								.height(1080)
+								.fit('crop')
+								.quality(90)
+								.format('webp')
+								.url(),
+							alt: article.mobileImage.alt
+						}
+					: undefined,
 			excerpt: article.excerpt || '',
 			featured: article.featured || false
 		})
@@ -107,7 +126,13 @@ export async function getArticleBySlug(slug: string) {
 		publishedAt: article.publishedAt || '',
 		featuredImage: {
 			url: article.featuredImage
-				? urlFor(article.featuredImage).width(1920).height(1080).quality(90).format('webp').url()
+				? urlFor(article.featuredImage)
+						.width(1920)
+						.height(1080)
+						.fit('crop')
+						.quality(90)
+						.format('webp')
+						.url()
 				: '',
 			alt: article.featuredImage?.alt
 		},
@@ -179,7 +204,7 @@ export async function getAllArticlesForFeed() {
 			excerpt: article.excerpt || '',
 			featuredImage: article.featuredImage
 				? {
-						url: urlFor(article.featuredImage).width(1200).height(630).url(),
+						url: urlFor(article.featuredImage).width(1200).height(630).fit('crop').url(),
 						alt: article.featuredImage?.alt,
 						mimeType: article.featuredImage.asset?.mimeType
 					}
@@ -229,6 +254,7 @@ export async function getArticleForSocialPublish(_id: string) {
 					url: urlFor(article.featuredImage)
 						.width(1200)
 						.height(630)
+						.fit('crop')
 						.quality(90)
 						.format('jpg')
 						.url(),
