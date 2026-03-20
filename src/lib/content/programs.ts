@@ -43,7 +43,7 @@ export async function getActivePrograms(): Promise<TransformedProgram[]> {
 			maxAge: program.maxAge || 0,
 			image: program.image
 				? {
-						url: urlFor(program.image).width(800).height(600).url(),
+						url: urlFor(program.image).width(800).height(600).fit('crop').url(),
 						alt: program.image.alt
 					}
 				: undefined,

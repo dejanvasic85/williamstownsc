@@ -47,7 +47,9 @@ export default async function Home() {
 		getNextMatch('state-league-2-men-s-north-west'),
 		getNextKeyDate()
 	]);
-	const logoUrl = siteSettings?.logo ? urlFor(siteSettings.logo).width(120).height(120).url() : '';
+	const logoUrl = siteSettings?.logo
+		? urlFor(siteSettings.logo).width(120).height(120).fit('crop').url()
+		: '';
 
 	const socialLinks = buildSocialLinks({
 		locations: siteSettings?.locations,

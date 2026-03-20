@@ -31,7 +31,7 @@ export function generateOrganizationSchema(
 	const homeLocation = siteSettings.locations?.find((loc) => loc.facilityType === 'home');
 
 	const logoUrl = siteSettings.logo
-		? urlFor(siteSettings.logo).width(800).height(800).url()
+		? urlFor(siteSettings.logo).width(800).height(800).fit('crop').url()
 		: undefined;
 
 	const schema: OrganizationSchema = {

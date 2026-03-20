@@ -38,6 +38,8 @@ export const newsArticle = defineType({
 		defineField({
 			name: 'featuredImage',
 			title: 'Featured Image',
+			description:
+				'Desktop hero image (landscape, min 1920×1080). Also used for news cards, article pages, and social sharing.',
 			type: 'image',
 			options: {
 				hotspot: true
@@ -50,6 +52,24 @@ export const newsArticle = defineType({
 				}
 			],
 			validation: (Rule) => Rule.required()
+		}),
+		defineField({
+			name: 'mobileImage',
+			title: 'Mobile Hero Image',
+			description:
+				'Square image (~1080×1080) for the mobile hero carousel. Falls back to the featured image if not set.',
+			type: 'image',
+			options: {
+				hotspot: true
+			},
+			fields: [
+				{
+					name: 'alt',
+					type: 'string',
+					title: 'Alt Text'
+				}
+			],
+			hidden: ({ document }) => !document?.featured
 		}),
 		defineField({
 			name: 'excerpt',

@@ -77,7 +77,7 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 		body: data.body,
 		featuredImage: data.featuredImage
 			? {
-					url: urlFor(data.featuredImage).width(1200).height(600).url(),
+					url: urlFor(data.featuredImage).width(1200).height(600).fit('crop').url(),
 					alt: data.featuredImage.alt || ''
 				}
 			: undefined,
@@ -91,7 +91,7 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 					ogDescription: data.seo.ogDescription || undefined,
 					ogImage: data.seo.ogImage
 						? {
-								url: urlFor(data.seo.ogImage).width(1200).height(630).url(),
+								url: urlFor(data.seo.ogImage).width(1200).height(630).fit('crop').url(),
 								alt: data.seo.ogImage.alt || ''
 							}
 						: undefined,
