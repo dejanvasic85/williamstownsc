@@ -237,7 +237,7 @@ async function applyFilters(
 	if (!seasonApplied) {
 		throw new Error(`Failed to select season "${seasonValue}".`);
 	}
-	await page.waitForLoadState('networkidle');
+	await page.waitForTimeout(2000);
 
 	// Apply Competition filter
 	const competitionApplied = await clickFilterByText(
@@ -249,7 +249,7 @@ async function applyFilters(
 	if (!competitionApplied) {
 		throw new Error(`Failed to select competition "${competitionValue}".`);
 	}
-	await page.waitForLoadState('networkidle');
+	await page.waitForTimeout(2000);
 
 	// Wait longer for League options to populate after Competition change
 	log.info('waiting for league options to populate');
@@ -261,7 +261,7 @@ async function applyFilters(
 		throw new Error(`Failed to select league "${args.league}". Please check the league name.`);
 	}
 
-	await page.waitForLoadState('networkidle');
+	await page.waitForTimeout(2000);
 
 	return {
 		season: seasonValue,
