@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import { differenceInSeconds, parseISO } from 'date-fns';
 
 type TimeRemaining = {
@@ -13,6 +14,7 @@ type TimeRemaining = {
 type CountdownTimerProps = {
 	targetDate: string;
 	targetTime: string;
+	matchDurationMinutes?: number;
 };
 
 function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRemaining {
@@ -32,18 +34,45 @@ function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRem
 	return { days, hours, minutes, seconds };
 }
 
-export function CountdownTimer({ targetDate, targetTime }: CountdownTimerProps) {
+export function CountdownTimer({
+	targetDate,
+	targetTime,
+	matchDurationMinutes = 120
+}: CountdownTimerProps) {
+	const router = useRouter();
+	const refreshTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 	const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(() =>
 		calculateTimeRemaining(targetDate, targetTime)
 	);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setTimeRemaining(calculateTimeRemaining(targetDate, targetTime));
+			const remaining = calculateTimeRemaining(targetDate, targetTime);
+			setTimeRemaining(remaining);
+
+			const expired =
+				remaining.days === 0 &&
+				remaining.hours === 0 &&
+				remaining.minutes === 0 &&
+				remaining.seconds === 0;
+			if (expired) clearInterval(interval);
 		}, 1000);
 
 		return () => clearInterval(interval);
 	}, [targetDate, targetTime]);
+
+	useEffect(() => {
+		const matchEnd = parseISO(`${targetDate}T${targetTime}`);
+		const delay = Math.max(0, matchEnd.getTime() + matchDurationMinutes * 60 * 1000 - Date.now());
+
+		refreshTimeoutRef.current = setTimeout(() => {
+			router.refresh();
+		}, delay);
+
+		return () => {
+			if (refreshTimeoutRef.current) clearTimeout(refreshTimeoutRef.current);
+		};
+	}, [targetDate, targetTime, matchDurationMinutes, router]);
 
 	const isExpired =
 		timeRemaining.days === 0 &&

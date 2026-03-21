@@ -85,7 +85,11 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 					)}
 				</div>
 
-				<CountdownTimer targetDate={match.date} targetTime={match.time} />
+				<CountdownTimer
+					targetDate={match.date}
+					targetTime={match.time}
+					matchDurationMinutes={120}
+				/>
 			</div>
 		</div>
 	);
