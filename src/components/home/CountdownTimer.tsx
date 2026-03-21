@@ -45,6 +45,16 @@ export function CountdownTimer({ targetDate, targetTime }: CountdownTimerProps) 
 		return () => clearInterval(interval);
 	}, [targetDate, targetTime]);
 
+	const isExpired =
+		timeRemaining.days === 0 &&
+		timeRemaining.hours === 0 &&
+		timeRemaining.minutes === 0 &&
+		timeRemaining.seconds === 0;
+
+	if (isExpired) {
+		return <p className="text-accent text-xl font-bold md:text-2xl">Match underway!</p>;
+	}
+
 	return (
 		<div className="grid grid-cols-4 gap-2 md:gap-3">
 			<div className="flex flex-col items-center">
