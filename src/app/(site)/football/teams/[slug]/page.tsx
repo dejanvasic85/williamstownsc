@@ -7,6 +7,7 @@ import { PlayerGrid } from '@/components/teams/PlayerGrid';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
+import { urlFor } from '@/sanity/lib/image';
 
 interface TeamDetailPageProps {
 	params: Promise<{ slug: string }>;
@@ -59,7 +60,11 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 									firstName={firstName}
 									lastName={lastName}
 									role={coach.title}
-									photoUrl={coach.person.photo.asset.url}
+									photoUrl={
+										coach.person.photo?.asset
+											? urlFor(coach.person.photo).width(256).height(256).fit('crop').url()
+											: '/img/player-alt.webp'
+									}
 									photoAlt={coach.person.photo.alt || coach.person.name}
 								/>
 							);

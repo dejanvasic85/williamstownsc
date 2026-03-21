@@ -1,4 +1,5 @@
 import { splitPersonName } from '@/lib/transformers/personTransformer';
+import { urlFor } from '@/sanity/lib/image';
 import type { Player } from '@/types/team';
 import { PlayerCard } from './PlayerCard';
 
@@ -59,7 +60,11 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 										lastName={lastName}
 										shirtNumber={player.shirtNumber || 0}
 										position={player.position || ''}
-										photoUrl={player.person?.photo?.asset?.url ?? '/img/player-alt.webp'}
+										photoUrl={
+											player.person?.photo?.asset
+												? urlFor(player.person.photo).width(256).height(256).fit('crop').url()
+												: '/img/player-alt.webp'
+										}
 										photoAlt={player.person?.photo?.alt || player.person.name}
 										isCaptain={player.isCaptain || false}
 										isViceCaptain={player.isViceCaptain || false}

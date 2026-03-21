@@ -31,7 +31,9 @@ export const teamDetailQuery = groq`
             _ref,
             url
           },
-          alt
+          alt,
+          crop,
+          hotspot
         },
         dateOfBirth
       },
@@ -46,7 +48,9 @@ export const teamDetailQuery = groq`
             _ref,
             url
           },
-          alt
+          alt,
+          crop,
+          hotspot
         },
         dateOfBirth
       },
