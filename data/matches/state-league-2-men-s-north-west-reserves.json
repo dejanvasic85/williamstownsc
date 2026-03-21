@@ -34,6 +34,19 @@
 			"round": 1,
 			"date": "2026-03-21",
 			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "3pmvQp0Ldv",
+			"address": "NewFlo Stadium Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-03-21",
+			"day": "Saturday",
 			"time": "13:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "AnmYzyArNz",
@@ -65,17 +78,6 @@
 			"awayTeamId": "PydoLxGmD9",
 			"address": "Findon Reserve Pitch 1",
 			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-03-21",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "3pmvQp0Ldv",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
 			"status": "pending"
 		},
 		{
