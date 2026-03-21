@@ -47,24 +47,23 @@ export function CountdownTimer({
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setTimeRemaining(calculateTimeRemaining(targetDate, targetTime));
+			const remaining = calculateTimeRemaining(targetDate, targetTime);
+			setTimeRemaining(remaining);
+
+			const expired =
+				remaining.days === 0 &&
+				remaining.hours === 0 &&
+				remaining.minutes === 0 &&
+				remaining.seconds === 0;
+			if (expired) clearInterval(interval);
 		}, 1000);
 
 		return () => clearInterval(interval);
 	}, [targetDate, targetTime]);
 
-	const isExpired =
-		timeRemaining.days === 0 &&
-		timeRemaining.hours === 0 &&
-		timeRemaining.minutes === 0 &&
-		timeRemaining.seconds === 0;
-
 	useEffect(() => {
-		if (!isExpired) return;
-
 		const matchEnd = parseISO(`${targetDate}T${targetTime}`);
-		const msUntilMatchEnd = matchEnd.getTime() + matchDurationMinutes * 60 * 1000 - Date.now();
-		const delay = Math.max(0, msUntilMatchEnd);
+		const delay = Math.max(0, matchEnd.getTime() + matchDurationMinutes * 60 * 1000 - Date.now());
 
 		refreshTimeoutRef.current = setTimeout(() => {
 			router.refresh();
@@ -73,7 +72,13 @@ export function CountdownTimer({
 		return () => {
 			if (refreshTimeoutRef.current) clearTimeout(refreshTimeoutRef.current);
 		};
-	}, [isExpired, targetDate, targetTime, matchDurationMinutes, router]);
+	}, [targetDate, targetTime, matchDurationMinutes, router]);
+
+	const isExpired =
+		timeRemaining.days === 0 &&
+		timeRemaining.hours === 0 &&
+		timeRemaining.minutes === 0 &&
+		timeRemaining.seconds === 0;
 
 	if (isExpired) {
 		return <p className="text-accent text-xl font-bold md:text-2xl">Match underway!</p>;
