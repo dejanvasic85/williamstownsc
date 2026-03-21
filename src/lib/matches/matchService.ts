@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { isBefore, parseISO } from 'date-fns';
+import { TZDate } from '@date-fns/tz';
+import { isBefore } from 'date-fns';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
 	getClubs as getClubsFromService
@@ -108,12 +109,12 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 				return false;
 			}
 
-			const matchDateTime = parseISO(`${fixture.date}T${fixture.time}`);
+			const matchDateTime = new TZDate(`${fixture.date}T${fixture.time}`, 'Australia/Melbourne');
 			return isBefore(now, matchDateTime);
 		})
 		.map((fixture) => ({
 			fixture,
-			matchDateTime: parseISO(`${fixture.date}T${fixture.time}`)
+			matchDateTime: new TZDate(`${fixture.date}T${fixture.time}`, 'Australia/Melbourne')
 		}));
 
 	if (upcomingFixturesWithDate.length === 0) {
