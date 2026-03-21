@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import { differenceInSeconds, parseISO } from 'date-fns';
 
 type TimeRemaining = {
@@ -13,6 +14,7 @@ type TimeRemaining = {
 type CountdownTimerProps = {
 	targetDate: string;
 	targetTime: string;
+	matchDurationMinutes?: number;
 };
 
 function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRemaining {
@@ -32,7 +34,13 @@ function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRem
 	return { days, hours, minutes, seconds };
 }
 
-export function CountdownTimer({ targetDate, targetTime }: CountdownTimerProps) {
+export function CountdownTimer({
+	targetDate,
+	targetTime,
+	matchDurationMinutes = 120
+}: CountdownTimerProps) {
+	const router = useRouter();
+	const refreshTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 	const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(() =>
 		calculateTimeRemaining(targetDate, targetTime)
 	);
@@ -50,6 +58,22 @@ export function CountdownTimer({ targetDate, targetTime }: CountdownTimerProps) 
 		timeRemaining.hours === 0 &&
 		timeRemaining.minutes === 0 &&
 		timeRemaining.seconds === 0;
+
+	useEffect(() => {
+		if (!isExpired) return;
+
+		const matchEnd = parseISO(`${targetDate}T${targetTime}`);
+		const msUntilMatchEnd = matchEnd.getTime() + matchDurationMinutes * 60 * 1000 - Date.now();
+		const delay = Math.max(0, msUntilMatchEnd);
+
+		refreshTimeoutRef.current = setTimeout(() => {
+			router.refresh();
+		}, delay);
+
+		return () => {
+			if (refreshTimeoutRef.current) clearTimeout(refreshTimeoutRef.current);
+		};
+	}, [isExpired, targetDate, targetTime, matchDurationMinutes, router]);
 
 	if (isExpired) {
 		return <p className="text-accent text-xl font-bold md:text-2xl">Match underway!</p>;
