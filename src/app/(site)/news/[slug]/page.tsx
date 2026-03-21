@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { PortableText } from 'next-sanity';
 import { PageContainer } from '@/components/layout';
+import { ShareButton } from '@/components/news/ShareButton';
 import { getArticleBySlug, getSiteSettings } from '@/lib/content';
 import { buildUrl, getRequestBaseUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
@@ -72,6 +73,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 		throw new Error('canonicalUrl is required');
 	}
 
+	const articleUrl = buildUrl(siteSettings.canonicalUrl, 'news', article.slug);
 	const publishedDate = new Date(article.publishedAt);
 	const formattedDate = publishedDate.toLocaleDateString('en-AU', {
 		weekday: 'long',
@@ -114,6 +116,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 					<time dateTime={publishedDate.toISOString()} className="text-base-content/60 text-lg">
 						{formattedDate}
 					</time>
+					<div className="mt-4">
+						<ShareButton title={article.title} url={articleUrl} />
+					</div>
 				</div>
 
 				{article.featuredImage.url && (
