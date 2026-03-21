@@ -10,6 +10,13 @@ import { fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
+const melbourneTimezone = 'Australia/Melbourne';
+
+function parseFixtureDateTime(date: string, time: string): TZDate {
+	const [year, month, day] = date.split('-').map(Number);
+	const [hour, minute] = time.split(':').map(Number);
+	return new TZDate(year, month - 1, day, hour, minute, melbourneTimezone);
+}
 
 const teamExternalIds: Record<string, string> = {
 	'state-league-2-men-s-north-west': '6lNbpDpwdx',
@@ -109,12 +116,12 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 				return false;
 			}
 
-			const matchDateTime = new TZDate(`${fixture.date}T${fixture.time}`, 'Australia/Melbourne');
+			const matchDateTime = parseFixtureDateTime(fixture.date, fixture.time);
 			return isBefore(now, matchDateTime);
 		})
 		.map((fixture) => ({
 			fixture,
-			matchDateTime: new TZDate(`${fixture.date}T${fixture.time}`, 'Australia/Melbourne')
+			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
 		}));
 
 	if (upcomingFixturesWithDate.length === 0) {
