@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Exo, Outfit } from 'next/font/google';
+import localFont from 'next/font/local';
 import { Suspense } from 'react';
 import clsx from 'clsx';
 import { GoogleTagManager, PageViewTracker } from '@/components/analytics';
@@ -8,16 +8,56 @@ import { getSiteSettings } from '@/lib/content';
 import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import './globals.css';
 
-const outfit = Outfit({
+const outfit = localFont({
 	variable: '--font-outfit',
-	weight: ['400', '500', '600', '700', '800'],
-	subsets: ['latin']
+	src: [
+		{
+			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-400-normal.woff2',
+			weight: '400'
+		},
+		{
+			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-500-normal.woff2',
+			weight: '500'
+		},
+		{
+			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-600-normal.woff2',
+			weight: '600'
+		},
+		{
+			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-700-normal.woff2',
+			weight: '700'
+		},
+		{
+			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-800-normal.woff2',
+			weight: '800'
+		}
+	]
 });
 
-const exo = Exo({
+const exo = localFont({
 	variable: '--font-exo',
-	weight: ['400', '500', '600', '700', '800'],
-	subsets: ['latin']
+	src: [
+		{
+			path: '../../node_modules/@fontsource/exo/files/exo-latin-400-normal.woff2',
+			weight: '400'
+		},
+		{
+			path: '../../node_modules/@fontsource/exo/files/exo-latin-500-normal.woff2',
+			weight: '500'
+		},
+		{
+			path: '../../node_modules/@fontsource/exo/files/exo-latin-600-normal.woff2',
+			weight: '600'
+		},
+		{
+			path: '../../node_modules/@fontsource/exo/files/exo-latin-700-normal.woff2',
+			weight: '700'
+		},
+		{
+			path: '../../node_modules/@fontsource/exo/files/exo-latin-800-normal.woff2',
+			weight: '800'
+		}
+	]
 });
 
 export const metadata: Metadata = {
