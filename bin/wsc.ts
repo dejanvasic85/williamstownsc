@@ -1,12 +1,12 @@
 #!/usr/bin/env tsx
 
 import { Command } from 'commander';
+import { getCrawlableTeams } from '@/lib/content/teams';
+import logger from '@/lib/logger';
 import { crawlClubs } from './commands/crawlClubs';
 import { crawlFixtures } from './commands/crawlFixtures';
 import { syncClubs } from './commands/syncClubs';
 import { syncFixtures } from './commands/syncFixtures';
-import { getCrawlableTeams } from '@/lib/content/teams';
-import logger from '@/lib/logger';
 
 const log = logger.child({ module: 'wsc' });
 
@@ -38,12 +38,7 @@ crawl
 	.option('-s, --season <year>', 'Season year', new Date().getFullYear().toString())
 	.option('-c, --competition <id>', 'Competition ID', 'FFV')
 	.action(
-		async (options: {
-			team?: string;
-			league?: string;
-			season?: string;
-			competition?: string;
-		}) => {
+		async (options: { team?: string; league?: string; season?: string; competition?: string }) => {
 			if (options.team && options.league) {
 				await crawlFixtures({
 					team: options.team,
