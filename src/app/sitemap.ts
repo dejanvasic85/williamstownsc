@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		);
 	}
 
-	const baseUrl = siteSettings.canonicalUrl;
+	const baseUrl = siteSettings.canonicalUrl.replace(/\/$/, '');
 
 	const staticRoutesValue: MetadataRoute.Sitemap = [
 		{
