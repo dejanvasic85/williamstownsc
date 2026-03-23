@@ -182,15 +182,13 @@ export const team = defineType({
 			name: 'fixturesUrl',
 			title: 'Fixtures URL',
 			type: 'url',
-			description: 'External link to team fixtures',
-			fieldset: 'fixturesCrawler'
+			description: 'External link to team fixtures'
 		}),
 		defineField({
 			name: 'tableUrl',
 			title: 'Table URL',
 			type: 'url',
-			description: 'External link to team table/ladder',
-			fieldset: 'fixturesCrawler'
+			description: 'External link to team table/ladder'
 		}),
 		defineField({
 			name: 'enableFixturesCrawler',
@@ -206,7 +204,14 @@ export const team = defineType({
 			type: 'string',
 			description: 'Competition name for crawler filter e.g. "VETO Sports State League Men\'s"',
 			fieldset: 'fixturesCrawler',
-			hidden: ({ parent }) => !parent?.enableFixturesCrawler
+			hidden: ({ parent }) => !parent?.enableFixturesCrawler,
+			validation: (Rule) =>
+				Rule.custom((value) => {
+					if (value !== undefined && value.trim().length === 0) {
+						return 'Competition name cannot be empty';
+					}
+					return true;
+				})
 		}),
 		defineField({
 			name: 'leagueName',

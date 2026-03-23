@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      NEXT_PUBLIC_SANITY_PROJECT_ID: 1ougwkz1
-      NEXT_PUBLIC_SANITY_DATASET: production
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET }}
     steps:
       - uses: actions/checkout@v6
       - uses: volta-cli/action@v4

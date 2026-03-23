@@ -72,13 +72,15 @@ crawl
 
 			for (const team of teams) {
 				try {
+					const competition = team.competitionName?.trim() || options.competition;
 					await crawlFixtures({
 						team: team.slug,
 						league: team.leagueName,
 						season: options.season,
-						competition: team.competitionName ?? options.competition
+						competition
 					});
 				} catch {
+					// crawlFixtures already logs errors; collect failures for summary
 					failures.push(team.slug);
 				}
 			}
@@ -120,6 +122,7 @@ sync
 			try {
 				await syncFixtures({ team: team.slug });
 			} catch {
+				// syncFixtures already logs errors; collect failures for summary
 				failures.push(team.slug);
 			}
 		}
