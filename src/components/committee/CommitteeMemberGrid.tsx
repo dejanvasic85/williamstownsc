@@ -1,4 +1,5 @@
 import { splitPersonName } from '@/lib/transformers/personTransformer';
+import { urlFor } from '@/sanity/lib/image';
 import type { CommitteeMember } from '@/types/committee';
 import { CommitteeMemberCard } from './CommitteeMemberCard';
 
@@ -10,7 +11,7 @@ export function CommitteeMemberGrid({ members }: CommitteeMemberGridProps) {
 	const sortedMembers = [...members].sort((a, b) => (a.order || 0) - (b.order || 0));
 
 	return (
-		<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+		<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 			{sortedMembers.map((member) => {
 				const { firstName, lastName } = splitPersonName(member.person.name);
 				return (
@@ -19,8 +20,12 @@ export function CommitteeMemberGrid({ members }: CommitteeMemberGridProps) {
 						firstName={firstName}
 						lastName={lastName}
 						title={member.title}
-						photoUrl={member.person.photo.asset.url}
-						photoAlt={member.person.photo.alt || member.person.name}
+						photoUrl={
+							member.person.photo?.asset
+								? urlFor(member.person.photo).width(256).height(256).fit('crop').url()
+								: '/img/player-alt.webp'
+						}
+						photoAlt={member.person.photo?.alt || member.person.name}
 					/>
 				);
 			})}
