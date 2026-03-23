@@ -204,10 +204,10 @@ export const team = defineType({
 			type: 'string',
 			description: 'Competition name for crawler filter e.g. "VETO Sports State League Men\'s"',
 			fieldset: 'fixturesCrawler',
-			hidden: ({ parent }) => !parent?.enableFixturesCrawler,
+			hidden: ({ document }) => !document?.enableFixturesCrawler,
 			validation: (Rule) =>
 				Rule.custom((value) => {
-					if (value !== undefined && value.trim().length === 0) {
+					if (typeof value === 'string' && value.trim().length === 0) {
 						return 'Competition name cannot be empty';
 					}
 					return true;
@@ -220,11 +220,14 @@ export const team = defineType({
 			description:
 				'League name for crawler filter e.g. "State League 2 Men\'s - North-West Reserves"',
 			fieldset: 'fixturesCrawler',
-			hidden: ({ parent }) => !parent?.enableFixturesCrawler,
+			hidden: ({ document }) => !document?.enableFixturesCrawler,
 			validation: (Rule) =>
 				Rule.custom((value, context) => {
-					const parent = context.parent as { enableFixturesCrawler?: boolean };
-					if (parent?.enableFixturesCrawler && !value) {
+					const doc = context.document as { enableFixturesCrawler?: boolean } | undefined;
+					if (
+						doc?.enableFixturesCrawler &&
+						(typeof value !== 'string' || value.trim().length === 0)
+					) {
 						return 'League name is required when fixtures crawler is enabled';
 					}
 					return true;

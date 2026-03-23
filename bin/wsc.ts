@@ -58,8 +58,8 @@ crawl
 
 			const teams = await getCrawlableTeams();
 			if (teams.length === 0) {
-				log.warn('no teams with enableFixturesCrawler found in Sanity');
-				return;
+				log.error('no teams with enableFixturesCrawler found in Sanity');
+				process.exit(1);
 			}
 
 			log.info({ count: teams.length }, 'crawling fixtures for teams from Sanity config');
@@ -106,8 +106,8 @@ sync
 
 		const teams = await getCrawlableTeams();
 		if (teams.length === 0) {
-			log.warn('no teams with enableFixturesCrawler found in Sanity');
-			return;
+			log.error('no teams with enableFixturesCrawler found in Sanity');
+			process.exit(1);
 		}
 
 		log.info({ count: teams.length }, 'syncing fixtures for teams from Sanity config');

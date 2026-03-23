@@ -63,7 +63,7 @@ export type CrawlableTeam = {
 };
 
 const crawlableTeamsQuery = groq`
-	*[_type == "team" && enableFixturesCrawler == true && defined(leagueName) && leagueName != ""] {
+	*[_type == "team" && enableFixturesCrawler == true && defined(slug.current) && slug.current != "" && defined(leagueName) && leagueName != ""] {
 		"slug": slug.current,
 		competitionName,
 		leagueName
