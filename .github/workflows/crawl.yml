@@ -14,6 +14,9 @@ jobs:
     name: Crawl clubs and fixtures
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET }}
     steps:
       - uses: actions/checkout@v6
       - uses: volta-cli/action@v4
@@ -26,17 +29,13 @@ jobs:
 
       - name: Crawl clubs
         run: npm run crawl:clubs:ci
-      - name: Crawl state-league-2-men-s-north-west fixtures
-        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West" -t "state-league-2-men-s-north-west"
-      - name: Crawl state-league-2-men-s-north-west-reserves fixtures
-        run: npm run crawl:fixtures:ci -- -c "VETO Sports State League Men's" -l "State League 2 Men's - North-West Reserves" -t "state-league-2-men-s-north-west-reserves"
+      - name: Crawl fixtures
+        run: npm run crawl:fixtures:ci
 
       - name: Sync clubs
         run: npm run sync:clubs
-      - name: Sync state-league-2-men-s-north-west fixtures
-        run: npm run sync:fixtures -- -t "state-league-2-men-s-north-west"
-      - name: Sync state-league-2-men-s-north-west-reserves fixtures
-        run: npm run sync:fixtures -- -t "state-league-2-men-s-north-west-reserves"
+      - name: Sync fixtures
+        run: npm run sync:fixtures
 
       - name: Format code
         run: npm run format
