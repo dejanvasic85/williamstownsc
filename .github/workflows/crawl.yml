@@ -7,7 +7,8 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 12 * * 1-5' # Weekdays 10pm AEST
+    - cron: '0 8-13 * * 6,0' # Weekends 6pm–11pm AEST (hourly)
 
 jobs:
   crawl:
