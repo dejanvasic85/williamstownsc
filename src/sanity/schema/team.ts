@@ -179,24 +179,28 @@ export const team = defineType({
 			description: 'Team roster including captains and vice captains'
 		}),
 		defineField({
-			name: 'fixturesUrl',
-			title: 'Fixtures URL',
-			type: 'url',
-			description: 'External link to team fixtures'
-		}),
-		defineField({
-			name: 'tableUrl',
-			title: 'Table URL',
-			type: 'url',
-			description: 'External link to team table/ladder'
-		}),
-		defineField({
 			name: 'enableFixturesCrawler',
 			title: 'Enable fixtures crawler',
 			type: 'boolean',
 			description: 'When enabled, this team will be included in the automated fixtures crawl',
 			initialValue: false,
 			fieldset: 'fixturesCrawler'
+		}),
+		defineField({
+			name: 'fixturesUrl',
+			title: 'Fixtures URL',
+			type: 'url',
+			description: 'External link to team fixtures',
+			fieldset: 'fixturesCrawler',
+			hidden: ({ document }) => !document?.enableFixturesCrawler
+		}),
+		defineField({
+			name: 'tableUrl',
+			title: 'Table URL',
+			type: 'url',
+			description: 'External link to team table/ladder',
+			fieldset: 'fixturesCrawler',
+			hidden: ({ document }) => !document?.enableFixturesCrawler
 		}),
 		defineField({
 			name: 'competitionName',
