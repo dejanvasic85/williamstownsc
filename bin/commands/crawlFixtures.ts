@@ -410,7 +410,7 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 			log.error({ err: error }, 'crawl failed: unknown error');
 		}
 
-		process.exit(1);
+		throw error;
 	} finally {
 		if (browser) {
 			await browser.close();
