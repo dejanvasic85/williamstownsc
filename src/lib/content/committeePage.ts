@@ -45,7 +45,9 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 						_ref,
 						url
 					},
-					alt
+					alt,
+					crop,
+					hotspot
 				}
 			},
 			title,
