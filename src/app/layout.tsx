@@ -1,64 +1,12 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import { Suspense } from 'react';
 import clsx from 'clsx';
 import { GoogleTagManager, PageViewTracker } from '@/components/analytics';
 import { getClientConfig, isLocal } from '@/lib/config';
 import { getSiteSettings } from '@/lib/content';
+import { exo, outfit } from '@/lib/fonts';
 import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import './globals.css';
-
-const outfit = localFont({
-	variable: '--font-outfit',
-	src: [
-		{
-			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-400-normal.woff2',
-			weight: '400'
-		},
-		{
-			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-500-normal.woff2',
-			weight: '500'
-		},
-		{
-			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-600-normal.woff2',
-			weight: '600'
-		},
-		{
-			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-700-normal.woff2',
-			weight: '700'
-		},
-		{
-			path: '../../node_modules/@fontsource/outfit/files/outfit-latin-800-normal.woff2',
-			weight: '800'
-		}
-	]
-});
-
-const exo = localFont({
-	variable: '--font-exo',
-	src: [
-		{
-			path: '../../node_modules/@fontsource/exo/files/exo-latin-400-normal.woff2',
-			weight: '400'
-		},
-		{
-			path: '../../node_modules/@fontsource/exo/files/exo-latin-500-normal.woff2',
-			weight: '500'
-		},
-		{
-			path: '../../node_modules/@fontsource/exo/files/exo-latin-600-normal.woff2',
-			weight: '600'
-		},
-		{
-			path: '../../node_modules/@fontsource/exo/files/exo-latin-700-normal.woff2',
-			weight: '700'
-		},
-		{
-			path: '../../node_modules/@fontsource/exo/files/exo-latin-800-normal.woff2',
-			weight: '800'
-		}
-	]
-});
 
 export const metadata: Metadata = {
 	title: 'Williamstown SC',
