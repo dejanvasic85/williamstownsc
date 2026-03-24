@@ -25,7 +25,7 @@ export function TeamListItem({ team }: TeamListItemProps) {
 							alt={team.photo.alt || team.name}
 							fill
 							className="object-cover"
-							sizes="(max-width: 1024px) 100vw, 300px"
+							sizes="(max-width: 1024px) 100vw, 500px"
 						/>
 					</figure>
 				) : (

@@ -33,7 +33,7 @@ export function NewsHero({ slug, title, excerpt, publishedAt, featuredImage }: N
 							alt={featuredImage.alt || title}
 							fill
 							className="object-cover transition-transform duration-500 group-hover:scale-105"
-							sizes="(max-width: 768px) 100vw, 40vw"
+							sizes="(max-width: 768px) 100vw, (max-width: 1280px) 40vw, 512px"
 							priority
 						/>
 					</figure>

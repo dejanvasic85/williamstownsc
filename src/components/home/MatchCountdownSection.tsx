@@ -49,6 +49,7 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 								alt={match.homeTeam.displayName}
 								fill
 								className="object-contain"
+								sizes="112px"
 							/>
 						</div>
 						<p className="text-center text-sm font-medium md:text-base">
@@ -65,6 +66,7 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 								alt={match.awayTeam.displayName}
 								fill
 								className="object-contain"
+								sizes="112px"
 							/>
 						</div>
 						<p className="text-center text-sm font-medium md:text-base">
