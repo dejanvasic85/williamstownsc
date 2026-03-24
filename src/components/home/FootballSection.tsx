@@ -85,6 +85,7 @@ export async function FootballSection() {
 												alt={team.photo.alt || team.name}
 												fill
 												className="object-cover transition-transform duration-300 group-hover:scale-105"
+												sizes="(max-width: 768px) 100vw, 50vw"
 											/>
 											<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-black/30" />
 											<div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
@@ -133,6 +134,7 @@ export async function FootballSection() {
 												alt={program.imageAlt || program.name || 'Program image'}
 												fill
 												className="object-cover transition-transform duration-300 group-hover:scale-105"
+												sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 											/>
 											<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 											<div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
