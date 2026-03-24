@@ -56,6 +56,24 @@ export const teamsQuery = groq`
   }
 `;
 
+export type CrawlableTeam = {
+	slug: string;
+	competitionName?: string;
+	leagueName: string;
+};
+
+const crawlableTeamsQuery = groq`
+	*[_type == "team" && enableFixturesCrawler == true && defined(slug.current) && slug.current != "" && defined(leagueName) && leagueName != ""] {
+		"slug": slug.current,
+		competitionName,
+		leagueName
+	}
+`;
+
+export async function getCrawlableTeams(): Promise<CrawlableTeam[]> {
+	return client.fetch<CrawlableTeam[]>(crawlableTeamsQuery);
+}
+
 export async function getAllTeamsForSitemap() {
 	const allTeamsQuery = groq`
 		*[_type == "team"] {

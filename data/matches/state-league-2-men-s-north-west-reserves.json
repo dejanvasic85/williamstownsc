@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -34,6 +34,19 @@
 			"round": 1,
 			"date": "2026-03-21",
 			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "3pmvQp0Ldv",
+			"address": "NewFlo Stadium Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-03-21",
+			"day": "Saturday",
 			"time": "13:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "AnmYzyArNz",
@@ -55,28 +68,6 @@
 			"homeScore": 4,
 			"awayScore": 2,
 			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-03-21",
-			"day": "Saturday",
-			"time": "12:30",
-			"homeTeamId": "Bjma0G87dR",
-			"awayTeamId": "PydoLxGmD9",
-			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-03-21",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "3pmvQp0Ldv",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
 		},
 		{
 			"round": 2,

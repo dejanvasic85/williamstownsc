@@ -71,6 +71,9 @@ export interface Team {
 	players?: Player[];
 	fixturesUrl?: string;
 	tableUrl?: string;
+	enableFixturesCrawler?: boolean;
+	competitionName?: string;
+	leagueName?: string;
 }
 
 export type TeamsByTab<T extends Team = Team> = {

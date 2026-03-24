@@ -225,6 +225,6 @@ export async function syncFixtures({ team }: SyncFixturesOptions) {
 			log.error({ err: error }, 'sync failed: unknown error');
 		}
 
-		process.exit(1);
+		throw error;
 	}
 }
