@@ -8,8 +8,7 @@ test.describe('Search', () => {
 	test('opens search modal with keyboard shortcut and navigates to result page', async ({
 		page
 	}) => {
-		// Wait for page to be fully loaded
-		await page.waitForLoadState('networkidle');
+		await page.waitForLoadState('domcontentloaded');
 
 		// Intercept search API to capture results
 		const searchResponsePromise = page.waitForResponse(
@@ -36,8 +35,7 @@ test.describe('Search', () => {
 	});
 
 	test('clears search input when modal is reopened after closing', async ({ page }) => {
-		// Wait for page to be fully loaded
-		await page.waitForLoadState('networkidle');
+		await page.waitForLoadState('domcontentloaded');
 
 		const searchButton = page.getByRole('button', { name: /search/i, exact: false }).first();
 		await searchButton.click();
