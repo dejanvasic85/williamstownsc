@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 132,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -67,6 +67,19 @@
 			"coordinates": "",
 			"homeScore": 4,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-03-21",
+			"day": "Saturday",
+			"time": "12:30",
+			"homeTeamId": "Bjma0G87dR",
+			"awayTeamId": "PydoLxGmD9",
+			"address": "Findon Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{
