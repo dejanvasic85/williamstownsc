@@ -26,7 +26,7 @@ export default defineConfig({
 		? undefined
 		: {
 				command: 'npm run dev',
-				url: 'http://localhost:3003',
+				url: 'http://localhost:3003/api/health',
 				reuseExistingServer: true,
 				timeout: 120 * 1000
 			}

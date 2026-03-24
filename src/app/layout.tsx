@@ -1,24 +1,12 @@
 import type { Metadata } from 'next';
-import { Exo, Outfit } from 'next/font/google';
 import { Suspense } from 'react';
 import clsx from 'clsx';
 import { GoogleTagManager, PageViewTracker } from '@/components/analytics';
 import { getClientConfig, isLocal } from '@/lib/config';
 import { getSiteSettings } from '@/lib/content';
+import { exo, outfit } from '@/lib/fonts';
 import { ConfigProvider } from '@/lib/providers/ConfigProvider';
 import './globals.css';
-
-const outfit = Outfit({
-	variable: '--font-outfit',
-	weight: ['400', '500', '600', '700', '800'],
-	subsets: ['latin']
-});
-
-const exo = Exo({
-	variable: '--font-exo',
-	weight: ['400', '500', '600', '700', '800'],
-	subsets: ['latin']
-});
 
 export const metadata: Metadata = {
 	title: 'Williamstown SC',
