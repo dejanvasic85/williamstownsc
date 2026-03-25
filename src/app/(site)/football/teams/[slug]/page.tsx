@@ -62,7 +62,7 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 									role={coach.title}
 									photoUrl={
 										coach.person.photo?.asset
-											? urlFor(coach.person.photo).width(256).height(256).fit('crop').url()
+											? urlFor(coach.person.photo).width(512).url()
 											: '/img/player-alt.webp'
 									}
 									photoAlt={coach.person.photo.alt || coach.person.name}
