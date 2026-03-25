@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import type { Coach } from '@/types/team';
 
 interface CoachingStaffAvatarsProps {
@@ -29,6 +30,7 @@ export function CoachingStaffAvatars({ coaches }: CoachingStaffAvatarsProps) {
 						<div className="avatar">
 							<div className="h-12 w-12 rounded-full">
 								<Image
+									loader={sanityImageLoader}
 									src={coach.person.photo.asset.url}
 									alt={coach.person.photo.alt || coach.person.name}
 									width={48}

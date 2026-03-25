@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import clsx from 'clsx';
 import { ExternalLink } from 'lucide-react';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 type SponsorCardVariant = 'featured' | 'standard' | 'compact';
 
@@ -23,12 +24,13 @@ type SponsorLogoProps = {
 function SponsorLogo({ logoUrl, logoAlt, name, size }: SponsorLogoProps) {
 	const dimensions =
 		size === 'large'
-			? { width: 400, height: 300, className: 'h-32 md:h-40' }
-			: { width: 250, height: 200, className: 'h-20 md:h-24' };
+			? { width: 320, height: 240, className: 'h-32 md:h-40' }
+			: { width: 160, height: 120, className: 'h-20 md:h-24' };
 
 	return (
 		<div className={clsx('flex w-full items-center justify-center', dimensions.className)}>
 			<Image
+				loader={sanityImageLoader}
 				src={logoUrl}
 				alt={logoAlt || `${name} logo`}
 				width={dimensions.width}

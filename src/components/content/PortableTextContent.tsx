@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { urlFor } from '@/sanity/lib/image';
 
 interface TextChild {
@@ -85,15 +86,17 @@ export function PortableTextContent({
 		// Handle images
 		if (block._type === 'image') {
 			const imageBlock = block as SanityImageBlock;
-			const imageUrl = urlFor(imageBlock).width(1200).url();
+			const imageUrl = urlFor(imageBlock).width(900).url();
 			return (
 				<figure key={imageBlock._key || index} className="my-8">
 					<Image
+						loader={sanityImageLoader}
 						src={imageUrl}
 						alt={imageBlock.alt || ''}
-						width={1200}
-						height={800}
+						width={900}
+						height={600}
 						className="h-auto w-full rounded-lg"
+						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 800px"
 					/>
 					{imageBlock.caption && (
 						<figcaption className="text-base-content/70 mt-2 text-center text-sm">

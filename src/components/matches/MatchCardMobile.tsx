@@ -32,6 +32,7 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
+						unoptimized
 					/>
 					<span className="text-base font-medium">{fixture.homeTeam.displayName}</span>
 					{hasScores && <span className="text-xl font-bold tabular-nums">{fixture.homeScore}</span>}
@@ -45,6 +46,7 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
+						unoptimized
 					/>
 					<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
 					{hasScores && <span className="text-xl font-bold tabular-nums">{fixture.awayScore}</span>}
