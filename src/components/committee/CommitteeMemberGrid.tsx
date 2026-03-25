@@ -22,7 +22,7 @@ export function CommitteeMemberGrid({ members }: CommitteeMemberGridProps) {
 						title={member.title}
 						photoUrl={
 							member.person.photo?.asset
-								? urlFor(member.person.photo).width(256).height(256).fit('crop').url()
+								? urlFor(member.person.photo).width(512).url()
 								: '/img/player-alt.webp'
 						}
 						photoAlt={member.person.photo?.alt || member.person.name}

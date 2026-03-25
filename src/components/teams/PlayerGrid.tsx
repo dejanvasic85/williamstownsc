@@ -62,7 +62,7 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 										position={player.position || ''}
 										photoUrl={
 											player.person?.photo?.asset
-												? urlFor(player.person.photo).width(256).height(256).fit('crop').url()
+												? urlFor(player.person.photo).width(512).url()
 												: '/img/player-alt.webp'
 										}
 										photoAlt={player.person?.photo?.alt || player.person.name}
