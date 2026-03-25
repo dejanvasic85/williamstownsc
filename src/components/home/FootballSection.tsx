@@ -7,6 +7,7 @@ import { TeamPhotoPlaceholder } from '@/components/teams/TeamPhotoPlaceholder';
 import { GradientBackground } from '@/components/ui';
 import { homepageTeamsQuery } from '@/lib/content/homepageTeams';
 import logger from '@/lib/logger';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { client } from '@/sanity/lib/client';
 import { getFeaturedPrograms } from '@/sanity/services/programService';
 
@@ -81,6 +82,7 @@ export async function FootballSection() {
 									{team.photo?.asset?.url ? (
 										<div className="relative h-64 w-full">
 											<Image
+												loader={sanityImageLoader}
 												src={team.photo.asset.url}
 												alt={team.photo.alt || team.name}
 												fill
@@ -130,6 +132,7 @@ export async function FootballSection() {
 									{program.imageUrl && (
 										<div className="relative h-64 w-full">
 											<Image
+												loader={sanityImageLoader}
 												src={program.imageUrl}
 												alt={program.imageAlt || program.name || 'Program image'}
 												fill

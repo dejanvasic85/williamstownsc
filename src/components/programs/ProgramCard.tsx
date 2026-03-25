@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { PortableTextBlock } from '@portabletext/types';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 interface ProgramCardProps {
 	name: string;
@@ -52,6 +53,7 @@ export function ProgramCard({
 			{imageUrl && (
 				<div className="relative h-48 w-full">
 					<Image
+						loader={sanityImageLoader}
 						src={imageUrl}
 						alt={name}
 						fill

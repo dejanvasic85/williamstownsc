@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDistanceToNow } from 'date-fns';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 interface NewsCardProps {
 	slug: string;
@@ -46,6 +47,7 @@ export function NewsCard({
 				)}
 				<figure className="relative aspect-video overflow-hidden">
 					<Image
+						loader={sanityImageLoader}
 						src={featuredImage.url}
 						alt={featuredImage.alt || title}
 						fill

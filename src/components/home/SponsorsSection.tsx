@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 interface Sponsor {
 	_id: string;
@@ -39,6 +40,7 @@ export function SponsorsSection({ sponsors }: SponsorsSectionProps) {
 						className="flex h-20 w-28 items-center justify-center md:h-24 md:w-32"
 					>
 						<Image
+							loader={sanityImageLoader}
 							src={sponsor.logo.url}
 							alt={sponsor.logo.alt || `${sponsor.name} logo`}
 							width={160}

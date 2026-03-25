@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { TransformedNewsArticle } from '@/lib/content';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 interface HeroCarouselProps {
 	articles: TransformedNewsArticle[];
@@ -133,6 +134,7 @@ export function HeroCarousel({
 					>
 						<Link href={`/news/${article.slug}`} className="relative h-full w-full">
 							<Image
+								loader={sanityImageLoader}
 								src={article.mobileImage?.url || article.featuredImage.url}
 								alt={article.mobileImage?.alt || article.featuredImage.alt || article.title}
 								fill
@@ -142,6 +144,7 @@ export function HeroCarousel({
 								sizes="100vw"
 							/>
 							<Image
+								loader={sanityImageLoader}
 								src={article.featuredImage.url}
 								alt={article.featuredImage.alt || article.title}
 								fill

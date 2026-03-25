@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import type { Team } from '@/types/team';
 import { CoachingStaffAvatars } from './CoachingStaffAvatars';
 import { TeamPhotoPlaceholder } from './TeamPhotoPlaceholder';
@@ -21,6 +22,7 @@ export function TeamListItem({ team }: TeamListItemProps) {
 				{team.photo?.asset?.url ? (
 					<figure className="relative aspect-video overflow-hidden rounded-xl">
 						<Image
+							loader={sanityImageLoader}
 							src={team.photo.asset.url}
 							alt={team.photo.alt || team.name}
 							fill

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDistanceToNow } from 'date-fns';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 interface NewsHeroProps {
 	slug: string;
@@ -29,6 +30,7 @@ export function NewsHero({ slug, title, excerpt, publishedAt, featuredImage }: N
 				<div className="grid gap-0 md:grid-cols-5">
 					<figure className="relative aspect-video overflow-hidden md:col-span-2 md:aspect-auto md:h-full">
 						<Image
+							loader={sanityImageLoader}
 							src={featuredImage.url}
 							alt={featuredImage.alt || title}
 							fill

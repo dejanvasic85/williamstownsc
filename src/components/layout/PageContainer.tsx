@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import clsx from 'clsx';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { getActiveAnnouncements } from '@/lib/announcements';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 type PageContainerProps = {
 	children?: ReactNode;
@@ -52,11 +53,13 @@ export async function PageContainer({
 				{featuredImage && (
 					<div className="mb-8">
 						<Image
+							loader={sanityImageLoader}
 							src={featuredImage.url}
 							alt={featuredImage.alt || heading || ''}
 							width={1200}
 							height={600}
 							className="h-auto w-full rounded-lg"
+							sizes="(max-width: 768px) 100vw, (max-width: 1280px) calc(100vw - 2rem), 1280px"
 							priority
 						/>
 					</div>

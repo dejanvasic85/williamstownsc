@@ -46,7 +46,7 @@ function transformSponsor(sponsor: SponsorWithExpandedType): TransformedSponsor 
 		_id: sponsor._id,
 		name: sponsor.name || '',
 		logo: {
-			url: sponsor.logo ? urlFor(sponsor.logo).width(800).height(600).fit('crop').url() : '',
+			url: sponsor.logo ? urlFor(sponsor.logo).width(400).height(300).fit('crop').url() : '',
 			alt: sponsor.logo?.alt
 		},
 		type: sponsor.type?.name ?? '',

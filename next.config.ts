@@ -4,6 +4,8 @@ import { withSentryConfig } from '@sentry/nextjs';
 const nextConfig: NextConfig = {
 	serverExternalPackages: ['pino', 'pino-pretty'],
 	images: {
+		deviceSizes: [640, 828, 1200],
+		imageSizes: [48, 128, 256],
 		qualities: [75, 90],
 		remotePatterns: [
 			{

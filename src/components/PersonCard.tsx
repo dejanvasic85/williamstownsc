@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import clsx from 'clsx';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 type PersonCardVariant = 'standard' | 'highlighted';
 
@@ -30,6 +31,7 @@ export function PersonCard({
 		>
 			<div className="relative aspect-square">
 				<Image
+					loader={sanityImageLoader}
 					src={photoUrl}
 					alt={photoAlt}
 					fill

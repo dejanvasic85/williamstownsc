@@ -5,6 +5,7 @@ import { PortableText } from 'next-sanity';
 import { PageContainer } from '@/components/layout';
 import { ShareButton } from '@/components/news/ShareButton';
 import { getArticleBySlug, getSiteSettings } from '@/lib/content';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { buildUrl, getRequestBaseUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -124,10 +125,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 				{article.featuredImage.url && (
 					<figure className="mb-8 overflow-hidden rounded-lg">
 						<Image
+							loader={sanityImageLoader}
 							src={article.featuredImage.url}
 							alt={article.featuredImage.alt || article.title}
-							width={1920}
-							height={1080}
+							width={1200}
+							height={675}
 							className="h-auto w-full object-cover"
 							priority
 						/>
@@ -146,6 +148,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 											<figure className="my-8">
 												{imageUrl && (
 													<Image
+														loader={sanityImageLoader}
 														src={imageUrl}
 														alt={value.alt || ''}
 														width={1200}
