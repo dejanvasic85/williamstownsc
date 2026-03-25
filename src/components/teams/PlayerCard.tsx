@@ -62,10 +62,10 @@ export function PlayerCard({
 						>
 							{firstName}
 						</div>
-						<div className="text-2xl leading-tight font-black uppercase">{lastName}</div>
+						<div className="truncate text-2xl leading-tight font-black uppercase">{lastName}</div>
 						<div className={clsx('text-sm', secondaryTextClass)}>{position}</div>
 					</div>
-					<div className="flex flex-col items-end gap-2">
+					<div className="flex shrink-0 flex-col items-end gap-2">
 						{isCaptain && (
 							<div className="bg-primary-content text-primary rounded px-3 py-1 text-xs font-bold tracking-wide uppercase">
 								Captain

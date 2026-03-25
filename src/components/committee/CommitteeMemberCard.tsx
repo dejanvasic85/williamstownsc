@@ -19,7 +19,7 @@ export function CommitteeMemberCard({
 		<PersonCard photoUrl={photoUrl} photoAlt={photoAlt}>
 			<div className="space-y-1 p-4">
 				<div className="text-sm font-medium uppercase opacity-80">{firstName}</div>
-				<div className="text-2xl leading-tight font-black uppercase">{lastName}</div>
+				<div className="truncate text-2xl leading-tight font-black uppercase">{lastName}</div>
 				<div className="text-primary text-sm font-bold tracking-wide uppercase">{title}</div>
 			</div>
 		</PersonCard>
