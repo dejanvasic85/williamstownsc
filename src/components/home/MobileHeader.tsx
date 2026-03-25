@@ -25,7 +25,6 @@ export function MobileHeader({ logoUrl, logoAlt, clubName, socialLinks }: Mobile
 						width={40}
 						height={40}
 						className="h-10 w-auto shrink-0"
-						unoptimized
 					/>
 				)}
 				{clubName && <h1 className="text-lg font-bold sm:text-xl">{clubName}</h1>}

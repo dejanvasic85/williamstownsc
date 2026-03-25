@@ -202,7 +202,6 @@ export function DesktopNavbar({
 									width={40}
 									height={40}
 									className="h-10 w-auto"
-									unoptimized
 								/>
 							)}
 

@@ -6,6 +6,8 @@ const baseURL = process.env.PLAYWRIGHT_TEST_BASE_URL || vercelURL || 'http://loc
 
 export default defineConfig({
 	testDir: './tests',
+	globalTimeout: 5 * 60 * 1000,
+	timeout: 30 * 1000,
 	fullyParallel: false,
 	forbidOnly: !!process.env.CI,
 	retries: process.env.CI ? 2 : 0,
