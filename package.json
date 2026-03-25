@@ -35,7 +35,7 @@
 		"@sanity/client": "7.20.0",
 		"@sanity/image-url": "2.0.3",
 		"@sanity/vision": "5.18.0",
-		"@sentry/nextjs": "10.45.0",
+		"@sentry/nextjs": "10.46.0",
 		"@tanstack/react-query": "5.95.2",
 		"clsx": "2.1.1",
 		"daisyui": "5.5.19",
