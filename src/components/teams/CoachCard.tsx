@@ -15,7 +15,7 @@ export function CoachCard({ firstName, lastName, role, photoUrl, photoAlt }: Coa
 				<div className="text-sm font-medium text-(--color-base-content-secondary) uppercase">
 					{firstName}
 				</div>
-				<div className="text-2xl leading-tight font-black uppercase">{lastName}</div>
+				<div className="truncate text-2xl leading-tight font-black uppercase">{lastName}</div>
 				<div className="text-sm text-(--color-base-content-secondary)">{role}</div>
 			</div>
 		</PersonCard>

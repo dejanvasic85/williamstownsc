@@ -25,7 +25,7 @@ export function PersonCard({
 	return (
 		<div
 			className={clsx(
-				'relative mx-auto w-full max-w-64 overflow-hidden rounded-xl transition-shadow hover:shadow-xl',
+				'relative mx-auto w-full overflow-hidden rounded-xl transition-shadow hover:shadow-xl sm:max-w-72',
 				variantStyles[variant]
 			)}
 		>
@@ -36,7 +36,7 @@ export function PersonCard({
 					alt={photoAlt}
 					fill
 					className="object-cover object-top"
-					sizes="256px"
+					sizes="(max-width: 639px) calc(100vw - 2rem), 288px"
 				/>
 			</div>
 
