@@ -25,7 +25,7 @@ export function PersonCard({
 	return (
 		<div
 			className={clsx(
-				'relative mx-auto w-full sm:max-w-72 overflow-hidden rounded-xl transition-shadow hover:shadow-xl',
+				'relative mx-auto w-full overflow-hidden rounded-xl transition-shadow hover:shadow-xl sm:max-w-72',
 				variantStyles[variant]
 			)}
 		>
