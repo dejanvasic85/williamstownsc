@@ -165,11 +165,11 @@ export function HeroCarousel({
 									<h2
 										className={clsx(
 											'mb-3 font-bold text-white drop-shadow-lg group-hover:underline md:leading-tight',
-											article.title.length > 80 && 'text-xl sm:text-2xl md:text-3xl',
+											article.title.length > 80 && 'text-lg sm:text-xl md:text-2xl',
 											article.title.length <= 80 &&
 												article.title.length > 50 &&
-												'text-2xl sm:text-3xl md:text-4xl',
-											article.title.length <= 50 && 'text-2xl sm:text-3xl md:text-5xl'
+												'text-xl sm:text-2xl md:text-3xl',
+											article.title.length <= 50 && 'text-xl sm:text-2xl md:text-4xl'
 										)}
 									>
 										{article.title}
