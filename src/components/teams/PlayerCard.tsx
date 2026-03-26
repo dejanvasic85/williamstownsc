@@ -51,7 +51,7 @@ export function PlayerCard({
 		>
 			<div className="space-y-3 p-4">
 				<div className="flex items-center justify-between gap-4">
-					<div className="flex-1 space-y-1">
+					<div className="min-w-0 flex-1 space-y-1">
 						<div
 							className={clsx(
 								'text-sm font-medium uppercase',

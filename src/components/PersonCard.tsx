@@ -36,7 +36,7 @@ export function PersonCard({
 					alt={photoAlt}
 					fill
 					className="object-cover object-top"
-					sizes="(max-width: 639px) 100vw, 288px"
+					sizes="(max-width: 639px) calc(100vw - 2rem), 288px"
 				/>
 			</div>
 
