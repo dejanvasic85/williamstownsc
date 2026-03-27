@@ -9,7 +9,7 @@ type MatchCardMobileProps = {
 };
 
 export function MatchCardMobile({ fixture, formattedDate, formattedTime }: MatchCardMobileProps) {
-	const hasScores = fixture.homeScore != null && fixture.awayScore != null;
+	const hasScores = fixture.status === 'complete' && fixture.homeScore != null && fixture.awayScore != null;
 
 	return (
 		<div className="flex flex-col gap-3">

@@ -9,7 +9,7 @@ type MatchCardDesktopProps = {
 };
 
 export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: MatchCardDesktopProps) {
-	const hasScores = fixture.homeScore != null && fixture.awayScore != null;
+	const hasScores = fixture.status === 'complete' && fixture.homeScore != null && fixture.awayScore != null;
 
 	return (
 		<div className="flex flex-col gap-2">
