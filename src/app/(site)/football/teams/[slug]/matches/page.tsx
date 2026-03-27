@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PageContainer } from '@/components/layout';
+import { FixtureAutoScroll } from '@/components/matches/FixtureAutoScroll';
 import { MatchList } from '@/components/matches/MatchList';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
+import type { EnrichedFixture } from '@/types/matches';
+
+function findCurrentRound(fixtures: EnrichedFixture[]): number {
+	const today = new Date().toISOString().split('T')[0];
+	const sorted = [...fixtures].sort((a, b) => a.date.localeCompare(b.date));
+	const upcoming = sorted.find((f) => f.date >= today);
+	if (upcoming) return upcoming.round;
+	return sorted[sorted.length - 1]?.round ?? 1;
+}
 
 type TeamMatchesPageProps = {
 	params: Promise<{ slug: string }>;
@@ -51,11 +61,14 @@ export default async function TeamMatchesPage({ params }: TeamMatchesPageProps) 
 		notFound();
 	}
 
+	const currentRound = findCurrentRound(fixtureData.fixtures);
+
 	return (
 		<PageContainer
 			heading={`${team.name} Fixtures`}
 			intro={`${fixtureData.competition} ${fixtureData.season}`}
 		>
+			<FixtureAutoScroll currentRound={currentRound} />
 			<MatchList fixtures={fixtureData.fixtures} />
 		</PageContainer>
 	);
