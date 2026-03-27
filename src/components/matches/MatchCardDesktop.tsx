@@ -8,9 +8,25 @@ type MatchCardDesktopProps = {
 	formattedTime: string;
 };
 
-export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: MatchCardDesktopProps) {
-	const hasScores = fixture.homeScore != null && fixture.awayScore != null;
+function renderScore(fixture: EnrichedFixture) {
+	switch (fixture.status) {
+		case 'complete':
+			if (fixture.homeScore == null || fixture.awayScore == null) {
+				return <span className="text-base-content/50">-</span>;
+			}
+			return (
+				<span className="text-lg font-bold tabular-nums">
+					{fixture.homeScore} - {fixture.awayScore}
+				</span>
+			);
+		case 'washout reschedule':
+			return <span className="badge badge-neutral">Postponed</span>;
+		default:
+			return <span className="text-base-content/50">-</span>;
+	}
+}
 
+export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: MatchCardDesktopProps) {
 	return (
 		<div className="flex flex-col gap-2">
 			{/* Teams Grid */}
@@ -45,13 +61,7 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 						height={40}
 						className="h-10 w-10 object-contain"
 					/>
-					{hasScores ? (
-						<span className="text-lg font-bold tabular-nums">
-							{fixture.homeScore} - {fixture.awayScore}
-						</span>
-					) : (
-						<span className="text-base-content/50">-</span>
-					)}
+					{renderScore(fixture)}
 					<Image
 						src={fixture.awayTeam.logoUrl}
 						alt={fixture.awayTeam.displayName}

@@ -9,7 +9,8 @@ type MatchCardMobileProps = {
 };
 
 export function MatchCardMobile({ fixture, formattedDate, formattedTime }: MatchCardMobileProps) {
-	const hasScores = fixture.homeScore != null && fixture.awayScore != null;
+	const isComplete = fixture.status === 'complete';
+	const isWashout = fixture.status === 'washout reschedule';
 
 	return (
 		<div className="flex flex-col gap-3">
@@ -34,7 +35,9 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 						className="h-10 w-10 object-contain"
 					/>
 					<span className="text-base font-medium">{fixture.homeTeam.displayName}</span>
-					{hasScores && <span className="text-xl font-bold tabular-nums">{fixture.homeScore}</span>}
+					{isComplete && fixture.homeScore != null && (
+						<span className="text-xl font-bold tabular-nums">{fixture.homeScore}</span>
+					)}
 				</div>
 
 				{/* Away Team */}
@@ -47,9 +50,13 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 						className="h-10 w-10 object-contain"
 					/>
 					<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
-					{hasScores && <span className="text-xl font-bold tabular-nums">{fixture.awayScore}</span>}
+					{isComplete && fixture.awayScore != null && (
+						<span className="text-xl font-bold tabular-nums">{fixture.awayScore}</span>
+					)}
 				</div>
 			</div>
+
+			{isWashout && <span className="badge badge-neutral">Postponed</span>}
 
 			{/* Venue */}
 			<div className="text-base-content/60 grid grid-cols-[auto_1fr] items-start gap-1.5 text-sm">
