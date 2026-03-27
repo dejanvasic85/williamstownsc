@@ -90,8 +90,10 @@
 			"homeTeamId": "PydoLxGmD9",
 			"awayTeamId": "6lNbpDpwdx",
 			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "washout reschedule"
 		},
 		{
 			"round": 2,
@@ -101,8 +103,10 @@
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "AnmYzyArNz",
 			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 2,
