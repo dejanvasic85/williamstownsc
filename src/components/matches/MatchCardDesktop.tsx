@@ -11,6 +11,9 @@ type MatchCardDesktopProps = {
 function renderScore(fixture: EnrichedFixture) {
 	switch (fixture.status) {
 		case 'complete':
+			if (fixture.homeScore == null || fixture.awayScore == null) {
+				return <span className="text-base-content/50">-</span>;
+			}
 			return (
 				<span className="text-lg font-bold tabular-nums">
 					{fixture.homeScore} - {fixture.awayScore}

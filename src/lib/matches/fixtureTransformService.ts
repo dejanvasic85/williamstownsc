@@ -32,8 +32,6 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 	const homeTeamId = findClubExternalId(attributes.home_team_name, attributes.home_logo);
 	const awayTeamId = findClubExternalId(attributes.away_team_name, attributes.away_logo);
 
-	const isComplete = attributes.status === 'complete';
-
 	const fixture: Fixture = {
 		round: roundNumber,
 		date: dateStr,
@@ -43,10 +41,10 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 		awayTeamId,
 		address,
 		coordinates,
-		homeScore: isComplete ? (attributes.home_score ?? undefined) : undefined,
-		awayScore: isComplete ? (attributes.away_score ?? undefined) : undefined,
-		homeScoreHalf: isComplete ? (attributes.home_score_half ?? undefined) : undefined,
-		awayScoreHalf: isComplete ? (attributes.away_score_half ?? undefined) : undefined,
+		homeScore: attributes.home_score ?? undefined,
+		awayScore: attributes.away_score ?? undefined,
+		homeScoreHalf: attributes.home_score_half ?? undefined,
+		awayScoreHalf: attributes.away_score_half ?? undefined,
 		status: attributes.status || undefined
 	};
 
