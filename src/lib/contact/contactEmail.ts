@@ -91,6 +91,8 @@ function createAdditionalDetails(data: ContactFormData) {
 	}
 }
 
+const bccEmail = 'dejanvasic24@gmail.com';
+
 async function sendNotificationEmail(data: ContactFormData, recipientEmail: string, from: string) {
 	const subject = `New ${typeLabels[data.contactType]} - ${data.name}`;
 	const additionalDetailsHtml = createAdditionalDetails(data);
@@ -126,7 +128,8 @@ async function sendNotificationEmail(data: ContactFormData, recipientEmail: stri
 		from,
 		to: recipientEmail,
 		subject,
-		bodyHtml
+		bodyHtml,
+		bcc: bccEmail
 	});
 }
 
