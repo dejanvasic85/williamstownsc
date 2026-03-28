@@ -91,6 +91,8 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
 			"status": "washout reschedule"
 		},
 		{
@@ -110,12 +112,27 @@
 			"round": 2,
 			"date": "2026-03-28",
 			"day": "Saturday",
+			"time": "17:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "bam1nQWrNw",
+			"address": "NewFlo Stadium Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-03-28",
+			"day": "Saturday",
 			"time": "15:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "Bjma0G87dR",
 			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -125,8 +142,10 @@
 			"homeTeamId": "7MNGvxzpmA",
 			"awayTeamId": "3pmvQp0Ldv",
 			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -136,19 +155,10 @@
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "3vmZv8JJmq",
 			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-03-28",
-			"day": "Saturday",
-			"time": "17:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "bam1nQWrNw",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 3,
