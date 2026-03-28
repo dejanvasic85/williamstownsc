@@ -132,13 +132,15 @@ export const newsArticle = defineType({
 		select: {
 			title: 'title',
 			media: 'featuredImage',
-			publishedAt: 'publishedAt'
+			publishedAt: 'publishedAt',
+			featured: 'featured'
 		},
-		prepare({ title, media, publishedAt }) {
+		prepare({ title, media, publishedAt, featured }) {
+			const date = publishedAt ? new Date(publishedAt).toLocaleDateString() : 'No date';
 			return {
 				title,
 				media,
-				subtitle: publishedAt ? new Date(publishedAt).toLocaleDateString() : 'No date'
+				subtitle: featured ? `★ Featured · ${date}` : date
 			};
 		}
 	}
