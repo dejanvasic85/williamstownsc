@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ExternalLink } from 'lucide-react';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { PageContainer } from '@/components/layout';
 import { CoachCard } from '@/components/teams/CoachCard';
 import { PlayerGrid } from '@/components/teams/PlayerGrid';
+import { TeamMatchesPreview } from '@/components/teams/TeamMatchesPreview';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
+import { getNextMatch, getPreviousMatch, hasFixtures } from '@/lib/matches/matchService';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -37,16 +41,65 @@ export async function generateMetadata({ params }: TeamDetailPageProps): Promise
 
 export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 	const { slug } = await params;
-	const team = await getTeamBySlug(slug);
+
+	const [team, localFixtures] = await Promise.all([getTeamBySlug(slug), hasFixtures(slug)]);
 
 	if (!team) {
 		notFound();
 	}
 
+	const [nextMatch, previousMatch] = localFixtures
+		? await Promise.all([getNextMatch(slug), getPreviousMatch(slug)])
+		: [null, null];
+
 	return (
 		<PageContainer heading={team.name}>
 			{team.description && <PortableTextContent blocks={team.description} />}
-			{team.players && team.players.length > 0 && <PlayerGrid players={team.players} />}
+
+			{(localFixtures || team.fixturesUrl || team.tableUrl) && (
+				<div className="mt-6 flex flex-wrap gap-3">
+					{localFixtures ? (
+						<Link
+							href={`/football/teams/${slug}/matches`}
+							className="btn btn-primary btn-outline"
+							aria-label={`View ${team.name} fixtures`}
+						>
+							Fixtures
+						</Link>
+					) : (
+						team.fixturesUrl && (
+							<a
+								href={team.fixturesUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="btn btn-primary btn-outline"
+								aria-label={`View ${team.name} fixtures`}
+							>
+								Fixtures
+								<ExternalLink className="h-4 w-4" aria-hidden="true" />
+							</a>
+						)
+					)}
+
+					{team.tableUrl && (
+						<a
+							href={team.tableUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="btn btn-primary btn-outline"
+							aria-label={`View ${team.name} table`}
+						>
+							Table
+							<ExternalLink className="h-4 w-4" aria-hidden="true" />
+						</a>
+					)}
+				</div>
+			)}
+
+			{localFixtures && (
+				<TeamMatchesPreview nextMatch={nextMatch} previousMatch={previousMatch} teamSlug={slug} />
+			)}
+
 			{team.coachingStaff && team.coachingStaff.length > 0 && (
 				<div className="mt-10 space-y-8">
 					<h2 className="text-3xl font-black uppercase">Coaching Staff</h2>
@@ -72,6 +125,8 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 					</div>
 				</div>
 			)}
+
+			{team.players && team.players.length > 0 && <PlayerGrid players={team.players} />}
 		</PageContainer>
 	);
 }
