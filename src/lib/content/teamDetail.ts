@@ -21,6 +21,7 @@ export const teamDetailQuery = groq`
     gender,
     ageGroup,
     fixturesUrl,
+    tableUrl,
     description,
     coachingStaff[] {
       person-> {

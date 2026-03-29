@@ -6,6 +6,7 @@ import {
 	getClubByExternalId as getClubByExternalIdFromService,
 	getClubs as getClubsFromService
 } from '@/lib/clubService';
+import { getClubConfig } from '@/lib/config';
 import { fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
@@ -17,11 +18,6 @@ function parseFixtureDateTime(date: string, time: string): TZDate {
 	const [hour, minute] = time.split(':').map(Number);
 	return new TZDate(year, month - 1, day, hour, minute, melbourneTimezone);
 }
-
-const teamExternalIds: Record<string, string> = {
-	'state-league-2-men-s-north-west': '6lNbpDpwdx',
-	'state-league-2-men-s-north-west-reserves': '6lNbpDpwdx'
-} as const;
 
 export function getClubs(): Club[] {
 	return getClubsFromService();
@@ -100,17 +96,13 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 		return null;
 	}
 
-	const clubExternalId = teamExternalIds[teamSlug];
-	if (!clubExternalId) {
-		return null;
-	}
-
+	const { wscClubExternalId } = getClubConfig();
 	const now = new Date();
 
 	const upcomingFixturesWithDate = fixtureData.fixtures
 		.filter((fixture) => {
 			const isClubMatch =
-				fixture.homeTeamId === clubExternalId || fixture.awayTeamId === clubExternalId;
+				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
 
 			if (!isClubMatch) {
 				return false;
@@ -132,5 +124,47 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 
 	const nextFixture = upcomingFixturesWithDate[0].fixture;
 	const enriched = enrichFixtures([nextFixture]);
+	return enriched[0];
+}
+
+export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
+	const fixtureData = await loadFixture(teamSlug);
+
+	if (!fixtureData) {
+		return null;
+	}
+
+	const { wscClubExternalId } = getClubConfig();
+	const now = new Date();
+
+	const completedFixturesWithDate = fixtureData.fixtures
+		.filter((fixture) => {
+			if (fixture.status !== 'complete') {
+				return false;
+			}
+
+			const isClubMatch =
+				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
+
+			if (!isClubMatch) {
+				return false;
+			}
+
+			const matchDateTime = parseFixtureDateTime(fixture.date, fixture.time);
+			return isBefore(matchDateTime, now);
+		})
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
+		}));
+
+	if (completedFixturesWithDate.length === 0) {
+		return null;
+	}
+
+	completedFixturesWithDate.sort((a, b) => b.matchDateTime.getTime() - a.matchDateTime.getTime());
+
+	const previousFixture = completedFixturesWithDate[0].fixture;
+	const enriched = enrichFixtures([previousFixture]);
 	return enriched[0];
 }
