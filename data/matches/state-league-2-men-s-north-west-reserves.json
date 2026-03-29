@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 130,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -99,25 +99,14 @@
 			"round": 2,
 			"date": "2026-03-28",
 			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "3vmZv8JJmq",
-			"address": "Myers Reserve Pitch 1",
+			"time": "15:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "bam1nQWrNw",
+			"address": "NewFlo Stadium Pitch 2",
 			"coordinates": "",
-			"homeScore": 0,
-			"awayScore": 2,
+			"homeScore": 2,
+			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-03-28",
-			"day": "Saturday",
-			"time": "12:45",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "Bjma0G87dR",
-			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
 		},
 		{
 			"round": 2,
@@ -127,19 +116,23 @@
 			"homeTeamId": "7MNGvxzpmA",
 			"awayTeamId": "3pmvQp0Ldv",
 			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 2,
 			"date": "2026-03-28",
 			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "bam1nQWrNw",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
+			"time": "13:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "3vmZv8JJmq",
+			"address": "Myers Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 3,
