@@ -42,6 +42,7 @@ type ContactFormData = {
 	organization?: string;
 	sponsorshipTier?: string;
 	programId?: string;
+	programName?: string;
 	subject?: string;
 };
 
@@ -64,12 +65,22 @@ export function ContactForm({
 		register,
 		handleSubmit,
 		reset,
+		watch,
+		setValue,
 		formState: { errors }
 	} = useForm<ContactFormData>({
 		defaultValues: {
-			programId: defaultProgramId
+			programId: defaultProgramId,
+			programName: programs.find((p) => p._id === defaultProgramId)?.name
 		}
 	});
+
+	const selectedProgramId = watch('programId');
+
+	useEffect(() => {
+		const selected = programs.find((p) => p._id === selectedProgramId);
+		setValue('programName', selected?.name ?? '');
+	}, [selectedProgramId, programs, setValue]);
 
 	useEffect(() => {
 		if (state?.success) {
