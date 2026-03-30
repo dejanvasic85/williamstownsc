@@ -1,5 +1,5 @@
 ---
-name: sanity-cms
+name: wsc-sanity-cms
 description: A headless CMS that provides a flexible content model and powerful APIs. Use for structured content management with type-safe queries for Williamstown SC.
 ---
 

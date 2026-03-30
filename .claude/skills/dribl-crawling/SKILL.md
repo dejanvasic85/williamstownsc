@@ -9,7 +9,7 @@ description: Document patterns for crawling dribl.com fixtures website using pla
 
 Extract clubs and fixtures data from https://fv.dribl.com/fixtures/ (SPA with Cloudflare protection) using real browser automation with playwright-core. Two-phase workflow: extraction (raw API data) → transformation (validated, merged data).
 
-**Purpose**: Crawl dribl.com to maintain up-to-date clubs and fixtures data for Williamstown SC website.
+**Purpose**: Crawl dribl.com to maintain up-to-date clubs and fixtures.
 
 ## Architecture
 
