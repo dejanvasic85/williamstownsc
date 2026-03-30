@@ -85,7 +85,7 @@ function createAdditionalDetails(data: ContactFormData) {
 				${createTableRow('Organization', data.organization)}
 				${createTableRow('Sponsorship Tier', data.sponsorshipTier)}`;
 		case 'program':
-			return createTableRow('Program', data.programId);
+			return createTableRow('Program', data.programName);
 		case 'general':
 			return createTableRow('Subject', data.subject);
 	}
