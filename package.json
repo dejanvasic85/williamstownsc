@@ -27,7 +27,7 @@
 		"test:e2e:report": "playwright show-report"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ses": "3.1020.0",
+		"@aws-sdk/client-ses": "3.1021.0",
 		"@fontsource/exo": "5.2.8",
 		"@fontsource/outfit": "5.2.8",
 		"@next/third-parties": "16.2.1",
