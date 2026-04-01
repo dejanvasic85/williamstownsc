@@ -1,9 +1,8 @@
 'use client';
 
-import { useTransition } from 'react';
+import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { LucideX } from 'lucide-react';
-import { dismissBanner } from './actions';
 
 interface BannerMessage {
 	message: string;
@@ -11,23 +10,41 @@ interface BannerMessage {
 	id: string;
 }
 
-interface BannerProps {
+type BannerProps = {
 	messages: BannerMessage[];
+};
+
+const dismissedAnnouncementsKey = 'dismissed_announcements';
+
+function getDismissedFromStorage(): string[] {
+	try {
+		const raw = localStorage.getItem(dismissedAnnouncementsKey);
+		if (!raw) return [];
+		const parsed = JSON.parse(raw);
+		return Array.isArray(parsed) ? parsed : [];
+	} catch {
+		return [];
+	}
 }
 
 export const Banner = ({ messages }: BannerProps) => {
-	const [isPending, startTransition] = useTransition();
+	const [dismissedIds, setDismissedIds] = useState<string[]>([]);
+
+	useEffect(() => {
+		setDismissedIds(getDismissedFromStorage());
+	}, []);
 
 	const handleDismiss = (bannerId: string) => {
-		startTransition(async () => {
-			await dismissBanner(bannerId);
-		});
+		const updated = Array.from(new Set([...dismissedIds, bannerId]));
+		setDismissedIds(updated);
+		localStorage.setItem(dismissedAnnouncementsKey, JSON.stringify(updated));
 	};
 
-	if (!messages.length) return null;
+	const activeMessages = messages.filter((m) => !dismissedIds.includes(m.id));
 
-	// Display one message at a time
-	const [message] = messages;
+	if (!activeMessages.length) return null;
+
+	const [message] = activeMessages;
 
 	return (
 		<div className="bg-base-100 fixed top-0 right-0 left-0 z-50 flex h-(--banner-height)">
@@ -49,7 +66,6 @@ export const Banner = ({ messages }: BannerProps) => {
 					<button
 						className="btn-ghost btn btn-sm"
 						onClick={() => handleDismiss(message.id)}
-						disabled={isPending}
 						aria-label="Dismiss banner"
 					>
 						<LucideX size={16} />

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 import clsx from 'clsx';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
-import { getActiveAnnouncements } from '@/lib/announcements';
+import { getAnnouncements } from '@/lib/content';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 type PageContainerProps = {
@@ -23,7 +23,8 @@ export async function PageContainer({
 	featuredImage,
 	layout = 'full-width'
 }: PageContainerProps) {
-	const { hasAnnouncements } = await getActiveAnnouncements();
+	const announcements = await getAnnouncements();
+	const hasAnnouncements = announcements.length > 0;
 
 	return (
 		<div
