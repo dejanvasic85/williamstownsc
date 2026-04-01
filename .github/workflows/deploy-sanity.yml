@@ -19,7 +19,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - uses: volta-cli/action@v4
+      - uses: volta-cli/action@v5
 
       - name: Install dependencies
         run: npm ci
