@@ -4,8 +4,7 @@ import clsx from 'clsx';
 import { Banner, Footer, Navbar } from '@/components/layout';
 import { SearchModal, SearchModalProvider } from '@/components/search';
 import { formatAddress } from '@/lib/address';
-import { getActiveAnnouncements } from '@/lib/announcements';
-import { getNavigationVisibility, getSiteSettings } from '@/lib/content';
+import { getAnnouncements, getNavigationVisibility, getSiteSettings } from '@/lib/content';
 import { navItems } from '@/lib/navigation';
 import { buildFooterNavLinks, filterNavItems } from '@/lib/navigationTransformer';
 import { QueryProvider } from '@/lib/providers/QueryProvider';
@@ -48,11 +47,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: PropsWithChildren) {
-	const [siteSettings, { activeAnnouncements, hasAnnouncements }, visibility] = await Promise.all([
+	const [siteSettings, announcements, visibility] = await Promise.all([
 		getSiteSettings(),
-		getActiveAnnouncements(),
+		getAnnouncements(),
 		getNavigationVisibility()
 	]);
+
+	const hasAnnouncements = announcements.length > 0;
 
 	const filteredNavItems = filterNavItems(navItems, visibility);
 	const footerNavLinks = buildFooterNavLinks(visibility);
@@ -92,7 +93,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 					Skip to main content
 				</a>
 				<Banner
-					messages={activeAnnouncements.map(({ _id, message, type }) => ({
+					messages={announcements.map(({ _id, message, type }) => ({
 						id: _id,
 						message,
 						type

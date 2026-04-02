@@ -1,9 +1,8 @@
 'use client';
 
-import { useTransition } from 'react';
+import { useSyncExternalStore } from 'react';
 import clsx from 'clsx';
 import { LucideX } from 'lucide-react';
-import { dismissBanner } from './actions';
 
 interface BannerMessage {
 	message: string;
@@ -11,23 +10,65 @@ interface BannerMessage {
 	id: string;
 }
 
-interface BannerProps {
+type BannerProps = {
 	messages: BannerMessage[];
+};
+
+const dismissedAnnouncementsKey = 'dismissed_announcements';
+const dismissedAnnouncementsEvent = 'wsc:announcement-dismissed';
+
+const emptyDismissed: string[] = [];
+
+let cachedRaw: string | null = null;
+let cachedParsed: string[] = emptyDismissed;
+
+function parseDismissed(raw: string | null): string[] {
+	if (!raw) return emptyDismissed;
+	try {
+		const parsed = JSON.parse(raw);
+		return Array.isArray(parsed) ? parsed : emptyDismissed;
+	} catch {
+		return emptyDismissed;
+	}
+}
+
+function subscribeToDismissed(callback: () => void): () => void {
+	window.addEventListener(dismissedAnnouncementsEvent, callback);
+	return () => window.removeEventListener(dismissedAnnouncementsEvent, callback);
+}
+
+function getDismissedSnapshot(): string[] {
+	const raw = localStorage.getItem(dismissedAnnouncementsKey);
+	if (raw !== cachedRaw) {
+		cachedRaw = raw;
+		cachedParsed = parseDismissed(raw);
+	}
+	return cachedParsed;
+}
+
+function getDismissedServerSnapshot(): string[] {
+	return emptyDismissed;
 }
 
 export const Banner = ({ messages }: BannerProps) => {
-	const [isPending, startTransition] = useTransition();
+	const dismissedIds = useSyncExternalStore(
+		subscribeToDismissed,
+		getDismissedSnapshot,
+		getDismissedServerSnapshot
+	);
 
 	const handleDismiss = (bannerId: string) => {
-		startTransition(async () => {
-			await dismissBanner(bannerId);
-		});
+		const current = parseDismissed(localStorage.getItem(dismissedAnnouncementsKey));
+		const updated = Array.from(new Set([...current, bannerId]));
+		localStorage.setItem(dismissedAnnouncementsKey, JSON.stringify(updated));
+		window.dispatchEvent(new Event(dismissedAnnouncementsEvent));
 	};
 
-	if (!messages.length) return null;
+	const activeMessages = messages.filter((m) => !dismissedIds.includes(m.id));
 
-	// Display one message at a time
-	const [message] = messages;
+	if (!activeMessages.length) return null;
+
+	const [message] = activeMessages;
 
 	return (
 		<div className="bg-base-100 fixed top-0 right-0 left-0 z-50 flex h-(--banner-height)">
@@ -49,7 +90,6 @@ export const Banner = ({ messages }: BannerProps) => {
 					<button
 						className="btn-ghost btn btn-sm"
 						onClick={() => handleDismiss(message.id)}
-						disabled={isPending}
 						aria-label="Dismiss banner"
 					>
 						<LucideX size={16} />
