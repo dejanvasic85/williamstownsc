@@ -17,13 +17,18 @@ type BannerProps = {
 const dismissedAnnouncementsKey = 'dismissed_announcements';
 const dismissedAnnouncementsEvent = 'wsc:announcement-dismissed';
 
+const emptyDismissed: string[] = [];
+
+let cachedRaw: string | null = null;
+let cachedParsed: string[] = emptyDismissed;
+
 function parseDismissed(raw: string | null): string[] {
-	if (!raw) return [];
+	if (!raw) return emptyDismissed;
 	try {
 		const parsed = JSON.parse(raw);
-		return Array.isArray(parsed) ? parsed : [];
+		return Array.isArray(parsed) ? parsed : emptyDismissed;
 	} catch {
-		return [];
+		return emptyDismissed;
 	}
 }
 
@@ -33,11 +38,16 @@ function subscribeToDismissed(callback: () => void): () => void {
 }
 
 function getDismissedSnapshot(): string[] {
-	return parseDismissed(localStorage.getItem(dismissedAnnouncementsKey));
+	const raw = localStorage.getItem(dismissedAnnouncementsKey);
+	if (raw !== cachedRaw) {
+		cachedRaw = raw;
+		cachedParsed = parseDismissed(raw);
+	}
+	return cachedParsed;
 }
 
 function getDismissedServerSnapshot(): string[] {
-	return [];
+	return emptyDismissed;
 }
 
 export const Banner = ({ messages }: BannerProps) => {
