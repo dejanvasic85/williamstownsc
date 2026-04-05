@@ -77,12 +77,18 @@
 - For larger change sets also ensure Next.js can build: `npm run build`
 - E2E testing: `npm run test:e2e`
 - Pre-commit hooks auto-run: Husky runs lint-staged (prettier + eslint)
+- **MUST**: At the end of every completed change, push commits to the remote branch and ensure there is an open pull request for that branch
+- If no pull request exists yet, create one immediately after pushing
+- **MUST**: Do not merge any pull request until explicit user approval is given
+- **MUST**: Wait for pull request review suggestions/comments, apply requested fixes, push updates, and repeat until all review comments are addressed
+- Resolve addressed review comments in the GitHub pull request conversation
 
 # Git & PRs
 
 - Branch naming: feat/_, fix/_, claude/\* (claude branches auto-generated)
 - Main branch: main
 - Pre-commit: Husky runs lint-staged (prettier + eslint)
+- If current branch is `main`, first pull latest `main` changes, then create and switch to a new branch before making changes
 
 # Dependency Management
 
