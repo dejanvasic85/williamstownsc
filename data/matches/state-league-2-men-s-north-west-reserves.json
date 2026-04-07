@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 130,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -133,6 +133,17 @@
 			"homeScore": 0,
 			"awayScore": 2,
 			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-06-05",
+			"day": "Friday",
+			"time": "18:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "-37.759892,144.819492",
+			"status": "washout reschedule"
 		},
 		{
 			"round": 3,
