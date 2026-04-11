@@ -176,6 +176,19 @@
 			"date": "2026-04-11",
 			"day": "Saturday",
 			"time": "13:00",
+			"homeTeamId": "bam1nQWrNw",
+			"awayTeamId": "7MNGvxzpmA",
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "13:00",
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "LBdDx0GQdb",
 			"address": "Strathnaver Reserve Pitch 1",
@@ -206,17 +219,6 @@
 			"awayTeamId": "PydoLxGmD9",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "bam1nQWrNw",
-			"awayTeamId": "7MNGvxzpmA",
-			"address": "Partridge Street Reserve Pitch 2",
-			"coordinates": "-37.663361,145.023019",
 			"status": "pending"
 		},
 		{
