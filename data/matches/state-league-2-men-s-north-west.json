@@ -204,12 +204,12 @@
 			"date": "2026-04-11",
 			"day": "Saturday",
 			"time": "15:00",
-			"homeTeamId": "AnmYzyArNz",
-			"awayTeamId": "LBdDx0GQdb",
-			"address": "Strathnaver Reserve Pitch 1",
+			"homeTeamId": "Bjma0G87dR",
+			"awayTeamId": "3vmZv8JJmq",
+			"address": "Findon Reserve Pitch 1",
 			"coordinates": "",
-			"homeScore": 4,
-			"awayScore": 0,
+			"homeScore": 3,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{
@@ -217,11 +217,13 @@
 			"date": "2026-04-11",
 			"day": "Saturday",
 			"time": "15:00",
-			"homeTeamId": "Bjma0G87dR",
-			"awayTeamId": "3vmZv8JJmq",
-			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"homeTeamId": "AnmYzyArNz",
+			"awayTeamId": "LBdDx0GQdb",
+			"address": "Strathnaver Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 3,
