@@ -168,8 +168,10 @@
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "PydoLxGmD9",
 			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -179,8 +181,10 @@
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "7MNGvappmA",
 			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -190,8 +194,23 @@
 			"homeTeamId": "bam1nQWrNw",
 			"awayTeamId": "7MNGvxzpmA",
 			"address": "Partridge Street Reserve Pitch 2",
-			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "AnmYzyArNz",
+			"awayTeamId": "LBdDx0GQdb",
+			"address": "Strathnaver Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -202,17 +221,6 @@
 			"awayTeamId": "3vmZv8JJmq",
 			"address": "Findon Reserve Pitch 1",
 			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "AnmYzyArNz",
-			"awayTeamId": "LBdDx0GQdb",
-			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
 			"status": "pending"
 		},
 		{
