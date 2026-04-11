@@ -164,6 +164,19 @@
 			"round": 3,
 			"date": "2026-04-11",
 			"day": "Saturday",
+			"time": "18:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "6lNbpDlAdx",
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "PydoLxGmD9",
@@ -224,17 +237,6 @@
 			"homeScore": 4,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "18:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpDlAdx",
-			"address": "JT Gray Reserve Pitch 1",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 4,
