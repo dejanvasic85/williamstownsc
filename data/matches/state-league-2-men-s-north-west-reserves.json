@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -163,6 +163,19 @@
 			"date": "2026-04-11",
 			"day": "Saturday",
 			"time": "13:00",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "PydoLxGmD9",
+			"address": "Waste Sense Park Main Pitch",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "13:00",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "7MNGvappmA",
 			"address": "Epping Stadium Main Pitch",
@@ -209,28 +222,6 @@
 			"homeScore": 3,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "PydoLxGmD9",
-			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "16:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpDlAdx",
-			"address": "JT Gray Reserve Pitch 1",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 4,
