@@ -19,11 +19,6 @@ function formatDateLabel(dateString: string) {
 	return parsedDate ? format(parsedDate, 'EEE, d MMM') : dateString;
 }
 
-function formatDateHeadline(dateString: string) {
-	const parsedDate = parseKeyDate(dateString);
-	return parsedDate ? format(parsedDate, 'EEEE, MMMM d, yyyy') : dateString;
-}
-
 function formatMonthLabel(date: Date) {
 	return format(date, 'MMMM yyyy');
 }
@@ -97,8 +92,7 @@ export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 					const isNextUpcoming = nextUpcomingIndex >= 0 && index === nextUpcomingIndex;
 					const statusLabels = [
 						dayDelta === 0 ? 'Today' : null,
-						isNextUpcoming && dayDelta !== 0 ? 'Next up' : null,
-						isClosest && dayDelta !== 0 ? 'Closest date' : null
+						isNextUpcoming && dayDelta !== 0 ? 'Next up' : null
 					].filter(Boolean) as string[];
 
 					return (
@@ -129,7 +123,7 @@ export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 								/>
 
 								<div className="flex flex-wrap items-center gap-3">
-									<p className="text-secondary text-xs font-semibold tracking-[0.24em] uppercase">
+									<p className="text-primary text-xs font-semibold tracking-[0.24em] uppercase">
 										{formatDateLabel(item.date)}
 									</p>
 									{statusLabels.map((label) => (
@@ -159,27 +153,11 @@ export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 									)}
 
 									<div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-										<div className="max-w-2xl">
+										<div className="max-w-3xl">
 											<h2 className="text-base-content text-xl font-bold text-balance md:text-2xl">
 												{item.title}
 											</h2>
-											<p className="text-base-content/75 mt-2 text-sm leading-6 md:text-base">
-												{formatDateHeadline(item.date)}
-											</p>
 										</div>
-										{parsedDate && (
-											<div
-												className={clsx(
-													'bg-secondary/10 text-base-content rounded-2xl px-4 py-3 text-left md:min-w-[6.5rem] md:text-right',
-													(isClosest || isNextUpcoming) && 'bg-secondary/15'
-												)}
-											>
-												<p className="text-secondary text-xs font-semibold tracking-[0.18em] uppercase">
-													{format(parsedDate, 'MMM')}
-												</p>
-												<p className="text-3xl leading-none font-bold">{format(parsedDate, 'd')}</p>
-											</div>
-										)}
 									</div>
 
 									{item.description && (
