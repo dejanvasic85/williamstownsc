@@ -58,11 +58,11 @@ export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
   			...,
   			alt
   		},
-  		keyDates[] | order(date desc) {
-  			title,
-  			date,
-  			description
-  		},
+	  	keyDates[] | order(date asc) {
+	  		title,
+	  		date,
+	  		description
+	  	},
   		seo {
   			...,
   			ogImage {
