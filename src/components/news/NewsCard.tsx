@@ -60,6 +60,13 @@ export function NewsCard({
 					/>
 				</figure>
 				<div className={`card-body relative ${isLarge ? 'p-7' : 'p-6'}`}>
+					{featured && (
+						<div className="mb-3">
+							<span className="bg-secondary text-secondary-content inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase">
+								Featured
+							</span>
+						</div>
+					)}
 					<h3
 						className={`card-title line-clamp-2 font-bold text-balance ${
 							isLarge ? 'text-2xl leading-tight' : 'text-xl leading-snug'
