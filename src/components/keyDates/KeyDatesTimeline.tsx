@@ -74,14 +74,20 @@ export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 		}
 
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const frame = window.requestAnimationFrame(() => {
-			target.scrollIntoView({
-				behavior: prefersReducedMotion ? 'auto' : 'smooth',
-				block: 'center'
+		let frame2: number;
+		const frame1 = window.requestAnimationFrame(() => {
+			frame2 = window.requestAnimationFrame(() => {
+				target.scrollIntoView({
+					behavior: prefersReducedMotion ? 'auto' : 'smooth',
+					block: 'start'
+				});
 			});
 		});
 
-		return () => window.cancelAnimationFrame(frame);
+		return () => {
+			window.cancelAnimationFrame(frame1);
+			window.cancelAnimationFrame(frame2);
+		};
 	}, [closestIndex]);
 
 	return (
