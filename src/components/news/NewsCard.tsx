@@ -39,8 +39,8 @@ export function NewsCard({
 	return (
 		<Link href={`/news/${slug}`} className="group block h-full">
 			<div
-				className={`card bg-surface border-base-200/70 relative h-full overflow-hidden border shadow-md transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl ${
-					featured ? 'border-l-secondary border-l-4' : ''
+				className={`card bg-surface relative h-full overflow-hidden border shadow-md transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl ${
+					featured ? 'border-secondary/70 shadow-secondary/10' : 'border-base-200/70'
 				}`}
 			>
 				<figure
