@@ -23,9 +23,8 @@ function formatMonthLabel(date: Date) {
 	return format(date, 'MMMM yyyy');
 }
 
-function getClosestIndex(items: KeyDateItem[]) {
-	const today = new Date();
-	let closestIndex = 0;
+function getClosestIndex(items: KeyDateItem[], today: Date) {
+	let closestIndex = -1;
 	let bestDistance = Number.POSITIVE_INFINITY;
 	let bestDelta = Number.POSITIVE_INFINITY;
 
@@ -49,18 +48,26 @@ function getClosestIndex(items: KeyDateItem[]) {
 		}
 	}
 
+	if (bestDistance === Number.POSITIVE_INFINITY) {
+		return -1;
+	}
+
 	return closestIndex;
 }
 
 export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 	const today = new Date();
-	const closestIndex = getClosestIndex(items);
+	const closestIndex = getClosestIndex(items, today);
 	const nextUpcomingIndex = items.findIndex((item) => {
 		const parsedDate = parseKeyDate(item.date);
 		return parsedDate ? differenceInCalendarDays(parsedDate, today) >= 0 : false;
 	});
 
 	useEffect(() => {
+		if (closestIndex < 0) {
+			return;
+		}
+
 		const target = document.getElementById(`key-date-${closestIndex}`);
 		if (!target) {
 			return;
@@ -88,12 +95,12 @@ export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 						!!parsedDate &&
 						(!previousDate || format(parsedDate, 'yyyy-MM') !== format(previousDate, 'yyyy-MM'));
 					const dayDelta = parsedDate ? differenceInCalendarDays(parsedDate, today) : null;
-					const isClosest = index === closestIndex;
+					const isClosest = closestIndex >= 0 && index === closestIndex;
 					const isNextUpcoming = nextUpcomingIndex >= 0 && index === nextUpcomingIndex;
 					const statusLabels = [
 						dayDelta === 0 ? 'Today' : null,
 						isNextUpcoming && dayDelta !== 0 ? 'Next up' : null
-					].filter(Boolean) as string[];
+					].filter((label): label is string => Boolean(label));
 
 					return (
 						<div key={`${item.title}-${item.date}-${index}`}>

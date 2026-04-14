@@ -51,26 +51,26 @@ export async function getNextKeyDate(): Promise<KeyDateItem | null> {
 export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
 	const data = await client.fetch<KeyDatesPageData>(
 		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0]{
-  		heading,
-  		introduction,
-  		body,
-  		featuredImage {
-  			...,
-  			alt
-  		},
-	  	keyDates[] | order(date asc) {
-	  		title,
-	  		date,
-	  		description
-	  	},
-  		seo {
-  			...,
-  			ogImage {
-  				...,
-  				alt
-  			}
-  		}
-  	}`,
+			heading,
+			introduction,
+			body,
+			featuredImage {
+				...,
+				alt
+			},
+			keyDates[] | order(date asc) {
+				title,
+				date,
+				description
+			},
+			seo {
+				...,
+				ogImage {
+					...,
+					alt
+				}
+			}
+		}`,
 		{},
 		{ next: { tags: ['page', 'keyDatesPage'] } }
 	);
