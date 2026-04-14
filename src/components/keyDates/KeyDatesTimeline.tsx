@@ -74,7 +74,7 @@ export function KeyDatesTimeline({ items }: KeyDatesTimelineProps) {
 		}
 
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		let frame2: number;
+		let frame2 = 0;
 		const frame1 = window.requestAnimationFrame(() => {
 			frame2 = window.requestAnimationFrame(() => {
 				target.scrollIntoView({
