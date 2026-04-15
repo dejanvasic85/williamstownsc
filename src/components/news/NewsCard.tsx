@@ -13,6 +13,7 @@ interface NewsCardProps {
 		alt?: string;
 	};
 	featured?: boolean;
+	size?: 'default' | 'large';
 }
 
 export function NewsCard({
@@ -21,7 +22,8 @@ export function NewsCard({
 	excerpt,
 	publishedAt,
 	featuredImage,
-	featured = false
+	featured = false,
+	size = 'default'
 }: NewsCardProps) {
 	const publishedDate = new Date(publishedAt);
 	const relativeDate = formatDistanceToNow(publishedDate, { addSuffix: true });
@@ -32,38 +34,48 @@ export function NewsCard({
 		day: 'numeric'
 	});
 
+	const isLarge = size === 'large';
+
 	return (
-		<Link href={`/news/${slug}`} className="group">
+		<Link href={`/news/${slug}`} className="group block h-full">
 			<div
-				className={`card h-full overflow-hidden shadow-lg transition-all hover:shadow-xl ${
-					featured ? 'relative bg-linear-to-br from-blue-900 to-slate-950' : 'bg-surface'
+				className={`card bg-surface relative h-full overflow-hidden border shadow-md transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl ${
+					featured ? 'border-secondary/70 shadow-secondary/10' : 'border-base-200/70'
 				}`}
 			>
-				{featured && (
-					<>
-						<div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-blue-800/20 blur-3xl" />
-						<div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-blue-950/30 blur-3xl" />
-					</>
-				)}
-				<figure className="relative aspect-video overflow-hidden">
+				<figure
+					className={`relative overflow-hidden ${isLarge ? 'aspect-[16/10]' : 'aspect-video'}`}
+				>
 					<Image
 						loader={sanityImageLoader}
 						src={featuredImage.url}
 						alt={featuredImage.alt || title}
 						fill
-						className="object-cover transition-transform duration-300 group-hover:scale-105"
-						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+						className="object-cover transition-transform duration-500 group-hover:scale-105"
+						sizes={
+							isLarge
+								? '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw'
+								: '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+						}
 					/>
 				</figure>
-				<div className={`card-body relative p-6 ${featured ? 'text-white' : ''}`}>
+				<div className={`card-body relative ${isLarge ? 'p-7' : 'p-6'}`}>
 					{featured && (
-						<div className="bg-secondary mb-2 inline-block w-fit rounded px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
-							Featured
+						<div className="mb-3">
+							<span className="bg-secondary text-secondary-content inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase">
+								Featured
+							</span>
 						</div>
 					)}
-					<h3 className="card-title line-clamp-2 text-xl font-bold">{title}</h3>
+					<h3
+						className={`card-title line-clamp-2 font-bold text-balance ${
+							isLarge ? 'text-2xl leading-tight' : 'text-xl leading-snug'
+						}`}
+					>
+						{title}
+					</h3>
 					<p
-						className={`line-clamp-3 ${featured ? 'text-white/90' : 'text-(--color-base-content-secondary)'}`}
+						className={`text-(--color-base-content-secondary) ${isLarge ? 'line-clamp-4' : 'line-clamp-3'}`}
 					>
 						{excerpt}
 					</p>
@@ -71,7 +83,7 @@ export function NewsCard({
 						<time
 							dateTime={publishedDate.toISOString()}
 							title={fullDate}
-							className={`text-sm font-bold ${featured ? 'text-white/80' : 'text-(--color-base-content-secondary)'}`}
+							className="text-sm font-semibold text-(--color-base-content-secondary)"
 						>
 							{relativeDate}
 						</time>
