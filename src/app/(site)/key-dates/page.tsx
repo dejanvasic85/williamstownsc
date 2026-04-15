@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Calendar } from 'lucide-react';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
-import { KeyDateCard } from '@/components/keyDates/KeyDateCard';
+import { KeyDatesTimeline } from '@/components/keyDates/KeyDatesTimeline';
 import { PageContainer } from '@/components/layout';
 import { getKeyDatesPageData } from '@/lib/content';
 import { getEditablePageMetadata } from '@/lib/content/page';
@@ -23,13 +23,7 @@ export default async function KeyDatesPage() {
 			{pageData?.body && pageData.body.length > 0 && <PortableTextContent blocks={pageData.body} />}
 
 			{pageData?.keyDates && pageData.keyDates.length > 0 && (
-				<div className="mt-10">
-					<div className="grid gap-4">
-						{pageData.keyDates.map((item, index) => (
-							<KeyDateCard key={index} item={item} />
-						))}
-					</div>
-				</div>
+				<KeyDatesTimeline items={pageData.keyDates} />
 			)}
 
 			{(!pageData?.keyDates || pageData.keyDates.length === 0) && (
