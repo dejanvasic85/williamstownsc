@@ -67,11 +67,11 @@
 - Event handlers should be named with the `handle` prefix (e.g. `handleClick`)
 - Try to limit components and modules up to 200 lines and split into different components to manage complexity
 
-## Workflow
+# Workflow
 
 All changes MUST follow the following workflow
 
-- After finishing code changes and **before every push**, run all three checks in order:
+- After finishing code changes and **before every push**, run all checks in order:
   1. `npm run format`
   2. `npm run lint`
   3. `npm run type:check`
