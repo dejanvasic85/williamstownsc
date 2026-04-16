@@ -59,7 +59,7 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 						alt={team.photo.alt || team.name}
 						width={1200}
 						height={600}
-						className="h-auto w-full rounded-xl"
+						className="h-48 w-full rounded-xl object-cover md:h-96"
 						sizes="(max-width: 768px) 100vw, (max-width: 1280px) calc(100vw - 2rem), 1280px"
 						priority
 					/>

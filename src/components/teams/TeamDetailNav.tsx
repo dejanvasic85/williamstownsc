@@ -33,7 +33,7 @@ export function TeamDetailNav({
 
 	const tabs: Tab[] = [
 		{
-			label: 'Profile',
+			label: 'Team details',
 			href: basePath,
 			isExternal: false,
 			isVisible: true,
@@ -59,7 +59,7 @@ export function TeamDetailNav({
 
 	return (
 		<nav
-			className="bg-base-100/95 sticky top-0 z-40 -mx-4 px-4 pt-2 pb-0 backdrop-blur-sm lg:top-[var(--navbar-height-desktop)]"
+			className="bg-base-100/95 sticky top-0 z-40 -mx-4 p-4 backdrop-blur-sm lg:top-[var(--navbar-height-desktop)]"
 			aria-label="Team navigation"
 		>
 			<div role="tablist" className="tabs tabs-border">
