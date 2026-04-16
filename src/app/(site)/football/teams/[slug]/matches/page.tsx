@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PageContainer } from '@/components/layout';
 import { FixtureAutoScroll } from '@/components/matches/FixtureAutoScroll';
 import { MatchList } from '@/components/matches/MatchList';
 import { getSiteSettings } from '@/lib/content';
@@ -64,12 +63,12 @@ export default async function TeamMatchesPage({ params }: TeamMatchesPageProps) 
 	const currentRound = findCurrentRound(fixtureData.fixtures);
 
 	return (
-		<PageContainer
-			heading={`${team.name} Fixtures`}
-			intro={`${fixtureData.competition} ${fixtureData.season}`}
-		>
+		<>
+			<p className="text-base-content/60 mt-4 mb-6 text-lg">
+				{fixtureData.competition} {fixtureData.season}
+			</p>
 			<FixtureAutoScroll currentRound={currentRound} />
 			<MatchList fixtures={fixtureData.fixtures} />
-		</PageContainer>
+		</>
 	);
 }

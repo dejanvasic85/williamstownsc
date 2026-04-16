@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { TZDate } from '@date-fns/tz';
 import { format } from 'date-fns';
 import { MapPin } from 'lucide-react';
@@ -8,7 +7,6 @@ import type { EnrichedFixture } from '@/types/matches';
 type TeamMatchesPreviewProps = {
 	nextMatch: EnrichedFixture | null;
 	previousMatch: EnrichedFixture | null;
-	teamSlug: string;
 };
 
 type MatchPreviewCardProps = {
@@ -81,26 +79,14 @@ function MatchPreviewCard({ title, fixture, showScore = false }: MatchPreviewCar
 	);
 }
 
-export function TeamMatchesPreview({
-	nextMatch,
-	previousMatch,
-	teamSlug
-}: TeamMatchesPreviewProps) {
+export function TeamMatchesPreview({ nextMatch, previousMatch }: TeamMatchesPreviewProps) {
 	if (!nextMatch && !previousMatch) {
 		return null;
 	}
 
 	return (
 		<div className="mt-8 space-y-4">
-			<div className="flex items-center justify-between">
-				<h2 className="text-2xl font-black uppercase">Matches</h2>
-				<Link
-					href={`/football/teams/${teamSlug}/matches`}
-					className="btn btn-primary btn-outline btn-sm"
-				>
-					View All Fixtures
-				</Link>
-			</div>
+			<h2 className="text-2xl font-black uppercase">Matches</h2>
 
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 				{previousMatch && (

@@ -10,7 +10,7 @@ export function FixtureAutoScroll({ currentRound }: FixtureAutoScrollProps) {
 	useEffect(() => {
 		document
 			.getElementById(`round-${currentRound}`)
-			?.scrollIntoView({ behavior: 'instant', block: 'start' });
+			?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}, [currentRound]);
 
 	return null;

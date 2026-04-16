@@ -1,21 +1,20 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ExternalLink } from 'lucide-react';
-import { PortableTextContent } from '@/components/content/PortableTextContent';
-import { PageContainer } from '@/components/layout';
 import { CoachCard } from '@/components/teams/CoachCard';
 import { PlayerGrid } from '@/components/teams/PlayerGrid';
 import { TeamMatchesPreview } from '@/components/teams/TeamMatchesPreview';
+import { TeamPhotoPlaceholder } from '@/components/teams/TeamPhotoPlaceholder';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getTeamMatches } from '@/lib/matches/matchService';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
-interface TeamDetailPageProps {
+type TeamDetailPageProps = {
 	params: Promise<{ slug: string }>;
-}
+};
 
 export async function generateMetadata({ params }: TeamDetailPageProps): Promise<Metadata> {
 	const { slug } = await params;
@@ -51,52 +50,25 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 	const { hasFixtures: localFixtures, nextMatch, previousMatch } = teamMatches;
 
 	return (
-		<PageContainer heading={team.name}>
-			{team.description && <PortableTextContent blocks={team.description} />}
+		<>
+			<div className="mt-6">
+				{team.photo?.asset?.url ? (
+					<Image
+						loader={sanityImageLoader}
+						src={team.photo.asset.url}
+						alt={team.photo.alt || team.name}
+						width={1200}
+						height={600}
+						className="h-auto w-full rounded-xl"
+						sizes="(max-width: 768px) 100vw, (max-width: 1280px) calc(100vw - 2rem), 1280px"
+						priority
+					/>
+				) : (
+					<TeamPhotoPlaceholder name={team.name} />
+				)}
+			</div>
 
-			{(localFixtures || team.fixturesUrl || team.tableUrl) && (
-				<div className="mt-6 flex flex-wrap gap-3">
-					{localFixtures ? (
-						<Link
-							href={`/football/teams/${slug}/matches`}
-							className="btn btn-primary btn-outline"
-							aria-label={`View ${team.name} fixtures`}
-						>
-							Fixtures
-						</Link>
-					) : (
-						team.fixturesUrl && (
-							<a
-								href={team.fixturesUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="btn btn-primary btn-outline"
-								aria-label={`View ${team.name} fixtures`}
-							>
-								Fixtures
-								<ExternalLink className="h-4 w-4" aria-hidden="true" />
-							</a>
-						)
-					)}
-
-					{team.tableUrl && (
-						<a
-							href={team.tableUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="btn btn-primary btn-outline"
-							aria-label={`View ${team.name} table`}
-						>
-							Table
-							<ExternalLink className="h-4 w-4" aria-hidden="true" />
-						</a>
-					)}
-				</div>
-			)}
-
-			{localFixtures && (
-				<TeamMatchesPreview nextMatch={nextMatch} previousMatch={previousMatch} teamSlug={slug} />
-			)}
+			{localFixtures && <TeamMatchesPreview nextMatch={nextMatch} previousMatch={previousMatch} />}
 
 			{team.coachingStaff && team.coachingStaff.length > 0 && (
 				<div className="mt-10 space-y-8">
@@ -125,6 +97,6 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 			)}
 
 			{team.players && team.players.length > 0 && <PlayerGrid players={team.players} />}
-		</PageContainer>
+		</>
 	);
 }
