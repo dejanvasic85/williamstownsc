@@ -38,7 +38,9 @@ export default async function TeamDetailLayout({ children, params }: TeamDetailL
 			<div className="container mx-auto px-4">
 				<div className="mb-6">
 					<div className="border-secondary mb-4 flex items-center gap-3 border-b-4 pb-4">
-						<h1 className="text-2xl font-bold lg:text-3xl">{team.name}</h1>
+						<h1 className="text-2xl font-bold lg:text-3xl" data-team-heading>
+							{team.name}
+						</h1>
 					</div>
 					{team.description && (
 						<div className="text-lg">
@@ -49,6 +51,7 @@ export default async function TeamDetailLayout({ children, params }: TeamDetailL
 
 				<TeamDetailNav
 					teamSlug={slug}
+					teamName={team.name}
 					hasFixtures={teamMatches.hasFixtures}
 					fixturesUrl={team.fixturesUrl}
 					tableUrl={team.tableUrl}
