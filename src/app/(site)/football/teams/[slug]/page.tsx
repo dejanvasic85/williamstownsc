@@ -9,7 +9,7 @@ import { PlayerGrid } from '@/components/teams/PlayerGrid';
 import { TeamMatchesPreview } from '@/components/teams/TeamMatchesPreview';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
-import { getNextMatch, getPreviousMatch, hasFixtures } from '@/lib/matches/matchService';
+import { getTeamMatches } from '@/lib/matches/matchService';
 import { splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
@@ -42,15 +42,13 @@ export async function generateMetadata({ params }: TeamDetailPageProps): Promise
 export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 	const { slug } = await params;
 
-	const [team, localFixtures] = await Promise.all([getTeamBySlug(slug), hasFixtures(slug)]);
+	const [team, teamMatches] = await Promise.all([getTeamBySlug(slug), getTeamMatches(slug)]);
 
 	if (!team) {
 		notFound();
 	}
 
-	const [nextMatch, previousMatch] = localFixtures
-		? await Promise.all([getNextMatch(slug), getPreviousMatch(slug)])
-		: [null, null];
+	const { hasFixtures: localFixtures, nextMatch, previousMatch } = teamMatches;
 
 	return (
 		<PageContainer heading={team.name}>

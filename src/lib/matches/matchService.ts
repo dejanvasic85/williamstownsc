@@ -89,81 +89,81 @@ export async function hasFixtures(slug: string): Promise<boolean> {
 	return Boolean(fixtureData?.fixtures.length);
 }
 
-export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
-	const fixtureData = await loadFixture(teamSlug);
-
-	if (!fixtureData) {
-		return null;
-	}
-
-	const { wscClubExternalId } = getClubConfig();
+function resolveNextMatch(fixtures: Fixture[], wscClubExternalId: string): EnrichedFixture | null {
 	const now = new Date();
 
-	const upcomingFixturesWithDate = fixtureData.fixtures
-		.filter((fixture) => {
-			const isClubMatch =
-				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
-
-			if (!isClubMatch) {
-				return false;
-			}
-
-			const matchDateTime = parseFixtureDateTime(fixture.date, fixture.time);
-			return isBefore(now, matchDateTime);
-		})
-		.map((fixture) => ({
-			fixture,
-			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
-		}));
-
-	if (upcomingFixturesWithDate.length === 0) {
-		return null;
-	}
-
-	upcomingFixturesWithDate.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
-
-	const nextFixture = upcomingFixturesWithDate[0].fixture;
-	const enriched = enrichFixtures([nextFixture]);
-	return enriched[0];
-}
-
-export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
-	const fixtureData = await loadFixture(teamSlug);
-
-	if (!fixtureData) {
-		return null;
-	}
-
-	const { wscClubExternalId } = getClubConfig();
-	const now = new Date();
-
-	const completedFixturesWithDate = fixtureData.fixtures
+	const upcoming = fixtures
 		.map((fixture) => ({
 			fixture,
 			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
 		}))
 		.filter(({ fixture, matchDateTime }) => {
-			if (fixture.status !== 'complete') {
-				return false;
-			}
-
 			const isClubMatch =
 				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
-
-			if (!isClubMatch) {
-				return false;
-			}
-
-			return isBefore(matchDateTime, now);
+			return isClubMatch && isBefore(now, matchDateTime);
 		});
 
-	if (completedFixturesWithDate.length === 0) {
-		return null;
+	if (upcoming.length === 0) return null;
+
+	upcoming.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
+	return enrichFixtures([upcoming[0].fixture])[0];
+}
+
+function resolvePreviousMatch(
+	fixtures: Fixture[],
+	wscClubExternalId: string
+): EnrichedFixture | null {
+	const now = new Date();
+
+	const completed = fixtures
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
+		}))
+		.filter(({ fixture, matchDateTime }) => {
+			if (fixture.status !== 'complete') return false;
+			const isClubMatch =
+				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
+			return isClubMatch && isBefore(matchDateTime, now);
+		});
+
+	if (completed.length === 0) return null;
+
+	completed.sort((a, b) => b.matchDateTime.getTime() - a.matchDateTime.getTime());
+	return enrichFixtures([completed[0].fixture])[0];
+}
+
+export async function getTeamMatches(teamSlug: string): Promise<{
+	hasFixtures: boolean;
+	nextMatch: EnrichedFixture | null;
+	previousMatch: EnrichedFixture | null;
+}> {
+	const fixtureData = await loadFixture(teamSlug);
+
+	if (!fixtureData?.fixtures.length) {
+		return { hasFixtures: false, nextMatch: null, previousMatch: null };
 	}
 
-	completedFixturesWithDate.sort((a, b) => b.matchDateTime.getTime() - a.matchDateTime.getTime());
+	const { wscClubExternalId } = getClubConfig();
+	const { fixtures } = fixtureData;
 
-	const previousFixture = completedFixturesWithDate[0].fixture;
-	const enriched = enrichFixtures([previousFixture]);
-	return enriched[0];
+	return {
+		hasFixtures: true,
+		nextMatch: resolveNextMatch(fixtures, wscClubExternalId),
+		previousMatch: resolvePreviousMatch(fixtures, wscClubExternalId)
+	};
+}
+
+export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
+	const fixtureData = await loadFixture(teamSlug);
+	if (!fixtureData) return null;
+	const { wscClubExternalId } = getClubConfig();
+	return resolveNextMatch(fixtureData.fixtures, wscClubExternalId);
+}
+
+export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
+	const fixtureData = await loadFixture(teamSlug);
+	if (!fixtureData) return null;
+	const { wscClubExternalId } = getClubConfig();
+	return resolvePreviousMatch(fixtureData.fixtures, wscClubExternalId);
 }

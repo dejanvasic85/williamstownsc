@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { format, parseISO } from 'date-fns';
+import { TZDate } from '@date-fns/tz';
+import { format } from 'date-fns';
 import { MapPin } from 'lucide-react';
 import type { EnrichedFixture } from '@/types/matches';
 
@@ -40,9 +41,14 @@ function MatchTeamRow({
 	);
 }
 
+const melbourneTimezone = 'Australia/Melbourne';
+
 function MatchPreviewCard({ title, fixture, showScore = false }: MatchPreviewCardProps) {
-	const formattedDate = format(parseISO(fixture.date), 'EEE d MMM yyyy');
-	const formattedTime = format(parseISO(`${fixture.date}T${fixture.time}`), 'h:mm a');
+	const [year, month, day] = fixture.date.split('-').map(Number);
+	const [hour, minute] = fixture.time.split(':').map(Number);
+	const matchDateTime = new TZDate(year, month - 1, day, hour, minute, melbourneTimezone);
+	const formattedDate = format(matchDateTime, 'EEE d MMM yyyy');
+	const formattedTime = format(matchDateTime, 'h:mm a');
 
 	return (
 		<div className="border-base-300 flex flex-col gap-4 rounded-xl border p-5">
