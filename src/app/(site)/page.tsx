@@ -10,8 +10,8 @@ import {
 	SponsorsSection
 } from '@/components/home';
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
-import { getActiveAnnouncements } from '@/lib/announcements';
 import {
+	getAnnouncements,
 	getFeaturedSponsors,
 	getHomePageData,
 	getNewsArticles,
@@ -36,7 +36,7 @@ export default async function Home() {
 		siteSettings,
 		homePageData,
 		featuredSponsors,
-		{ hasAnnouncements },
+		announcements,
 		nextMatch,
 		nextKeyDate
 	] = await Promise.all([
@@ -45,10 +45,12 @@ export default async function Home() {
 		getSiteSettings(),
 		getHomePageData(),
 		getFeaturedSponsors(),
-		getActiveAnnouncements(),
+		getAnnouncements(),
 		getNextMatch('state-league-2-men-s-north-west'),
 		getNextKeyDate()
 	]);
+
+	const hasAnnouncements = announcements.length > 0;
 	const logoUrl = siteSettings?.logo
 		? urlFor(siteSettings.logo).width(120).height(120).fit('crop').url()
 		: '';

@@ -33,7 +33,8 @@ export const sponsorFormSchema = commonFieldsSchema.extend({
 
 export const programFormSchema = commonFieldsSchema.extend({
 	contactType: z.literal('program'),
-	programId: z.string().optional()
+	programId: z.string().optional(),
+	programName: z.string().optional()
 });
 
 export const generalFormSchema = commonFieldsSchema.extend({

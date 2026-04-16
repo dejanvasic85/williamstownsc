@@ -9,10 +9,25 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function NewsPage() {
-	const articles = await getNewsArticles({ limit: 20 });
+	const [articles, featuredPool] = await Promise.all([
+		getNewsArticles({ limit: 20 }),
+		getNewsArticles({ limit: 6, featured: true })
+	]);
 
 	const heroArticle = articles[0];
-	const gridArticles = articles.slice(1);
+	const primaryFeaturedArticles = featuredPool
+		.filter((article) => article._id !== heroArticle?._id)
+		.slice(0, 2);
+	const primaryFeaturedIds = new Set(primaryFeaturedArticles.map((article) => article._id));
+	const fallbackFeaturedArticles = articles
+		.slice(1)
+		.filter((article) => !article.featured && !primaryFeaturedIds.has(article._id))
+		.slice(0, Math.max(0, 2 - primaryFeaturedArticles.length));
+	const featuredArticles = [...primaryFeaturedArticles, ...fallbackFeaturedArticles];
+	const featuredIds = new Set(featuredArticles.map((article) => article._id));
+	const gridArticles = articles.slice(1).filter((article) => !featuredIds.has(article._id));
+	const featuredSectionTitle =
+		fallbackFeaturedArticles.length > 0 ? 'Top Updates' : 'Featured Updates';
 
 	return (
 		<PageContainer
@@ -32,20 +47,55 @@ export default async function NewsPage() {
 						/>
 					)}
 
+					{featuredArticles.length > 0 && (
+						<section className="mb-14">
+							<div className="mb-6 flex items-center gap-4">
+								<h2 className="text-2xl font-bold">{featuredSectionTitle}</h2>
+								<div className="bg-secondary h-0.5 flex-1 rounded-full" />
+							</div>
+							<div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+								{featuredArticles.map((article) => (
+									<div key={article._id} className="animate-fade-in-up">
+										<NewsCard
+											slug={article.slug}
+											title={article.title}
+											excerpt={article.excerpt}
+											publishedAt={article.publishedAt}
+											featuredImage={article.featuredImage}
+											featured
+											size="large"
+										/>
+									</div>
+								))}
+							</div>
+						</section>
+					)}
+
 					{gridArticles.length > 0 && (
-						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-							{gridArticles.map((article) => (
-								<NewsCard
-									key={article._id}
-									slug={article.slug}
-									title={article.title}
-									excerpt={article.excerpt}
-									publishedAt={article.publishedAt}
-									featuredImage={article.featuredImage}
-									featured={article.featured}
-								/>
-							))}
-						</div>
+						<section>
+							<div className="mb-6 flex items-center gap-4">
+								<h2 className="text-2xl font-bold">Latest News</h2>
+								<div className="bg-base-300 h-px flex-1" />
+							</div>
+							<div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+								{gridArticles.map((article, index) => (
+									<div
+										key={article._id}
+										className="animate-fade-in-up"
+										style={{ animationDelay: `${Math.min(index * 80, 500)}ms` }}
+									>
+										<NewsCard
+											slug={article.slug}
+											title={article.title}
+											excerpt={article.excerpt}
+											publishedAt={article.publishedAt}
+											featuredImage={article.featuredImage}
+											featured={article.featured}
+										/>
+									</div>
+								))}
+							</div>
+						</section>
 					)}
 				</>
 			)}

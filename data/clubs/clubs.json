@@ -840,6 +840,26 @@
 			]
 		},
 		{
+			"externalId": "08NOp9GkKZ",
+			"name": "Border Raiders FC",
+			"displayName": "Border Raiders FC",
+			"logoUrl": "https://ocean.dribl.com/19c515cb82664b7b8e753681dd0ab5aa",
+			"email": "borderraidersinfo@gmail.com",
+			"website": "https://www.facebook.com/borderraidersclub/",
+			"address": {
+				"street": "Perricoota Road",
+				"city": "Moama",
+				"state": "VIC",
+				"postcode": "2731"
+			},
+			"socials": [
+				{
+					"platform": "facebook",
+					"url": "https://www.facebook.com/borderraidersclub"
+				}
+			]
+		},
+		{
 			"externalId": "A4KLxY1oKq",
 			"name": "Boronia SC",
 			"displayName": "Boronia SC",
@@ -1585,8 +1605,7 @@
 			"name": "Corio SC",
 			"displayName": "Corio SC",
 			"logoUrl": "https://ocean.dribl.com/0e5506977eaf4897ab6a47e63ceb7a66",
-			"email": "coriosc2020@gmail.com",
-			"website": "https://coriosc.com.au/",
+			"email": "info@coriosoccerclub.com.au",
 			"address": {
 				"street": "Hume Reseve Court Hume Reserve (Off Thompson Road)",
 				"city": "Bell Park",
@@ -3178,7 +3197,7 @@
 			"externalId": "2PmjOnvQNZ",
 			"name": "Hamilton SC",
 			"displayName": "Hamilton SC",
-			"logoUrl": "https://ocean.dribl.com/5d1f12fb78714f33abc99d1eded1ba2b",
+			"logoUrl": "https://ocean.dribl.com/098e235aa1214b9a8e8679b7f9360590",
 			"email": "hamiltonraiderssoccerclub@gmail.com",
 			"website": "https://hamiltonsoccerclubvic.com.au",
 			"address": {
@@ -3298,7 +3317,7 @@
 			"externalId": "LBdDbJ4Nb7",
 			"name": "Heidelberg United FC",
 			"displayName": "Heidelberg United FC",
-			"logoUrl": "https://ocean.dribl.com/8f105df7d73e4f1696cfd6edb2b418fd",
+			"logoUrl": "https://ocean.dribl.com/1c4939061b4b4893802e7574043749bc",
 			"email": "admin@hufc.com.au",
 			"website": "https://www.hufc.com.au",
 			"address": {
@@ -4434,26 +4453,6 @@
 			]
 		},
 		{
-			"externalId": "08NOp9GkKZ",
-			"name": "Moama-Echuca Border Raiders Soccer Association",
-			"displayName": "Moama-Echuca Border Raiders Soccer Association",
-			"logoUrl": "https://ocean.dribl.com/19c515cb82664b7b8e753681dd0ab5aa",
-			"email": "borderraidersinfo@gmail.com",
-			"website": "https://www.facebook.com/borderraidersclub/",
-			"address": {
-				"street": "Perricoota Road",
-				"city": "Moama",
-				"state": "VIC",
-				"postcode": "2731"
-			},
-			"socials": [
-				{
-					"platform": "facebook",
-					"url": "https://www.facebook.com/borderraidersclub"
-				}
-			]
-		},
-		{
 			"externalId": "gld4pzM2dW",
 			"name": "Moe United SC",
 			"displayName": "Moe United SC",
@@ -5236,7 +5235,7 @@
 			"name": "Old Trinity Grammarians SC",
 			"displayName": "Old Trinity Grammarians SC",
 			"logoUrl": "https://ocean.dribl.com/6b5f4f064c23431f9e6ae2ac743d3dbc",
-			"email": "jeremyneylon1@gmail.com",
+			"email": "christopherliosatos0@gmail.com",
 			"website": "https://www.otgsc.com.au/",
 			"address": {
 				"street": "Bulleen Road",
@@ -6979,10 +6978,10 @@
 			"displayName": "West Hills FC",
 			"logoUrl": "https://ocean.dribl.com/8fd545ff1c8f4b9998c8f890a27731a6",
 			"address": {
-				"street": "Dorchester Street",
-				"city": "Thornhill Park",
-				"state": "SA",
-				"postcode": "3335"
+				"street": "159-211 Coburns Rd",
+				"city": "Melton West",
+				"state": "VIC",
+				"postcode": "3337"
 			}
 		},
 		{
@@ -7453,8 +7452,8 @@
 		},
 		{
 			"externalId": "bam1nq5kNw",
-			"name": "Yarra Jets Junior FC",
-			"displayName": "Yarra Jets Junior FC",
+			"name": "Yarra Jets FC",
+			"displayName": "Yarra Jets FC",
 			"logoUrl": "https://ocean.dribl.com/855cfd9a37a04e2bbcaa8379313417ea",
 			"email": "president@yarrajetsfc.org.au",
 			"website": "https://yarrajetsfc.majestri.com.au/",

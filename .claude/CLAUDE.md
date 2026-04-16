@@ -69,20 +69,17 @@
 
 # Workflow
 
-- **MUST**: After finishing code changes and **before every push**, run all three checks in order:
-  1. `npm run lint`
-  2. `npm run format`
+All changes MUST follow the following workflow
+
+- After finishing code changes and **before every push**, run all checks in order:
+  1. `npm run format`
+  2. `npm run lint`
   3. `npm run type:check`
+  4. `npm run build`
+  5. `npm run test:e2e`
 - Never push without running these checks — commit any formatting changes before pushing
-- For larger change sets also ensure Next.js can build: `npm run build`
-- E2E testing: `npm run test:e2e`
 - Pre-commit hooks auto-run: Husky runs lint-staged (prettier + eslint)
-
-# Git & PRs
-
-- Branch naming: feat/_, fix/_, claude/\* (claude branches auto-generated)
-- Main branch: main
-- Pre-commit: Husky runs lint-staged (prettier + eslint)
+- Update any plan files with progress to help with issue tracking
 
 # Dependency Management
 

@@ -87,19 +87,6 @@
 			"date": "2026-03-27",
 			"day": "Friday",
 			"time": "20:30",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "",
-			"homeScore": 0,
-			"awayScore": 0,
-			"status": "washout reschedule"
-		},
-		{
-			"round": 2,
-			"date": "2026-03-27",
-			"day": "Friday",
-			"time": "20:30",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "AnmYzyArNz",
 			"address": "Epping Stadium Main Pitch",
@@ -161,59 +148,17 @@
 			"status": "complete"
 		},
 		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "PydoLxGmD9",
-			"address": "Kevin Flint Reserve Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "7MNGgM7NAz",
-			"awayTeamId": "7MNGvappmA",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "bam1nQWrNw",
-			"awayTeamId": "7MNGvxzpmA",
-			"address": "Partridge Street Reserve Pitch 2",
-			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "Bjma0G87dR",
-			"awayTeamId": "3vmZv8JJmq",
-			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-04-11",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "AnmYzyArNz",
-			"awayTeamId": "LBdDx0GQdb",
-			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"round": 2,
+			"date": "2026-06-05",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "-37.759892,144.819492",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "washout reschedule"
 		},
 		{
 			"round": 3,
@@ -223,8 +168,75 @@
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "6lNbpDlAdx",
 			"address": "JT Gray Reserve Pitch 1",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "PydoLxGmD9",
+			"address": "Waste Sense Park Main Pitch",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "7MNGgM7NAz",
+			"awayTeamId": "7MNGvappmA",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "bam1nQWrNw",
+			"awayTeamId": "7MNGvxzpmA",
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "Bjma0G87dR",
+			"awayTeamId": "3vmZv8JJmq",
+			"address": "Findon Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-04-11",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "AnmYzyArNz",
+			"awayTeamId": "LBdDx0GQdb",
+			"address": "Strathnaver Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -321,7 +333,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "3vmZv8JJmq",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -464,7 +476,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -497,7 +509,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "7MNGvappmA",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -629,7 +641,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "AnmYzyArNz",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -772,7 +784,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "LBdDx0GQdb",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -838,7 +850,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "7MNGvxzpmA",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -970,7 +982,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "6lNbpDlAdx",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -1124,7 +1136,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "Bjma0G87dR",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -1289,7 +1301,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "bam1nQWrNw",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
@@ -1421,7 +1433,7 @@
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "7MNGgM7NAz",
-			"address": "Kevin Flint Reserve Main Pitch",
+			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},

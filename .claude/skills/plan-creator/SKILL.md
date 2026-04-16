@@ -1,6 +1,6 @@
 ---
 name: plan-creator
-description: "Creates and maintains implementation plans for the Williamstown SC project. This skill should be used when the user asks to create a plan, document a feature, or track implementation progress for a task. Plans are stored in docs/plans/ and follow the project's established conventions."
+description: "Creates and maintains implementation plans. This skill should be used when the user asks to create a plan, document a feature, or track implementation progress for a task. Plans are stored in docs/plans/ and follow the project's established conventions."
 ---
 
 # Plan Creator
