@@ -138,7 +138,11 @@ export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixtur
 	const now = new Date();
 
 	const completedFixturesWithDate = fixtureData.fixtures
-		.filter((fixture) => {
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
+		}))
+		.filter(({ fixture, matchDateTime }) => {
 			if (fixture.status !== 'complete') {
 				return false;
 			}
@@ -150,13 +154,8 @@ export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixtur
 				return false;
 			}
 
-			const matchDateTime = parseFixtureDateTime(fixture.date, fixture.time);
 			return isBefore(matchDateTime, now);
-		})
-		.map((fixture) => ({
-			fixture,
-			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
-		}));
+		});
 
 	if (completedFixturesWithDate.length === 0) {
 		return null;

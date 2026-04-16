@@ -170,7 +170,7 @@ export const team = defineType({
 			title: 'Coaching Staff',
 			type: 'array',
 			of: [{ type: 'coach' }],
-			validation: (Rule) => Rule.min(1).warning('At least one coach is recommended')
+			validation: (Rule) => Rule.min(1).error('At least one coach is required')
 		}),
 		defineField({
 			name: 'players',
