@@ -82,7 +82,7 @@ export function TeamDetailNav({
 		<>
 			<div ref={sentinelRef} className="h-px" aria-hidden="true" />
 			<nav
-				className={`team-detail-nav sticky top-0 z-40 -mx-4 border-b-2 px-4 pt-1 pb-0 transition-colors duration-300 lg:top-[var(--navbar-height-desktop)] ${
+				className={`team-detail-nav sticky top-0 z-40 -mx-4 border-b-2 px-4 pt-1 pb-0 transition-colors duration-300 lg:top-[var(--navbar-height-desktop)] lg:mx-0 lg:px-2 ${
 					isStuck
 						? 'border-secondary bg-base-200 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)]'
 						: 'bg-base-100 border-transparent'
@@ -91,7 +91,7 @@ export function TeamDetailNav({
 			>
 				<span
 					className={`text-base-content block truncate text-xs font-bold transition-all duration-300 lg:text-sm ${
-						isStuck ? 'mt-1 max-h-6 translate-y-0 opacity-100' : 'max-h-0 -translate-y-1 opacity-0'
+						isStuck ? 'mt-2 max-h-6 translate-y-0 opacity-100' : 'max-h-0 -translate-y-1 opacity-0'
 					}`}
 					aria-hidden={!isStuck}
 				>
