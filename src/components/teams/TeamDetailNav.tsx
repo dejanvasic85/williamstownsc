@@ -47,6 +47,8 @@ export function TeamDetailNav({
 	const hasFixturesTab = hasFixtures || !!fixturesUrl;
 	const fixturesHref = hasFixtures ? `${basePath}/matches` : (fixturesUrl ?? '');
 
+	const isExternalUrl = (href: string) => href.startsWith('http://') || href.startsWith('https://');
+
 	const tabs: Tab[] = [
 		{
 			label: 'Team details',
@@ -58,14 +60,14 @@ export function TeamDetailNav({
 		{
 			label: 'Fixtures',
 			href: fixturesHref,
-			isExternal: !hasFixtures,
+			isExternal: isExternalUrl(fixturesHref),
 			isVisible: hasFixturesTab,
 			matchFn: (p) => p.startsWith(`${basePath}/matches`)
 		},
 		{
 			label: 'Table',
 			href: tableUrl ?? '',
-			isExternal: true,
+			isExternal: isExternalUrl(tableUrl ?? ''),
 			isVisible: !!tableUrl,
 			matchFn: () => false
 		}
@@ -79,40 +81,39 @@ export function TeamDetailNav({
 			aria-label="Team navigation"
 		>
 			<div className="flex items-center justify-between">
-				<div role="tablist" className="tabs tabs-border">
+				<ul className="tabs tabs-border">
 					{visibleTabs.map((tab) => {
 						const isActive = tab.matchFn(pathname);
 
 						if (tab.isExternal) {
 							return (
-								<a
-									key={tab.label}
-									href={tab.href}
-									role="tab"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="tab gap-1.5 text-sm font-semibold lg:text-base"
-									aria-selected={false}
-								>
-									{tab.label}
-									<ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-								</a>
+								<li key={tab.label}>
+									<a
+										href={tab.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="tab gap-1.5 text-sm font-semibold lg:text-base"
+									>
+										{tab.label}
+										<ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+									</a>
+								</li>
 							);
 						}
 
 						return (
-							<Link
-								key={tab.label}
-								href={tab.href}
-								role="tab"
-								className={`tab text-sm font-semibold lg:text-base ${isActive ? 'tab-active' : ''}`}
-								aria-selected={isActive}
-							>
-								{tab.label}
-							</Link>
+							<li key={tab.label}>
+								<Link
+									href={tab.href}
+									aria-current={isActive ? 'page' : undefined}
+									className={`tab text-sm font-semibold lg:text-base ${isActive ? 'tab-active' : ''}`}
+								>
+									{tab.label}
+								</Link>
+							</li>
 						);
 					})}
-				</div>
+				</ul>
 
 				<span
 					className={`text-base-content truncate pl-4 text-sm font-bold transition-all duration-300 lg:text-base ${

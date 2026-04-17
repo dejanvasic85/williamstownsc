@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { cache } from 'react';
 import { TZDate } from '@date-fns/tz';
 import { isBefore } from 'date-fns';
 import {
@@ -54,7 +55,9 @@ function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
 	});
 }
 
-async function loadFixture(leageName: string): Promise<FixtureData | null> {
+const loadFixture = cache(async function loadFixture(
+	leageName: string
+): Promise<FixtureData | null> {
 	const filePath = path.join(fixturesDirectory, `${leageName}.json`);
 
 	try {
@@ -64,7 +67,7 @@ async function loadFixture(leageName: string): Promise<FixtureData | null> {
 	} catch {
 		return null;
 	}
-}
+});
 
 export async function getFixturesForTeam(slug: string): Promise<{
 	fixtures: EnrichedFixture[];

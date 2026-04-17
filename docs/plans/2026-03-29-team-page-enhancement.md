@@ -32,7 +32,7 @@ Team detail page currently shows description, players, coaching staff only. Need
 
 - [ ] **Save plan** to `docs/plans/2026-03-29-team-page-enhancement.md`
 - [ ] **Sanity schema**: Add `validation: (Rule) => Rule.min(1)` to `coachingStaff` array
-- [ ] **`src/lib/config.ts`**: Add `clubConfig` schema with `wscClubExternalId: z.string().default('6lNbpDpwdx')` and `getClubConfig()`; add `WSC_CLUB_EXTERNAL_ID=6lNbpDpwdx` to `.env.example`
+- [x] **`src/lib/config.ts`**: Add `clubConfig` with hardcoded `wscClubExternalId: '6lNbpDpwdx'` and `getClubConfig()` — ID is club-specific constant, not environment-specific config
 - [ ] **`teamDetail.ts`**: Add `tableUrl` to `teamDetailQuery` projection
 - [ ] **`matchService.ts`**:
   - Replace `teamExternalIds` map with `getClubConfig().wscClubExternalId` from config
