@@ -136,6 +136,13 @@ h6 {
 	}
 }
 
+/* Offset fixture rounds so sticky navbars don't overlap when auto-scrolling */
+@media (min-width: 1024px) {
+	[id^='round-'] {
+		scroll-margin-top: calc(var(--navbar-height-desktop) + var(--team-nav-height) + 1rem);
+	}
+}
+
 /* Active tab in team detail nav uses gold to match site nav active-state language */
 .team-detail-nav .tab-active {
 	--tab-color: var(--color-secondary);
