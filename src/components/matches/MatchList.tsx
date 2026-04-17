@@ -38,11 +38,7 @@ export function MatchList({ fixtures }: MatchListProps) {
 	return (
 		<div className="space-y-6">
 			{fixturesByRound.map(({ round, fixtures: roundFixtures }) => (
-				<article
-					key={round}
-					id={`round-${round}`}
-					className="card card-md bg-base-200 shadow-sm lg:[scroll-margin-top:calc(var(--navbar-height-desktop)+var(--team-nav-height)+1rem)]"
-				>
+				<article key={round} id={`round-${round}`} className="card card-md bg-base-200 shadow-sm">
 					<div className="card-body">
 						<h2 className="card-title text-xl md:text-2xl">Round {round}</h2>
 						<ul className="list">
