@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { PageContainer } from '@/components/layout';
-import { TeamTabs } from '@/components/teams/TeamTabs';
+import { TeamsDirectory } from '@/components/teams/TeamsDirectory';
 import { getPageMetadata } from '@/lib/content/page';
-import { teamsQuery } from '@/lib/content/teams';
+import { teamsDirectoryQuery } from '@/lib/content/teams';
 import logger from '@/lib/logger';
-import { hasFixtures } from '@/lib/matches/matchService';
 import { groupTeamsByTab } from '@/lib/teamService';
 import { client } from '@/sanity/lib/client';
-import type { Team } from '@/types/team';
+import type { TeamBase } from '@/types/team';
 
 const log = logger.child({ module: 'teams-page' });
 
@@ -16,10 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('teamsPage');
 }
 
-async function getTeams() {
+async function getTeams(): Promise<TeamBase[]> {
 	try {
-		const teams = await client.fetch<Team[]>(teamsQuery, {}, { next: { tags: ['team'] } });
-		return teams;
+		return await client.fetch<TeamBase[]>(teamsDirectoryQuery, {}, { next: { tags: ['team'] } });
 	} catch (error) {
 		Sentry.captureException(error);
 		log.error({ err: error }, 'error fetching teams');
@@ -27,18 +25,13 @@ async function getTeams() {
 	}
 }
 
-type TeamWithFixturesFlag = Team & { hasLocalFixtures: boolean };
-
 export default async function FootballTeamsPage() {
 	const teams = await getTeams();
-	const teamsWithFixtures: TeamWithFixturesFlag[] = await Promise.all(
-		teams.map(async (team) => ({ ...team, hasLocalFixtures: await hasFixtures(team.slug) }))
-	);
-	const teamsByTab = groupTeamsByTab<TeamWithFixturesFlag>(teamsWithFixtures);
+	const teamsByTab = groupTeamsByTab(teams);
 
 	return (
 		<PageContainer heading="Football Teams">
-			<TeamTabs teamsByTab={teamsByTab} />
+			<TeamsDirectory teamsByTab={teamsByTab} />
 		</PageContainer>
 	);
 }
