@@ -46,6 +46,9 @@ const socialPublishConfigSchema = z.object({
 	socialPublishSecret: z.string().min(1, 'Social publish secret is required')
 });
 
+export type ClubConfig = {
+	wscClubExternalId: string;
+};
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
@@ -158,4 +161,10 @@ export function getSocialPublishConfig(): SocialPublishConfig {
 	return socialPublishConfigSchema.parse({
 		socialPublishSecret: process.env.SOCIAL_PUBLISH_SECRET
 	});
+}
+
+const wscClubExternalId = '6lNbpDpwdx';
+
+export function getClubConfig(): ClubConfig {
+	return { wscClubExternalId };
 }
