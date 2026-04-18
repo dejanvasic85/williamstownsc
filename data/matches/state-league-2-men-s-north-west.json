@@ -255,6 +255,19 @@
 			"round": 4,
 			"date": "2026-04-18",
 			"day": "Saturday",
+			"time": "18:30",
+			"homeTeamId": "3vmZv8JJmq",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
 			"time": "17:00",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "7MNGgM7NAz",
@@ -302,17 +315,6 @@
 			"homeScore": 3,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-04-18",
-			"day": "Saturday",
-			"time": "18:30",
-			"homeTeamId": "3vmZv8JJmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Polish Sports & Recreation Complex Pitch 1",
-			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
 		},
 		{
 			"round": 5,
