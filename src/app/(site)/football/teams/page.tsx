@@ -30,7 +30,7 @@ export default async function FootballTeamsPage() {
 	const teamsByTab = groupTeamsByTab(teams);
 
 	return (
-		<PageContainer heading="Football Teams">
+		<PageContainer heading="Football Teams" layout="article">
 			<TeamsDirectory teamsByTab={teamsByTab} />
 		</PageContainer>
 	);
