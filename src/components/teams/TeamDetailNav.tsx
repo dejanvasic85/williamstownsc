@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, LayoutList } from 'lucide-react';
 
 type Tab = {
 	label: string;
@@ -131,6 +131,16 @@ export function TeamDetailNav({
 							</li>
 						);
 					})}
+					<li className="ml-auto">
+						<Link
+							href="/football/teams"
+							className="tab gap-1 px-3 text-sm font-semibold lg:px-4 lg:text-base"
+							aria-label="All teams"
+						>
+							<LayoutList className="h-4 w-4 shrink-0" aria-hidden="true" />
+							<span className="hidden sm:inline">All Teams</span>
+						</Link>
+					</li>
 				</ul>
 			</nav>
 		</>
