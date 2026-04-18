@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { cache } from 'react';
 import { TZDate } from '@date-fns/tz';
-import { isBefore } from 'date-fns';
+import { addMinutes, isBefore } from 'date-fns';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
 	getClubs as getClubsFromService
@@ -92,6 +92,8 @@ export async function hasFixtures(slug: string): Promise<boolean> {
 	return Boolean(fixtureData?.fixtures.length);
 }
 
+const matchDurationMinutes = 120;
+
 function resolveNextMatch(fixtures: Fixture[], wscClubExternalId: string): EnrichedFixture | null {
 	const now = new Date();
 
@@ -103,7 +105,8 @@ function resolveNextMatch(fixtures: Fixture[], wscClubExternalId: string): Enric
 		.filter(({ fixture, matchDateTime }) => {
 			const isClubMatch =
 				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
-			return isClubMatch && isBefore(now, matchDateTime);
+			const matchEnd = addMinutes(matchDateTime, matchDurationMinutes);
+			return isClubMatch && isBefore(now, matchEnd);
 		});
 
 	if (upcoming.length === 0) return null;
