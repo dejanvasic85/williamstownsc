@@ -255,6 +255,19 @@
 			"round": 4,
 			"date": "2026-04-18",
 			"day": "Saturday",
+			"time": "17:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "7MNGgM7NAz",
+			"address": "NewFlo Stadium Pitch 2",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
 			"time": "15:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "3pmvQp0Ldv",
@@ -289,17 +302,6 @@
 			"homeScore": 3,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-04-18",
-			"day": "Saturday",
-			"time": "17:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "7MNGgM7NAz",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
 		},
 		{
 			"round": 4,
