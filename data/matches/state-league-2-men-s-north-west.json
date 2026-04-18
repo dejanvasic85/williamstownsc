@@ -246,8 +246,10 @@
 			"homeTeamId": "PydoLxGmD9",
 			"awayTeamId": "bam1nQWrNw",
 			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -257,8 +259,10 @@
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "3pmvQp0Ldv",
 			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -268,8 +272,10 @@
 			"homeTeamId": "7MNGvxzpmA",
 			"awayTeamId": "AnmYzyArNz",
 			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -279,8 +285,10 @@
 			"homeTeamId": "Bjma0G87dR",
 			"awayTeamId": "7MNGvappmA",
 			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 4,
