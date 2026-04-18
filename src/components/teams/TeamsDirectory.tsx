@@ -30,7 +30,7 @@ export function TeamsDirectory({ teamsByTab }: TeamsDirectoryProps) {
 					style={{ animationDelay: `${groupIndex * 80}ms` }}
 					className="animate-[fadeSlideIn_0.4s_ease_both] overflow-hidden rounded-2xl"
 				>
-					<div className="bg-secondary/10 border-secondary/30 border-l-4 px-5 py-3">
+					<div className="bg-secondary/10 border-secondary/30 border-b-4 px-5 py-3">
 						<h2 className="text-base font-bold tracking-widest uppercase">{label}</h2>
 					</div>
 					<ul className="bg-base-200">
