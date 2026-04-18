@@ -244,8 +244,49 @@
 			"homeTeamId": "PydoLxGmD9",
 			"awayTeamId": "bam1nQWrNw",
 			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
+			"time": "16:00",
+			"homeTeamId": "3vmZv8JJmq",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
+			"time": "13:00",
+			"homeTeamId": "7MNGvxzpmA",
+			"awayTeamId": "AnmYzyArNz",
+			"address": "Hume Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
+			"time": "12:45",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "3pmvQp0Ldv",
+			"address": "Duane Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -262,44 +303,11 @@
 			"round": 4,
 			"date": "2026-04-18",
 			"day": "Saturday",
-			"time": "12:45",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "3pmvQp0Ldv",
-			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-04-18",
-			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "7MNGvxzpmA",
-			"awayTeamId": "AnmYzyArNz",
-			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-04-18",
-			"day": "Saturday",
 			"time": "15:00",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "7MNGgM7NAz",
 			"address": "NewFlo Stadium Pitch 2",
 			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-04-18",
-			"day": "Saturday",
-			"time": "16:00",
-			"homeTeamId": "3vmZv8JJmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Polish Sports & Recreation Complex Pitch 1",
-			"coordinates": "-37.770859,144.807385",
 			"status": "pending"
 		},
 		{
