@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, LayoutList } from 'lucide-react';
 
 type Tab = {
 	label: string;
@@ -48,7 +48,6 @@ export function TeamDetailNav({
 
 	const hasFixturesTab = hasFixtures || !!fixturesUrl;
 	const fixturesHref = hasFixtures ? `${basePath}/matches` : (fixturesUrl ?? '');
-
 	const isExternalUrl = (href: string) => href.startsWith('http://') || href.startsWith('https://');
 
 	const tabs: Tab[] = [
@@ -82,7 +81,7 @@ export function TeamDetailNav({
 		<>
 			<div ref={sentinelRef} className="h-px" aria-hidden="true" />
 			<nav
-				className={`team-detail-nav sticky top-0 z-40 -mx-4 border-b-2 px-4 pt-1 pb-0 transition-colors duration-300 lg:top-[var(--navbar-height-desktop)] lg:mx-0 lg:px-2 ${
+				className={`team-detail-nav sticky top-0 z-40 -mx-4 border-b-2 px-4 pt-2 pb-0 transition-colors duration-300 lg:top-[var(--navbar-height-desktop)] lg:mx-0 lg:px-2 ${
 					isStuck
 						? 'border-secondary bg-base-200 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)]'
 						: 'bg-base-100 border-transparent'
@@ -90,7 +89,7 @@ export function TeamDetailNav({
 				aria-label="Team navigation"
 			>
 				<span
-					className={`text-base-content block truncate text-xs font-bold transition-all duration-300 lg:text-sm ${
+					className={`text-base-content block truncate px-4 text-xs font-bold transition-all duration-300 lg:text-sm ${
 						isStuck ? 'mt-2 max-h-6 translate-y-0 opacity-100' : 'max-h-0 -translate-y-1 opacity-0'
 					}`}
 					aria-hidden={!isStuck}
@@ -132,6 +131,16 @@ export function TeamDetailNav({
 							</li>
 						);
 					})}
+					<li className="ml-auto">
+						<Link
+							href="/football/teams"
+							className="tab gap-1 px-3 text-sm font-semibold lg:px-4 lg:text-base"
+							aria-label="All teams"
+						>
+							<LayoutList className="h-4 w-4 shrink-0" aria-hidden="true" />
+							<span className="hidden sm:inline">All Teams</span>
+						</Link>
+					</li>
 				</ul>
 			</nav>
 		</>

@@ -86,7 +86,7 @@ export function TeamMatchesPreview({ nextMatch, previousMatch }: TeamMatchesPrev
 
 	return (
 		<div className="mt-8 space-y-4">
-			<h2 className="text-2xl font-black uppercase">Matches</h2>
+			<h2 className="text-2xl font-black tracking-wide uppercase">Matches</h2>
 
 			<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 				{previousMatch && (

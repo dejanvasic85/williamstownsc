@@ -1,6 +1,16 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 
+export const teamsDirectoryQuery = groq`
+  *[_type == "team"] | order(ageGroup asc, order asc) {
+    _id,
+    name,
+    "slug": slug.current,
+    ageGroup,
+    order
+  }
+`;
+
 export const teamsQuery = groq`
   *[_type == "team"] | order(ageGroup asc, order asc) {
     _id,

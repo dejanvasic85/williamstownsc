@@ -1,5 +1,13 @@
 import type { PortableTextBlock } from '@portabletext/types';
 
+export type TeamBase = {
+	_id: string;
+	name: string;
+	slug: string;
+	ageGroup: AgeGroup;
+	order: number;
+};
+
 export type AgeGroup =
 	| 'seniors'
 	| 'reserves'
@@ -76,7 +84,7 @@ export interface Team {
 	leagueName?: string;
 }
 
-export type TeamsByTab<T extends Team = Team> = {
+export type TeamsByTab<T extends TeamBase = Team> = {
 	seniors: T[];
 	reserves: T[];
 	juniors: T[];

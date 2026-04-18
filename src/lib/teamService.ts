@@ -1,4 +1,4 @@
-import type { AgeGroup, TabCategory, Team, TeamsByTab } from '@/types/team';
+import type { AgeGroup, TabCategory, TeamBase, TeamsByTab } from '@/types/team';
 
 const juniorAgeGroups: AgeGroup[] = [
 	'6',
@@ -24,7 +24,7 @@ export function getTabCategory(ageGroup: AgeGroup): TabCategory {
 	return 'juniors';
 }
 
-export function sortTeams<T extends Team>(teams: T[]): T[] {
+export function sortTeams<T extends TeamBase>(teams: T[]): T[] {
 	return [...teams].sort((a, b) => {
 		const aIsJunior = juniorAgeGroups.includes(a.ageGroup);
 		const bIsJunior = juniorAgeGroups.includes(b.ageGroup);
@@ -42,7 +42,7 @@ export function sortTeams<T extends Team>(teams: T[]): T[] {
 	});
 }
 
-export function groupTeamsByTab<T extends Team>(teams: T[]): TeamsByTab<T> {
+export function groupTeamsByTab<T extends TeamBase>(teams: T[]): TeamsByTab<T> {
 	const grouped: TeamsByTab<T> = {
 		seniors: [],
 		reserves: [],
