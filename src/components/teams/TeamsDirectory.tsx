@@ -22,13 +22,21 @@ const groupConfigs: GroupConfig[] = [
 export function TeamsDirectory({ teamsByTab }: TeamsDirectoryProps) {
 	const activeGroups = groupConfigs.filter(({ key }) => teamsByTab[key].length > 0);
 
+	if (activeGroups.length === 0) {
+		return (
+			<div className="bg-base-200 text-base-content/70 rounded-2xl px-5 py-6">
+				No teams are available right now. Please check back soon.
+			</div>
+		);
+	}
+
 	return (
 		<div className="space-y-6">
 			{activeGroups.map(({ key, label }, groupIndex) => (
 				<section
 					key={key}
 					style={{ animationDelay: `${groupIndex * 80}ms` }}
-					className="animate-[fadeSlideIn_0.4s_ease_both] overflow-hidden rounded-2xl"
+					className="animate-[fade-slide-in_0.4s_ease_both] overflow-hidden rounded-2xl"
 				>
 					<div className="bg-secondary/10 border-secondary/30 border-b-4 px-5 py-3">
 						<h2 className="text-base font-bold tracking-widest uppercase">{label}</h2>

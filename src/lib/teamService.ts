@@ -1,4 +1,4 @@
-import type { AgeGroup, TabCategory, Team, TeamBase, TeamsByTab } from '@/types/team';
+import type { AgeGroup, TabCategory, TeamBase, TeamsByTab } from '@/types/team';
 
 const juniorAgeGroups: AgeGroup[] = [
 	'6',

@@ -149,7 +149,7 @@ h6 {
 	color: var(--color-secondary);
 }
 
-@keyframes fadeSlideIn {
+@keyframes fade-slide-in {
 	from {
 		opacity: 0;
 		transform: translateY(8px);
