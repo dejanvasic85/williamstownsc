@@ -21,9 +21,9 @@ export function CoachingStaffAvatars({ coaches }: CoachingStaffAvatarsProps) {
 
 	return (
 		<div className="space-y-4">
-			<h4 className="text-base-content/80 text-sm font-bold tracking-wide uppercase">
+			<p className="text-base-content/80 text-sm font-bold tracking-wide uppercase">
 				Coaching Staff
-			</h4>
+			</p>
 			<div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-6">
 				{coaches.map((coach) => (
 					<div key={coach.person._id} className="flex items-center gap-4">
