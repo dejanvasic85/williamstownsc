@@ -81,8 +81,5 @@
 			"eslint ."
 		]
 	},
-	"volta": {
-		"node": "24.12.0"
-	},
 	"browserslist": "> 1%"
 }
