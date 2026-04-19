@@ -47,7 +47,7 @@ To run the site locally, follow these steps:
 
 ### Prerequisites
 
-- Node.js 18+ installed
+- Node.js 24 installed
 - A Sanity account and project set up
 
 ### CLI tools
