@@ -20,7 +20,7 @@ updated: '2026-04-19'
 
 | # | Title | Status | Priority | Phase | Completion | Plan |
 |---|-------|--------|----------|-------|------------|------|
-| [01](./01-league-ladder-crawler.md) | League Ladder Crawler | draft | high | — | 0/8 criteria | — |
+| [01](./01-league-table-crawler.md) | League Table Crawler | draft | high | — | 0/8 criteria | — |
 
 ## Pipeline Flow
 

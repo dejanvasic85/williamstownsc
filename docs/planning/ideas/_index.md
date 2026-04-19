@@ -19,7 +19,7 @@ updated: '2026-04-19'
 
 | File | Title | Status | Priority | Domain | Captured | PRD |
 |------|-------|--------|----------|--------|----------|-----|
-| [2026-04-league-ladder-crawler.md](./2026-04-league-ladder-crawler.md) | League Ladder Crawler | accepted | unset | engineering | 2026-04-19 | [01-league-ladder-crawler.md](../prds/01-league-ladder-crawler.md) |
+| [2026-04-league-table-crawler.md](./2026-04-league-table-crawler.md) | League Table Crawler | accepted | unset | engineering | 2026-04-19 | [01-league-table-crawler.md](../prds/01-league-table-crawler.md) |
 
 ## Action Required
 
