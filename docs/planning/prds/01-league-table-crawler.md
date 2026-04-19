@@ -51,6 +51,7 @@ New file `bin/commands/crawlTable.ts`:
 Register in `bin/wsc.ts` under the `crawl` group with `--team` and `--table-url` options.
 
 Add npm scripts to `package.json`:
+
 - `crawl:table` — with browser GUI
 - `crawl:table:ci` — headless
 
@@ -65,6 +66,7 @@ New file `bin/commands/syncTable.ts`:
 Register in `bin/wsc.ts` under the `sync` group.
 
 Add npm scripts:
+
 - `sync:table`
 - `sync:table:ci`
 
@@ -74,25 +76,25 @@ Add to `src/types/table.ts`:
 
 ```ts
 type TableEntry = {
-  position: number
-  teamId: string
-  teamName: string
-  logoUrl: string
-  played: number
-  wins: number
-  draws: number
-  losses: number
-  goalsFor: number
-  goalsAgainst: number
-  goalDifference: number
-  points: number
-}
+	position: number;
+	teamId: string;
+	teamName: string;
+	logoUrl: string;
+	played: number;
+	wins: number;
+	draws: number;
+	losses: number;
+	goalsFor: number;
+	goalsAgainst: number;
+	goalDifference: number;
+	points: number;
+};
 
 type TableData = {
-  season: number
-  competition: string
-  entries: TableEntry[]
-}
+	season: number;
+	competition: string;
+	entries: TableEntry[];
+};
 ```
 
 ### 5. Table service

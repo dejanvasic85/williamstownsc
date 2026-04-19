@@ -6,20 +6,20 @@ updated: '2026-04-19'
 
 ## Summary
 
-| Status | Count |
-|--------|-------|
-| Captured | 0 |
-| Evaluating | 0 |
-| Accepted | 1 |
-| Rejected | 0 |
-| Deferred | 0 |
-| **Total** | **1** |
+| Status     | Count |
+| ---------- | ----- |
+| Captured   | 0     |
+| Evaluating | 0     |
+| Accepted   | 1     |
+| Rejected   | 0     |
+| Deferred   | 0     |
+| **Total**  | **1** |
 
 ## Ideas
 
-| File | Title | Status | Priority | Domain | Captured | PRD |
-|------|-------|--------|----------|--------|----------|-----|
-| [2026-04-league-table-crawler.md](./2026-04-league-table-crawler.md) | League Table Crawler | accepted | unset | engineering | 2026-04-19 | [01-league-table-crawler.md](../prds/01-league-table-crawler.md) |
+| File                                                                 | Title                | Status   | Priority | Domain      | Captured   | PRD                                                              |
+| -------------------------------------------------------------------- | -------------------- | -------- | -------- | ----------- | ---------- | ---------------------------------------------------------------- |
+| [2026-04-league-table-crawler.md](./2026-04-league-table-crawler.md) | League Table Crawler | accepted | unset    | engineering | 2026-04-19 | [01-league-table-crawler.md](../prds/01-league-table-crawler.md) |
 
 ## Action Required
 

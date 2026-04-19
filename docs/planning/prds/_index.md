@@ -6,21 +6,21 @@ updated: '2026-04-19'
 
 ## Summary
 
-| Status | Count |
-|--------|-------|
-| Draft | 1 |
-| Review | 0 |
-| Approved | 0 |
-| In Progress | 0 |
-| Completed | 0 |
-| Cancelled | 0 |
-| **Total** | **1** |
+| Status      | Count |
+| ----------- | ----- |
+| Draft       | 1     |
+| Review      | 0     |
+| Approved    | 0     |
+| In Progress | 0     |
+| Completed   | 0     |
+| Cancelled   | 0     |
+| **Total**   | **1** |
 
 ## PRDs
 
-| # | Title | Status | Priority | Phase | Completion | Plan |
-|---|-------|--------|----------|-------|------------|------|
-| [01](./01-league-table-crawler.md) | League Table Crawler | draft | high | — | 0/8 criteria | — |
+| #                                  | Title                | Status | Priority | Phase | Completion   | Plan |
+| ---------------------------------- | -------------------- | ------ | -------- | ----- | ------------ | ---- |
+| [01](./01-league-table-crawler.md) | League Table Crawler | draft  | high     | —     | 0/8 criteria | —    |
 
 ## Pipeline Flow
 

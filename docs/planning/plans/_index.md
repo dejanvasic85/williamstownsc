@@ -6,14 +6,14 @@ updated: '2026-04-19'
 
 ## Summary
 
-| Status | Count |
-|--------|-------|
-| Planning | 0 |
-| Ready | 0 |
-| In Progress | 0 |
-| Blocked | 0 |
-| Completed | 0 |
-| **Total** | **0** |
+| Status      | Count |
+| ----------- | ----- |
+| Planning    | 0     |
+| Ready       | 0     |
+| In Progress | 0     |
+| Blocked     | 0     |
+| Completed   | 0     |
+| **Total**   | **0** |
 
 ## Plans
 
