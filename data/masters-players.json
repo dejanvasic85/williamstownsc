@@ -1,0 +1,272 @@
+[
+	{
+		"shirtNumber": 6,
+		"name": "Markica Simic",
+		"personId": "EVj0RqsSpvRiQ6UQlq9c8o",
+		"position": "Left back",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": "Markics is officially the 26th best defender in football history. "
+	},
+	{
+		"shirtNumber": 5,
+		"name": "Goran Maximovic",
+		"personId": "jWN41jHzt1g0nwfDNntz3Y",
+		"position": "Centre Back",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 25,
+		"name": "Sean Burke",
+		"personId": "ILjsIjFuaf2xD3JMqeiwyA",
+		"position": "Striker",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": "They call him the Netbuster. For a good reason. He's been the masters top goalscorer over 3 years running and has netted multiple goals in finals. "
+	},
+	{
+		"shirtNumber": 14,
+		"name": "Nickolas Darbyshire",
+		"personId": "Apg54dc37ZZhDFmwkbOBru",
+		"position": "Center Midfield",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": "Derby is known for his hard work rate, tackling and master of fines. By ensuring the boys make their payments during the year, he provides them with what they come to play for. An end of season trip to remember."
+	},
+	{
+		"shirtNumber": 3,
+		"name": "Pat Simonetti",
+		"personId": "7QvloFeIPqZBCP6sghZELL",
+		"position": "Midfielder",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": "Pat is a very busy midfielder who can hold the ball but also strike them from distance. He's started his account this year already with a 30 yard strike against Strathmore."
+	},
+	{
+		"shirtNumber": 9,
+		"name": "Lee Swalding",
+		"personId": "EVj0RqsSpvRiQ6UQlq9daK",
+		"position": "Right Back",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 8,
+		"name": "Michael Susa",
+		"personId": "10d853cd-db40-42b2-a1dd-76080850c15c",
+		"position": "Centre Back and Holding Midfielder",
+		"areaOfPitch": "defender",
+		"isCaptain": true,
+		"isViceCaptain": false,
+		"intro": "Susa has been around the club for as long as anyone can remember. His pace hasn't changed since his senior days but he continues to show that he just doesn't need it. "
+	},
+	{
+		"shirtNumber": 22,
+		"name": "Zoran Pajic",
+		"personId": "EVj0RqsSpvRiQ6UQlq9dfA",
+		"position": "Sweeper",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": "If you had to compare Zoki to one of the greats, it has to be Beckenbauer. Although he's our trusted defender, Zoki always looks to making forward plays and scoring from distance."
+	},
+	{
+		"shirtNumber": 17,
+		"name": "Carl Rainbow",
+		"personId": "7QvloFeIPqZBCP6sghZFb0",
+		"position": "Winger / Striker",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 23,
+		"name": "Darryl Roach",
+		"personId": "jWN41jHzt1g0nwfDNnu3qV",
+		"position": "Winger",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 1,
+		"name": "Filip Konikowski",
+		"personId": "ILjsIjFuaf2xD3JMqeizSq",
+		"position": "Goalkeeper",
+		"areaOfPitch": "goalkeeper",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 7,
+		"name": "Matt Kuzub",
+		"personId": "ILjsIjFuaf2xD3JMqeizbg",
+		"position": "Midfielder",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 21,
+		"name": "Colin Wain",
+		"personId": "7QvloFeIPqZBCP6sghZFvi",
+		"position": "Center Midfielder",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": "Colin well deserved to win the players' player and best and fairest in 2025. The engine of the team and playmaker that the team constantly relies on."
+	},
+	{
+		"shirtNumber": 2,
+		"name": "Avinash Oliver",
+		"personId": "7QvloFeIPqZBCP6sghZGVx",
+		"position": "Winger",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 31,
+		"name": "Danny Madaki",
+		"personId": "ILjsIjFuaf2xD3JMqeizvZ",
+		"position": "Defender",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 20,
+		"name": "Joeseph Fedele",
+		"personId": "2de4c745-e734-47f9-bff4-6f5b9af9f8ef",
+		"position": "Center Back",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 34,
+		"name": "Cian O'Neill",
+		"personId": "083f1c00-7b1d-4df8-8b92-1471e9cbbc6a",
+		"position": "Centre Midfielder",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 27,
+		"name": "Dejan Vasic",
+		"personId": "d7486131-feb9-4d3e-9480-cd7fda21aa7d",
+		"position": "Attacking Midfielder / Winger",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 16,
+		"name": "Glen Fraser",
+		"personId": "7eaeb194-bf02-470c-bd15-3605f8276c6f",
+		"position": "Holding Midfielder",
+		"areaOfPitch": "midfielder",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 10,
+		"name": "Craig Moss",
+		"personId": "9e5322ab-30d1-462c-ab86-f2f5e59cdd5e",
+		"position": "Striker / Attacking midfielder",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 50,
+		"name": "Vlad Babic",
+		"personId": "Apg54dc37ZZhDFmwkbODIw",
+		"position": "Winger / Striker",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 26,
+		"name": "John Ross Jones",
+		"personId": "Apg54dc37ZZhDFmwkbODOs",
+		"position": "Centre Back",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 12,
+		"name": "Jim Wibskov",
+		"personId": "f074ae95-be8f-4668-8346-08371b77ba52",
+		"position": "Goalkeeper",
+		"areaOfPitch": "goalkeeper",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 11,
+		"name": "Rob Holder",
+		"personId": "jWN41jHzt1g0nwfDNnuEGV",
+		"position": "Striker / Winger",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 18,
+		"name": "Steve O'Connor",
+		"personId": "4f025c88-c004-46a8-8f49-84fcc1942ee9",
+		"position": "Centre Back / Full Back",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 12,
+		"name": "Djonata Vianini",
+		"personId": "EVj0RqsSpvRiQ6UQlq9eEF",
+		"position": "Centre Midfielder",
+		"areaOfPitch": "defender",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	},
+	{
+		"shirtNumber": 4,
+		"name": "Adamson Ajayi",
+		"personId": "1159950b-f909-43ee-95fd-c937eba86886",
+		"position": "Winger / Striker",
+		"areaOfPitch": "forward",
+		"isCaptain": false,
+		"isViceCaptain": false,
+		"intro": null
+	}
+]
