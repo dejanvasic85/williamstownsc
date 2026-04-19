@@ -128,6 +128,11 @@ In `src/lib/content/teams.ts`, extend `getCrawlableTeams()` GROQ query to includ
 - `data/table/` is a new top-level directory under `data/`, consistent with `data/matches/`
 - In future this data moves to a database; the service layer (`tableService.ts`) abstracts the storage so that migration only touches one file
 
+## Available Skills
+
+- **dribl-crawling** — documents the Dribl Playwright interception pattern (Cloudflare bypass, API interception, Zod validation, data merging). Use when implementing `crawlTable.ts` to follow established conventions.
+- **agent-browser** — use to drive the live site at `http://localhost:3003` to verify the table page renders correctly, the WSC row highlights, the nav tab links internally, and responsive/dark mode behaviour looks right.
+
 ## Acceptance Criteria
 
 - [ ] `npm run crawl:table` intercepts Dribl API and writes `data/external/table/{team-slug}.json`
