@@ -1,9 +1,9 @@
 import Image from 'next/image';
+import { getClubConfig } from '@/lib/config';
 import type { TableEntry } from '@/types/table';
 
 type LeagueTableProps = {
 	entries: TableEntry[];
-	wscClubName: string;
 };
 
 type Column = {
@@ -23,7 +23,9 @@ const columns: Column[] = [
 	{ label: 'Points', shortLabel: 'Pts', key: 'points' }
 ];
 
-export function LeagueTable({ entries, wscClubName }: LeagueTableProps) {
+export function LeagueTable({ entries }: LeagueTableProps) {
+	const { wscClubDriblName } = getClubConfig();
+
 	return (
 		<div className="overflow-x-auto">
 			<table className="table-zebra table w-full text-sm">
@@ -41,7 +43,7 @@ export function LeagueTable({ entries, wscClubName }: LeagueTableProps) {
 				</thead>
 				<tbody>
 					{entries.map((entry) => {
-						const isWsc = entry.clubName.includes(wscClubName);
+						const isWsc = entry.clubName.includes(wscClubDriblName);
 						return (
 							<tr
 								key={entry.teamId}

@@ -35,11 +35,7 @@ export async function generateMetadata({ params }: TeamTablePageProps): Promise<
 export default async function TeamTablePage({ params }: TeamTablePageProps) {
 	const { slug } = await params;
 
-	const [team, tableData, siteSettings] = await Promise.all([
-		getTeamBySlug(slug),
-		getTableForTeam(slug),
-		getSiteSettings()
-	]);
+	const [team, tableData] = await Promise.all([getTeamBySlug(slug), getTableForTeam(slug)]);
 
 	if (!team || !tableData) {
 		notFound();
@@ -51,7 +47,7 @@ export default async function TeamTablePage({ params }: TeamTablePageProps) {
 			<p className="text-base-content/60 mb-6 text-lg">
 				{tableData.competition} {tableData.season}
 			</p>
-			<LeagueTable entries={tableData.entries} wscClubName={siteSettings.clubName ?? ''} />
+			<LeagueTable entries={tableData.entries} />
 		</div>
 	);
 }
