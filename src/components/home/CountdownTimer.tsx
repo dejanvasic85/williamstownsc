@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 import { differenceInSeconds, parseISO } from 'date-fns';
 
 type TimeRemaining = {
@@ -15,6 +16,7 @@ type CountdownTimerProps = {
 	targetDate: string;
 	targetTime: string;
 	matchDurationMinutes?: number;
+	countdownColor?: string;
 };
 
 function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRemaining {
@@ -37,7 +39,8 @@ function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRem
 export function CountdownTimer({
 	targetDate,
 	targetTime,
-	matchDurationMinutes = 120
+	matchDurationMinutes = 120,
+	countdownColor = 'text-accent'
 }: CountdownTimerProps) {
 	const router = useRouter();
 	const refreshTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -81,25 +84,33 @@ export function CountdownTimer({
 		timeRemaining.seconds === 0;
 
 	if (isExpired) {
-		return <p className="text-accent text-xl font-bold md:text-2xl">Match underway!</p>;
+		return <p className={clsx(countdownColor, 'text-xl font-bold md:text-2xl')}>Match underway!</p>;
 	}
 
 	return (
 		<div className="grid grid-cols-4 gap-2 md:gap-3">
 			<div className="flex flex-col items-center">
-				<div className="text-accent text-xl font-bold md:text-3xl">{timeRemaining.days}</div>
+				<div className={clsx(countdownColor, 'text-xl font-bold md:text-3xl')}>
+					{timeRemaining.days}
+				</div>
 				<div className="text-base-content/70 text-xs">Days</div>
 			</div>
 			<div className="flex flex-col items-center">
-				<div className="text-accent text-xl font-bold md:text-3xl">{timeRemaining.hours}</div>
+				<div className={clsx(countdownColor, 'text-xl font-bold md:text-3xl')}>
+					{timeRemaining.hours}
+				</div>
 				<div className="text-base-content/70 text-xs">Hours</div>
 			</div>
 			<div className="flex flex-col items-center">
-				<div className="text-accent text-xl font-bold md:text-3xl">{timeRemaining.minutes}</div>
+				<div className={clsx(countdownColor, 'text-xl font-bold md:text-3xl')}>
+					{timeRemaining.minutes}
+				</div>
 				<div className="text-base-content/70 text-xs">Mins</div>
 			</div>
 			<div className="flex flex-col items-center">
-				<div className="text-accent text-xl font-bold md:text-3xl">{timeRemaining.seconds}</div>
+				<div className={clsx(countdownColor, 'text-xl font-bold md:text-3xl')}>
+					{timeRemaining.seconds}
+				</div>
 				<div className="text-base-content/70 text-xs">Secs</div>
 			</div>
 		</div>
