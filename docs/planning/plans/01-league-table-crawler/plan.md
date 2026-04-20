@@ -34,59 +34,70 @@ Before writing any code, use the `agent-browser` skill to capture the actual JSO
 URL intercepted: `GET https://mc-api.dribl.com/api/ladders?date_range=default&season=nPmrj2rmow&competition=wOmejBq1N0&league=PmjBD66BmZ&ladder_type=regular&tenant=w8zdBWPmBX&require_pools=true`
 
 Top-level response shape:
+
 ```json
 {
-  "data": [ /* array of ladder-entry objects */ ],
-  "point_adjustments": null
+	"data": [
+		/* array of ladder-entry objects */
+	],
+	"point_adjustments": null
 }
 ```
 
 Each `data` entry shape:
+
 ```json
 {
-  "type": "ladder-entry",
-  "id": "pmvzbbREmv",
-  "attributes": {
-    "team_hash_id": "pmvzbYyEmv",       // string, never null
-    "league_hash_id": "PmjBD66BmZ",     // string, never null
-    "league_name": "State League 2 Men's - North-West", // string, never null
-    "stage_order": null,                 // always null in this dataset
-    "team_name": "Williamstown SC Seniors", // string, never null
-    "season_name": "2026",              // string (year as string), never null
-    "club_code": "WILC",                // string, never null
-    "club_name": "Williamstown SC",     // string, never null
-    "club_logo": "https://ocean.dribl.com/...", // string URL, never null
-    "points": 9,                        // int
-    "goals_for": 8,                     // int
-    "goals_against": 5,                 // int
-    "goal_difference": 3,               // int
-    "played": 3,                        // int
-    "won": 3,                           // int
-    "drawn": 0,                         // int
-    "lost": 0,                          // int
-    "pen_win": 0,                       // int
-    "pen_loss": 0,                      // int
-    "et_win": 0,                        // int
-    "et_loss": 0,                       // int
-    "red_cards": 1,                     // int
-    "yellow_cards": 8,                  // int
-    "other_cards": 0,                   // int
-    "temporary_dismissals": 0,          // int
-    "seq_no": 12,                       // int
-    "position": 1,                      // int
-    "forfeits": 0,                      // int
-    "points_per_game": "3.00",          // string (decimal as string)
-    "byes": 0,                          // int
-    "point_adjustment": 0,              // int
-    "pool_name": null,                  // nullable string
-    "upcoming_matches": [ /* array */ ],
-    "recent_matches": [ /* array */ ]
-  },
-  "links": { /* ignored */ }
+	"type": "ladder-entry",
+	"id": "pmvzbbREmv",
+	"attributes": {
+		"team_hash_id": "pmvzbYyEmv", // string, never null
+		"league_hash_id": "PmjBD66BmZ", // string, never null
+		"league_name": "State League 2 Men's - North-West", // string, never null
+		"stage_order": null, // always null in this dataset
+		"team_name": "Williamstown SC Seniors", // string, never null
+		"season_name": "2026", // string (year as string), never null
+		"club_code": "WILC", // string, never null
+		"club_name": "Williamstown SC", // string, never null
+		"club_logo": "https://ocean.dribl.com/...", // string URL, never null
+		"points": 9, // int
+		"goals_for": 8, // int
+		"goals_against": 5, // int
+		"goal_difference": 3, // int
+		"played": 3, // int
+		"won": 3, // int
+		"drawn": 0, // int
+		"lost": 0, // int
+		"pen_win": 0, // int
+		"pen_loss": 0, // int
+		"et_win": 0, // int
+		"et_loss": 0, // int
+		"red_cards": 1, // int
+		"yellow_cards": 8, // int
+		"other_cards": 0, // int
+		"temporary_dismissals": 0, // int
+		"seq_no": 12, // int
+		"position": 1, // int
+		"forfeits": 0, // int
+		"points_per_game": "3.00", // string (decimal as string)
+		"byes": 0, // int
+		"point_adjustment": 0, // int
+		"pool_name": null, // nullable string
+		"upcoming_matches": [
+			/* array */
+		],
+		"recent_matches": [
+			/* array */
+		]
+	},
+	"links": {
+		/* ignored */
+	}
 }
 ```
 
 Key notes for Zod schema:
+
 - Only `stage_order` and `pool_name` are nullable across all 12 entries
 - `season_name` is a string `"2026"` — parse to int with `Number()`
 - `points_per_game` is a decimal string — ignore in canonical type
@@ -183,6 +194,7 @@ Model after `bin/commands/crawlFixtures.ts` using the simpler single-response in
 ```
 
 **Phase 3 verification:**
+
 1. Run `npm run crawl:table -- --team <slug> --table-url <url>` for one real team
 2. Confirm `data/external/table/{slug}.json` exists and contains valid JSON matching the shape captured in Phase 0
 3. Run `npm run type:check` — no errors
@@ -223,9 +235,12 @@ Model after `bin/commands/syncFixtures.ts`:
 ```
 
 **Phase 4 verification:**
+
 1. Run `npm run sync:table -- --team <slug>` for the same team used in Phase 3
 2. Confirm `data/table/{slug}.json` exists with correct canonical shape: `{ season, competition, entries: [...] }`
 3. Spot-check: entry count matches external file, `position`/`points` fields are numbers, `teamName` is populated
+
+✅ Verified: `data/table/state-league-2-men-s-north-west.json` written. 12 entries, season 2026, competition "State League 2 Men's - North-West". WSC pos 1, P3 W3 D0 L0 GD3 Pts9. Type check clean.
 
 ---
 
@@ -234,7 +249,7 @@ Model after `bin/commands/syncFixtures.ts`:
 ### Task 5.1 — Create `src/lib/matches/tableService.ts`
 
 ```ts
-export async function getTableForTeam(slug: string): Promise<TableData | null>
+export async function getTableForTeam(slug: string): Promise<TableData | null>;
 ```
 
 - Uses `fs.readFile` from `data/table/{slug}.json`
@@ -264,14 +279,15 @@ Extract table rendering into a standalone component:
 
 ```ts
 type LeagueTableProps = {
-  entries: TableEntry[];
-  highlightTeamName: string;
+	entries: TableEntry[];
+	highlightTeamName: string;
 };
 ```
 
 - Keep page thin; all rendering logic in this component
 
 **Phase 6 verification (agent-browser):**
+
 1. Start dev server (`npm run dev`)
 2. Use `agent-browser` to navigate to `/football/teams/{slug}/table`
 3. Confirm: table renders with all 10 columns, WSC row is visually highlighted, logos load
