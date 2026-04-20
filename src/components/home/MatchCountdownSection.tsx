@@ -2,22 +2,52 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import clsx from 'clsx';
 import { format, parseISO } from 'date-fns';
 import { MapPin } from 'lucide-react';
 import type { EnrichedFixture } from '@/types/matches';
 import { CountdownTimer } from './CountdownTimer';
 
+type MatchColor = 'blue' | 'purple';
+
 type MatchCountdownSectionProps = {
 	match: EnrichedFixture | null;
 	teamSlug: string;
+	teamName: string;
+	color: MatchColor;
 };
 
-export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSectionProps) {
+const colorClasses: Record<MatchColor, { card: string; btn: string; countdown: string }> = {
+	blue: {
+		card: 'border-blue-300/30 bg-blue-100/40 dark:border-blue-500 dark:bg-surface',
+		btn: 'btn-outline border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white dark:text-blue-400 dark:hover:text-white',
+		countdown: 'text-blue-500'
+	},
+	purple: {
+		card: 'border-purple-300/30 bg-purple-100/40 dark:border-purple-500 dark:bg-surface',
+		btn: 'btn-outline border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white dark:text-purple-400 dark:hover:text-white',
+		countdown: 'text-purple-500'
+	}
+};
+
+export function MatchCountdownSection({
+	match,
+	teamSlug,
+	teamName,
+	color
+}: MatchCountdownSectionProps) {
+	const classes = colorClasses[color];
+
 	if (!match) {
 		return (
-			<div className="border-accent/30 bg-accent/10 dark:border-accent dark:bg-surface flex h-full flex-col justify-between gap-4 border p-6 md:flex-row md:items-start md:rounded-2xl md:p-8">
+			<div
+				className={clsx(
+					classes.card,
+					'flex h-full flex-col justify-between gap-4 border p-6 md:flex-row md:items-start md:rounded-2xl md:p-8'
+				)}
+			>
 				<div>
-					<h2 className="mb-2 text-2xl font-bold md:text-3xl">Next Match</h2>
+					<h2 className="mb-2 text-2xl font-bold md:text-3xl">{teamName} Next Match</h2>
 					<p className="text-base-content/70 text-base md:text-lg">No upcoming matches scheduled</p>
 				</div>
 			</div>
@@ -29,12 +59,17 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 	const formattedTime = format(parseISO(`${match.date}T${match.time}`), 'h:mm a');
 
 	return (
-		<div className="border-accent/30 bg-accent/10 dark:border-accent dark:bg-surface relative flex h-full flex-col gap-6 border p-6 md:rounded-2xl md:p-8">
+		<div
+			className={clsx(
+				classes.card,
+				'relative flex h-full flex-col gap-6 border p-6 md:rounded-2xl md:p-8'
+			)}
+		>
 			<div className="flex items-start justify-between">
-				<h2 className="text-2xl font-bold md:text-3xl">Next Match</h2>
+				<h2 className="mb-2 text-2xl font-bold md:text-3xl">{teamName} Next Match</h2>
 				<Link
 					href={`/football/teams/${teamSlug}/matches`}
-					className="btn btn-accent btn-outline shrink-0"
+					className={clsx('btn shrink-0', classes.btn)}
 				>
 					View Full Fixtures
 				</Link>
@@ -91,6 +126,7 @@ export function MatchCountdownSection({ match, teamSlug }: MatchCountdownSection
 					targetDate={match.date}
 					targetTime={match.time}
 					matchDurationMinutes={120}
+					countdownColor={classes.countdown}
 				/>
 			</div>
 		</div>

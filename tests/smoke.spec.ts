@@ -30,10 +30,8 @@ test.describe('Homepage', () => {
 	});
 
 	test('displays next match section', async ({ page }) => {
-		const nextMatchHeading = page.getByRole('heading', {
-			name: /next match/i
-		});
-		await expect(nextMatchHeading).toBeVisible();
+		const nextMatchHeadings = page.getByRole('heading', { name: /next match/i });
+		await expect(nextMatchHeadings).toHaveCount(2);
 	});
 
 	test('displays key dates section', async ({ page }) => {

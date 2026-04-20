@@ -37,7 +37,8 @@ export default async function Home() {
 		homePageData,
 		featuredSponsors,
 		announcements,
-		nextMatch,
+		seniorMensNextMatch,
+		seniorWomensNextMatch,
 		nextKeyDate
 	] = await Promise.all([
 		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
@@ -47,6 +48,7 @@ export default async function Home() {
 		getFeaturedSponsors(),
 		getAnnouncements(),
 		getNextMatch('state-league-2-men-s-north-west'),
+		getNextMatch('state-league-2-women-s'),
 		getNextKeyDate()
 	]);
 
@@ -95,8 +97,19 @@ export default async function Home() {
 				</div>
 
 				<div className="container mx-auto">
-					<div className="grid items-stretch gap-12 md:grid-cols-2">
-						<MatchCountdownSection match={nextMatch} teamSlug="state-league-2-men-s-north-west" />
+					<div className="grid items-stretch gap-8 md:grid-cols-3">
+						<MatchCountdownSection
+							match={seniorMensNextMatch}
+							teamSlug="state-league-2-men-s-north-west"
+							teamName="Senior Mens"
+							color="blue"
+						/>
+						<MatchCountdownSection
+							match={seniorWomensNextMatch}
+							teamSlug="state-league-2-women-s"
+							teamName="Senior Women's"
+							color="purple"
+						/>
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}
 							leadingText={homePageData?.keyDatesSection?.leadingText}
