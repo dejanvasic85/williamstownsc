@@ -1,7 +1,7 @@
 ---
 title: 'League Table Crawler'
 number: '01'
-status: draft
+status: completed
 priority: high
 phase: ''
 created: '2026-04-19'
@@ -137,11 +137,11 @@ In `src/lib/content/teams.ts`, extend `getCrawlableTeams()` GROQ query to includ
 
 ## Acceptance Criteria
 
-- [ ] `npm run crawl:table` intercepts Dribl API and writes `data/external/table/{team-slug}.json`
-- [ ] `npm run sync:table` transforms and writes `data/table/{team-slug}.json` with correct canonical shape
-- [ ] `/football/teams/{slug}/table` page renders full standings table
-- [ ] WSC team row is visually highlighted in the table
-- [ ] "Table" nav tab on team detail page links internally (not externally) when table data exists
-- [ ] Page is mobile responsive and works in light and dark themes
-- [ ] `npm run type:check`, `npm run lint`, `npm run build` all pass
-- [ ] E2E test covers table page render for at least one team
+- [x] `npm run crawl:table` intercepts Dribl API and writes `data/external/table/{team-slug}.json`
+- [x] `npm run sync:table` transforms and writes `data/table/{team-slug}.json` with correct canonical shape
+- [x] `/football/teams/{slug}/table` page renders full standings table
+- [x] WSC team row is visually highlighted in the table
+- [x] "Table" nav tab on team detail page links internally (not externally) when table data exists
+- [x] Page is mobile responsive and works in light and dark themes
+- [x] `npm run type:check`, `npm run lint`, `npm run build` all pass
+- [x] E2E test covers table page render for at least one team

@@ -60,7 +60,7 @@ export function TeamDetailNav({
 			matchFn: (p) => p === basePath
 		},
 		{
-			label: 'Fixtures',
+			label: 'Matches',
 			href: fixturesHref,
 			isExternal: isExternalUrl(fixturesHref),
 			isVisible: hasFixturesTab,

@@ -42,11 +42,11 @@ export default async function TeamTablePage({ params }: TeamTablePageProps) {
 	}
 
 	return (
-		<>
+		<div className="mx-auto max-w-4xl">
 			<p className="text-base-content/60 mt-4 mb-6 text-lg">
 				{tableData.competition} {tableData.season}
 			</p>
 			<LeagueTable entries={tableData.entries} wscClubName="Williamstown" />
-		</>
+		</div>
 	);
 }

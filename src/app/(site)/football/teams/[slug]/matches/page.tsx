@@ -63,12 +63,12 @@ export default async function TeamMatchesPage({ params }: TeamMatchesPageProps) 
 	const currentRound = findCurrentRound(fixtureData.fixtures);
 
 	return (
-		<>
+		<div className="mx-auto max-w-4xl">
 			<p className="text-base-content/60 mt-4 mb-6 text-lg">
 				{fixtureData.competition} {fixtureData.season}
 			</p>
 			<FixtureAutoScroll currentRound={currentRound} />
 			<MatchList fixtures={fixtureData.fixtures} />
-		</>
+		</div>
 	);
 }

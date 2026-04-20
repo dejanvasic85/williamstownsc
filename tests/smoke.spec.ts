@@ -93,10 +93,10 @@ test.describe('Fixtures Page', () => {
 		await expect(rounds.first()).toBeVisible();
 	});
 
-	test('Fixtures nav tab is active', async ({ page }) => {
-		const fixturesTab = page.getByRole('link', { name: 'Fixtures' });
-		await expect(fixturesTab).toBeVisible();
-		await expect(fixturesTab).toHaveAttribute('aria-current', 'page');
+	test('Matches nav tab is active', async ({ page }) => {
+		const matchesTab = page.getByRole('link', { name: 'Matches' });
+		await expect(matchesTab).toBeVisible();
+		await expect(matchesTab).toHaveAttribute('aria-current', 'page');
 	});
 });
 

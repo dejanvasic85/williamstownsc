@@ -1,5 +1,5 @@
 ---
-updated: '2026-04-19'
+updated: '2026-04-20'
 ---
 
 # Execution Plans
@@ -12,12 +12,14 @@ updated: '2026-04-19'
 | Ready       | 0     |
 | In Progress | 0     |
 | Blocked     | 0     |
-| Completed   | 0     |
-| **Total**   | **0** |
+| Completed   | 1     |
+| **Total**   | **1** |
 
 ## Plans
 
-_No execution plans yet. Approve a PRD and run `/plan-execution` to generate one._
+| #                                                              | Title                          | Status   | Priority | PRD                                                | Started    | Completed  |
+| -------------------------------------------------------------- | ------------------------------ | -------- | -------- | -------------------------------------------------- | ---------- | ---------- |
+| [01](./01-league-table-crawler/plan.md)                        | League Table Crawler           | complete | high     | [01-league-table-crawler.md](../prds/01-league-table-crawler.md) | —          | 2026-04-20 |
 
 ## Blockers
 

@@ -1,14 +1,14 @@
 ---
 title: 'League Table Crawler: Execution Plan'
 number: '01'
-status: planning
+status: complete
 priority: high
 created: '2026-04-20'
 updated: '2026-04-20'
 owner: 'Dejan Vasic'
 prd: '01-league-table-crawler.md'
 started: ''
-completed: ''
+completed: '2026-04-20'
 estimated-hours: '8'
 tags: [crawler, table, fixtures, dribl, playwright]
 ---
@@ -346,11 +346,11 @@ Create `e2e/table.spec.ts` (model after existing fixture E2E tests):
 
 ## Verification Checklist
 
-- [ ] `npm run format`
-- [ ] `npm run lint`
-- [ ] `npm run type:check`
-- [ ] `npm run build`
-- [ ] `npm run test:e2e`
+- [x] `npm run format`
+- [x] `npm run lint`
+- [x] `npm run type:check`
+- [x] `npm run build`
+- [x] `npm run test:e2e` — 23 passed
 
 ---
 
