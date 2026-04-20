@@ -29,7 +29,72 @@ Before writing any code, use the `agent-browser` skill to capture the actual JSO
 4. Note any envelope fields (e.g. `meta`, `links`, pagination) beyond `data[]`
 5. Document the real shape in a comment block at the top of `src/types/table.ts` before writing the Zod schema
 
-**Verification:** Raw JSON is captured and field names are confirmed before writing any Zod schema. Adjust `externalTableEntrySchema` in Phase 1 to match reality.
+**Findings — confirmed API shape:**
+
+URL intercepted: `GET https://mc-api.dribl.com/api/ladders?date_range=default&season=nPmrj2rmow&competition=wOmejBq1N0&league=PmjBD66BmZ&ladder_type=regular&tenant=w8zdBWPmBX&require_pools=true`
+
+Top-level response shape:
+```json
+{
+  "data": [ /* array of ladder-entry objects */ ],
+  "point_adjustments": null
+}
+```
+
+Each `data` entry shape:
+```json
+{
+  "type": "ladder-entry",
+  "id": "pmvzbbREmv",
+  "attributes": {
+    "team_hash_id": "pmvzbYyEmv",       // string, never null
+    "league_hash_id": "PmjBD66BmZ",     // string, never null
+    "league_name": "State League 2 Men's - North-West", // string, never null
+    "stage_order": null,                 // always null in this dataset
+    "team_name": "Williamstown SC Seniors", // string, never null
+    "season_name": "2026",              // string (year as string), never null
+    "club_code": "WILC",                // string, never null
+    "club_name": "Williamstown SC",     // string, never null
+    "club_logo": "https://ocean.dribl.com/...", // string URL, never null
+    "points": 9,                        // int
+    "goals_for": 8,                     // int
+    "goals_against": 5,                 // int
+    "goal_difference": 3,               // int
+    "played": 3,                        // int
+    "won": 3,                           // int
+    "drawn": 0,                         // int
+    "lost": 0,                          // int
+    "pen_win": 0,                       // int
+    "pen_loss": 0,                      // int
+    "et_win": 0,                        // int
+    "et_loss": 0,                       // int
+    "red_cards": 1,                     // int
+    "yellow_cards": 8,                  // int
+    "other_cards": 0,                   // int
+    "temporary_dismissals": 0,          // int
+    "seq_no": 12,                       // int
+    "position": 1,                      // int
+    "forfeits": 0,                      // int
+    "points_per_game": "3.00",          // string (decimal as string)
+    "byes": 0,                          // int
+    "point_adjustment": 0,              // int
+    "pool_name": null,                  // nullable string
+    "upcoming_matches": [ /* array */ ],
+    "recent_matches": [ /* array */ ]
+  },
+  "links": { /* ignored */ }
+}
+```
+
+Key notes for Zod schema:
+- Only `stage_order` and `pool_name` are nullable across all 12 entries
+- `season_name` is a string `"2026"` — parse to int with `Number()`
+- `points_per_game` is a decimal string — ignore in canonical type
+- `upcoming_matches` and `recent_matches` arrays can be `z.any()` (not needed in canonical type)
+- Team logo URL uses `https://ocean.dribl.com/` base (not `mc-api`)
+- 12 teams in this league
+
+**Verification:** Complete — Zod schema in Phase 1 is based on real observed data.
 
 ---
 
@@ -37,14 +102,34 @@ Before writing any code, use the `agent-browser` skill to capture the actual JSO
 
 ### Task 1.1 — Create `src/types/table.ts`
 
-Create new file with all Zod schemas and TypeScript types:
+Create new file with all Zod schemas and TypeScript types (field names confirmed from Phase 0):
 
-1. Add `externalTableEntrySchema` with fields: `position`, `team_name`, `team_logo`, `played`, `wins`, `draws`, `losses`, `goals_for`, `goals_against`, `goal_difference`, `points`, `team_id`
-2. Add `externalTableApiResponseSchema` wrapping `data: z.array(externalTableEntrySchema)`
-3. Export canonical types:
-   - `TableEntry` — camelCase, typed fields per PRD
+1. Add `externalTableEntryAttributesSchema`:
+   - `team_hash_id: z.string()` — used as canonical `teamId`
+   - `team_name: z.string()`
+   - `club_name: z.string()`
+   - `club_logo: z.string()` — logo URL
+   - `season_name: z.string()` — e.g. `"2026"`, parse to int for canonical type
+   - `league_name: z.string()`
+   - `position: z.number().int()`
+   - `played: z.number().int()`
+   - `won: z.number().int()`
+   - `drawn: z.number().int()`
+   - `lost: z.number().int()`
+   - `goals_for: z.number().int()`
+   - `goals_against: z.number().int()`
+   - `goal_difference: z.number().int()`
+   - `points: z.number().int()`
+   - `stage_order: z.number().nullable()`
+   - `pool_name: z.string().nullable()`
+   - `upcoming_matches: z.array(z.any()).optional()`
+   - `recent_matches: z.array(z.any()).optional()`
+2. Add `externalTableEntrySchema = z.object({ type: z.literal('ladder-entry'), id: z.string(), attributes: externalTableEntryAttributesSchema })`
+3. Add `externalTableApiResponseSchema = z.object({ data: z.array(externalTableEntrySchema), point_adjustments: z.any().nullable() })`
+4. Export canonical types:
+   - `TableEntry` — `{ teamId, teamName, clubName, logoUrl, position, played, wins, draws, losses, goalsFor, goalsAgainst, goalDifference, points }`
    - `TableData` — `{ season: number; competition: string; entries: TableEntry[] }`
-4. Add `tableDataSchema` Zod schema for validating canonical output
+5. Add `tableDataSchema` Zod schema for validating canonical output
 
 **Verification:** `npm run type:check` passes.
 
