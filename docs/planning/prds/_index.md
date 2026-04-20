@@ -18,8 +18,8 @@ updated: '2026-04-20'
 
 ## PRDs
 
-| #                                  | Title                | Status    | Priority | Phase | Completion   | Plan                                                              |
-| ---------------------------------- | -------------------- | --------- | -------- | ----- | ------------ | ----------------------------------------------------------------- |
+| #                                  | Title                | Status    | Priority | Phase | Completion   | Plan                                                                        |
+| ---------------------------------- | -------------------- | --------- | -------- | ----- | ------------ | --------------------------------------------------------------------------- |
 | [01](./01-league-table-crawler.md) | League Table Crawler | completed | high     | —     | 8/8 criteria | [01-league-table-crawler/plan.md](../plans/01-league-table-crawler/plan.md) |
 
 ## Pipeline Flow

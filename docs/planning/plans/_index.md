@@ -17,9 +17,9 @@ updated: '2026-04-20'
 
 ## Plans
 
-| #                                                              | Title                          | Status   | Priority | PRD                                                | Started    | Completed  |
-| -------------------------------------------------------------- | ------------------------------ | -------- | -------- | -------------------------------------------------- | ---------- | ---------- |
-| [01](./01-league-table-crawler/plan.md)                        | League Table Crawler           | complete | high     | [01-league-table-crawler.md](../prds/01-league-table-crawler.md) | —          | 2026-04-20 |
+| #                                       | Title                | Status   | Priority | PRD                                                              | Started | Completed  |
+| --------------------------------------- | -------------------- | -------- | -------- | ---------------------------------------------------------------- | ------- | ---------- |
+| [01](./01-league-table-crawler/plan.md) | League Table Crawler | complete | high     | [01-league-table-crawler.md](../prds/01-league-table-crawler.md) | —       | 2026-04-20 |
 
 ## Blockers
 
