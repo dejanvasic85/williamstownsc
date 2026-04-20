@@ -17,6 +17,22 @@ tags: [crawler, table, fixtures, dribl, playwright]
 
 Implements an internal league standings page for WSC team detail pages. Crawls the Dribl table API using the existing Playwright network-interception pattern, syncs to canonical JSON files, and renders a highlighted standings table at `/football/teams/{slug}/table`. Updates `TeamDetailNav` to link internally instead of externally.
 
+## Phase 0 — API Analysis (agent-browser)
+
+### Task 0.1 — Inspect real Dribl ladder API response
+
+Before writing any code, use the `agent-browser` skill to capture the actual JSON shape:
+
+1. Open the browser and navigate to a known team `tableUrl` from Sanity (e.g. the State League 2 Men's North-West team's Dribl ladder page)
+2. Monitor network requests for calls to `mc-api.dribl.com/api/ladders`
+3. Capture and print the full JSON response — record all field names, types, and nullable fields
+4. Note any envelope fields (e.g. `meta`, `links`, pagination) beyond `data[]`
+5. Document the real shape in a comment block at the top of `src/types/table.ts` before writing the Zod schema
+
+**Verification:** Raw JSON is captured and field names are confirmed before writing any Zod schema. Adjust `externalTableEntrySchema` in Phase 1 to match reality.
+
+---
+
 ## Phase 1 — Types
 
 ### Task 1.1 — Create `src/types/table.ts`
@@ -81,6 +97,11 @@ Model after `bin/commands/crawlFixtures.ts` using the simpler single-response in
 "crawl:table:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl table"
 ```
 
+**Phase 3 verification:**
+1. Run `npm run crawl:table -- --team <slug> --table-url <url>` for one real team
+2. Confirm `data/external/table/{slug}.json` exists and contains valid JSON matching the shape captured in Phase 0
+3. Run `npm run type:check` — no errors
+
 ---
 
 ## Phase 4 — Sync Command
@@ -113,6 +134,11 @@ Model after `bin/commands/syncFixtures.ts`:
 "sync:table": "tsx bin/wsc.ts sync table",
 "sync:table:ci": "tsx bin/wsc.ts sync table"
 ```
+
+**Phase 4 verification:**
+1. Run `npm run sync:table -- --team <slug>` for the same team used in Phase 3
+2. Confirm `data/table/{slug}.json` exists with correct canonical shape: `{ season, competition, entries: [...] }`
+3. Spot-check: entry count matches external file, `position`/`points` fields are numbers, `teamName` is populated
 
 ---
 
@@ -157,6 +183,14 @@ type LeagueTableProps = {
 ```
 
 - Keep page thin; all rendering logic in this component
+
+**Phase 6 verification (agent-browser):**
+1. Start dev server (`npm run dev`)
+2. Use `agent-browser` to navigate to `/football/teams/{slug}/table`
+3. Confirm: table renders with all 10 columns, WSC row is visually highlighted, logos load
+4. Resize to mobile viewport — confirm columns abbreviate and layout doesn't break
+5. Toggle dark mode — confirm table is readable in both themes
+6. Run `npm run build` — no build errors
 
 ---
 
