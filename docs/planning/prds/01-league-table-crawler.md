@@ -8,7 +8,7 @@ created: '2026-04-19'
 updated: '2026-04-19'
 owner: 'Dejan Vasic'
 idea: '2026-04-league-table-crawler.md'
-plan: ''
+plan: '01-league-table-crawler/plan.md'
 depends-on: []
 domain: engineering
 budget: ''
