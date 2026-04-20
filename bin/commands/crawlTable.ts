@@ -58,6 +58,10 @@ export async function crawlTable({ team, tableUrl }: CrawlTableOptions) {
 		const validated = externalTableApiResponseSchema.parse(capturedResponse);
 		log.info({ entries: validated.data.length }, 'response validated');
 
+		if (!/^[a-z0-9][a-z0-9-_]*$/i.test(team)) {
+			throw new Error(`Invalid team slug for filename: ${team}`);
+		}
+
 		const outputDir = resolve(currentDir, `../../data/external/table`);
 		mkdirSync(outputDir, { recursive: true });
 

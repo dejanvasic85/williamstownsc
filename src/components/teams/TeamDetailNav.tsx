@@ -18,6 +18,7 @@ type TeamDetailNavProps = {
 	teamSlug: string;
 	teamName: string;
 	hasFixtures: boolean;
+	hasTable?: boolean;
 	fixturesUrl?: string;
 	tableUrl?: string;
 };
@@ -26,6 +27,7 @@ export function TeamDetailNav({
 	teamSlug,
 	teamName,
 	hasFixtures,
+	hasTable,
 	fixturesUrl,
 	tableUrl
 }: TeamDetailNavProps) {
@@ -68,8 +70,8 @@ export function TeamDetailNav({
 		},
 		{
 			label: 'Table',
-			href: `${basePath}/table`,
-			isExternal: false,
+			href: hasTable ? `${basePath}/table` : (tableUrl ?? ''),
+			isExternal: !hasTable && isExternalUrl(tableUrl ?? ''),
 			isVisible: !!tableUrl,
 			matchFn: (p) => p.startsWith(`${basePath}/table`)
 		}

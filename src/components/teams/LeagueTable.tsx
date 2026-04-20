@@ -33,11 +33,8 @@ export function LeagueTable({ entries, wscClubName }: LeagueTableProps) {
 						<th>Team</th>
 						{columns.map((col) => (
 							<th key={col.key} className="text-center">
-								<span className="hidden sm:inline">{col.shortLabel}</span>
-								<span className="sr-only sm:hidden">{col.label}</span>
-								<span className="sm:hidden" aria-hidden="true">
-									{col.shortLabel}
-								</span>
+								<span className="sr-only">{col.label}</span>
+								<span aria-hidden="true">{col.shortLabel}</span>
 							</th>
 						))}
 					</tr>

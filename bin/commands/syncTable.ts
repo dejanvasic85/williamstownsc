@@ -61,8 +61,19 @@ export async function syncTable({ team }: SyncTableOptions) {
 
 		log.info({ entries: external.data.length }, 'external data loaded and validated');
 
+		if (external.data.length === 0) {
+			throw new Error(`No table entries found for team "${team}"`);
+		}
+
 		const firstEntry = external.data[0];
-		const season = Number(firstEntry.attributes.season_name);
+		const rawSeason = parseInt(firstEntry.attributes.season_name.trim(), 10);
+		const season = Number.isInteger(rawSeason) ? rawSeason : new Date().getFullYear();
+		if (!Number.isInteger(rawSeason)) {
+			log.warn(
+				{ seasonName: firstEntry.attributes.season_name, fallback: season },
+				'unexpected season_name, falling back to current year'
+			);
+		}
 		const competition = firstEntry.attributes.league_name;
 
 		const entries: TableEntry[] = external.data

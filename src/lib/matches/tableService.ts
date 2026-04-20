@@ -7,7 +7,15 @@ import type { TableData } from '@/types/table';
 const tableDirectory = path.join(process.cwd(), 'data', 'table');
 
 const loadTable = cache(async function loadTable(slug: string): Promise<TableData | null> {
-	const filePath = path.join(tableDirectory, `${slug}.json`);
+	if (!/^[a-z0-9-]+$/.test(slug)) {
+		return null;
+	}
+
+	const filePath = path.resolve(tableDirectory, `${slug}.json`);
+	const relativePath = path.relative(tableDirectory, filePath);
+	if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
+		return null;
+	}
 
 	try {
 		const fileContents = await fs.readFile(filePath, 'utf-8');

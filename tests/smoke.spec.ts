@@ -77,7 +77,7 @@ test.describe('Homepage', () => {
 	});
 });
 
-test.describe('Fixtures Page', () => {
+test.describe('Matches Page', () => {
 	const fixturesUrl = '/football/teams/state-league-2-men-s-north-west/matches';
 
 	test.beforeEach(async ({ page }) => {

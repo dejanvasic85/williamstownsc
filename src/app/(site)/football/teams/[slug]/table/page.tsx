@@ -35,7 +35,11 @@ export async function generateMetadata({ params }: TeamTablePageProps): Promise<
 export default async function TeamTablePage({ params }: TeamTablePageProps) {
 	const { slug } = await params;
 
-	const [team, tableData] = await Promise.all([getTeamBySlug(slug), getTableForTeam(slug)]);
+	const [team, tableData, siteSettings] = await Promise.all([
+		getTeamBySlug(slug),
+		getTableForTeam(slug),
+		getSiteSettings()
+	]);
 
 	if (!team || !tableData) {
 		notFound();
@@ -43,10 +47,11 @@ export default async function TeamTablePage({ params }: TeamTablePageProps) {
 
 	return (
 		<div className="mx-auto max-w-4xl">
-			<p className="text-base-content/60 mt-4 mb-6 text-lg">
+			<h2 className="mt-4 mb-2 text-xl font-bold">League Table</h2>
+			<p className="text-base-content/60 mb-6 text-lg">
 				{tableData.competition} {tableData.season}
 			</p>
-			<LeagueTable entries={tableData.entries} wscClubName="Williamstown" />
+			<LeagueTable entries={tableData.entries} wscClubName={siteSettings.clubName ?? ''} />
 		</div>
 	);
 }

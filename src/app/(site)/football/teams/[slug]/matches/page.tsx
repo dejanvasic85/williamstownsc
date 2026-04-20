@@ -64,7 +64,8 @@ export default async function TeamMatchesPage({ params }: TeamMatchesPageProps) 
 
 	return (
 		<div className="mx-auto max-w-4xl">
-			<p className="text-base-content/60 mt-4 mb-6 text-lg">
+			<h2 className="mt-4 mb-2 text-xl font-bold">Fixtures &amp; Results</h2>
+			<p className="text-base-content/60 mb-6 text-lg">
 				{fixtureData.competition} {fixtureData.season}
 			</p>
 			<FixtureAutoScroll currentRound={currentRound} />
