@@ -83,10 +83,8 @@ export function TeamDetailNav({
 		<>
 			<div ref={sentinelRef} className="h-px" aria-hidden="true" />
 			<nav
-				className={`team-detail-nav sticky top-0 z-40 -mx-4 border-b-2 px-4 pt-2 pb-0 transition-colors duration-300 lg:top-[var(--navbar-height-desktop)] lg:mx-0 lg:px-2 ${
-					isStuck
-						? 'border-secondary bg-base-200 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)]'
-						: 'bg-base-100 border-transparent'
+				className={`team-detail-nav sticky top-0 z-40 -mx-4 px-4 pt-1 pb-0 transition-colors duration-300 lg:top-[var(--navbar-height-desktop)] lg:mx-0 lg:px-2 ${
+					isStuck ? 'bg-base-200 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)]' : 'bg-base-100'
 				}`}
 				aria-label="Team navigation"
 			>
@@ -99,7 +97,7 @@ export function TeamDetailNav({
 					{teamName}
 				</span>
 
-				<ul className="tabs tabs-border flex-nowrap">
+				<ul className="flex flex-nowrap items-center gap-1 py-2">
 					{visibleTabs.map((tab) => {
 						const isActive = tab.matchFn(pathname);
 
@@ -110,7 +108,7 @@ export function TeamDetailNav({
 										href={tab.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="tab gap-1 px-3 text-sm font-semibold lg:gap-1.5 lg:px-4 lg:text-base"
+										className="text-base-content/70 hover:bg-base-300 flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold transition-colors lg:gap-1.5 lg:px-4 lg:text-base"
 									>
 										<span className="sm:hidden">{tab.shortLabel ?? tab.label}</span>
 										<span className="hidden sm:inline">{tab.label}</span>
@@ -125,7 +123,11 @@ export function TeamDetailNav({
 								<Link
 									href={tab.href}
 									aria-current={isActive ? 'page' : undefined}
-									className={`tab px-3 text-sm font-semibold lg:px-4 lg:text-base ${isActive ? 'tab-active' : ''}`}
+									className={`flex items-center rounded-full px-3 py-1.5 text-sm font-semibold transition-colors lg:px-4 lg:text-base ${
+										isActive
+											? 'bg-secondary text-secondary-content'
+											: 'text-base-content/70 hover:bg-base-300'
+									}`}
 								>
 									<span className="sm:hidden">{tab.shortLabel ?? tab.label}</span>
 									<span className="hidden sm:inline">{tab.label}</span>
@@ -136,7 +138,7 @@ export function TeamDetailNav({
 					<li className="ml-auto">
 						<Link
 							href="/football/teams"
-							className="tab gap-1 px-3 text-sm font-semibold lg:px-4 lg:text-base"
+							className="text-base-content/70 hover:bg-base-300 flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-semibold transition-colors lg:px-4 lg:text-base"
 							aria-label="All teams"
 						>
 							<LayoutList className="h-4 w-4 shrink-0" aria-hidden="true" />
