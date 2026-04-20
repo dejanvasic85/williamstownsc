@@ -19,6 +19,8 @@
 		"crawl:clubs:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl clubs",
 		"crawl:fixtures": "tsx bin/wsc.ts crawl fixtures",
 		"crawl:fixtures:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures",
+		"crawl:table": "tsx bin/wsc.ts crawl table",
+		"crawl:table:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl table",
 		"sync:clubs": "tsx bin/wsc.ts sync clubs",
 		"sync:fixtures": "tsx bin/wsc.ts sync fixtures",
 		"test:e2e": "playwright test",

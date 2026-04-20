@@ -5,6 +5,7 @@ import { getCrawlableTeams } from '@/lib/content/teams';
 import logger from '@/lib/logger';
 import { crawlClubs } from './commands/crawlClubs';
 import { crawlFixtures } from './commands/crawlFixtures';
+import { crawlTable } from './commands/crawlTable';
 import { syncClubs } from './commands/syncClubs';
 import { syncFixtures } from './commands/syncFixtures';
 
@@ -86,6 +87,52 @@ crawl
 			}
 		}
 	);
+
+crawl
+	.command('table')
+	.description('Extract league table data from Dribl')
+	.option(
+		'-t, --team <slug>',
+		'Team slug for output filename (e.g., "state-league-2-men-s-north-west")'
+	)
+	.option('-u, --table-url <url>', 'Dribl ladder page URL for the team')
+	.action(async (options: { team?: string; tableUrl?: string }) => {
+		if (options.team && options.tableUrl) {
+			await crawlTable({ team: options.team, tableUrl: options.tableUrl });
+			return;
+		}
+
+		if (options.team || options.tableUrl) {
+			log.error(
+				'both --team and --table-url must be provided together, or omit both to use Sanity config'
+			);
+			process.exit(1);
+		}
+
+		const teams = await getCrawlableTeams();
+		const teamsWithTable = teams.filter((t) => t.tableUrl);
+
+		if (teamsWithTable.length === 0) {
+			log.error('no teams with tableUrl found in Sanity');
+			process.exit(1);
+		}
+
+		log.info({ count: teamsWithTable.length }, 'crawling tables for teams from Sanity config');
+		const failures: string[] = [];
+
+		for (const team of teamsWithTable) {
+			try {
+				await crawlTable({ team: team.slug, tableUrl: team.tableUrl! });
+			} catch {
+				failures.push(team.slug);
+			}
+		}
+
+		if (failures.length > 0) {
+			log.error({ failures }, 'crawl failed for some teams');
+			process.exit(1);
+		}
+	});
 
 sync
 	.command('clubs')

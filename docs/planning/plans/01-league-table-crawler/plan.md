@@ -131,7 +131,7 @@ Create new file with all Zod schemas and TypeScript types (field names confirmed
    - `TableData` — `{ season: number; competition: string; entries: TableEntry[] }`
 5. Add `tableDataSchema` Zod schema for validating canonical output
 
-**Verification:** `npm run type:check` passes.
+**Verification:** `npm run type:check` passes. ✅
 
 ---
 
@@ -145,7 +145,7 @@ Current `crawlableTeamsQuery` (line 75) does not include `tableUrl`.
 2. Add `tableUrl` to `crawlableTeamsQuery` GROQ projection
 3. No other files need changing — `wsc.ts` already calls `getCrawlableTeams()`
 
-**Verification:** TypeScript resolves `team.tableUrl` without errors.
+**Verification:** TypeScript resolves `team.tableUrl` without errors. ✅
 
 ---
 
@@ -186,6 +186,8 @@ Model after `bin/commands/crawlFixtures.ts` using the simpler single-response in
 1. Run `npm run crawl:table -- --team <slug> --table-url <url>` for one real team
 2. Confirm `data/external/table/{slug}.json` exists and contains valid JSON matching the shape captured in Phase 0
 3. Run `npm run type:check` — no errors
+
+✅ Verified: `data/external/table/state-league-2-men-s-north-west.json` written with 12 entries. WSC top of table (pos 1, 9 pts). Type check clean.
 
 ---
 
