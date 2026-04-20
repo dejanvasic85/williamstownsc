@@ -126,7 +126,7 @@ export function MatchCountdownSection({
 					targetDate={match.date}
 					targetTime={match.time}
 					matchDurationMinutes={120}
-					countdownColor={classes.countdown}
+					countdownClassName={classes.countdown}
 				/>
 			</div>
 		</div>
