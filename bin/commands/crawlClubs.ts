@@ -25,8 +25,8 @@ export async function crawlClubs() {
 		});
 		const page = await context.newPage();
 
-		log.info({ url: fixturesBaseUrl }, 'navigating to fixtures page');
-		log.info('waiting for clubs API response');
+		log.debug({ url: fixturesBaseUrl }, 'navigating to fixtures page');
+		log.debug('waiting for clubs API response');
 		const [clubsResponse] = await Promise.all([
 			page.waitForResponse((response) => response.url().startsWith(clubsApiUrl) && response.ok(), {
 				timeout: 60_000
@@ -35,13 +35,13 @@ export async function crawlClubs() {
 		]);
 		const rawData = await clubsResponse.json();
 
-		log.info('received clubs API response, validating');
+		log.debug('received clubs API response, validating');
 		const validated = externalApiResponseSchema.parse(rawData);
-		log.info({ count: validated.data.length }, 'validated clubs');
+		log.info({ count: validated.data.length }, 'clubs crawl completed');
 
 		mkdirSync(resolve(outputPath, '..'), { recursive: true });
 		writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
-		log.info({ outputPath }, 'saved clubs data');
+		log.debug({ outputPath }, 'saved clubs data');
 	} finally {
 		if (browser) {
 			await browser.close();
