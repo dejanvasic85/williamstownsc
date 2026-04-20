@@ -102,7 +102,7 @@ async function getCurrentSeasonText(page: Page): Promise<string> {
 }
 
 async function waitForLoadMoreButton(page: Page, maxAttempts: number = 10): Promise<boolean> {
-	log.info('scrolling to find Load More button');
+	log.debug('scrolling to find Load More button');
 
 	for (let attempt = 1; attempt <= maxAttempts; attempt++) {
 		// Scroll to bottom
@@ -112,14 +112,14 @@ async function waitForLoadMoreButton(page: Page, maxAttempts: number = 10): Prom
 		// Check if button is visible
 		const hasButton = await hasLoadMoreButton(page);
 		if (hasButton) {
-			log.info({ scrollAttempts: attempt }, 'Load More button found');
+			log.debug({ scrollAttempts: attempt }, 'Load More button found');
 			return true;
 		}
 
 		log.debug({ attempt, maxAttempts }, 'button not visible yet');
 	}
 
-	log.info('Load More button not found after scrolling');
+	log.debug('Load More button not found after scrolling');
 	return false;
 }
 
@@ -130,7 +130,7 @@ async function clickFilterByText(
 	newValueText: string
 ): Promise<boolean> {
 	try {
-		log.info({ filter: filterLabel, current: currentValueText }, 'clicking filter');
+		log.debug({ filter: filterLabel, current: currentValueText }, 'clicking filter');
 
 		// STEP 1: Click on the current filter value text
 		const currentValueClicked = await page.evaluate((text) => {
@@ -150,7 +150,7 @@ async function clickFilterByText(
 		if (!currentValueClicked) {
 			log.warn({ filter: filterLabel, text: currentValueText }, 'could not find visible text');
 
-			log.info({ filter: filterLabel }, 'falling back to label click');
+			log.debug({ filter: filterLabel }, 'falling back to label click');
 			const labelClicked = await page.evaluate((labelText) => {
 				const elements = Array.from(document.querySelectorAll('*'));
 				const element = elements.find((el) => {
@@ -175,7 +175,7 @@ async function clickFilterByText(
 		await page.waitForTimeout(1000);
 
 		// STEP 3: Click on the desired option text
-		log.info({ filter: filterLabel, value: newValueText }, 'selecting filter option');
+		log.debug({ filter: filterLabel, value: newValueText }, 'selecting filter option');
 		const optionClicked = await page.evaluate((text) => {
 			const elements = Array.from(document.querySelectorAll('*'));
 			const element = elements.find((el) => {
@@ -197,7 +197,7 @@ async function clickFilterByText(
 
 		// STEP 4: Wait for filter to apply
 		await page.waitForTimeout(1500);
-		log.info({ filter: filterLabel, value: newValueText }, 'filter applied');
+		log.debug({ filter: filterLabel, value: newValueText }, 'filter applied');
 
 		return true;
 	} catch (error) {
@@ -210,7 +210,7 @@ async function applyFilters(
 	page: Page,
 	args: FilterArgs
 ): Promise<{ season: string; competition: string; league: string }> {
-	log.info('applying filters');
+	log.debug('applying filters');
 
 	await page.waitForLoadState('domcontentloaded');
 	await page.waitForFunction(
@@ -252,7 +252,7 @@ async function applyFilters(
 	await page.waitForTimeout(2000);
 
 	// Wait longer for League options to populate after Competition change
-	log.info('waiting for league options to populate');
+	log.debug('waiting for league options to populate');
 
 	// Apply League filter (required)
 	const leagueSuccess = await clickFilterByText(page, 'League', 'All Leagues', args.league);
@@ -285,7 +285,7 @@ async function crawlPage({
 	outputDir,
 	filterArgs
 }: CrawlPageOptions): Promise<void> {
-	log.info({ url }, 'navigating to page');
+	log.debug({ url }, 'navigating to page');
 	await page.goto(url, { waitUntil: 'domcontentloaded' });
 
 	// Apply filters
@@ -297,9 +297,9 @@ async function crawlPage({
 	}
 
 	// Wait for first API response
-	log.info('waiting for initial data');
+	log.debug('waiting for initial data');
 	await waitForNewResponse(responses, 0, 60_000);
-	log.info('initial data loaded');
+	log.debug('initial data loaded');
 
 	// Scroll until Load More button appears
 	let hasMorePages = await waitForLoadMoreButton(page);
@@ -309,13 +309,13 @@ async function crawlPage({
 
 	while (hasMorePages) {
 		const expectedIndex = chunkIndex + 1;
-		log.info({ chunk: expectedIndex }, 'loading more');
+		log.debug({ chunk: expectedIndex }, 'loading more');
 
 		const loadMoreButton = page.getByText('Load more...');
 		await loadMoreButton.click();
 
 		await waitForNewResponse(responses, expectedIndex, 60_000);
-		log.info({ chunk: expectedIndex }, 'chunk loaded');
+		log.debug({ chunk: expectedIndex }, 'chunk loaded');
 
 		await page.waitForTimeout(1000);
 
@@ -323,11 +323,11 @@ async function crawlPage({
 		hasMorePages = await waitForLoadMoreButton(page, 5);
 	}
 
-	log.info({ totalChunks: responses.length }, 'all data loaded');
+	log.debug({ totalChunks: responses.length }, 'all data loaded');
 
 	// Validate and save chunks
 	mkdirSync(outputDir, { recursive: true });
-	log.info({ outputDir }, 'saving chunks');
+	log.debug({ outputDir }, 'saving chunks');
 
 	let savedChunks = 0;
 	for (let i = 0; i < responses.length; i++) {
@@ -338,7 +338,7 @@ async function crawlPage({
 			const chunkPath = resolve(outputDir, `chunk-${savedChunks}.json`);
 			writeFileSync(chunkPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
 
-			log.info({ chunk: savedChunks, fixtures: validated.data.length }, 'saved chunk');
+			log.debug({ chunk: savedChunks, fixtures: validated.data.length }, 'saved chunk');
 			savedChunks++;
 		} catch (error) {
 			if (error instanceof ZodError) {
@@ -367,7 +367,7 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 		page.on('response', async (response) => {
 			if (response.url().startsWith(driblApiBaseUrl) && response.ok()) {
 				responses.push(response);
-				log.info({ count: responses.length }, 'API response captured');
+				log.debug({ count: responses.length }, 'API response captured');
 			}
 		});
 

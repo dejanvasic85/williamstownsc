@@ -36,14 +36,14 @@ export async function crawlTable({ team, tableUrl }: CrawlTableOptions) {
 			if (response.url().includes(driblLaddersApiUrl) && response.ok()) {
 				try {
 					capturedResponse = await response.json();
-					log.info({ url: response.url() }, 'API response captured');
+					log.debug({ url: response.url() }, 'API response captured');
 				} catch (err) {
 					log.warn({ err }, 'failed to parse API response body');
 				}
 			}
 		});
 
-		log.info({ url: tableUrl }, 'navigating to ladder page');
+		log.debug({ url: tableUrl }, 'navigating to ladder page');
 		await page.goto(tableUrl, { waitUntil: 'domcontentloaded' });
 
 		const deadline = Date.now() + 60_000;
@@ -56,7 +56,7 @@ export async function crawlTable({ team, tableUrl }: CrawlTableOptions) {
 		}
 
 		const validated = externalTableApiResponseSchema.parse(capturedResponse);
-		log.info({ entries: validated.data.length }, 'response validated');
+		log.debug({ entries: validated.data.length }, 'response validated');
 
 		if (!/^[a-z0-9][a-z0-9-_]*$/i.test(team)) {
 			throw new Error(`Invalid team slug for filename: ${team}`);
@@ -67,7 +67,7 @@ export async function crawlTable({ team, tableUrl }: CrawlTableOptions) {
 
 		const outputPath = resolve(outputDir, `${team}.json`);
 		writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
-		log.info({ outputPath }, 'table data written');
+		log.debug({ outputPath }, 'table data written');
 
 		log.info({ team }, 'crawl completed');
 	} catch (error) {

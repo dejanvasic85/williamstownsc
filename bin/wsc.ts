@@ -69,6 +69,7 @@ crawl
 
 			for (const team of teams) {
 				try {
+					log.info({ team: team.slug }, 'crawling team');
 					const competition = team.competitionName?.trim() || options.competition;
 					await crawlFixtures({
 						team: team.slug,
@@ -123,6 +124,7 @@ crawl
 
 		for (const team of teamsWithTable) {
 			try {
+				log.info({ team: team.slug }, 'crawling team');
 				await crawlTable({ team: team.slug, tableUrl: team.tableUrl! });
 			} catch {
 				failures.push(team.slug);
@@ -163,6 +165,7 @@ sync
 
 		for (const team of teams) {
 			try {
+				log.info({ team: team.slug }, 'syncing team');
 				await syncFixtures({ team: team.slug });
 			} catch {
 				// syncFixtures already logs errors; collect failures for summary
@@ -199,6 +202,7 @@ sync
 
 		for (const team of teamsWithTable) {
 			try {
+				log.info({ team: team.slug }, 'syncing team');
 				await syncTable({ team: team.slug });
 			} catch {
 				failures.push(team.slug);
