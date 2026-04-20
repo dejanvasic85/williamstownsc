@@ -101,7 +101,7 @@ export default async function Home() {
 						<MatchCountdownSection
 							match={seniorMensNextMatch}
 							teamSlug="state-league-2-men-s-north-west"
-							teamName="Senior Mens"
+							teamName="Senior Men's"
 							color="blue"
 						/>
 						<MatchCountdownSection
