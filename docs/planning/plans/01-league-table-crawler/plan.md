@@ -295,6 +295,8 @@ type LeagueTableProps = {
 5. Toggle dark mode — confirm table is readable in both themes
 6. Run `npm run build` — no build errors
 
+✅ Verified: table renders correctly at desktop and mobile viewports. WSC row highlighted in both light and dark themes. `ocean.dribl.com` already whitelisted in next.config. Type check clean.
+
 ---
 
 ## Phase 7 — Nav Update

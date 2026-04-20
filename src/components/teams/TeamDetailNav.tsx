@@ -68,10 +68,10 @@ export function TeamDetailNav({
 		},
 		{
 			label: 'Table',
-			href: tableUrl ?? '',
-			isExternal: isExternalUrl(tableUrl ?? ''),
+			href: `${basePath}/table`,
+			isExternal: false,
 			isVisible: !!tableUrl,
-			matchFn: () => false
+			matchFn: (p) => p.startsWith(`${basePath}/table`)
 		}
 	];
 

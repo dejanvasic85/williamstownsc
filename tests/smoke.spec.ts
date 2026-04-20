@@ -77,6 +77,64 @@ test.describe('Homepage', () => {
 	});
 });
 
+test.describe('Fixtures Page', () => {
+	const fixturesUrl = '/football/teams/state-league-2-men-s-north-west/matches';
+
+	test.beforeEach(async ({ page }) => {
+		await page.goto(fixturesUrl);
+	});
+
+	test('loads with correct title', async ({ page }) => {
+		await expect(page).toHaveTitle(/Matches.*Williamstown SC/i);
+	});
+
+	test('renders at least one round', async ({ page }) => {
+		const rounds = page.getByRole('heading', { name: /Round \d+/i });
+		await expect(rounds.first()).toBeVisible();
+	});
+
+	test('Fixtures nav tab is active', async ({ page }) => {
+		const fixturesTab = page.getByRole('link', { name: 'Fixtures' });
+		await expect(fixturesTab).toBeVisible();
+		await expect(fixturesTab).toHaveAttribute('aria-current', 'page');
+	});
+});
+
+test.describe('League Table Page', () => {
+	const tableUrl = '/football/teams/state-league-2-men-s-north-west/table';
+
+	test.beforeEach(async ({ page }) => {
+		await page.goto(tableUrl);
+	});
+
+	test('loads with correct title', async ({ page }) => {
+		await expect(page).toHaveTitle(/League Table.*Williamstown SC/i);
+	});
+
+	test('renders standings table', async ({ page }) => {
+		await expect(page.getByRole('table')).toBeVisible();
+	});
+
+	test('table has expected column headers', async ({ page }) => {
+		const headers = page.getByRole('columnheader');
+		await expect(headers.filter({ hasText: '#' })).toBeVisible();
+		await expect(headers.filter({ hasText: 'Team' })).toBeVisible();
+		await expect(headers.filter({ hasText: 'Pts' })).toBeVisible();
+	});
+
+	test('WSC row is present and highlighted', async ({ page }) => {
+		const wscRow = page.getByRole('row').filter({ hasText: 'Williamstown SC' });
+		await expect(wscRow).toBeVisible();
+		await expect(wscRow).toHaveClass(/bg-secondary/);
+	});
+
+	test('Table nav tab is active', async ({ page }) => {
+		const tableTab = page.getByRole('link', { name: 'Table' });
+		await expect(tableTab).toBeVisible();
+		await expect(tableTab).toHaveAttribute('aria-current', 'page');
+	});
+});
+
 test.describe('Responsive', () => {
 	test('renders on mobile viewport', async ({ page }) => {
 		await page.setViewportSize({ width: 375, height: 667 });
