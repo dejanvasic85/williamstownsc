@@ -5,8 +5,10 @@ import { getCrawlableTeams } from '@/lib/content/teams';
 import logger from '@/lib/logger';
 import { crawlClubs } from './commands/crawlClubs';
 import { crawlFixtures } from './commands/crawlFixtures';
+import { crawlTable } from './commands/crawlTable';
 import { syncClubs } from './commands/syncClubs';
 import { syncFixtures } from './commands/syncFixtures';
+import { syncTable } from './commands/syncTable';
 
 const log = logger.child({ module: 'wsc' });
 
@@ -87,6 +89,52 @@ crawl
 		}
 	);
 
+crawl
+	.command('table')
+	.description('Extract league table data from Dribl')
+	.option(
+		'-t, --team <slug>',
+		'Team slug for output filename (e.g., "state-league-2-men-s-north-west")'
+	)
+	.option('-u, --table-url <url>', 'Dribl ladder page URL for the team')
+	.action(async (options: { team?: string; tableUrl?: string }) => {
+		if (options.team && options.tableUrl) {
+			await crawlTable({ team: options.team, tableUrl: options.tableUrl });
+			return;
+		}
+
+		if (options.team || options.tableUrl) {
+			log.error(
+				'both --team and --table-url must be provided together, or omit both to use Sanity config'
+			);
+			process.exit(1);
+		}
+
+		const teams = await getCrawlableTeams();
+		const teamsWithTable = teams.filter((t) => t.tableUrl);
+
+		if (teamsWithTable.length === 0) {
+			log.error('no teams with tableUrl found in Sanity');
+			process.exit(1);
+		}
+
+		log.info({ count: teamsWithTable.length }, 'crawling tables for teams from Sanity config');
+		const failures: string[] = [];
+
+		for (const team of teamsWithTable) {
+			try {
+				await crawlTable({ team: team.slug, tableUrl: team.tableUrl! });
+			} catch {
+				failures.push(team.slug);
+			}
+		}
+
+		if (failures.length > 0) {
+			log.error({ failures }, 'crawl failed for some teams');
+			process.exit(1);
+		}
+	});
+
 sync
 	.command('clubs')
 	.description('Transform external club data into canonical format')
@@ -118,6 +166,41 @@ sync
 				await syncFixtures({ team: team.slug });
 			} catch {
 				// syncFixtures already logs errors; collect failures for summary
+				failures.push(team.slug);
+			}
+		}
+
+		if (failures.length > 0) {
+			log.error({ failures }, 'sync failed for some teams');
+			process.exit(1);
+		}
+	});
+
+sync
+	.command('table')
+	.description('Transform external table data into canonical format')
+	.option('-t, --team <slug>', 'Team slug to sync (e.g., "state-league-2-men-s-north-west")')
+	.action(async (options: { team?: string }) => {
+		if (options.team) {
+			await syncTable({ team: options.team });
+			return;
+		}
+
+		const teams = await getCrawlableTeams();
+		const teamsWithTable = teams.filter((t) => t.tableUrl);
+
+		if (teamsWithTable.length === 0) {
+			log.error('no teams with tableUrl found in Sanity');
+			process.exit(1);
+		}
+
+		log.info({ count: teamsWithTable.length }, 'syncing tables for teams from Sanity config');
+		const failures: string[] = [];
+
+		for (const team of teamsWithTable) {
+			try {
+				await syncTable({ team: team.slug });
+			} catch {
 				failures.push(team.slug);
 			}
 		}

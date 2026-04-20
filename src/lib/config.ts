@@ -47,7 +47,8 @@ const socialPublishConfigSchema = z.object({
 });
 
 export type ClubConfig = {
-	wscClubExternalId: string;
+	wscClubDriblId: string;
+	wscClubDriblName: string;
 };
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
@@ -163,8 +164,6 @@ export function getSocialPublishConfig(): SocialPublishConfig {
 	});
 }
 
-const wscClubExternalId = '6lNbpDpwdx';
-
 export function getClubConfig(): ClubConfig {
-	return { wscClubExternalId };
+	return { wscClubDriblId: '6lNbpDpwdx', wscClubDriblName: 'Williamstown' };
 }

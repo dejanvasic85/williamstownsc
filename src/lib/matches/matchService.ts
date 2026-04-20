@@ -94,7 +94,7 @@ export async function hasFixtures(slug: string): Promise<boolean> {
 
 const matchDurationMinutes = 120;
 
-function resolveNextMatch(fixtures: Fixture[], wscClubExternalId: string): EnrichedFixture | null {
+function resolveNextMatch(fixtures: Fixture[], wscClubDriblId: string): EnrichedFixture | null {
 	const now = new Date();
 
 	const upcoming = fixtures
@@ -104,7 +104,7 @@ function resolveNextMatch(fixtures: Fixture[], wscClubExternalId: string): Enric
 		}))
 		.filter(({ fixture, matchDateTime }) => {
 			const isClubMatch =
-				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
+				fixture.homeTeamId === wscClubDriblId || fixture.awayTeamId === wscClubDriblId;
 			const matchEnd = addMinutes(matchDateTime, matchDurationMinutes);
 			return isClubMatch && isBefore(now, matchEnd);
 		});
@@ -115,10 +115,7 @@ function resolveNextMatch(fixtures: Fixture[], wscClubExternalId: string): Enric
 	return enrichFixtures([upcoming[0].fixture])[0];
 }
 
-function resolvePreviousMatch(
-	fixtures: Fixture[],
-	wscClubExternalId: string
-): EnrichedFixture | null {
+function resolvePreviousMatch(fixtures: Fixture[], wscClubDriblId: string): EnrichedFixture | null {
 	const now = new Date();
 
 	const completed = fixtures
@@ -129,7 +126,7 @@ function resolvePreviousMatch(
 		.filter(({ fixture, matchDateTime }) => {
 			if (fixture.status !== 'complete') return false;
 			const isClubMatch =
-				fixture.homeTeamId === wscClubExternalId || fixture.awayTeamId === wscClubExternalId;
+				fixture.homeTeamId === wscClubDriblId || fixture.awayTeamId === wscClubDriblId;
 			return isClubMatch && isBefore(matchDateTime, now);
 		});
 
@@ -150,26 +147,26 @@ export async function getTeamMatches(teamSlug: string): Promise<{
 		return { hasFixtures: false, nextMatch: null, previousMatch: null };
 	}
 
-	const { wscClubExternalId } = getClubConfig();
+	const { wscClubDriblId } = getClubConfig();
 	const { fixtures } = fixtureData;
 
 	return {
 		hasFixtures: true,
-		nextMatch: resolveNextMatch(fixtures, wscClubExternalId),
-		previousMatch: resolvePreviousMatch(fixtures, wscClubExternalId)
+		nextMatch: resolveNextMatch(fixtures, wscClubDriblId),
+		previousMatch: resolvePreviousMatch(fixtures, wscClubDriblId)
 	};
 }
 
 export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
 	const fixtureData = await loadFixture(teamSlug);
 	if (!fixtureData) return null;
-	const { wscClubExternalId } = getClubConfig();
-	return resolveNextMatch(fixtureData.fixtures, wscClubExternalId);
+	const { wscClubDriblId } = getClubConfig();
+	return resolveNextMatch(fixtureData.fixtures, wscClubDriblId);
 }
 
 export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
 	const fixtureData = await loadFixture(teamSlug);
 	if (!fixtureData) return null;
-	const { wscClubExternalId } = getClubConfig();
-	return resolvePreviousMatch(fixtureData.fixtures, wscClubExternalId);
+	const { wscClubDriblId } = getClubConfig();
+	return resolvePreviousMatch(fixtureData.fixtures, wscClubDriblId);
 }

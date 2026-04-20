@@ -6,6 +6,7 @@ import { TeamDetailNav } from '@/components/teams/TeamDetailNav';
 import { getAnnouncements } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getTeamMatches } from '@/lib/matches/matchService';
+import { getTableForTeam } from '@/lib/matches/tableService';
 
 type TeamDetailLayoutProps = {
 	children: ReactNode;
@@ -15,10 +16,11 @@ type TeamDetailLayoutProps = {
 export default async function TeamDetailLayout({ children, params }: TeamDetailLayoutProps) {
 	const { slug } = await params;
 
-	const [team, teamMatches, announcements] = await Promise.all([
+	const [team, teamMatches, announcements, tableData] = await Promise.all([
 		getTeamBySlug(slug),
 		getTeamMatches(slug),
-		getAnnouncements()
+		getAnnouncements(),
+		getTableForTeam(slug)
 	]);
 
 	if (!team) {
@@ -53,6 +55,7 @@ export default async function TeamDetailLayout({ children, params }: TeamDetailL
 					teamSlug={slug}
 					teamName={team.name}
 					hasFixtures={teamMatches.hasFixtures}
+					hasTable={!!tableData}
 					fixturesUrl={team.fixturesUrl}
 					tableUrl={team.tableUrl}
 				/>
