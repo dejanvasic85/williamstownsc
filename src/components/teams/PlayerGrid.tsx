@@ -1,4 +1,4 @@
-import { splitPersonName } from '@/lib/transformers/personTransformer';
+import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 import type { Player } from '@/types/team';
 import { PlayerCard } from './PlayerCard';
@@ -55,6 +55,7 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 							{positionPlayers.map((player) => {
 								const { firstName, lastName } = splitPersonName(player.person.name);
+								const photo = resolvePersonPhoto(player.photo, player.person.photo);
 								return (
 									<PlayerCard
 										key={player.person._id}
@@ -63,11 +64,9 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 										shirtNumber={player.shirtNumber || 0}
 										position={player.position || ''}
 										photoUrl={
-											player.person?.photo?.asset
-												? urlFor(player.person.photo).width(512).url()
-												: '/img/player-alt.webp'
+											photo?.asset ? urlFor(photo).width(512).url() : '/img/player-alt.webp'
 										}
-										photoAlt={player.person?.photo?.alt || player.person.name}
+										photoAlt={photo?.alt || player.person.name}
 										isCaptain={player.isCaptain || false}
 										isViceCaptain={player.isViceCaptain || false}
 										intro={player.intro}

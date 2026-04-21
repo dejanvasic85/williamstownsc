@@ -9,7 +9,7 @@ import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getTeamMatches } from '@/lib/matches/matchService';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
-import { splitPersonName } from '@/lib/transformers/personTransformer';
+import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
 type TeamDetailPageProps = {
@@ -76,6 +76,7 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 						{team.coachingStaff.map((coach) => {
 							const { firstName, lastName } = splitPersonName(coach.person.name);
+							const photo = resolvePersonPhoto(coach.photo, coach.person.photo);
 
 							return (
 								<CoachCard
@@ -83,12 +84,8 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 									firstName={firstName}
 									lastName={lastName}
 									role={coach.title}
-									photoUrl={
-										coach.person.photo?.asset
-											? urlFor(coach.person.photo).width(512).url()
-											: '/img/player-alt.webp'
-									}
-									photoAlt={coach.person.photo.alt || coach.person.name}
+									photoUrl={photo?.asset ? urlFor(photo).width(512).url() : '/img/player-alt.webp'}
+									photoAlt={photo?.alt || coach.person.name}
 								/>
 							);
 						})}

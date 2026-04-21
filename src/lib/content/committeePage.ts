@@ -37,6 +37,12 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 			alt
 		},
 		committeeMembers[] {
+			photo {
+				asset-> { _ref, url },
+				alt,
+				crop,
+				hotspot
+			},
 			person-> {
 				_id,
 				name,

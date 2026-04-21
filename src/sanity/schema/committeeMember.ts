@@ -13,6 +13,22 @@ export const committeeMember = defineType({
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
+			name: 'photo',
+			title: 'Role Photo',
+			type: 'image',
+			description:
+				'Optional. Use a different photo when this person appears as a committee member.',
+			options: { hotspot: true },
+			fields: [
+				defineField({
+					name: 'alt',
+					type: 'string',
+					title: 'Alt Text',
+					validation: (Rule) => Rule.required()
+				})
+			]
+		}),
+		defineField({
 			name: 'title',
 			title: 'Title',
 			type: 'string',
