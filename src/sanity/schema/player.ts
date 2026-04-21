@@ -25,7 +25,14 @@ export const player = defineType({
 			type: 'image',
 			description: 'Optional. Use a different photo when this person appears as a player.',
 			options: { hotspot: true },
-			fields: [{ name: 'alt', type: 'string', title: 'Alt Text' }]
+			fields: [
+				defineField({
+					name: 'alt',
+					type: 'string',
+					title: 'Alt Text',
+					validation: (Rule) => Rule.required()
+				})
+			]
 		}),
 		defineField({
 			name: 'shirtNumber',

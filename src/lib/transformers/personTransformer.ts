@@ -1,7 +1,7 @@
 import type { PersonPhoto } from '@/types/team';
 
 export function resolvePersonPhoto(
-	rolePhoto: PersonPhoto | undefined,
+	rolePhoto: PersonPhoto | null | undefined,
 	personPhoto: PersonPhoto
 ): PersonPhoto {
 	return rolePhoto ?? personPhoto;
