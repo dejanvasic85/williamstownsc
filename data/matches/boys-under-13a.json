@@ -374,8 +374,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "PydoLxGmD9",
-			"address": "Duane Reserve Main Pitch - Half B",
-			"coordinates": "-37.823133,144.842838",
+			"address": "AB Shaw Reserve Pitch 1 - Half B",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -668,11 +668,11 @@
 			"round": 11,
 			"date": "2026-07-18",
 			"day": "Sunday",
-			"time": "09:00",
+			"time": "08:30",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "bgdMXan2KE",
-			"address": "Duane Reserve Main Pitch - Half B",
-			"coordinates": "-37.823133,144.842838",
+			"address": "AB Shaw Reserve Pitch 2 - Half B",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -770,8 +770,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "Duane Reserve Main Pitch - Half B",
-			"coordinates": "-37.823133,144.842838",
+			"address": "AB Shaw Reserve Pitch 1 - Half B",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{

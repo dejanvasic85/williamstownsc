@@ -721,6 +721,17 @@
 		},
 		{
 			"round": 14,
+			"date": "2026-08-07",
+			"day": "Friday",
+			"time": "19:30",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "7ZKRa2oNkB",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "-37.755431,144.939902",
+			"status": "pending"
+		},
+		{
+			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
 			"time": "13:00",
@@ -750,17 +761,6 @@
 			"awayTeamId": "OEN2Z5GlNq",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "6lNbVk6NxE",
-			"awayTeamId": "7ZKRa2oNkB",
-			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
 			"status": "pending"
 		},
 		{
@@ -941,24 +941,24 @@
 		},
 		{
 			"round": 18,
-			"date": "2026-09-04",
-			"day": "Friday",
-			"time": "19:45",
-			"homeTeamId": "7ZKRa2oNkB",
-			"awayTeamId": "08NOpe1bKZ",
-			"address": "Hosken Reserve Pitch 1 South",
-			"coordinates": "-37.725117,144.957411",
+			"date": "2026-09-06",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "k2KpA9PdY5",
+			"awayTeamId": "OEN2Z5GlNq",
+			"address": "More Park Northern Field",
+			"coordinates": "-37.772482,144.796616",
 			"status": "pending"
 		},
 		{
 			"round": 18,
 			"date": "2026-09-06",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "k2KpA9PdY5",
-			"awayTeamId": "OEN2Z5GlNq",
-			"address": "More Park Northern Field",
-			"coordinates": "-37.772482,144.796616",
+			"time": "15:00",
+			"homeTeamId": "7ZKRa2oNkB",
+			"awayTeamId": "08NOpe1bKZ",
+			"address": "Hosken Reserve Pitch 1 South",
+			"coordinates": "-37.725117,144.957411",
 			"status": "pending"
 		},
 		{
