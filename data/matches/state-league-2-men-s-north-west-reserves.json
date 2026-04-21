@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 132,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -302,6 +302,19 @@
 			"status": "complete"
 		},
 		{
+			"round": 4,
+			"date": "2026-04-18",
+			"day": "Saturday",
+			"time": "12:30",
+			"homeTeamId": "Bjma0G87dR",
+			"awayTeamId": "7MNGvappmA",
+			"address": "Findon Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
 			"round": 5,
 			"date": "2026-04-24",
 			"day": "Friday",
@@ -330,8 +343,8 @@
 			"time": "12:45",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "7MNGvxzpmA",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -451,8 +464,8 @@
 			"time": "18:15",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "6lNbpDlAdx",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -583,8 +596,8 @@
 			"time": "18:15",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "Bjma0G87dR",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -726,8 +739,8 @@
 			"time": "12:45",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "3pmvQp0Ldv",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -792,8 +805,8 @@
 			"time": "12:45",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "bam1nQWrNw",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -979,8 +992,8 @@
 			"time": "12:45",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "LBdDx0GQdb",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -1111,8 +1124,8 @@
 			"time": "18:15",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "PydoLxGmD9",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -1243,8 +1256,8 @@
 			"time": "18:15",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "3vmZv8JJmq",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
@@ -1375,8 +1388,8 @@
 			"time": "18:15",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
+			"address": "Harvest Home Recreation Reserve Pitch 2",
+			"coordinates": "-37.624506,145.02702",
 			"status": "pending"
 		},
 		{
