@@ -1,4 +1,4 @@
-import { splitPersonName } from '@/lib/transformers/personTransformer';
+import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 import type { CommitteeMember } from '@/types/committee';
 import { CommitteeMemberCard } from './CommitteeMemberCard';
@@ -14,18 +14,15 @@ export function CommitteeMemberGrid({ members }: CommitteeMemberGridProps) {
 		<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 			{sortedMembers.map((member) => {
 				const { firstName, lastName } = splitPersonName(member.person.name);
+				const photo = resolvePersonPhoto(member.photo, member.person.photo);
 				return (
 					<CommitteeMemberCard
 						key={member.person._id}
 						firstName={firstName}
 						lastName={lastName}
 						title={member.title}
-						photoUrl={
-							member.person.photo?.asset
-								? urlFor(member.person.photo).width(512).url()
-								: '/img/player-alt.webp'
-						}
-						photoAlt={member.person.photo?.alt || member.person.name}
+						photoUrl={photo?.asset ? urlFor(photo).width(512).url() : '/img/player-alt.webp'}
+						photoAlt={photo?.alt || member.person.name}
 					/>
 				);
 			})}

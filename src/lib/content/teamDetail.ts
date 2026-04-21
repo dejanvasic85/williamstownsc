@@ -24,6 +24,12 @@ export const teamDetailQuery = groq`
     tableUrl,
     description,
     coachingStaff[] {
+      photo {
+        asset-> { _ref, url },
+        alt,
+        crop,
+        hotspot
+      },
       person-> {
         _id,
         name,
@@ -41,6 +47,12 @@ export const teamDetailQuery = groq`
       title
     },
     players[] {
+      photo {
+        asset-> { _ref, url },
+        alt,
+        crop,
+        hotspot
+      },
       person-> {
         _id,
         name,

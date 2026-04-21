@@ -1,3 +1,12 @@
+import type { PersonPhoto } from '@/types/team';
+
+export function resolvePersonPhoto(
+	rolePhoto: PersonPhoto | undefined,
+	personPhoto: PersonPhoto
+): PersonPhoto {
+	return rolePhoto ?? personPhoto;
+}
+
 export function splitPersonName(fullName: string): { firstName: string; lastName: string } {
 	const parts = fullName.trim().split(' ');
 	if (parts.length === 1) {

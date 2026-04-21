@@ -30,28 +30,32 @@ export type AgeGroup =
 
 export type TabCategory = 'seniors' | 'reserves' | 'juniors' | 'masters' | 'metros';
 
+export type PersonPhoto = {
+	asset: {
+		_ref: string;
+		url: string;
+	};
+	alt: string;
+	crop?: { top: number; bottom: number; left: number; right: number };
+	hotspot?: { x: number; y: number; width: number; height: number };
+};
+
 export interface Person {
 	_id: string;
 	name: string;
-	photo: {
-		asset: {
-			_ref: string;
-			url: string;
-		};
-		alt: string;
-		crop?: { top: number; bottom: number; left: number; right: number };
-		hotspot?: { x: number; y: number; width: number; height: number };
-	};
+	photo: PersonPhoto;
 	dateOfBirth?: string;
 }
 
 export interface Coach {
 	person: Person;
+	photo?: PersonPhoto;
 	title: string;
 }
 
 export interface Player {
 	person: Person;
+	photo?: PersonPhoto;
 	shirtNumber?: number;
 	position?: string;
 	areaOfPitch?: 'goalkeeper' | 'defender' | 'midfielder' | 'forward';
