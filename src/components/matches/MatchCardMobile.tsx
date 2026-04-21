@@ -59,10 +59,15 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 			{isWashout && <span className="badge badge-neutral">Postponed</span>}
 
 			{/* Venue */}
-			<div className="text-base-content/60 grid grid-cols-[auto_1fr] items-start gap-1.5 text-sm">
-				<MapPin className="mt-0.5 h-4 w-4" aria-hidden="true" />
+			<a
+				href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fixture.address)}`}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="text-base-content/60 hover:text-base-content grid grid-cols-[auto_1fr] items-start gap-1.5 text-sm transition-colors"
+			>
+				<MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
 				<span>{fixture.address}</span>
-			</div>
+			</a>
 		</div>
 	);
 }

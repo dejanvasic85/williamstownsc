@@ -41,10 +41,15 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 							{formattedDate} {formattedTime}
 						</span>
 					</time>
-					<div className="text-base-content/70 flex items-center gap-1.5 text-sm">
-						<MapPin className="h-4 w-4" aria-hidden="true" />
+					<a
+						href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fixture.address)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-base-content/70 hover:text-base-content flex items-start gap-1.5 text-sm transition-colors"
+					>
+						<MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
 						<span>{fixture.address}</span>
-					</div>
+					</a>
 				</div>
 
 				{/* Column 2: Home Team Name (right-aligned) */}
