@@ -91,7 +91,7 @@ export function TeamDetailNav({
 				aria-label="Team navigation"
 			>
 				<span
-					className={`text-base-content block truncate px-1 text-xs font-bold tracking-wide uppercase transition-all duration-300 lg:text-xs ${
+					className={`text-base-content hidden truncate px-1 text-xs font-bold tracking-wide uppercase transition-all duration-300 lg:block ${
 						isStuck ? 'mt-2 max-h-5 translate-y-0 opacity-60' : 'max-h-0 -translate-y-1 opacity-0'
 					}`}
 					aria-hidden={!isStuck}
