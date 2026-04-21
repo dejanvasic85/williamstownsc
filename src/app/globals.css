@@ -89,7 +89,7 @@
 	--navbar-height-desktop: 5rem;
 	--navbar-with-banner-height: calc(var(--banner-height) + var(--navbar-height-desktop));
 	--navbar-with-offset: calc(var(--navbar-height-desktop) + 3rem);
-	--team-nav-height: 2.75rem;
+	--team-nav-height: 3.25rem;
 }
 
 body {
