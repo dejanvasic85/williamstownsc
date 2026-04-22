@@ -13,7 +13,9 @@
 			"awayTeamId": "bgdMXan2KE",
 			"address": "MacPherson Park Pitch 4 (U12/13s)",
 			"coordinates": "-37.63624,144.565487",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 1,
