@@ -393,6 +393,17 @@
 			"round": 8,
 			"date": "2026-06-19",
 			"day": "Friday",
+			"time": "19:30",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "wOmejXOyN0",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "-37.755431,144.939902",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-19",
+			"day": "Friday",
 			"time": "19:45",
 			"homeTeamId": "7ZKRa2oNkB",
 			"awayTeamId": "OEN2Z5GlNq",
@@ -420,17 +431,6 @@
 			"awayTeamId": "08NOpe1bKZ",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "6lNbVk6NxE",
-			"awayTeamId": "wOmejXOyN0",
-			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
 			"status": "pending"
 		},
 		{
