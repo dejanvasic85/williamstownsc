@@ -35,10 +35,7 @@ crawl
 		(val: string, prev: string[]) => [...prev, val],
 		[] as string[]
 	)
-	.option(
-		'-l, --league <name>',
-		'League name for manual mode (requires exactly one --team)'
-	)
+	.option('-l, --league <name>', 'League name for manual mode (requires exactly one --team)')
 	.option('-s, --season <year>', 'Season year', new Date().getFullYear().toString())
 	.option('-c, --competition <id>', 'Competition ID', 'FFV')
 	.action(
@@ -47,12 +44,14 @@ crawl
 
 			// Manual mode: single team with explicit league
 			if (teams.length === 1 && options.league) {
-				await crawlFixtures([{
-					team: teams[0],
-					league: options.league,
-					season: options.season,
-					competition: options.competition,
-				}]);
+				await crawlFixtures([
+					{
+						team: teams[0],
+						league: options.league,
+						season: options.season,
+						competition: options.competition
+					}
+				]);
 				return;
 			}
 
@@ -68,9 +67,8 @@ crawl
 				process.exit(1);
 			}
 
-			const filtered = teams.length > 0
-				? sanityTeams.filter((t) => teams.includes(t.slug))
-				: sanityTeams;
+			const filtered =
+				teams.length > 0 ? sanityTeams.filter((t) => teams.includes(t.slug)) : sanityTeams;
 
 			if (filtered.length === 0) {
 				log.error({ slugs: teams }, 'no matching teams found in Sanity config');
@@ -84,7 +82,7 @@ crawl
 					team: t.slug,
 					league: t.leagueName,
 					season: options.season,
-					competition: t.competitionName?.trim() || options.competition,
+					competition: t.competitionName?.trim() || options.competition
 				}))
 			);
 		}
@@ -99,7 +97,10 @@ crawl
 		(val: string, prev: string[]) => [...prev, val],
 		[] as string[]
 	)
-	.option('-u, --table-url <url>', 'Dribl ladder page URL for manual mode (requires exactly one --team)')
+	.option(
+		'-u, --table-url <url>',
+		'Dribl ladder page URL for manual mode (requires exactly one --team)'
+	)
 	.action(async (options: { team: string[]; tableUrl?: string }) => {
 		const teams = options.team;
 
@@ -123,9 +124,8 @@ crawl
 			process.exit(1);
 		}
 
-		const filtered = teams.length > 0
-			? teamsWithTable.filter((t) => teams.includes(t.slug))
-			: teamsWithTable;
+		const filtered =
+			teams.length > 0 ? teamsWithTable.filter((t) => teams.includes(t.slug)) : teamsWithTable;
 
 		if (filtered.length === 0) {
 			log.error({ slugs: teams }, 'no matching teams with tableUrl found in Sanity config');

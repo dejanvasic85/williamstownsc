@@ -50,11 +50,10 @@ export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> 
 				log.info({ team: team.team, tableUrl: team.tableUrl }, 'crawling table');
 
 				const [response] = await Promise.all([
-					page.waitForResponse(
-						(r) => r.url().includes(driblLaddersApiUrl) && r.ok(),
-						{ timeout: 60_000 }
-					),
-					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' }),
+					page.waitForResponse((r) => r.url().includes(driblLaddersApiUrl) && r.ok(), {
+						timeout: 60_000
+					}),
+					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' })
 				]);
 
 				const rawData = await response.json();

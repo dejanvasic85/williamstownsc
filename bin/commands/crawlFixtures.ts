@@ -393,18 +393,30 @@ export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<
 				const filterArgs: FilterArgs = {
 					league: team.league,
 					season: team.season,
-					competition: team.competition,
+					competition: team.competition
 				};
 
 				// Crawl fixtures (upcoming)
 				responses.length = 0;
 				const fixturesOutputDir = resolve(currentDir, `../../data/external/fixtures/${team.team}`);
-				await crawlPage({ page, responses, url: fixturesBaseUrl, outputDir: fixturesOutputDir, filterArgs });
+				await crawlPage({
+					page,
+					responses,
+					url: fixturesBaseUrl,
+					outputDir: fixturesOutputDir,
+					filterArgs
+				});
 
 				// Crawl results (past + scores)
 				responses.length = 0;
 				const resultsOutputDir = resolve(currentDir, `../../data/external/results/${team.team}`);
-				await crawlPage({ page, responses, url: resultsBaseUrl, outputDir: resultsOutputDir, filterArgs });
+				await crawlPage({
+					page,
+					responses,
+					url: resultsBaseUrl,
+					outputDir: resultsOutputDir,
+					filterArgs
+				});
 
 				responses.length = 0;
 				log.info({ team: team.team, league: team.league }, 'crawl completed');

@@ -94,7 +94,10 @@ export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<
 
 	try {
 		browser = await chromium.launch({ headless: false, channel: 'chrome' });
-		const context = await browser.newContext({ userAgent: '...', viewport: { width: 1280, height: 720 } });
+		const context = await browser.newContext({
+			userAgent: '...',
+			viewport: { width: 1280, height: 720 }
+		});
 		const page = await context.newPage();
 
 		const responses: Response[] = [];
@@ -106,15 +109,31 @@ export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<
 
 		for (const team of teams) {
 			try {
-				const filterArgs = { league: team.league, season: team.season, competition: team.competition };
+				const filterArgs = {
+					league: team.league,
+					season: team.season,
+					competition: team.competition
+				};
 
 				// Crawl fixtures (upcoming)
 				responses.length = 0;
-				await crawlPage({ page, responses, url: fixturesBaseUrl, outputDir: `.../${team.team}`, filterArgs });
+				await crawlPage({
+					page,
+					responses,
+					url: fixturesBaseUrl,
+					outputDir: `.../${team.team}`,
+					filterArgs
+				});
 
 				// Crawl results (past + scores)
 				responses.length = 0;
-				await crawlPage({ page, responses, url: resultsBaseUrl, outputDir: `.../${team.team}`, filterArgs });
+				await crawlPage({
+					page,
+					responses,
+					url: resultsBaseUrl,
+					outputDir: `.../${team.team}`,
+					filterArgs
+				});
 
 				responses.length = 0;
 			} catch (error) {
@@ -188,17 +207,19 @@ export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> 
 
 	try {
 		browser = await chromium.launch({ headless: false, channel: 'chrome' });
-		const context = await browser.newContext({ userAgent: '...', viewport: { width: 1280, height: 720 } });
+		const context = await browser.newContext({
+			userAgent: '...',
+			viewport: { width: 1280, height: 720 }
+		});
 		const page = await context.newPage();
 
 		for (const team of teams) {
 			try {
 				const [response] = await Promise.all([
-					page.waitForResponse(
-						(r) => r.url().includes('mc-api.dribl.com/api/ladders') && r.ok(),
-						{ timeout: 60_000 }
-					),
-					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' }),
+					page.waitForResponse((r) => r.url().includes('mc-api.dribl.com/api/ladders') && r.ok(), {
+						timeout: 60_000
+					}),
+					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' })
 				]);
 
 				const rawData = await response.json();
