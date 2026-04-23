@@ -1,13 +1,3 @@
-# Tech Stack
-
-- Next.js 16.1.6, React 19.2.4
-- Sanity CMS 5.7.0: Always check latest documentation when implementing features
-  - Project contains both the Sanity Studio under /studio path and the main website available from /(site)/ directory
-- Tailwind CSS 4.x, DaisyUI 5.5.14 for components (navbar, buttons, dialog, forms)
-- Lucide for icons
-- Playwright 1.58.0 (E2E testing and web scraping)
-- TanStack Query 5.90.20, React Hook Form 7.71.1
-
 # Environment & Commands
 
 - **IMPORTANT**: Dev server runs on port 3003 (not 3000): `npm run dev`
