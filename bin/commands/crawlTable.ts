@@ -45,6 +45,9 @@ export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> 
 		});
 		const page = await context.newPage();
 
+		const outputDir = resolve(currentDir, `../../data/external/table`);
+		mkdirSync(outputDir, { recursive: true });
+
 		for (const team of teams) {
 			try {
 				log.info({ team: team.team, tableUrl: team.tableUrl }, 'crawling table');
@@ -63,9 +66,6 @@ export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> 
 				if (!/^[a-z0-9][a-z0-9-_]*$/i.test(team.team)) {
 					throw new Error(`Invalid team slug for filename: ${team.team}`);
 				}
-
-				const outputDir = resolve(currentDir, `../../data/external/table`);
-				mkdirSync(outputDir, { recursive: true });
 
 				const outputPath = resolve(outputDir, `${team.team}.json`);
 				writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');

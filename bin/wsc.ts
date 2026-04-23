@@ -55,8 +55,8 @@ crawl
 				return;
 			}
 
-			if (teams.length > 1 && options.league) {
-				log.error('--league cannot be combined with multiple --team values');
+			if (options.league && teams.length !== 1) {
+				log.error({ teamCount: teams.length }, '--league requires exactly one --team');
 				process.exit(1);
 			}
 
@@ -73,6 +73,12 @@ crawl
 			if (filtered.length === 0) {
 				log.error({ slugs: teams }, 'no matching teams found in Sanity config');
 				process.exit(1);
+			}
+
+			if (teams.length > 0 && filtered.length < teams.length) {
+				const matched = new Set(filtered.map((t) => t.slug));
+				const missing = teams.filter((slug) => !matched.has(slug));
+				log.warn({ missing }, 'some --team slugs did not match any Sanity team');
 			}
 
 			log.info({ count: filtered.length }, 'crawling fixtures for teams from Sanity config');
@@ -110,8 +116,8 @@ crawl
 			return;
 		}
 
-		if (teams.length > 1 && options.tableUrl) {
-			log.error('--table-url cannot be combined with multiple --team values');
+		if (options.tableUrl && teams.length !== 1) {
+			log.error({ teamCount: teams.length }, '--table-url requires exactly one --team');
 			process.exit(1);
 		}
 
@@ -130,6 +136,12 @@ crawl
 		if (filtered.length === 0) {
 			log.error({ slugs: teams }, 'no matching teams with tableUrl found in Sanity config');
 			process.exit(1);
+		}
+
+		if (teams.length > 0 && filtered.length < teams.length) {
+			const matched = new Set(filtered.map((t) => t.slug));
+			const missing = teams.filter((slug) => !matched.has(slug));
+			log.warn({ missing }, 'some --team slugs did not match any Sanity team');
 		}
 
 		log.info({ count: filtered.length }, 'crawling tables for teams from Sanity config');
