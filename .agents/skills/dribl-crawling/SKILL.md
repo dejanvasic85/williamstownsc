@@ -33,7 +33,7 @@ dribl API → data/external/clubs/ (raw) → transform → data/clubs/ (validate
 
 ## Clubs Extraction
 
-**Reference**: `bin/crawlClubs.ts`
+**Reference**: `bin/commands/crawlClubs.ts`
 
 **Pattern:**
 
@@ -81,23 +81,83 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 
 ## Fixtures Extraction
 
-**Pattern (implemented in bin/crawlFixtures.ts):**
+**Reference**: `bin/commands/crawlFixtures.ts`
 
-**Steps:**
+**Single browser session for all teams.** The browser launches once, then each team's pages are crawled by reusing the same page instance. Each `page.goto()` resets the SPA's filter state, so `applyFilters` is idempotent on every navigation.
 
-1. Navigate to https://fv.dribl.com/fixtures/
-2. Wait for SPA to load (`waitUntil: 'domcontentloaded'`)
-3. Apply filters (REQUIRED):
-   - Season (e.g., "2025")
-   - Competition (e.g., "FFV")
-   - League (e.g., "state-league-2-men-s-north-west")
-4. Intercept `/api/fixtures` responses
-5. Handle pagination:
-   - Detect "Load more" button in DOM
-   - Click button to load next chunk
-   - Wait for new API response
-   - Repeat until no more data
-6. Save each chunk as `chunk-{index}.json`
+**Pattern:**
+
+```typescript
+export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<void> {
+	let browser: Browser | undefined;
+	const failures: string[] = [];
+
+	try {
+		browser = await chromium.launch({ headless: false, channel: 'chrome' });
+		const context = await browser.newContext({
+			userAgent: '...',
+			viewport: { width: 1280, height: 720 }
+		});
+		const page = await context.newPage();
+
+		const responses: Response[] = [];
+		page.on('response', async (response) => {
+			if (response.url().startsWith(driblApiBaseUrl) && response.ok()) {
+				responses.push(response);
+			}
+		});
+
+		for (const team of teams) {
+			try {
+				const filterArgs = {
+					league: team.league,
+					season: team.season,
+					competition: team.competition
+				};
+
+				// Crawl fixtures (upcoming)
+				responses.length = 0;
+				await crawlPage({
+					page,
+					responses,
+					url: fixturesBaseUrl,
+					outputDir: `.../${team.team}`,
+					filterArgs
+				});
+
+				// Crawl results (past + scores)
+				responses.length = 0;
+				await crawlPage({
+					page,
+					responses,
+					url: resultsBaseUrl,
+					outputDir: `.../${team.team}`,
+					filterArgs
+				});
+
+				responses.length = 0;
+			} catch (error) {
+				failures.push(team.team);
+			}
+		}
+	} finally {
+		if (browser) await browser.close();
+	}
+
+	if (failures.length > 0) {
+		throw new Error(`Crawl failed for teams: ${failures.join(', ')}`);
+	}
+}
+```
+
+**Steps per team:**
+
+1. Reset `responses.length = 0`
+2. Navigate to `https://fv.dribl.com/fixtures/` — SPA loads with default filters
+3. Apply filters: Season → Competition → League (via `clickFilterByText`)
+4. Paginate via "Load more..." button until exhausted
+5. Save each API response chunk as `chunk-{index}.json`
+6. Reset responses and repeat for `https://fv.dribl.com/results/`
 
 **API endpoint:**
 
@@ -109,19 +169,95 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 **Output:**
 
 - Path: `data/external/fixtures/{team}/chunk-0.json`, `chunk-1.json`, etc.
+- Path: `data/external/results/{team}/chunk-0.json`, `chunk-1.json`, etc.
 - Format: Multiple JSON files (one per "Load more" click)
-- Naming: `chunk-{index}.json` where index starts at 0
 
 **CLI args:**
 
-- `--team <slug>` (required) - Team slug for output folder (e.g., "state-league-2-men-s-north-west")
-- `--league <slug>` (required) - League slug for filtering (e.g., "State League 2 Men's - North-West")
-- `--season <year>` (optional, default to current year)
-- `--competition <id>` (optional, default to FFV)
+- `-t, --team <slug>` — repeatable; filters Sanity teams to these slugs (e.g., `-t slug1 -t slug2`)
+- `-l, --league <name>` — manual mode only; requires exactly one `-t`
+- `-s, --season <year>` (optional, default to current year)
+- `-c, --competition <id>` (optional, default to FFV)
+
+**CLI usage examples:**
+
+```bash
+# All Sanity teams (single browser session)
+npm run crawl:fixtures
+
+# Specific teams from Sanity (single browser session)
+npm run crawl:fixtures -- -t state-league-2-men-s-north-west -t reserves
+
+# Manual mode: single team with explicit league
+npm run crawl:fixtures -- -t my-team -l "State League 2 Men's - North-West"
+```
+
+## Table Extraction
+
+**Reference**: `bin/commands/crawlTable.ts`
+
+**Single browser session for all teams.** Each team has its own Dribl ladder URL. The browser navigates to each URL in turn and captures the single API response using `page.waitForResponse()` (same pattern as `crawlClubs.ts`).
+
+**Pattern:**
+
+```typescript
+export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> {
+	let browser: Browser | undefined;
+	const failures: string[] = [];
+
+	try {
+		browser = await chromium.launch({ headless: false, channel: 'chrome' });
+		const context = await browser.newContext({
+			userAgent: '...',
+			viewport: { width: 1280, height: 720 }
+		});
+		const page = await context.newPage();
+
+		for (const team of teams) {
+			try {
+				const [response] = await Promise.all([
+					page.waitForResponse((r) => r.url().includes('mc-api.dribl.com/api/ladders') && r.ok(), {
+						timeout: 60_000
+					}),
+					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' })
+				]);
+
+				const rawData = await response.json();
+				const validated = externalTableApiResponseSchema.parse(rawData);
+				// save to data/external/table/{team}.json
+			} catch (error) {
+				failures.push(team.team);
+			}
+		}
+	} finally {
+		if (browser) await browser.close();
+	}
+
+	if (failures.length > 0) {
+		throw new Error(`Crawl failed for teams: ${failures.join(', ')}`);
+	}
+}
+```
+
+**API endpoint:**
+
+- URL: `https://mc-api.dribl.com/api/ladders`
+- Response: JSON with `data` array of ladder entries
+- Validation: `externalTableApiResponseSchema` (src/types/table.ts)
+
+**Output:**
+
+- Path: `data/external/table/{team}.json`
+- Format: Single JSON file per team
+
+**CLI args:**
+
+- `-t, --team <slug>` — repeatable; filters Sanity teams to these slugs
+- `-u, --table-url <url>` — manual mode only; requires exactly one `-t`
 
 ## Clubs Transformation
 
-**Reference**: `bin/syncClubs.ts`
+**Reference**: `bin/commands/syncClubs.ts`
 
 **Pattern:**
 
@@ -167,7 +303,7 @@ writeFileSync(CLUBS_FILE_PATH, JSON.stringify({ clubs: mergedClubs }, null, '\t'
 
 ## Fixtures Transformation
 
-**Reference**: `bin/syncFixtures.ts`
+**Reference**: `bin/commands/syncFixtures.ts`
 
 **Pattern:**
 
@@ -263,7 +399,7 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 
 ## CI Integration
 
-**Reference**: `.github/workflows/crawl-clubs.yml`
+**Reference**: `.github/workflows/crawl.yml`
 
 **Linux setup (GitHub Actions):**
 
@@ -271,25 +407,26 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 - name: Install Chrome
   run: npx playwright install --with-deps chrome
 
-- name: Crawl clubs
-  run: npm run crawl:clubs:ci -- ${{ inputs.url && format('--url "{0}"', inputs.url) || '' }}
+- name: Crawl fixtures
+  run: npm run crawl:fixtures:ci
 ```
 
 **Key points:**
 
-- Use `xvfb-run` prefix on Linux for headless Chrome (e.g., `xvfb-run npm run crawl:clubs`)
+- Use `xvfb-run --auto-servernum` prefix on Linux for headless Chrome (e.g., `xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures`)
 - Install with `--with-deps` flag to get system dependencies
-- Set appropriate timeout (5 min for clubs, may need more for fixtures)
-- Upload artifacts for data files
+- No team args needed in CI — all Sanity teams are crawled in one browser session
 
 **Package.json scripts pattern:**
 
 ```json
 {
-	"crawl:clubs": "tsx bin/crawlClubs.ts",
-	"crawl:clubs:ci": "xvfb-run tsx bin/crawlClubs.ts",
-	"sync:clubs": "tsx bin/syncClubs.ts",
-	"sync:fixtures": "tsx bin/syncFixtures.ts"
+	"crawl:fixtures": "tsx bin/wsc.ts crawl fixtures",
+	"crawl:fixtures:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures",
+	"crawl:table": "tsx bin/wsc.ts crawl table",
+	"crawl:table:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl table",
+	"sync:clubs": "tsx bin/wsc.ts sync clubs",
+	"sync:fixtures": "tsx bin/wsc.ts sync fixtures"
 }
 ```
 
@@ -297,26 +434,22 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 
 **Logging:**
 
-- Use emoji logging for clarity:
-  - ✓ / ✅ - Success
-  - ❌ - Error
-  - 📂 - File operations
-  - 🔄 - Processing/transformation
+- Use pino logger with child loggers per module
 - Log counts and progress for large operations
 
 **Error handling:**
 
-- Try/catch at top level
-- Special handling for ZodError (print issues)
-- Exit with code 1 on failure
-- Close browser in finally block
+- Per-team failures are caught and collected — the session continues to the next team
+- A single throw at the end signals partial failure to the caller
+- Browser closes in `finally` block regardless of failures
+- Special handling for ZodError (print issues) and missing Playwright executable
 
 **File operations:**
 
 - Always use `mkdirSync(path, { recursive: true })` before writing
 - Format JSON with tabs: `JSON.stringify(data, null, '\t')`
 - Add newline at end of file: `content + '\n'`
-- Use absolute paths with `resolve(__dirname, '../relative/path')`
+- Use absolute paths with `resolve(currentDir, '../relative/path')`
 
 **Data separation:**
 
@@ -333,9 +466,9 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 **CLI arguments:**
 
 - Use Commander library for consistent CLI parsing
-- Define options with `.option()` or `.requiredOption()`
-- Provide defaults for optional args
-- Commander auto-generates help text and validates required args
+- `-t, --team` is repeatable (collector function): `-t slug1 -t slug2`
+- Manual mode requires exactly one `-t` plus the URL/league option
+- Sanity mode (no manual options) fetches team config from CMS
 
 ## Common Patterns
 
@@ -373,14 +506,23 @@ incoming.forEach((item) => map.set(item.id, item)); // update or add
 const merged = Array.from(map.values());
 ```
 
-**Browser cleanup:**
+**Single-browser session pattern:**
 
 ```typescript
 let browser: Browser | undefined;
+const failures: string[] = [];
 try {
-  browser = await chromium.launch(...);
-  // work
+	browser = await chromium.launch(...);
+	const page = await (await browser.newContext(...)).newPage();
+	for (const team of teams) {
+		try {
+			// work per team
+		} catch (error) {
+			failures.push(team.slug);
+		}
+	}
 } finally {
-  if (browser) await browser.close();
+	if (browser) await browser.close();
 }
+if (failures.length > 0) throw new Error(`Failed: ${failures.join(', ')}`);
 ```

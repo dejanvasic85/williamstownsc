@@ -10,16 +10,31 @@ const log = logger.child({ module: 'crawl-table' });
 
 const driblLaddersApiUrl = 'mc-api.dribl.com/api/ladders';
 
-export type CrawlTableOptions = {
+export type CrawlTableTeamOptions = {
 	team: string;
 	tableUrl: string;
 };
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 
-export async function crawlTable({ team, tableUrl }: CrawlTableOptions) {
-	log.info({ team, tableUrl }, 'launching browser');
+function logTeamError(error: unknown, team: string): void {
+	if (error instanceof ZodError) {
+		log.error({ issues: error.issues, team }, 'crawl failed: validation error');
+	} else if (error instanceof Error) {
+		log.error({ err: error, team }, 'crawl failed');
+
+		if (error.message.includes("Executable doesn't exist")) {
+			log.info('install Playwright browsers with: npx playwright install --with-deps chrome');
+		}
+	} else {
+		log.error({ err: error, team }, 'crawl failed: unknown error');
+	}
+}
+
+export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> {
+	log.info({ count: teams.length }, 'launching browser');
 	let browser: Browser | undefined;
+	const failures: string[] = [];
 
 	try {
 		browser = await chromium.launch({ headless: false, channel: 'chrome' });
@@ -30,64 +45,47 @@ export async function crawlTable({ team, tableUrl }: CrawlTableOptions) {
 		});
 		const page = await context.newPage();
 
-		let capturedResponse: unknown = null;
-
-		page.on('response', async (response) => {
-			if (response.url().includes(driblLaddersApiUrl) && response.ok()) {
-				try {
-					capturedResponse = await response.json();
-					log.debug({ url: response.url() }, 'API response captured');
-				} catch (err) {
-					log.warn({ err }, 'failed to parse API response body');
-				}
-			}
-		});
-
-		log.debug({ url: tableUrl }, 'navigating to ladder page');
-		await page.goto(tableUrl, { waitUntil: 'domcontentloaded' });
-
-		const deadline = Date.now() + 60_000;
-		while (!capturedResponse && Date.now() < deadline) {
-			await page.waitForTimeout(500);
-		}
-
-		if (!capturedResponse) {
-			throw new Error(`Timed out waiting for API response from ${driblLaddersApiUrl}`);
-		}
-
-		const validated = externalTableApiResponseSchema.parse(capturedResponse);
-		log.debug({ entries: validated.data.length }, 'response validated');
-
-		if (!/^[a-z0-9][a-z0-9-_]*$/i.test(team)) {
-			throw new Error(`Invalid team slug for filename: ${team}`);
-		}
-
 		const outputDir = resolve(currentDir, `../../data/external/table`);
 		mkdirSync(outputDir, { recursive: true });
 
-		const outputPath = resolve(outputDir, `${team}.json`);
-		writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
-		log.debug({ outputPath }, 'table data written');
+		for (const team of teams) {
+			try {
+				log.info({ team: team.team, tableUrl: team.tableUrl }, 'crawling table');
 
-		log.info({ team }, 'crawl completed');
-	} catch (error) {
-		if (error instanceof ZodError) {
-			log.error({ issues: error.issues }, 'crawl failed: validation error');
-		} else if (error instanceof Error) {
-			log.error({ err: error }, 'crawl failed');
+				const [response] = await Promise.all([
+					page.waitForResponse((r) => r.url().includes(driblLaddersApiUrl) && r.ok(), {
+						timeout: 60_000
+					}),
+					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' })
+				]);
 
-			if (error.message.includes("Executable doesn't exist")) {
-				log.info('install Playwright browsers with: npx playwright install --with-deps chrome');
+				const rawData = await response.json();
+				const validated = externalTableApiResponseSchema.parse(rawData);
+				log.debug({ entries: validated.data.length }, 'response validated');
+
+				if (!/^[a-z0-9][a-z0-9-_]*$/i.test(team.team)) {
+					throw new Error(`Invalid team slug for filename: ${team.team}`);
+				}
+
+				const outputPath = resolve(outputDir, `${team.team}.json`);
+				writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
+				log.debug({ outputPath }, 'table data written');
+
+				log.info({ team: team.team }, 'crawl completed');
+			} catch (error) {
+				logTeamError(error, team.team);
+				failures.push(team.team);
 			}
-		} else {
-			log.error({ err: error }, 'crawl failed: unknown error');
 		}
-
-		throw error;
 	} finally {
 		if (browser) {
 			await browser.close();
 			log.info('browser closed');
 		}
+	}
+
+	if (failures.length > 0) {
+		log.error({ failures }, 'crawl failed for some teams');
+		throw new Error(`Crawl failed for teams: ${failures.join(', ')}`);
 	}
 }

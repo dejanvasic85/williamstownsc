@@ -12,7 +12,7 @@ const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
 const resultsBaseUrl = 'https://fv.dribl.com/results/';
 const driblApiBaseUrl = 'https://mc-api.dribl.com/api/';
 
-export type CrawlFixturesOptions = {
+export type CrawlFixturesTeamOptions = {
 	team: string;
 	league: string;
 	season?: string;
@@ -350,9 +350,24 @@ async function crawlPage({
 	}
 }
 
-export async function crawlFixtures({ team, league, season, competition }: CrawlFixturesOptions) {
-	log.info('launching browser');
+function logTeamError(error: unknown, team: string): void {
+	if (error instanceof ZodError) {
+		log.error({ issues: error.issues, team }, 'crawl failed: validation error');
+	} else if (error instanceof Error) {
+		log.error({ err: error, team }, 'crawl failed');
+
+		if (error.message.includes("Executable doesn't exist")) {
+			log.info('install Playwright browsers with: npx playwright install --with-deps chrome');
+		}
+	} else {
+		log.error({ err: error, team }, 'crawl failed: unknown error');
+	}
+}
+
+export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<void> {
+	log.info({ count: teams.length }, 'launching browser');
 	let browser: Browser | undefined;
+	const failures: string[] = [];
 
 	try {
 		browser = await chromium.launch({ headless: false, channel: 'chrome' });
@@ -371,50 +386,54 @@ export async function crawlFixtures({ team, league, season, competition }: Crawl
 			}
 		});
 
-		const filterArgs: FilterArgs = { league, season, competition };
+		for (const team of teams) {
+			try {
+				log.info({ team: team.team, league: team.league }, 'crawling team');
 
-		// Crawl fixtures (upcoming)
-		const fixturesOutputDir = resolve(currentDir, `../../data/external/fixtures/${team}`);
-		await crawlPage({
-			page,
-			responses,
-			url: fixturesBaseUrl,
-			outputDir: fixturesOutputDir,
-			filterArgs
-		});
+				const filterArgs: FilterArgs = {
+					league: team.league,
+					season: team.season,
+					competition: team.competition
+				};
 
-		// Reset responses before crawling results
-		responses.length = 0;
+				// Crawl fixtures (upcoming)
+				responses.length = 0;
+				const fixturesOutputDir = resolve(currentDir, `../../data/external/fixtures/${team.team}`);
+				await crawlPage({
+					page,
+					responses,
+					url: fixturesBaseUrl,
+					outputDir: fixturesOutputDir,
+					filterArgs
+				});
 
-		// Crawl results (past + scores)
-		const resultsOutputDir = resolve(currentDir, `../../data/external/results/${team}`);
-		await crawlPage({
-			page,
-			responses,
-			url: resultsBaseUrl,
-			outputDir: resultsOutputDir,
-			filterArgs
-		});
+				// Crawl results (past + scores)
+				responses.length = 0;
+				const resultsOutputDir = resolve(currentDir, `../../data/external/results/${team.team}`);
+				await crawlPage({
+					page,
+					responses,
+					url: resultsBaseUrl,
+					outputDir: resultsOutputDir,
+					filterArgs
+				});
 
-		log.info({ team, league }, 'crawl completed');
-	} catch (error) {
-		if (error instanceof ZodError) {
-			log.error({ issues: error.issues }, 'crawl failed: validation error');
-		} else if (error instanceof Error) {
-			log.error({ err: error }, 'crawl failed');
-
-			if (error.message.includes("Executable doesn't exist")) {
-				log.info('install Playwright browsers with: npx playwright install --with-deps chrome');
+				responses.length = 0;
+				log.info({ team: team.team, league: team.league }, 'crawl completed');
+			} catch (error) {
+				logTeamError(error, team.team);
+				failures.push(team.team);
 			}
-		} else {
-			log.error({ err: error }, 'crawl failed: unknown error');
 		}
-
-		throw error;
 	} finally {
 		if (browser) {
 			await browser.close();
 			log.info('browser closed');
 		}
+	}
+
+	if (failures.length > 0) {
+		log.error({ failures }, 'crawl failed for some teams');
+		throw new Error(`Crawl failed for teams: ${failures.join(', ')}`);
 	}
 }
