@@ -48,7 +48,9 @@
 			"awayTeamId": "6lNbpD56dx",
 			"address": "JH Allan Reserve Main Pitch A - Half Field",
 			"coordinates": "-37.747864,144.857697",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 2,

@@ -8,17 +8,6 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "8zdBbr2dBX",
-			"address": "Tarneit Rise Synthetic Pitch 1B (Half)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "Bjma0BXAdR",
 			"awayTeamId": "LBdDx0GQdb",
@@ -57,6 +46,17 @@
 			"awayTeamId": "7MNGvappmA",
 			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
 			"coordinates": "-37.878568,144.79544",
+			"status": "pending"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "8zdBbr2dBX",
+			"address": "Hummingbird Boulevard Reserve 1B (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
