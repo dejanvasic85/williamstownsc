@@ -324,8 +324,10 @@
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "PydoLxGmD9",
 			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 5,
