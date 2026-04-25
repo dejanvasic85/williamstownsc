@@ -202,8 +202,7 @@ Table crawling is embedded inside the fixtures crawl. After crawling results for
 
 ```typescript
 async function crawlTeamTable(page: Page, team: string, outputDir: string): Promise<void> {
-	await clickNavTab(page, 'Ladders');
-
+	// Register listener BEFORE the click — the API response can fire during navigation
 	const tableResponses: Response[] = [];
 	const listener = (response: Response) => {
 		if (response.url().includes('mc-api.dribl.com/api/ladders') && response.ok()) {
@@ -211,6 +210,8 @@ async function crawlTeamTable(page: Page, team: string, outputDir: string): Prom
 		}
 	};
 	page.on('response', listener);
+
+	await clickNavTab(page, 'Ladders');
 
 	try {
 		// Race: API response vs "No Ladders" text (some competitions have no ladder)

@@ -405,7 +405,6 @@ async function crawlTeamResults(
 
 async function crawlTeamTable(page: Page, team: string, outputDir: string): Promise<void> {
 	log.debug('navigating to ladders tab');
-	await clickNavTab(page, 'Ladders');
 
 	const tableResponses: Response[] = [];
 	const listener = (response: Response) => {
@@ -414,6 +413,8 @@ async function crawlTeamTable(page: Page, team: string, outputDir: string): Prom
 		}
 	};
 	page.on('response', listener);
+
+	await clickNavTab(page, 'Ladders');
 
 	try {
 		const startTime = Date.now();
