@@ -194,66 +194,55 @@ npm run crawl:fixtures -- -t my-team -l "State League 2 Men's - North-West"
 
 ## Table Extraction
 
-**Reference**: `bin/commands/crawlTable.ts`
+**Reference**: `bin/commands/crawlFixtures.ts` — `crawlTeamTable()`
 
-**Single browser session for all teams.** Each team has its own Dribl ladder URL. The browser navigates to each URL in turn and captures the single API response using `page.waitForResponse()` (same pattern as `crawlClubs.ts`).
+Table crawling is embedded inside the fixtures crawl. After crawling results for each team, `crawlFixtures` clicks the "Ladders" nav tab and captures the single `mc-api.dribl.com/api/ladders` response using a scoped page listener. No separate browser session or separate command.
 
 **Pattern:**
 
 ```typescript
-export async function crawlTable(teams: CrawlTableTeamOptions[]): Promise<void> {
-	let browser: Browser | undefined;
-	const failures: string[] = [];
+async function crawlTeamTable(page: Page, team: string, outputDir: string): Promise<void> {
+	// Register listener BEFORE the click — the API response can fire during navigation
+	const tableResponses: Response[] = [];
+	const listener = (response: Response) => {
+		if (response.url().includes('mc-api.dribl.com/api/ladders') && response.ok()) {
+			tableResponses.push(response);
+		}
+	};
+	page.on('response', listener);
+
+	await clickNavTab(page, 'Ladders');
 
 	try {
-		browser = await chromium.launch({ headless: false, channel: 'chrome' });
-		const context = await browser.newContext({
-			userAgent: '...',
-			viewport: { width: 1280, height: 720 }
-		});
-		const page = await context.newPage();
-
-		for (const team of teams) {
-			try {
-				const [response] = await Promise.all([
-					page.waitForResponse((r) => r.url().includes('mc-api.dribl.com/api/ladders') && r.ok(), {
-						timeout: 60_000
-					}),
-					page.goto(team.tableUrl, { waitUntil: 'domcontentloaded' })
-				]);
-
-				const rawData = await response.json();
-				const validated = externalTableApiResponseSchema.parse(rawData);
-				// save to data/external/table/{team}.json
-			} catch (error) {
-				failures.push(team.team);
-			}
+		// Race: API response vs "No Ladders" text (some competitions have no ladder)
+		const startTime = Date.now();
+		while (Date.now() - startTime < 15_000) {
+			if (tableResponses.length > 0) break;
+			if (await hasPageText(page, 'No Ladders')) return; // skip gracefully
+			await new Promise((r) => setTimeout(r, 200));
 		}
-	} finally {
-		if (browser) await browser.close();
-	}
 
-	if (failures.length > 0) {
-		throw new Error(`Crawl failed for teams: ${failures.join(', ')}`);
+		const rawData = await tableResponses[0].json();
+		const validated = externalTableApiResponseSchema.parse(rawData);
+		writeFileSync(resolve(outputDir, `${team}.json`), JSON.stringify(validated, null, '\t') + '\n');
+	} finally {
+		page.off('response', listener);
 	}
 }
 ```
+
+**Empty state handling:** pages that show "No Ladders" (e.g. MiniRoos competitions) are skipped with a warn log — same pattern as "No Results" on the Results tab.
 
 **API endpoint:**
 
 - URL: `https://mc-api.dribl.com/api/ladders`
 - Response: JSON with `data` array of ladder entries
-- Validation: `externalTableApiResponseSchema` (src/types/table.ts)
+- Validation: `externalTableApiResponseSchema` (`src/types/table.ts`)
 
 **Output:**
 
 - Path: `data/external/table/{team}.json`
-- Format: Single JSON file per team
-
-**CLI args:**
-
-- `-t, --team <slug>` — repeatable; filters Sanity teams to these slugs
-- `-u, --table-url <url>` — manual mode only; requires exactly one `-t`
+- Format: Single JSON file per team (not chunked — always one response)
 
 ## Clubs Transformation
 
@@ -423,12 +412,13 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
 {
 	"crawl:fixtures": "tsx bin/wsc.ts crawl fixtures",
 	"crawl:fixtures:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures",
-	"crawl:table": "tsx bin/wsc.ts crawl table",
-	"crawl:table:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl table",
 	"sync:clubs": "tsx bin/wsc.ts sync clubs",
-	"sync:fixtures": "tsx bin/wsc.ts sync fixtures"
+	"sync:fixtures": "tsx bin/wsc.ts sync fixtures",
+	"sync:table": "tsx bin/wsc.ts sync table"
 }
 ```
+
+> Table crawling runs automatically as part of `crawl:fixtures` — there is no separate `crawl:table` script.
 
 ## Best Practices
 

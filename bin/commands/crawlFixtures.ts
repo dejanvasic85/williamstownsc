@@ -5,12 +5,13 @@ import { type Browser, type Page, type Response, chromium } from 'playwright-cor
 import { ZodError } from 'zod';
 import logger from '@/lib/logger';
 import { externalFixturesApiResponseSchema } from '@/types/matches';
+import { externalTableApiResponseSchema } from '@/types/table';
 
 const log = logger.child({ module: 'crawl-fixtures' });
 
 const fixturesBaseUrl = 'https://fv.dribl.com/fixtures/';
-const resultsBaseUrl = 'https://fv.dribl.com/results/';
 const driblApiBaseUrl = 'https://mc-api.dribl.com/api/';
+const driblLaddersApiUrl = 'mc-api.dribl.com/api/ladders';
 
 export type CrawlFixturesTeamOptions = {
 	team: string;
@@ -52,6 +53,21 @@ async function waitForNewResponse(
 	throw new Error(
 		`Timeout waiting for response at index ${expectedIndex}. Current responses: ${responses.length}`
 	);
+}
+
+async function hasPageText(page: Page, text: string): Promise<boolean> {
+	return page.evaluate((t) => {
+		const elements = Array.from(document.querySelectorAll('*'));
+		return elements.some(
+			(el) => el.textContent?.trim() === t && (el as HTMLElement).offsetParent !== null
+		);
+	}, text);
+}
+
+async function clickNavTab(page: Page, tabText: string): Promise<void> {
+	await page.getByText(tabText).first().click();
+	await page.waitForLoadState('domcontentloaded');
+	await page.waitForTimeout(2000);
 }
 
 async function getCurrentSeasonText(page: Page): Promise<string> {
@@ -270,62 +286,7 @@ async function applyFilters(
 	};
 }
 
-type CrawlPageOptions = {
-	page: Page;
-	responses: Response[];
-	url: string;
-	outputDir: string;
-	filterArgs: FilterArgs;
-};
-
-async function crawlPage({
-	page,
-	responses,
-	url,
-	outputDir,
-	filterArgs
-}: CrawlPageOptions): Promise<void> {
-	log.debug({ url }, 'navigating to page');
-	await page.goto(url, { waitUntil: 'domcontentloaded' });
-
-	// Apply filters
-	await applyFilters(page, filterArgs);
-
-	// Clear any pre-filter responses to avoid saving stale data
-	if (responses.length > 1) {
-		responses.splice(0, responses.length - 1);
-	}
-
-	// Wait for first API response
-	log.debug('waiting for initial data');
-	await waitForNewResponse(responses, 0, 60_000);
-	log.debug('initial data loaded');
-
-	// Scroll until Load More button appears
-	let hasMorePages = await waitForLoadMoreButton(page);
-
-	// Pagination loop
-	let chunkIndex = 0;
-
-	while (hasMorePages) {
-		const expectedIndex = chunkIndex + 1;
-		log.debug({ chunk: expectedIndex }, 'loading more');
-
-		const loadMoreButton = page.getByText('Load more...');
-		await loadMoreButton.click();
-
-		await waitForNewResponse(responses, expectedIndex, 60_000);
-		log.debug({ chunk: expectedIndex }, 'chunk loaded');
-
-		await page.waitForTimeout(1000);
-
-		chunkIndex++;
-		hasMorePages = await waitForLoadMoreButton(page, 5);
-	}
-
-	log.debug({ totalChunks: responses.length }, 'all data loaded');
-
-	// Validate and save chunks
+async function saveResponseChunks(responses: Response[], outputDir: string): Promise<void> {
 	mkdirSync(outputDir, { recursive: true });
 	log.debug({ outputDir }, 'saving chunks');
 
@@ -347,6 +308,142 @@ async function crawlPage({
 			}
 			throw error;
 		}
+	}
+}
+
+async function paginateAndSave(
+	page: Page,
+	responses: Response[],
+	outputDir: string
+): Promise<void> {
+	await waitForNewResponse(responses, 0, 60_000);
+	log.debug('initial data loaded');
+
+	let hasMorePages = await waitForLoadMoreButton(page);
+	let chunkIndex = 0;
+
+	while (hasMorePages) {
+		const expectedIndex = chunkIndex + 1;
+		log.debug({ chunk: expectedIndex }, 'loading more');
+
+		const loadMoreButton = page.getByText('Load more...');
+		await loadMoreButton.click();
+
+		await waitForNewResponse(responses, expectedIndex, 60_000);
+		log.debug({ chunk: expectedIndex }, 'chunk loaded');
+
+		await page.waitForTimeout(1000);
+
+		chunkIndex++;
+		hasMorePages = await waitForLoadMoreButton(page, 5);
+	}
+
+	log.debug({ totalChunks: responses.length }, 'all data loaded');
+	await saveResponseChunks(responses, outputDir);
+}
+
+async function crawlTeamFixtures(
+	page: Page,
+	responses: Response[],
+	outputDir: string,
+	filterArgs: FilterArgs
+): Promise<void> {
+	log.debug({ url: fixturesBaseUrl }, 'navigating to fixtures page');
+	await page.goto(fixturesBaseUrl, { waitUntil: 'domcontentloaded' });
+
+	await applyFilters(page, filterArgs);
+
+	// Clear any pre-filter responses to avoid saving stale data
+	if (responses.length > 1) {
+		responses.splice(0, responses.length - 1);
+	}
+
+	log.debug('waiting for initial fixtures data');
+	await paginateAndSave(page, responses, outputDir);
+}
+
+async function waitForResultsOrNoResults(
+	page: Page,
+	responses: Response[],
+	timeout: number
+): Promise<'data' | 'no-results'> {
+	const startTime = Date.now();
+	while (Date.now() - startTime < timeout) {
+		if (responses.length > 0) {
+			return 'data';
+		}
+		if (await hasPageText(page, 'No Results')) {
+			return 'no-results';
+		}
+		await new Promise((resolve) => setTimeout(resolve, 200));
+	}
+	// Final check before giving up
+	if (await hasPageText(page, 'No Results')) {
+		return 'no-results';
+	}
+	throw new Error('Timeout waiting for results page to load');
+}
+
+async function crawlTeamResults(
+	page: Page,
+	responses: Response[],
+	outputDir: string
+): Promise<void> {
+	log.debug('navigating to results tab');
+	await clickNavTab(page, 'Results');
+
+	const outcome = await waitForResultsOrNoResults(page, responses, 15_000);
+	if (outcome === 'no-results') {
+		log.warn('results page has no results, skipping');
+		mkdirSync(outputDir, { recursive: true });
+		return;
+	}
+
+	log.debug('waiting for initial results data');
+	await paginateAndSave(page, responses, outputDir);
+}
+
+async function crawlTeamTable(page: Page, team: string, outputDir: string): Promise<void> {
+	log.debug('navigating to ladders tab');
+
+	const tableResponses: Response[] = [];
+	const listener = (response: Response) => {
+		if (response.url().includes(driblLaddersApiUrl) && response.ok()) {
+			tableResponses.push(response);
+		}
+	};
+	page.on('response', listener);
+
+	await clickNavTab(page, 'Ladders');
+
+	try {
+		const startTime = Date.now();
+		while (Date.now() - startTime < 15_000) {
+			if (tableResponses.length > 0) break;
+			if (await hasPageText(page, 'No Ladders')) {
+				log.warn({ team }, 'ladders page has no ladders, skipping');
+				return;
+			}
+			await new Promise((resolve) => setTimeout(resolve, 200));
+		}
+
+		if (tableResponses.length === 0) {
+			if (await hasPageText(page, 'No Ladders')) {
+				log.warn({ team }, 'ladders page has no ladders, skipping');
+				return;
+			}
+			throw new Error('Timeout waiting for ladders response');
+		}
+
+		const rawData = await tableResponses[0].json();
+		const validated = externalTableApiResponseSchema.parse(rawData);
+
+		mkdirSync(outputDir, { recursive: true });
+		const outputPath = resolve(outputDir, `${team}.json`);
+		writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n', 'utf-8');
+		log.debug({ entries: validated.data.length, outputPath }, 'table data saved');
+	} finally {
+		page.off('response', listener);
 	}
 }
 
@@ -396,27 +493,19 @@ export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<
 					competition: team.competition
 				};
 
-				// Crawl fixtures (upcoming)
+				// Crawl fixtures (upcoming) — navigates and applies filters
 				responses.length = 0;
 				const fixturesOutputDir = resolve(currentDir, `../../data/external/fixtures/${team.team}`);
-				await crawlPage({
-					page,
-					responses,
-					url: fixturesBaseUrl,
-					outputDir: fixturesOutputDir,
-					filterArgs
-				});
+				await crawlTeamFixtures(page, responses, fixturesOutputDir, filterArgs);
 
-				// Crawl results (past + scores)
+				// Crawl results (past + scores) — clicks Results tab, filters already applied
 				responses.length = 0;
 				const resultsOutputDir = resolve(currentDir, `../../data/external/results/${team.team}`);
-				await crawlPage({
-					page,
-					responses,
-					url: resultsBaseUrl,
-					outputDir: resultsOutputDir,
-					filterArgs
-				});
+				await crawlTeamResults(page, responses, resultsOutputDir);
+
+				// Crawl ladder — clicks Ladders tab, uses separate response listener
+				const tableOutputDir = resolve(currentDir, `../../data/external/table`);
+				await crawlTeamTable(page, team.team, tableOutputDir);
 
 				responses.length = 0;
 				log.info({ team: team.team, league: team.league }, 'crawl completed');

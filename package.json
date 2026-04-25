@@ -19,8 +19,6 @@
 		"crawl:clubs:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl clubs",
 		"crawl:fixtures": "dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures",
 		"crawl:fixtures:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures",
-		"crawl:table": "dotenv -e .env.local -- tsx bin/wsc.ts crawl table",
-		"crawl:table:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl table",
 		"sync:clubs": "dotenv -e .env.local -- tsx bin/wsc.ts sync clubs",
 		"sync:fixtures": "dotenv -e .env.local -- tsx bin/wsc.ts sync fixtures",
 		"sync:table": "dotenv -e .env.local -- tsx bin/wsc.ts sync table",

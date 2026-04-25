@@ -61,8 +61,7 @@ export const teamsQuery = groq`
       isCaptain,
       isViceCaptain
     },
-    fixturesUrl,
-    tableUrl
+    fixturesUrl
   }
 `;
 
@@ -70,15 +69,13 @@ export type CrawlableTeam = {
 	slug: string;
 	competitionName?: string;
 	leagueName: string;
-	tableUrl?: string;
 };
 
 const crawlableTeamsQuery = groq`
 	*[_type == "team" && enableFixturesCrawler == true && defined(slug.current) && slug.current != "" && defined(leagueName) && leagueName != ""] {
 		"slug": slug.current,
 		competitionName,
-		leagueName,
-		tableUrl
+		leagueName
 	}
 `;
 

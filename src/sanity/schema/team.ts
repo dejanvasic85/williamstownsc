@@ -186,12 +186,6 @@ export const team = defineType({
 			description: 'External link to team fixtures page (e.g. Dribl)'
 		}),
 		defineField({
-			name: 'tableUrl',
-			title: 'Table URL',
-			type: 'url',
-			description: 'External link to team table/ladder'
-		}),
-		defineField({
 			name: 'enableFixturesCrawler',
 			title: 'Enable fixtures crawler',
 			type: 'boolean',
