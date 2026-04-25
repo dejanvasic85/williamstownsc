@@ -56,6 +56,14 @@ export async function syncTable({ team }: SyncTableOptions) {
 
 	try {
 		const inputPath = path.join(externalTableDir, `${team}.json`);
+
+		try {
+			await fs.access(inputPath);
+		} catch {
+			log.warn({ team }, 'no external table data found, skipping');
+			return;
+		}
+
 		const content = await fs.readFile(inputPath, 'utf-8');
 		const external = externalTableApiResponseSchema.parse(JSON.parse(content));
 
