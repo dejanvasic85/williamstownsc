@@ -181,8 +181,13 @@ export async function syncFixtures({ team }: SyncFixturesOptions) {
 		);
 		const fixtureResponses = await readExternalFixtureFiles(
 			path.join(EXTERNAL_FIXTURES_DIR, team),
-			true
+			false
 		);
+
+		if (resultResponses.length === 0 && fixtureResponses.length === 0) {
+			log.warn({ team }, 'no fixture or result files found, skipping');
+			return;
+		}
 
 		// Transform and merge — results first so they win deduplication
 		log.info('transforming and merging fixtures');
