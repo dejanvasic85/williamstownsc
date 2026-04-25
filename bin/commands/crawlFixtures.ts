@@ -303,7 +303,17 @@ async function saveResponseChunks(responses: Response[], outputDir: string): Pro
 			savedChunks++;
 		} catch (error) {
 			if (error instanceof ZodError) {
-				log.debug({ chunk: i, url: responses[i].url() }, 'skipping non-fixture response');
+				const url = responses[i].url();
+				const isFixtureOrResultUrl =
+					url.includes('/api/fixtures?') || url.includes('/api/results?');
+				if (isFixtureOrResultUrl) {
+					log.warn(
+						{ chunk: i, url, issues: error.issues },
+						'fixture/result response failed validation'
+					);
+				} else {
+					log.debug({ chunk: i, url }, 'skipping non-fixture response');
+				}
 				continue;
 			}
 			throw error;

@@ -29,8 +29,14 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 			? `${attributes.ground_latitude},${attributes.ground_longitude}`
 			: '';
 
-	const homeTeamId = findClubExternalId(attributes.home_team_name, attributes.home_logo);
-	const awayTeamId = findClubExternalId(attributes.away_team_name, attributes.away_logo);
+	const homeTeamId =
+		attributes.home_team_name && attributes.home_logo
+			? findClubExternalId(attributes.home_team_name, attributes.home_logo)
+			: 'bye';
+	const awayTeamId =
+		attributes.away_team_name && attributes.away_logo
+			? findClubExternalId(attributes.away_team_name, attributes.away_logo)
+			: 'bye';
 
 	const fixture: Fixture = {
 		round: roundNumber,
