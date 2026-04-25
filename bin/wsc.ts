@@ -146,17 +146,16 @@ sync
 		}
 
 		const teams = await getCrawlableTeams();
-		const teamsWithTable = teams.filter((t) => t.tableUrl);
 
-		if (teamsWithTable.length === 0) {
-			log.error('no teams with tableUrl found in Sanity');
+		if (teams.length === 0) {
+			log.error('no crawlable teams found in Sanity');
 			process.exit(1);
 		}
 
-		log.info({ count: teamsWithTable.length }, 'syncing tables for teams from Sanity config');
+		log.info({ count: teams.length }, 'syncing tables for teams from Sanity config');
 		const failures: string[] = [];
 
-		for (const team of teamsWithTable) {
+		for (const team of teams) {
 			try {
 				log.info({ team: team.slug }, 'syncing team');
 				await syncTable({ team: team.slug });

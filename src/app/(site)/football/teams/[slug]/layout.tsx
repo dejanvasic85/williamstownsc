@@ -57,7 +57,6 @@ export default async function TeamDetailLayout({ children, params }: TeamDetailL
 					hasFixtures={teamMatches.hasFixtures}
 					hasTable={!!tableData}
 					fixturesUrl={team.fixturesUrl}
-					tableUrl={team.tableUrl}
 				/>
 
 				<main className="py-3">{children}</main>
