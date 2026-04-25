@@ -14,7 +14,7 @@ jobs:
   crawl:
     name: Crawl clubs and fixtures
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     env:
       NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
       NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET }}
