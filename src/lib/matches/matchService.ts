@@ -8,7 +8,7 @@ import {
 	getClubs as getClubsFromService
 } from '@/lib/clubService';
 import { getClubConfig } from '@/lib/config';
-import { fixtureDataSchema } from '@/types/matches';
+import { bye, fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
@@ -28,31 +28,37 @@ export function getClubByExternalId(externalId: string): Club | undefined {
 	return getClubByExternalIdFromService(externalId);
 }
 
+function isByeFixture(fixture: Fixture): boolean {
+	return fixture.homeTeamId === 'bye' || fixture.awayTeamId === 'bye';
+}
+
 function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
-	return fixtures.map((fixture) => {
-		const homeTeam = getClubByExternalId(fixture.homeTeamId);
-		const awayTeam = getClubByExternalId(fixture.awayTeamId);
+	return fixtures
+		.filter((f) => !isByeFixture(f))
+		.map((fixture) => {
+			const homeTeam = getClubByExternalId(fixture.homeTeamId);
+			const awayTeam = getClubByExternalId(fixture.awayTeamId);
 
-		if (!homeTeam || !awayTeam) {
-			throw new Error(`Club not found for fixture round ${fixture.round}`);
-		}
+			if (!homeTeam || !awayTeam) {
+				throw new Error(`Club not found for fixture round ${fixture.round}`);
+			}
 
-		return {
-			round: fixture.round,
-			date: fixture.date,
-			day: fixture.day,
-			time: fixture.time,
-			homeTeam,
-			awayTeam,
-			address: fixture.address,
-			coordinates: fixture.coordinates,
-			homeScore: fixture.homeScore,
-			awayScore: fixture.awayScore,
-			homeScoreHalf: fixture.homeScoreHalf,
-			awayScoreHalf: fixture.awayScoreHalf,
-			status: fixture.status
-		};
-	});
+			return {
+				round: fixture.round,
+				date: fixture.date,
+				day: fixture.day,
+				time: fixture.time,
+				homeTeam,
+				awayTeam,
+				address: fixture.address,
+				coordinates: fixture.coordinates,
+				homeScore: fixture.homeScore,
+				awayScore: fixture.awayScore,
+				homeScoreHalf: fixture.homeScoreHalf,
+				awayScoreHalf: fixture.awayScoreHalf,
+				status: fixture.status
+			};
+		});
 }
 
 const loadFixture = cache(async function loadFixture(
@@ -98,6 +104,7 @@ function resolveNextMatch(fixtures: Fixture[], wscClubDriblId: string): Enriched
 	const now = new Date();
 
 	const upcoming = fixtures
+		.filter((f) => !isByeFixture(f))
 		.map((fixture) => ({
 			fixture,
 			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
@@ -119,6 +126,7 @@ function resolvePreviousMatch(fixtures: Fixture[], wscClubDriblId: string): Enri
 	const now = new Date();
 
 	const completed = fixtures
+		.filter((f) => !isByeFixture(f))
 		.map((fixture) => ({
 			fixture,
 			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)

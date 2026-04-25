@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+export const bye = 'bye';
+
 const externalAddressSchema = z.object({
 	address_line_1: z.string().nullable(),
 	address_line_2: z.string().nullable(),
