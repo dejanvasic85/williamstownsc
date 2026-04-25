@@ -1,5 +1,5 @@
 import { findClubExternalId } from '@/lib/clubService';
-import { type ExternalFixture, type Fixture, fixtureSchema } from '@/types/matches';
+import { type ExternalFixture, type Fixture, bye, fixtureSchema } from '@/types/matches';
 
 export function transformExternalFixture(externalFixture: ExternalFixture): Fixture {
 	const { attributes } = externalFixture;
@@ -32,11 +32,11 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 	const homeTeamId =
 		attributes.home_team_name && attributes.home_logo
 			? findClubExternalId(attributes.home_team_name, attributes.home_logo)
-			: 'bye';
+			: bye;
 	const awayTeamId =
 		attributes.away_team_name && attributes.away_logo
 			? findClubExternalId(attributes.away_team_name, attributes.away_logo)
-			: 'bye';
+			: bye;
 
 	const fixture: Fixture = {
 		round: roundNumber,
