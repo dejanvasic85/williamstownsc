@@ -1,20 +1,9 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-24",
-			"day": "Friday",
-			"time": "19:45",
-			"homeTeamId": "7ZKRa2oNkB",
-			"awayTeamId": "bgdMXLR7KE",
-			"address": "Hosken Reserve Pitch 1 South",
-			"coordinates": "-37.725117,144.957411",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
