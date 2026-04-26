@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 62,
+	"totalFixtures": 90,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -15,6 +15,19 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "08NOpe1bKZ",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{
@@ -42,6 +55,303 @@
 			"homeScore": 0,
 			"awayScore": 1,
 			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "15:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "LBdDxg8Qdb",
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-01",
+			"day": "Friday",
+			"time": "19:30",
+			"homeTeamId": "bgdMXLR7KE",
+			"awayTeamId": "08NOpe1bKZ",
+			"address": "JC Donath Reserve Pitch 7",
+			"coordinates": "-37.700848,145.017287",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "k2KpA9PdY5",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "More Park Northern Field",
+			"coordinates": "-37.772482,144.796616",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "OEN2Z5GlNq",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "-37.755431,144.939902",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "7ZKRa2oNkB",
+			"address": "Sumner Park Main Pitch",
+			"coordinates": "-37.774141,144.986315",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "LBdDxg8Qdb",
+			"awayTeamId": "7MNGvobEmA",
+			"address": "Gilwell Park (Mosaic Reserve) Pitch 2",
+			"coordinates": "-37.666384,144.994017",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "08NOpe1bKZ",
+			"awayTeamId": "wOmejXOyN0",
+			"address": "Wallace Reserve Pitch 1",
+			"coordinates": "-37.694764,144.935299",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "bgdMXLR7KE",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "15:15",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "k2KpA9PdY5",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "15:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "6lNbVk6NxE",
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "7ZKRa2oNkB",
+			"awayTeamId": "LBdDxg8Qdb",
+			"address": "Hosken Reserve Pitch 1 South",
+			"coordinates": "-37.725117,144.957411",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "k2KpA9PdY5",
+			"awayTeamId": "7ZKRa2oNkB",
+			"address": "More Park Northern Field",
+			"coordinates": "-37.772482,144.796616",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "OEN2Z5GlNq",
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "bgdMXLR7KE",
+			"address": "Sumner Park Main Pitch",
+			"coordinates": "-37.774141,144.986315",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "7MNGvobEmA",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "-37.755431,144.939902",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "LBdDxg8Qdb",
+			"awayTeamId": "08NOpe1bKZ",
+			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
+			"coordinates": "-37.666384,144.994017",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-22",
+			"day": "Friday",
+			"time": "19:30",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "wOmejXOyN0",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-22",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": "bgdMXLR7KE",
+			"awayTeamId": "LBdDxg8Qdb",
+			"address": "JC Donath Reserve Pitch 8",
+			"coordinates": "-37.700848,145.017287",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "13:25",
+			"homeTeamId": "08NOpe1bKZ",
+			"awayTeamId": "k2KpA9PdY5",
+			"address": "Wallace Reserve Pitch 1",
+			"coordinates": "-37.694764,144.935299",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "14:30",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "7ZKRa2oNkB",
+			"awayTeamId": "6lNbVk6NxE",
+			"address": "Hosken Reserve Pitch 1 South",
+			"coordinates": "-37.725117,144.957411",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "LBdDxg8Qdb",
+			"awayTeamId": "wOmejXOyN0",
+			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
+			"coordinates": "-37.666384,144.994017",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "k2KpA9PdY5",
+			"awayTeamId": "bgdMXLR7KE",
+			"address": "More Park Northern Field",
+			"coordinates": "-37.772482,144.796616",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "OEN2Z5GlNq",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "08NOpe1bKZ",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "-37.755431,144.939902",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "15:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "7ZKRa2oNkB",
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-12",
+			"day": "Friday",
+			"time": "19:30",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "LBdDxg8Qdb",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
+			"status": "pending"
 		},
 		{
 			"round": 7,
