@@ -70,7 +70,8 @@ export async function syncTable({ team }: SyncTableOptions) {
 		log.info({ entries: external.data.length }, 'external data loaded and validated');
 
 		if (external.data.length === 0) {
-			throw new Error(`No table entries found for team "${team}"`);
+			log.warn({ team }, 'no table entries found, skipping');
+			return;
 		}
 
 		const firstEntry = external.data[0];

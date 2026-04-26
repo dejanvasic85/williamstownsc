@@ -170,4 +170,34 @@ sync
 		}
 	});
 
+const list = program.command('list').description('List configuration data');
+
+list
+	.command('teams')
+	.description('List crawlable team slugs from Sanity')
+	.option('--json', 'Output as JSON array')
+	.action(async (options: { json?: boolean }) => {
+		const teams = await getCrawlableTeams();
+		if (options.json) {
+			process.stdout.write(JSON.stringify(teams.map((t) => t.slug)) + '\n');
+		} else {
+			teams.forEach((t) => log.info({ slug: t.slug }, t.slug));
+		}
+	});
+
+list
+	.command('chunks')
+	.description('List crawlable team slugs grouped into chunks (for CI matrix)')
+	.option('-s, --size <n>', 'Teams per chunk', '4')
+	.action(async (options: { size: string }) => {
+		const chunkSize = parseInt(options.size, 10);
+		const teams = await getCrawlableTeams();
+		const slugs = teams.map((t) => t.slug);
+		const chunks: string[][] = [];
+		for (let i = 0; i < slugs.length; i += chunkSize) {
+			chunks.push(slugs.slice(i, i + chunkSize));
+		}
+		process.stdout.write(JSON.stringify(chunks) + '\n');
+	});
+
 program.parse();

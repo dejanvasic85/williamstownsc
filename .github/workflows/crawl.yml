@@ -6,54 +6,136 @@ permissions:
 
 on:
   workflow_dispatch:
+    inputs:
+      chunk_size:
+        description: 'Teams per crawl job'
+        default: '4'
+        required: false
   schedule:
     - cron: '0 12 * * 1-5' # Weekdays 10pm AEST
     - cron: '0 8-13 * * 6,0' # Weekends 6pm–11pm AEST (hourly)
 
-jobs:
-  crawl:
-    name: Crawl clubs and fixtures
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    env:
-      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
-      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET }}
-      LOG_LEVEL: info
-    steps:
-      - uses: actions/checkout@v6
-      - uses: jdx/mise-action@v4
+env:
+  NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
+  NEXT_PUBLIC_SANITY_DATASET: ${{ vars.SANITY_DATASET }}
+  LOG_LEVEL: info
 
+jobs:
+  setup:
+    name: Compute team chunks
+    runs-on: ubuntu-latest
+    outputs:
+      chunks: ${{ steps.chunk.outputs.chunks }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
       - name: Install dependencies
         run: npm ci
+      - id: chunk
+        name: Compute chunks
+        run: |
+          SIZE=${{ github.event.inputs.chunk_size || '4' }}
+          echo "chunks=$(npx tsx bin/wsc.ts list chunks --size $SIZE)" >> $GITHUB_OUTPUT
 
+  crawl-clubs:
+    name: Crawl clubs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Chrome
+        run: npx playwright install --with-deps chrome
+      - name: Crawl clubs
+        run: npm run crawl:clubs:ci
+      - name: Sync clubs
+        run: npm run sync:clubs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clubs-data
+          path: data/clubs/
+
+  crawl:
+    name: Crawl chunk ${{ strategy.job-index }}
+    needs: setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      matrix:
+        chunk: ${{ fromJson(needs.setup.outputs.chunks) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
+      - name: Install dependencies
+        run: npm ci
       - name: Install Chrome
         run: npx playwright install --with-deps chrome
 
-      - name: Crawl clubs
-        run: npm run crawl:clubs:ci
-      - name: Crawl fixtures
-        run: npm run crawl:fixtures:ci
+      - name: Crawl fixtures for chunk
+        run: xvfb-run --auto-servernum npx tsx bin/wsc.ts crawl fixtures --team ${{ join(matrix.chunk, ' --team ') }}
 
-      - name: Sync clubs
-        run: npm run sync:clubs
-      - name: Sync fixtures
-        run: npm run sync:fixtures
+      - name: Sync fixtures and tables for chunk
+        run: |
+          for team in ${{ join(matrix.chunk, ' ') }}; do
+            npx tsx bin/wsc.ts sync fixtures --team "$team"
+            npx tsx bin/wsc.ts sync table --team "$team"
+          done
 
+      - name: Collect team file paths for artifact
+        id: files
+        run: |
+          PATHS=""
+          for team in ${{ join(matrix.chunk, ' ') }}; do
+            for f in \
+              "data/matches/$team.json" \
+              "data/table/$team.json"; do
+              [ -e "$f" ] && PATHS="$PATHS$f"$'\n'
+            done
+          done
+          echo "paths<<EOF" >> $GITHUB_OUTPUT
+          echo "$PATHS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ strategy.job-index }}
+          path: ${{ steps.files.outputs.paths }}
+
+  commit:
+    name: Create PR
+    needs: [crawl-clubs, crawl]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
+      - name: Install dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: clubs-data
+          path: data/clubs/
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: .
+          merge-multiple: true
       - name: Format code
         run: npm run format
-
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v8
         with:
           branch: feat/update-clubs-and-fixtures
-          title: 'feat: update clubs and fixtures'
+          title: 'feat: update clubs and fixtures data'
           body: |
             This is an automated pull request to update clubs and fixtures data.
           commit-message: 'feat: update clubs and fixtures data'
           labels: 'content'
           token: ${{ secrets.ACTIONS_TOKEN }}
-
       - name: Enable auto-merge for PR
         if: steps.cpr.outputs.pull-request-operation == 'created'
         run: gh pr merge --auto --squash ${{ steps.cpr.outputs.pull-request-number }}
