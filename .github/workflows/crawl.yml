@@ -75,13 +75,11 @@ jobs:
         run: npx playwright install --with-deps chrome
 
       - name: Crawl fixtures for chunk
-        run: |
-          TEAM_ARGS=$(echo '${{ toJson(matrix.chunk) }}' | jq -r '.[] | "--team " + .' | tr '\n' ' ')
-          xvfb-run --auto-servernum npx tsx bin/wsc.ts crawl fixtures $TEAM_ARGS
+        run: xvfb-run --auto-servernum npx tsx bin/wsc.ts crawl fixtures --team ${{ join(matrix.chunk, ' --team ') }}
 
       - name: Sync fixtures and tables for chunk
         run: |
-          for team in $(echo '${{ toJson(matrix.chunk) }}' | jq -r '.[]'); do
+          for team in ${{ join(matrix.chunk, ' ') }}; do
             npx tsx bin/wsc.ts sync fixtures --team "$team"
             npx tsx bin/wsc.ts sync table --team "$team"
           done
@@ -90,7 +88,7 @@ jobs:
         id: files
         run: |
           PATHS=""
-          for team in $(echo '${{ toJson(matrix.chunk) }}' | jq -r '.[]'); do
+          for team in ${{ join(matrix.chunk, ' ') }}; do
             for f in \
               "data/matches/$team.json" \
               "data/table/$team.json"; do

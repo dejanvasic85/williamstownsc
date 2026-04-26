@@ -179,7 +179,7 @@ list
 	.action(async (options: { json?: boolean }) => {
 		const teams = await getCrawlableTeams();
 		if (options.json) {
-			process.stdout.write(JSON.stringify(teams.map((t) => t.slug)));
+			process.stdout.write(JSON.stringify(teams.map((t) => t.slug)) + '\n');
 		} else {
 			teams.forEach((t) => log.info({ slug: t.slug }, t.slug));
 		}
@@ -197,7 +197,7 @@ list
 		for (let i = 0; i < slugs.length; i += chunkSize) {
 			chunks.push(slugs.slice(i, i + chunkSize));
 		}
-		process.stdout.write(JSON.stringify(chunks));
+		process.stdout.write(JSON.stringify(chunks) + '\n');
 	});
 
 program.parse();
