@@ -117,6 +117,12 @@ jobs:
         run: npm ci
       - uses: actions/download-artifact@v4
         with:
+          pattern: clubs-data
+          path: data/clubs/
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
           path: .
           merge-multiple: true
       - name: Format code
