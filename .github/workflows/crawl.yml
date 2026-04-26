@@ -84,25 +84,17 @@ jobs:
             npx tsx bin/wsc.ts sync table --team "$team"
           done
 
-      - name: Collect team file paths for artifact
-        id: files
-        run: |
-          PATHS=""
-          for team in ${{ join(matrix.chunk, ' ') }}; do
-            for f in \
-              "data/matches/$team.json" \
-              "data/table/$team.json"; do
-              [ -e "$f" ] && PATHS="$PATHS$f"$'\n'
-            done
-          done
-          echo "paths<<EOF" >> $GITHUB_OUTPUT
-          echo "$PATHS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matches-chunk-${{ strategy.job-index }}
+          path: data/matches/
+          if-no-files-found: warn
 
       - uses: actions/upload-artifact@v4
         with:
-          name: chunk-${{ strategy.job-index }}
-          path: ${{ steps.files.outputs.paths }}
+          name: table-chunk-${{ strategy.job-index }}
+          path: data/table/
+          if-no-files-found: warn
 
   commit:
     name: Create PR
@@ -120,8 +112,14 @@ jobs:
           merge-multiple: true
       - uses: actions/download-artifact@v4
         with:
-          pattern: chunk-*
-          path: data/
+          pattern: matches-chunk-*
+          path: data/matches/
+          merge-multiple: true
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: table-chunk-*
+          path: data/table/
           merge-multiple: true
       - name: Format code
         run: npm run format
