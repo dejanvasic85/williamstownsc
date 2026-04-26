@@ -10,6 +10,7 @@ import {
 	fixtureDataSchema
 } from '@/types/matches';
 import type { Fixture, FixtureData } from '@/types/matches';
+import { syncTable } from './syncTable';
 
 const log = logger.child({ module: 'sync-fixtures' });
 
@@ -219,6 +220,8 @@ export async function syncFixtures({ team }: SyncFixturesOptions) {
 
 		// Write to file
 		await writeFixtureData(team, fixtureData);
+
+		await syncTable({ team });
 
 		log.info('sync completed');
 	} catch (error) {
