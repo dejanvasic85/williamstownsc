@@ -14,7 +14,8 @@ type GroupConfig = {
 const groupConfigs: GroupConfig[] = [
 	{ key: 'seniors', label: 'Seniors' },
 	{ key: 'reserves', label: 'Reserves' },
-	{ key: 'juniors', label: 'Juniors' },
+	{ key: 'juniorGirls', label: 'Junior Girls' },
+	{ key: 'juniorBoys', label: 'Junior Boys' },
 	{ key: 'masters', label: 'Masters' },
 	{ key: 'metros', label: 'Metros' }
 ];

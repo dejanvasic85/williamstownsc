@@ -5,6 +5,7 @@ export type TeamBase = {
 	name: string;
 	slug: string;
 	ageGroup: AgeGroup;
+	gender?: 'male' | 'female' | 'mixed';
 	order: number;
 };
 
@@ -28,7 +29,13 @@ export type AgeGroup =
 	| '17'
 	| '18';
 
-export type TabCategory = 'seniors' | 'reserves' | 'juniors' | 'masters' | 'metros';
+export type TabCategory =
+	| 'seniors'
+	| 'reserves'
+	| 'juniorBoys'
+	| 'juniorGirls'
+	| 'masters'
+	| 'metros';
 
 export type PersonPhoto = {
 	asset: {
@@ -90,7 +97,8 @@ export interface Team {
 export type TeamsByTab<T extends TeamBase = Team> = {
 	seniors: T[];
 	reserves: T[];
-	juniors: T[];
+	juniorBoys: T[];
+	juniorGirls: T[];
 	masters: T[];
 	metros: T[];
 };
