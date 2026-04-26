@@ -8,23 +8,27 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
-			"time": "11:45",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 1",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"time": "12:15",
+			"homeTeamId": "gld4pGXGdW",
+			"awayTeamId": "wOmejJVeN0",
+			"address": "Dixon Field Reserve Pitch E (Junior)",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
-			"time": "12:15",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "wOmejJVeN0",
-			"address": "Dixon Field Reserve Pitch E (Junior)",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"time": "11:45",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "nPmrBk05mo",
+			"address": "JT Gray Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -46,7 +50,7 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 2,

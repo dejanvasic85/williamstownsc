@@ -1,64 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 126,
+	"totalFixtures": 121,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "Bjma0G03dR",
-			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "nPmrBk05mo",
-			"address": "Arndell Park Reserve Pitch 2 - Half Field A",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0RXqdR",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:30",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -79,7 +24,7 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 2,

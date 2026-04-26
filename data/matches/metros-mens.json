@@ -8,12 +8,14 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "wOmejvpyN0",
-			"awayTeamId": "bam1nklZNw",
-			"address": "Princes Park Oval Pitch 2",
-			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"time": "15:00",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "08NOpe5WKZ",
+			"address": "Sumner Park Main Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -23,19 +25,23 @@
 			"homeTeamId": "nPmrB8Gpmo",
 			"awayTeamId": "Bjma0GJMdR",
 			"address": "Fawkner Park South Pavilion Pitch 2 (Lawn 20)",
-			"coordinates": "-37.8392,144.9919",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "08NOpe5WKZ",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"time": "11:00",
+			"homeTeamId": "wOmejvpyN0",
+			"awayTeamId": "bam1nklZNw",
+			"address": "Princes Park Oval Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -57,7 +63,7 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 2,

@@ -1,20 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 108,
+	"totalFixtures": 107,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "Johnson Reserve Pitch 1B",
-			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -57,7 +46,7 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 1,

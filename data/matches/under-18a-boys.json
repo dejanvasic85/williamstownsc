@@ -8,12 +8,25 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "nPmr7WjNow",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -25,19 +38,6 @@
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "nPmr7WjNow",
-			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"homeScore": 0,
-			"awayScore": 3,
-			"status": "complete"
 		},
 		{
 			"round": 1,

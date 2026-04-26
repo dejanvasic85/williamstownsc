@@ -1,31 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 72,
+	"totalFixtures": 70,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "vbd91WEDd4",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",

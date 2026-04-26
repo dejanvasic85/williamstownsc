@@ -12,8 +12,49 @@
 			"homeTeamId": "OVdzwWpmGr",
 			"awayTeamId": "6lNbpDpwdx",
 			"address": "John Cain Memorial Park Pitch 1",
-			"coordinates": "-37.763663,145.023846",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "nPmr7WjNow",
+			"address": "Paisley Park - Altona Magic SC Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "14:25",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "wOmejJVeN0",
+			"address": "NewFlo Stadium Pitch 2",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "14:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "gld4pGXGdW",
+			"address": "Myers Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -24,7 +65,7 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -35,39 +76,6 @@
 			"awayTeamId": "AnmYz1R1Nz",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "gld4pGXGdW",
-			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "14:25",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "wOmejJVeN0",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "nPmr7WjNow",
-			"address": "Paisley Park - Altona Magic SC Pitch 1",
-			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
