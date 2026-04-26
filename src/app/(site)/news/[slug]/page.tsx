@@ -115,7 +115,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 				<div className="mb-8">
 					<h1 className="mb-4 text-3xl font-bold lg:text-4xl">{article.title}</h1>
 					<time dateTime={publishedDate.toISOString()} className="text-base-content/60 text-lg">
-						{formattedDate}
+						Published {formattedDate}
 					</time>
 					<div className="mt-4">
 						<ShareButton title={article.title} url={articleUrl} />
