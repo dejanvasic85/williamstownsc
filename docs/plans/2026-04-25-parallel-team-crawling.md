@@ -57,11 +57,11 @@ Missing: a command to **list crawlable team slugs as chunks** (JSON array of arr
 
 ## Requirements
 
-- [ ] Add `wsc list teams` subcommand to `bin/wsc.ts` — prints slugs as JSON array (flat, for reference)
-- [ ] Add `wsc list chunks --size <n>` subcommand — prints `[["team-a","team-b","team-c","team-d"],["team-e",...],...]` for use as GH Actions matrix
-- [ ] Rewrite `.github/workflows/crawl.yml` with 3-job chunked matrix strategy
-- [ ] Artifacts scoped per chunk (or per team within chunk) — avoid collisions in commit job
-- [ ] `crawl:clubs:ci` stays as its own sequential step (unchanged logic)
+- [x] Add `wsc list teams` subcommand to `bin/wsc.ts` — prints slugs as JSON array (flat, for reference)
+- [x] Add `wsc list chunks --size <n>` subcommand — prints `[["team-a","team-b","team-c","team-d"],["team-e",...],...]` for use as GH Actions matrix
+- [x] Rewrite `.github/workflows/crawl.yml` with 3-job chunked matrix strategy
+- [x] Artifacts scoped per chunk (or per team within chunk) — avoid collisions in commit job
+- [x] `crawl:clubs:ci` stays as its own sequential step (unchanged logic)
 
 ## Files to Modify
 
