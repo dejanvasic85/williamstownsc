@@ -1,0 +1,112 @@
+{
+	"data": [
+		{
+			"type": "results",
+			"hash_id": "nmYnlkRpyN",
+			"attributes": {
+				"name": "Gisborne SC U16 Juniors - B Female 16JD vs Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
+				"date": "2026-04-26 02:15:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Dixon Field Reserve",
+				"field_name": "Pitch E (Junior)",
+				"home_team_name": "Gisborne SC U16 Juniors - B Female 16JD",
+				"home_logo": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
+				"away_team_name": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
+				"away_logo": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
+				"competition_name": "Junior Girls Sunday (U12 - U18)",
+				"league_name": "Girls' West 16B",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 1,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 2,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": true,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 1,
+				"enable_referees_allocated": true,
+				"match_hash_id": "ydoRELgnLK",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "RNE6nBzXKv",
+				"away_team_hash_id": "RdkEpOQBNG"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/nmYnlkRpyN"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "ZKRyGwl6DN",
+			"attributes": {
+				"name": "Williamstown SC U16 Juniors - B Female Girls Under 16 vs Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+				"date": "2026-04-26 01:45:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "JT Gray Reserve",
+				"field_name": "Pitch 1",
+				"home_team_name": "Williamstown SC U16 Juniors - B Female Girls Under 16",
+				"home_logo": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+				"away_team_name": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+				"away_logo": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
+				"competition_name": "Junior Girls Sunday (U12 - U18)",
+				"league_name": "Girls' West 16B",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 0,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 5,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "pN6R3Y89QN",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "emAeLAaBmB",
+				"away_team_hash_id": "1K3v5AlRNQ"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/ZKRyGwl6DN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": null,
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/results",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": null
+	}
+}

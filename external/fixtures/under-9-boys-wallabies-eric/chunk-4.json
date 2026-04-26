@@ -1,0 +1,120 @@
+{
+	"data": [
+		{
+			"type": "fixtures",
+			"hash_id": "JmXW14LGzd",
+			"attributes": {
+				"name": "Point Cook SC U09 MiniRoos - Wallabies Mixed U9 Boomerangs vs Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
+				"date": "2026-09-06T02:00:00.000000Z",
+				"round": "R18",
+				"full_round": "Round 18",
+				"ground_name": "Saltwater Reserve",
+				"ground_latitude": -37.908433,
+				"ground_longitude": 144.755511,
+				"ground_address": null,
+				"field_name": "Pitch 3 SSF3 (U9)",
+				"is_historic_field": false,
+				"home_team_name": "Point Cook SC U09 MiniRoos - Wallabies Mixed U9 Boomerangs",
+				"home_logo": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
+				"away_team_name": "Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
+				"away_logo": "https://ocean.dribl.com/f072ba3410e14bdfad1e3146c3ad4ed3",
+				"competition_name": "Coles MiniRoos Mixed Sunday (U6 - U11)",
+				"league_name": "Coles MiniRoos Mixed Sunday West 9 Wallabies Blue",
+				"status": "pending",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "body",
+				"home_score": null,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": null,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "ZNQOLaAaJd",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "ld44BZXpdW",
+				"away_team_hash_id": "vdWv4oz4KO"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/fixtures/JmXW14LGzd"
+				}
+			}
+		},
+		{
+			"type": "fixtures",
+			"hash_id": "ZKRyZPoxaN",
+			"attributes": {
+				"name": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate) vs Bye",
+				"date": "2026-09-06T02:00:00.000000Z",
+				"round": "R18",
+				"full_round": "Round 18",
+				"ground_name": null,
+				"ground_latitude": null,
+				"ground_longitude": null,
+				"ground_address": null,
+				"field_name": null,
+				"is_historic_field": false,
+				"home_team_name": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
+				"home_logo": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+				"away_team_name": null,
+				"away_logo": "https://ocean.dribl.com/2b1c25c950b04e0cb9aa1adf551fdb05",
+				"competition_name": "Coles MiniRoos Mixed Sunday (U6 - U11)",
+				"league_name": "Coles MiniRoos Mixed Sunday West 9 Wallabies Blue",
+				"status": "pending",
+				"bye_flag": true,
+				"is_unstructured": false,
+				"league_result_access": "body",
+				"home_score": null,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": null,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "ydoRpOaOLK",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "RdkEbkJANG",
+				"away_team_hash_id": null
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/fixtures/ZKRyZPoxaN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": "https://mc-api.dribl.com/api/fixtures?cursor=eyJzY2hlZHVsZV9ldmVudHMuZGF0ZSI6IjIwMjYtMDktMDYgMDI6MDA6MDAiLCJzY2hlZHVsZV9ldmVudHMuaWQiOjY2MDE0NDYsIl9wb2ludHNUb05leHRJdGVtcyI6ZmFsc2V9",
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/fixtures",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": "eyJzY2hlZHVsZV9ldmVudHMuZGF0ZSI6IjIwMjYtMDktMDYgMDI6MDA6MDAiLCJzY2hlZHVsZV9ldmVudHMuaWQiOjY2MDE0NDYsIl9wb2ludHNUb05leHRJdGVtcyI6ZmFsc2V9"
+	}
+}

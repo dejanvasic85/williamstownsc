@@ -1,0 +1,208 @@
+{
+	"data": [
+		{
+			"type": "results",
+			"hash_id": "1K3p3YDqod",
+			"attributes": {
+				"name": "Altona Magic SC U16 Juniors - A Mixed U16 Black vs Caroline Springs George Cross FC U16 Juniors - A Mixed",
+				"date": "2026-04-26 05:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Paisley Park - Altona Magic SC",
+				"field_name": "Pitch 1",
+				"home_team_name": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
+				"home_logo": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
+				"away_team_name": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
+				"away_logo": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed North-West 16A",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 1,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 3,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "Rdk2pvEDRK",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "EN2n2RzrNq",
+				"away_team_hash_id": "vdWv14OyKO"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/1K3p3YDqod"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "am14jq5Ekd",
+			"attributes": {
+				"name": "Surf Coast FC U16 Juniors - A Mixed vs Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
+				"date": "2026-04-26 04:25:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "NewFlo Stadium",
+				"field_name": "Pitch 2",
+				"home_team_name": "Surf Coast FC U16 Juniors - A Mixed",
+				"home_logo": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
+				"away_team_name": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
+				"away_logo": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed North-West 16A",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 3,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 3,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": true,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 1,
+				"enable_referees_allocated": true,
+				"match_hash_id": "vdWD1ov6vm",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "xm89eORVNr",
+				"away_team_hash_id": "BdD9QO68mb"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/am14jq5Ekd"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "ld45BOQLrm",
+			"attributes": {
+				"name": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro vs Gisborne SC U16 Juniors - A Mixed 16SS",
+				"date": "2026-04-26 04:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Myers Reserve",
+				"field_name": "Pitch 1",
+				"home_team_name": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
+				"home_logo": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
+				"away_team_name": "Gisborne SC U16 Juniors - A Mixed 16SS",
+				"away_logo": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed North-West 16A",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 1,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 3,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "8Nq53W7xaN",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "pN69jM02m0",
+				"away_team_hash_id": "ZKRP0zWjmk"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/ld45BOQLrm"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "8Nq53WBaJN",
+			"attributes": {
+				"name": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community vs Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+				"date": "2026-04-25 23:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "John Cain Memorial Park",
+				"field_name": "Pitch 1",
+				"home_team_name": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+				"home_logo": "https://ocean.dribl.com/ec9db56b702f499dbe52a5a818301df2",
+				"away_team_name": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+				"away_logo": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed North-West 16A",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 0,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 2,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "am14jqQ7zd",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "BdD9ZGw4mb",
+				"away_team_hash_id": "BdD9L8w8mb"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/8Nq53WBaJN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": null,
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/results",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": null
+	}
+}

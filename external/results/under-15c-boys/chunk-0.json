@@ -1,0 +1,112 @@
+{
+	"data": [
+		{
+			"type": "results",
+			"hash_id": "yKJJoL5QrK",
+			"attributes": {
+				"name": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black vs Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
+				"date": "2026-04-26 05:05:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Aston Fields",
+				"field_name": "Pitch 2",
+				"home_team_name": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
+				"home_logo": "https://ocean.dribl.com/5a5e334701b545bf8a1970648d7975ac",
+				"away_team_name": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
+				"away_logo": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed North-West 15C",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 1,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 1,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": true,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 1,
+				"enable_referees_allocated": true,
+				"match_hash_id": "Rdk2yOrVVK",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "Wdgpl509mR",
+				"away_team_hash_id": "jmaB5x83NR"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/yKJJoL5QrK"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "nmYnw5J3xN",
+			"attributes": {
+				"name": "Roxburgh Park United SC U15 Juniors - C Mixed U15C vs Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
+				"date": "2026-04-26 00:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Arena Recreation Reserve",
+				"field_name": "Pitch 1",
+				"home_team_name": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+				"home_logo": "https://ocean.dribl.com/97271535176849e1a978334c6b620394",
+				"away_team_name": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
+				"away_logo": "https://ocean.dribl.com/b7f56b4d0e0141d6871b4c0e72dd2af8",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed North-West 15C",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 1,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 2,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "1K3p5EQV7d",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "ZNQxMORJmx",
+				"away_team_hash_id": "ld44BW6GdW"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/nmYnw5J3xN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": null,
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/results",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": null
+	}
+}

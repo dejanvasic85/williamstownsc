@@ -1,0 +1,112 @@
+{
+	"data": [
+		{
+			"type": "results",
+			"hash_id": "ZKRypWOgjN",
+			"attributes": {
+				"name": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank vs Wyndham FC U14 Juniors - D Mixed Under 14 D",
+				"date": "2026-04-26 00:45:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Grange Reserve - Hoppers Crossing",
+				"field_name": "Pitch 1",
+				"home_team_name": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
+				"home_logo": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
+				"away_team_name": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
+				"away_logo": "https://ocean.dribl.com/f20d0e1df69046dfb92cfe65f203cf7f",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed West 14D",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 13,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 2,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": true,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 1,
+				"enable_referees_allocated": true,
+				"match_hash_id": "RNEg54oRMd",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "BdD95wGgmb",
+				"away_team_hash_id": "nmYZ1pn3Nz"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/ZKRypWOgjN"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "emAn54JoRN",
+			"attributes": {
+				"name": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC vs Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+				"date": "2026-04-26 00:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Romsey Recreation Reserve",
+				"field_name": "Pitch 2",
+				"home_team_name": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
+				"home_logo": "https://ocean.dribl.com/dd6a6effe69641ba968ea36fb1ffdfb1",
+				"away_team_name": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+				"away_logo": "https://ocean.dribl.com/c2d7cb601af445688a1d500797857c0d",
+				"competition_name": "Junior Mixed Sunday (U12 - U16)",
+				"league_name": "Mixed West 14D",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 1,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 10,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "EN2pjLr87d",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "BdD9QJj6mb",
+				"away_team_hash_id": "ydoJpx3aKD"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/emAn54JoRN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": null,
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/results",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": null
+	}
+}
