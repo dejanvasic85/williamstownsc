@@ -22,22 +22,13 @@
 			"date": "2026-04-26",
 			"day": "Sunday",
 			"time": "15:00",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "08NOpe1bKZ",
-			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "15:00",
 			"homeTeamId": "6lNbVk6NxE",
 			"awayTeamId": "k2KpA9PdY5",
 			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -47,7 +38,20 @@
 			"homeTeamId": "7MNGvobEmA",
 			"awayTeamId": "wOmejXOyN0",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
-			"coordinates": "-37.846664,144.856335",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "08NOpe1bKZ",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
 			"status": "pending"
 		},
 		{

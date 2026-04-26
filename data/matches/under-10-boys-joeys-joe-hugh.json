@@ -1,42 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 72,
+	"totalFixtures": 69,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "AnmYzg0xNz",
-			"address": "McIvor Reserve  Pitch 3 - Half (A+B)",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpR8n8mY",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Castley Reserve Main Pitch - Half Field B",
-			"coordinates": "-37.790938,144.815634",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "bam1nkkrNw",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",

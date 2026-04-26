@@ -8,6 +8,19 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "15:05",
+			"homeTeamId": "gld4pz60dW",
+			"awayTeamId": "k2KpRJ56mY",
+			"address": "Aston Fields Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "nPmrB8Rjmo",
 			"awayTeamId": "3vmZv9nLmq",
@@ -35,17 +48,6 @@
 			"awayTeamId": "nPmrBwrPmo",
 			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
 			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "15:05",
-			"homeTeamId": "gld4pz60dW",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "Aston Fields Pitch 2",
-			"coordinates": "-37.597457,144.890302",
 			"status": "pending"
 		},
 		{

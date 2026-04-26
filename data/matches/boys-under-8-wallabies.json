@@ -1,42 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 87,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "1pN6RBQN0g",
-			"awayTeamId": "AnmYz1R1Nz",
-			"address": "Fairbairn Park Pitch 4 Midi (7v7) B",
-			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "3vmZv9nLmq",
-			"address": "McIvor Reserve  Pitch 1 - Midi (1/4) A",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "3pmvQp0Ldv",
-			"address": "Club Italia Sporting Club Pitch 1 - 7V7 Field D",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",

@@ -1,20 +1,9 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 108,
+	"totalFixtures": 107,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -23,8 +12,10 @@
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "3vmZvwGMmq",
 			"address": "HC Kim Reserve Pitch 3A",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 1,

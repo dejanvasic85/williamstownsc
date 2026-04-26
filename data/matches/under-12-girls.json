@@ -11,8 +11,21 @@
 			"time": "09:00",
 			"homeTeamId": "LBdDx1O8db",
 			"awayTeamId": "bgdMXan2KE",
-			"address": "MacPherson Park Pitch 4 (U12/13s)",
-			"coordinates": "-37.63624,144.565487",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "3pmvQpkodv",
+			"awayTeamId": "6lNbpD56dx",
+			"address": "",
+			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
 			"status": "complete"
@@ -25,8 +38,10 @@
 			"homeTeamId": "vbd91WEDd4",
 			"awayTeamId": "nPmr7WjNow",
 			"address": "Johnson Reserve Pitch 1A",
-			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -38,19 +53,6 @@
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
 			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "3pmvQpkodv",
-			"awayTeamId": "6lNbpD56dx",
-			"address": "JH Allan Reserve Main Pitch A - Half Field",
-			"coordinates": "-37.747864,144.857697",
-			"homeScore": 3,
-			"awayScore": 0,
-			"status": "complete"
 		},
 		{
 			"round": 2,

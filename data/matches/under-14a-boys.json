@@ -8,6 +8,19 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "Bjma0G03dR",
+			"address": "HC Kim Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "10:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8nm7PgVNOq",
@@ -19,23 +32,12 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "Bjma0G03dR",
-			"address": "HC Kim Reserve Pitch 2",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 1,

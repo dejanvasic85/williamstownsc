@@ -1,53 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 126,
+	"totalFixtures": 122,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "HC Kim Reserve Pitch 3 - Midi B (7v7)",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "Bjma0RXqdR",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Midi A (7v7)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Webster Street Reserve Pitch 3A Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "08NOpe5WKZ",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "JL Murphy Reserve Pitch 3C (7v7)",
-			"coordinates": "-37.834006,144.92755",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -79,7 +35,7 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 2,

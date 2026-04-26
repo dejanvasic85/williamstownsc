@@ -1,64 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 108,
+	"totalFixtures": 103,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Alcock Road Reserve Pitch 1 - Mini (4v4) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Webster Street Reserve Pitch 1B Mini 4v4",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMM4ZdE2",
-			"address": "Saltwater Reserve Pitch 1A",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "b8Nq3q27d9",
-			"address": "Alcock Road Reserve Pitch 1 - Mini (4v4) B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "Polly Parade Reserve Main Pitch - Mini (4v4) A",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",

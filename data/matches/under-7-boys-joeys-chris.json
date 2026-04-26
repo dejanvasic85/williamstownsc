@@ -1,75 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 100,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Avondale Heights Reserve Mini B",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "AnmYz1R1Nz",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Mini A (4v4)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "8zdBbr2dBX",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Mini C (4v4)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "bgdMM4ZdE2",
-			"address": "Costas Mitre 10 Park Pitch 4E, Galvin Park Reserve - Quarter Field (4v4)",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "HC Kim Reserve Pitch 3 - Mini A (4v4)",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "Bjma0RXqdR",
-			"address": "Saltwater Reserve Pitch 1B",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",
