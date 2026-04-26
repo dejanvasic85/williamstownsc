@@ -1,0 +1,112 @@
+{
+	"data": [
+		{
+			"type": "results",
+			"hash_id": "WdgqJO1llN",
+			"attributes": {
+				"name": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A vs Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
+				"date": "2026-04-26 03:30:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Keilor Lodge Reserve",
+				"field_name": "Pitch 1",
+				"home_team_name": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
+				"home_logo": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
+				"away_team_name": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
+				"away_logo": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+				"competition_name": "Junior Boys Sunday (U17 - U18)",
+				"league_name": "Boys West 18A",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 5,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 3,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "vdWDRqJ2vm",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "1K3v3E9oNQ",
+				"away_team_hash_id": "BdD9ZQbJmb"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/WdgqJO1llN"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "jmazZQ7DYN",
+			"attributes": {
+				"name": "Spring Hills FC U18 Juniors - A Male North-West U18 A BOYS - LUCAS vs Caroline Springs George Cross FC U18 Juniors - A Male",
+				"date": "2026-04-26 03:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": null,
+				"field_name": null,
+				"home_team_name": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
+				"home_logo": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
+				"away_team_name": "Caroline Springs George Cross FC U18 Juniors - A Male",
+				"away_logo": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
+				"competition_name": "Junior Boys Sunday (U17 - U18)",
+				"league_name": "Boys West 18A",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 0,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 3,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "am140axwzd",
+				"forfeit_team_hash_id": "ld44BkrxdW",
+				"home_team_hash_id": "ld44BkrxdW",
+				"away_team_hash_id": "am1QjYJnmw"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/jmazZQ7DYN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": null,
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/results",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": null
+	}
+}

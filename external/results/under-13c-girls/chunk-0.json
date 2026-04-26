@@ -1,0 +1,112 @@
+{
+	"data": [
+		{
+			"type": "results",
+			"hash_id": "BdDbL0nLJN",
+			"attributes": {
+				"name": "Williamstown SC U13 Juniors - C Female Girls Under 13 vs Williams Landing SC U13 Juniors - C Female",
+				"date": "2026-04-26 02:00:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "JT Gray Reserve",
+				"field_name": "Pitch 3B",
+				"home_team_name": "Williamstown SC U13 Juniors - C Female Girls Under 13",
+				"home_logo": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+				"away_team_name": "Williams Landing SC U13 Juniors - C Female",
+				"away_logo": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+				"competition_name": "Junior Girls Sunday (U12 - U18)",
+				"league_name": "Girls' West 13C",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 5,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 2,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "BdDbLWvjxN",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "RNE6JAQAKv",
+				"away_team_hash_id": "pN69EgY0m0"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/BdDbL0nLJN"
+				}
+			}
+		},
+		{
+			"type": "results",
+			"hash_id": "pN6RgqZgpN",
+			"attributes": {
+				"name": "Gisborne SC U13 Juniors - C Female 13ML vs Point Cook SC U13 Juniors - C Female U13 Blue Angels",
+				"date": "2026-04-26 01:30:00",
+				"round": "R1",
+				"full_round": "Round 1",
+				"ground_name": "Dixon Field Reserve",
+				"field_name": "Pitch D (U13)",
+				"home_team_name": "Gisborne SC U13 Juniors - C Female 13ML",
+				"home_logo": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
+				"away_team_name": "Point Cook SC U13 Juniors - C Female U13 Blue Angels",
+				"away_logo": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
+				"competition_name": "Junior Girls Sunday (U12 - U18)",
+				"league_name": "Girls' West 13C",
+				"status": "complete",
+				"bye_flag": false,
+				"is_unstructured": false,
+				"league_result_access": "public",
+				"home_score": 10,
+				"home_score_extra": null,
+				"home_score_penalty": null,
+				"home_score_half": null,
+				"home_score_extra_half": null,
+				"away_score": 1,
+				"away_score_extra": null,
+				"away_score_penalty": null,
+				"away_score_half": null,
+				"away_score_extra_half": null,
+				"allocated_center_referee": false,
+				"allocated_assistant_referee_1": false,
+				"allocated_assistant_referee_2": false,
+				"allocated_fourth_official": false,
+				"allocated_game_leader": false,
+				"referee_count": 0,
+				"enable_referees_allocated": true,
+				"match_hash_id": "pN6RgVyZnN",
+				"forfeit_team_hash_id": null,
+				"home_team_hash_id": "ld44B0ZDdW",
+				"away_team_hash_id": "xm89bRGENr"
+			},
+			"links": {
+				"self": {
+					"href": "https://mc-api.dribl.com/api/results/pN6RgqZgpN"
+				}
+			}
+		}
+	],
+	"links": {
+		"first": null,
+		"last": null,
+		"prev": null,
+		"next": null
+	},
+	"meta": {
+		"path": "https://mc-api.dribl.com/api/results",
+		"per_page": 30,
+		"next_cursor": null,
+		"prev_cursor": null
+	}
+}
