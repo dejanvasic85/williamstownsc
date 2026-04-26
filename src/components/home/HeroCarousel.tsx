@@ -93,14 +93,6 @@ export function HeroCarousel({
 		return null;
 	}
 
-	const formatDate = (date: string) => {
-		return new Date(date).toLocaleDateString('en-AU', {
-			month: 'short',
-			day: 'numeric',
-			year: 'numeric'
-		});
-	};
-
 	return (
 		<section
 			className="group relative w-full"
@@ -155,12 +147,6 @@ export function HeroCarousel({
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 md:flex-col md:p-10">
-								<div className="flex justify-start">
-									<div className="badge badge-primary badge-lg bg-primary/90 gap-2 px-4 py-3 font-semibold backdrop-blur-sm">
-										{formatDate(article.publishedAt)}
-									</div>
-								</div>
-
 								<div className="max-w-4xl sm:px-0">
 									<h2
 										className={clsx(
