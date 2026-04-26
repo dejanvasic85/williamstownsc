@@ -7,6 +7,7 @@ export const teamsDirectoryQuery = groq`
     name,
     "slug": slug.current,
     ageGroup,
+    gender,
     order
   }
 `;

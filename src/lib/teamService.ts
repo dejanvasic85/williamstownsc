@@ -16,12 +16,12 @@ const juniorAgeGroups: AgeGroup[] = [
 	'18'
 ];
 
-export function getTabCategory(ageGroup: AgeGroup): TabCategory {
+export function getTabCategory(ageGroup: AgeGroup, gender?: TeamBase['gender']): TabCategory {
 	if (ageGroup === 'seniors') return 'seniors';
 	if (ageGroup === 'reserves') return 'reserves';
 	if (ageGroup === 'metros') return 'metros';
 	if (ageGroup === 'masters' || ageGroup === 'over45') return 'masters';
-	return 'juniors';
+	return gender === 'female' ? 'juniorGirls' : 'juniorBoys';
 }
 
 export function sortTeams<T extends TeamBase>(teams: T[]): T[] {
@@ -46,20 +46,22 @@ export function groupTeamsByTab<T extends TeamBase>(teams: T[]): TeamsByTab<T> {
 	const grouped: TeamsByTab<T> = {
 		seniors: [],
 		reserves: [],
-		juniors: [],
+		juniorBoys: [],
+		juniorGirls: [],
 		masters: [],
 		metros: []
 	};
 
 	teams.forEach((team) => {
-		const category = getTabCategory(team.ageGroup);
+		const category = getTabCategory(team.ageGroup, team.gender);
 		grouped[category].push(team);
 	});
 
 	return {
 		seniors: sortTeams(grouped.seniors),
 		reserves: sortTeams(grouped.reserves),
-		juniors: sortTeams(grouped.juniors),
+		juniorBoys: sortTeams(grouped.juniorBoys),
+		juniorGirls: sortTeams(grouped.juniorGirls),
 		masters: sortTeams(grouped.masters),
 		metros: sortTeams(grouped.metros)
 	};
