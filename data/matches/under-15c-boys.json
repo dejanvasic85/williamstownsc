@@ -25,10 +25,8 @@
 			"homeTeamId": "nPmrB8Rjmo",
 			"awayTeamId": "3vmZv9nLmq",
 			"address": "Arena Recreation Reserve Pitch 1",
-			"coordinates": "",
-			"homeScore": 1,
-			"awayScore": 2,
-			"status": "complete"
+			"coordinates": "-37.618866,144.916762",
+			"status": "pending"
 		},
 		{
 			"round": 1,
