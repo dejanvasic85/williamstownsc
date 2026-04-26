@@ -55,9 +55,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: clubs-data
-          path: |
-            data/external/clubs/
-            data/clubs/
+          path: data/clubs/
 
   crawl:
     name: Crawl chunk ${{ strategy.job-index }}
@@ -94,9 +92,6 @@ jobs:
           PATHS=""
           for team in $(echo '${{ toJson(matrix.chunk) }}' | jq -r '.[]'); do
             for f in \
-              "data/external/fixtures/$team" \
-              "data/external/results/$team" \
-              "data/external/table/$team.json" \
               "data/matches/$team.json" \
               "data/table/$team.json"; do
               [ -e "$f" ] && PATHS="$PATHS$f"$'\n'
