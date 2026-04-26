@@ -121,7 +121,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           pattern: chunk-*
-          path: .
+          path: data/
           merge-multiple: true
       - name: Format code
         run: npm run format
