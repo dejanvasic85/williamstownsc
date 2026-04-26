@@ -8,6 +8,19 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "wOmejJVeN0",
+			"awayTeamId": "3vmZv3vbmq",
+			"address": "Keilor Lodge Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "OEN2Z5GlNq",
 			"awayTeamId": "nPmr7WjNow",
@@ -37,17 +50,6 @@
 			"awayTeamId": "8zdBbr2dBX",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "wOmejJVeN0",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Keilor Lodge Reserve Pitch 1",
-			"coordinates": "-37.688087,144.777598",
 			"status": "pending"
 		},
 		{

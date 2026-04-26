@@ -8,6 +8,19 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "McIvor Reserve  Pitch 1 - FULL",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "15:45",
 			"homeTeamId": "6lNbpGXodx",
 			"awayTeamId": "wOmejXOyN0",
@@ -52,17 +65,6 @@
 			"awayTeamId": "vbd91VOJd4",
 			"address": "JC Donath Reserve Pitch 8",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "McIvor Reserve  Pitch 1 - FULL",
-			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{
