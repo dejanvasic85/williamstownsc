@@ -35,7 +35,7 @@ jobs:
         name: Compute chunks
         run: |
           SIZE=${{ github.event.inputs.chunk_size || '4' }}
-          echo "chunks=$(tsx bin/wsc.ts list chunks --size $SIZE)" >> $GITHUB_OUTPUT
+          echo "chunks=$(npx tsx bin/wsc.ts list chunks --size $SIZE)" >> $GITHUB_OUTPUT
 
   crawl-clubs:
     name: Crawl clubs
@@ -79,13 +79,13 @@ jobs:
       - name: Crawl fixtures for chunk
         run: |
           TEAM_ARGS=$(echo '${{ toJson(matrix.chunk) }}' | jq -r '.[] | "--team " + .' | tr '\n' ' ')
-          xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures $TEAM_ARGS
+          xvfb-run --auto-servernum npx tsx bin/wsc.ts crawl fixtures $TEAM_ARGS
 
       - name: Sync fixtures and tables for chunk
         run: |
           for team in $(echo '${{ toJson(matrix.chunk) }}' | jq -r '.[]'); do
-            tsx bin/wsc.ts sync fixtures --team "$team"
-            tsx bin/wsc.ts sync table --team "$team"
+            npx tsx bin/wsc.ts sync fixtures --team "$team"
+            npx tsx bin/wsc.ts sync table --team "$team"
           done
 
       - uses: actions/upload-artifact@v4
