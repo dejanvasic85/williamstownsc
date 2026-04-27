@@ -2,6 +2,8 @@ FROM node:24.12.0-bookworm
 
 # Chrome and all Playwright browser binaries live here (baked into the image)
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+# Prevent npm ci postinstall from re-downloading browsers at runtime
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 
 # Install Chrome + all system dependencies via Playwright CLI
 # Pin to the exact version used by the project

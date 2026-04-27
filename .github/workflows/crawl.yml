@@ -40,8 +40,14 @@ jobs:
   crawl-clubs:
     name: Crawl clubs
     runs-on: ubuntu-latest
+    permissions:
+      packages: read
     container:
       image: ghcr.io/dejanvasic85/williamstownsc-crawler:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+      options: --shm-size=1g
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -60,8 +66,14 @@ jobs:
     name: Crawl chunk ${{ strategy.job-index }}
     needs: setup
     runs-on: ubuntu-latest
+    permissions:
+      packages: read
     container:
       image: ghcr.io/dejanvasic85/williamstownsc-crawler:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+      options: --shm-size=1g
     timeout-minutes: 25
     strategy:
       matrix:
