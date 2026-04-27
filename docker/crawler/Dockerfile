@@ -1,4 +1,4 @@
-FROM node:24.12.0-bookworm
+FROM --platform=linux/amd64 node:24.12.0-bookworm
 
 # Chrome and all Playwright browser binaries live here (baked into the image)
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
