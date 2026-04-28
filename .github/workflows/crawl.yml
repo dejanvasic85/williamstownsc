@@ -89,21 +89,33 @@ jobs:
 
       - name: Sync fixtures and tables for chunk
         run: |
+          mkdir -p tmp/crawl/matches tmp/crawl/table
           for team in ${{ join(matrix.chunk, ' ') }}; do
             npx tsx bin/wsc.ts sync fixtures --team "$team"
             npx tsx bin/wsc.ts sync table --team "$team"
+            if [[ -f "data/matches/$team.json" ]]; then
+              cp "data/matches/$team.json" "tmp/crawl/matches/$team.json"
+            else
+              echo "warn: missing matches file for team=$team"
+            fi
+
+            if [[ -f "data/table/$team.json" ]]; then
+              cp "data/table/$team.json" "tmp/crawl/table/$team.json"
+            else
+              echo "warn: missing table file for team=$team"
+            fi
           done
 
       - uses: actions/upload-artifact@v4
         with:
           name: matches-chunk-${{ strategy.job-index }}
-          path: data/matches/
+          path: tmp/crawl/matches/
           if-no-files-found: warn
 
       - uses: actions/upload-artifact@v4
         with:
           name: table-chunk-${{ strategy.job-index }}
-          path: data/table/
+          path: tmp/crawl/table/
           if-no-files-found: warn
 
   commit:
