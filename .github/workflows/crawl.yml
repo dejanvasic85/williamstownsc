@@ -93,8 +93,17 @@ jobs:
           for team in ${{ join(matrix.chunk, ' ') }}; do
             npx tsx bin/wsc.ts sync fixtures --team "$team"
             npx tsx bin/wsc.ts sync table --team "$team"
-            cp "data/matches/$team.json" "tmp/crawl/matches/$team.json"
-            cp "data/table/$team.json" "tmp/crawl/table/$team.json"
+            if [[ -f "data/matches/$team.json" ]]; then
+              cp "data/matches/$team.json" "tmp/crawl/matches/$team.json"
+            else
+              echo "warn: missing matches file for team=$team"
+            fi
+
+            if [[ -f "data/table/$team.json" ]]; then
+              cp "data/table/$team.json" "tmp/crawl/table/$team.json"
+            else
+              echo "warn: missing table file for team=$team"
+            fi
           done
 
       - uses: actions/upload-artifact@v4
