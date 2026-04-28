@@ -1,42 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 85,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "1pN6RBQN0g",
-			"awayTeamId": "PydoLxGmD9",
-			"address": "Fairbairn Park Pitch 4 Midi (7v7) A",
-			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "bgdMXaXpKE",
-			"address": "Avondale Heights Reserve Pitch 2 - Midi (7v7)",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

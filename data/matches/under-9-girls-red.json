@@ -1,31 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 70,
+	"totalFixtures": 68,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "1pN6pqv7d0",
-			"awayTeamId": "gld4pGXGdW",
-			"address": "Langama Park Pitch 5 Midi",
-			"coordinates": "-37.586728,144.709286",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 2A (7v7)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

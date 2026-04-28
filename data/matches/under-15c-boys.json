@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 72,
+	"totalFixtures": 70,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -25,30 +25,10 @@
 			"homeTeamId": "nPmrB8Rjmo",
 			"awayTeamId": "3vmZv9nLmq",
 			"address": "Arena Recreation Reserve Pitch 1",
-			"coordinates": "-37.618866,144.916762",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Webster Street Reserve Pitch 1",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "nPmrBwrPmo",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 2,

@@ -34,6 +34,19 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "10:30",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "vbd91WEDd4",
 			"awayTeamId": "nPmr7WjNow",
@@ -42,17 +55,6 @@
 			"homeScore": 0,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
 		},
 		{
 			"round": 2,

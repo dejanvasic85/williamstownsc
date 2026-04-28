@@ -1,9 +1,35 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "3vmZv3vbmq",
+			"address": "Tarneit Rise Synthetic Pitch Tarneit Rise Synthetic Pitch",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "12:40",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "7MNGvappmA",
+			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -16,50 +42,6 @@
 			"homeScore": 2,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "8nm7PgVNOq",
-			"address": "JT Gray Reserve Pitch 1",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:40",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "7MNGvappmA",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
-			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Tarneit Rise Synthetic Pitch Tarneit Rise Synthetic Pitch",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
 		},
 		{
 			"round": 2,

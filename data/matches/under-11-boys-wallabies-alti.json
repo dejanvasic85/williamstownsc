@@ -1,64 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 124,
+	"totalFixtures": 119,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "8zdBbr2dBX",
-			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:10",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMM4ZdE2",
-			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMXan2KE",
-			"address": "JT Gray Reserve Pitch 3B",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

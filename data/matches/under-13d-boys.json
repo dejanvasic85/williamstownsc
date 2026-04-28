@@ -1,75 +1,9 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 100,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:25",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "nPmrBk05mo",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "bgdMXLL2KE",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 9v9 (A)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "nPmrBk05mo",
-			"address": "Webster Street Reserve Pitch 4B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "R1K3BbeoNQ",
-			"address": "JT Gray Reserve Pitch 3B",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

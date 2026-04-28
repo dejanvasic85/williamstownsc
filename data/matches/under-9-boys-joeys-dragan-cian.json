@@ -1,64 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 83,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "6lNbpD56dx",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "Polly Parade Reserve Main Pitch - Midi (7v7) B",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0RXqdR",
-			"address": "Alcock Road Reserve Pitch 1 - Mini (4v4) B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "Saltwater Reserve Pitch 3 SSF3 (U9)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

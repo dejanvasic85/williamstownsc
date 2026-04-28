@@ -1,20 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 103,
+	"totalFixtures": 102,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Williams Landing Sports Reserve Pitch A (4v4)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

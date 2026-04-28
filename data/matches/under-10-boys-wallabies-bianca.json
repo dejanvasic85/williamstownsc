@@ -1,31 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 121,
+	"totalFixtures": 119,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:20",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (B)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",
