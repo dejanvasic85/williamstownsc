@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -15,6 +15,19 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "3vmZv3BJmq",
+			"address": "Alcock Road Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 5,
 			"status": "complete"
 		},
 		{
@@ -41,28 +54,6 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 4,
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "3vmZv3BJmq",
-			"address": "Alcock Road Reserve Pitch 1",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "15:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

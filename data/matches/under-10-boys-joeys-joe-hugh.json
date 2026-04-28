@@ -1,20 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 69,
+	"totalFixtures": 68,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bgdMXaXpKE",
-			"address": "HC Kim Reserve Pitch 3B",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

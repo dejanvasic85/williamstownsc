@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 69,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -12,30 +12,10 @@
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "nPmr7WjNow",
 			"address": "HC Kim Reserve Pitch 3",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "bgdMXLbQKE",
-			"awayTeamId": "7MNGvappmA",
-			"address": "Brookside Recreation Reserve Grass Oval",
-			"coordinates": "-37.744543,144.736337",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Paisley Park - Altona Magic SC Pitch 1",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 2,

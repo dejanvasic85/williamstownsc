@@ -1,9 +1,22 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 74,
+	"totalFixtures": 73,
 	"totalRounds": 19,
 	"fixtures": [
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "8zdBbr2dBX",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -28,28 +41,6 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 5,
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "8zdBbr2dBX",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

@@ -1,9 +1,22 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 105,
 	"totalRounds": 18,
 	"fixtures": [
+		{
+			"round": 1,
+			"date": "2026-04-25",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "3vmZv9nLmq",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 2,
+			"status": "complete"
+		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -16,39 +29,6 @@
 			"homeScore": 5,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "AnmYz1R1Nz",
-			"address": "Webster Street Reserve Pitch 2B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "gld450DmW5",
-			"address": "AW Bond Reserve Half A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "11:20",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "AnmYzg0xNz",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half A",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
 		},
 		{
 			"round": 1,

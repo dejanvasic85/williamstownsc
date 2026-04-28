@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 130,
+	"totalFixtures": 128,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -34,6 +34,19 @@
 			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "OEN2ZnG7Nq",
+			"awayTeamId": "3vmZv3vbmq",
+			"address": "HR Uren Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
 			"time": "14:25",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "wOmejJVeN0",
@@ -55,39 +68,6 @@
 			"homeScore": 1,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "V8dnR1odwL",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "3pmvQW0Edv",
-			"awayTeamId": "AnmYz1R1Nz",
-			"address": "Barrymore Road Recreation Reserve Pitch 1",
-			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "OEN2ZnG7Nq",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "HR Uren Reserve Pitch 2",
-			"coordinates": "-37.68317,144.98957",
-			"status": "pending"
 		},
 		{
 			"round": 2,

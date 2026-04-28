@@ -1,31 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 85,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "bgdMXan2KE",
-			"address": "Polly Parade Reserve Main Pitch - Half B",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "AB Shaw Reserve Pitch 1 - Half A",
-			"coordinates": "-37.865571,144.783747",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-02",

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Boys Sunday (U17 - U18)",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 87,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -29,39 +29,6 @@
 			"homeScore": 0,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "8zdBbr2dBX",
-			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 1,
-			"date": "2026-04-26",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "7MNGvappmA",
-			"address": "JT Gray Reserve Pitch 1",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 2,
