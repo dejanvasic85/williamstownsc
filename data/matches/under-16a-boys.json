@@ -73,6 +73,17 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "wOmejJVeN0",
+			"awayTeamId": "7MNGvappmA",
+			"address": "Keilor Lodge Reserve Pitch 1",
+			"coordinates": "-37.688087,144.777598",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "V8dnR1odwL",
@@ -133,17 +144,6 @@
 			"awayTeamId": "LBdDx0GQdb",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "wOmejJVeN0",
-			"awayTeamId": "7MNGvappmA",
-			"address": "Keilor Lodge Reserve Pitch 2",
-			"coordinates": "-37.688087,144.777598",
 			"status": "pending"
 		},
 		{
@@ -238,6 +238,17 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "wOmejJVeN0",
+			"awayTeamId": "OVdzwWpmGr",
+			"address": "Keilor Lodge Reserve Pitch 1",
+			"coordinates": "-37.688087,144.777598",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "11:35",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "AnmYz1R1Nz",
@@ -287,17 +298,6 @@
 			"awayTeamId": "OEN2ZnG7Nq",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "wOmejJVeN0",
-			"awayTeamId": "OVdzwWpmGr",
-			"address": "Keilor Lodge Reserve Pitch 2",
-			"coordinates": "-37.688087,144.777598",
 			"status": "pending"
 		},
 		{
