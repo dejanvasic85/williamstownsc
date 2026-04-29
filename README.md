@@ -48,6 +48,7 @@ To run the site locally, follow these steps:
 ### Prerequisites
 
 - Node.js 24 installed
+- pnpm 10.5.2 installed
 - A Sanity account and project set up
 
 ### CLI tools
@@ -55,7 +56,13 @@ To run the site locally, follow these steps:
 The data CLI uses Playwright. Before running crawl commands, install the browser binaries:
 
 ```bash
-npx playwright install --with-deps chromium
+pnpm exec playwright install --with-deps chromium
+```
+
+### Install dependencies
+
+```bash
+pnpm install
 ```
 
 ## Content Management
@@ -74,7 +81,7 @@ Sanity URLs:
 After modifying Sanity schemas in `src/sanity/schema/`, run:
 
 ```bash
-npm run type:gen
+pnpm run type:gen
 ```
 
 This will update the TypeScript types to match your schema changes.

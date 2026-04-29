@@ -2,9 +2,10 @@
 	"name": "williamstownsc",
 	"version": "1.0.0",
 	"private": true,
+	"packageManager": "pnpm@10.5.2",
 	"scripts": {
 		"dev": "next dev --port 3003",
-		"build": "npm run type:gen && next build",
+		"build": "pnpm run type:gen && next build",
 		"build:sanity": "sanity build",
 		"deploy:sanity": "sanity deploy",
 		"start": "next start",
@@ -84,5 +85,13 @@
 			"eslint ."
 		]
 	},
-	"browserslist": "> 1%"
+	"browserslist": "> 1%",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@sentry/cli",
+			"esbuild",
+			"sharp",
+			"unrs-resolver"
+		]
+	}
 }

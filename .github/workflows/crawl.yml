@@ -29,13 +29,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.5.2
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - id: chunk
         name: Compute chunks
         run: |
           SIZE=${{ github.event.inputs.chunk_size || '4' }}
-          echo "chunks=$(npx tsx bin/wsc.ts list chunks --size $SIZE)" >> $GITHUB_OUTPUT
+          echo "chunks=$(pnpm exec tsx bin/wsc.ts list chunks --size $SIZE)" >> $GITHUB_OUTPUT
 
   crawl-clubs:
     name: Crawl clubs
@@ -44,19 +47,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.5.2
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-chrome-${{ hashFiles('package-lock.json') }}
+          key: playwright-chrome-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Install Chrome
-        run: npx playwright install --with-deps chrome
+        run: pnpm exec playwright install --with-deps chrome
       - name: Crawl clubs
-        run: npm run crawl:clubs:ci
+        run: pnpm run crawl:clubs:ci
       - name: Sync clubs
-        run: npm run sync:clubs
+        run: pnpm run sync:clubs
       - uses: actions/upload-artifact@v4
         with:
           name: clubs-data
@@ -74,25 +80,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.5.2
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-chrome-${{ hashFiles('package-lock.json') }}
+          key: playwright-chrome-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Install Chrome
-        run: npx playwright install --with-deps chrome
+        run: pnpm exec playwright install --with-deps chrome
 
       - name: Crawl fixtures for chunk
-        run: xvfb-run --auto-servernum npx tsx bin/wsc.ts crawl fixtures --team ${{ join(matrix.chunk, ' --team ') }}
+        run: xvfb-run --auto-servernum pnpm exec tsx bin/wsc.ts crawl fixtures --team ${{ join(matrix.chunk, ' --team ') }}
 
       - name: Sync fixtures and tables for chunk
         run: |
           mkdir -p tmp/crawl/matches tmp/crawl/table
           for team in ${{ join(matrix.chunk, ' ') }}; do
-            npx tsx bin/wsc.ts sync fixtures --team "$team"
-            npx tsx bin/wsc.ts sync table --team "$team"
+            pnpm exec tsx bin/wsc.ts sync fixtures --team "$team"
+            pnpm exec tsx bin/wsc.ts sync table --team "$team"
             if [[ -f "data/matches/$team.json" ]]; then
               cp "data/matches/$team.json" "tmp/crawl/matches/$team.json"
             else
@@ -125,8 +134,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.5.2
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - uses: actions/download-artifact@v4
         with:
           pattern: clubs-data
@@ -144,7 +156,7 @@ jobs:
           path: data/table/
           merge-multiple: true
       - name: Format code
-        run: npm run format
+        run: pnpm run format
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v8
