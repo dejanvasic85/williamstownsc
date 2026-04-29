@@ -26,9 +26,9 @@
 
 ## Tooling
 
-- **Next.js 16**: React framework for production-grade applications
+- **Next.js**: React framework for production-grade applications
 - **Sanity CMS**: Headless CMS for flexible content management
-- **Tailwind CSS V4**: Utility-first CSS framework
+- **Tailwind CSS**: Utility-first CSS framework
 - **DaisyUI**: Tailwind CSS component library
 - **TypeScript**: Type-safe development
 - **Zod**: Schema validation for environment variables
@@ -47,7 +47,8 @@ To run the site locally, follow these steps:
 
 ### Prerequisites
 
-- Node.js 24 installed
+- Node.js installed (managed by Mise)
+- pnpm
 - A Sanity account and project set up
 
 ### CLI tools
@@ -55,7 +56,13 @@ To run the site locally, follow these steps:
 The data CLI uses Playwright. Before running crawl commands, install the browser binaries:
 
 ```bash
-npx playwright install --with-deps chromium
+pnpm exec playwright install --with-deps chromium
+```
+
+### Install dependencies
+
+```bash
+pnpm install
 ```
 
 ## Content Management
@@ -74,7 +81,7 @@ Sanity URLs:
 After modifying Sanity schemas in `src/sanity/schema/`, run:
 
 ```bash
-npm run type:gen
+pnpm run type:gen
 ```
 
 This will update the TypeScript types to match your schema changes.

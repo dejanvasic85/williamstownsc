@@ -1,27 +1,27 @@
 # Environment & Commands
 
-- **IMPORTANT**: Dev server runs on port 3003 (not 3000): `npm run dev`
-- Node version: 24.12.0 (managed by Volta)
+- **IMPORTANT**: Dev server runs on port 3003 (not 3000): `pnpm run dev`
+- Node version (managed by Mise)
 - TypeScript path aliases: `@/*` (src), `@data/*` (data)
 - Required env vars: see .env.example (Sanity, AWS SES, reCAPTCHA)
 - Sanity Studio: separate at /studio path
 
 ## Key Commands (see package.json for full list)
 
-- `npm run dev` - Dev server on port 3003
-- `npm run test:e2e[:ui|:debug|:report]` - Playwright E2E tests
-- `npm run crawl:[clubs|fixtures]` - Playwright-based web scraping
-- `npm run sync:[clubs|fixtures]` - Sync scraped data to Sanity
-- `npm run type:gen` - Regenerate Sanity types after schema changes
+- `pnpm run dev` - Dev server on port 3003
+- `pnpm run test:e2e[:ui|:debug|:report]` - Playwright E2E tests
+- `pnpm run crawl:[clubs|fixtures]` - Playwright-based web scraping
+- `pnpm run sync:[clubs|fixtures]` - Sync scraped data to Sanity
+- `pnpm run type:gen` - Regenerate Sanity types after schema changes
 
 # Testing
 
 - Framework: Playwright only (no unit test framework)
 - Tests run against http://localhost:3003
-- Run E2E tests: `npm run test:e2e`
-- Run with UI mode: `npm run test:e2e:ui`
-- Debug mode: `npm run test:e2e:debug`
-- View report: `npm run test:e2e:report`
+- Run E2E tests: `pnpm run test:e2e`
+- Run with UI mode: `pnpm run test:e2e:ui`
+- Debug mode: `pnpm run test:e2e:debug`
+- View report: `pnpm run test:e2e:report`
 
 # Technical Requirements
 
@@ -64,11 +64,11 @@
 All changes MUST follow the following workflow
 
 - After finishing code changes and **before every push**, run all checks in order:
-  1. `npm run format`
-  2. `npm run lint`
-  3. `npm run type:check`
-  4. `npm run build`
-  5. `npm run test:e2e`
+  1. `pnpm run format`
+  2. `pnpm run lint`
+  3. `pnpm run type:check`
+  4. `pnpm run build`
+  5. `pnpm run test:e2e`
 - Never push without running these checks — commit any formatting changes before pushing
 - Pre-commit hooks auto-run: Husky runs lint-staged (prettier + eslint)
 - Update any plan files with progress to help with issue tracking
@@ -98,5 +98,5 @@ All changes MUST follow the following workflow
 - **NEVER**: create "helpers" or "utils" (use services/mappers/transformers)
 - Playwright-based web scraping: crawl scripts use playwright-core for data extraction
 - Pre-commit hooks auto-run: changes will trigger prettier + eslint
-- Run `npm run type:gen` after Sanity schema changes
+- Run `pnpm run type:gen` after Sanity schema changes
 - Prettier line width: 100 chars (not default 80)
