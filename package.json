@@ -36,6 +36,7 @@
 		"@next/third-parties": "16.2.2",
 		"@portabletext/toolkit": "5.0.2",
 		"@sanity/client": "7.20.0",
+		"@sanity/icons": "^3.7.4",
 		"@sanity/image-url": "2.1.1",
 		"@sanity/vision": "5.19.0",
 		"@sentry/nextjs": "10.47.0",
