@@ -11,7 +11,7 @@
 			"time": "12:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZv3vbmq",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 2,
@@ -136,7 +136,7 @@
 			"time": "12:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "R1K3pRLdQ9",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -202,7 +202,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMM4ZdE2",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -301,7 +301,7 @@
 			"time": "12:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXaXpKE",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -554,7 +554,7 @@
 			"time": "11:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -686,7 +686,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "7MNGvobEmA",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -793,7 +793,7 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
-			"time": "13:00",
+			"time": "14:00",
 			"homeTeamId": "Bjma0BXAdR",
 			"awayTeamId": "R1K3pRLdQ9",
 			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
@@ -840,7 +840,7 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "gld4pGXGdW",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -939,7 +939,7 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

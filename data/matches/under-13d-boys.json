@@ -1,9 +1,22 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 100,
+	"totalFixtures": 101,
 	"totalRounds": 18,
 	"fixtures": [
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "10:30",
+			"homeTeamId": "Bjma0G03dR",
+			"awayTeamId": "bgdMXLL2KE",
+			"address": "Wyndham Vale North Reserve Main Pitch A - 9v9 (A)",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 9,
+			"status": "complete"
+		},
 		{
 			"round": 2,
 			"date": "2026-05-02",
@@ -11,7 +24,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0RXqdR",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -132,7 +145,7 @@
 			"time": "12:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "AnmYzg0xNz",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -198,7 +211,7 @@
 			"time": "13:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -264,7 +277,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -319,7 +332,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0RXqdR",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -462,7 +475,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -572,7 +585,7 @@
 			"time": "12:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -594,7 +607,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -682,7 +695,7 @@
 			"time": "10:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0G03dR",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -770,7 +783,7 @@
 			"time": "12:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -792,7 +805,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -924,7 +937,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -957,7 +970,7 @@
 			"time": "12:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0G03dR",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1056,7 +1069,7 @@
 			"time": "10:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13)",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1100,7 +1113,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		}

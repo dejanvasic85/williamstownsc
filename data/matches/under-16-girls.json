@@ -37,7 +37,7 @@
 			"time": "11:45",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 5,
@@ -50,7 +50,7 @@
 			"time": "11:20",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "gld4pGXGdW",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -160,7 +160,7 @@
 			"time": "13:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -413,7 +413,7 @@
 			"time": "13:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "7MNGvobEmA",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -490,7 +490,7 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "wOmejJVeN0",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -578,7 +578,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8zdBbr2dBX",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -633,7 +633,7 @@
 			"time": "13:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 3",
+			"address": "JT Gray Reserve Pitch 3 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -666,7 +666,7 @@
 			"time": "11:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "gld4pGXGdW",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Boys Sunday (U17 - U18)",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -15,6 +15,19 @@
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "7MNGvappmA",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{
@@ -125,7 +138,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZv3vbmq",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -235,7 +248,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3pmvQp0Ldv",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -257,7 +270,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "LBdDx0GQdb",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -565,7 +578,7 @@
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8zdBbr2dBX",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -664,7 +677,7 @@
 			"time": "13:45",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "wOmejJVeN0",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -829,7 +842,7 @@
 			"time": "13:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "OEN2Z5GlNq",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -939,7 +952,7 @@
 			"time": "13:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmr7WjNow",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
