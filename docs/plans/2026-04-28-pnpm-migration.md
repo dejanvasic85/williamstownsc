@@ -42,3 +42,7 @@ Standardize project package manager on pnpm. Keep local docs and GitHub workflow
 - `.github/workflows/deploy-sanity.yml`: npm commands replaced with pnpm equivalents
 - `README.md`: local setup and schema typegen commands updated to pnpm
 - `AGENTS.md`: workflow command references updated to pnpm
+
+## Unresolved questions
+
+- None

@@ -47,7 +47,7 @@ To run the site locally, follow these steps:
 
 ### Prerequisites
 
-- Node.js 24 installed
+- Node.js 24.12.0 installed (managed by Mise)
 - pnpm 10.5.2 installed
 - A Sanity account and project set up
 
