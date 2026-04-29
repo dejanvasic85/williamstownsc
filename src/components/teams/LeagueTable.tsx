@@ -58,6 +58,7 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 											width={24}
 											height={24}
 											className="shrink-0 rounded-full object-contain"
+											unoptimized
 										/>
 										<span className="truncate">{entry.teamName}</span>
 									</div>
