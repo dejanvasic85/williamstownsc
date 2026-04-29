@@ -36,6 +36,7 @@
 		"@fontsource/outfit": "5.2.8",
 		"@next/third-parties": "16.2.2",
 		"@portabletext/toolkit": "5.0.2",
+		"@portabletext/types": "^4.0.2",
 		"@sanity/client": "7.20.0",
 		"@sanity/icons": "^3.7.4",
 		"@sanity/image-url": "2.1.1",
