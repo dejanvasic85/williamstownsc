@@ -2,7 +2,7 @@
 	"name": "williamstownsc",
 	"version": "1.0.0",
 	"private": true,
-	"packageManager": "pnpm@10.5.2",
+	"packageManager": "pnpm@10.33.2",
 	"scripts": {
 		"dev": "next dev --port 3003",
 		"build": "pnpm run type:gen && next build",

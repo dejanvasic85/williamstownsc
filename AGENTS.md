@@ -1,7 +1,7 @@
 # Environment & Commands
 
 - **IMPORTANT**: Dev server runs on port 3003 (not 3000): `pnpm run dev`
-- Node version: 24.12.0 (managed by Mise)
+- Node version (managed by Mise)
 - TypeScript path aliases: `@/*` (src), `@data/*` (data)
 - Required env vars: see .env.example (Sanity, AWS SES, reCAPTCHA)
 - Sanity Studio: separate at /studio path
