@@ -50,6 +50,8 @@
 # React & Components
 
 - Always use Next.js Image component `<Image />` instead of `<img />`
+- **MUST**: All `<Image />` components that render external or Dribl URLs (club logos, fixture images) MUST include `unoptimized` prop to avoid Vercel image transformation charges
+- **MUST**: All `<Image />` components that render Sanity CDN images MUST use `loader={sanityImageLoader}` from `@/lib/sanityImageLoader` — never rely on Next.js to transform Sanity images
 - Each Component should declare its own prop types using TypeScript within the same file
 - **NEVER** use inline TypeScript types in function parameters - always declare a separate type or interface (e.g., `type MyProps = {...}` not `function MyComponent({ prop }: { prop: string })`)
 - Component files should have constants declared outside the component function

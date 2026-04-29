@@ -85,6 +85,7 @@ export function MatchCountdownSection({
 								fill
 								className="object-contain"
 								sizes="112px"
+								unoptimized
 							/>
 						</div>
 						<p className="text-center text-sm font-medium md:text-base">
@@ -102,6 +103,7 @@ export function MatchCountdownSection({
 								fill
 								className="object-contain"
 								sizes="112px"
+								unoptimized
 							/>
 						</div>
 						<p className="text-center text-sm font-medium md:text-base">
