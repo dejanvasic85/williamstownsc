@@ -173,7 +173,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bam1nklZNw",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -283,7 +283,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -368,22 +368,22 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "wOmejvpyN0",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Princes Park Oval Pitch 3",
+			"coordinates": "-37.787624,144.960651",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "17:00",
 			"homeTeamId": "bam1nklZNw",
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-15",
-			"day": "Monday",
-			"time": "15:00",
-			"homeTeamId": "wOmejvpyN0",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Princes Park Oval Pitch 2",
-			"coordinates": "-37.787624,144.960651",
 			"status": "pending"
 		},
 		{
@@ -393,7 +393,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZv3BJmq",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -558,7 +558,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "08NOpe5WKZ",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -613,7 +613,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "wOmejXOyN0",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -723,7 +723,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrB8Gpmo",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -833,7 +833,7 @@
 			"time": "20:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "wOmejvpyN0",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -943,7 +943,7 @@
 			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0GJMdR",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

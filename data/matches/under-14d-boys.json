@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 123,
+	"totalFixtures": 124,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -15,6 +15,19 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "bam1nkkrNw",
+			"awayTeamId": "R1K3BvL3NQ",
+			"address": "Hansen Reserve Pitch 2 - Junior Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{
@@ -63,7 +76,7 @@
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -74,7 +87,7 @@
 			"time": "10:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -217,7 +230,7 @@
 			"time": "09:35",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "bam1nkkrNw",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -250,7 +263,7 @@
 			"time": "10:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "kemAbxpxNB",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -371,7 +384,7 @@
 			"time": "10:15",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "3vmZv9nLmq",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -423,22 +436,22 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "AnmYzg4rNz",
-			"address": "JT Gray Reserve Pitch 4",
-			"coordinates": "-37.857002,144.865559",
+			"time": "13:00",
+			"homeTeamId": "Bjma0G03dR",
+			"awayTeamId": "R1K3BOqGNQ",
+			"address": "Wyndham Vale North Reserve Main Pitch A",
+			"coordinates": "-37.898902,144.624443",
 			"status": "pending"
 		},
 		{
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "R1K3BOqGNQ",
-			"address": "Wyndham Vale North Reserve Main Pitch A",
-			"coordinates": "-37.898902,144.624443",
+			"time": "13:45",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "AnmYzg4rNz",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -525,7 +538,7 @@
 			"time": "09:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "R1K3BOqGNQ",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -580,7 +593,7 @@
 			"time": "11:45",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "R1K3BvL3NQ",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -679,7 +692,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0G03dR",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -690,7 +703,7 @@
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "1pN6pqv7d0",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -833,7 +846,7 @@
 			"time": "09:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXLL2KE",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -910,7 +923,7 @@
 			"time": "10:15",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "gld4pGXGdW",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -987,7 +1000,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "gld4pGXGdW",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -998,7 +1011,7 @@
 			"time": "10:15",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1083,6 +1096,17 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
+			"time": "10:35",
+			"homeTeamId": "AnmYzg4rNz",
+			"awayTeamId": "R1K3BvL3NQ",
+			"address": "Scovell Reserve Main Pitch",
+			"coordinates": "-37.784639,144.878892",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "bam1nkkrNw",
 			"awayTeamId": "1pN6pqv7d0",
@@ -1116,17 +1140,6 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
-			"time": "12:05",
-			"homeTeamId": "AnmYzg4rNz",
-			"awayTeamId": "R1K3BvL3NQ",
-			"address": "Scovell Reserve Main Pitch",
-			"coordinates": "-37.784639,144.878892",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
 			"time": "13:30",
 			"homeTeamId": "k2KpRJ56mY",
 			"awayTeamId": "6lNbpDpwdx",
@@ -1141,7 +1154,7 @@
 			"time": "08:45",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1163,7 +1176,7 @@
 			"time": "09:35",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "kemAbxpxNB",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1295,7 +1308,7 @@
 			"time": "08:45",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bam1nkkrNw",
-			"address": "JT Gray Reserve Pitch 1",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1317,7 +1330,7 @@
 			"time": "10:20",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "AnmYzg4rNz",
-			"address": "JT Gray Reserve Pitch 6",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

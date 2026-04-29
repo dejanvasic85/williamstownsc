@@ -28,17 +28,6 @@
 		},
 		{
 			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "b8Nq3q27d9",
-			"address": "JT Gray Reserve Pitch 5 - Half Field (A)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "10:00",
@@ -60,6 +49,17 @@
 			"status": "pending"
 		},
 		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "b8Nq3q27d9",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
 			"round": 3,
 			"date": "2026-05-09",
 			"day": "Sunday",
@@ -77,7 +77,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 4 - Half Field (B)",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -143,7 +143,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0RXqdR",
-			"address": "JT Gray Reserve Pitch 4 - Half Field (B)",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -204,17 +204,6 @@
 		},
 		{
 			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "JT Gray Reserve Pitch 5 - Half Field (A)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "10:00",
@@ -225,13 +214,24 @@
 			"status": "pending"
 		},
 		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
 			"round": 6,
 			"date": "2026-05-30",
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmrBk05mo",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -317,21 +317,21 @@
 			"date": "2026-06-13",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "b8Nq3q27d9",
-			"address": "JT Gray Reserve Pitch 5 - Half Field (B)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-13",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "Bjma0G03dR",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 2 - Half Pitch A",
 			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "b8Nq3q27d9",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{

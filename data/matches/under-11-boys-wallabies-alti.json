@@ -9,17 +9,6 @@
 			"date": "2026-05-02",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "k2KpRJ56mY",
 			"awayTeamId": "3vmZv3vbmq",
 			"address": "Alcock Road Reserve Pitch 3 - Half A",
@@ -74,6 +63,17 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
+			"coordinates": "-37.886177,144.651364",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "bye",
@@ -121,7 +121,7 @@
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -165,7 +165,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "6lNbpD56dx",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -528,7 +528,7 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZv3vbmq",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -660,7 +660,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8nm7PgVNOq",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -792,7 +792,7 @@
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1045,7 +1045,7 @@
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMM4ZdE2",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1243,7 +1243,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

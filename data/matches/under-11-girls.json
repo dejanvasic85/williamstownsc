@@ -11,8 +11,19 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0RXqdR",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-02",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "vbd91WEDd4",
+			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (A)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
@@ -42,20 +53,9 @@
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "12:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZvwGMmq",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -68,6 +68,17 @@
 			"awayTeamId": "vbd91WEDd4",
 			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
 			"coordinates": "-37.908433,144.755511",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-09",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "Alcock Road Reserve Pitch 2 - Half A",
+			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{
@@ -121,19 +132,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "k2KpRJ56mY",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -143,7 +143,7 @@
 			"time": "10:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "bgdMM4ZdE2",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -156,6 +156,17 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"address": "McIvor Reserve  Pitch 1 - Half (C+D)",
 			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "10:20",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "Bjma0BXAdR",
+			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half A",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
@@ -187,19 +198,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -222,6 +222,17 @@
 			"awayTeamId": "bgdMXLL2KE",
 			"address": "Johnson Reserve Pitch 1B",
 			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-23",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "McIvor Reserve  Pitch 2 - Half (A+B)",
+			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{
@@ -253,19 +264,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "bgdMXaXpKE",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -316,22 +316,22 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "bgdMXLL2KE",
+			"time": "10:20",
+			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
-			"coordinates": "-37.857002,144.865559",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Half Field (A)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
+			"time": "11:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "6lNbpDpwdx",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -354,6 +354,17 @@
 			"awayTeamId": "bgdMM4ZdE2",
 			"address": "Johnson Reserve Pitch 1B",
 			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-13",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "JT Gray Reserve Pitch 5 - Half Field (B)",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -385,19 +396,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZvwGMmq",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "bgdMXLL2KE",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -409,6 +409,17 @@
 			"awayTeamId": "Bjma0RXqdR",
 			"address": "Johnson Reserve Pitch 1B",
 			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-20",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "3vmZvwGMmq",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Half Field (B)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
@@ -429,7 +440,7 @@
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -451,19 +462,8 @@
 			"time": "11:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZvwGMmq",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -475,6 +475,17 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
 			"coordinates": "-37.908433,144.755511",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-27",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
+			"coordinates": "-37.886177,144.651364",
 			"status": "pending"
 		},
 		{
@@ -517,19 +528,8 @@
 			"time": "11:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "bgdMM4ZdE2",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -556,12 +556,23 @@
 		},
 		{
 			"round": 10,
+			"date": "2026-07-11",
+			"day": "Sunday",
+			"time": "09:45",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "vbd91WEDd4",
+			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (A)",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0RXqdR",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -572,7 +583,7 @@
 			"time": "10:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0BXAdR",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -583,19 +594,19 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXaXpKE",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
-			"round": 10,
-			"date": "2026-07-12",
+			"round": 11,
+			"date": "2026-07-18",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
+			"time": "09:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "JT Gray Reserve Pitch 4 - Half Field (A)",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -654,14 +665,14 @@
 			"status": "pending"
 		},
 		{
-			"round": 11,
-			"date": "2026-07-19",
+			"round": 12,
+			"date": "2026-07-25",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "",
-			"coordinates": "",
+			"time": "09:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "Bjma0RXqdR",
+			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (A)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
@@ -671,7 +682,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXLL2KE",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -720,14 +731,14 @@
 			"status": "pending"
 		},
 		{
-			"round": 12,
-			"date": "2026-07-26",
+			"round": 13,
+			"date": "2026-08-01",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "Bjma0RXqdR",
-			"address": "",
-			"coordinates": "",
+			"time": "09:00",
+			"homeTeamId": "vbd91WEDd4",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "Johnson Reserve Pitch 1B",
+			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
 		{
@@ -781,19 +792,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpRJ56mY",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "vbd91WEDd4",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -822,10 +822,21 @@
 			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "k2KpRJ56mY",
+			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (B)",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "3vmZvwGMmq",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -836,7 +847,7 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMM4ZdE2",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -849,17 +860,6 @@
 			"awayTeamId": "vbd91WEDd4",
 			"address": "McIvor Reserve  Pitch 2 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -902,7 +902,7 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXaXpKE",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -921,11 +921,11 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "",
-			"coordinates": "",
+			"time": "13:00",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
+			"coordinates": "-37.908433,144.755511",
 			"status": "pending"
 		},
 		{
@@ -946,7 +946,7 @@
 			"time": "09:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -959,6 +959,17 @@
 			"awayTeamId": "vbd91WEDd4",
 			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
 			"coordinates": "-37.908433,144.755511",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "10:20",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "bgdMXaXpKE",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Half Field (B)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
@@ -979,19 +990,8 @@
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "6lNbpDpwdx",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1003,6 +1003,17 @@
 			"awayTeamId": "3vmZvwGMmq",
 			"address": "Johnson Reserve Pitch 1B",
 			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 17,
+			"date": "2026-08-29",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "8nm7PgVNOq",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -1045,19 +1056,19 @@
 			"time": "11:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXLL2KE",
-			"address": "JT Gray Reserve Pitch 3B",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
-			"round": 17,
-			"date": "2026-08-30",
+			"round": 18,
+			"date": "2026-08-29",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "6lNbpDpwdx",
-			"address": "",
-			"coordinates": "",
+			"time": "09:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "bgdMXLL2KE",
+			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (A)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
@@ -1089,7 +1100,7 @@
 			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "vbd91WEDd4",
-			"address": "JT Gray Reserve Pitch 3A",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -1113,17 +1124,6 @@
 			"awayTeamId": "k2KpRJ56mY",
 			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 18,
-			"date": "2026-09-06",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "bye",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		}
 	]
