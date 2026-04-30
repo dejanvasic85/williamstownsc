@@ -140,17 +140,6 @@
 			"round": 4,
 			"date": "2026-05-16",
 			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "Bjma0BXAdR",
-			"address": "Ralph Reserve Main Pitch F (Quarter Field - 4v4)",
-			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "6lNbpDpwdx",
@@ -200,6 +189,17 @@
 			"awayTeamId": "8nm7PgVNOq",
 			"address": "Costas Mitre 10 Park Pitch 1E, Galvin Park Reserve - Quarter Field (4v4)",
 			"coordinates": "-37.886177,144.651364",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "AnmYz1R1Nz",
+			"address": "Saltwater Reserve Pitch 1A",
+			"coordinates": "-37.908433,144.755511",
 			"status": "pending"
 		},
 		{
@@ -272,28 +272,6 @@
 			"round": 6,
 			"date": "2026-05-30",
 			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "8nm7PgVNOq",
-			"address": "Ralph Reserve Main Pitch F (Quarter Field - 4v4)",
-			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "3vmZv9nLmq",
-			"address": "Avondale Heights Reserve Mini B",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "Bjma0BXAdR",
 			"awayTeamId": "6lNbpDpwdx",
@@ -321,6 +299,28 @@
 			"awayTeamId": "8zdBbr2dBX",
 			"address": "Costas Mitre 10 Park Pitch 1D, Galvin Park Reserve - Quarter Field (7v7)",
 			"coordinates": "-37.886177,144.651364",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-30",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "AnmYz1R1Nz",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Mini (4v4) A",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-30",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "3vmZv9nLmq",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Mini (4v4) B",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{

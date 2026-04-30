@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -28,6 +28,19 @@
 			"coordinates": "",
 			"homeScore": 10,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "vbd91WEDd4",
+			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{

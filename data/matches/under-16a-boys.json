@@ -373,17 +373,6 @@
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "13:45",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "3vmZv3vbmq",
-			"address": "Ralph Reserve Main Pitch",
-			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
 			"homeTeamId": "OVdzwWpmGr",
 			"awayTeamId": "nPmr7WjNow",
 			"address": "John Cain Memorial Park Pitch 1",
@@ -410,6 +399,17 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "14:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "AnmYz1R1Nz",
+			"address": "Williams Landing Sports Reserve Pitch 1",
+			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
