@@ -20,10 +20,10 @@
 			"date": "2026-05-02",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "bgdMXaXpKE",
-			"address": "Ralph Reserve Main Pitch C (Quarter Field - 7v7)",
-			"coordinates": "-37.792903,144.799142",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "AnmYz1R1Nz",
+			"address": "McIvor Reserve  Pitch 2 - Midi (1/4) C",
+			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{
@@ -149,17 +149,6 @@
 		},
 		{
 			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "AnmYzg4rNz",
-			"address": "Ralph Reserve Main Pitch C (Quarter Field - 7v7)",
-			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
-		},
-		{
-			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "12:00",
@@ -167,6 +156,17 @@
 			"awayTeamId": "bye",
 			"address": "",
 			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "AnmYzg4rNz",
+			"awayTeamId": "AnmYz1R1Nz",
+			"address": "Scovell Reserve Quarter Pitch 7v7",
+			"coordinates": "-37.784639,144.878892",
 			"status": "pending"
 		},
 		{
@@ -251,10 +251,10 @@
 			"date": "2026-05-30",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "3vmZv9nLmq",
-			"address": "Ralph Reserve Main Pitch C (Quarter Field - 7v7)",
-			"coordinates": "-37.792903,144.799142",
+			"homeTeamId": "3vmZv9nLmq",
+			"awayTeamId": "AnmYz1R1Nz",
+			"address": "Avondale Heights Reserve Midi A (S) (7v7)",
+			"coordinates": "-37.76242,144.858824",
 			"status": "pending"
 		},
 		{
