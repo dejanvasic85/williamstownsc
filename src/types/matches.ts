@@ -157,6 +157,8 @@ export const fixtureSchema = z.object({
 	time: z.string(),
 	homeTeamId: z.string(),
 	awayTeamId: z.string(),
+	homeTeamName: z.string().optional(),
+	awayTeamName: z.string().optional(),
 	address: z.string(),
 	coordinates: z.string(),
 	homeScore: z.number().optional(),
@@ -191,6 +193,8 @@ export type EnrichedFixture = {
 	time: string;
 	homeTeam: Club;
 	awayTeam: Club;
+	homeTeamDisplayName: string;
+	awayTeamDisplayName: string;
 	address: string;
 	coordinates: string;
 	homeScore?: number;

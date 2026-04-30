@@ -81,7 +81,7 @@ export function MatchCountdownSection({
 						<div className="relative h-20 w-20 md:h-28 md:w-28">
 							<Image
 								src={match.homeTeam.logoUrl}
-								alt={match.homeTeam.displayName}
+								alt={match.homeTeamDisplayName}
 								fill
 								className="object-contain"
 								sizes="112px"
@@ -89,7 +89,7 @@ export function MatchCountdownSection({
 							/>
 						</div>
 						<p className="text-center text-sm font-medium md:text-base">
-							{match.homeTeam.displayName}
+							{match.homeTeamDisplayName}
 						</p>
 					</div>
 
@@ -99,7 +99,7 @@ export function MatchCountdownSection({
 						<div className="relative h-20 w-20 md:h-28 md:w-28">
 							<Image
 								src={match.awayTeam.logoUrl}
-								alt={match.awayTeam.displayName}
+								alt={match.awayTeamDisplayName}
 								fill
 								className="object-contain"
 								sizes="112px"
@@ -107,7 +107,7 @@ export function MatchCountdownSection({
 							/>
 						</div>
 						<p className="text-center text-sm font-medium md:text-base">
-							{match.awayTeam.displayName}
+							{match.awayTeamDisplayName}
 						</p>
 					</div>
 				</div>

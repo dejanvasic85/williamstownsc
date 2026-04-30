@@ -47,6 +47,12 @@ export function findClubExternalId(teamName: string, logoUrl: string): string {
 	throw new Error(`Could not find club for team: ${teamName} (logo: ${logoUrl})`);
 }
 
+export function resolveTeamDisplayName(teamName: string | undefined, club: Club): string {
+	if (!teamName) return club.displayName;
+	if (teamName.endsWith(' Seniors')) return club.displayName;
+	return teamName;
+}
+
 export function transformExternalClub(externalClub: ExternalClub): Club {
 	const { id: externalId, attributes } = externalClub;
 

@@ -29,12 +29,12 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 				<div className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
 					<Image
 						src={fixture.homeTeam.logoUrl}
-						alt={fixture.homeTeam.displayName}
+						alt={fixture.homeTeamDisplayName}
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
 					/>
-					<span className="text-base font-medium">{fixture.homeTeam.displayName}</span>
+					<span className="text-base font-medium">{fixture.homeTeamDisplayName}</span>
 					{isComplete && fixture.homeScore != null && (
 						<span className="text-xl font-bold tabular-nums">{fixture.homeScore}</span>
 					)}
@@ -44,12 +44,12 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 				<div className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
 					<Image
 						src={fixture.awayTeam.logoUrl}
-						alt={fixture.awayTeam.displayName}
+						alt={fixture.awayTeamDisplayName}
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
 					/>
-					<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
+					<span className="text-base font-medium">{fixture.awayTeamDisplayName}</span>
 					{isComplete && fixture.awayScore != null && (
 						<span className="text-xl font-bold tabular-nums">{fixture.awayScore}</span>
 					)}

@@ -5,7 +5,8 @@ import { TZDate } from '@date-fns/tz';
 import { addMinutes, isBefore } from 'date-fns';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
-	getClubs as getClubsFromService
+	getClubs as getClubsFromService,
+	resolveTeamDisplayName
 } from '@/lib/clubService';
 import { getClubConfig } from '@/lib/config';
 import { bye, fixtureDataSchema } from '@/types/matches';
@@ -50,6 +51,8 @@ function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
 				time: fixture.time,
 				homeTeam,
 				awayTeam,
+				homeTeamDisplayName: resolveTeamDisplayName(fixture.homeTeamName, homeTeam),
+				awayTeamDisplayName: resolveTeamDisplayName(fixture.awayTeamName, awayTeam),
 				address: fixture.address,
 				coordinates: fixture.coordinates,
 				homeScore: fixture.homeScore,
