@@ -41,13 +41,13 @@ resolveTeamDisplayName(teamName, club):
 
 ## Todo
 
-- [ ] Add optional `homeTeamName` and `awayTeamName` to `fixtureSchema` in `src/types/matches.ts`
-- [ ] Add `resolveTeamDisplayName(teamName, club)` to `src/lib/clubService.ts`
-- [ ] Update `EnrichedFixture` type: replace `homeTeam`/`awayTeam` `Club` lookup display with resolved names, or add `homeTeamDisplayName`/`awayTeamDisplayName` fields
-- [ ] Update `fixtureTransformService.ts` to capture `home_team_name` / `away_team_name`
-- [ ] Update `matchService.ts` `enrichFixtures` to call `resolveTeamDisplayName` and set on `EnrichedFixture`
-- [ ] Update `MatchCardDesktop.tsx` and `MatchCardMobile.tsx` to use resolved display names
-- [ ] Check `MatchCountdownSection` and `TeamMatchesPreview` for same issue
-- [ ] Re-run `pnpm run sync:fixtures` to regenerate fixture JSONs with team names
-- [ ] Run checks: format, lint, type:check, build, test:e2e
-- [ ] Commit and push
+- [x] Add optional `homeTeamName` and `awayTeamName` to `fixtureSchema` in `src/types/matches.ts`
+- [x] Add `resolveTeamDisplayName(teamName, club)` to `src/lib/clubService.ts`
+- [x] Update `EnrichedFixture` type: replace `homeTeam`/`awayTeam` `Club` lookup display with resolved names, or add `homeTeamDisplayName`/`awayTeamDisplayName` fields
+- [x] Update `fixtureTransformService.ts` to capture `home_team_name` / `away_team_name`
+- [x] Update `matchService.ts` `enrichFixtures` to call `resolveTeamDisplayName` and set on `EnrichedFixture`
+- [x] Update `MatchCardDesktop.tsx` and `MatchCardMobile.tsx` to use resolved display names
+- [x] Check `MatchCountdownSection` and `TeamMatchesPreview` for same issue
+- [ ] Re-run `pnpm run sync:fixtures` to regenerate fixture JSONs with team names (requires env credentials)
+- [x] Run checks: format, lint, type:check, build, test:e2e
+- [x] Commit and push

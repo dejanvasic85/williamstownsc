@@ -33,6 +33,7 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
+						unoptimized
 					/>
 					<span className="text-base font-medium">{fixture.homeTeamDisplayName}</span>
 					{isComplete && fixture.homeScore != null && (
@@ -48,6 +49,7 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
+						unoptimized
 					/>
 					<span className="text-base font-medium">{fixture.awayTeamDisplayName}</span>
 					{isComplete && fixture.awayScore != null && (

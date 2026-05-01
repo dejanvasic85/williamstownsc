@@ -49,7 +49,7 @@ export function findClubExternalId(teamName: string, logoUrl: string): string {
 
 export function resolveTeamDisplayName(teamName: string | undefined, club: Club): string {
 	if (!teamName) return club.displayName;
-	if (teamName.endsWith(' Seniors')) return club.displayName;
+	if (normalizeTeamName(teamName) !== teamName.trim()) return club.displayName;
 	return teamName;
 }
 
