@@ -9,19 +9,6 @@
 			"date": "2026-05-02",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Tarneit United SC U08 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Jess",
-			"address": "Hummingbird Boulevard Reserve 1D (7V7)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "R1K3BvL3NQ",
 			"awayTeamId": "R1K3BbeoNQ",
 			"homeTeamName": "Melbourne City FC U08 MiniRoos - Joeys Mixed U8 Boys",
@@ -41,6 +28,19 @@
 			"awayTeamName": "Avondale FC U08 MiniRoos - Joeys Mixed U8 - MiniRoos - Boys - Adam",
 			"address": "JT Gray Reserve Pitch 9 (U8/U9) - BUFC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "bam1nkkrNw",
+			"homeTeamName": "Tarneit United SC U08 MiniRoos - Joeys Mixed",
+			"awayTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Jess",
+			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
+			"coordinates": "-37.835861,144.664274",
 			"status": "pending"
 		},
 		{

@@ -101,21 +101,8 @@
 			"awayTeamId": "AnmYzg0xNz",
 			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
 			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"address": "Emmanuel College Synthetic - Half A",
-			"coordinates": "-37.830715,144.841618",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Tarneit United SC U13 Juniors - A Mixed",
-			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
-			"address": "Tarneit Rise Synthetic Pitch 1A (Half)",
-			"coordinates": "-37.835861,144.664274",
+			"address": "AB Shaw Reserve Pitch 1 - Half A",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -155,6 +142,19 @@
 			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
 			"address": "Myers Reserve Pitch 1A - Half (9v9)",
 			"coordinates": "-38.09538,144.320027",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Tarneit United SC U13 Juniors - A Mixed",
+			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
+			"address": "Hummingbird Boulevard Reserve 2B (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
@@ -257,8 +257,8 @@
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
 			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
-			"address": "Emmanuel College Synthetic - Half B",
-			"coordinates": "-37.830715,144.841618",
+			"address": "AB Shaw Reserve Pitch 1 - Half A",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -549,19 +549,6 @@
 		},
 		{
 			"round": 8,
-			"date": "2026-06-20",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "7MNGvappmA",
-			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
-			"awayTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
-			"address": "Emmanuel College Synthetic - Half A",
-			"coordinates": "-37.830715,144.841618",
-			"status": "pending"
-		},
-		{
-			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
 			"time": "10:00",
@@ -610,6 +597,19 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"address": "Webster Street Reserve Pitch 4",
 			"coordinates": "-37.88838,144.714084",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-21",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "7MNGvappmA",
+			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
+			"awayTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
+			"address": "AB Shaw Reserve Pitch 1 - Half A",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -1024,8 +1024,8 @@
 			"awayTeamId": "Bjma0RXqdR",
 			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
 			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
-			"address": "Emmanuel College Synthetic - Half A",
-			"coordinates": "-37.830715,144.841618",
+			"address": "AB Shaw Reserve Pitch 1 - Half A",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -1173,19 +1173,6 @@
 		},
 		{
 			"round": 16,
-			"date": "2026-08-22",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
-			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
-			"address": "Emmanuel College Synthetic - Half A",
-			"coordinates": "-37.830715,144.841618",
-			"status": "pending"
-		},
-		{
-			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
 			"time": "10:00",
@@ -1195,6 +1182,19 @@
 			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
 			"address": "Tarneit Rise Synthetic Pitch 1B (Half)",
 			"coordinates": "-37.835861,144.664274",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
+			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
+			"address": "AB Shaw Reserve Pitch 2 - Half B",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -1329,19 +1329,6 @@
 		},
 		{
 			"round": 18,
-			"date": "2026-09-05",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
-			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
-			"address": "Emmanuel College Synthetic - Half A",
-			"coordinates": "-37.830715,144.841618",
-			"status": "pending"
-		},
-		{
-			"round": 18,
 			"date": "2026-09-06",
 			"day": "Sunday",
 			"time": "10:00",
@@ -1390,6 +1377,19 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"address": "Myers Reserve Pitch 1A - Half (9v9)",
 			"coordinates": "-38.09538,144.320027",
+			"status": "pending"
+		},
+		{
+			"round": 18,
+			"date": "2026-09-06",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
+			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
+			"address": "AB Shaw Reserve Pitch 1 - Half B",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
