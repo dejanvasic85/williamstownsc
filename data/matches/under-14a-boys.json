@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -50,6 +50,21 @@
 			"status": "complete"
 		},
 		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "10:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "8nm7PgVNOq",
+			"homeTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
@@ -60,19 +75,6 @@
 			"awayTeamName": "Altona City SC U14 Juniors - A Mixed",
 			"address": "Williams Landing Sports Reserve Pitch 2",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
-			"address": "Hummingbird Boulevard Reserve Pitch 1",
-			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
@@ -111,6 +113,19 @@
 			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"address": "Paisley Park - Altona Magic SC Pitch 1",
 			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
+			"address": "Hummingbird Boulevard Reserve Pitch 1",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{

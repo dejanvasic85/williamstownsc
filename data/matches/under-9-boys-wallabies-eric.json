@@ -9,19 +9,6 @@
 			"date": "2026-05-02",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
-			"address": "Hummingbird Boulevard Reserve 2C (7V7)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "8nm7PgVNOq",
 			"homeTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Phil",
@@ -67,6 +54,19 @@
 			"awayTeamName": "Middle Park FC U09 MiniRoos - Wallabies Mixed",
 			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Mixed",
+			"awayTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
+			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
+			"coordinates": "-37.835861,144.664274",
 			"status": "pending"
 		},
 		{
