@@ -54,31 +54,33 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 
 				{/* Column 2: Home Team Name (right-aligned) */}
 				<div className="flex items-center justify-end">
-					<span className="text-base font-medium">{fixture.homeTeam.displayName}</span>
+					<span className="text-base font-medium">{fixture.homeTeamDisplayName}</span>
 				</div>
 
 				{/* Column 3: Logos and Score */}
 				<div className="flex items-center gap-3">
 					<Image
 						src={fixture.homeTeam.logoUrl}
-						alt={fixture.homeTeam.displayName}
+						alt={fixture.homeTeamDisplayName}
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
+						unoptimized
 					/>
 					{renderScore(fixture)}
 					<Image
 						src={fixture.awayTeam.logoUrl}
-						alt={fixture.awayTeam.displayName}
+						alt={fixture.awayTeamDisplayName}
 						width={40}
 						height={40}
 						className="h-10 w-10 object-contain"
+						unoptimized
 					/>
 				</div>
 
 				{/* Column 4: Away Team Name (left-aligned) */}
 				<div className="flex items-center justify-start">
-					<span className="text-base font-medium">{fixture.awayTeam.displayName}</span>
+					<span className="text-base font-medium">{fixture.awayTeamDisplayName}</span>
 				</div>
 			</div>
 		</div>

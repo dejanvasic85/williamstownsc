@@ -59,12 +59,12 @@ function MatchPreviewCard({ title, fixture, showScore = false }: MatchPreviewCar
 			<div className="flex flex-col gap-2">
 				<MatchTeamRow
 					logoUrl={fixture.homeTeam.logoUrl}
-					displayName={fixture.homeTeam.displayName}
+					displayName={fixture.homeTeamDisplayName}
 					score={showScore ? fixture.homeScore : undefined}
 				/>
 				<MatchTeamRow
 					logoUrl={fixture.awayTeam.logoUrl}
-					displayName={fixture.awayTeam.displayName}
+					displayName={fixture.awayTeamDisplayName}
 					score={showScore ? fixture.awayScore : undefined}
 				/>
 			</div>

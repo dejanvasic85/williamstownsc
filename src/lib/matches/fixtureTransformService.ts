@@ -45,6 +45,8 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 		time: timeStr,
 		homeTeamId,
 		awayTeamId,
+		homeTeamName: attributes.home_team_name ?? undefined,
+		awayTeamName: attributes.away_team_name ?? undefined,
 		address,
 		coordinates,
 		homeScore: attributes.home_score ?? undefined,
