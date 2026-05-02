@@ -75,7 +75,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
 			"address": "Tarneit Rise Synthetic Pitch 1A (Half)",
 			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 2,

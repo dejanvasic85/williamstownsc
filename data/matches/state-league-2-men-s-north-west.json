@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -464,21 +464,10 @@
 			"homeTeamName": "Brimbank Stallions FC Seniors",
 			"awayTeamName": "Whittlesea Ranges FC Seniors",
 			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-01",
-			"day": "Friday",
-			"time": "20:30",
-			"homeTeamId": "7MNGvxzpmA",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Corio SC Seniors",
-			"awayTeamName": "Surf Coast FC Seniors",
-			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -490,8 +479,10 @@
 			"homeTeamName": "Altona North SC Seniors",
 			"awayTeamName": "FC Strathmore Split Seniors",
 			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -503,8 +494,10 @@
 			"homeTeamName": "Uni Hill Eagles FC Seniors",
 			"awayTeamName": "Albion Rovers FC Seniors",
 			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -516,8 +509,10 @@
 			"homeTeamName": "Williamstown SC Seniors",
 			"awayTeamName": "Geelong Rangers SC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 6,

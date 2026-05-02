@@ -68,6 +68,19 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "AnmYz1R1Nz",
+			"homeTeamName": "Altona City SC U12 Juniors - B Mixed",
+			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
+			"address": "HC Kim Reserve Pitch 1B",
+			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "10:30",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "6lNbpDpwdx",
@@ -75,19 +88,6 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - B Mixed Under 12 Boys (Ben)",
 			"address": "Webster Street Reserve Pitch 4A",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Altona City SC U12 Juniors - B Mixed",
-			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
-			"address": "HC Kim Reserve Pitch 3B",
-			"coordinates": "-37.863721,144.839985",
 			"status": "pending"
 		},
 		{

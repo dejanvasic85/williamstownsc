@@ -8,6 +8,19 @@
 			"round": 2,
 			"date": "2026-05-02",
 			"day": "Sunday",
+			"time": "08:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "AnmYz1R1Nz",
+			"homeTeamName": "Williamstown SC U07 MiniRoos - Wallabies Mixed Boys Under 7W (Matt)",
+			"awayTeamName": "Western Suburbs SC U07 MiniRoos - Wallabies Mixed U7 Bill - Wallabies",
+			"address": "JT Gray Reserve Pitch 1 - 4v4 (A)",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-02",
+			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "3vmZv9nLmq",
@@ -67,19 +80,6 @@
 			"awayTeamName": "Altona City SC U07 MiniRoos - Wallabies Mixed Wallabies Gold",
 			"address": "Webster Street Reserve Pitch 1B Mini 4v4",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-06-06",
-			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Western Suburbs SC U07 MiniRoos - Wallabies Mixed U7 Bill - Wallabies",
-			"awayTeamName": "Williamstown SC U07 MiniRoos - Wallabies Mixed Boys Under 7W (Matt)",
-			"address": "Ralph Reserve Main Pitch F (Quarter Field - 4v4)",
-			"coordinates": "-37.792903,144.799142",
 			"status": "pending"
 		},
 		{

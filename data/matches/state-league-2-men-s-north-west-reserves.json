@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -457,52 +457,15 @@
 			"date": "2026-05-01",
 			"day": "Friday",
 			"time": "18:30",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "7MNGgM7NAz",
-			"homeTeamName": "Brimbank Stallions FC Reserves",
-			"awayTeamName": "Whittlesea Ranges FC Reserves",
-			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-01",
-			"day": "Friday",
-			"time": "18:30",
 			"homeTeamId": "7MNGvxzpmA",
 			"awayTeamId": "LBdDx0GQdb",
 			"homeTeamName": "Corio SC Reserves",
 			"awayTeamName": "Surf Coast FC Reserves",
 			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-02",
-			"day": "Saturday",
-			"time": "12:30",
-			"homeTeamId": "Bjma0G87dR",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Uni Hill Eagles FC Reserves",
-			"awayTeamName": "Albion Rovers FC Reserves",
-			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-02",
-			"day": "Saturday",
-			"time": "12:45",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "AnmYzyArNz",
-			"homeTeamName": "Altona North SC Reserves",
-			"awayTeamName": "FC Strathmore Split Reserves",
-			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -514,8 +477,40 @@
 			"homeTeamName": "Williamstown SC Reserves",
 			"awayTeamName": "Geelong Rangers SC Reserves",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-02",
+			"day": "Saturday",
+			"time": "12:45",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "AnmYzyArNz",
+			"homeTeamName": "Altona North SC Reserves",
+			"awayTeamName": "FC Strathmore Split Reserves",
+			"address": "Duane Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-02",
+			"day": "Saturday",
+			"time": "12:30",
+			"homeTeamId": "Bjma0G87dR",
+			"awayTeamId": "3pmvQp0Ldv",
+			"homeTeamName": "Uni Hill Eagles FC Reserves",
+			"awayTeamName": "Albion Rovers FC Reserves",
+			"address": "Findon Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 6,

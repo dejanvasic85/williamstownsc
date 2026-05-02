@@ -89,8 +89,10 @@
 			"homeTeamName": "Brunswick City SC Seniors",
 			"awayTeamName": "Spring Hills FC Seniors state league 2 women",
 			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -102,8 +104,10 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Moreland Eagles FC Seniors",
 			"address": "JC Donath Reserve Pitch 7",
-			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 2,

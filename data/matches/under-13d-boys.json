@@ -49,26 +49,13 @@
 		},
 		{
 			"round": 2,
-			"date": "2026-05-02",
+			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "09:15",
+			"time": "10:15",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"awayTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:35",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
@@ -97,6 +84,19 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
 			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
 			"coordinates": "-37.878568,144.79544",
+			"status": "pending"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
+			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{

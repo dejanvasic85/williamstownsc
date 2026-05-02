@@ -186,19 +186,6 @@
 		},
 		{
 			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "OVdzwWpmGr",
-			"awayTeamId": "gld4pGXGdW",
-			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
-			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"address": "John Cain Memorial Park Pitch 1",
-			"coordinates": "-37.763663,145.023846",
-			"status": "pending"
-		},
-		{
-			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
 			"time": "12:00",
@@ -272,6 +259,19 @@
 			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "15:30",
+			"homeTeamId": "OVdzwWpmGr",
+			"awayTeamId": "gld4pGXGdW",
+			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
+			"address": "John Cain Memorial Park Pitch 2",
+			"coordinates": "-37.763663,145.023846",
 			"status": "pending"
 		},
 		{
