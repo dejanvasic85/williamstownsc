@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 124,
+	"totalFixtures": 125,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -17,6 +17,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "bgdMXLL2KE",
+			"homeTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
+			"awayTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
+			"address": "Alcock Road Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{
@@ -83,14 +98,31 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
-			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"time": "12:05",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "AnmYzg4rNz",
+			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
+			"awayTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
+			"address": "Edwards Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "1pN6pqv7d0",
+			"awayTeamId": "bam1nkkrNw",
+			"homeTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
+			"address": "Langama Park Pitch 2 - Full Field",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 12,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -102,8 +134,10 @@
 			"homeTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
 			"awayTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"address": "JT Gray Reserve Pitch 6- BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -115,7 +149,22 @@
 			"homeTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
 			"awayTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
 			"address": "Wyndham Vale North Reserve Main Pitch B",
-			"coordinates": "-37.898902,144.624443",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
+			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -142,32 +191,6 @@
 			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
 			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
 			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "1pN6pqv7d0",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
-			"address": "Langama Park Pitch 2 - Full Field",
-			"coordinates": "-37.586728,144.709286",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:05",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "AnmYzg4rNz",
-			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
-			"awayTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
-			"address": "Edwards Reserve Main Pitch",
-			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{

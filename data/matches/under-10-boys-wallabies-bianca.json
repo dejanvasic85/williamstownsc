@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 119,
+	"totalFixtures": 115,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Werribee City FC U10 MiniRoos - Wallabies Mixed U10s Nick",
-			"awayTeamName": "Laverton FC U10 MiniRoos - Wallabies Mixed Laverton FC SAS U10W",
-			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Fury",
-			"awayTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Thunderbolts",
-			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Wyndham FC U10 MiniRoos - Wallabies Mixed U10 Wallabies",
-			"awayTeamName": "Altona East SC U10 MiniRoos - Wallabies Mixed",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 9v9 (A)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Williamstown SC U10 MiniRoos - Wallabies Mixed Boys Under 10W (Bianca)",
-			"awayTeamName": "Truganina Lions FC U10 MiniRoos - Wallabies Mixed Boys U10 - Wallabies",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",
@@ -92,7 +40,7 @@
 			"homeTeamName": "Williams Landing SC U10 MiniRoos - Wallabies Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 3,

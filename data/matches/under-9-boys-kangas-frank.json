@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 85,
+	"totalFixtures": 83,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "OVdz1bpKGr",
-			"homeTeamName": "Brimbank Stallions FC U09 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Green Gully SC U09 MiniRoos - Kangaroos Mixed U9 Boys Nico",
-			"address": "Club Italia Sporting Club Pitch 1 - 7V7 Field C",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "OVdz1bpKGr",
-			"homeTeamName": "Yarraville Glory FC U09 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Green Gully SC U09 MiniRoos - Kangaroos Mixed U9 Boys Ethan & Rafi",
-			"address": "McIvor Reserve  Pitch 1 - Midi (1/4) D",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

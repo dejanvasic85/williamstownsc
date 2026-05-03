@@ -98,14 +98,16 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "wOmejJVeN0",
-			"awayTeamId": "7MNGvappmA",
-			"homeTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
-			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
-			"address": "Keilor Lodge Reserve Pitch 1",
-			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"time": "13:45",
+			"homeTeamId": "nPmr7WjNow",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
+			"awayTeamName": "Surf Coast FC U16 Juniors - A Mixed",
+			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -117,7 +119,22 @@
 			"homeTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"awayTeamName": "Hume City FC U16 Juniors - A Mixed",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
-			"coordinates": "-37.846664,144.856335",
+			"coordinates": "",
+			"homeScore": 11,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "wOmejJVeN0",
+			"awayTeamId": "7MNGvappmA",
+			"homeTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
+			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
+			"address": "Keilor Lodge Reserve Pitch 1",
+			"coordinates": "-37.688087,144.777598",
 			"status": "pending"
 		},
 		{
@@ -143,7 +160,7 @@
 			"homeTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -169,19 +186,6 @@
 			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "nPmr7WjNow",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
-			"awayTeamName": "Surf Coast FC U16 Juniors - A Mixed",
-			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
-			"coordinates": "-37.714141,144.726888",
 			"status": "pending"
 		},
 		{

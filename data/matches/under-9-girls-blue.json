@@ -1,21 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bye",
-			"homeTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

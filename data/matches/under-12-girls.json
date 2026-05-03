@@ -73,8 +73,23 @@
 			"awayTeamId": "nPmr7WjNow",
 			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
-			"address": "Tarneit Rise Synthetic Pitch 1A (Half)",
-			"coordinates": "-37.835861,144.664274",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "6lNbpD56dx",
+			"awayTeamId": "LBdDx1O8db",
+			"homeTeamName": "Truganina Hornets SC U12 Juniors - C Female",
+			"awayTeamName": "Melton Phoenix FC U12 Juniors - C Female",
+			"address": "",
+			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 3,
 			"status": "complete"
@@ -104,21 +119,6 @@
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "LBdDx1O8db",
-			"homeTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"awayTeamName": "Melton Phoenix FC U12 Juniors - C Female",
-			"address": "Arndell Park Reserve Pitch 1 (S) - Half Field A",
-			"coordinates": "-37.863107,144.727995",
-			"homeScore": 0,
-			"awayScore": 3,
-			"status": "complete"
 		},
 		{
 			"round": 3,

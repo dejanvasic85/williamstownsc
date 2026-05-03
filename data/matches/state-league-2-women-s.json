@@ -113,6 +113,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "7ZKRa2oNkB",
+			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
+			"awayTeamName": "Pascoe Vale FC Seniors",
+			"address": "Sumner Park Main Pitch",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "k2KpA9PdY5",
 			"awayTeamId": "6lNbpDpwdx",
@@ -120,19 +135,6 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "More Park Northern Field",
 			"coordinates": "-37.772482,144.796616",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "7ZKRa2oNkB",
-			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
-			"awayTeamName": "Pascoe Vale FC Seniors",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
 			"status": "pending"
 		},
 		{

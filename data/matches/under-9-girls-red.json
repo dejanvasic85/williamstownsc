@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "R1K3BOqGNQ",
-			"homeTeamName": "Gisborne SC U09 MiniRoos - Joeys Female 9SL",
-			"awayTeamName": "Satellite City United SC U09 MiniRoos - Joeys Female Jaime-Lee",
-			"address": "Dixon Field Reserve Pitch B (U8-9)",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

@@ -53,6 +53,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "12:40",
+			"homeTeamId": "gld4pz60dW",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
+			"awayTeamName": "Williamstown SC U15 Juniors - C Mixed Under 15C Boys",
+			"address": "Aston Fields Pitch 3",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "nPmrBwrPmo",
 			"awayTeamId": "nPmrB8Rjmo",
@@ -60,19 +75,6 @@
 			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
 			"address": "Gladstone Park Reserve Pitch 1",
 			"coordinates": "-37.686596,144.887219",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:40",
-			"homeTeamId": "gld4pz60dW",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
-			"awayTeamName": "Williamstown SC U15 Juniors - C Mixed Under 15C Boys",
-			"address": "Aston Fields Pitch 3",
-			"coordinates": "-37.597457,144.890302",
 			"status": "pending"
 		},
 		{

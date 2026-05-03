@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 85,
+	"totalFixtures": 83,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Wyndham FC U11 MiniRoos - Joeys Mixed U11 Joeys",
-			"awayTeamName": "Truganina Lions FC U11 MiniRoos - Joeys Mixed Boys U11 - Joeys",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 9v9 (B)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Hoppers Crossing SC U11 MiniRoos - Joeys Mixed u11 marko",
-			"awayTeamName": "Williamstown SC U11 MiniRoos - Joeys Mixed Boys Under 11J (Lee)",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

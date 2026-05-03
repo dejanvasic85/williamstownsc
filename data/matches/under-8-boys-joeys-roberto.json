@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 85,
+	"totalFixtures": 83,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Melbourne City FC U08 MiniRoos - Joeys Mixed U8 Boys",
-			"awayTeamName": "Newport Storm FC U08 MiniRoos - Joeys Mixed Fofana",
-			"address": "Edwards Reserve Main Pitch D - Quarter Pitch 7v7",
-			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Barnstoneworth United FC U08 MiniRoos - Joeys Mixed BUFC U8",
-			"awayTeamName": "Avondale FC U08 MiniRoos - Joeys Mixed U8 - MiniRoos - Boys - Adam",
-			"address": "JT Gray Reserve Pitch 9 (U8/U9) - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",
@@ -66,7 +40,7 @@
 			"homeTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Michael",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 3,

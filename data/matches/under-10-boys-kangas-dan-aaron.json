@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 102,
+	"totalFixtures": 100,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Werribee City FC U10 MiniRoos - Kangaroos Mixed U10 Damian",
-			"awayTeamName": "Avondale FC U10 MiniRoos - Kangaroos Mixed U10 - Miniroos - Boys - Jacob",
-			"address": "Costas Mitre 10 Park Pitch 4A, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Truganina Lions FC U10 MiniRoos - Kangaroos Mixed Boys U10 - Kangaroos",
-			"awayTeamName": "Tarneit United SC U10 MiniRoos - Kangaroos Mixed",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

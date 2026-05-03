@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 105,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -81,29 +81,33 @@
 		},
 		{
 			"round": 2,
-			"date": "2026-05-02",
+			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
-			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
-			"address": "Club Italia Sporting Club Pitch 2 - Half Field B",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"time": "11:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Altona City SC U13 Juniors - A Mixed",
+			"awayTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
+			"address": "HC Kim Reserve Pitch 3A",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 2,
-			"date": "2026-05-02",
+			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
-			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"address": "AB Shaw Reserve Pitch 1 - Half A",
-			"coordinates": "-37.865571,144.783747",
-			"status": "pending"
+			"time": "11:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
+			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -116,32 +120,6 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Altona City SC U13 Juniors - A Mixed",
-			"awayTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
-			"address": "HC Kim Reserve Pitch 3A",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
-			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
-			"address": "Myers Reserve Pitch 1A - Half (9v9)",
-			"coordinates": "-38.09538,144.320027",
 			"status": "pending"
 		},
 		{
