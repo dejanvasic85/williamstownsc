@@ -44,8 +44,40 @@
 			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 9,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -57,8 +89,10 @@
 			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"awayTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -77,39 +111,13 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "Bjma0BXAdR",
 			"awayTeamId": "bye",
 			"homeTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 3,

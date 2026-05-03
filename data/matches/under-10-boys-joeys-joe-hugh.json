@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Williamstown SC U10 MiniRoos - Joeys Mixed Boys Under 10J (Hugh/Joe)",
-			"awayTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed Blue",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

@@ -68,27 +68,31 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "08NOpe5WKZ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Middle Park FC Seniors",
-			"awayTeamName": "Williamstown SC Seniors",
-			"address": "Lagoon Reserve Main Pitch",
-			"coordinates": "-37.840912,144.944188",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "wOmejXOyN0",
 			"awayTeamId": "bam1nklZNw",
 			"homeTeamName": "Brunswick Zebras FC Seniors The Old Lady",
 			"awayTeamName": "Fitzroy Lions SC Seniors",
 			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "08NOpe5WKZ",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Middle Park FC Seniors",
+			"awayTeamName": "Williamstown SC Seniors",
+			"address": "Lagoon Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -126,7 +130,7 @@
 			"awayTeamName": "South Yarra SC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 3,

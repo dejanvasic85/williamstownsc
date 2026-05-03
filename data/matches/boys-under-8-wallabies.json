@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 85,
+	"totalFixtures": 81,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "1pN6RBQN0g",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Avondale FC U08 MiniRoos - Wallabies Mixed U8 - MiniRoos - Boys - Ben",
-			"awayTeamName": "Williamstown SC U08 MiniRoos - Wallabies Mixed Boys Under 8W (Jim)",
-			"address": "Fairbairn Park Pitch 1J Midi (7v7) B",
-			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Yarraville Glory FC U08 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Western Suburbs SC U08 MiniRoos - Wallabies Mixed U8 Adam - Wallabies",
-			"address": "McIvor Reserve  Pitch 2 - Midi (1/4) C",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "AnmYzg4rNz",
-			"homeTeamName": "Albion Rovers FC U08 MiniRoos - Wallabies Mixed Albion MINI ROVERS U8 RED",
-			"awayTeamName": "Maidstone United SC U08 MiniRoos - Wallabies Mixed Mango",
-			"address": "Waste Sense Park Pitch 2 - Midi 1 (7v7)",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Moonee Valley Knights SC U08 MiniRoos - Wallabies Mixed Moonee Valley Knights U8 (Pink)",
-			"awayTeamName": "Brimbank Stallions FC U08 MiniRoos - Wallabies Mixed",
-			"address": "Avondale Heights Reserve Midi A (S) (7v7)",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

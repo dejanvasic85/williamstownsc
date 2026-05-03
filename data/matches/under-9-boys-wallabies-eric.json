@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 119,
+	"totalFixtures": 116,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Phil",
-			"awayTeamName": "Altona Magic SC U09 MiniRoos - Wallabies Mixed U9 Black",
-			"address": "Webster Street Reserve Pitch 3A Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Truganina Lions FC U09 MiniRoos - Wallabies Mixed Boys U9 - Wallabies",
-			"awayTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Khurram",
-			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Point Cook SC U09 MiniRoos - Wallabies Mixed U9 Boomerangs",
-			"awayTeamName": "Altona Magic SC U09 MiniRoos - Wallabies Mixed U9 Red",
-			"address": "Saltwater Reserve Pitch 3 SSF4 (U9)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
 		{
 			"round": 2,
 			"date": "2026-05-03",

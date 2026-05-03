@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 132,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -467,6 +467,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 5,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-01",
+			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": "7MNGvxzpmA",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Corio SC Seniors",
+			"awayTeamName": "Surf Coast FC Seniors",
+			"address": "Hume Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
