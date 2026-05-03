@@ -99,6 +99,21 @@
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "11:00",
+			"homeTeamId": "wOmejvpyN0",
+			"awayTeamId": "6lNbpGXodx",
+			"homeTeamName": "Melbourne University SC Seniors Senior Women SL5",
+			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
+			"address": "Princes Park Oval Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:00",
 			"homeTeamId": "vbd91VOJd4",
 			"awayTeamId": "bgdMXaXpKE",
 			"homeTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
@@ -123,19 +138,6 @@
 			"homeScore": 0,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "wOmejvpyN0",
-			"awayTeamId": "6lNbpGXodx",
-			"homeTeamName": "Melbourne University SC Seniors Senior Women SL5",
-			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
-			"address": "Princes Park Oval Pitch 2",
-			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
 		},
 		{
 			"round": 2,
