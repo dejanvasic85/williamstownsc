@@ -68,6 +68,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Altona City SC U18 Juniors - A Male",
+			"awayTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
+			"address": "HC Kim Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "16:05",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "3pmvQp0Ldv",
@@ -120,19 +135,6 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Altona City SC U18 Juniors - A Male",
-			"awayTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
-			"address": "HC Kim Reserve Pitch 1",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
 		},
 		{
 			"round": 3,
