@@ -113,6 +113,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "OVdzwWpmGr",
+			"homeTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
+			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"address": "Williams Landing Sports Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "V8dnR1odwL",
@@ -135,19 +150,6 @@
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "OVdzwWpmGr",
-			"homeTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
-			"address": "Williams Landing Sports Reserve Pitch 2",
-			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
