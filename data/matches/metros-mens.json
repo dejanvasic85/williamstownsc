@@ -83,6 +83,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "Bjma0GJMdR",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Kings Domain FC Seniors",
+			"awayTeamName": "Truganina Lions FC Seniors",
+			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "08NOpe5WKZ",
 			"awayTeamId": "6lNbpDpwdx",
@@ -93,19 +108,6 @@
 			"homeScore": 3,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "Bjma0GJMdR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Kings Domain FC Seniors",
-			"awayTeamName": "Truganina Lions FC Seniors",
-			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
-			"coordinates": "-37.843712,144.981104",
-			"status": "pending"
 		},
 		{
 			"round": 2,
