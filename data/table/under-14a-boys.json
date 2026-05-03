@@ -33,11 +33,26 @@
 			"points": 6
 		},
 		{
+			"teamId": "EN2nb2Z2Nq",
+			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"clubName": "Williams Landing SC",
+			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"position": 3,
+			"played": 2,
+			"wins": 1,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 11,
+			"goalsAgainst": 6,
+			"goalDifference": 5,
+			"points": 3
+		},
+		{
 			"teamId": "8NOX3blaKZ",
 			"teamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
-			"position": 3,
+			"position": 4,
 			"played": 1,
 			"wins": 1,
 			"draws": 0,
@@ -52,7 +67,7 @@
 			"teamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
 			"clubName": "Wyndham FC",
 			"logoUrl": "https://ocean.dribl.com/f20d0e1df69046dfb92cfe65f203cf7f",
-			"position": 4,
+			"position": 5,
 			"played": 2,
 			"wins": 1,
 			"draws": 0,
@@ -61,21 +76,6 @@
 			"goalsAgainst": 5,
 			"goalDifference": -2,
 			"points": 3
-		},
-		{
-			"teamId": "WdgpJR5omR",
-			"teamName": "Altona City SC U14 Juniors - A Mixed",
-			"clubName": "Altona City SC",
-			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
-			"position": 5,
-			"played": 1,
-			"wins": 0,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 2,
-			"goalsAgainst": 3,
-			"goalDifference": -1,
-			"points": 0
 		},
 		{
 			"teamId": "am1Q20nkmw",
@@ -108,26 +108,11 @@
 			"points": 0
 		},
 		{
-			"teamId": "EN2nb2Z2Nq",
-			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"clubName": "Williams Landing SC",
-			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 8,
-			"played": 1,
-			"wins": 0,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 1,
-			"goalsAgainst": 6,
-			"goalDifference": -5,
-			"points": 0
-		},
-		{
 			"teamId": "emAe9DwbmB",
 			"teamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
-			"position": 9,
+			"position": 8,
 			"played": 1,
 			"wins": 0,
 			"draws": 0,
@@ -135,6 +120,21 @@
 			"goalsFor": 0,
 			"goalsAgainst": 6,
 			"goalDifference": -6,
+			"points": 0
+		},
+		{
+			"teamId": "WdgpJR5omR",
+			"teamName": "Altona City SC U14 Juniors - A Mixed",
+			"clubName": "Altona City SC",
+			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
+			"position": 9,
+			"played": 2,
+			"wins": 0,
+			"draws": 0,
+			"losses": 2,
+			"goalsFor": 2,
+			"goalsAgainst": 13,
+			"goalDifference": -11,
 			"points": 0
 		}
 	]
