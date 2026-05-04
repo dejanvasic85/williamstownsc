@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -62,6 +62,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "3vmZv3BJmq",
+			"awayTeamId": "wOmejvpyN0",
+			"homeTeamName": "St Kilda SC Seniors Sundays",
+			"awayTeamName": "Melbourne University SC Seniors",
+			"address": "Elwood Park (Esplanade Oval) Main Pitch",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{
