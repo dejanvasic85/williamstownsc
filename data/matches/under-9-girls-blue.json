@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 67,
+	"totalFixtures": 64,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
-			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
-			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
-			"address": "Williams Landing Sports Reserve Pitch 5 Oval (7v7)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
-			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
-			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",

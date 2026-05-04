@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 125,
+	"totalFixtures": 123,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -128,6 +128,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "gld4pGXGdW",
+			"awayTeamId": "3vmZv3YLmq",
+			"homeTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
+			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
+			"address": "Dixon Field Reserve Pitch E (Junior)",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "nPmrBk05mo",
@@ -153,45 +168,6 @@
 			"homeScore": 2,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
-			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "3vmZv3YLmq",
-			"homeTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
-			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
-			"address": "Dixon Field Reserve Pitch E (Junior)",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
 		},
 		{
 			"round": 3,
@@ -683,8 +659,8 @@
 			"awayTeamId": "1pN6pqv7d0",
 			"homeTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
 			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"address": "Victoria University Sporting Complex Hoppers Lane Victoria University Sporting Complex Hoppers Lane",
-			"coordinates": "-37.891771,144.699593",
+			"address": "Wyndham Vale North Reserve Main Pitch A",
+			"coordinates": "-37.898902,144.624443",
 			"status": "pending"
 		},
 		{
@@ -925,13 +901,13 @@
 			"round": 11,
 			"date": "2026-07-19",
 			"day": "Sunday",
-			"time": "10:05",
+			"time": "10:00",
 			"homeTeamId": "3vmZv3YLmq",
 			"awayTeamId": "bgdMXLL2KE",
 			"homeTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
 			"awayTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
-			"address": "Frontier Recreation Reserve Main Pitch",
-			"coordinates": "-37.722614,144.664318",
+			"address": "Aintree North Recreation Reserve Field 2",
+			"coordinates": "-37.714012,144.665373",
 			"status": "pending"
 		},
 		{
@@ -1164,8 +1140,8 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
 			"awayTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
-			"address": "Frontier Recreation Reserve Main Pitch",
-			"coordinates": "-37.722614,144.664318",
+			"address": "Aintree North Recreation Reserve Field 2",
+			"coordinates": "-37.714012,144.665373",
 			"status": "pending"
 		},
 		{

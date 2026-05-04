@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 87,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -16,6 +16,21 @@
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "",
 			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "11:45",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "R1K3pRLdQ9",
+			"homeTeamName": "Altona East SC U13 Juniors - C Female",
+			"awayTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
+			"coordinates": "",
+			"homeScore": 2,
 			"awayScore": 2,
 			"status": "complete"
 		},
@@ -89,33 +104,10 @@
 			"homeTeamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"awayTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"address": "Johnson Reserve Pitch 1B",
-			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bye",
-			"homeTeamName": "Point Cook SC U13 Juniors - C Female U13 Blue Angels",
-			"address": "",
 			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 5,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "R1K3pRLdQ9",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
-			"awayTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
-			"address": "Churchill Reserve Pitch 2 - Half Field B",
-			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
 		},
 		{
 			"round": 3,

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 102,
+	"totalFixtures": 101,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -17,6 +17,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "10:30",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
+			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
+			"address": "Alcock Road Reserve Pitch 2 - Half B",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{
@@ -92,31 +107,6 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 7,
-			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:45",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
-			"awayTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
-			"address": "AW Bond Reserve Half B",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bye",
-			"homeTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 67,
+	"totalFixtures": 64,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Laverton FC U10 MiniRoos - Joeys Male Laverton FC U10",
-			"awayTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
-			"address": "HD Graham Reserve Field 1 (North) Half B",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bam1nkkrNw",
-			"awayTeamId": "k2KpR8n8mY",
-			"homeTeamName": "Footscray Rangers FC U10 MiniRoos - Joeys Mixed Juan",
-			"awayTeamName": "Sunshine Heights JSC U10 MiniRoos - Joeys Mixed",
-			"address": "Hansen Reserve Main Pitch - Half Field A",
-			"coordinates": "-37.8042,144.872777",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed White",
-			"awayTeamName": "Altona City SC U10 MiniRoos - Joeys Mixed",
-			"address": "McIvor Reserve  Pitch 1 - Half (C+D)",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",

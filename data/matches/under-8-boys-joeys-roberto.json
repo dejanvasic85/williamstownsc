@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 83,
+	"totalFixtures": 80,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Tarneit United SC U08 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Jess",
-			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "b8Nq3q27d9",
-			"homeTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Roberto)",
-			"awayTeamName": "Tarneit North FC U08 MiniRoos - Joeys Mixed U8 Sunday West",
-			"address": "JT Gray Reserve Pitch 2A (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bam1nkkrNw",
-			"awayTeamId": "bye",
-			"homeTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Michael",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",

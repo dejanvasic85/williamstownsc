@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 73,
+	"totalFixtures": 72,
 	"totalRounds": 19,
 	"fixtures": [
 		{
@@ -53,6 +53,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Altona City SC U16 Juniors - B Female",
+			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
+			"address": "HC Kim Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "7MNGvobEmA",
@@ -77,31 +92,6 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 5,
-			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Altona City SC U16 Juniors - B Female",
-			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
-			"address": "HC Kim Reserve Pitch 2",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "bye",
-			"awayTeamId": "wOmejJVeN0",
-			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

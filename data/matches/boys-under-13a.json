@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 105,
+	"totalFixtures": 104,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -83,6 +83,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Tarneit United SC U13 Juniors - A Mixed",
+			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
+			"address": "Hummingbird Boulevard Reserve 2B (Half)",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "6lNbpDpwdx",
@@ -107,33 +122,7 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 1,
-			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
-			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
-			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Tarneit United SC U13 Juniors - A Mixed",
-			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
-			"address": "Hummingbird Boulevard Reserve 2B (Half)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"status": "washout cancelled"
 		},
 		{
 			"round": 3,

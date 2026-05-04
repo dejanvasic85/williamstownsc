@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 97,
+	"totalFixtures": 96,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8 Emad",
-			"awayTeamName": "Newport Storm FC U08 MiniRoos - Kangaroos Mixed Hakimi",
-			"address": "Costas Mitre 10 Park Pitch 4C, Galvin Park Reserve - Quarter Field (7v7)",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",

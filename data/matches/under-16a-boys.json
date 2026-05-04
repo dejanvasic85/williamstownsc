@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 129,
+	"totalFixtures": 127,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -113,6 +113,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "gld4pGXGdW",
+			"awayTeamId": "OEN2ZnG7Nq",
+			"homeTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
+			"awayTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
+			"address": "Dixon Field Reserve Pitch A",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "OVdzwWpmGr",
@@ -149,46 +164,10 @@
 			"homeTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Keilor Lodge Reserve Pitch 1",
-			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "bye",
-			"homeTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
-			"address": "",
 			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "OEN2ZnG7Nq",
-			"homeTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"awayTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
-			"address": "Dixon Field Reserve Pitch A",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "3pmvQW0Edv",
-			"homeTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 3,
@@ -271,7 +250,7 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
-			"time": "15:30",
+			"time": "15:00",
 			"homeTeamId": "OVdzwWpmGr",
 			"awayTeamId": "gld4pGXGdW",
 			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",

@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 115,
+	"totalFixtures": 112,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Hoppers Crossing SC U10 MiniRoos - Wallabies Mixed Manny u10",
-			"awayTeamName": "Altona Magic SC U10 MiniRoos - Wallabies Mixed U10 Red",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "West Point SC U10 MiniRoos - Wallabies Mixed U10W Mixed - Abbas",
-			"awayTeamName": "Truganina Hornets SC U10 MiniRoos - Wallabies Mixed",
-			"address": "Webster Street Reserve Pitch 3B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "bye",
-			"homeTeamName": "Williams Landing SC U10 MiniRoos - Wallabies Mixed",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",
