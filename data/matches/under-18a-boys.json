@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Boys Sunday (U17 - U18)",
 	"season": 2026,
-	"totalFixtures": 89,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -122,18 +122,6 @@
 			"coordinates": "",
 			"homeScore": 15,
 			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "nPmr7WjNow",
-			"awayTeamId": "bye",
-			"homeTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

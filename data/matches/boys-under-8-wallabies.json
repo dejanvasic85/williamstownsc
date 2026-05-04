@@ -1,21 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 81,
+	"totalFixtures": 80,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "bye",
-			"homeTeamName": "Moonee Valley Knights SC U08 MiniRoos - Wallabies Mixed Moonee Valley Knights U8 (Blue)",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",

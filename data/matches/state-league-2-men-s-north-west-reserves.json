@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 130,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -457,6 +457,21 @@
 			"date": "2026-05-01",
 			"day": "Friday",
 			"time": "18:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "7MNGgM7NAz",
+			"homeTeamName": "Brimbank Stallions FC Reserves",
+			"awayTeamName": "Whittlesea Ranges FC Reserves",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-01",
+			"day": "Friday",
+			"time": "18:30",
 			"homeTeamId": "7MNGvxzpmA",
 			"awayTeamId": "LBdDx0GQdb",
 			"homeTeamName": "Corio SC Reserves",
@@ -534,8 +549,8 @@
 			"awayTeamId": "6lNbpDlAdx",
 			"homeTeamName": "Whittlesea Ranges FC Reserves",
 			"awayTeamName": "Altona North SC Reserves",
-			"address": "Harvest Home Recreation Reserve Pitch 2",
-			"coordinates": "-37.624506,145.02702",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "-37.624625,145.024327",
 			"status": "pending"
 		},
 		{

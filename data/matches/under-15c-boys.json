@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 70,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -17,6 +17,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "nPmrBwrPmo",
+			"homeTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
+			"awayTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
+			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 4,
 			"status": "complete"
 		},
 		{
@@ -74,34 +89,10 @@
 			"homeTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
 			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
 			"address": "Gladstone Park Reserve Pitch 1",
-			"coordinates": "-37.686596,144.887219",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
-			"awayTeamName": "West Point SC U15 Juniors - C Mixed U15C Mixed - Glen",
-			"address": "Avondale Heights Reserve Pitch 1",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "R1K3BOqGNQ",
-			"homeTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
-			"awayTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
-			"address": "Alcock Road Reserve Pitch 1",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 3,

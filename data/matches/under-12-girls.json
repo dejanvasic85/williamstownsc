@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 72,
+	"totalFixtures": 71,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -84,6 +84,21 @@
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "10:00",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "vbd91WEDd4",
+			"homeTeamName": "Altona East SC U12 Juniors - C Female",
+			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 7,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "10:00",
 			"homeTeamId": "6lNbpD56dx",
 			"awayTeamId": "LBdDx1O8db",
 			"homeTeamName": "Truganina Hornets SC U12 Juniors - C Female",
@@ -93,32 +108,6 @@
 			"homeScore": 0,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "vbd91WEDd4",
-			"homeTeamName": "Altona East SC U12 Juniors - C Female",
-			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "3pmvQpkodv",
-			"homeTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
-			"awayTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 3,
@@ -142,7 +131,7 @@
 			"awayTeamId": "6lNbpD56dx",
 			"homeTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (A)",
+			"address": "City Vista Pavilion & Sports Field Pitch 3 (S) - 9v9 (B)",
 			"coordinates": "-37.714141,144.726888",
 			"status": "pending"
 		},

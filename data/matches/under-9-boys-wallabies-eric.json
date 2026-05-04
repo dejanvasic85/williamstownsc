@@ -1,60 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 116,
+	"totalFixtures": 112,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "08NOpe5WKZ",
-			"homeTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
-			"awayTeamName": "Middle Park FC U09 MiniRoos - Wallabies Mixed",
-			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
-			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "bye",
-			"homeTeamName": "Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Williams Landing SC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Altona City SC U09 MiniRoos - Wallabies Mixed",
-			"address": "Williams Landing Sports Reserve Pitch 5 Oval (7v7)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",

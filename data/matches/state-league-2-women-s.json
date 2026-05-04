@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -138,19 +138,6 @@
 			"homeScore": 6,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "k2KpA9PdY5",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "North Sunshine Eagles SC Seniors",
-			"awayTeamName": "Williamstown SC Seniors",
-			"address": "More Park Northern Field",
-			"coordinates": "-37.772482,144.796616",
-			"status": "pending"
 		},
 		{
 			"round": 3,

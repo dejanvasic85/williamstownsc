@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 100,
+	"totalFixtures": 96,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "gld450DmW5",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Melbourne Knights FC U10 MiniRoos - Kangaroos Mixed MKFC U10's Kangaroos",
-			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"address": "Robert Barrett Reserve Pitch 2 Half B",
-			"coordinates": "-37.777915,144.885698",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Yarraville Glory FC U10 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Williamstown SC U10 MiniRoos - Kangaroos Mixed Boys Under 10K (Dan/Aaron)",
-			"address": "McIvor Reserve  Pitch 3 - Half (A+B)",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Altona Magic SC U10 MiniRoos - Kangaroos Mixed U10 Black",
-			"awayTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half A",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 2,
-			"date": "2026-05-03",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "6lNbpDlAdx",
-			"homeTeamName": "Moonee Valley Knights SC U10 MiniRoos - Kangaroos Mixed Moonee  Valley Knights (Emad)",
-			"awayTeamName": "Altona North SC U10 MiniRoos - Kangaroos Mixed Oriol",
-			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-09",
