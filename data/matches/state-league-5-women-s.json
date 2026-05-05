@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 89,
+	"totalFixtures": 90,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -77,6 +77,21 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "nPmrBqlrmo",
+			"awayTeamId": "bgdMXLL2KE",
+			"homeTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
+			"awayTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
+			"address": "GH Mott Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
 			"status": "complete"
 		},
 		{
