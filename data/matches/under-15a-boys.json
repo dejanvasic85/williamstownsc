@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 69,
+	"totalFixtures": 70,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -62,6 +62,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "bgdMXLbQKE",
+			"homeTeamName": "Altona City SC U15 Juniors - A Mixed",
+			"awayTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
+			"address": "HC Kim Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{

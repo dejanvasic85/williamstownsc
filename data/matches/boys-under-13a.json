@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 104,
+	"totalFixtures": 105,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -77,6 +77,21 @@
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-02",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
+			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
+			"address": "Club Italia Sporting Club Pitch 2 - Half Field B",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
