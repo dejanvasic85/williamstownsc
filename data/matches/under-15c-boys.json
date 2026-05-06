@@ -98,19 +98,6 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "gld4pz60dW",
-			"homeTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
-			"awayTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
 			"time": "11:45",
 			"homeTeamId": "nPmrB8Rjmo",
 			"awayTeamId": "k2KpRJ56mY",
@@ -118,6 +105,19 @@
 			"awayTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
 			"address": "Arena Recreation Reserve Pitch 1",
 			"coordinates": "-37.618866,144.916762",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "gld4pz60dW",
+			"homeTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
+			"awayTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
+			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
+			"coordinates": "-37.6742,144.584",
 			"status": "pending"
 		},
 		{

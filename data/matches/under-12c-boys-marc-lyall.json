@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 108,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -152,6 +152,21 @@
 			"coordinates": "",
 			"homeScore": 7,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
+			"awayTeamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{

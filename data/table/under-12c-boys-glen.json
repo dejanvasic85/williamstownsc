@@ -63,11 +63,26 @@
 			"points": 4
 		},
 		{
+			"teamId": "ZNQx0VMgmx",
+			"teamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 5,
+			"played": 2,
+			"wins": 1,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 6,
+			"goalsAgainst": 4,
+			"goalDifference": 2,
+			"points": 4
+		},
+		{
 			"teamId": "lNbj5jMDNx",
 			"teamName": "Tarneit United SC U12 Juniors - C Mixed",
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
-			"position": 5,
+			"position": 6,
 			"played": 2,
 			"wins": 1,
 			"draws": 0,
@@ -75,21 +90,6 @@
 			"goalsFor": 9,
 			"goalsAgainst": 5,
 			"goalDifference": 4,
-			"points": 3
-		},
-		{
-			"teamId": "ZNQx0VMgmx",
-			"teamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 6,
-			"played": 1,
-			"wins": 1,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 3,
-			"goalsAgainst": 1,
-			"goalDifference": 2,
 			"points": 3
 		},
 		{
@@ -128,14 +128,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 9,
-			"played": 1,
+			"played": 2,
 			"wins": 0,
-			"draws": 0,
+			"draws": 1,
 			"losses": 1,
-			"goalsFor": 0,
-			"goalsAgainst": 2,
+			"goalsFor": 3,
+			"goalsAgainst": 5,
 			"goalDifference": -2,
-			"points": 0
+			"points": 1
 		},
 		{
 			"teamId": "ld44BzPBdW",

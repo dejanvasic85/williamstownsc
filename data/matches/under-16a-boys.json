@@ -1300,19 +1300,6 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "wOmejJVeN0",
-			"homeTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
-			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
-			"address": "Myers Reserve Pitch 3",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
 			"time": "13:30",
 			"homeTeamId": "OEN2ZnG7Nq",
 			"awayTeamId": "gld4pGXGdW",
@@ -1346,6 +1333,19 @@
 			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
+			"time": "13:45",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "wOmejJVeN0",
+			"homeTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
+			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
+			"address": "Myers Reserve Pitch 3",
+			"coordinates": "-38.09538,144.320027",
 			"status": "pending"
 		},
 		{

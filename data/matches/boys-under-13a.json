@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 105,
+	"totalFixtures": 106,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -32,6 +32,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "6lNbpDlAdx",
+			"homeTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
+			"awayTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 4,
 			"status": "complete"
 		},
 		{
