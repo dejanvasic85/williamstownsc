@@ -3,11 +3,26 @@
 	"competition": "Mixed Sunday West 13A Blue",
 	"entries": [
 		{
+			"teamId": "PmrqyjRRdo",
+			"teamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
+			"clubName": "Geelong Rangers SC",
+			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
+			"position": 1,
+			"played": 2,
+			"wins": 2,
+			"draws": 0,
+			"losses": 0,
+			"goalsFor": 8,
+			"goalsAgainst": 1,
+			"goalDifference": 7,
+			"points": 6
+		},
+		{
 			"teamId": "ydoJr4X7KD",
 			"teamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
-			"position": 1,
+			"position": 2,
 			"played": 2,
 			"wins": 2,
 			"draws": 0,
@@ -22,7 +37,7 @@
 			"teamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 2,
+			"position": 3,
 			"played": 1,
 			"wins": 1,
 			"draws": 0,
@@ -30,21 +45,6 @@
 			"goalsFor": 10,
 			"goalsAgainst": 1,
 			"goalDifference": 9,
-			"points": 3
-		},
-		{
-			"teamId": "PmrqyjRRdo",
-			"teamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
-			"clubName": "Geelong Rangers SC",
-			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
-			"position": 3,
-			"played": 1,
-			"wins": 1,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 5,
-			"goalsAgainst": 0,
-			"goalDifference": 5,
 			"points": 3
 		},
 		{
@@ -63,26 +63,11 @@
 			"points": 3
 		},
 		{
-			"teamId": "ld446DwxdW",
-			"teamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
-			"clubName": "West Point SC",
-			"logoUrl": "https://ocean.dribl.com/98a1c928261d4c18b77ee3f8a7106e49",
-			"position": 5,
-			"played": 1,
-			"wins": 1,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 3,
-			"goalsAgainst": 1,
-			"goalDifference": 2,
-			"points": 3
-		},
-		{
 			"teamId": "yKJbGbAzKY",
 			"teamName": "Tarneit United SC U13 Juniors - A Mixed",
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
-			"position": 6,
+			"position": 5,
 			"played": 2,
 			"wins": 1,
 			"draws": 0,
@@ -90,6 +75,21 @@
 			"goalsFor": 4,
 			"goalsAgainst": 3,
 			"goalDifference": 1,
+			"points": 3
+		},
+		{
+			"teamId": "ld446DwxdW",
+			"teamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
+			"clubName": "West Point SC",
+			"logoUrl": "https://ocean.dribl.com/98a1c928261d4c18b77ee3f8a7106e49",
+			"position": 6,
+			"played": 2,
+			"wins": 1,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 4,
+			"goalsAgainst": 4,
+			"goalDifference": 0,
 			"points": 3
 		},
 		{

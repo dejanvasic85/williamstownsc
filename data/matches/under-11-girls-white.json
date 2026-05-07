@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 95,
+	"totalFixtures": 96,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -66,6 +66,19 @@
 			"homeTeamName": "Williamstown SC U11 MiniRoos - Joeys Female Under 11 White",
 			"awayTeamName": "Point Cook SC U11 MiniRoos - Joeys Female U11 Fireflies",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "3vmZvwGMmq",
+			"homeTeamName": "Barnstoneworth United FC U11 MiniRoos - Joeys Female BUFC U11 Fierce Chillis",
+			"awayTeamName": "Balmoral FC U11 MiniRoos - Joeys Female Balmoral FC - Đerzelez",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

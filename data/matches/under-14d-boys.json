@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 123,
+	"totalFixtures": 124,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -137,6 +137,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
+			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{
