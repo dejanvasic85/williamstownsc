@@ -6,19 +6,6 @@
 	"fixtures": [
 		{
 			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "vbd91WEDd4",
-			"homeTeamName": "Satellite City United SC U09 MiniRoos - Joeys Female Jaime-Lee",
-			"awayTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Silver",
-			"address": "Kurunjang Recreation Reserve 1C (7V7)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
 			"time": "10:00",
@@ -54,6 +41,19 @@
 			"awayTeamName": "Gisborne SC U09 MiniRoos - Joeys Female 9SL",
 			"address": "Ardeer Reserve Main Pitch - Midi Field A",
 			"coordinates": "-37.778434,144.806219",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "vbd91WEDd4",
+			"homeTeamName": "Satellite City United SC U09 MiniRoos - Joeys Female Jaime-Lee",
+			"awayTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Silver",
+			"address": "Kurunjang Recreation Reserve 1C (7V7)",
+			"coordinates": "-37.6742,144.584",
 			"status": "pending"
 		},
 		{

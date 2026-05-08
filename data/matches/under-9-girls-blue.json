@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 64,
+	"totalFixtures": 57,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -19,6 +19,19 @@
 		},
 		{
 			"round": 3,
+			"date": "2026-05-09",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "Williams Landing Sports Reserve Pitch 6 Oval (7v7)",
+			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
 			"time": "10:00",
@@ -28,18 +41,6 @@
 			"awayTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
 			"address": "Edwards Reserve Main Pitch C - Quarter Pitch 7v7",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:20",
-			"homeTeamId": "bye",
-			"awayTeamId": "3vmZv3vbmq",
-			"awayTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -95,27 +96,16 @@
 			"status": "pending"
 		},
 		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "bye",
-			"homeTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
 			"round": 5,
 			"date": "2026-05-23",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "bye",
+			"homeTeamId": "R1K3BbeoNQ",
 			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
-			"address": "",
-			"coordinates": "",
+			"address": "JT Gray Reserve Pitch 3 - 7v7",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -162,11 +152,12 @@
 			"date": "2026-05-30",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "R1K3BvL3NQ",
-			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "",
-			"coordinates": "",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "Edwards Reserve Main Pitch C - Quarter Pitch 7v7",
+			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{
@@ -206,18 +197,6 @@
 			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
 			"address": "JT Gray Reserve Pitch 2A (7v7) - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-13",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "bye",
-			"homeTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -277,24 +256,25 @@
 			"date": "2026-06-20",
 			"day": "Sunday",
 			"time": "09:00",
+			"homeTeamId": "vbd91WEDd4",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "Johnson Reserve Pitch 1D - Quarter Pitch 7v7",
+			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-20",
+			"day": "Sunday",
+			"time": "09:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
 			"address": "HC Kim Reserve Pitch 3 - Midi A (7v7)",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bye",
-			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -314,6 +294,19 @@
 			"round": 9,
 			"date": "2026-06-27",
 			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"awayTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
+			"address": "HC Kim Reserve Pitch 3 - Midi A (7v7)",
+			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-27",
+			"day": "Sunday",
 			"time": "09:45",
 			"homeTeamId": "R1K3BvL3NQ",
 			"awayTeamId": "Bjma0G03dR",
@@ -321,18 +314,6 @@
 			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
 			"address": "Edwards Reserve Main Pitch D - Quarter Pitch 7v7",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "8zdBbr2dBX",
-			"awayTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -391,18 +372,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "bye",
-			"homeTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "vbd91WEDd4",
 			"awayTeamId": "R1K3BvL3NQ",
@@ -452,18 +421,6 @@
 			"status": "pending"
 		},
 		{
-			"round": 11,
-			"date": "2026-07-19",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "Bjma0G03dR",
-			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
 			"round": 12,
 			"date": "2026-07-25",
 			"day": "Sunday",
@@ -474,6 +431,19 @@
 			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
 			"address": "HC Kim Reserve Pitch 1 - Midi B (7v7)",
 			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-25",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "JT Gray Reserve Pitch 3 - 7v7",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
@@ -494,18 +464,6 @@
 			"date": "2026-07-26",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bye",
-			"homeTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 12,
-			"date": "2026-07-26",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "vbd91WEDd4",
 			"homeTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
@@ -518,12 +476,13 @@
 			"round": 13,
 			"date": "2026-08-01",
 			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "bye",
-			"homeTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "",
-			"coordinates": "",
+			"time": "09:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "R1K3BvL3NQ",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
+			"address": "Edwards Reserve Main Pitch D - Quarter Pitch 7v7",
+			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{
@@ -563,18 +522,6 @@
 			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
 			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "bgdMXaXpKE",
-			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -621,6 +568,19 @@
 			"date": "2026-08-15",
 			"day": "Sunday",
 			"time": "09:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "vbd91WEDd4",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"awayTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
+			"address": "Johnson Reserve Pitch 1D - Quarter Pitch 7v7",
+			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-15",
+			"day": "Sunday",
+			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
@@ -640,18 +600,6 @@
 			"awayTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
 			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "vbd91WEDd4",
-			"awayTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -686,10 +634,11 @@
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bye",
+			"awayTeamId": "R1K3BbeoNQ",
 			"homeTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
-			"address": "",
-			"coordinates": "",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "AB Shaw Reserve Pitch 1 - Midi B (7v7)",
+			"coordinates": "-37.865571,144.783747",
 			"status": "pending"
 		},
 		{
@@ -748,18 +697,6 @@
 			"round": 17,
 			"date": "2026-08-30",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "3vmZv3vbmq",
-			"awayTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 17,
-			"date": "2026-08-30",
-			"day": "Sunday",
 			"time": "10:05",
 			"homeTeamId": "R1K3BvL3NQ",
 			"awayTeamId": "vbd91WEDd4",
@@ -806,18 +743,6 @@
 			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
 			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 18,
-			"date": "2026-09-06",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "bye",
-			"homeTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		}
 	]

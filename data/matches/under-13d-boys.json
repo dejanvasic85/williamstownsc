@@ -113,19 +113,6 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "Bjma0G03dR",
 			"awayTeamId": "nPmrBk05mo",
@@ -146,6 +133,19 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "Webster Street Reserve Pitch 2B",
 			"coordinates": "-37.88838,144.714084",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
+			"address": "Alcock Road Reserve Pitch 2 - Half B",
+			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{
@@ -374,7 +374,7 @@
 			"awayTeamId": "k2KpRJ56mY",
 			"homeTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 9v9 (A)",
+			"address": "Wyndham Vale North Reserve Southern End Half Pitch (9v9)",
 			"coordinates": "-37.898902,144.624443",
 			"status": "pending"
 		},

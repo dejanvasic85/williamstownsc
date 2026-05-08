@@ -153,7 +153,7 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
-			"time": "12:00",
+			"time": "13:00",
 			"homeTeamId": "OEN2Z5GlNq",
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
@@ -186,7 +186,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -281,19 +283,6 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "wOmejJVeN0",
-			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
-			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
-			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
 			"time": "13:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3pmvQp0Ldv",
@@ -301,6 +290,19 @@
 			"awayTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "wOmejJVeN0",
+			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
+			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
 			"status": "pending"
 		},
 		{
@@ -819,7 +821,7 @@
 			"round": 13,
 			"date": "2026-08-02",
 			"day": "Sunday",
-			"time": "15:00",
+			"time": "15:15",
 			"homeTeamId": "OEN2Z5GlNq",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
