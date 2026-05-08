@@ -61,25 +61,25 @@
 			"date": "2026-05-10",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Kangaroos Mixed Boys U8 - Kangaroos",
-			"awayTeamName": "Williams Landing SC U08 MiniRoos - Kangaroos Mixed WLFC U8A - Portland Timbers",
-			"address": "Alcock Road Reserve Pitch 3 - Midi (7v7) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "R1K3BbeoNQ",
 			"awayTeamId": "6lNbpDlAdx",
 			"homeTeamName": "Newport Storm FC U08 MiniRoos - Kangaroos Mixed Hakimi",
 			"awayTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Oriol",
 			"address": "AW Bond Reserve Midi B",
 			"coordinates": "-37.827591,144.845123",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-11",
+			"day": "Monday",
+			"time": "18:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Kangaroos Mixed Boys U8 - Kangaroos",
+			"awayTeamName": "Williams Landing SC U08 MiniRoos - Kangaroos Mixed WLFC U8A - Portland Timbers",
+			"address": "Alcock Road Reserve Pitch 3 - Midi (7v7) A",
+			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{

@@ -1,24 +1,9 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 69,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "LBdDx1O8db",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Melton Phoenix FC U12 Juniors - C Female",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "",
-			"coordinates": "",
-			"homeScore": 3,
-			"awayScore": 0,
-			"status": "complete"
-		},
 		{
 			"round": 1,
 			"date": "2026-04-26",
@@ -66,21 +51,6 @@
 		},
 		{
 			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
-			"address": "",
-			"coordinates": "",
-			"homeScore": 0,
-			"awayScore": 3,
-			"status": "complete"
-		},
-		{
-			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "10:00",
@@ -115,11 +85,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "Johnson Reserve Pitch 1A",
-			"coordinates": "-37.791812,144.874864",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -133,7 +102,9 @@
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - C Female",
 			"address": "City Vista Pavilion & Sports Field Pitch 3 (S) - 9v9 (B)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -193,11 +164,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "Arndell Park Reserve Pitch 1 (S) - Half Field B",
-			"coordinates": "-37.863107,144.727995",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -218,12 +188,11 @@
 			"date": "2026-05-23",
 			"day": "Sunday",
 			"time": "08:45",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
-			"address": "Hummingbird Boulevard Reserve 1A (Half)",
-			"coordinates": "-37.837381,144.663287",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -271,11 +240,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Altona East SC U12 Juniors - C Female",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
-			"coordinates": "-37.846664,144.856335",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -361,12 +329,11 @@
 			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "12:30",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "3pmvQpkodv",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
-			"address": "Hummingbird Boulevard Reserve 1A (Half)",
-			"coordinates": "-37.837381,144.663287",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -400,12 +367,11 @@
 			"date": "2026-06-21",
 			"day": "Sunday",
 			"time": "11:00",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "LBdDx1O8db",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Melton Phoenix FC U12 Juniors - C Female",
-			"address": "Tarneit Rise Synthetic Pitch 1A (Half)",
-			"coordinates": "-37.835861,144.664274",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -453,11 +419,10 @@
 			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "nPmr7WjNow",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (B)",
-			"coordinates": "-37.714141,144.726888",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -504,12 +469,11 @@
 			"date": "2026-07-12",
 			"day": "Sunday",
 			"time": "12:30",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "vbd91WEDd4",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"address": "Hummingbird Boulevard Reserve 1A (Half)",
-			"coordinates": "-37.837381,144.663287",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -543,12 +507,11 @@
 			"date": "2026-07-19",
 			"day": "Sunday",
 			"time": "11:15",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"address": "Hummingbird Boulevard Reserve 1A (Half)",
-			"coordinates": "-37.837381,144.663287",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -609,11 +572,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -660,12 +622,11 @@
 			"date": "2026-08-02",
 			"day": "Sunday",
 			"time": "11:00",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Altona East SC U12 Juniors - C Female",
-			"address": "Tarneit Rise Synthetic Pitch 1B (Half)",
-			"coordinates": "-37.835861,144.664274",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -726,11 +687,10 @@
 			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "3pmvQpkodv",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "JH Allan Reserve Main Pitch A - Half Field",
-			"coordinates": "-37.747864,144.857697",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -778,11 +738,10 @@
 			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "LBdDx1O8db",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Melton Phoenix FC U12 Juniors - C Female",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "MacPherson Park Pitch 4 (U12/13s)",
-			"coordinates": "-37.63624,144.565487",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -816,12 +775,11 @@
 			"date": "2026-08-23",
 			"day": "Sunday",
 			"time": "11:15",
-			"homeTeamId": "bgdMXan2KE",
+			"homeTeamId": "bye",
 			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Tarneit United SC U12 Juniors - C Female",
 			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
-			"address": "Tarneit Rise Synthetic Pitch 1B (Half)",
-			"coordinates": "-37.835861,144.664274",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -843,11 +801,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "Johnson Reserve Pitch 1A",
-			"coordinates": "-37.791812,144.874864",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -895,11 +852,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "bgdMXan2KE",
+			"awayTeamId": "bye",
 			"homeTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Female",
-			"address": "Arndell Park Reserve Pitch 1 (S) - Half Field B",
-			"coordinates": "-37.863107,144.727995",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 124,
+	"totalFixtures": 125,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -128,6 +128,21 @@
 			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "3vmZv9nLmq",
+			"homeTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
+			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
+			"coordinates": "",
+			"homeScore": 7,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "gld4pGXGdW",
 			"awayTeamId": "3vmZv3YLmq",
@@ -240,19 +255,6 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
-			"time": "12:15",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "gld4pGXGdW",
-			"homeTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
-			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
-			"address": "Alcock Road Reserve Pitch 2",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
 			"time": "12:20",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "6lNbpDpwdx",
@@ -260,6 +262,19 @@
 			"awayTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
 			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "gld4pGXGdW",
+			"homeTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
+			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
+			"address": "Alcock Road Reserve Pitch 2",
+			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{

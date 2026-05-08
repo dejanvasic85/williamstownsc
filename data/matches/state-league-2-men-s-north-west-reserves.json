@@ -537,8 +537,10 @@
 			"homeTeamName": "FC Strathmore Split Reserves",
 			"awayTeamName": "Western Eagles SC Reserves",
 			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 7,
@@ -550,8 +552,10 @@
 			"homeTeamName": "Whittlesea Ranges FC Reserves",
 			"awayTeamName": "Altona North SC Reserves",
 			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 7,
@@ -601,7 +605,7 @@
 			"awayTeamId": "PydoLxGmD9",
 			"homeTeamName": "Surf Coast FC Reserves",
 			"awayTeamName": "Brimbank Stallions FC Reserves",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},

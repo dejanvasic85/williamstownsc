@@ -38,14 +38,14 @@
 			"clubName": "Caroline Springs George Cross FC",
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
 			"position": 3,
-			"played": 1,
-			"wins": 1,
+			"played": 2,
+			"wins": 2,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 3,
+			"goalsFor": 6,
 			"goalsAgainst": 0,
-			"goalDifference": 3,
-			"points": 3
+			"goalDifference": 6,
+			"points": 6
 		},
 		{
 			"teamId": "BdD9ZQbJmb",
@@ -128,13 +128,13 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 9,
-			"played": 1,
+			"played": 2,
 			"wins": 0,
 			"draws": 0,
-			"losses": 1,
+			"losses": 2,
 			"goalsFor": 0,
-			"goalsAgainst": 15,
-			"goalDifference": -15,
+			"goalsAgainst": 18,
+			"goalDifference": -18,
 			"points": 0
 		}
 	]
