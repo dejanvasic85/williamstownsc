@@ -576,6 +576,21 @@
 			"round": 7,
 			"date": "2026-05-09",
 			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "PydoLxGmD9",
+			"homeTeamName": "Surf Coast FC Reserves",
+			"awayTeamName": "Brimbank Stallions FC Reserves",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-05-09",
+			"day": "Saturday",
 			"time": "13:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "6lNbpDpwdx",
@@ -601,19 +616,6 @@
 			"homeScore": 2,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-05-09",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Surf Coast FC Reserves",
-			"awayTeamName": "Brimbank Stallions FC Reserves",
-			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
-			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
 		},
 		{
 			"round": 8,
