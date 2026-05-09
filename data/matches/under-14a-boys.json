@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -77,6 +77,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
+			"address": "Paisley Park - Altona Magic SC Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
