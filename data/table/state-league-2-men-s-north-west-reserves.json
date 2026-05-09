@@ -3,11 +3,26 @@
 	"competition": "State League 2 Men's - North-West Reserves",
 	"entries": [
 		{
+			"teamId": "8NOD6VV7KZ",
+			"teamName": "Geelong Rangers SC Reserves",
+			"clubName": "Geelong Rangers SC",
+			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
+			"position": 1,
+			"played": 7,
+			"wins": 5,
+			"draws": 1,
+			"losses": 1,
+			"goalsFor": 13,
+			"goalsAgainst": 5,
+			"goalDifference": 8,
+			"points": 16
+		},
+		{
 			"teamId": "nmYykb5Dmz",
 			"teamName": "Albion Rovers FC Reserves",
 			"clubName": "Albion Rovers FC",
 			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
-			"position": 1,
+			"position": 2,
 			"played": 7,
 			"wins": 4,
 			"draws": 3,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 10,
 			"goalDifference": 6,
 			"points": 15
-		},
-		{
-			"teamId": "8NOD6VV7KZ",
-			"teamName": "Geelong Rangers SC Reserves",
-			"clubName": "Geelong Rangers SC",
-			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
-			"position": 2,
-			"played": 6,
-			"wins": 4,
-			"draws": 1,
-			"losses": 1,
-			"goalsFor": 11,
-			"goalsAgainst": 5,
-			"goalDifference": 6,
-			"points": 13
 		},
 		{
 			"teamId": "PmjnpqZ9mZ",
@@ -128,13 +128,13 @@
 			"clubName": "Corio SC",
 			"logoUrl": "https://ocean.dribl.com/0e5506977eaf4897ab6a47e63ceb7a66",
 			"position": 9,
-			"played": 6,
+			"played": 7,
 			"wins": 2,
 			"draws": 1,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 14,
-			"goalsAgainst": 13,
-			"goalDifference": 1,
+			"goalsAgainst": 15,
+			"goalDifference": -1,
 			"points": 7
 		},
 		{
