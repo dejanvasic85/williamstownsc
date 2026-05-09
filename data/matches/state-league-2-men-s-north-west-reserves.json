@@ -531,6 +531,21 @@
 			"round": 7,
 			"date": "2026-05-08",
 			"day": "Friday",
+			"time": "18:30",
+			"homeTeamId": "bam1nQWrNw",
+			"awayTeamId": "Bjma0G87dR",
+			"homeTeamName": "Mill Park SC Reserves",
+			"awayTeamName": "Uni Hill Eagles FC Reserves",
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-05-08",
+			"day": "Friday",
 			"time": "18:15",
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "3vmZv8JJmq",
@@ -559,19 +574,6 @@
 		},
 		{
 			"round": 7,
-			"date": "2026-05-08",
-			"day": "Friday",
-			"time": "18:30",
-			"homeTeamId": "bam1nQWrNw",
-			"awayTeamId": "Bjma0G87dR",
-			"homeTeamName": "Mill Park SC Reserves",
-			"awayTeamName": "Uni Hill Eagles FC Reserves",
-			"address": "Partridge Street Reserve Pitch 2",
-			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
-		},
-		{
-			"round": 7,
 			"date": "2026-05-09",
 			"day": "Saturday",
 			"time": "13:00",
@@ -580,8 +582,10 @@
 			"homeTeamName": "Albion Rovers FC Reserves",
 			"awayTeamName": "Williamstown SC Reserves",
 			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 7,
