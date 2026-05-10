@@ -179,8 +179,10 @@
 			"homeTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
 			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"address": "JJ Holland Park Main Pitch (S)",
-			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 9,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 3,

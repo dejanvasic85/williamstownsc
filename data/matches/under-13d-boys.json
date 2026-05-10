@@ -113,14 +113,31 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "AnmYzg0xNz",
+			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
+			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "Bjma0G03dR",
 			"awayTeamId": "nPmrBk05mo",
 			"homeTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"address": "Wyndham Vale North Reserve Main Pitch A - 9v9 (A)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -171,20 +188,7 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
-			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,

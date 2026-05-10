@@ -128,14 +128,31 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "R1K3pRLdQ9",
+			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
+			"awayTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "7MNGvobEmA",
 			"homeTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"awayTeamName": "Altona East SC U13 Juniors - C Female",
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -147,8 +164,10 @@
 			"homeTeamName": "Gisborne SC U13 Juniors - C Female 13ML",
 			"awayTeamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"address": "Dixon Field Reserve Pitch D (U13)",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 12,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -173,20 +192,7 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - C Female",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "R1K3pRLdQ9",
-			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
-			"awayTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,

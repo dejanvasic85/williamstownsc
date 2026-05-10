@@ -23,14 +23,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 2,
-			"played": 1,
+			"played": 2,
 			"wins": 1,
-			"draws": 0,
+			"draws": 1,
 			"losses": 0,
-			"goalsFor": 5,
-			"goalsAgainst": 1,
+			"goalsFor": 6,
+			"goalsAgainst": 2,
 			"goalDifference": 4,
-			"points": 3
+			"points": 4
 		},
 		{
 			"teamId": "ld44BoxOdW",
@@ -38,14 +38,14 @@
 			"clubName": "Melton Phoenix FC",
 			"logoUrl": "https://ocean.dribl.com/398714cf7b80462991ac9dc3914cc1f6",
 			"position": 3,
-			"played": 1,
+			"played": 2,
 			"wins": 1,
-			"draws": 0,
+			"draws": 1,
 			"losses": 0,
-			"goalsFor": 3,
-			"goalsAgainst": 0,
+			"goalsFor": 4,
+			"goalsAgainst": 1,
 			"goalDifference": 3,
-			"points": 3
+			"points": 4
 		},
 		{
 			"teamId": "jmaBG6a5NR",

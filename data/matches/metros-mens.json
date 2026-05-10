@@ -128,14 +128,31 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "wOmejvpyN0",
+			"awayTeamId": "Bjma0GJMdR",
+			"homeTeamName": "Melbourne University SC Seniors",
+			"awayTeamName": "Kings Domain FC Seniors",
+			"address": "Princes Park Oval Pitch 1",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 7,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "nPmrB8Gpmo",
 			"awayTeamId": "08NOpe5WKZ",
 			"homeTeamName": "South Yarra SC Seniors",
 			"awayTeamName": "Middle Park FC Seniors",
 			"address": "Fawkner Park South Pavilion Pitch 2 (Lawn 20)",
-			"coordinates": "-37.8392,144.9919",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -148,19 +165,6 @@
 			"awayTeamName": "St Kilda SC Seniors Sundays",
 			"address": "George Knott Reserve George Knott Reserve",
 			"coordinates": "-37.784108,145.001458",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "wOmejvpyN0",
-			"awayTeamId": "Bjma0GJMdR",
-			"homeTeamName": "Melbourne University SC Seniors",
-			"awayTeamName": "Kings Domain FC Seniors",
-			"address": "Princes Park Oval Pitch 1",
-			"coordinates": "-37.787624,144.960651",
 			"status": "pending"
 		},
 		{
@@ -186,7 +190,7 @@
 			"homeTeamName": "Truganina Lions FC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,
