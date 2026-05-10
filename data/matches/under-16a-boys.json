@@ -203,6 +203,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "13:45",
+			"homeTeamId": "3pmvQW0Edv",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
+			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
+			"address": "Barrymore Road Recreation Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "13:30",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "8nm7PgVNOq",
@@ -252,19 +267,6 @@
 			"awayTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
 			"address": "Hume City Stadium Pitch 1",
 			"coordinates": "-37.664466,144.915723",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "3pmvQW0Edv",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"address": "Barrymore Road Recreation Reserve Pitch 1",
-			"coordinates": "-37.649063,144.894037",
 			"status": "pending"
 		},
 		{

@@ -143,6 +143,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
+			"awayTeamName": "Altona City SC U18 Juniors - A Male",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "wOmejJVeN0",
@@ -165,19 +180,6 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
-			"awayTeamName": "Altona City SC U18 Juniors - A Male",
-			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
 		},
 		{
 			"round": 3,

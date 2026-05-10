@@ -33,11 +33,26 @@
 			"points": 9
 		},
 		{
+			"teamId": "lNbjwx5wNx",
+			"teamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
+			"clubName": "Truganina Lions FC",
+			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
+			"position": 3,
+			"played": 3,
+			"wins": 2,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 8,
+			"goalsAgainst": 6,
+			"goalDifference": 2,
+			"points": 7
+		},
+		{
 			"teamId": "BdD9y9aGmb",
 			"teamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
 			"clubName": "Satellite City United SC",
 			"logoUrl": "https://ocean.dribl.com/cbbe2daa51c7437493a9d93e9cec1188",
-			"position": 3,
+			"position": 4,
 			"played": 2,
 			"wins": 2,
 			"draws": 0,
@@ -46,21 +61,6 @@
 			"goalsAgainst": 3,
 			"goalDifference": 11,
 			"points": 6
-		},
-		{
-			"teamId": "lNbjwx5wNx",
-			"teamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
-			"clubName": "Truganina Lions FC",
-			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
-			"position": 4,
-			"played": 2,
-			"wins": 1,
-			"draws": 1,
-			"losses": 0,
-			"goalsFor": 6,
-			"goalsAgainst": 5,
-			"goalDifference": 1,
-			"points": 4
 		},
 		{
 			"teamId": "ydoJpx3aKD",
@@ -98,13 +98,13 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 7,
-			"played": 2,
+			"played": 3,
 			"wins": 1,
 			"draws": 0,
-			"losses": 1,
-			"goalsFor": 6,
-			"goalsAgainst": 7,
-			"goalDifference": -1,
+			"losses": 2,
+			"goalsFor": 7,
+			"goalsAgainst": 9,
+			"goalDifference": -2,
 			"points": 3
 		},
 		{

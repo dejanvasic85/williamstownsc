@@ -18,11 +18,26 @@
 			"points": 9
 		},
 		{
+			"teamId": "2KpprE0bKY",
+			"teamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
+			"clubName": "Williams Landing SC",
+			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"position": 2,
+			"played": 3,
+			"wins": 3,
+			"draws": 0,
+			"losses": 0,
+			"goalsFor": 9,
+			"goalsAgainst": 5,
+			"goalDifference": 4,
+			"points": 9
+		},
+		{
 			"teamId": "1K3vWMnRNQ",
 			"teamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
 			"clubName": "Lalor United FC",
 			"logoUrl": "https://ocean.dribl.com/ada34c636e4f49878c9550a35fc4c510",
-			"position": 2,
+			"position": 3,
 			"played": 3,
 			"wins": 2,
 			"draws": 0,
@@ -30,21 +45,6 @@
 			"goalsFor": 16,
 			"goalsAgainst": 4,
 			"goalDifference": 12,
-			"points": 6
-		},
-		{
-			"teamId": "2KpprE0bKY",
-			"teamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"clubName": "Williams Landing SC",
-			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 3,
-			"played": 2,
-			"wins": 2,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 8,
-			"goalsAgainst": 5,
-			"goalDifference": 3,
 			"points": 6
 		},
 		{
@@ -158,13 +158,13 @@
 			"clubName": "Greenvale United SC",
 			"logoUrl": "https://ocean.dribl.com/4c443f48aa7346d19a9a6dead7f5acd3",
 			"position": 11,
-			"played": 1,
+			"played": 2,
 			"wins": 0,
 			"draws": 1,
-			"losses": 0,
+			"losses": 1,
 			"goalsFor": 2,
-			"goalsAgainst": 2,
-			"goalDifference": 0,
+			"goalsAgainst": 3,
+			"goalDifference": -1,
 			"points": 1
 		},
 		{
