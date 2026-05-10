@@ -173,6 +173,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "wOmejXOyN0",
+			"homeTeamName": "Yarraville Glory FC Seniors state league 6 women",
+			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL5",
+			"address": "McIvor Reserve  Pitch 1 - FULL",
+			"coordinates": "",
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "6lNbpGXodx",
 			"awayTeamId": "nPmrBqlrmo",
@@ -195,19 +210,6 @@
 			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
 			"address": "JT Gray Reserve Pitch 4 - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "wOmejXOyN0",
-			"homeTeamName": "Yarraville Glory FC Seniors state league 6 women",
-			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL5",
-			"address": "McIvor Reserve  Pitch 1 - FULL",
-			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{
