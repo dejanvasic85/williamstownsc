@@ -143,6 +143,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "7ZKRa2oNkB",
+			"awayTeamId": "LBdDxg8Qdb",
+			"homeTeamName": "Pascoe Vale FC Seniors",
+			"awayTeamName": "Whittlesea United SC Seniors",
+			"address": "Hosken Reserve Pitch 1 South",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "15:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "6lNbVk6NxE",
@@ -198,19 +213,6 @@
 			"homeScore": 1,
 			"awayScore": 5,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "7ZKRa2oNkB",
-			"awayTeamId": "LBdDxg8Qdb",
-			"homeTeamName": "Pascoe Vale FC Seniors",
-			"awayTeamName": "Whittlesea United SC Seniors",
-			"address": "Hosken Reserve Pitch 1 South",
-			"coordinates": "-37.725117,144.957411",
-			"status": "pending"
 		},
 		{
 			"round": 4,

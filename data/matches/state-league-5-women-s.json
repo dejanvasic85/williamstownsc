@@ -203,6 +203,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
+			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
+			"address": "JT Gray Reserve Pitch 4 - BUFC",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "6lNbpGXodx",
 			"awayTeamId": "nPmrBqlrmo",
@@ -213,19 +228,6 @@
 			"homeScore": 9,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
-			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
-			"address": "JT Gray Reserve Pitch 4 - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 4,

@@ -224,8 +224,10 @@
 			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
 			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,
