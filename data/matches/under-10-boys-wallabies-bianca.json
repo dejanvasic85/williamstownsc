@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 112,
+	"totalFixtures": 108,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Altona East SC U10 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Fury",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Thunderbolts",
-			"awayTeamName": "Werribee City FC U10 MiniRoos - Wallabies Mixed U10s Nick",
-			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Truganina Lions FC U10 MiniRoos - Wallabies Mixed Boys U10 - Wallabies",
-			"awayTeamName": "Wyndham FC U10 MiniRoos - Wallabies Mixed U10 Wallabies",
-			"address": "Alcock Road Reserve Pitch 3 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Truganina Hornets SC U10 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Williamstown SC U10 MiniRoos - Wallabies Mixed Boys Under 10W (Bianca)",
-			"address": "Arndell Park Reserve Pitch 2 - Half Field B",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-10",
@@ -92,7 +40,7 @@
 			"awayTeamName": "Hoppers Crossing SC U10 MiniRoos - Wallabies Mixed Manny u10",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,

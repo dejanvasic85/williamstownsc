@@ -83,13 +83,16 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bye",
-			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"address": "",
+			"time": "14:00",
+			"homeTeamId": "LBdDx1O8db",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Melton Phoenix FC U12 Juniors - C Female",
+			"awayTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
+			"address": "MacPherson Park Pitch 4 (U12/13s)",
 			"coordinates": "",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -100,10 +103,22 @@
 			"awayTeamId": "6lNbpD56dx",
 			"homeTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"address": "City Vista Pavilion & Sports Field Pitch 3 (S) - 9v9 (B)",
-			"coordinates": "-37.714141,144.726888",
+			"address": "",
+			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "vbd91WEDd4",
+			"awayTeamId": "bye",
+			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
+			"address": "",
+			"coordinates": "",
 			"status": "complete"
 		},
 		{
@@ -117,19 +132,6 @@
 			"awayTeamName": "Altona East SC U12 Juniors - C Female",
 			"address": "JH Allan Reserve Main Pitch B - Half Field",
 			"coordinates": "-37.747864,144.857697",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "LBdDx1O8db",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Melton Phoenix FC U12 Juniors - C Female",
-			"awayTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
-			"address": "MacPherson Park Pitch 4 (U12/13s)",
-			"coordinates": "-37.63624,144.565487",
 			"status": "pending"
 		},
 		{

@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 80,
+	"totalFixtures": 77,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "nPmrBk05mo",
-			"homeTeamName": "Truganina Lions FC U11 MiniRoos - Joeys Mixed Boys U11 - Joeys",
-			"awayTeamName": "Hoppers Crossing SC U11 MiniRoos - Joeys Mixed u11 marko",
-			"address": "Alcock Road Reserve Pitch 1 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Williamstown SC U11 MiniRoos - Joeys Mixed Boys Under 11J (Lee)",
-			"awayTeamName": "Point Cook SC U11 MiniRoos - Joeys Mixed U11 Mustangs",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "West Point SC U11 MiniRoos - Joeys Mixed U11 Mixed - Brett",
-			"awayTeamName": "Tarneit United SC U11 MiniRoos - Joeys Mixed",
-			"address": "Webster Street Reserve Pitch 3A",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-10",

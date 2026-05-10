@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 64,
+	"totalFixtures": 62,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Altona City SC U10 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Williamstown SC U10 MiniRoos - Joeys Mixed Boys Under 10J (Hugh/Joe)",
-			"address": "HC Kim Reserve Pitch 2A",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
-			"awayTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed White",
-			"address": "JT Gray Reserve Pitch 6- BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-10",

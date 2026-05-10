@@ -149,8 +149,10 @@
 			"homeTeamName": "Moreland Eagles FC Seniors",
 			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
 			"address": "Wallace Reserve Pitch 1",
-			"coordinates": "-37.694764,144.935299",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 3,

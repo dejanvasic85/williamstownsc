@@ -128,14 +128,31 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "13:45",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "nPmr7WjNow",
+			"homeTeamName": "Surf Coast FC U18 Juniors - A Male",
+			"awayTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "wOmejJVeN0",
 			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
 			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
 			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -147,7 +164,7 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 3,
@@ -174,21 +191,6 @@
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Surf Coast FC U18 Juniors - A Male",
-			"awayTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
-			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
-			"coordinates": "-38.306639,144.324553",
-			"homeScore": 0,
-			"awayScore": 3,
-			"status": "complete"
 		},
 		{
 			"round": 4,

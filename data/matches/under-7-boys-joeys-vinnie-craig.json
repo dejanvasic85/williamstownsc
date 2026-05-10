@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 64,
+	"totalFixtures": 61,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Gold",
-			"awayTeamName": "Altona East SC U07 MiniRoos - Joeys Mixed",
-			"address": "Williams Landing Sports Reserve Pitch B (4v4)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Yarraville Glory FC U07 MiniRoos - Joeys Mixed Gold",
-			"awayTeamName": "Williamstown SC U07 MiniRoos - Joeys Mixed Boys Under 7J (Vinnie/Craig)",
-			"address": "McIvor Reserve  Pitch 2 - Mini (1/8) B.1",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-09",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys Blue",
-			"awayTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys White",
-			"address": "Edwards Reserve Main Pitch E - Quarter Pitch 4v4",
-			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
 		{
 			"round": 3,
 			"date": "2026-05-10",
