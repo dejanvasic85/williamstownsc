@@ -134,8 +134,10 @@
 			"homeTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
 			"awayTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 3,
