@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 70,
+	"totalFixtures": 69,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -138,19 +138,6 @@
 			"homeScore": 0,
 			"awayScore": 6,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:45",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
-			"awayTeamName": "Altona City SC U15 Juniors - A Mixed",
-			"address": "Paisley Park - Altona Magic SC Pitch 2",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
 		},
 		{
 			"round": 4,

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 69,
+	"totalFixtures": 68,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -98,6 +98,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "13:15",
+			"homeTeamId": "3pmvQpkodv",
+			"awayTeamId": "7MNGvobEmA",
+			"homeTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
+			"awayTeamName": "Altona East SC U12 Juniors - C Female",
+			"address": "JH Allan Reserve Main Pitch B - Half Field",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "nPmr7WjNow",
 			"awayTeamId": "6lNbpD56dx",
@@ -108,31 +123,6 @@
 			"homeScore": 3,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "bye",
-			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "3pmvQpkodv",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
-			"awayTeamName": "Altona East SC U12 Juniors - C Female",
-			"address": "JH Allan Reserve Main Pitch B - Half Field",
-			"coordinates": "-37.747864,144.857697",
-			"status": "pending"
 		},
 		{
 			"round": 4,

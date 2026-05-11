@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 78,
+	"totalFixtures": 75,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Newport Storm FC U09 MiniRoos - Kangaroos Mixed Rudiger",
-			"awayTeamName": "Moonee Valley Knights SC U09 MiniRoos - Kangaroos Mixed Moonee Valley Knights U9 (Blue)",
-			"address": "AW Bond Reserve Midi B",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Moonee Valley Knights SC U09 MiniRoos - Kangaroos Mixed Moonee Valley Knights U9 Hakan",
-			"awayTeamName": "Brimbank Stallions FC U09 MiniRoos - Kangaroos Mixed",
-			"address": "Avondale Heights Reserve Pitch 2 - Midi (7v7)",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "bgdMXaXpKE",
-			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Kangaroos Mixed",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-16",

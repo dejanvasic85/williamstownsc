@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -108,58 +108,6 @@
 			"homeScore": 0,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "11:45",
-			"homeTeamId": "nPmrB8Rjmo",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"awayTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
-			"address": "Arena Recreation Reserve Pitch 1",
-			"coordinates": "-37.618866,144.916762",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "gld4pz60dW",
-			"homeTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
-			"awayTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "nPmrBwrPmo",
-			"homeTeamName": "West Point SC U15 Juniors - C Mixed U15C Mixed - Glen",
-			"awayTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
-			"address": "Webster Street Reserve Pitch 3",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "14:45",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
-			"awayTeamName": "Williamstown SC U15 Juniors - C Mixed Under 15C Boys",
-			"address": "Avondale Heights Reserve Pitch 1",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
 		},
 		{
 			"round": 4,

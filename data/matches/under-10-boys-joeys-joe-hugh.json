@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 62,
+	"totalFixtures": 60,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed Blue",
-			"awayTeamName": "Footscray Rangers FC U10 MiniRoos - Joeys Mixed Juan",
-			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "k2KpR8n8mY",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Sunshine Heights JSC U10 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Laverton FC U10 MiniRoos - Joeys Male Laverton FC U10",
-			"address": "Castley Reserve Main Pitch - Half Field B",
-			"coordinates": "-37.790938,144.815634",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-16",

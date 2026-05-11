@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Boys Sunday (U17 - U18)",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 87,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -182,18 +182,6 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 4,
-			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "7MNGvappmA",
-			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{
