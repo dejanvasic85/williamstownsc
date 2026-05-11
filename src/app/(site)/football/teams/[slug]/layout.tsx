@@ -5,8 +5,16 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { TeamDetailNav } from '@/components/teams/TeamDetailNav';
 import { getAnnouncements } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
+import { getAllTeamsForSitemap } from '@/lib/content/teams';
 import { getTeamMatches } from '@/lib/matches/matchService';
 import { getTableForTeam } from '@/lib/matches/tableService';
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+	const teams = await getAllTeamsForSitemap();
+	return teams.map((team) => ({ slug: team.slug }));
+}
 
 type TeamDetailLayoutProps = {
 	children: ReactNode;
