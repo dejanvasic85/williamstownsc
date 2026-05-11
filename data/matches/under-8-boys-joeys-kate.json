@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 109,
+	"totalFixtures": 105,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "West Point SC U08 MiniRoos - Joeys Mixed U8 Mixed - Matt",
-			"awayTeamName": "Williams Landing SC U08 MiniRoos - Joeys Mixed WLFC U8 - White",
-			"address": "Webster Street Reserve Pitch 3B Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Ray)",
-			"awayTeamName": "Truganina Hornets SC U08 MiniRoos - Joeys Mixed",
-			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Tarneit North FC U08 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Wyndham FC U08 MiniRoos - Joeys Mixed Under 8 Joeys KK",
-			"address": "Polly Parade Reserve Main Pitch - Midi (7v7) A",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:20",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Joeys Mixed Boys U8 - Joeys (A)",
-			"awayTeamName": "Altona Magic SC U08 MiniRoos - Joeys Mixed U8 Red",
-			"address": "Alcock Road Reserve Pitch 1 - Mini (4v4) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-16",

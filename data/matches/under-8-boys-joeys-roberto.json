@@ -1,21 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 76,
+	"totalFixtures": 75,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "6lNbpDpwdx",
-			"awayTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Roberto)",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-16",

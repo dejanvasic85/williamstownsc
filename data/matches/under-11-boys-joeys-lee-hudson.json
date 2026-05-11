@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 77,
+	"totalFixtures": 75,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Tarneit North FC U11 MiniRoos - Joeys Mixed U11 Sunday West",
-			"awayTeamName": "Wyndham FC U11 MiniRoos - Joeys Mixed U11 Joeys",
-			"address": "Polly Parade Reserve Main Pitch - Half A",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Altona City SC U11 MiniRoos - Joeys Mixed Silver",
-			"awayTeamName": "Williamstown SC U11 MiniRoos - Joeys Mixed Boys Under 11J (Matt/Chris)",
-			"address": "HC Kim Reserve Pitch 1B",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-16",

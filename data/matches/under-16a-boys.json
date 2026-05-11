@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 127,
+	"totalFixtures": 125,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -243,31 +243,6 @@
 			"homeScore": 12,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "6lNbpDpwdx",
-			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "V8dnR1odwL",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Hume City FC U16 Juniors - A Mixed",
-			"awayTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
-			"address": "Hume City Stadium Pitch 1",
-			"coordinates": "-37.664466,144.915723",
-			"status": "pending"
 		},
 		{
 			"round": 4,

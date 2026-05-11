@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 101,
+	"totalFixtures": 98,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -128,6 +128,21 @@
 			"round": 3,
 			"date": "2026-05-10",
 			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
+			"address": "Alcock Road Reserve Pitch 2 - Half B",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "Bjma0G03dR",
 			"awayTeamId": "nPmrBk05mo",
@@ -137,57 +152,6 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 6,
-			"status": "complete"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
-			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
-			"address": "Webster Street Reserve Pitch 2B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
-			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"address": "Alcock Road Reserve Pitch 3 - Half A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 3,
-			"date": "2026-05-10",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "nPmrBk05mo",
-			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{
