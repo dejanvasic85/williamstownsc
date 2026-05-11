@@ -5,9 +5,17 @@ import { PortableText } from 'next-sanity';
 import { PageContainer } from '@/components/layout';
 import { ShareButton } from '@/components/news/ShareButton';
 import { getArticleBySlug, getSiteSettings } from '@/lib/content';
+import { getAllArticlesForSitemap } from '@/lib/content/news';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
-import { buildUrl, getRequestBaseUrl } from '@/lib/url';
+import { buildUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+	const articles = await getAllArticlesForSitemap();
+	return articles.map((article) => ({ slug: article.slug }));
+}
 
 interface ArticlePageProps {
 	params: Promise<{ slug: string }>;
@@ -27,8 +35,6 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 	}
 
 	const articleCanonicalUrl = buildUrl(siteSettings.canonicalUrl, 'news', article.slug);
-	const requestBaseUrl = await getRequestBaseUrl();
-	const articleRequestUrl = buildUrl(requestBaseUrl, 'news', article.slug);
 
 	return {
 		title: article.title,
@@ -41,7 +47,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 			siteName: siteSettings.clubName,
 			title: article.title,
 			description: article.excerpt,
-			url: articleRequestUrl,
+			url: articleCanonicalUrl,
 			publishedTime: article.publishedAt,
 			images: [
 				{

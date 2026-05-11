@@ -12,6 +12,8 @@ import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
+export const revalidate = 3600;
+
 type TeamDetailPageProps = {
 	params: Promise<{ slug: string }>;
 };

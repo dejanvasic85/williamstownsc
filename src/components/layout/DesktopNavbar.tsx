@@ -9,6 +9,7 @@ import { ChevronDown, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 import { useSearchModal } from '@/components/search';
 import { NavItem } from '@/lib/navigation';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
 type DesktopNavbarProps = {
 	navItems: NavItem[];
@@ -197,6 +198,7 @@ export function DesktopNavbar({
 						<Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
 							{logoUrl && (
 								<Image
+									loader={sanityImageLoader}
 									src={logoUrl}
 									alt={logoAlt || 'Club logo'}
 									width={40}

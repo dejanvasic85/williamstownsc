@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Search } from 'lucide-react';
 import { useSearchModal } from '@/components/search';
+import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { type SocialLink, SocialLinks } from './SocialLinks';
 
 interface MobileHeaderProps {
@@ -20,6 +21,7 @@ export function MobileHeader({ logoUrl, logoAlt, clubName, socialLinks }: Mobile
 			<div className="flex items-center gap-2">
 				{logoUrl && (
 					<Image
+						loader={sanityImageLoader}
 						src={logoUrl}
 						alt={logoAlt || 'Club logo'}
 						width={40}
