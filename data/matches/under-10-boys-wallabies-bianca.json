@@ -22,6 +22,19 @@
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "10:00",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Fury",
+			"awayTeamName": "Truganina Lions FC U10 MiniRoos - Wallabies Mixed Boys U10 - Wallabies",
+			"address": "Saltwater Reserve Pitch 3 SSF3 (U9)",
+			"coordinates": "-37.908433,144.755511",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8nm7PgVNOq",
 			"homeTeamName": "Williamstown SC U10 MiniRoos - Wallabies Mixed Boys Under 10W (Bianca)",
@@ -67,19 +80,6 @@
 			"awayTeamName": "Altona East SC U10 MiniRoos - Wallabies Mixed",
 			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Fury",
-			"awayTeamName": "Truganina Lions FC U10 MiniRoos - Wallabies Mixed Boys U10 - Wallabies",
-			"address": "Alcock Road Reserve Pitch 3 - Half B",
-			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{

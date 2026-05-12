@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 125,
+	"totalFixtures": 126,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -107,6 +107,21 @@
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "13:15",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "3pmvQW0Edv",
+			"homeTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{

@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 91,
+	"totalFixtures": 90,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 3,
-			"date": "2026-05-11",
-			"day": "Monday",
-			"time": "18:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Kangaroos Mixed Boys U8 - Kangaroos",
-			"awayTeamName": "Williams Landing SC U08 MiniRoos - Kangaroos Mixed WLFC U8A - Portland Timbers",
-			"address": "Alcock Road Reserve Pitch 3 - Midi (7v7) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-16",

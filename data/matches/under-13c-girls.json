@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 86,
+	"totalFixtures": 87,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -137,6 +137,21 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Yarraville Glory FC U13 Juniors - C Female",
+			"awayTeamName": "Point Cook SC U13 Juniors - C Female U13 Blue Angels",
+			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{
