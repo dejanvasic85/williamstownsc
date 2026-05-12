@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 69,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -62,6 +62,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 7,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "3pmvQpkodv",
+			"homeTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
+			"awayTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "",
+			"homeScore": 15,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{
@@ -164,9 +179,9 @@
 		},
 		{
 			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
+			"date": "2026-05-22",
+			"day": "Friday",
+			"time": "18:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "nPmr7WjNow",
 			"homeTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",

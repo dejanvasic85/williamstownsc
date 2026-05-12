@@ -63,11 +63,26 @@
 			"points": 5
 		},
 		{
+			"teamId": "ZKRP0gkPmk",
+			"teamName": "Yarraville Glory FC U13 Juniors - C Female",
+			"clubName": "Yarraville Glory FC",
+			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
+			"position": 5,
+			"played": 2,
+			"wins": 1,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 5,
+			"goalsAgainst": 1,
+			"goalDifference": 4,
+			"points": 4
+		},
+		{
 			"teamId": "vdWvpPMkKO",
 			"teamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"clubName": "Maribyrnong Swifts FC",
 			"logoUrl": "https://ocean.dribl.com/2bdcd22e002244f0affb3249fec1eb1f",
-			"position": 5,
+			"position": 6,
 			"played": 3,
 			"wins": 1,
 			"draws": 0,
@@ -76,21 +91,6 @@
 			"goalsAgainst": 19,
 			"goalDifference": -14,
 			"points": 3
-		},
-		{
-			"teamId": "ZKRP0gkPmk",
-			"teamName": "Yarraville Glory FC U13 Juniors - C Female",
-			"clubName": "Yarraville Glory FC",
-			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
-			"position": 6,
-			"played": 1,
-			"wins": 0,
-			"draws": 1,
-			"losses": 0,
-			"goalsFor": 1,
-			"goalsAgainst": 1,
-			"goalDifference": 0,
-			"points": 1
 		},
 		{
 			"teamId": "pN69EgY0m0",
@@ -108,26 +108,11 @@
 			"points": 0
 		},
 		{
-			"teamId": "xm89bRGENr",
-			"teamName": "Point Cook SC U13 Juniors - C Female U13 Blue Angels",
-			"clubName": "Point Cook SC",
-			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
-			"position": 8,
-			"played": 1,
-			"wins": 0,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 1,
-			"goalsAgainst": 10,
-			"goalDifference": -9,
-			"points": 0
-		},
-		{
 			"teamId": "ld44WqprdW",
 			"teamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
-			"position": 9,
+			"position": 8,
 			"played": 3,
 			"wins": 0,
 			"draws": 0,
@@ -135,6 +120,21 @@
 			"goalsFor": 2,
 			"goalsAgainst": 13,
 			"goalDifference": -11,
+			"points": 0
+		},
+		{
+			"teamId": "xm89bRGENr",
+			"teamName": "Point Cook SC U13 Juniors - C Female U13 Blue Angels",
+			"clubName": "Point Cook SC",
+			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
+			"position": 9,
+			"played": 2,
+			"wins": 0,
+			"draws": 0,
+			"losses": 2,
+			"goalsFor": 1,
+			"goalsAgainst": 14,
+			"goalDifference": -13,
 			"points": 0
 		}
 	]

@@ -35,6 +35,19 @@
 			"date": "2026-05-16",
 			"day": "Sunday",
 			"time": "09:00",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "AnmYz1R1Nz",
+			"homeTeamName": "Point Cook SC U07 MiniRoos - Wallabies Mixed U7 Vipers",
+			"awayTeamName": "Western Suburbs SC U07 MiniRoos - Wallabies Mixed U7 Bill - Wallabies",
+			"address": "Saltwater Reserve Pitch 1C",
+			"coordinates": "-37.908433,144.755511",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-16",
+			"day": "Sunday",
+			"time": "09:00",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "3vmZv9nLmq",
 			"homeTeamName": "West Point SC U07 MiniRoos - Wallabies Mixed U7W Crezwell",
@@ -67,19 +80,6 @@
 			"awayTeamName": "Altona Magic SC U07 MiniRoos - Wallabies Mixed U7 Black",
 			"address": "Costas Mitre 10 Park Pitch 1E, Galvin Park Reserve - Quarter Field (4v4)",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Point Cook SC U07 MiniRoos - Wallabies Mixed U7 Vipers",
-			"awayTeamName": "Western Suburbs SC U07 MiniRoos - Wallabies Mixed U7 Bill - Wallabies",
-			"address": "Saltwater Reserve Pitch 1A",
-			"coordinates": "-37.908433,144.755511",
 			"status": "pending"
 		},
 		{
