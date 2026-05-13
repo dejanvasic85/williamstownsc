@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 126,
+	"totalFixtures": 127,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -219,6 +219,21 @@
 			"date": "2026-05-10",
 			"day": "Sunday",
 			"time": "13:45",
+			"homeTeamId": "V8dnR1odwL",
+			"awayTeamId": "AnmYz1R1Nz",
+			"homeTeamName": "Hume City FC U16 Juniors - A Mixed",
+			"awayTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
+			"address": "Hume City Stadium Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 10,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "13:45",
 			"homeTeamId": "3pmvQW0Edv",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
@@ -319,8 +334,8 @@
 			"awayTeamId": "V8dnR1odwL",
 			"homeTeamName": "Surf Coast FC U16 Juniors - A Mixed",
 			"awayTeamName": "Hume City FC U16 Juniors - A Mixed",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
-			"coordinates": "-38.306639,144.324553",
+			"address": "Connewarre Reserve Pitch 2",
+			"coordinates": "-38.264844,144.396621",
 			"status": "pending"
 		},
 		{
@@ -825,6 +840,19 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "OVdzwWpmGr",
+			"awayTeamId": "V8dnR1odwL",
+			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"awayTeamName": "Hume City FC U16 Juniors - A Mixed",
+			"address": "Darebin International Sports Centre Pitch 3 (S)",
+			"coordinates": "-37.764252,145.025751",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "OEN2ZnG7Nq",
 			"awayTeamId": "3pmvQW0Edv",
@@ -896,19 +924,6 @@
 			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "15:45",
-			"homeTeamId": "OVdzwWpmGr",
-			"awayTeamId": "V8dnR1odwL",
-			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
-			"awayTeamName": "Hume City FC U16 Juniors - A Mixed",
-			"address": "John Cain Memorial Park Pitch 1",
-			"coordinates": "-37.763663,145.023846",
 			"status": "pending"
 		},
 		{
