@@ -290,8 +290,8 @@
 			"awayTeamId": "bgdMXLR7KE",
 			"homeTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"awayTeamName": "Keon Park SC Seniors Senior Women SL5",
-			"address": "W H Robinson Reserve Pitch 1",
-			"coordinates": "-37.747615,144.981522",
+			"address": "GH Mott Reserve Pitch 1",
+			"coordinates": "-37.744468,145.009898",
 			"status": "pending"
 		},
 		{
@@ -935,7 +935,7 @@
 			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
-			"time": "14:30",
+			"time": "15:15",
 			"homeTeamId": "nPmrBqlrmo",
 			"awayTeamId": "bgdMXaXpKE",
 			"homeTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
@@ -1065,13 +1065,13 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "14:30",
+			"time": "15:15",
 			"homeTeamId": "nPmrBqlrmo",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
-			"address": "W H Robinson Reserve Pitch 1",
-			"coordinates": "-37.747615,144.981522",
+			"address": "GH Mott Reserve Pitch 1",
+			"coordinates": "-37.744468,145.009898",
 			"status": "pending"
 		},
 		{
