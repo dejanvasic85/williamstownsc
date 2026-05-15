@@ -195,7 +195,9 @@
 			"awayTeamName": "Surf Coast FC U18 Juniors - A Male",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,

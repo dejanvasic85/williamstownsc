@@ -234,6 +234,19 @@
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "13:00",
+			"homeTeamId": "LBdDxg8Qdb",
+			"awayTeamId": "08NOpe1bKZ",
+			"homeTeamName": "Whittlesea United SC Seniors",
+			"awayTeamName": "Moreland Eagles FC Seniors",
+			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
+			"coordinates": "-37.666384,144.994017",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "13:00",
 			"homeTeamId": "k2KpA9PdY5",
 			"awayTeamId": "7ZKRa2oNkB",
 			"homeTeamName": "North Sunshine Eagles SC Seniors",
@@ -279,19 +292,6 @@
 			"awayTeamName": "Altona East SC Seniors",
 			"address": "Dunstan Reserve Pitch 1",
 			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "LBdDxg8Qdb",
-			"awayTeamId": "08NOpe1bKZ",
-			"homeTeamName": "Whittlesea United SC Seniors",
-			"awayTeamName": "Moreland Eagles FC Seniors",
-			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
-			"coordinates": "-37.666384,144.994017",
 			"status": "pending"
 		},
 		{

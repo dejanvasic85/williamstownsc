@@ -123,6 +123,19 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "wOmejJVeN0",
+			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "13:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "Bjma0BXAdR",
@@ -130,19 +143,6 @@
 			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "wOmejJVeN0",
-			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 2",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
@@ -200,6 +200,19 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"awayTeamName": "Altona City SC U16 Juniors - B Female",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "7MNGvobEmA",
 			"awayTeamId": "wOmejJVeN0",
@@ -207,19 +220,6 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"awayTeamName": "Altona City SC U16 Juniors - B Female",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
@@ -302,6 +302,19 @@
 			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-21",
+			"day": "Sunday",
 			"time": "12:15",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "7MNGvobEmA",
@@ -309,19 +322,6 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "HC Kim Reserve Pitch 3",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{

@@ -47,19 +47,6 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Tarneit United SC U10 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
-			"address": "Hummingbird Boulevard Reserve 1B (Half)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
 			"time": "10:20",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "6lNbpDpwdx",
@@ -67,6 +54,19 @@
 			"awayTeamName": "Williamstown SC U10 MiniRoos - Kangaroos Mixed Boys Under 10K (Dan/Aaron)",
 			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half B",
 			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Tarneit United SC U10 MiniRoos - Kangaroos Mixed",
+			"awayTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
+			"address": "Hummingbird Boulevard Reserve 2B (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
@@ -208,8 +208,8 @@
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Tarneit United SC U10 MiniRoos - Kangaroos Mixed",
 			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"address": "Tarneit Rise Synthetic Pitch 1A (Half)",
-			"coordinates": "-37.835861,144.664274",
+			"address": "Hummingbird Boulevard Reserve 2B (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
