@@ -9,13 +9,13 @@
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
 			"position": 1,
 			"played": 3,
-			"wins": 2,
+			"wins": 3,
 			"draws": 0,
-			"losses": 1,
-			"goalsFor": 8,
-			"goalsAgainst": 4,
-			"goalDifference": 4,
-			"points": 6
+			"losses": 0,
+			"goalsFor": 10,
+			"goalsAgainst": 0,
+			"goalDifference": 10,
+			"points": 9
 		},
 		{
 			"teamId": "nmYZ7kzpNz",
@@ -63,26 +63,11 @@
 			"points": 4
 		},
 		{
-			"teamId": "emAe9D69mB",
-			"teamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
-			"clubName": "Altona Magic SC",
-			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
-			"position": 5,
-			"played": 1,
-			"wins": 1,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 4,
-			"goalsAgainst": 1,
-			"goalDifference": 3,
-			"points": 3
-		},
-		{
 			"teamId": "4KLz5Xxgmq",
 			"teamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 6,
+			"position": 5,
 			"played": 1,
 			"wins": 1,
 			"draws": 0,
@@ -91,6 +76,21 @@
 			"goalsAgainst": 2,
 			"goalDifference": 1,
 			"points": 3
+		},
+		{
+			"teamId": "emAe9D69mB",
+			"teamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
+			"clubName": "Altona Magic SC",
+			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
+			"position": 6,
+			"played": 1,
+			"wins": 0,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 0,
+			"goalsAgainst": 3,
+			"goalDifference": -3,
+			"points": 0
 		},
 		{
 			"teamId": "3NPlg7yYNr",

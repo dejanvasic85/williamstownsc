@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -54,19 +54,6 @@
 			"awayTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8s Jeremy",
 			"address": "AB Shaw Reserve Pitch 1 - Half B",
 			"coordinates": "-37.865571,144.783747",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "6lNbpDlAdx",
-			"homeTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8 Emad",
-			"awayTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Masnou",
-			"address": "Costas Mitre 10 Park Pitch 4D, Galvin Park Reserve - Quarter Field (7v7)",
-			"coordinates": "-37.886177,144.651364",
 			"status": "pending"
 		},
 		{

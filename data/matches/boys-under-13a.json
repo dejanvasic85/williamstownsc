@@ -434,19 +434,6 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Tarneit United SC U13 Juniors - A Mixed",
-			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
-			"address": "Tarneit Rise Synthetic Pitch 1B (Half)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "AnmYzg0xNz",
 			"awayTeamId": "Bjma0BXAdR",
@@ -506,6 +493,19 @@
 			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Tarneit United SC U13 Juniors - A Mixed",
+			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
+			"address": "Hummingbird Boulevard Reserve 2A (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{

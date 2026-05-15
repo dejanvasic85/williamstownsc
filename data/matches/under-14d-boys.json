@@ -436,7 +436,7 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "11:45",
+			"time": "11:30",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "k2KpRJ56mY",
 			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
@@ -469,6 +469,19 @@
 			"awayTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
 			"address": "Avondale Heights Reserve Pitch 1",
 			"coordinates": "-37.76242,144.858824",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-30",
+			"day": "Sunday",
+			"time": "09:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "3vmZv3YLmq",
+			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
+			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
@@ -508,19 +521,6 @@
 			"awayTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
 			"address": "Alcock Road Reserve Pitch 3",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "3vmZv3YLmq",
-			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
-			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
@@ -658,6 +658,19 @@
 			"date": "2026-06-20",
 			"day": "Sunday",
 			"time": "09:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "bam1nkkrNw",
+			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
+			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-20",
+			"day": "Sunday",
+			"time": "09:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "R1K3BOqGNQ",
 			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
@@ -703,19 +716,6 @@
 			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "11:25",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
-			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
