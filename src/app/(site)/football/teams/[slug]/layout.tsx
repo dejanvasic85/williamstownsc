@@ -9,7 +9,7 @@ import { getAllTeamsForSitemap } from '@/lib/content/teams';
 import { getTeamMatches } from '@/lib/matches/matchService';
 import { getTableForTeam } from '@/lib/matches/tableService';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
 	const teams = await getAllTeamsForSitemap();

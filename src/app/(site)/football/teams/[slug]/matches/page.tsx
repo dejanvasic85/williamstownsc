@@ -7,8 +7,6 @@ import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
 import type { EnrichedFixture } from '@/types/matches';
 
-export const revalidate = 3600;
-
 function findCurrentRound(fixtures: EnrichedFixture[]): number {
 	const today = new Date().toISOString().split('T')[0];
 	const sorted = [...fixtures].sort((a, b) => a.date.localeCompare(b.date));
