@@ -339,7 +339,12 @@ async function paginateAndSave(
 		const loadMoreButton = page.getByText('Load more...');
 		await loadMoreButton.click();
 
-		await waitForNewResponse(responses, expectedIndex, 60_000);
+		try {
+			await waitForNewResponse(responses, expectedIndex, 20_000);
+		} catch {
+			log.warn({ chunk: expectedIndex }, 'no new response after Load More — assuming end');
+			break;
+		}
 		log.debug({ chunk: expectedIndex }, 'chunk loaded');
 
 		await page.waitForTimeout(1000);
