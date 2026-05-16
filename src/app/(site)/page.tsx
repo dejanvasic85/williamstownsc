@@ -23,7 +23,7 @@ import { getNextMatch } from '@/lib/matches/matchService';
 import { buildSocialLinks } from '@/lib/socialLinks';
 import { urlFor } from '@/sanity/lib/image';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
 	return getPageMetadata('homePage');

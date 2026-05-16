@@ -10,7 +10,7 @@ import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { buildUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
 	const articles = await getAllArticlesForSitemap();

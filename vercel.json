@@ -1,6 +1,7 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
 	"buildCommand": "npm run build",
+	"ignoreCommand": "bash bin/vercel-ignore-build.sh",
 	"redirects": [
 		{ "source": "/about", "destination": "/club/about", "permanent": true },
 		{ "source": "/calendar", "destination": "/key-dates", "permanent": true },
