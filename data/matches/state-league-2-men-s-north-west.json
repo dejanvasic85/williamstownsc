@@ -644,8 +644,10 @@
 			"homeTeamName": "Albion Rovers FC Seniors",
 			"awayTeamName": "Geelong Rangers SC Seniors",
 			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -657,8 +659,10 @@
 			"homeTeamName": "Altona North SC Seniors",
 			"awayTeamName": "Surf Coast FC Seniors",
 			"address": "Duane Reserve Main Pitch",
-			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -670,8 +674,10 @@
 			"homeTeamName": "Brimbank Stallions FC Seniors",
 			"awayTeamName": "Corio SC Seniors",
 			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -683,8 +689,10 @@
 			"homeTeamName": "Uni Hill Eagles FC Seniors",
 			"awayTeamName": "FC Strathmore Split Seniors",
 			"address": "Findon Reserve Pitch 1",
-			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -696,8 +704,10 @@
 			"homeTeamName": "Williamstown SC Seniors",
 			"awayTeamName": "Mill Park SC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,
