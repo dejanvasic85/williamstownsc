@@ -188,6 +188,21 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "bgdMM4ZdE2",
@@ -238,19 +253,6 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
 		},
 		{
 			"round": 5,

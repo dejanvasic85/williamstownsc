@@ -98,6 +98,21 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "wOmejJVeN0",
+			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "7MNGvobEmA",
 			"awayTeamId": "gld4pGXGdW",
@@ -118,19 +133,6 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "wOmejJVeN0",
-			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
 		},
 		{
 			"round": 4,

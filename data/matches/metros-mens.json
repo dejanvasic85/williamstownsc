@@ -224,8 +224,10 @@
 			"homeTeamName": "Middle Park FC Seniors",
 			"awayTeamName": "Truganina Lions FC Seniors",
 			"address": "Lagoon Reserve Main Pitch",
-			"coordinates": "-37.840912,144.944188",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,

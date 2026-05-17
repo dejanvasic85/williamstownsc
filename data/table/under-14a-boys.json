@@ -8,14 +8,14 @@
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
 			"position": 1,
-			"played": 3,
-			"wins": 3,
+			"played": 4,
+			"wins": 4,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 20,
+			"goalsFor": 23,
 			"goalsAgainst": 2,
-			"goalDifference": 18,
-			"points": 9
+			"goalDifference": 21,
+			"points": 12
 		},
 		{
 			"teamId": "jmaBLM1YNR",
@@ -23,13 +23,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 2,
-			"played": 3,
+			"played": 4,
 			"wins": 3,
 			"draws": 0,
-			"losses": 0,
+			"losses": 1,
 			"goalsFor": 12,
-			"goalsAgainst": 2,
-			"goalDifference": 10,
+			"goalsAgainst": 5,
+			"goalDifference": 7,
 			"points": 9
 		},
 		{

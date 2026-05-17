@@ -33,11 +33,26 @@
 			"points": 9
 		},
 		{
+			"teamId": "JmX40MY6mn",
+			"teamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
+			"clubName": "Truganina Lions FC",
+			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
+			"position": 3,
+			"played": 4,
+			"wins": 3,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 14,
+			"goalsAgainst": 5,
+			"goalDifference": 9,
+			"points": 9
+		},
+		{
 			"teamId": "MNGx5j22KA",
 			"teamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
 			"clubName": "West Point SC",
 			"logoUrl": "https://ocean.dribl.com/98a1c928261d4c18b77ee3f8a7106e49",
-			"position": 3,
+			"position": 4,
 			"played": 4,
 			"wins": 2,
 			"draws": 1,
@@ -45,21 +60,6 @@
 			"goalsFor": 15,
 			"goalsAgainst": 5,
 			"goalDifference": 10,
-			"points": 7
-		},
-		{
-			"teamId": "ZNQx0VMgmx",
-			"teamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 4,
-			"played": 3,
-			"wins": 2,
-			"draws": 1,
-			"losses": 0,
-			"goalsFor": 13,
-			"goalsAgainst": 6,
-			"goalDifference": 7,
 			"points": 7
 		},
 		{
@@ -78,11 +78,26 @@
 			"points": 7
 		},
 		{
+			"teamId": "ZNQx0VMgmx",
+			"teamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 6,
+			"played": 4,
+			"wins": 2,
+			"draws": 1,
+			"losses": 1,
+			"goalsFor": 13,
+			"goalsAgainst": 9,
+			"goalDifference": 4,
+			"points": 7
+		},
+		{
 			"teamId": "BdD95XO6mb",
 			"teamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
-			"position": 6,
+			"position": 7,
 			"played": 4,
 			"wins": 2,
 			"draws": 1,
@@ -91,21 +106,6 @@
 			"goalsAgainst": 7,
 			"goalDifference": 0,
 			"points": 7
-		},
-		{
-			"teamId": "JmX40MY6mn",
-			"teamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
-			"clubName": "Truganina Lions FC",
-			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
-			"position": 7,
-			"played": 3,
-			"wins": 2,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 11,
-			"goalsAgainst": 5,
-			"goalDifference": 6,
-			"points": 6
 		},
 		{
 			"teamId": "ZNQx0eermx",
