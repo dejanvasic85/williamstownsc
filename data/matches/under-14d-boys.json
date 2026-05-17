@@ -299,8 +299,25 @@
 			"homeTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
 			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
 			"address": "JT Gray Reserve Pitch 6- BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "R1K3BOqGNQ",
+			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
+			"awayTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"address": "Edwards Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -352,19 +369,6 @@
 			"awayTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
 			"address": "Wyndham Vale North Reserve Main Pitch B",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "R1K3BOqGNQ",
-			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
-			"awayTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"address": "Edwards Reserve Main Pitch",
-			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{

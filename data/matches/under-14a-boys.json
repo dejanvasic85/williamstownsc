@@ -188,14 +188,31 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Altona City SC U14 Juniors - A Mixed",
+			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
+			"address": "HC Kim Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "10:30",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "7MNGvappmA",
 			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
 			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -214,26 +231,13 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Altona City SC U14 Juniors - A Mixed",
-			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
-			"address": "HC Kim Reserve Pitch 2",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "Bjma0G03dR",
 			"awayTeamId": "bye",
 			"homeTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,

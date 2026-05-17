@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 98,
+	"totalFixtures": 99,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -17,6 +17,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "Bjma0RXqdR",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
+			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"address": "Webster Street Reserve Pitch 4B",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 8,
 			"status": "complete"
 		},
 		{
@@ -158,14 +173,31 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "13:15",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "",
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "AnmYzg0xNz",
 			"awayTeamId": "Bjma0G03dR",
 			"homeTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"awayTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 8,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -216,20 +248,7 @@
 			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 5,

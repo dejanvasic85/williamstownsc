@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 73,
+	"totalFixtures": 71,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Point Cook SC U09 MiniRoos - Joeys Mixed U9 Phantoms",
-			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Mixed Boys Under 9J (Cian/Dragan)",
-			"address": "Saltwater Reserve Pitch 3 SSF4 (U9)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "b8Nq3q27d9",
-			"homeTeamName": "Truganina Hornets SC U09 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Tarneit North FC U09 MiniRoos - Joeys Mixed U9 Sunday West",
-			"address": "Arndell Park Reserve Midi",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-17",
