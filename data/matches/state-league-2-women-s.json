@@ -233,14 +233,46 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "OEN2Z5GlNq",
+			"homeTeamName": "Williamstown SC Seniors",
+			"awayTeamName": "Spring Hills FC Seniors state league 2 women",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 7,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "7MNGvobEmA",
+			"homeTeamName": "Brunswick City SC Seniors",
+			"awayTeamName": "Altona East SC Seniors",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "LBdDxg8Qdb",
 			"awayTeamId": "08NOpe1bKZ",
 			"homeTeamName": "Whittlesea United SC Seniors",
 			"awayTeamName": "Moreland Eagles FC Seniors",
-			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
-			"coordinates": "-37.666384,144.994017",
-			"status": "pending"
+			"address": "",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -252,21 +284,10 @@
 			"homeTeamName": "North Sunshine Eagles SC Seniors",
 			"awayTeamName": "Pascoe Vale FC Seniors",
 			"address": "More Park Northern Field",
-			"coordinates": "-37.772482,144.796616",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "OEN2Z5GlNq",
-			"homeTeamName": "Williamstown SC Seniors",
-			"awayTeamName": "Spring Hills FC Seniors state league 2 women",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -279,19 +300,6 @@
 			"awayTeamName": "Keon Park SC Seniors",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "6lNbVk6NxE",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Brunswick City SC Seniors",
-			"awayTeamName": "Altona East SC Seniors",
-			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
 			"status": "pending"
 		},
 		{

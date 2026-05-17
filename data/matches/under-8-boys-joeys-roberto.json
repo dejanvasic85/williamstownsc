@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 75,
+	"totalFixtures": 73,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Newport Storm FC U08 MiniRoos - Joeys Mixed Fofana",
-			"awayTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Jess",
-			"address": "AW Bond Reserve Midi A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Roberto)",
-			"awayTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Michael",
-			"address": "JT Gray Reserve Pitch 2A (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-17",

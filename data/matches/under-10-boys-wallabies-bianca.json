@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 105,
+	"totalFixtures": 104,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Hoppers Crossing SC U10 MiniRoos - Wallabies Mixed Manny u10",
-			"awayTeamName": "Williams Landing SC U10 MiniRoos - Wallabies Mixed",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
 		{
 			"round": 4,
 			"date": "2026-05-17",

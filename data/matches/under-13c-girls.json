@@ -194,8 +194,10 @@
 			"homeTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
 			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -233,7 +235,7 @@
 			"homeTeamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,
