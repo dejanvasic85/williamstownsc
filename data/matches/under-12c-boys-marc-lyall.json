@@ -294,6 +294,21 @@
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "12:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
+			"awayTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "12:00",
 			"homeTeamId": "bgdMXan2KE",
 			"awayTeamId": "R1K3BvL3NQ",
 			"homeTeamName": "Tarneit United SC U12 Juniors - C Mixed",
@@ -348,19 +363,6 @@
 			"homeScore": 4,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
-			"awayTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 5,
