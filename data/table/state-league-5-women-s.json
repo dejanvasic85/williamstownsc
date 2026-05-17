@@ -108,11 +108,26 @@
 			"points": 3
 		},
 		{
+			"teamId": "8Nq7P20zd9",
+			"teamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
+			"clubName": "Darebin Womens SC",
+			"logoUrl": "https://ocean.dribl.com/b7c909f02bb249e58fe88e5bb951a1e3",
+			"position": 8,
+			"played": 4,
+			"wins": 1,
+			"draws": 0,
+			"losses": 3,
+			"goalsFor": 4,
+			"goalsAgainst": 15,
+			"goalDifference": -11,
+			"points": 3
+		},
+		{
 			"teamId": "jdylGGY6K5",
 			"teamName": "Brunswick Zebras FC Seniors Senior Women SL5",
 			"clubName": "Brunswick Zebras FC",
 			"logoUrl": "https://ocean.dribl.com/fcd9c186ffec46b08881b3573b897206",
-			"position": 8,
+			"position": 9,
 			"played": 4,
 			"wins": 0,
 			"draws": 1,
@@ -127,30 +142,15 @@
 			"teamName": "Keon Park SC Seniors Senior Women SL5",
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
-			"position": 9,
-			"played": 3,
+			"position": 10,
+			"played": 4,
 			"wins": 0,
 			"draws": 1,
-			"losses": 2,
-			"goalsFor": 0,
-			"goalsAgainst": 13,
-			"goalDifference": -13,
-			"points": 1
-		},
-		{
-			"teamId": "8Nq7P20zd9",
-			"teamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
-			"clubName": "Darebin Womens SC",
-			"logoUrl": "https://ocean.dribl.com/b7c909f02bb249e58fe88e5bb951a1e3",
-			"position": 10,
-			"played": 3,
-			"wins": 0,
-			"draws": 0,
 			"losses": 3,
 			"goalsFor": 1,
-			"goalsAgainst": 14,
-			"goalDifference": -13,
-			"points": 0
+			"goalsAgainst": 16,
+			"goalDifference": -15,
+			"points": 1
 		}
 	]
 }

@@ -249,6 +249,21 @@
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "15:00",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "bgdMXLR7KE",
+			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
+			"awayTeamName": "Keon Park SC Seniors",
+			"address": "Sumner Park Main Pitch",
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "15:00",
 			"homeTeamId": "6lNbVk6NxE",
 			"awayTeamId": "7MNGvobEmA",
 			"homeTeamName": "Brunswick City SC Seniors",
@@ -288,19 +303,6 @@
 			"homeScore": 2,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "bgdMXLR7KE",
-			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
-			"awayTeamName": "Keon Park SC Seniors",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
 		},
 		{
 			"round": 5,
