@@ -7,7 +7,7 @@ Support browsing multiple seasons of fixtures, results, and tables. As the 2026 
 ## Requirements
 
 - Multi-year JSON storage per team, keyed by year
-- URL path: `/football/teams/[slug]/matches/[season]` and `/table/[season]`
+- URL path: `/football/teams/[slug]/matches/[season]` and `/football/teams/[slug]/table/[season]`
 - Base `/matches` and `/table` redirect to latest available season
 - Season selector UI on matches and table pages
 - Off-season banner: "Viewing {year} season — {next} season begins in March"
