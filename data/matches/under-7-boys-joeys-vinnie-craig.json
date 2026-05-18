@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 57,
+	"totalFixtures": 56,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Yarraville Glory FC U07 MiniRoos - Joeys Mixed Gold",
-			"awayTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys White",
-			"address": "McIvor Reserve  Pitch 2 - Mini (1/8) B.1",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-23",
