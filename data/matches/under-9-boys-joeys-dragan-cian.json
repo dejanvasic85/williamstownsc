@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 68,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "West Point SC U09 MiniRoos - Joeys Mixed U9J Ankita",
-			"awayTeamName": "Truganina Lions FC U09 MiniRoos - Joeys Mixed Boys U9 - Joeys (A)",
-			"address": "Webster Street Reserve Pitch 3A Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Wyndham FC U09 MiniRoos - Joeys Mixed U9 Joeys",
-			"awayTeamName": "Truganina Lions FC U09 MiniRoos - Joeys Mixed Boys U9 - Joeys (B)",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bye",
-			"homeTeamName": "Point Cook SC U09 MiniRoos - Joeys Mixed U9 Dragons",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-23",

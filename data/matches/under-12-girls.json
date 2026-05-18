@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -152,18 +152,6 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 4,
-			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "bye",
-			"homeTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

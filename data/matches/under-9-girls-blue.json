@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 51,
+	"totalFixtures": 56,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
-			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-23",
@@ -161,6 +148,19 @@
 			"status": "pending"
 		},
 		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
+			"address": "AW Bond Reserve Midi B",
+			"coordinates": "-37.827591,144.845123",
+			"status": "pending"
+		},
+		{
 			"round": 8,
 			"date": "2026-06-20",
 			"day": "Sunday",
@@ -294,6 +294,19 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "Williams Landing Sports Reserve Pitch 5 Oval (7v7)",
+			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "vbd91WEDd4",
 			"awayTeamId": "R1K3BvL3NQ",
@@ -340,6 +353,19 @@
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
 			"address": "Edwards Reserve Main Pitch C - Quarter Pitch 7v7",
 			"coordinates": "-37.827616,144.870036",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "Bjma0G03dR",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
+			"address": "AW Bond Reserve Midi B",
+			"coordinates": "-37.827591,144.845123",
 			"status": "pending"
 		},
 		{
@@ -444,6 +470,19 @@
 			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
 			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "McIvor Reserve  Pitch 2 - Midi (1/4) A",
+			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{
@@ -619,6 +658,19 @@
 			"round": 17,
 			"date": "2026-08-30",
 			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"awayTeamName": "Williams Landing SC U09 MiniRoos - Joeys Female WLFC U9G - Navy",
+			"address": "AW Bond Reserve Midi A",
+			"coordinates": "-37.827591,144.845123",
+			"status": "pending"
+		},
+		{
+			"round": 17,
+			"date": "2026-08-30",
+			"day": "Sunday",
 			"time": "10:05",
 			"homeTeamId": "R1K3BvL3NQ",
 			"awayTeamId": "vbd91WEDd4",
@@ -665,6 +717,19 @@
 			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
 			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 18,
+			"date": "2026-09-06",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "Bjma0G03dR",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
+			"coordinates": "-37.898902,144.624443",
 			"status": "pending"
 		}
 	]

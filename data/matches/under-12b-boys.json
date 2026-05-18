@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 106,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -333,19 +333,6 @@
 			"homeScore": 1,
 			"awayScore": 18,
 			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:15",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
-			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
-			"address": "Webster Street Reserve Pitch 3A",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
 		},
 		{
 			"round": 5,
@@ -1248,7 +1235,7 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "10:00",
+			"time": "11:00",
 			"homeTeamId": "AnmYz1R1Nz",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",

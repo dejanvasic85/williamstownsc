@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 69,
+	"totalFixtures": 70,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -62,6 +62,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
+			"awayTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
+			"address": "Williams Landing Sports Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 11,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
@@ -158,15 +173,15 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "bgdMXLbQKE",
-			"homeTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
-			"awayTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
-			"address": "Paisley Park - Altona Magic SC Pitch 2",
+			"time": "13:00",
+			"homeTeamId": "nPmr7WjNow",
+			"awayTeamId": "7MNGvappmA",
+			"homeTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
+			"awayTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
+			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
 			"coordinates": "",
-			"homeScore": 0,
-			"awayScore": 2,
+			"homeScore": 4,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{
@@ -179,21 +194,25 @@
 			"homeTeamName": "Altona City SC U15 Juniors - A Mixed",
 			"awayTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
 			"address": "HC Kim Reserve Pitch 3",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "nPmr7WjNow",
-			"awayTeamId": "7MNGvappmA",
-			"homeTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
-			"awayTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
-			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
-			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"time": "12:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "bgdMXLbQKE",
+			"homeTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
+			"awayTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
+			"address": "Paisley Park - Altona Magic SC Pitch 2",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 5,

@@ -33,11 +33,26 @@
 			"points": 9
 		},
 		{
+			"teamId": "EN2nb2Z2Nq",
+			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"clubName": "Williams Landing SC",
+			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"position": 3,
+			"played": 4,
+			"wins": 2,
+			"draws": 0,
+			"losses": 2,
+			"goalsFor": 16,
+			"goalsAgainst": 10,
+			"goalDifference": 6,
+			"points": 6
+		},
+		{
 			"teamId": "am1Q20nkmw",
 			"teamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
-			"position": 3,
+			"position": 4,
 			"played": 3,
 			"wins": 2,
 			"draws": 0,
@@ -45,21 +60,6 @@
 			"goalsFor": 8,
 			"goalsAgainst": 3,
 			"goalDifference": 5,
-			"points": 6
-		},
-		{
-			"teamId": "lNbjllRpNx",
-			"teamName": "Surf Coast FC U14 Juniors - A Mixed",
-			"clubName": "Surf Coast FC",
-			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
-			"position": 4,
-			"played": 3,
-			"wins": 2,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 6,
-			"goalsAgainst": 5,
-			"goalDifference": 1,
 			"points": 6
 		},
 		{
@@ -78,19 +78,19 @@
 			"points": 6
 		},
 		{
-			"teamId": "EN2nb2Z2Nq",
-			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"clubName": "Williams Landing SC",
-			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"teamId": "lNbjllRpNx",
+			"teamName": "Surf Coast FC U14 Juniors - A Mixed",
+			"clubName": "Surf Coast FC",
+			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 6,
-			"played": 3,
-			"wins": 1,
+			"played": 4,
+			"wins": 2,
 			"draws": 0,
 			"losses": 2,
-			"goalsFor": 13,
-			"goalsAgainst": 9,
-			"goalDifference": 4,
-			"points": 3
+			"goalsFor": 7,
+			"goalsAgainst": 8,
+			"goalDifference": -1,
+			"points": 6
 		},
 		{
 			"teamId": "ld4436nDdW",

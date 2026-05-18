@@ -854,19 +854,6 @@
 			"date": "2026-08-22",
 			"day": "Sunday",
 			"time": "08:30",
-			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Western Suburbs SC U07 MiniRoos - Wallabies Mixed U7 Bill - Wallabies",
-			"awayTeamName": "Altona City SC U07 MiniRoos - Wallabies Mixed Wallabies Gold",
-			"address": "Ralph Reserve Main Pitch F (Quarter Field - 4v4)",
-			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-22",
-			"day": "Sunday",
-			"time": "08:30",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "3vmZv9nLmq",
 			"homeTeamName": "Werribee City FC U07 MiniRoos - Wallabies Mixed U7 Som",
@@ -912,6 +899,19 @@
 			"awayTeamName": "Altona City SC U07 MiniRoos - Wallabies Mixed maroon",
 			"address": "Webster Street Reserve Pitch 1A Mini 4v4",
 			"coordinates": "-37.88838,144.714084",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-22",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "AnmYz1R1Nz",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Western Suburbs SC U07 MiniRoos - Wallabies Mixed U7 Bill - Wallabies",
+			"awayTeamName": "Altona City SC U07 MiniRoos - Wallabies Mixed Wallabies Gold",
+			"address": "Ralph Reserve Main Pitch F (Quarter Field - 4v4)",
+			"coordinates": "-37.792903,144.799142",
 			"status": "pending"
 		},
 		{

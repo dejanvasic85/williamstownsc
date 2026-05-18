@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 85,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -227,31 +227,6 @@
 			"coordinates": "",
 			"homeScore": 7,
 			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "Bjma0GJMdR",
-			"awayTeamId": "3vmZv3BJmq",
-			"homeTeamName": "Kings Domain FC Seniors",
-			"awayTeamName": "St Kilda SC Seniors Sundays",
-			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
-			"coordinates": "-37.843712,144.981104",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "wOmejvpyN0",
-			"awayTeamName": "Melbourne University SC Seniors",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 127,
+	"totalFixtures": 125,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -347,31 +347,6 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 3,
-			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "3pmvQW0Edv",
-			"homeTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"address": "Dixon Field Reserve Pitch A",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "bye",
-			"homeTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Boys Sunday (U17 - U18)",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 86,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -242,18 +242,6 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bye",
-			"homeTeamName": "Altona City SC U18 Juniors - A Male",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{
