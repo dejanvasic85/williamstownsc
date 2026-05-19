@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 132,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -486,6 +486,21 @@
 			"round": 6,
 			"date": "2026-05-02",
 			"day": "Saturday",
+			"time": "16:00",
+			"homeTeamId": "3vmZv8JJmq",
+			"awayTeamId": "bam1nQWrNw",
+			"homeTeamName": "Western Eagles SC Reserves",
+			"awayTeamName": "Mill Park SC Reserves",
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-02",
+			"day": "Saturday",
 			"time": "13:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "7MNGvappmA",
@@ -729,8 +744,8 @@
 			"awayTeamId": "Bjma0G87dR",
 			"homeTeamName": "Whittlesea Ranges FC Reserves",
 			"awayTeamName": "Uni Hill Eagles FC Reserves",
-			"address": "Harvest Home Recreation Reserve Pitch 2",
-			"coordinates": "-37.624506,145.02702",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "-37.624625,145.024327",
 			"status": "pending"
 		},
 		{
