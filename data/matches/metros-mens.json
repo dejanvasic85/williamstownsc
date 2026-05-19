@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 85,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -203,52 +203,31 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "08NOpe5WKZ",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Middle Park FC Seniors",
-			"awayTeamName": "Truganina Lions FC Seniors",
-			"address": "Lagoon Reserve Main Pitch",
-			"coordinates": "-37.840912,144.944188",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "Bjma0GJMdR",
-			"awayTeamId": "3vmZv3BJmq",
-			"homeTeamName": "Kings Domain FC Seniors",
-			"awayTeamName": "St Kilda SC Seniors Sundays",
-			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
-			"coordinates": "-37.843712,144.981104",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "wOmejXOyN0",
 			"awayTeamId": "nPmrB8Gpmo",
 			"homeTeamName": "Brunswick Zebras FC Seniors The Old Lady",
 			"awayTeamName": "South Yarra SC Seniors",
 			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "wOmejvpyN0",
-			"awayTeamName": "Melbourne University SC Seniors",
-			"address": "",
+			"time": "12:00",
+			"homeTeamId": "08NOpe5WKZ",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Middle Park FC Seniors",
+			"awayTeamName": "Truganina Lions FC Seniors",
+			"address": "Lagoon Reserve Main Pitch",
 			"coordinates": "",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 5,

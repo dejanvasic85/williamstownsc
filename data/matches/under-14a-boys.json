@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 87,
+	"totalFixtures": 86,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -188,27 +188,16 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "7MNGvappmA",
-			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
-			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
-			"address": "Paisley Park - Altona Magic SC Pitch 2",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:45",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
-			"address": "Williams Landing Sports Reserve Pitch 2",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"time": "13:30",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -220,33 +209,40 @@
 			"homeTeamName": "Altona City SC U14 Juniors - A Mixed",
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "HC Kim Reserve Pitch 2",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "bye",
-			"homeTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
-			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"address": "Tarneit Rise Synthetic Pitch 1C (7V7)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
+			"time": "10:45",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
+			"address": "Williams Landing Sports Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "10:30",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "7MNGvappmA",
+			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
+			"address": "Paisley Park - Altona Magic SC Pitch 2",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 5,

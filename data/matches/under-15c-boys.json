@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 70,
+	"totalFixtures": 68,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -158,14 +158,16 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
-			"awayTeamName": "Williamstown SC U15 Juniors - C Mixed Under 15C Boys",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
+			"time": "13:30",
+			"homeTeamId": "gld4pz60dW",
+			"awayTeamId": "nPmrB8Rjmo",
+			"homeTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
+			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+			"address": "Aston Fields Pitch 3",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -177,34 +179,10 @@
 			"homeTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
 			"awayTeamName": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
 			"address": "Gladstone Park Reserve Pitch 1",
-			"coordinates": "-37.686596,144.887219",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "gld4pz60dW",
-			"awayTeamId": "nPmrB8Rjmo",
-			"homeTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
-			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"address": "Aston Fields Pitch 3",
-			"coordinates": "-37.597457,144.890302",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
-			"awayTeamName": "West Point SC U15 Juniors - C Mixed U15C Mixed - Glen",
-			"address": "Alcock Road Reserve Pitch 2",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 5,

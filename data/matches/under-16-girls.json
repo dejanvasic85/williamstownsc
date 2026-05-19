@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 66,
 	"totalRounds": 19,
 	"fixtures": [
 		{
@@ -98,52 +98,31 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "gld4pGXGdW",
-			"homeTeamName": "Altona East SC U16 Juniors - B Female",
-			"awayTeamName": "Gisborne SC U16 Juniors - B Female 16JD",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bye",
-			"homeTeamName": "Altona City SC U16 Juniors - B Female",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "wOmejJVeN0",
 			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
-			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"time": "12:00",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "gld4pGXGdW",
+			"homeTeamName": "Altona East SC U16 Juniors - B Female",
+			"awayTeamName": "Gisborne SC U16 Juniors - B Female 16JD",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 5,

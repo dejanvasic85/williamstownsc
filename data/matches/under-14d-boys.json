@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 124,
+	"totalFixtures": 121,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -299,73 +299,10 @@
 			"homeTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
 			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
 			"address": "JT Gray Reserve Pitch 6- BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "nPmrBk05mo",
-			"homeTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
-			"awayTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
-			"address": "Dixon Field Reserve Pitch E (Junior)",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "1pN6pqv7d0",
-			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
-			"address": "Langama Park Pitch 2 - Full Field",
-			"coordinates": "-37.586728,144.709286",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "kemAbxpxNB",
-			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
-			"awayTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "AnmYzg4rNz",
-			"homeTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
-			"awayTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
-			"address": "Wyndham Vale North Reserve Main Pitch B",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 4,
-			"date": "2026-05-17",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "R1K3BOqGNQ",
-			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
-			"awayTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"address": "Edwards Reserve Main Pitch",
-			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -377,8 +314,40 @@
 			"homeTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
 			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
 			"address": "Alcock Road Reserve Pitch 3",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "R1K3BOqGNQ",
+			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
+			"awayTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"address": "Edwards Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "1pN6pqv7d0",
+			"awayTeamId": "3vmZv9nLmq",
+			"homeTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
+			"address": "Langama Park Pitch 2 - Full Field",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 5,
