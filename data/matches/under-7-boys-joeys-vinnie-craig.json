@@ -23,19 +23,6 @@
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys White",
-			"awayTeamName": "Altona East SC U07 MiniRoos - Joeys Mixed",
-			"address": "Edwards Reserve Main Pitch E - Quarter Pitch 4v4",
-			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BvL3NQ",
 			"awayTeamId": "bgdMXaXpKE",
 			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys Blue",
 			"awayTeamName": "Yarraville Glory FC U07 MiniRoos - Joeys Mixed Gold",
@@ -54,6 +41,19 @@
 			"awayTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Navy",
 			"address": "Williams Landing Sports Reserve Pitch A (4v4)",
 			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "7MNGvobEmA",
+			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys White",
+			"awayTeamName": "Altona East SC U07 MiniRoos - Joeys Mixed",
+			"address": "Edwards Reserve Main Pitch F - Quarter Pitch 4v4",
+			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{

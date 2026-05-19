@@ -63,11 +63,26 @@
 			"points": 14
 		},
 		{
+			"teamId": "jdye798Ld5",
+			"teamName": "Western Eagles SC Reserves",
+			"clubName": "Western Eagles SC",
+			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
+			"position": 5,
+			"played": 8,
+			"wins": 3,
+			"draws": 3,
+			"losses": 2,
+			"goalsFor": 15,
+			"goalsAgainst": 12,
+			"goalDifference": 3,
+			"points": 12
+		},
+		{
 			"teamId": "am1q9Wvzmw",
 			"teamName": "Whittlesea Ranges FC Reserves",
 			"clubName": "Whittlesea Ranges FC",
 			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
-			"position": 5,
+			"position": 6,
 			"played": 8,
 			"wins": 4,
 			"draws": 0,
@@ -76,21 +91,6 @@
 			"goalsAgainst": 15,
 			"goalDifference": -3,
 			"points": 12
-		},
-		{
-			"teamId": "jdye798Ld5",
-			"teamName": "Western Eagles SC Reserves",
-			"clubName": "Western Eagles SC",
-			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
-			"position": 6,
-			"played": 7,
-			"wins": 3,
-			"draws": 2,
-			"losses": 2,
-			"goalsFor": 14,
-			"goalsAgainst": 11,
-			"goalDifference": 3,
-			"points": 11
 		},
 		{
 			"teamId": "bd9XyEElK4",
@@ -158,14 +158,14 @@
 			"clubName": "Mill Park SC",
 			"logoUrl": "https://ocean.dribl.com/6e5cc0f97e4942e2a8b24cdbe74c187f",
 			"position": 11,
-			"played": 7,
+			"played": 8,
 			"wins": 2,
-			"draws": 0,
+			"draws": 1,
 			"losses": 5,
-			"goalsFor": 3,
-			"goalsAgainst": 11,
+			"goalsFor": 4,
+			"goalsAgainst": 12,
 			"goalDifference": -8,
-			"points": 6
+			"points": 7
 		},
 		{
 			"teamId": "emA1Dq0qmB",
