@@ -53,17 +53,17 @@ Support browsing multiple seasons of fixtures, results, and tables. As the 2026 
 
 ## Critical Files
 
-| File | Change |
-|---|---|
-| `bin/commands/syncFixtures.ts` | Write to `data/matches/{slug}/{year}.json` |
-| `bin/commands/syncTable.ts` | Write to `data/table/{slug}/{year}.json` |
-| `src/lib/matches/matchService.ts` | Add year param + `getAvailableSeasons` |
-| `src/lib/matches/tableService.ts` | Add year param + `getAvailableSeasons` |
-| `src/app/(site)/football/teams/[slug]/matches/page.tsx` | Redirect to latest season |
-| `src/app/(site)/football/teams/[slug]/matches/[season]/page.tsx` | New (moved from above) |
-| `src/app/(site)/football/teams/[slug]/table/page.tsx` | Redirect to latest season |
-| `src/app/(site)/football/teams/[slug]/table/[season]/page.tsx` | New (moved from above) |
-| `src/components/teams/TeamDetailNav.tsx` | Include active season in nav links |
+| File                                                             | Change                                     |
+| ---------------------------------------------------------------- | ------------------------------------------ |
+| `bin/commands/syncFixtures.ts`                                   | Write to `data/matches/{slug}/{year}.json` |
+| `bin/commands/syncTable.ts`                                      | Write to `data/table/{slug}/{year}.json`   |
+| `src/lib/matches/matchService.ts`                                | Add year param + `getAvailableSeasons`     |
+| `src/lib/matches/tableService.ts`                                | Add year param + `getAvailableSeasons`     |
+| `src/app/(site)/football/teams/[slug]/matches/page.tsx`          | Redirect to latest season                  |
+| `src/app/(site)/football/teams/[slug]/matches/[season]/page.tsx` | New (moved from above)                     |
+| `src/app/(site)/football/teams/[slug]/table/page.tsx`            | Redirect to latest season                  |
+| `src/app/(site)/football/teams/[slug]/table/[season]/page.tsx`   | New (moved from above)                     |
+| `src/components/teams/TeamDetailNav.tsx`                         | Include active season in nav links         |
 
 ## Verification
 
