@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 66,
+	"totalFixtures": 68,
 	"totalRounds": 19,
 	"fixtures": [
 		{
@@ -92,6 +92,36 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 5,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "14:00",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
+			"awayTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"address": "Saltwater Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "wOmejJVeN0",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
+			"awayTeamName": "Altona City SC U16 Juniors - B Female",
+			"address": "Keilor Lodge Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{

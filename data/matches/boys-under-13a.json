@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 107,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -286,7 +286,22 @@
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "",
 			"homeScore": 5,
-			"awayScore": 2,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-16",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
+			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
+			"address": "AB Shaw Reserve Pitch 1 - Half A",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{

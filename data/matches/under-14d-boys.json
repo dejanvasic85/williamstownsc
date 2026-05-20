@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 123,
+	"totalFixtures": 124,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -353,6 +353,21 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "kemAbxpxNB",
+			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
+			"awayTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "gld4pGXGdW",
 			"awayTeamId": "nPmrBk05mo",
@@ -397,19 +412,6 @@
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "11:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "1pN6pqv7d0",
-			"homeTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "11:15",
 			"homeTeamId": "kemAbxpxNB",
 			"awayTeamId": "gld4pGXGdW",
 			"homeTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
@@ -442,6 +444,19 @@
 			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
 			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "1pN6pqv7d0",
+			"homeTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
+			"coordinates": "-37.6742,144.584",
 			"status": "pending"
 		},
 		{

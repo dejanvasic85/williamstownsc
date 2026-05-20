@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 67,
+	"totalFixtures": 68,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -136,6 +136,21 @@
 			"address": "",
 			"coordinates": "",
 			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-16",
+			"day": "Sunday",
+			"time": "09:30",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "LBdDx1O8db",
+			"homeTeamName": "Altona East SC U12 Juniors - C Female",
+			"awayTeamName": "Melton Phoenix FC U12 Juniors - C Female",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
+			"coordinates": "",
+			"homeScore": 2,
 			"awayScore": 0,
 			"status": "complete"
 		},
