@@ -6,6 +6,19 @@
 	"fixtures": [
 		{
 			"round": 5,
+			"date": "2026-05-20",
+			"day": "Wednesday",
+			"time": "19:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Gold",
+			"awayTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Navy",
+			"address": "Williams Landing Sports Reserve Pitch A (4v4)",
+			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 5,
 			"date": "2026-05-23",
 			"day": "Sunday",
 			"time": "08:30",
@@ -28,19 +41,6 @@
 			"awayTeamName": "Yarraville Glory FC U07 MiniRoos - Joeys Mixed Gold",
 			"address": "Edwards Reserve Main Pitch F - Quarter Pitch 4v4",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Gold",
-			"awayTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Navy",
-			"address": "Williams Landing Sports Reserve Pitch A (4v4)",
-			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
