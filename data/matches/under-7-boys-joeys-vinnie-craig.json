@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 56,
+	"totalFixtures": 55,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-20",
-			"day": "Wednesday",
-			"time": "19:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Gold",
-			"awayTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Navy",
-			"address": "Williams Landing Sports Reserve Pitch A (4v4)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-23",

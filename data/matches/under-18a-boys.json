@@ -229,19 +229,6 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "wOmejJVeN0",
-			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
-			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
-			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
 			"time": "15:30",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "7MNGvappmA",
@@ -249,6 +236,19 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "Williams Landing Sports Reserve Pitch 2",
 			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-06-07",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "wOmejJVeN0",
+			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
+			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
 			"status": "pending"
 		},
 		{

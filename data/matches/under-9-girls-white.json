@@ -6,19 +6,6 @@
 	"fixtures": [
 		{
 			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRwV8mY",
-			"awayTeamId": "1pN6pqv7d0",
-			"homeTeamName": "Westgate Sindjelich SC U09 MiniRoos - Joeys Female",
-			"awayTeamName": "Sunbury United FC U09 MiniRoos - Joeys Female Sunbury United FC U9 Girls",
-			"address": "Ardeer Reserve Main Pitch - Midi Field A",
-			"coordinates": "-37.778434,144.806219",
-			"status": "pending"
-		},
-		{
-			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "10:00",
@@ -41,6 +28,19 @@
 			"awayTeamName": "Satellite City United SC U09 MiniRoos - Joeys Female Jaime-Lee",
 			"address": "Waste Sense Park Pitch 3 - Midi 1 (7v7)",
 			"coordinates": "-37.758429,144.79484",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "k2KpRwV8mY",
+			"awayTeamId": "1pN6pqv7d0",
+			"homeTeamName": "Westgate Sindjelich SC U09 MiniRoos - Joeys Female",
+			"awayTeamName": "Sunbury United FC U09 MiniRoos - Joeys Female Sunbury United FC U9 Girls",
+			"address": "Ardeer Reserve Main Pitch - Midi Field A",
+			"coordinates": "-37.778434,144.806219",
 			"status": "pending"
 		},
 		{

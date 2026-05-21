@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 108,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -323,6 +323,21 @@
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
+			"time": "13:15",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
+			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "LBdDx0GQdb",
@@ -432,19 +447,6 @@
 			"date": "2026-05-31",
 			"day": "Sunday",
 			"time": "11:00",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "11:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "bgdMM4ZdE2",
 			"homeTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
@@ -477,6 +479,19 @@
 			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
 			"address": "HC Kim Reserve Pitch 3B",
 			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
+			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
+			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
+			"coordinates": "-37.878568,144.79544",
 			"status": "pending"
 		},
 		{
