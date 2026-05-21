@@ -48,11 +48,26 @@
 			"points": 10
 		},
 		{
+			"teamId": "BdD9y9aGmb",
+			"teamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"clubName": "Satellite City United SC",
+			"logoUrl": "https://ocean.dribl.com/cbbe2daa51c7437493a9d93e9cec1188",
+			"position": 4,
+			"played": 4,
+			"wins": 3,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 28,
+			"goalsAgainst": 8,
+			"goalDifference": 20,
+			"points": 9
+		},
+		{
 			"teamId": "pN69DQyQm0",
 			"teamName": "Melbourne City FC U14 Juniors - D Mixed",
 			"clubName": "Melbourne City FC",
 			"logoUrl": "https://ocean.dribl.com/f36dcde3f3634df6919129024a40eaf3",
-			"position": 4,
+			"position": 5,
 			"played": 4,
 			"wins": 3,
 			"draws": 0,
@@ -61,21 +76,6 @@
 			"goalsAgainst": 9,
 			"goalDifference": 2,
 			"points": 9
-		},
-		{
-			"teamId": "BdD9y9aGmb",
-			"teamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"clubName": "Satellite City United SC",
-			"logoUrl": "https://ocean.dribl.com/cbbe2daa51c7437493a9d93e9cec1188",
-			"position": 5,
-			"played": 3,
-			"wins": 2,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 18,
-			"goalsAgainst": 8,
-			"goalDifference": 10,
-			"points": 6
 		},
 		{
 			"teamId": "jmaBLbA7NR",
@@ -203,13 +203,13 @@
 			"clubName": "Maidstone United SC",
 			"logoUrl": "https://ocean.dribl.com/7c97576b83434fc5991a6bf11747459e",
 			"position": 14,
-			"played": 2,
+			"played": 3,
 			"wins": 0,
 			"draws": 0,
-			"losses": 2,
+			"losses": 3,
 			"goalsFor": 2,
-			"goalsAgainst": 5,
-			"goalDifference": -3,
+			"goalsAgainst": 15,
+			"goalDifference": -13,
 			"points": 0
 		}
 	]

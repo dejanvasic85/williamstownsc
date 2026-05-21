@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 70,
+	"totalFixtures": 71,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -17,6 +17,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
+			"awayTeamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
+			"address": "Paisley Park - Altona Magic SC Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 4,
 			"status": "complete"
 		},
 		{

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 124,
+	"totalFixtures": 125,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -47,6 +47,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "AnmYzg4rNz",
+			"awayTeamId": "R1K3BOqGNQ",
+			"homeTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
+			"awayTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"address": "Scovell Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 10,
 			"status": "complete"
 		},
 		{

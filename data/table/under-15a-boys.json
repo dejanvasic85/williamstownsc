@@ -18,11 +18,26 @@
 			"points": 12
 		},
 		{
+			"teamId": "4KLz5Xxgmq",
+			"teamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
+			"clubName": "Williams Landing SC",
+			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"position": 2,
+			"played": 4,
+			"wins": 3,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 19,
+			"goalsAgainst": 5,
+			"goalDifference": 14,
+			"points": 10
+		},
+		{
 			"teamId": "nmYZ7kzpNz",
 			"teamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
 			"clubName": "Westside Strikers Caroline Springs FC",
 			"logoUrl": "https://ocean.dribl.com/50c8bc8e46774af5b6c1e2525d060a3e",
-			"position": 2,
+			"position": 3,
 			"played": 4,
 			"wins": 3,
 			"draws": 0,
@@ -31,21 +46,6 @@
 			"goalsAgainst": 3,
 			"goalDifference": 6,
 			"points": 9
-		},
-		{
-			"teamId": "4KLz5Xxgmq",
-			"teamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
-			"clubName": "Williams Landing SC",
-			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 3,
-			"played": 3,
-			"wins": 2,
-			"draws": 1,
-			"losses": 0,
-			"goalsFor": 15,
-			"goalsAgainst": 5,
-			"goalDifference": 10,
-			"points": 7
 		},
 		{
 			"teamId": "ld4466rDdW",
@@ -98,13 +98,13 @@
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
 			"position": 7,
-			"played": 2,
+			"played": 3,
 			"wins": 0,
 			"draws": 0,
-			"losses": 2,
+			"losses": 3,
 			"goalsFor": 0,
-			"goalsAgainst": 5,
-			"goalDifference": -5,
+			"goalsAgainst": 9,
+			"goalDifference": -9,
 			"points": 0
 		},
 		{

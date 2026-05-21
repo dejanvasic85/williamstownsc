@@ -3,11 +3,26 @@
 	"competition": "Mixed Sunday West 13A Blue",
 	"entries": [
 		{
+			"teamId": "ydoJr4X7KD",
+			"teamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
+			"clubName": "Point Cook SC",
+			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
+			"position": 1,
+			"played": 4,
+			"wins": 4,
+			"draws": 0,
+			"losses": 0,
+			"goalsFor": 17,
+			"goalsAgainst": 3,
+			"goalDifference": 14,
+			"points": 12
+		},
+		{
 			"teamId": "OmeX2AjGd0",
 			"teamName": "Altona North SC U13 Juniors - A Mixed Oriol",
 			"clubName": "Altona North SC",
 			"logoUrl": "https://ocean.dribl.com/f87efaf54d9c4c2696c327078ccdc7e7",
-			"position": 1,
+			"position": 2,
 			"played": 4,
 			"wins": 3,
 			"draws": 1,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 2,
 			"goalDifference": 11,
 			"points": 10
-		},
-		{
-			"teamId": "ydoJr4X7KD",
-			"teamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
-			"clubName": "Point Cook SC",
-			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
-			"position": 2,
-			"played": 3,
-			"wins": 3,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 15,
-			"goalsAgainst": 3,
-			"goalDifference": 12,
-			"points": 9
 		},
 		{
 			"teamId": "PmrqyjRRdo",
@@ -143,13 +143,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 10,
-			"played": 3,
+			"played": 4,
 			"wins": 0,
 			"draws": 1,
-			"losses": 2,
+			"losses": 3,
 			"goalsFor": 1,
-			"goalsAgainst": 7,
-			"goalDifference": -6,
+			"goalsAgainst": 9,
+			"goalDifference": -8,
 			"points": 1
 		},
 		{
