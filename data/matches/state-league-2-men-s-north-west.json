@@ -728,14 +728,31 @@
 			"round": 9,
 			"date": "2026-05-22",
 			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": "7MNGgM7NAz",
+			"awayTeamId": "Bjma0G87dR",
+			"homeTeamName": "Whittlesea Ranges FC Seniors",
+			"awayTeamName": "Uni Hill Eagles FC Seniors",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 9,
+			"date": "2026-05-22",
+			"day": "Friday",
 			"time": "20:15",
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "FC Strathmore Split Seniors",
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -748,19 +765,6 @@
 			"awayTeamName": "Albion Rovers FC Seniors",
 			"address": "Partridge Street Reserve Pitch 2",
 			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-05-22",
-			"day": "Friday",
-			"time": "20:30",
-			"homeTeamId": "7MNGgM7NAz",
-			"awayTeamId": "Bjma0G87dR",
-			"homeTeamName": "Whittlesea Ranges FC Seniors",
-			"awayTeamName": "Uni Hill Eagles FC Seniors",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
 			"status": "pending"
 		},
 		{

@@ -23,14 +23,14 @@
 			"clubName": "Brunswick Zebras FC",
 			"logoUrl": "https://ocean.dribl.com/fcd9c186ffec46b08881b3573b897206",
 			"position": 2,
-			"played": 4,
+			"played": 5,
 			"wins": 3,
-			"draws": 1,
+			"draws": 2,
 			"losses": 0,
 			"goalsFor": 12,
 			"goalsAgainst": 3,
 			"goalDifference": 9,
-			"points": 10
+			"points": 11
 		},
 		{
 			"teamId": "pN69x6pOm0",
@@ -78,11 +78,26 @@
 			"points": 9
 		},
 		{
+			"teamId": "yKJbGMx3KY",
+			"teamName": "Spring Hills FC Seniors state league 2 women",
+			"clubName": "Spring Hills FC",
+			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
+			"position": 6,
+			"played": 5,
+			"wins": 1,
+			"draws": 1,
+			"losses": 3,
+			"goalsFor": 6,
+			"goalsAgainst": 15,
+			"goalDifference": -9,
+			"points": 4
+		},
+		{
 			"teamId": "ZNQxkWyAmx",
 			"teamName": "North Sunshine Eagles SC Seniors",
 			"clubName": "North Sunshine Eagles SC",
 			"logoUrl": "https://ocean.dribl.com/2251bf99c3fd423b8cb51a515d4354fe",
-			"position": 6,
+			"position": 7,
 			"played": 4,
 			"wins": 1,
 			"draws": 0,
@@ -90,21 +105,6 @@
 			"goalsFor": 3,
 			"goalsAgainst": 9,
 			"goalDifference": -6,
-			"points": 3
-		},
-		{
-			"teamId": "yKJbGMx3KY",
-			"teamName": "Spring Hills FC Seniors state league 2 women",
-			"clubName": "Spring Hills FC",
-			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
-			"position": 7,
-			"played": 4,
-			"wins": 1,
-			"draws": 0,
-			"losses": 3,
-			"goalsFor": 6,
-			"goalsAgainst": 15,
-			"goalDifference": -9,
 			"points": 3
 		},
 		{

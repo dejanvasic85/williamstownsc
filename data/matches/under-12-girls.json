@@ -179,8 +179,10 @@
 			"homeTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
 			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 5,
