@@ -6,19 +6,6 @@
 	"fixtures": [
 		{
 			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "OVdz1bpKGr",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Green Gully SC U09 MiniRoos - Kangaroos Mixed U9 Boys Ethan & Rafi",
-			"awayTeamName": "Avondale FC U09 MiniRoos - Kangaroos Mixed U9 - MiniRoos - Boys - Blake",
-			"address": "Green Gully Reserve Pitch 3 - Midi Field A",
-			"coordinates": "-37.724344,144.817872",
-			"status": "pending"
-		},
-		{
-			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "10:00",
@@ -28,6 +15,19 @@
 			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Kangaroos Mixed",
 			"address": "AW Bond Reserve Midi B",
 			"coordinates": "-37.827591,144.845123",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "OVdz1bpKGr",
+			"awayTeamId": "1pN6RBQN0g",
+			"homeTeamName": "Green Gully SC U09 MiniRoos - Kangaroos Mixed U9 Boys Ethan & Rafi",
+			"awayTeamName": "Avondale FC U09 MiniRoos - Kangaroos Mixed U9 - MiniRoos - Boys - Blake",
+			"address": "Green Gully Reserve Pitch 3 - Midi Field A",
+			"coordinates": "-37.724344,144.817872",
 			"status": "pending"
 		},
 		{

@@ -726,14 +726,31 @@
 			"round": 9,
 			"date": "2026-05-22",
 			"day": "Friday",
+			"time": "18:30",
+			"homeTeamId": "bam1nQWrNw",
+			"awayTeamId": "3pmvQp0Ldv",
+			"homeTeamName": "Mill Park SC Reserves",
+			"awayTeamName": "Albion Rovers FC Reserves",
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 9,
+			"date": "2026-05-22",
+			"day": "Friday",
 			"time": "18:15",
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "FC Strathmore Split Reserves",
 			"awayTeamName": "Williamstown SC Reserves",
 			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -746,19 +763,6 @@
 			"awayTeamName": "Uni Hill Eagles FC Reserves",
 			"address": "Epping Stadium Main Pitch",
 			"coordinates": "-37.624625,145.024327",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-05-22",
-			"day": "Friday",
-			"time": "18:30",
-			"homeTeamId": "bam1nQWrNw",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Mill Park SC Reserves",
-			"awayTeamName": "Albion Rovers FC Reserves",
-			"address": "Partridge Street Reserve Pitch 2",
-			"coordinates": "-37.663361,145.023019",
 			"status": "pending"
 		},
 		{

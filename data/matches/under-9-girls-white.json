@@ -9,6 +9,19 @@
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "10:00",
+			"homeTeamId": "vbd91WEDd4",
+			"awayTeamId": "AnmYz1R1Nz",
+			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Silver",
+			"awayTeamName": "Western Suburbs SC U09 MiniRoos - Joeys Female U9 Girls - Joeys",
+			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
+			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "10:00",
 			"homeTeamId": "bam1nkkrNw",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Footscray Rangers FC U09 MiniRoos - Joeys Female Rachel",
@@ -53,19 +66,6 @@
 			"homeTeamName": "Gisborne SC U09 MiniRoos - Joeys Female 9SL",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Silver",
-			"awayTeamName": "Western Suburbs SC U09 MiniRoos - Joeys Female U9 Girls - Joeys",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
-			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
 		{

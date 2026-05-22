@@ -305,19 +305,6 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "11:45",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"address": "Wyndham Vale North Reserve Southern End Half Pitch (9v9)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "bye",
@@ -337,6 +324,19 @@
 			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "14:45",
+			"homeTeamId": "Bjma0G03dR",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"address": "Wyndham Vale North Reserve Southern End Half Pitch (9v9)",
+			"coordinates": "-37.898902,144.624443",
 			"status": "pending"
 		},
 		{

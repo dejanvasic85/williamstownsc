@@ -314,8 +314,10 @@
 			"homeTeamName": "Keon Park SC Seniors Senior Women SL5",
 			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
 			"address": "JC Donath Reserve Pitch 8",
-			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 5,
