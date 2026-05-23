@@ -63,11 +63,26 @@
 			"points": 17
 		},
 		{
+			"teamId": "jdye798Ld5",
+			"teamName": "Western Eagles SC Reserves",
+			"clubName": "Western Eagles SC",
+			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
+			"position": 5,
+			"played": 9,
+			"wins": 4,
+			"draws": 3,
+			"losses": 2,
+			"goalsFor": 18,
+			"goalsAgainst": 12,
+			"goalDifference": 6,
+			"points": 15
+		},
+		{
 			"teamId": "am1q9Wvzmw",
 			"teamName": "Whittlesea Ranges FC Reserves",
 			"clubName": "Whittlesea Ranges FC",
 			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
-			"position": 5,
+			"position": 6,
 			"played": 9,
 			"wins": 4,
 			"draws": 1,
@@ -76,21 +91,6 @@
 			"goalsAgainst": 19,
 			"goalDifference": -3,
 			"points": 13
-		},
-		{
-			"teamId": "jdye798Ld5",
-			"teamName": "Western Eagles SC Reserves",
-			"clubName": "Western Eagles SC",
-			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
-			"position": 6,
-			"played": 8,
-			"wins": 3,
-			"draws": 3,
-			"losses": 2,
-			"goalsFor": 15,
-			"goalsAgainst": 12,
-			"goalDifference": 3,
-			"points": 12
 		},
 		{
 			"teamId": "1K3YZLkBmQ",
@@ -113,13 +113,13 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 8,
-			"played": 8,
+			"played": 9,
 			"wins": 3,
 			"draws": 2,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 11,
-			"goalsAgainst": 12,
-			"goalDifference": -1,
+			"goalsAgainst": 15,
+			"goalDifference": -4,
 			"points": 11
 		},
 		{
