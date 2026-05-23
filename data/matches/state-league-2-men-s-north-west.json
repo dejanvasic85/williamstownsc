@@ -729,6 +729,21 @@
 			"date": "2026-05-22",
 			"day": "Friday",
 			"time": "20:30",
+			"homeTeamId": "bam1nQWrNw",
+			"awayTeamId": "3pmvQp0Ldv",
+			"homeTeamName": "Mill Park SC Seniors",
+			"awayTeamName": "Albion Rovers FC Seniors",
+			"address": "Partridge Street Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 9,
+			"date": "2026-05-22",
+			"day": "Friday",
+			"time": "20:30",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "Bjma0G87dR",
 			"homeTeamName": "Whittlesea Ranges FC Seniors",
@@ -756,19 +771,6 @@
 		},
 		{
 			"round": 9,
-			"date": "2026-05-22",
-			"day": "Friday",
-			"time": "20:30",
-			"homeTeamId": "bam1nQWrNw",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Mill Park SC Seniors",
-			"awayTeamName": "Albion Rovers FC Seniors",
-			"address": "Partridge Street Reserve Pitch 2",
-			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
-		},
-		{
-			"round": 9,
 			"date": "2026-05-23",
 			"day": "Saturday",
 			"time": "15:00",
@@ -777,8 +779,10 @@
 			"homeTeamName": "Corio SC Seniors",
 			"awayTeamName": "Altona North SC Seniors",
 			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -790,8 +794,10 @@
 			"homeTeamName": "Geelong Rangers SC Seniors",
 			"awayTeamName": "Brimbank Stallions FC Seniors",
 			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,
