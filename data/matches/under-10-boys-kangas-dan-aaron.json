@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 84,
+	"totalFixtures": 82,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "gld450DmW5",
-			"homeTeamName": "Werribee City FC U10 MiniRoos - Kangaroos Mixed U10 Damian",
-			"awayTeamName": "Melbourne Knights FC U10 MiniRoos - Kangaroos Mixed MKFC U10's Kangaroos",
-			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"awayTeamName": "Altona Magic SC U10 MiniRoos - Kangaroos Mixed U10 Black",
-			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-24",

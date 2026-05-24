@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 55,
+	"totalFixtures": 53,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Williamstown SC U07 MiniRoos - Joeys Mixed Boys Under 7J (Vinnie/Craig)",
-			"awayTeamName": "Footscray Rangers FC U07 MiniRoos - Joeys Mixed Rob",
-			"address": "JT Gray Reserve Pitch 2A Mini B (4v4)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys Blue",
-			"awayTeamName": "Yarraville Glory FC U07 MiniRoos - Joeys Mixed Gold",
-			"address": "Edwards Reserve Main Pitch F - Quarter Pitch 4v4",
-			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-24",
