@@ -219,6 +219,21 @@
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "14:00",
+			"homeTeamId": "3vmZv9nLmq",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
+			"awayTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
+			"address": "Avondale Heights Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "14:00",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "gld4pz60dW",
 			"homeTeamName": "West Point SC U15 Juniors - C Mixed U15C Mixed - Glen",
@@ -240,19 +255,6 @@
 			"awayTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
 			"address": "Arena Recreation Reserve Pitch 2",
 			"coordinates": "-37.618866,144.916762",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
-			"awayTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
-			"address": "Avondale Heights Reserve Pitch 1",
-			"coordinates": "-37.76242,144.858824",
 			"status": "pending"
 		},
 		{
