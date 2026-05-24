@@ -43,7 +43,7 @@
 			"awayTeamId": "7MNGvappmA",
 			"homeTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
 			"awayTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
-			"address": "Brookside Recreation Reserve Grass Oval",
+			"address": "Taylors Hill Recreation Reserve Pitch 1",
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 1,
@@ -233,14 +233,16 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "11:45",
-			"homeTeamId": "bgdMXLbQKE",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
-			"awayTeamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
-			"address": "Taylors Hill Recreation Reserve Pitch 2",
-			"coordinates": "-37.713377,144.75485",
-			"status": "pending"
+			"time": "14:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "nPmr7WjNow",
+			"homeTeamName": "Surf Coast FC U15 Juniors - A Mixed",
+			"awayTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
+			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -252,8 +254,25 @@
 			"homeTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
 			"awayTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "11:45",
+			"homeTeamId": "bgdMXLbQKE",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
+			"awayTeamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
+			"address": "Taylors Hill Recreation Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -266,19 +285,6 @@
 			"awayTeamName": "Altona City SC U15 Juniors - A Mixed",
 			"address": "Myers Reserve Pitch 3",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Surf Coast FC U15 Juniors - A Mixed",
-			"awayTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
-			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},
 		{

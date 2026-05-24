@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 98,
+	"totalFixtures": 96,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Truganina Hornets SC U11 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Altona City SC U11 MiniRoos - Wallabies Mixed Maroon",
-			"address": "Arndell Park Reserve Pitch 2 - Half Field B",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Point Cook SC U11 MiniRoos - Wallabies Mixed U11 Harriers",
-			"awayTeamName": "Williamstown SC U11 MiniRoos - Wallabies Mixed Boys Under 11W (Alti/Matt)",
-			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-24",

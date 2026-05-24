@@ -203,13 +203,16 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bye",
-			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
-			"address": "",
+			"time": "11:30",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "bgdMXLL2KE",
+			"homeTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
+			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
+			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
 			"coordinates": "",
-			"status": "pending"
+			"homeScore": 6,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -221,21 +224,22 @@
 			"homeTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"address": "Webster Street Reserve Pitch 4A",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
-			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
+			"time": "10:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "bye",
+			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
+			"address": "",
+			"coordinates": "",
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -247,7 +251,7 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 5,

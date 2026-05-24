@@ -368,37 +368,31 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "8nm7PgVNOq",
-			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
-			"address": "",
+			"time": "14:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "AnmYz1R1Nz",
+			"homeTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
+			"awayTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
+			"address": "Williams Landing Sports Reserve Pitch 1",
 			"coordinates": "",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "gld4pGXGdW",
-			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"address": "",
+			"time": "13:45",
+			"homeTeamId": "OVdzwWpmGr",
+			"awayTeamId": "nPmr7WjNow",
+			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
+			"address": "John Cain Memorial Park Pitch 2",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "OEN2ZnG7Nq",
-			"awayTeamId": "bye",
-			"homeTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -410,8 +404,46 @@
 			"homeTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"awayTeamName": "Surf Coast FC U16 Juniors - A Mixed",
 			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "bye",
+			"awayTeamId": "8nm7PgVNOq",
+			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
+			"address": "",
+			"coordinates": "",
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "bye",
+			"awayTeamId": "gld4pGXGdW",
+			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
+			"address": "",
+			"coordinates": "",
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "OEN2ZnG7Nq",
+			"awayTeamId": "bye",
+			"homeTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
+			"address": "",
+			"coordinates": "",
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -431,25 +463,12 @@
 			"date": "2026-05-24",
 			"day": "Sunday",
 			"time": "13:45",
-			"homeTeamId": "OVdzwWpmGr",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
-			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
-			"address": "John Cain Memorial Park Pitch 2",
-			"coordinates": "-37.763663,145.023846",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
 			"homeTeamId": "bye",
 			"awayTeamId": "wOmejJVeN0",
 			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 5,
@@ -461,20 +480,7 @@
 			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"awayTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
-			"address": "Williams Landing Sports Reserve Pitch 1",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 6,

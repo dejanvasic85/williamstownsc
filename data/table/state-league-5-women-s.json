@@ -38,14 +38,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 3,
-			"played": 4,
-			"wins": 3,
+			"played": 5,
+			"wins": 4,
 			"draws": 0,
 			"losses": 1,
-			"goalsFor": 19,
+			"goalsFor": 20,
 			"goalsAgainst": 5,
-			"goalDifference": 14,
-			"points": 9
+			"goalDifference": 15,
+			"points": 12
 		},
 		{
 			"teamId": "am1QRrPXmw",
@@ -128,13 +128,13 @@
 			"clubName": "Brunswick Zebras FC",
 			"logoUrl": "https://ocean.dribl.com/fcd9c186ffec46b08881b3573b897206",
 			"position": 9,
-			"played": 4,
+			"played": 5,
 			"wins": 0,
 			"draws": 1,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 0,
-			"goalsAgainst": 10,
-			"goalDifference": -10,
+			"goalsAgainst": 11,
+			"goalDifference": -11,
 			"points": 1
 		},
 		{

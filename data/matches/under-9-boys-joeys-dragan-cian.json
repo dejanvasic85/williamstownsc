@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Tarneit North FC U09 MiniRoos - Joeys Mixed U9 Sunday West",
-			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Mixed U9 Joeys",
-			"address": "Polly Parade Reserve Main Pitch - Midi (7v7) B",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-24",

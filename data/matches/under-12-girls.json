@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 67,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -182,18 +182,6 @@
 			"coordinates": "",
 			"homeScore": 4,
 			"awayScore": 2,
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "08:45",
-			"homeTeamId": "bye",
-			"awayTeamId": "6lNbpDpwdx",
-			"awayTeamName": "Williamstown SC U12 Juniors - C Female Girls Under 12",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

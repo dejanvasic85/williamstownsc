@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 56,
+	"totalFixtures": 55,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-23",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Williamstown SC U10 MiniRoos - Joeys Mixed Boys Under 10J (Hugh/Joe)",
-			"awayTeamName": "Laverton FC U10 MiniRoos - Joeys Male Laverton FC U10",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
 		{
 			"round": 5,
 			"date": "2026-05-24",
