@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 85,
+	"totalFixtures": 82,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -258,44 +258,6 @@
 			"homeScore": 3,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "nPmrB8Gpmo",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "South Yarra SC Seniors",
-			"awayTeamName": "Williamstown SC Seniors",
-			"address": "Fawkner Park South Pavilion Pitch 2 (Lawn 20)",
-			"coordinates": "-37.8392,144.9919",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv3BJmq",
-			"awayTeamId": "bye",
-			"homeTeamName": "St Kilda SC Seniors Sundays",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "wOmejvpyN0",
-			"awayTeamId": "08NOpe5WKZ",
-			"homeTeamName": "Melbourne University SC Seniors",
-			"awayTeamName": "Middle Park FC Seniors",
-			"address": "Princes Park Oval Pitch 2",
-			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
 		},
 		{
 			"round": 6,

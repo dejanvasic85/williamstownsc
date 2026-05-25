@@ -68,14 +68,14 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 5,
-			"played": 3,
-			"wins": 0,
+			"played": 4,
+			"wins": 1,
 			"draws": 0,
 			"losses": 3,
-			"goalsFor": 8,
+			"goalsFor": 17,
 			"goalsAgainst": 11,
-			"goalDifference": -3,
-			"points": 0
+			"goalDifference": 6,
+			"points": 3
 		},
 		{
 			"teamId": "emAe96VRmB",
@@ -98,13 +98,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 7,
-			"played": 2,
+			"played": 3,
 			"wins": 0,
 			"draws": 0,
-			"losses": 2,
+			"losses": 3,
 			"goalsFor": 1,
-			"goalsAgainst": 10,
-			"goalDifference": -9,
+			"goalsAgainst": 19,
+			"goalDifference": -18,
 			"points": 0
 		}
 	]

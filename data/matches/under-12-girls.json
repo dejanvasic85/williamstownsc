@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 67,
+	"totalFixtures": 66,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -188,40 +188,31 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
-			"awayTeamName": "Truganina Hornets SC U12 Juniors - C Female",
-			"address": "Johnson Reserve Pitch 1A",
-			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "LBdDx1O8db",
-			"awayTeamId": "3pmvQpkodv",
-			"homeTeamName": "Melton Phoenix FC U12 Juniors - C Female",
-			"awayTeamName": "Moonee Ponds United SC U12 Juniors - C Female U12 Girls Gabby",
-			"address": "MacPherson Park Pitch 4 (U12/13s)",
-			"coordinates": "-37.63624,144.565487",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "nPmr7WjNow",
 			"awayTeamId": "7MNGvobEmA",
 			"homeTeamName": "Caroline Springs George Cross FC U12 Juniors - C Female",
 			"awayTeamName": "Altona East SC U12 Juniors - C Female",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (B)",
-			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "vbd91WEDd4",
+			"awayTeamId": "6lNbpD56dx",
+			"homeTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
+			"awayTeamName": "Truganina Hornets SC U12 Juniors - C Female",
+			"address": "Johnson Reserve Pitch 1A",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 6,

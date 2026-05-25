@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 78,
+	"totalFixtures": 76,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Williamstown SC U07 MiniRoos - Wallabies Mixed Boys Under 7W (Matt)",
-			"awayTeamName": "Truganina Lions FC U07 MiniRoos - Wallabies Mixed Boys U7 - Wallabies",
-			"address": "JT Gray Reserve Pitch 2A Mini A (4v4)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Moonee Valley Knights SC U07 MiniRoos - Wallabies Mixed U7 (George)",
-			"awayTeamName": "Werribee City FC U07 MiniRoos - Wallabies Mixed U7 Som",
-			"address": "Avondale Heights Reserve Mini B",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-30",

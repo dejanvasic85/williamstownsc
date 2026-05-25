@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 72,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -121,6 +121,21 @@
 			"address": "NewFlo Stadium Pitch 2",
 			"coordinates": "",
 			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "12:45",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
+			"awayTeamName": "Altona City SC U15 Juniors - A Mixed",
+			"address": "Paisley Park - Altona Magic SC Pitch 2",
+			"coordinates": "",
+			"homeScore": 1,
 			"awayScore": 0,
 			"status": "complete"
 		},
@@ -263,6 +278,21 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
+			"awayTeamName": "Altona City SC U15 Juniors - A Mixed",
+			"address": "Myers Reserve Pitch 3",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
 			"time": "11:45",
 			"homeTeamId": "bgdMXLbQKE",
 			"awayTeamId": "3vmZv3vbmq",
@@ -273,19 +303,6 @@
 			"homeScore": 2,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
-			"awayTeamName": "Altona City SC U15 Juniors - A Mixed",
-			"address": "Myers Reserve Pitch 3",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
 		},
 		{
 			"round": 6,

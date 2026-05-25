@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 88,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -323,6 +323,21 @@
 			"round": 5,
 			"date": "2026-05-24",
 			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "nPmrBqlrmo",
+			"homeTeamName": "Yarraville Glory FC Seniors state league 6 women",
+			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
+			"address": "McIvor Reserve  Pitch 1 - FULL",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
 			"time": "15:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "wOmejXOyN0",
@@ -333,45 +348,6 @@
 			"homeScore": 1,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "AnmYzglzNz",
-			"awayTeamId": "wOmejvpyN0",
-			"homeTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
-			"awayTeamName": "Melbourne University SC Seniors Senior Women SL5",
-			"address": "JJ Holland Park Main Pitch (S)",
-			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "vbd91VOJd4",
-			"homeTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
-			"awayTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
-			"address": "JT Gray Reserve Pitch 4 - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "nPmrBqlrmo",
-			"homeTeamName": "Yarraville Glory FC Seniors state league 6 women",
-			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
-			"address": "McIvor Reserve  Pitch 1 - FULL",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
 		},
 		{
 			"round": 6,

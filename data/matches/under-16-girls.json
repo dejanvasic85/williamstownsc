@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 68,
+	"totalFixtures": 65,
 	"totalRounds": 19,
 	"fixtures": [
 		{
@@ -125,6 +125,21 @@
 			"status": "complete"
 		},
 		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Altona East SC U16 Juniors - B Female",
+			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4",
+			"coordinates": "",
+			"homeScore": 9,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
 			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
@@ -153,57 +168,6 @@
 			"homeScore": 4,
 			"awayScore": 5,
 			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:40",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Gisborne SC U16 Juniors - B Female 16JD",
-			"awayTeamName": "Altona City SC U16 Juniors - B Female",
-			"address": "Dixon Field Reserve Pitch A",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "bye",
-			"awayTeamId": "nPmrBk05mo",
-			"awayTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "wOmejJVeN0",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
-			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
-			"address": "Keilor Lodge Reserve Pitch 2",
-			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "14:25",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
-			"awayTeamName": "Altona East SC U16 Juniors - B Female",
-			"address": "Saltwater Reserve Pitch 2",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
 		},
 		{
 			"round": 6,

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 126,
+	"totalFixtures": 120,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -407,79 +407,6 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "8nm7PgVNOq",
-			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "gld4pGXGdW",
-			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "OEN2ZnG7Nq",
-			"awayTeamId": "bye",
-			"homeTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "V8dnR1odwL",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Hume City FC U16 Juniors - A Mixed",
-			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"address": "Hume City Stadium Pitch 1",
-			"coordinates": "-37.664466,144.915723",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "bye",
-			"awayTeamId": "wOmejJVeN0",
-			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "13:45",
-			"homeTeamId": "3pmvQW0Edv",
-			"awayTeamId": "bye",
-			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{
