@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 95,
+	"totalFixtures": 91,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Wyndham FC U08 MiniRoos - Joeys Mixed Under 8 Joeys KK",
-			"awayTeamName": "West Point SC U08 MiniRoos - Joeys Mixed U8 Mixed - Matt",
-			"address": "Wyndham Vale North Reserve Main Pitch A - 7v7 (B)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Tarneit North FC U08 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Laverton FC U08 MiniRoos - Joeys Mixed Laverton FC U8",
-			"address": "Polly Parade Reserve Main Pitch - Midi (7v7) A",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Point Cook SC U08 MiniRoos - Joeys Mixed U8 Hunters",
-			"awayTeamName": "Werribee City FC U08 MiniRoos - Joeys Mixed U8 Mario",
-			"address": "Saltwater Reserve Pitch 3 SSF3 (U9)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Joeys Mixed Boys U8 - Joeys (A)",
-			"awayTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Kate)",
-			"address": "Alcock Road Reserve Pitch 2 - Midi (7v7) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-30",

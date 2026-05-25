@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 107,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -92,6 +92,21 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 9,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "13:15",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "3vmZvwGMmq",
+			"homeTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
+			"awayTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
+			"address": "AW Bond Reserve Half B",
+			"coordinates": "",
+			"homeScore": 18,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{

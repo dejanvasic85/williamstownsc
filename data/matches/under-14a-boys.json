@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 86,
+	"totalFixtures": 85,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -302,18 +302,6 @@
 			"coordinates": "",
 			"homeScore": 4,
 			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "3vmZv3vbmq",
-			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

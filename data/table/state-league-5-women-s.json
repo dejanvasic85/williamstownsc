@@ -53,14 +53,14 @@
 			"clubName": "Yarraville Glory FC",
 			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
 			"position": 4,
-			"played": 4,
-			"wins": 2,
+			"played": 5,
+			"wins": 3,
 			"draws": 1,
 			"losses": 1,
-			"goalsFor": 12,
+			"goalsFor": 16,
 			"goalsAgainst": 3,
-			"goalDifference": 9,
-			"points": 7
+			"goalDifference": 13,
+			"points": 10
 		},
 		{
 			"teamId": "am1QRrxnmw",
@@ -113,13 +113,13 @@
 			"clubName": "Darebin Womens SC",
 			"logoUrl": "https://ocean.dribl.com/b7c909f02bb249e58fe88e5bb951a1e3",
 			"position": 8,
-			"played": 4,
+			"played": 5,
 			"wins": 1,
 			"draws": 0,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 4,
-			"goalsAgainst": 15,
-			"goalDifference": -11,
+			"goalsAgainst": 19,
+			"goalDifference": -15,
 			"points": 3
 		},
 		{

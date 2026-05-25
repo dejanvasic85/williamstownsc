@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 83,
+	"totalFixtures": 80,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
-			"awayTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Phil",
-			"address": "Costas Mitre 10 Park Pitch 4C, Galvin Park Reserve - Quarter Field (7v7)",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Point Cook SC U09 MiniRoos - Wallabies Mixed U9 Boomerangs",
-			"address": "Arndell Park Reserve Pitch 2 - Half Field A",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Male JUNIOR STARS",
-			"awayTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
-			"address": "Tarneit Rise Synthetic Pitch 1D (7V7)",
-			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-30",

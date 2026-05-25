@@ -305,6 +305,21 @@
 			"status": "complete"
 		},
 		{
+			"round": 3,
+			"date": "2026-05-10",
+			"day": "Sunday",
+			"time": "10:50",
+			"homeTeamId": "AnmYzg4rNz",
+			"awayTeamId": "1pN6pqv7d0",
+			"homeTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
+			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+			"address": "Scovell Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 8,
+			"status": "complete"
+		},
+		{
 			"round": 4,
 			"date": "2026-05-16",
 			"day": "Sunday",
@@ -498,19 +513,6 @@
 			"homeScore": 3,
 			"awayScore": 2,
 			"status": "complete"
-		},
-		{
-			"round": 5,
-			"date": "2026-05-24",
-			"day": "Sunday",
-			"time": "12:15",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "1pN6pqv7d0",
-			"homeTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
 		},
 		{
 			"round": 6,
