@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 125,
+	"totalFixtures": 126,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -437,6 +437,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "1pN6pqv7d0",
+			"homeTeamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{

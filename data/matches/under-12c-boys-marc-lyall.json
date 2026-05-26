@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 108,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -376,6 +376,21 @@
 			"address": "Alcock Road Reserve Pitch 1 - Half B",
 			"coordinates": "",
 			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Altona East SC U12 Juniors - C Mixed Antonio",
+			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
+			"coordinates": "",
+			"homeScore": 2,
 			"awayScore": 1,
 			"status": "complete"
 		},

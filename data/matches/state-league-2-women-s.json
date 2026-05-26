@@ -449,25 +449,25 @@
 			"date": "2026-06-12",
 			"day": "Friday",
 			"time": "19:30",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "LBdDxg8Qdb",
-			"homeTeamName": "Spring Hills FC Seniors state league 2 women",
-			"awayTeamName": "Whittlesea United SC Seniors",
-			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-12",
-			"day": "Friday",
-			"time": "19:30",
 			"homeTeamId": "bgdMXLR7KE",
 			"awayTeamId": "6lNbVk6NxE",
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Brunswick City SC Seniors",
 			"address": "JC Donath Reserve Pitch 8",
 			"coordinates": "-37.700848,145.017287",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-12",
+			"day": "Friday",
+			"time": "20:00",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "LBdDxg8Qdb",
+			"homeTeamName": "Spring Hills FC Seniors state league 2 women",
+			"awayTeamName": "Whittlesea United SC Seniors",
+			"address": "Springside Recreational Reserve Pitch 1 (S)",
+			"coordinates": "-37.712403,144.736088",
 			"status": "pending"
 		},
 		{

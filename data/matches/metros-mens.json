@@ -327,6 +327,19 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "3vmZv3BJmq",
+			"awayTeamId": "wOmejXOyN0",
+			"homeTeamName": "St Kilda SC Seniors Sundays",
+			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
+			"address": "Alma Park East Field 1",
+			"coordinates": "-37.860185,144.994366",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "Bjma0GJMdR",
 			"awayTeamId": "08NOpe5WKZ",
@@ -334,19 +347,6 @@
 			"awayTeamName": "Middle Park FC Seniors",
 			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
 			"coordinates": "-37.843712,144.981104",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "3vmZv3BJmq",
-			"awayTeamId": "wOmejXOyN0",
-			"homeTeamName": "St Kilda SC Seniors Sundays",
-			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
-			"address": "Alma Park East Field 1",
-			"coordinates": "-37.860185,144.994366",
 			"status": "pending"
 		},
 		{

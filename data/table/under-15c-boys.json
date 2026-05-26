@@ -3,11 +3,26 @@
 	"competition": "Mixed North-West 15C",
 	"entries": [
 		{
+			"teamId": "jmaB5x83NR",
+			"teamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
+			"clubName": "Truganina Lions FC",
+			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
+			"position": 1,
+			"played": 5,
+			"wins": 4,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 29,
+			"goalsAgainst": 7,
+			"goalDifference": 22,
+			"points": 13
+		},
+		{
 			"teamId": "ld44BW6GdW",
 			"teamName": "Moonee Valley Knights SC U15 Juniors - C Mixed Adrian",
 			"clubName": "Moonee Valley Knights SC",
 			"logoUrl": "https://ocean.dribl.com/b7f56b4d0e0141d6871b4c0e72dd2af8",
-			"position": 1,
+			"position": 2,
 			"played": 5,
 			"wins": 4,
 			"draws": 0,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 9,
 			"goalDifference": 8,
 			"points": 12
-		},
-		{
-			"teamId": "jmaB5x83NR",
-			"teamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
-			"clubName": "Truganina Lions FC",
-			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
-			"position": 2,
-			"played": 4,
-			"wins": 3,
-			"draws": 1,
-			"losses": 0,
-			"goalsFor": 19,
-			"goalsAgainst": 7,
-			"goalDifference": 12,
-			"points": 10
 		},
 		{
 			"teamId": "BdD9apegmb",
@@ -98,13 +98,13 @@
 			"clubName": "West Point SC",
 			"logoUrl": "https://ocean.dribl.com/98a1c928261d4c18b77ee3f8a7106e49",
 			"position": 7,
-			"played": 4,
+			"played": 5,
 			"wins": 1,
 			"draws": 0,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 4,
-			"goalsAgainst": 14,
-			"goalDifference": -10,
+			"goalsAgainst": 24,
+			"goalDifference": -20,
 			"points": 3
 		},
 		{

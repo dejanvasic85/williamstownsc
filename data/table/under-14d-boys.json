@@ -33,11 +33,26 @@
 			"points": 13
 		},
 		{
+			"teamId": "BdD9y9aGmb",
+			"teamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
+			"clubName": "Satellite City United SC",
+			"logoUrl": "https://ocean.dribl.com/cbbe2daa51c7437493a9d93e9cec1188",
+			"position": 3,
+			"played": 5,
+			"wins": 4,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 32,
+			"goalsAgainst": 10,
+			"goalDifference": 22,
+			"points": 12
+		},
+		{
 			"teamId": "lNbjwx5wNx",
 			"teamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
 			"clubName": "Truganina Lions FC",
 			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
-			"position": 3,
+			"position": 4,
 			"played": 5,
 			"wins": 3,
 			"draws": 1,
@@ -46,21 +61,6 @@
 			"goalsAgainst": 10,
 			"goalDifference": 1,
 			"points": 10
-		},
-		{
-			"teamId": "BdD9y9aGmb",
-			"teamName": "Satellite City United SC U14 Juniors - D Mixed Costa",
-			"clubName": "Satellite City United SC",
-			"logoUrl": "https://ocean.dribl.com/cbbe2daa51c7437493a9d93e9cec1188",
-			"position": 4,
-			"played": 4,
-			"wins": 3,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 28,
-			"goalsAgainst": 8,
-			"goalDifference": 20,
-			"points": 9
 		},
 		{
 			"teamId": "pN69DQyQm0",
@@ -98,13 +98,13 @@
 			"clubName": "Sunbury United FC",
 			"logoUrl": "https://ocean.dribl.com/c2d7cb601af445688a1d500797857c0d",
 			"position": 7,
-			"played": 4,
+			"played": 5,
 			"wins": 2,
 			"draws": 0,
-			"losses": 2,
-			"goalsFor": 22,
-			"goalsAgainst": 17,
-			"goalDifference": 5,
+			"losses": 3,
+			"goalsFor": 24,
+			"goalsAgainst": 21,
+			"goalDifference": 3,
 			"points": 6
 		},
 		{
