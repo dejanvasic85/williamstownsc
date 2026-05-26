@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 99,
+	"totalFixtures": 100,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -302,6 +302,21 @@
 			"coordinates": "",
 			"homeScore": 8,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"address": "Alcock Road Reserve Pitch 3 - Half A",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{

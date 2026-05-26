@@ -18,11 +18,26 @@
 			"points": 13
 		},
 		{
+			"teamId": "BdD9L8w8mb",
+			"teamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 2,
+			"played": 4,
+			"wins": 3,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 22,
+			"goalsAgainst": 3,
+			"goalDifference": 19,
+			"points": 10
+		},
+		{
 			"teamId": "2KpprE0bKY",
 			"teamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 2,
+			"position": 3,
 			"played": 4,
 			"wins": 3,
 			"draws": 0,
@@ -37,7 +52,7 @@
 			"teamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
 			"clubName": "Western Suburbs SC",
 			"logoUrl": "https://ocean.dribl.com/df3fa07db8864d48977e7142593a476e",
-			"position": 3,
+			"position": 4,
 			"played": 4,
 			"wins": 2,
 			"draws": 1,
@@ -45,21 +60,6 @@
 			"goalsFor": 18,
 			"goalsAgainst": 7,
 			"goalDifference": 11,
-			"points": 7
-		},
-		{
-			"teamId": "BdD9L8w8mb",
-			"teamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 4,
-			"played": 3,
-			"wins": 2,
-			"draws": 1,
-			"losses": 0,
-			"goalsFor": 7,
-			"goalsAgainst": 3,
-			"goalDifference": 4,
 			"points": 7
 		},
 		{
@@ -188,13 +188,13 @@
 			"clubName": "Hume City FC",
 			"logoUrl": "https://ocean.dribl.com/1006941c983f40edac059ddb7bddef68",
 			"position": 13,
-			"played": 3,
+			"played": 4,
 			"wins": 0,
 			"draws": 0,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 0,
-			"goalsAgainst": 28,
-			"goalDifference": -28,
+			"goalsAgainst": 43,
+			"goalDifference": -43,
 			"points": 0
 		}
 	]

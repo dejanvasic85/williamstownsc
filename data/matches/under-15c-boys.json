@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 71,
+	"totalFixtures": 72,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -182,6 +182,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "14:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Truganina Lions FC U15 Juniors - C Mixed Boys U15 - C",
+			"awayTeamName": "West Point SC U15 Juniors - C Mixed U15C Mixed - Glen",
+			"address": "Alcock Road Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 10,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{
