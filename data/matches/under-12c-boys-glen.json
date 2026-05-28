@@ -484,19 +484,6 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
-			"awayTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
-			"address": "Webster Street Reserve Pitch 2A",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "bgdMXaXpKE",
 			"awayTeamId": "7MNGvobEmA",
@@ -504,6 +491,19 @@
 			"awayTeamName": "Altona East SC U12 Juniors - C Mixed Antonio",
 			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "Bjma0RXqdR",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
+			"awayTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
+			"address": "Webster Street Reserve Pitch 4A",
+			"coordinates": "-37.88838,144.714084",
 			"status": "pending"
 		},
 		{

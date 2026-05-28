@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 108,
+	"totalFixtures": 110,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -25,14 +25,13 @@
 			"day": "Sunday",
 			"time": "11:20",
 			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half A",
+			"address": "",
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 2,
-			"status": "complete"
+			"status": "pending"
 		},
 		{
 			"round": 1,
@@ -144,15 +143,14 @@
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "11:15",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
-			"address": "HD Graham Reserve Pitch 2 (South) - Midi A (7v7)",
+			"address": "",
 			"coordinates": "",
 			"homeScore": 9,
 			"awayScore": 0,
-			"status": "complete"
+			"status": "pending"
 		},
 		{
 			"round": 2,
@@ -265,29 +263,27 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
+			"address": "",
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 0,
-			"status": "complete"
+			"status": "pending"
 		},
 		{
 			"round": 4,
 			"date": "2026-05-16",
 			"day": "Sunday",
 			"time": "08:45",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
+			"address": "",
 			"coordinates": "",
 			"homeScore": 6,
 			"awayScore": 4,
-			"status": "complete"
+			"status": "pending"
 		},
 		{
 			"round": 4,
@@ -445,14 +441,13 @@
 			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Williamstown SC U12 Juniors - B Mixed Under 12 Boys (Ben)",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"address": "",
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
-			"status": "complete"
+			"status": "pending"
 		},
 		{
 			"round": 6,
@@ -473,11 +468,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "gld450DmW5",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Mixed MKFC U12 Boys B",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
-			"coordinates": "-37.777915,144.885698",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -550,12 +544,11 @@
 			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "3vmZvwGMmq",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
-			"address": "HD Graham Reserve Field 1 (North) Half B",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -616,11 +609,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "AnmYz1R1Nz",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Ralph Reserve Main Pitch A (Half Field)",
-			"coordinates": "-37.792903,144.799142",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -745,12 +737,11 @@
 			"date": "2026-06-28",
 			"day": "Sunday",
 			"time": "12:15",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
-			"address": "HD Graham Reserve Field 1 (North) Half A",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -811,11 +802,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Altona City SC U12 Juniors - B Mixed",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "HC Kim Reserve Pitch 3A",
-			"coordinates": "-37.863721,144.839985",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -888,12 +878,11 @@
 			"date": "2026-07-19",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
-			"address": "HD Graham Reserve Field 1 (North) Half A",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -992,12 +981,23 @@
 			"date": "2026-07-26",
 			"day": "Sunday",
 			"time": "11:15",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-01",
+			"day": "Sunday",
+			"time": "00:00",
+			"homeTeamId": "bye",
+			"awayTeamId": "AnmYz1R1Nz",
+			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1019,11 +1019,10 @@
 			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "AnmYz1R1Nz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Altona City SC U12 Juniors - B Mixed",
-			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
-			"address": "HC Kim Reserve Pitch 3A",
-			"coordinates": "-37.863721,144.839985",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1071,11 +1070,10 @@
 			"day": "Sunday",
 			"time": "12:15",
 			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
-			"coordinates": "-37.861747,144.749995",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1109,12 +1107,11 @@
 			"date": "2026-08-09",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1154,6 +1151,18 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
 			"coordinates": "-37.777915,144.885698",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-15",
+			"day": "Sunday",
+			"time": "00:00",
+			"homeTeamId": "bye",
+			"awayTeamId": "Bjma0RXqdR",
+			"awayTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1214,11 +1223,10 @@
 			"day": "Sunday",
 			"time": "12:20",
 			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "Bjma0RXqdR",
+			"awayTeamId": "bye",
 			"homeTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
-			"awayTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
-			"address": "AW Bond Reserve Half A",
-			"coordinates": "-37.827591,144.845123",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1227,11 +1235,10 @@
 			"day": "Sunday",
 			"time": "12:45",
 			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
-			"coordinates": "-37.861747,144.749995",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1239,12 +1246,11 @@
 			"date": "2026-08-23",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Williamstown SC U12 Juniors - B Mixed Under 12 Boys (Ben)",
-			"address": "HD Graham Reserve Field 1 (North) Half A",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1317,12 +1323,11 @@
 			"date": "2026-08-30",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
+			"homeTeamId": "bye",
 			"awayTeamId": "gld450DmW5",
-			"homeTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
 			"awayTeamName": "Melbourne Knights FC U12 Juniors - B Mixed MKFC U12 Boys B",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
@@ -1435,11 +1440,10 @@
 			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "3vmZvwGMmq",
-			"awayTeamId": "AnmYzg0xNz",
+			"awayTeamId": "bye",
 			"homeTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
-			"awayTeamName": "Laverton FC U12 Juniors - B Mixed Laverton FC SAS U12 White",
-			"address": "Balmoral Park Juniors",
-			"coordinates": "-37.791615,144.765315",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
