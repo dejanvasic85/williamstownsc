@@ -91,7 +91,7 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
+			"address": "Johnson Reserve Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
@@ -126,25 +126,25 @@
 			"date": "2026-06-20",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "vbd91WEDd4",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
-			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
-			"address": "Johnson Reserve Pitch 1D - Quarter Pitch 7v7",
-			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-20",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Mark)",
 			"address": "HC Kim Reserve Pitch 3 - Midi A (7v7)",
 			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-21",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "vbd91WEDd4",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
+			"awayTeamName": "Newport Storm FC U09 MiniRoos - Joeys Female Hurricanes",
+			"address": "Johnson Reserve Quarter Pitch 7v7",
+			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
 		{
@@ -260,7 +260,7 @@
 			"awayTeamId": "R1K3BvL3NQ",
 			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
 			"awayTeamName": "Melbourne City FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
+			"address": "Johnson Reserve Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
@@ -273,7 +273,7 @@
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
 			"awayTeamName": "Altona City SC U09 MiniRoos - Joeys Female",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
+			"address": "Johnson Reserve Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
@@ -416,7 +416,7 @@
 			"awayTeamId": "Bjma0G03dR",
 			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
 			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Female U9 Girls",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
+			"address": "Johnson Reserve Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},
@@ -572,7 +572,7 @@
 			"awayTeamId": "bgdMXaXpKE",
 			"homeTeamName": "Maribyrnong Swifts FC U09 MiniRoos - Joeys Female Purple",
 			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Joeys Female",
-			"address": "Johnson Reserve Pitch 1C - Quarter Pitch 7v7",
+			"address": "Johnson Reserve Quarter Pitch 7v7",
 			"coordinates": "-37.791812,144.874864",
 			"status": "pending"
 		},

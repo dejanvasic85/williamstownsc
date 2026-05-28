@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 90,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -347,6 +347,36 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "vbd91VOJd4",
+			"homeTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
+			"awayTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
+			"address": "JT Gray Reserve Pitch 4 - BUFC",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 7,
+			"status": "complete"
+		},
+		{
+			"round": 5,
+			"date": "2026-05-24",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "AnmYzglzNz",
+			"awayTeamId": "wOmejvpyN0",
+			"homeTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
+			"awayTeamName": "Melbourne University SC Seniors Senior Women SL5",
+			"address": "JJ Holland Park Main Pitch (S)",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
