@@ -384,25 +384,25 @@
 			"date": "2026-05-31",
 			"day": "Sunday",
 			"time": "11:00",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "vbd91VOJd4",
-			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL5",
-			"awayTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "11:00",
 			"homeTeamId": "wOmejvpyN0",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Melbourne University SC Seniors Senior Women SL5",
 			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
 			"address": "Princes Park Oval Pitch 1",
 			"coordinates": "-37.787624,144.960651",
+			"status": "pending"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "vbd91VOJd4",
+			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL5",
+			"awayTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
+			"address": "Ryder Oval Ryder Oval",
+			"coordinates": "-37.778822,144.955931",
 			"status": "pending"
 		},
 		{

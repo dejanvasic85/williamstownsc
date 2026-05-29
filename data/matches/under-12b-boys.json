@@ -31,7 +31,7 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 2,
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 1,
@@ -150,7 +150,7 @@
 			"coordinates": "",
 			"homeScore": 9,
 			"awayScore": 0,
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 2,
@@ -269,7 +269,7 @@
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 0,
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -283,7 +283,7 @@
 			"coordinates": "",
 			"homeScore": 6,
 			"awayScore": 4,
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 4,
@@ -447,7 +447,7 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 0,
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 6,
