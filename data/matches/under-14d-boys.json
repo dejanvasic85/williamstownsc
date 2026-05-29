@@ -531,14 +531,14 @@
 		},
 		{
 			"round": 6,
-			"date": "2026-05-30",
+			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "09:30",
+			"time": "10:10",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "3vmZv3YLmq",
 			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic",
 			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
