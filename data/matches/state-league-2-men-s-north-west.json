@@ -818,6 +818,21 @@
 			"round": 10,
 			"date": "2026-05-30",
 			"day": "Saturday",
+			"time": "18:30",
+			"homeTeamId": "3vmZv8JJmq",
+			"awayTeamId": "7MNGvxzpmA",
+			"homeTeamName": "Western Eagles SC Seniors",
+			"awayTeamName": "Corio SC Seniors",
+			"address": "Polish Sports & Recreation Complex Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-05-30",
+			"day": "Saturday",
 			"time": "15:00",
 			"homeTeamId": "3pmvQp0Ldv",
 			"awayTeamId": "AnmYzyArNz",
@@ -888,19 +903,6 @@
 			"homeScore": 3,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 10,
-			"date": "2026-05-30",
-			"day": "Saturday",
-			"time": "18:30",
-			"homeTeamId": "3vmZv8JJmq",
-			"awayTeamId": "7MNGvxzpmA",
-			"homeTeamName": "Western Eagles SC Seniors",
-			"awayTeamName": "Corio SC Seniors",
-			"address": "Polish Sports & Recreation Complex Pitch 1",
-			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
 		},
 		{
 			"round": 11,
