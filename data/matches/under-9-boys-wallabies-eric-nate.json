@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 80,
+	"totalFixtures": 78,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Khurram",
-			"awayTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
-			"address": "Webster Street Reserve Pitch 3A Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "08NOpe5WKZ",
-			"homeTeamName": "Altona City SC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Middle Park FC U09 MiniRoos - Wallabies Mixed",
-			"address": "HC Kim Reserve Pitch 3 - Midi B (7v7)",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-31",

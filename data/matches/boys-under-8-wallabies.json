@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 65,
+	"totalFixtures": 63,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Brimbank Stallions FC U08 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Williamstown SC U08 MiniRoos - Wallabies Mixed Boys Under 8W (Jim)",
-			"address": "Club Italia Sporting Club Pitch 1 - 7V7 Field D",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "AnmYzg4rNz",
-			"homeTeamName": "Yarraville Glory FC U08 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Maidstone United SC U08 MiniRoos - Wallabies Mixed Mango",
-			"address": "McIvor Reserve  Pitch 1 - Midi (1/4) B",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-31",

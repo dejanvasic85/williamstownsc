@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -886,19 +886,6 @@
 			"homeScore": 6,
 			"awayScore": 0,
 			"status": "complete"
-		},
-		{
-			"round": 10,
-			"date": "2026-05-30",
-			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "7MNGgM7NAz",
-			"homeTeamName": "Williamstown SC Reserves",
-			"awayTeamName": "Whittlesea Ranges FC Reserves",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 11,

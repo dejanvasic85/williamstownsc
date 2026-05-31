@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 100,
+	"totalFixtures": 99,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -351,16 +351,18 @@
 		},
 		{
 			"round": 6,
-			"date": "2026-05-30",
+			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "nPmrBk05mo",
-			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"time": "11:15",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
+			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -379,26 +381,13 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "bye",
 			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 6,
