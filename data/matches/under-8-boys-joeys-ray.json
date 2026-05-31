@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 91,
+	"totalFixtures": 87,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Hoppers Crossing SC U08 MiniRoos - Joeys Mixed u8 Matt",
-			"awayTeamName": "West Point SC U08 MiniRoos - Joeys Mixed U8 Mixed - Matt",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 2 - Midi Pitch A",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Altona Magic SC U08 MiniRoos - Joeys Mixed U8 Red",
-			"awayTeamName": "Wyndham FC U08 MiniRoos - Joeys Mixed Under 8 Joeys KK",
-			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Midi (7v7) B",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Werribee City FC U08 MiniRoos - Joeys Mixed U8 Mario",
-			"awayTeamName": "Truganina Lions FC U08 MiniRoos - Joeys Mixed Boys U8 - Joeys (A)",
-			"address": "Costas Mitre 10 Park Pitch 4C, Galvin Park Reserve - Quarter Field (7v7)",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:15",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Laverton FC U08 MiniRoos - Joeys Mixed Laverton FC U8",
-			"awayTeamName": "Williams Landing SC U08 MiniRoos - Joeys Mixed WLFC U8 - White",
-			"address": "HD Graham Reserve Field 1 (North) Midi A (7v7)",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-31",

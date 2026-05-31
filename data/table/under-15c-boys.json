@@ -8,14 +8,14 @@
 			"clubName": "Truganina Lions FC",
 			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
 			"position": 1,
-			"played": 5,
+			"played": 6,
 			"wins": 4,
-			"draws": 1,
+			"draws": 2,
 			"losses": 0,
-			"goalsFor": 29,
-			"goalsAgainst": 7,
+			"goalsFor": 31,
+			"goalsAgainst": 9,
 			"goalDifference": 22,
-			"points": 13
+			"points": 14
 		},
 		{
 			"teamId": "ld44BW6GdW",
@@ -38,14 +38,14 @@
 			"clubName": "Meadow Park SC",
 			"logoUrl": "https://ocean.dribl.com/4951a5443c554b879ee160dc81ac7825",
 			"position": 3,
-			"played": 5,
+			"played": 6,
 			"wins": 3,
-			"draws": 0,
+			"draws": 1,
 			"losses": 2,
-			"goalsFor": 14,
-			"goalsAgainst": 8,
+			"goalsFor": 16,
+			"goalsAgainst": 10,
 			"goalDifference": 6,
-			"points": 9
+			"points": 10
 		},
 		{
 			"teamId": "RdkE8Er2NG",
@@ -63,11 +63,26 @@
 			"points": 9
 		},
 		{
+			"teamId": "ZNQxMORJmx",
+			"teamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+			"clubName": "Roxburgh Park United SC",
+			"logoUrl": "https://ocean.dribl.com/97271535176849e1a978334c6b620394",
+			"position": 5,
+			"played": 6,
+			"wins": 3,
+			"draws": 0,
+			"losses": 3,
+			"goalsFor": 15,
+			"goalsAgainst": 12,
+			"goalDifference": 3,
+			"points": 9
+		},
+		{
 			"teamId": "Wdgpl509mR",
 			"teamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
 			"clubName": "Craigieburn City FC",
 			"logoUrl": "https://ocean.dribl.com/5a5e334701b545bf8a1970648d7975ac",
-			"position": 5,
+			"position": 6,
 			"played": 5,
 			"wins": 2,
 			"draws": 1,
@@ -76,21 +91,6 @@
 			"goalsAgainst": 8,
 			"goalDifference": 4,
 			"points": 7
-		},
-		{
-			"teamId": "ZNQxMORJmx",
-			"teamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"clubName": "Roxburgh Park United SC",
-			"logoUrl": "https://ocean.dribl.com/97271535176849e1a978334c6b620394",
-			"position": 6,
-			"played": 5,
-			"wins": 2,
-			"draws": 0,
-			"losses": 3,
-			"goalsFor": 10,
-			"goalsAgainst": 12,
-			"goalDifference": -2,
-			"points": 6
 		},
 		{
 			"teamId": "vmZ9YXMBdq",
@@ -113,13 +113,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 8,
-			"played": 5,
+			"played": 6,
 			"wins": 0,
 			"draws": 0,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 4,
-			"goalsAgainst": 26,
-			"goalDifference": -22,
+			"goalsAgainst": 31,
+			"goalDifference": -27,
 			"points": 0
 		}
 	]

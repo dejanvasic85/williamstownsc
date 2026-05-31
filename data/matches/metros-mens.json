@@ -323,14 +323,31 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
+			"time": "14:30",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "wOmejvpyN0",
+			"homeTeamName": "Brunswick Zebras FC Seniors The Old Lady",
+			"awayTeamName": "Melbourne University SC Seniors",
+			"address": "Ryder Oval Ryder Oval",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "nPmrB8Gpmo",
 			"awayTeamId": "bam1nklZNw",
 			"homeTeamName": "South Yarra SC Seniors",
 			"awayTeamName": "Fitzroy Lions SC Seniors",
 			"address": "Fawkner Park South Pavilion Pitch 2 (Lawn 20)",
-			"coordinates": "-37.8392,144.9919",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -342,21 +359,10 @@
 			"homeTeamName": "Middle Park FC Seniors",
 			"awayTeamName": "St Kilda SC Seniors Sundays",
 			"address": "Lagoon Reserve Main Pitch",
-			"coordinates": "-37.840912,144.944188",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "14:30",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "wOmejvpyN0",
-			"homeTeamName": "Brunswick Zebras FC Seniors The Old Lady",
-			"awayTeamName": "Melbourne University SC Seniors",
-			"address": "Ryder Oval Ryder Oval",
-			"coordinates": "-37.778822,144.955931",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -368,7 +374,7 @@
 			"awayTeamName": "Kings Domain FC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 7,

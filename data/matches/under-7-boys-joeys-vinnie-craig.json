@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 52,
+	"totalFixtures": 50,
 	"totalRounds": 18,
 	"fixtures": [
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "08:30",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Altona East SC U07 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Williams Landing SC U07 MiniRoos - Joeys Mixed WLFC U7 - Navy",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Mini D (4v4)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys Blue",
-			"awayTeamName": "Williamstown SC U07 MiniRoos - Joeys Mixed Boys Under 7J (Vinnie/Craig)",
-			"address": "Edwards Reserve Main Pitch E - Quarter Pitch 4v4",
-			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
-		},
 		{
 			"round": 6,
 			"date": "2026-05-31",

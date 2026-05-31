@@ -308,40 +308,16 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
-			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
-			"address": "Wyndham Vale North Reserve Main Pitch A",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "10:40",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "7MNGvappmA",
-			"homeTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
-			"address": "Williams Landing Sports Reserve Pitch 2",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMM4ZdE2",
 			"homeTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -353,8 +329,40 @@
 			"homeTeamName": "Altona City SC U14 Juniors - A Mixed",
 			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"address": "HC Kim Reserve Pitch 2",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 7,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "10:40",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "7MNGvappmA",
+			"homeTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
+			"address": "Williams Landing Sports Reserve Pitch 2",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "10:30",
+			"homeTeamId": "Bjma0G03dR",
+			"awayTeamId": "8nm7PgVNOq",
+			"homeTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
+			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"address": "Wyndham Vale North Reserve Main Pitch A",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -366,7 +374,7 @@
 			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 7,
