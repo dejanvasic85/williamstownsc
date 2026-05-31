@@ -3,11 +3,26 @@
 	"competition": "Girls' West 16B",
 	"entries": [
 		{
+			"teamId": "RdkEpOQBNG",
+			"teamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
+			"clubName": "Sydenham Park SC",
+			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
+			"position": 1,
+			"played": 5,
+			"wins": 4,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 18,
+			"goalsAgainst": 6,
+			"goalDifference": 12,
+			"points": 12
+		},
+		{
 			"teamId": "1K3v5AlRNQ",
 			"teamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
-			"position": 1,
+			"position": 2,
 			"played": 4,
 			"wins": 4,
 			"draws": 0,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 6,
 			"goalDifference": 8,
 			"points": 12
-		},
-		{
-			"teamId": "RdkEpOQBNG",
-			"teamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
-			"clubName": "Sydenham Park SC",
-			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
-			"position": 2,
-			"played": 4,
-			"wins": 3,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 14,
-			"goalsAgainst": 5,
-			"goalDifference": 9,
-			"points": 9
 		},
 		{
 			"teamId": "RNE6nBzXKv",
@@ -53,13 +53,13 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 4,
-			"played": 5,
+			"played": 6,
 			"wins": 2,
 			"draws": 0,
-			"losses": 3,
-			"goalsFor": 28,
-			"goalsAgainst": 11,
-			"goalDifference": 17,
+			"losses": 4,
+			"goalsFor": 29,
+			"goalsAgainst": 15,
+			"goalDifference": 14,
 			"points": 6
 		},
 		{
