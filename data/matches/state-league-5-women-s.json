@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 90,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -438,19 +438,6 @@
 			"homeScore": 0,
 			"awayScore": 3,
 			"status": "complete"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "6lNbpGXodx",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
-			"awayTeamName": "Yarraville Glory FC Seniors state league 6 women",
-			"address": "JJ Holland Park Main Pitch (S)",
-			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
 		},
 		{
 			"round": 7,

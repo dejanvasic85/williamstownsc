@@ -413,6 +413,21 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "08NOpe1bKZ",
+			"homeTeamName": "Brunswick City SC Seniors",
+			"awayTeamName": "Moreland Eagles FC Seniors",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 8,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "LBdDxg8Qdb",
 			"awayTeamId": "wOmejXOyN0",
@@ -438,19 +453,6 @@
 			"homeScore": 0,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "6lNbVk6NxE",
-			"awayTeamId": "08NOpe1bKZ",
-			"homeTeamName": "Brunswick City SC Seniors",
-			"awayTeamName": "Moreland Eagles FC Seniors",
-			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
 		},
 		{
 			"round": 7,

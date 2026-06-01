@@ -98,13 +98,13 @@
 			"clubName": "Whittlesea Ranges FC",
 			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
 			"position": 7,
-			"played": 9,
+			"played": 10,
 			"wins": 4,
 			"draws": 1,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 16,
-			"goalsAgainst": 19,
-			"goalDifference": -3,
+			"goalsAgainst": 22,
+			"goalDifference": -6,
 			"points": 13
 		},
 		{
@@ -128,14 +128,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 9,
-			"played": 8,
-			"wins": 2,
+			"played": 9,
+			"wins": 3,
 			"draws": 1,
 			"losses": 5,
-			"goalsFor": 13,
+			"goalsFor": 16,
 			"goalsAgainst": 21,
-			"goalDifference": -8,
-			"points": 7
+			"goalDifference": -5,
+			"points": 10
 		},
 		{
 			"teamId": "Pmrke44rNo",
