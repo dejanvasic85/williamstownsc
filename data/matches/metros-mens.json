@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 85,
+	"totalFixtures": 84,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -362,18 +362,6 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 6,
-			"date": "2026-05-31",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "bye",
-			"awayTeamId": "Bjma0GJMdR",
-			"awayTeamName": "Kings Domain FC Seniors",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{
