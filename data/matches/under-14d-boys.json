@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 40,
+	"totalFixtures": 42,
 	"totalRounds": 6,
 	"fixtures": [
 		{
@@ -593,6 +593,21 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "gld4pGXGdW",
+			"awayTeamId": "bam1nkkrNw",
+			"homeTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
+			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
+			"address": "Dixon Field Reserve Pitch E (Junior)",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "3vmZv9nLmq",
@@ -602,6 +617,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "10:10",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "3vmZv3YLmq",
+			"homeTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
+			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
 			"status": "complete"
 		}
 	]
