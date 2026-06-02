@@ -146,7 +146,7 @@ export function HeroCarousel({
 								sizes={isFullWidth ? '100vw' : '67vw'}
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
-							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 md:flex-col md:p-10">
+							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 pb-16 md:flex-col md:p-10 md:pb-10">
 								<div className="max-w-4xl sm:px-0">
 									<h2
 										className={clsx(
