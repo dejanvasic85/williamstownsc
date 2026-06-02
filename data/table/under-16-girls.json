@@ -18,11 +18,26 @@
 			"points": 12
 		},
 		{
+			"teamId": "RNE6nBzXKv",
+			"teamName": "Gisborne SC U16 Juniors - B Female 16JD",
+			"clubName": "Gisborne SC",
+			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
+			"position": 2,
+			"played": 5,
+			"wins": 4,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 18,
+			"goalsAgainst": 8,
+			"goalDifference": 10,
+			"points": 12
+		},
+		{
 			"teamId": "1K3v5AlRNQ",
 			"teamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
-			"position": 2,
+			"position": 3,
 			"played": 4,
 			"wins": 4,
 			"draws": 0,
@@ -31,21 +46,6 @@
 			"goalsAgainst": 6,
 			"goalDifference": 8,
 			"points": 12
-		},
-		{
-			"teamId": "RNE6nBzXKv",
-			"teamName": "Gisborne SC U16 Juniors - B Female 16JD",
-			"clubName": "Gisborne SC",
-			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
-			"position": 3,
-			"played": 4,
-			"wins": 3,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 14,
-			"goalsAgainst": 8,
-			"goalDifference": 6,
-			"points": 9
 		},
 		{
 			"teamId": "bd9W01yYN4",
@@ -98,13 +98,13 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 4,
+			"played": 5,
 			"wins": 0,
 			"draws": 0,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 1,
-			"goalsAgainst": 16,
-			"goalDifference": -15,
+			"goalsAgainst": 20,
+			"goalDifference": -19,
 			"points": 0
 		}
 	]

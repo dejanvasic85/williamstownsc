@@ -180,9 +180,7 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "-37.759892,144.819492",
-			"homeScore": 0,
-			"awayScore": 0,
-			"status": "washout reschedule"
+			"status": "pending"
 		},
 		{
 			"round": 3,
