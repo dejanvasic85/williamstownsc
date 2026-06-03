@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 16,
+	"totalFixtures": 17,
 	"totalRounds": 6,
 	"fixtures": [
 		{
@@ -227,6 +227,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "LBdDx1O8db",
+			"awayTeamId": "vbd91WEDd4",
+			"homeTeamName": "Melton Phoenix FC U12 Juniors - C Female",
+			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - C Female Silver",
+			"address": "MacPherson Park Pitch 4 (U12/13s)",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{

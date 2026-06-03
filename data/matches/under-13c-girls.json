@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 23,
+	"totalFixtures": 24,
 	"totalRounds": 6,
 	"fixtures": [
 		{
@@ -302,6 +302,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-30",
+			"day": "Sunday",
+			"time": "09:30",
+			"homeTeamId": "R1K3pRLdQ9",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
+			"awayTeamName": "Point Cook SC U13 Juniors - D Female U13 Blue Angels",
+			"address": "Churchill Reserve Pitch 2 - Half Field A",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{

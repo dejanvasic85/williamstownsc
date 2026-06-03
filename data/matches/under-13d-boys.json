@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 25,
+	"totalFixtures": 28,
 	"totalRounds": 6,
 	"fixtures": [
 		{
@@ -351,6 +351,21 @@
 		},
 		{
 			"round": 6,
+			"date": "2026-05-30",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
+			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
 			"time": "14:45",
@@ -368,6 +383,21 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
+			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "AnmYzg0xNz",
 			"awayTeamId": "k2KpRJ56mY",
@@ -377,6 +407,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
+			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
+			"address": "AW Bond Reserve Half B",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
 			"status": "complete"
 		}
 	]

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 22,
+	"totalFixtures": 24,
 	"totalRounds": 6,
 	"fixtures": [
 		{
@@ -308,6 +308,21 @@
 			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "nPmr7WjNow",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
+			"awayTeamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
+			"address": "City Vista Pavilion & Sports Field Pitch 3 (S) - 7v7 (A)",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
 			"time": "12:50",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "7MNGvappmA",
@@ -332,6 +347,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Altona City SC U15 Juniors - A Mixed",
+			"awayTeamName": "Surf Coast FC U15 Juniors - A Mixed",
+			"address": "HC Kim Reserve Pitch 3",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 0,
 			"status": "complete"
 		}
 	]
