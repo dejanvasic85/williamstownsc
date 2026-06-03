@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 33,
+	"totalFixtures": 34,
 	"totalRounds": 6,
 	"fixtures": [
 		{
@@ -467,6 +467,21 @@
 			"coordinates": "",
 			"homeScore": 7,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "OVdzwWpmGr",
+			"homeTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
+			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ Clement)",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{

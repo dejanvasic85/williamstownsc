@@ -23,14 +23,14 @@
 			"clubName": "Kensington City SC",
 			"logoUrl": "https://ocean.dribl.com/164d4108c9194bbfa868ceb938b6dab0",
 			"position": 2,
-			"played": 5,
+			"played": 6,
 			"wins": 5,
-			"draws": 0,
+			"draws": 1,
 			"losses": 0,
 			"goalsFor": 22,
 			"goalsAgainst": 1,
 			"goalDifference": 21,
-			"points": 15
+			"points": 16
 		},
 		{
 			"teamId": "8Nq7P2X7d9",
@@ -53,14 +53,14 @@
 			"clubName": "Yarraville Glory FC",
 			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
 			"position": 4,
-			"played": 5,
+			"played": 6,
 			"wins": 3,
-			"draws": 1,
+			"draws": 2,
 			"losses": 1,
 			"goalsFor": 16,
 			"goalsAgainst": 3,
 			"goalDifference": 13,
-			"points": 10
+			"points": 11
 		},
 		{
 			"teamId": "JmX4eOQlmn",
