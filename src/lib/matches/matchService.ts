@@ -33,35 +33,70 @@ function isByeFixture(fixture: Fixture): boolean {
 	return fixture.homeTeamId === 'bye' || fixture.awayTeamId === 'bye';
 }
 
+function findDuplicateClubIds(fixtures: Fixture[]): Set<string> {
+	const clubTeamNames = new Map<string, Set<string>>();
+
+	for (const fixture of fixtures) {
+		if (isByeFixture(fixture)) continue;
+
+		const sides: Array<[string, string | undefined]> = [
+			[fixture.homeTeamId, fixture.homeTeamName],
+			[fixture.awayTeamId, fixture.awayTeamName]
+		];
+
+		for (const [clubId, teamName] of sides) {
+			if (!clubTeamNames.has(clubId)) clubTeamNames.set(clubId, new Set());
+			if (teamName) clubTeamNames.get(clubId)!.add(teamName);
+		}
+	}
+
+	const duplicates = new Set<string>();
+	for (const [clubId, names] of clubTeamNames) {
+		if (names.size > 1) duplicates.add(clubId);
+	}
+	return duplicates;
+}
+
+function enrichFixture(fixture: Fixture, duplicateClubIds: Set<string>): EnrichedFixture {
+	const homeTeam = getClubByExternalId(fixture.homeTeamId);
+	const awayTeam = getClubByExternalId(fixture.awayTeamId);
+
+	if (!homeTeam || !awayTeam) {
+		throw new Error(`Club not found for fixture round ${fixture.round}`);
+	}
+
+	return {
+		round: fixture.round,
+		date: fixture.date,
+		day: fixture.day,
+		time: fixture.time,
+		homeTeam,
+		awayTeam,
+		homeTeamDisplayName: resolveTeamDisplayName(
+			fixture.homeTeamName,
+			homeTeam,
+			duplicateClubIds.has(fixture.homeTeamId)
+		),
+		awayTeamDisplayName: resolveTeamDisplayName(
+			fixture.awayTeamName,
+			awayTeam,
+			duplicateClubIds.has(fixture.awayTeamId)
+		),
+		address: fixture.address,
+		coordinates: fixture.coordinates,
+		homeScore: fixture.homeScore,
+		awayScore: fixture.awayScore,
+		homeScoreHalf: fixture.homeScoreHalf,
+		awayScoreHalf: fixture.awayScoreHalf,
+		status: fixture.status
+	};
+}
+
 function enrichFixtures(fixtures: Fixture[]): EnrichedFixture[] {
+	const duplicateClubIds = findDuplicateClubIds(fixtures);
 	return fixtures
 		.filter((f) => !isByeFixture(f))
-		.map((fixture) => {
-			const homeTeam = getClubByExternalId(fixture.homeTeamId);
-			const awayTeam = getClubByExternalId(fixture.awayTeamId);
-
-			if (!homeTeam || !awayTeam) {
-				throw new Error(`Club not found for fixture round ${fixture.round}`);
-			}
-
-			return {
-				round: fixture.round,
-				date: fixture.date,
-				day: fixture.day,
-				time: fixture.time,
-				homeTeam,
-				awayTeam,
-				homeTeamDisplayName: resolveTeamDisplayName(fixture.homeTeamName, homeTeam),
-				awayTeamDisplayName: resolveTeamDisplayName(fixture.awayTeamName, awayTeam),
-				address: fixture.address,
-				coordinates: fixture.coordinates,
-				homeScore: fixture.homeScore,
-				awayScore: fixture.awayScore,
-				homeScoreHalf: fixture.homeScoreHalf,
-				awayScoreHalf: fixture.awayScoreHalf,
-				status: fixture.status
-			};
-		});
+		.map((fixture) => enrichFixture(fixture, duplicateClubIds));
 }
 
 const loadFixture = cache(async function loadFixture(
@@ -105,6 +140,7 @@ const matchDurationMinutes = 120;
 
 function resolveNextMatch(fixtures: Fixture[], wscClubDriblId: string): EnrichedFixture | null {
 	const now = new Date();
+	const duplicateClubIds = findDuplicateClubIds(fixtures);
 
 	const upcoming = fixtures
 		.filter((f) => !isByeFixture(f))
@@ -122,11 +158,12 @@ function resolveNextMatch(fixtures: Fixture[], wscClubDriblId: string): Enriched
 	if (upcoming.length === 0) return null;
 
 	upcoming.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
-	return enrichFixtures([upcoming[0].fixture])[0];
+	return enrichFixture(upcoming[0].fixture, duplicateClubIds);
 }
 
 function resolvePreviousMatch(fixtures: Fixture[], wscClubDriblId: string): EnrichedFixture | null {
 	const now = new Date();
+	const duplicateClubIds = findDuplicateClubIds(fixtures);
 
 	const completed = fixtures
 		.filter((f) => !isByeFixture(f))
@@ -144,7 +181,7 @@ function resolvePreviousMatch(fixtures: Fixture[], wscClubDriblId: string): Enri
 	if (completed.length === 0) return null;
 
 	completed.sort((a, b) => b.matchDateTime.getTime() - a.matchDateTime.getTime());
-	return enrichFixtures([completed[0].fixture])[0];
+	return enrichFixture(completed[0].fixture, duplicateClubIds);
 }
 
 export async function getTeamMatches(teamSlug: string): Promise<{
