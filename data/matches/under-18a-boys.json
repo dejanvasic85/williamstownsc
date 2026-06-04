@@ -322,12 +322,12 @@
 			"date": "2026-06-07",
 			"day": "Sunday",
 			"time": "13:30",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
-			"awayTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
-			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
+			"homeTeamId": "nPmr7WjNow",
+			"awayTeamId": "7MNGvappmA",
+			"homeTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
+			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
+			"address": "City Vista Pavilion & Sports Field DEKA Park",
+			"coordinates": "-37.714141,144.726888",
 			"status": "pending"
 		},
 		{
