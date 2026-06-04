@@ -47,9 +47,12 @@ export function findClubExternalId(teamName: string, logoUrl: string): string {
 	throw new Error(`Could not find club for team: ${teamName} (logo: ${logoUrl})`);
 }
 
-export function resolveTeamDisplayName(teamName: string | undefined, club: Club): string {
-	if (!teamName) return club.displayName;
-	if (normalizeTeamName(teamName) !== teamName.trim()) return club.displayName;
+export function resolveTeamDisplayName(
+	teamName: string | undefined,
+	club: Club,
+	hasDuplicates = false
+): string {
+	if (!teamName || !hasDuplicates) return club.displayName;
 	return teamName;
 }
 

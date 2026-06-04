@@ -23,8 +23,21 @@ const columns: Column[] = [
 	{ label: 'Points', shortLabel: 'Pts', key: 'points' }
 ];
 
+function buildDuplicateClubNames(entries: TableEntry[]): Set<string> {
+	const counts = new Map<string, number>();
+	for (const entry of entries) {
+		counts.set(entry.clubName, (counts.get(entry.clubName) ?? 0) + 1);
+	}
+	return new Set([...counts.entries()].filter(([, count]) => count > 1).map(([name]) => name));
+}
+
+function resolveEntryDisplayName(entry: TableEntry, duplicateClubNames: Set<string>): string {
+	return duplicateClubNames.has(entry.clubName) ? entry.teamName : entry.clubName;
+}
+
 export function LeagueTable({ entries }: LeagueTableProps) {
 	const { wscClubDriblName } = getClubConfig();
+	const duplicateClubNames = buildDuplicateClubNames(entries);
 
 	return (
 		<div className="overflow-x-auto">
@@ -60,7 +73,9 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 											className="shrink-0 rounded-full object-contain"
 											unoptimized
 										/>
-										<span className="truncate">{entry.teamName}</span>
+										<span className="truncate">
+											{resolveEntryDisplayName(entry, duplicateClubNames)}
+										</span>
 									</div>
 								</td>
 								{columns.map((col) => (
