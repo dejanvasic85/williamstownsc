@@ -6,7 +6,11 @@ Sentry.init({
 	tracesSampleRate: 1,
 	debug: false,
 	enabled: isSentryEnabled(),
-	enableLogs: true
+	enableLogs: true,
+	ignoreErrors: [
+		// Browser extension noise — not application errors
+		'Invalid call to runtime.sendMessage()'
+	]
 });
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
