@@ -179,8 +179,10 @@
 			"homeTeamName": "Brimbank Stallions FC Seniors",
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 3,

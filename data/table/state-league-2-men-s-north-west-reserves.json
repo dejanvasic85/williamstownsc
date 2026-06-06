@@ -93,11 +93,26 @@
 			"points": 14
 		},
 		{
+			"teamId": "2KpvYAzomY",
+			"teamName": "Williamstown SC Reserves",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 7,
+			"played": 10,
+			"wins": 4,
+			"draws": 1,
+			"losses": 5,
+			"goalsFor": 18,
+			"goalsAgainst": 22,
+			"goalDifference": -4,
+			"points": 13
+		},
+		{
 			"teamId": "am1q9Wvzmw",
 			"teamName": "Whittlesea Ranges FC Reserves",
 			"clubName": "Whittlesea Ranges FC",
 			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
-			"position": 7,
+			"position": 8,
 			"played": 10,
 			"wins": 4,
 			"draws": 1,
@@ -112,7 +127,7 @@
 			"teamName": "Surf Coast FC Reserves",
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
-			"position": 8,
+			"position": 9,
 			"played": 10,
 			"wins": 3,
 			"draws": 2,
@@ -121,21 +136,6 @@
 			"goalsAgainst": 21,
 			"goalDifference": -10,
 			"points": 11
-		},
-		{
-			"teamId": "2KpvYAzomY",
-			"teamName": "Williamstown SC Reserves",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 9,
-			"played": 9,
-			"wins": 3,
-			"draws": 1,
-			"losses": 5,
-			"goalsFor": 16,
-			"goalsAgainst": 21,
-			"goalDifference": -5,
-			"points": 10
 		},
 		{
 			"teamId": "Pmrke44rNo",
@@ -173,13 +173,13 @@
 			"clubName": "Brimbank Stallions FC",
 			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
 			"position": 12,
-			"played": 9,
+			"played": 10,
 			"wins": 1,
 			"draws": 2,
-			"losses": 6,
-			"goalsFor": 8,
-			"goalsAgainst": 16,
-			"goalDifference": -8,
+			"losses": 7,
+			"goalsFor": 9,
+			"goalsAgainst": 18,
+			"goalDifference": -9,
 			"points": 5
 		}
 	]
