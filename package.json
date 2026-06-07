@@ -91,13 +91,5 @@
 			"eslint ."
 		]
 	},
-	"browserslist": "> 1%",
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"@sentry/cli",
-			"esbuild",
-			"sharp",
-			"unrs-resolver"
-		]
-	}
+	"browserslist": "> 1%"
 }
