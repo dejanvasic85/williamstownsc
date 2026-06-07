@@ -2,107 +2,50 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { TransformedNewsArticle } from '@/lib/content';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
-interface HeroCarouselProps {
+type HeroCarouselProps = {
 	articles: TransformedNewsArticle[];
-	autoplayInterval?: number;
+	currentSlide: number;
+	isPaused: boolean;
 	className?: string;
-	isFullWidth?: boolean;
-}
+	onSlideChange: (index: number) => void;
+	onPrevious: () => void;
+	onNext: () => void;
+	onTogglePause: () => void;
+	onMouseEnter: () => void;
+	onMouseLeave: () => void;
+};
 
 export function HeroCarousel({
 	articles,
-	autoplayInterval = 5000,
+	currentSlide,
+	isPaused,
 	className,
-	isFullWidth = false
+	onSlideChange,
+	onPrevious,
+	onNext,
+	onTogglePause,
+	onMouseEnter,
+	onMouseLeave
 }: HeroCarouselProps) {
-	const [currentSlide, setCurrentSlide] = useState(0);
-	const [isPaused, setIsPaused] = useState(false);
-	const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-	const startInterval = useCallback(() => {
-		if (articles.length <= 1 || isPaused) return;
-
-		if (intervalRef.current) {
-			clearInterval(intervalRef.current);
-		}
-
-		intervalRef.current = setInterval(() => {
-			setCurrentSlide((prev) => (prev + 1) % articles.length);
-		}, autoplayInterval);
-	}, [articles.length, autoplayInterval, isPaused]);
-
-	useEffect(() => {
-		startInterval();
-		return () => {
-			if (intervalRef.current) {
-				clearInterval(intervalRef.current);
-			}
-		};
-	}, [startInterval]);
-
-	const handleSlideChange = (index: number) => {
-		setCurrentSlide(index);
-		startInterval();
-	};
-
-	const handlePrevious = () => {
-		setCurrentSlide((prev) => (prev - 1 + articles.length) % articles.length);
-		startInterval();
-	};
-
-	const handleNext = () => {
-		setCurrentSlide((prev) => (prev + 1) % articles.length);
-		startInterval();
-	};
-
-	const handleTogglePause = () => {
-		setIsPaused((prev) => {
-			const newPausedState = !prev;
-			if (!newPausedState) {
-				// Immediately restart when unpausing
-				if (intervalRef.current) {
-					clearInterval(intervalRef.current);
-				}
-				intervalRef.current = setInterval(() => {
-					setCurrentSlide((prevSlide) => (prevSlide + 1) % articles.length);
-				}, autoplayInterval);
-			}
-			return newPausedState;
-		});
-	};
-
-	const handleMouseEnter = () => {
-		if (intervalRef.current) {
-			clearInterval(intervalRef.current);
-		}
-	};
-
-	const handleMouseLeave = () => {
-		if (!isPaused) {
-			startInterval();
-		}
-	};
-
 	if (articles.length === 0) {
 		return null;
 	}
 
 	return (
 		<section
-			className="group relative w-full"
+			className="group relative h-full w-full"
 			role="region"
 			aria-roledescription="carousel"
 			aria-label="Featured news"
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}
-			onFocusCapture={handleMouseEnter}
-			onBlurCapture={handleMouseLeave}
+			onMouseEnter={onMouseEnter}
+			onMouseLeave={onMouseLeave}
+			onFocusCapture={onMouseEnter}
+			onBlurCapture={onMouseLeave}
 		>
 			<div
 				className={clsx(
@@ -143,7 +86,7 @@ export function HeroCarousel({
 								className="hidden object-cover md:block"
 								priority={index === 0}
 								quality={90}
-								sizes={isFullWidth ? '100vw' : '67vw'}
+								sizes="67vw"
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 pb-16 md:flex-col md:p-10 md:pb-10">
@@ -173,14 +116,14 @@ export function HeroCarousel({
 			{articles.length > 1 && (
 				<>
 					<button
-						onClick={handlePrevious}
+						onClick={onPrevious}
 						className="btn btn-circle text-secondary absolute top-1/2 left-4 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
 						aria-label="Go to previous slide"
 					>
 						<ChevronLeft className="h-6 w-6" aria-hidden="true" />
 					</button>
 					<button
-						onClick={handleNext}
+						onClick={onNext}
 						className="btn btn-circle text-secondary absolute top-1/2 right-4 -translate-y-1/2 bg-white/10 backdrop-blur-sm hover:bg-white/20"
 						aria-label="Go to next slide"
 					>
@@ -189,7 +132,7 @@ export function HeroCarousel({
 
 					<div className="absolute right-6 bottom-6 flex items-center gap-3">
 						<button
-							onClick={handleTogglePause}
+							onClick={onTogglePause}
 							className="btn btn-circle btn-sm text-secondary bg-white/10 backdrop-blur-sm hover:bg-white/20"
 							aria-label={isPaused ? 'Play carousel' : 'Pause carousel'}
 							aria-pressed={isPaused}
@@ -209,7 +152,7 @@ export function HeroCarousel({
 								<button
 									key={index}
 									role="tab"
-									onClick={() => handleSlideChange(index)}
+									onClick={() => onSlideChange(index)}
 									className={`h-3 w-3 rounded-full transition-all ${
 										index === currentSlide ? 'w-8 bg-white' : 'bg-white/50 hover:bg-white/75'
 									}`}
