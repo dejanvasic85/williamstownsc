@@ -11,10 +11,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  changes:
+    name: Detect changes
+    runs-on: ubuntu-latest
+    outputs:
+      app: ${{ steps.filter.outputs.app }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            app:
+              - '!(data/**)'
+
   test:
     name: Verify
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    needs: changes
+    if: ${{ needs.changes.outputs.app == 'true' }}
     steps:
       - uses: actions/checkout@v6
       - uses: jdx/mise-action@v4
@@ -38,8 +54,8 @@ jobs:
     name: E2E Tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    needs: test
-    if: ${{ !startsWith(github.head_ref, 'feat/update-clubs-and-fixtures') }}
+    needs: [changes, test]
+    if: ${{ needs.changes.outputs.app == 'true' }}
     steps:
       - uses: actions/checkout@v6
       - uses: jdx/mise-action@v4
