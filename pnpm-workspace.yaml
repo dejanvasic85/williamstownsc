@@ -1,4 +1,6 @@
-minimumReleaseAge: 0
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - daisyui
 allowBuilds:
   '@sentry/cli': true
   esbuild: true
