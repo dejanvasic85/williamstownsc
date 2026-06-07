@@ -87,7 +87,7 @@ export function HeroSection({ articles }: HeroSectionProps) {
 	return (
 		<div className="flex flex-col gap-6">
 			{/* On desktop: CSS grid so both columns share the same row height naturally */}
-			<div className="lg:grid lg:grid-cols-[2fr_1fr] lg:gap-6">
+			<div className="lg:rounded-box lg:grid lg:grid-cols-[2fr_1fr] lg:overflow-hidden lg:shadow-lg">
 				<HeroCarousel
 					articles={articles}
 					currentSlide={currentSlide}

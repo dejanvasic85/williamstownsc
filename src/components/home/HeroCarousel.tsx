@@ -48,10 +48,7 @@ export function HeroCarousel({
 			onBlurCapture={onMouseLeave}
 		>
 			<div
-				className={clsx(
-					'carousel md:rounded-box relative w-full overflow-hidden',
-					className || 'h-[55vh]'
-				)}
+				className={clsx('carousel relative w-full overflow-hidden', className || 'h-[55vh]')}
 				aria-live="polite"
 				aria-atomic="true"
 			>
@@ -89,6 +86,7 @@ export function HeroCarousel({
 								sizes="67vw"
 							/>
 							<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
+							<div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/10 to-transparent" />
 							<div className="absolute inset-0 flex flex-col-reverse justify-between p-6 pb-16 md:flex-col md:p-10 md:pb-10">
 								<div className="max-w-4xl sm:px-0">
 									<h2

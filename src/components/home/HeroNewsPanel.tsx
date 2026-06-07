@@ -17,7 +17,7 @@ export function HeroNewsPanel({ articles, currentSlide, onSlideChange }: HeroNew
 
 	return (
 		<div className="hidden lg:flex lg:flex-col">
-			<div className="rounded-box border-base-content/10 bg-base-100/60 flex h-full flex-col border shadow-lg backdrop-blur-xl">
+			<div className="bg-base-100 flex h-full flex-col">
 				<h2 className="px-6 pt-6 pb-2 text-2xl font-bold">News</h2>
 
 				<div className="flex-1 overflow-y-auto px-6">
