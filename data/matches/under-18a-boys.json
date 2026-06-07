@@ -254,8 +254,10 @@
 			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
 			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
 			"address": "Springside Recreational Reserve Pitch 1 (S)",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 6,
@@ -327,8 +329,10 @@
 			"homeTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "City Vista Pavilion & Sports Field DEKA Park",
-			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 6,
