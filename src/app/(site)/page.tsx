@@ -3,10 +3,9 @@ import clsx from 'clsx';
 import {
 	ExpressionOfInterestSection,
 	FootballSection,
-	HeroCarousel,
+	HeroSection,
 	MatchCountdownSection,
 	MobileHeader,
-	NewsPanel,
 	SponsorsSection
 } from '@/components/home';
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
@@ -32,7 +31,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
 	const [
 		carouselArticles,
-		generalNews,
 		siteSettings,
 		homePageData,
 		featuredSponsors,
@@ -42,7 +40,6 @@ export default async function Home() {
 		nextKeyDate
 	] = await Promise.all([
 		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
-		getNewsArticles({ limit: 5, featured: 'exclude', imageSize: 'small' }),
 		getSiteSettings(),
 		getHomePageData(),
 		getFeaturedSponsors(),
@@ -81,21 +78,7 @@ export default async function Home() {
 							: 'lg:pt-(--navbar-with-offset)'
 					)}
 				>
-					<div className="flex flex-col gap-6 lg:flex-row">
-						{/* Hero Carousel - Left Side */}
-						<div className={clsx(generalNews.length > 0 ? 'lg:w-2/3' : 'lg:w-full')}>
-							<HeroCarousel
-								articles={carouselArticles}
-								className={
-									generalNews.length === 0 ? 'h-[70vh] md:h-[70vh]' : 'h-[65vh] md:h-[55vh]'
-								}
-								isFullWidth={generalNews.length === 0}
-							/>
-						</div>
-
-						{/* News Panel - Right Side */}
-						<NewsPanel articles={generalNews} />
-					</div>
+					<HeroSection articles={carouselArticles} />
 				</div>
 
 				<div className="container mx-auto">
