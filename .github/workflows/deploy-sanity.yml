@@ -21,7 +21,7 @@ jobs:
 
       - uses: jdx/mise-action@v4
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           version: 11.5.2
 
