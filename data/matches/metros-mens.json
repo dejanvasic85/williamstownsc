@@ -407,25 +407,25 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "wOmejvpyN0",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Melbourne University SC Seniors",
-			"awayTeamName": "Williamstown SC Seniors",
-			"address": "Princes Park Oval Pitch 3",
-			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "17:00",
 			"homeTeamId": "bam1nklZNw",
 			"awayTeamId": "bye",
 			"homeTeamName": "Fitzroy Lions SC Seniors",
 			"address": "",
 			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "wOmejvpyN0",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Melbourne University SC Seniors",
+			"awayTeamName": "Williamstown SC Seniors",
+			"address": "Princes Park Oval Pitch 2",
+			"coordinates": "-37.787624,144.960651",
 			"status": "pending"
 		},
 		{
