@@ -497,19 +497,6 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "nPmrBqlrmo",
-			"homeTeamName": "Williamstown SC Seniors Senior Women SL5",
-			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "17:00",
 			"homeTeamId": "bgdMXaXpKE",
 			"awayTeamId": "bgdMXLR7KE",
@@ -517,6 +504,19 @@
 			"awayTeamName": "Keon Park SC Seniors Senior Women SL5",
 			"address": "McIvor Reserve  Pitch 1 - FULL",
 			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "nPmrBqlrmo",
+			"homeTeamName": "Williamstown SC Seniors Senior Women SL5",
+			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
