@@ -382,6 +382,19 @@
 			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "11:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "nPmrB8Rjmo",
+			"homeTeamName": "Brimbank Stallions FC U15 Juniors - C Mixed",
+			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+			"address": "Club Italia Sporting Club Pitch 2",
+			"coordinates": "-37.759892,144.819492",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "11:30",
 			"homeTeamId": "nPmrBwrPmo",
 			"awayTeamId": "A4KLxz3GKq",
 			"homeTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
@@ -400,19 +413,6 @@
 			"homeTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "nPmrB8Rjmo",
-			"homeTeamName": "Brimbank Stallions FC U15 Juniors - C Mixed",
-			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"address": "Club Italia Sporting Club Pitch 2",
-			"coordinates": "-37.759892,144.819492",
 			"status": "pending"
 		},
 		{

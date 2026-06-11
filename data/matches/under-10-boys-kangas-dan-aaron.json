@@ -65,7 +65,7 @@
 			"awayTeamId": "bgdMM4ZdE2",
 			"homeTeamName": "Melbourne Knights FC U10 MiniRoos - Kangaroos Mixed MKFC U10's Kangaroos",
 			"awayTeamName": "Werribee City FC U10 MiniRoos - Kangaroos Mixed U10 Damian",
-			"address": "Knights Stadium Pitch 2A",
+			"address": "Knights Stadium Pitch 2A - Half Pitch",
 			"coordinates": "-37.76258,144.845387",
 			"status": "pending"
 		},
@@ -167,8 +167,8 @@
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Melbourne Knights FC U10 MiniRoos - Kangaroos Mixed MKFC U10's Kangaroos",
 			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"address": "Tompsett Stadium Main Pitch B (Half Field)",
-			"coordinates": "-37.762821,144.845199",
+			"address": "Knights Stadium Pitch 1B - Half Pitch",
+			"coordinates": "-37.76258,144.845387",
 			"status": "pending"
 		},
 		{
