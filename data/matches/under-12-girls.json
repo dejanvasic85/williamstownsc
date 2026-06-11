@@ -605,8 +605,8 @@
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Female WLFC U12G - Gold",
-			"address": "Dobson Reserve Pitch 1A",
-			"coordinates": "-37.787361,144.866896",
+			"address": "Knights Stadium Pitch 1B - Half Pitch",
+			"coordinates": "-37.76258,144.845387",
 			"status": "pending"
 		},
 		{
@@ -646,19 +646,6 @@
 			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
 			"address": "Fairbairn Park Pitch 4  - Half Field B",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
-			"awayTeamName": "Altona City SC U12 Juniors - B Female",
-			"address": "Waste Sense Park Main Pitch Half 1",
-			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
 		{
@@ -717,6 +704,19 @@
 			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
+			"awayTeamName": "Altona City SC U12 Juniors - B Female",
+			"address": "Waste Sense Park Pitch 2 - Half 1",
+			"coordinates": "-37.758429,144.79484",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-21",
+			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "OEN2Z5GlNq",
 			"awayTeamId": "gld4pGXGdW",
@@ -748,8 +748,8 @@
 			"awayTeamId": "vbd91WEDd4",
 			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
 			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - B Female Purple",
-			"address": "Tony Clarke Recreation Stadium Pitch 1A",
-			"coordinates": "-37.418683,144.574659",
+			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
+			"coordinates": "-37.777915,144.885698",
 			"status": "pending"
 		},
 		{
