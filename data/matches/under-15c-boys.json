@@ -382,12 +382,12 @@
 			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "11:30",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "nPmrB8Rjmo",
-			"homeTeamName": "Brimbank Stallions FC U15 Juniors - C Mixed",
-			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"address": "Club Italia Sporting Club Pitch 2",
-			"coordinates": "-37.759892,144.819492",
+			"homeTeamId": "nPmrB8Rjmo",
+			"awayTeamId": "PydoLxGmD9",
+			"homeTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+			"awayTeamName": "Brimbank Stallions FC U15 Juniors - C Mixed",
+			"address": "Arena Recreation Reserve Pitch 3",
+			"coordinates": "-37.618866,144.916762",
 			"status": "pending"
 		},
 		{

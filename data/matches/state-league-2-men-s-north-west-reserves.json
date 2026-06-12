@@ -914,8 +914,10 @@
 			"homeTeamName": "FC Strathmore Split Reserves",
 			"awayTeamName": "Mill Park SC Reserves",
 			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -978,7 +980,7 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Surf Coast FC Reserves",
 			"awayTeamName": "Williamstown SC Reserves",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},

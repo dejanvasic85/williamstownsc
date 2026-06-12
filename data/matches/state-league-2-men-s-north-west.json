@@ -908,6 +908,21 @@
 			"round": 11,
 			"date": "2026-06-12",
 			"day": "Friday",
+			"time": "20:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "3vmZv8JJmq",
+			"homeTeamName": "Brimbank Stallions FC Seniors",
+			"awayTeamName": "Western Eagles SC Seniors",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-12",
+			"day": "Friday",
 			"time": "20:15",
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "bam1nQWrNw",
@@ -915,19 +930,6 @@
 			"awayTeamName": "Mill Park SC Seniors",
 			"address": "Strathnaver Reserve Pitch 1",
 			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-12",
-			"day": "Friday",
-			"time": "20:30",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "3vmZv8JJmq",
-			"homeTeamName": "Brimbank Stallions FC Seniors",
-			"awayTeamName": "Western Eagles SC Seniors",
-			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
 			"status": "pending"
 		},
 		{

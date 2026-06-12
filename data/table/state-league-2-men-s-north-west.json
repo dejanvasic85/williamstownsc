@@ -48,11 +48,26 @@
 			"points": 16
 		},
 		{
+			"teamId": "gdMvAY7bmE",
+			"teamName": "Western Eagles SC Seniors",
+			"clubName": "Western Eagles SC",
+			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
+			"position": 4,
+			"played": 11,
+			"wins": 4,
+			"draws": 3,
+			"losses": 4,
+			"goalsFor": 21,
+			"goalsAgainst": 17,
+			"goalDifference": 4,
+			"points": 15
+		},
+		{
 			"teamId": "vmZwOWE2Nq",
 			"teamName": "Surf Coast FC Seniors",
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
-			"position": 4,
+			"position": 5,
 			"played": 10,
 			"wins": 4,
 			"draws": 3,
@@ -67,7 +82,7 @@
 			"teamName": "Altona North SC Seniors",
 			"clubName": "Altona North SC",
 			"logoUrl": "https://ocean.dribl.com/f87efaf54d9c4c2696c327078ccdc7e7",
-			"position": 5,
+			"position": 6,
 			"played": 10,
 			"wins": 3,
 			"draws": 5,
@@ -75,21 +90,6 @@
 			"goalsFor": 16,
 			"goalsAgainst": 11,
 			"goalDifference": 5,
-			"points": 14
-		},
-		{
-			"teamId": "gdMvAY7bmE",
-			"teamName": "Western Eagles SC Seniors",
-			"clubName": "Western Eagles SC",
-			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
-			"position": 6,
-			"played": 10,
-			"wins": 4,
-			"draws": 2,
-			"losses": 4,
-			"goalsFor": 20,
-			"goalsAgainst": 16,
-			"goalDifference": 4,
 			"points": 14
 		},
 		{
@@ -108,11 +108,26 @@
 			"points": 14
 		},
 		{
+			"teamId": "am1q9W76mw",
+			"teamName": "Brimbank Stallions FC Seniors",
+			"clubName": "Brimbank Stallions FC",
+			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
+			"position": 8,
+			"played": 11,
+			"wins": 3,
+			"draws": 3,
+			"losses": 5,
+			"goalsFor": 14,
+			"goalsAgainst": 22,
+			"goalDifference": -8,
+			"points": 12
+		},
+		{
 			"teamId": "MNGoenVXNA",
 			"teamName": "Geelong Rangers SC Seniors",
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
-			"position": 8,
+			"position": 9,
 			"played": 10,
 			"wins": 2,
 			"draws": 5,
@@ -120,21 +135,6 @@
 			"goalsFor": 13,
 			"goalsAgainst": 15,
 			"goalDifference": -2,
-			"points": 11
-		},
-		{
-			"teamId": "am1q9W76mw",
-			"teamName": "Brimbank Stallions FC Seniors",
-			"clubName": "Brimbank Stallions FC",
-			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
-			"position": 9,
-			"played": 10,
-			"wins": 3,
-			"draws": 2,
-			"losses": 5,
-			"goalsFor": 13,
-			"goalsAgainst": 21,
-			"goalDifference": -8,
 			"points": 11
 		},
 		{

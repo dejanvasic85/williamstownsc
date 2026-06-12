@@ -487,11 +487,10 @@
 			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "bye",
 			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
-			"awayTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{
