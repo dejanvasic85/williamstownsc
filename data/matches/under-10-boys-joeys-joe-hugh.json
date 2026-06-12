@@ -72,19 +72,6 @@
 			"round": 8,
 			"date": "2026-06-20",
 			"day": "Sunday",
-			"time": "08:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
-			"awayTeamName": "Williamstown SC U10 MiniRoos - Joeys Mixed Boys Under 10J (Hugh/Joe)",
-			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-20",
-			"day": "Sunday",
 			"time": "08:55",
 			"homeTeamId": "bgdMXaXpKE",
 			"awayTeamId": "bam1nkkrNw",
@@ -105,6 +92,19 @@
 			"awayTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed Blue",
 			"address": "Castley Reserve Main Pitch - Half Field A",
 			"coordinates": "-37.790938,144.815634",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-20",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
+			"awayTeamName": "Williamstown SC U10 MiniRoos - Joeys Mixed Boys Under 10J (Hugh/Joe)",
+			"address": "JT Gray Reserve Pitch 8 (U10/U11) - BUFC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
