@@ -7,7 +7,12 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 	const roundNumber = parseInt(attributes.round.replace(/^R/, ''), 10);
 
 	const fixtureDate = new Date(attributes.date);
-	const dateStr = fixtureDate.toISOString().split('T')[0];
+	const dateStr = fixtureDate.toLocaleDateString('en-CA', {
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		timeZone: 'Australia/Melbourne'
+	});
 	const timeStr = fixtureDate.toLocaleTimeString('en-AU', {
 		hour: '2-digit',
 		minute: '2-digit',
