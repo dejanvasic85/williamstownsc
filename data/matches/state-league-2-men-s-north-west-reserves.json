@@ -944,8 +944,10 @@
 			"homeTeamName": "Whittlesea Ranges FC Reserves",
 			"awayTeamName": "Albion Rovers FC Reserves",
 			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,

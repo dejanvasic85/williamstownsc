@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 132,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -921,6 +921,21 @@
 		},
 		{
 			"round": 11,
+			"date": "2026-06-12",
+			"day": "Friday",
+			"time": "20:15",
+			"homeTeamId": "AnmYzyArNz",
+			"awayTeamId": "bam1nQWrNw",
+			"homeTeamName": "FC Strathmore Split Seniors",
+			"awayTeamName": "Mill Park SC Seniors",
+			"address": "Strathnaver Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 11,
 			"date": "2026-06-13",
 			"day": "Saturday",
 			"time": "15:00",
@@ -929,8 +944,25 @@
 			"homeTeamName": "Corio SC Seniors",
 			"awayTeamName": "Uni Hill Eagles FC Seniors",
 			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-13",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "7MNGgM7NAz",
+			"awayTeamId": "3pmvQp0Ldv",
+			"homeTeamName": "Whittlesea Ranges FC Seniors",
+			"awayTeamName": "Albion Rovers FC Seniors",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -943,19 +975,6 @@
 			"awayTeamName": "Altona North SC Seniors",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-13",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "7MNGgM7NAz",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Whittlesea Ranges FC Seniors",
-			"awayTeamName": "Albion Rovers FC Seniors",
-			"address": "Epping Stadium Main Pitch",
-			"coordinates": "-37.624625,145.024327",
 			"status": "pending"
 		},
 		{

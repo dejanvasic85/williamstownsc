@@ -48,11 +48,26 @@
 			"points": 20
 		},
 		{
+			"teamId": "nmYykb5Dmz",
+			"teamName": "Albion Rovers FC Reserves",
+			"clubName": "Albion Rovers FC",
+			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
+			"position": 4,
+			"played": 11,
+			"wins": 5,
+			"draws": 5,
+			"losses": 1,
+			"goalsFor": 25,
+			"goalsAgainst": 20,
+			"goalDifference": 5,
+			"points": 20
+		},
+		{
 			"teamId": "EN2ORBB2Kq",
 			"teamName": "FC Strathmore Split Reserves",
 			"clubName": "FC Strathmore Split",
 			"logoUrl": "https://ocean.dribl.com/eea604f0133145cfaa26c37f5c596ee5",
-			"position": 4,
+			"position": 5,
 			"played": 11,
 			"wins": 6,
 			"draws": 2,
@@ -61,21 +76,6 @@
 			"goalsAgainst": 15,
 			"goalDifference": 3,
 			"points": 20
-		},
-		{
-			"teamId": "nmYykb5Dmz",
-			"teamName": "Albion Rovers FC Reserves",
-			"clubName": "Albion Rovers FC",
-			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
-			"position": 5,
-			"played": 10,
-			"wins": 5,
-			"draws": 4,
-			"losses": 1,
-			"goalsFor": 23,
-			"goalsAgainst": 18,
-			"goalDifference": 5,
-			"points": 19
 		},
 		{
 			"teamId": "1K3YZLkBmQ",
@@ -93,11 +93,26 @@
 			"points": 14
 		},
 		{
+			"teamId": "am1q9Wvzmw",
+			"teamName": "Whittlesea Ranges FC Reserves",
+			"clubName": "Whittlesea Ranges FC",
+			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
+			"position": 7,
+			"played": 11,
+			"wins": 4,
+			"draws": 2,
+			"losses": 5,
+			"goalsFor": 18,
+			"goalsAgainst": 24,
+			"goalDifference": -6,
+			"points": 14
+		},
+		{
 			"teamId": "2KpvYAzomY",
 			"teamName": "Williamstown SC Reserves",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 7,
+			"position": 8,
 			"played": 10,
 			"wins": 4,
 			"draws": 1,
@@ -105,21 +120,6 @@
 			"goalsFor": 18,
 			"goalsAgainst": 22,
 			"goalDifference": -4,
-			"points": 13
-		},
-		{
-			"teamId": "am1q9Wvzmw",
-			"teamName": "Whittlesea Ranges FC Reserves",
-			"clubName": "Whittlesea Ranges FC",
-			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
-			"position": 8,
-			"played": 10,
-			"wins": 4,
-			"draws": 1,
-			"losses": 5,
-			"goalsFor": 16,
-			"goalsAgainst": 22,
-			"goalDifference": -6,
 			"points": 13
 		},
 		{
