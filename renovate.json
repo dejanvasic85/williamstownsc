@@ -18,6 +18,8 @@
 	"prNotPendingHours": 1,
 	"semanticCommitScope": "",
 	"semanticCommitType": "deps",
+	"dependencyDashboardOSVVulnerabilitySummary": "none",
+	"ignorePaths": ["**/node_modules/**", "**/.next/**"],
 	"lockFileMaintenance": {
 		"enabled": true,
 		"automerge": true,
