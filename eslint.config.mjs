@@ -53,7 +53,8 @@ const eslintConfig = defineConfig([
 		// Playwright:
 		'test-results/**',
 		'playwright-report/**',
-		'playwright/.cache/**'
+		'playwright/.cache/**',
+		'*.config.ts'
 	])
 ]);
 

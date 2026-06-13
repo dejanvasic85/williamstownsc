@@ -6,7 +6,10 @@ export function transformExternalFixture(externalFixture: ExternalFixture): Fixt
 
 	const roundNumber = parseInt(attributes.round.replace(/^R/, ''), 10);
 
-	const fixtureDate = new Date(attributes.date);
+	// Results API omits the timezone indicator (e.g. "2026-04-26 03:15:00") but the value is UTC.
+	// Normalise to ISO 8601 with Z so the Date is always parsed as UTC.
+	const normalised = attributes.date.replace(' ', 'T').replace(/Z?$/, 'Z');
+	const fixtureDate = new Date(normalised);
 	const dateStr = fixtureDate.toLocaleDateString('en-CA', {
 		year: 'numeric',
 		month: '2-digit',
