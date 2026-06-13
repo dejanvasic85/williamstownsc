@@ -11,6 +11,14 @@ type RouteParams = {
 	params: Promise<{ slug: string }>;
 };
 
+function escapeText(value: string): string {
+	return value
+		.replace(/\\/g, '\\\\')
+		.replace(/;/g, '\\;')
+		.replace(/,/g, '\\,')
+		.replace(/\n/g, '\\n');
+}
+
 function buildVEvent(fixture: EnrichedFixture, slug: string): string {
 	const [year, month, day] = fixture.date.split('-').map(Number);
 	const [hour, minute] = fixture.time.split(':').map(Number);
@@ -25,9 +33,11 @@ function buildVEvent(fixture: EnrichedFixture, slug: string): string {
 			.replace(/\.\d{3}Z$/, 'Z');
 
 	const uid = `r${fixture.round}-${fixture.homeTeam.externalId}-${fixture.awayTeam.externalId}-${slug}@williamstownsc.com.au`;
-	const summary = `${fixture.homeTeamDisplayName} vs ${fixture.awayTeamDisplayName} - Round ${fixture.round}`;
+	const summary = escapeText(
+		`${fixture.homeTeamDisplayName} vs ${fixture.awayTeamDisplayName} - Round ${fixture.round}`
+	);
 	const mapsUrl = fixture.coordinates ? `https://maps.google.com/?q=${fixture.coordinates}` : '';
-	const description = [fixture.address, mapsUrl].filter(Boolean).join('\\n');
+	const description = [escapeText(fixture.address), mapsUrl].filter(Boolean).join('\\n');
 	const status = fixture.status === 'complete' ? 'CONFIRMED' : 'TENTATIVE';
 
 	return [
@@ -36,7 +46,7 @@ function buildVEvent(fixture: EnrichedFixture, slug: string): string {
 		`DTSTART:${format(startUtc)}`,
 		`DTEND:${format(endUtc)}`,
 		`SUMMARY:${summary}`,
-		`LOCATION:${fixture.address}`,
+		`LOCATION:${escapeText(fixture.address)}`,
 		`DESCRIPTION:${description}`,
 		`STATUS:${status}`,
 		'END:VEVENT'
