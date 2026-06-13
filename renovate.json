@@ -12,16 +12,20 @@
 	],
 	"automerge": true,
 	"commitMessageAction": "",
+	"minimumReleaseAge": "1 day",
 	"labels": ["dependencies"],
 	"prConcurrentLimit": 5,
+	"branchConcurrentLimit": 2,
 	"prNotPendingHours": 1,
 	"semanticCommitScope": "",
 	"semanticCommitType": "deps",
+	"dependencyDashboardOSVVulnerabilitySummary": "none",
+	"ignorePaths": ["**/node_modules/**", "**/.next/**"],
 	"lockFileMaintenance": {
 		"enabled": true,
 		"automerge": true,
-		"recreateWhen": "always",
 		"rebaseWhen": "behind-base-branch",
+		"recreateWhen": "auto",
 		"schedule": ["before 4am on monday"],
 		"prBodyDefinitions": {
 			"Change": "All locks refreshed"
