@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, LayoutList } from 'lucide-react';
+import { CalendarArrowDown, ExternalLink, LayoutList } from 'lucide-react';
 
 type Tab = {
 	label: string;
@@ -135,6 +135,19 @@ export function TeamDetailNav({
 							</li>
 						);
 					})}
+					{hasFixtures && (
+						<li>
+							<a
+								href={`/api/calendar/${teamSlug}`}
+								download
+								className="text-base-content/60 hover:text-base-content hover:bg-base-200 flex items-center gap-1 rounded-full px-3.5 py-1.5 text-sm font-medium transition-all lg:gap-1.5 lg:px-5 lg:py-2 lg:text-sm"
+								aria-label="Download calendar"
+							>
+								<CalendarArrowDown className="h-4 w-4 shrink-0" aria-hidden="true" />
+								<span className="hidden sm:inline">Calendar</span>
+							</a>
+						</li>
+					)}
 					<li className="ml-auto">
 						<Link
 							href="/football/teams"
