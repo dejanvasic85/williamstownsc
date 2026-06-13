@@ -6,21 +6,6 @@
 	"fixtures": [
 		{
 			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
-			"awayTeamName": "Surf Coast FC U15 Juniors - A Mixed",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "",
-			"homeScore": 1,
-			"awayScore": 2,
-			"status": "complete"
-		},
-		{
-			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
 			"time": "13:00",
@@ -62,6 +47,21 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
+			"awayTeamName": "Surf Coast FC U15 Juniors - A Mixed",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
@@ -366,7 +366,7 @@
 		},
 		{
 			"round": 7,
-			"date": "2026-06-13",
+			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "bgdMXLbQKE",
