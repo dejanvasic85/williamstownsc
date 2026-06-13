@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -918,19 +918,6 @@
 			"homeScore": 1,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-12",
-			"day": "Friday",
-			"time": "20:15",
-			"homeTeamId": "AnmYzyArNz",
-			"awayTeamId": "bam1nQWrNw",
-			"homeTeamName": "FC Strathmore Split Seniors",
-			"awayTeamName": "Mill Park SC Seniors",
-			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
 		},
 		{
 			"round": 11,
