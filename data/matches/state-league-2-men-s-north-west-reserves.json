@@ -908,6 +908,21 @@
 			"round": 11,
 			"date": "2026-06-12",
 			"day": "Friday",
+			"time": "18:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "3vmZv8JJmq",
+			"homeTeamName": "Brimbank Stallions FC Reserves",
+			"awayTeamName": "Western Eagles SC Reserves",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-12",
+			"day": "Friday",
 			"time": "18:15",
 			"homeTeamId": "AnmYzyArNz",
 			"awayTeamId": "bam1nQWrNw",
@@ -918,19 +933,6 @@
 			"homeScore": 1,
 			"awayScore": 2,
 			"status": "complete"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-12",
-			"day": "Friday",
-			"time": "18:30",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "3vmZv8JJmq",
-			"homeTeamName": "Brimbank Stallions FC Reserves",
-			"awayTeamName": "Western Eagles SC Reserves",
-			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
 		},
 		{
 			"round": 11,
