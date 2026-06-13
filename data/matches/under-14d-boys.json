@@ -678,6 +678,19 @@
 			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "11:15",
+			"homeTeamId": "3vmZv3YLmq",
+			"awayTeamId": "bgdMXan2KE",
+			"homeTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
+			"awayTeamName": "Tarneit United SC U14 Juniors - D Mixed (second)",
+			"address": "Aintree North Recreation Reserve Field 2",
+			"coordinates": "-37.714012,144.665373",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "11:15",
 			"homeTeamId": "3vmZv9nLmq",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
@@ -710,19 +723,6 @@
 			"awayTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
 			"address": "Alcock Road Reserve Pitch 3",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "3vmZv3YLmq",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
-			"awayTeamName": "Tarneit United SC U14 Juniors - D Mixed (second)",
-			"address": "Aintree North Recreation Reserve Field 2",
-			"coordinates": "-37.714012,144.665373",
 			"status": "pending"
 		},
 		{
