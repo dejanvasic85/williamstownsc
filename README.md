@@ -65,6 +65,30 @@ pnpm exec playwright install --with-deps chromium
 pnpm install
 ```
 
+### Running fixture crawls locally
+
+Fixtures are scraped from Dribl in two stages: crawl (scrapes raw data) then sync (transforms into `data/matches/`). League and competition names are read automatically from the Fixtures Crawler fields on each Team document in Sanity.
+
+Run for a single team:
+
+```bash
+pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures -t under-12-girls
+pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts sync fixtures -t under-12-girls
+```
+
+Omit `-t` to crawl all teams with `enableFixturesCrawler` enabled in Sanity:
+
+```bash
+pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures
+pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts sync fixtures
+```
+
+To override league and competition manually (useful before a team is configured in Sanity):
+
+```bash
+pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures -t <team-slug> -l "<League Name>" -c "<Competition Name>"
+```
+
 ## Content Management
 
 Sanity URLs:
