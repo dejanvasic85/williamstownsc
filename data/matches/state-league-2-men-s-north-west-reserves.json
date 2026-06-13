@@ -938,6 +938,21 @@
 			"round": 11,
 			"date": "2026-06-13",
 			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Surf Coast FC Reserves",
+			"awayTeamName": "Williamstown SC Reserves",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-13",
+			"day": "Saturday",
 			"time": "12:45",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "3pmvQp0Ldv",
@@ -973,19 +988,6 @@
 			"awayTeamName": "Altona North SC Reserves",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-13",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Surf Coast FC Reserves",
-			"awayTeamName": "Williamstown SC Reserves",
-			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
-			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},
 		{
