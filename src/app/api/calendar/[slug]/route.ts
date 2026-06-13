@@ -1,5 +1,6 @@
 import { TZDate } from '@date-fns/tz';
 import { addHours } from 'date-fns';
+import { getClubConfig } from '@/lib/config';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
 import type { EnrichedFixture } from '@/types/matches';
 
@@ -70,7 +71,12 @@ export async function GET(_request: Request, { params }: RouteParams) {
 		return new Response('Not Found', { status: 404 });
 	}
 
-	const ical = buildIcal(fixtureData.fixtures, fixtureData.competition, fixtureData.season, slug);
+	const { wscClubDriblId } = getClubConfig();
+	const wscFixtures = fixtureData.fixtures.filter(
+		(f) => f.homeTeam.externalId === wscClubDriblId || f.awayTeam.externalId === wscClubDriblId
+	);
+
+	const ical = buildIcal(wscFixtures, fixtureData.competition, fixtureData.season, slug);
 
 	return new Response(ical, {
 		headers: {
