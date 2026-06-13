@@ -14,13 +14,13 @@
 	"commitMessageAction": "",
 	"labels": ["dependencies"],
 	"prConcurrentLimit": 5,
+	"branchConcurrentLimit": 2,
 	"prNotPendingHours": 1,
 	"semanticCommitScope": "",
 	"semanticCommitType": "deps",
 	"lockFileMaintenance": {
 		"enabled": true,
 		"automerge": true,
-		"recreateWhen": "always",
 		"rebaseWhen": "behind-base-branch",
 		"schedule": ["before 4am on monday"],
 		"prBodyDefinitions": {
