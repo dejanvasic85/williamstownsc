@@ -12,6 +12,7 @@
 	],
 	"automerge": true,
 	"commitMessageAction": "",
+	"minimumReleaseAge": "1 day",
 	"labels": ["dependencies"],
 	"prConcurrentLimit": 5,
 	"branchConcurrentLimit": 2,
@@ -24,6 +25,7 @@
 		"enabled": true,
 		"automerge": true,
 		"rebaseWhen": "behind-base-branch",
+		"recreateWhen": "auto",
 		"schedule": ["before 4am on monday"],
 		"prBodyDefinitions": {
 			"Change": "All locks refreshed"
