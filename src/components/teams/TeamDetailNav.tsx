@@ -81,9 +81,9 @@ export function TeamDetailNav({
 		<>
 			<div ref={sentinelRef} className="h-px" aria-hidden="true" />
 			<nav
-				className={`team-detail-nav sticky top-0 z-40 -mx-4 px-4 transition-all duration-300 lg:top-[var(--navbar-height-desktop)] lg:mx-0 lg:px-2 ${
+				className={`team-detail-nav sticky top-0 z-40 -mx-4 px-4 transition-all duration-300 lg:top-(--navbar-height-desktop) lg:mx-0 lg:px-2 ${
 					isStuck
-						? 'bg-base-300/90 rounded-b-2xl shadow-[0_4px_16px_-2px_rgba(0,0,0,0.12)] backdrop-blur-sm'
+						? 'bg-base-100/95 rounded-b-2xl shadow-[0_8px_32px_-4px_rgba(0,0,0,0.18),0_2px_8px_-2px_rgba(0,0,0,0.08)] backdrop-blur-md'
 						: 'bg-base-100 border-base-200 border-b'
 				}`}
 				aria-label="Team navigation"
