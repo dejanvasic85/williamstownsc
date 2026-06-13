@@ -49,6 +49,8 @@ jobs:
         run: pnpm run type:check
       - name: Format
         run: pnpm run format:check
+      - name: Unit tests
+        run: pnpm run test
 
   e2e:
     name: E2E Tests
