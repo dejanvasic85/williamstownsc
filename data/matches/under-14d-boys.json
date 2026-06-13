@@ -321,21 +321,6 @@
 		},
 		{
 			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "09:35",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
-			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
-			"address": "JT Gray Reserve Pitch 6- BUFC",
-			"coordinates": "",
-			"homeScore": 3,
-			"awayScore": 6,
-			"status": "complete"
-		},
-		{
-			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "13:00",
@@ -422,6 +407,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "09:35",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "bam1nkkrNw",
+			"homeTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
+			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
+			"address": "JT Gray Reserve Pitch 6- BUFC",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 6,
 			"status": "complete"
 		},
 		{

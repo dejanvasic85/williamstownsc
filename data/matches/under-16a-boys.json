@@ -6,21 +6,6 @@
 	"fixtures": [
 		{
 			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "OVdzwWpmGr",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
-			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"address": "John Cain Memorial Park Pitch 1",
-			"coordinates": "",
-			"homeScore": 0,
-			"awayScore": 2,
-			"status": "complete"
-		},
-		{
-			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
 			"time": "15:00",
@@ -91,6 +76,21 @@
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "",
 			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "OVdzwWpmGr",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+			"address": "John Cain Memorial Park Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
 			"awayScore": 2,
 			"status": "complete"
 		},
@@ -516,7 +516,7 @@
 		},
 		{
 			"round": 7,
-			"date": "2026-06-13",
+			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "09:45",
 			"homeTeamId": "wOmejJVeN0",
