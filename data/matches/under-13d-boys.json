@@ -81,21 +81,6 @@
 		},
 		{
 			"round": 2,
-			"date": "2026-05-02",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
-			"coordinates": "",
-			"homeScore": 9,
-			"awayScore": 1,
-			"status": "complete"
-		},
-		{
-			"round": 2,
 			"date": "2026-05-03",
 			"day": "Sunday",
 			"time": "11:30",
@@ -152,6 +137,21 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 7,
+			"status": "complete"
+		},
+		{
+			"round": 2,
+			"date": "2026-05-03",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
+			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
+			"coordinates": "",
+			"homeScore": 9,
+			"awayScore": 1,
 			"status": "complete"
 		},
 		{
@@ -351,21 +351,6 @@
 		},
 		{
 			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXLL2KE",
-			"awayTeamId": "nPmrBk05mo",
-			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
-			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
-			"coordinates": "",
-			"homeScore": 4,
-			"awayScore": 1,
-			"status": "complete"
-		},
-		{
-			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
 			"time": "14:45",
@@ -425,8 +410,23 @@
 			"status": "complete"
 		},
 		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXLL2KE",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
+			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
 			"round": 7,
-			"date": "2026-06-13",
+			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "k2KpRJ56mY",
@@ -580,7 +580,7 @@
 		},
 		{
 			"round": 9,
-			"date": "2026-06-27",
+			"date": "2026-06-28",
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "Bjma0RXqdR",

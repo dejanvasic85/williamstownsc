@@ -261,21 +261,6 @@
 		},
 		{
 			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "OEN2Z5GlNq",
-			"homeTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
-			"awayTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
-			"address": "",
-			"coordinates": "",
-			"homeScore": 3,
-			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
 			"time": "15:00",
@@ -321,6 +306,21 @@
 		},
 		{
 			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "OEN2Z5GlNq",
+			"homeTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
+			"awayTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 6,
 			"date": "2026-06-07",
 			"day": "Sunday",
 			"time": "13:30",
@@ -349,7 +349,7 @@
 		},
 		{
 			"round": 7,
-			"date": "2026-06-13",
+			"date": "2026-06-14",
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "3vmZv3vbmq",

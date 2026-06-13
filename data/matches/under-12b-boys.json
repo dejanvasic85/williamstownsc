@@ -6,21 +6,6 @@
 	"fixtures": [
 		{
 			"round": 1,
-			"date": "2026-04-25",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
-			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
-			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
-			"coordinates": "",
-			"homeScore": 6,
-			"awayScore": 2,
-			"status": "complete"
-		},
-		{
-			"round": 1,
 			"date": "2026-04-26",
 			"day": "Sunday",
 			"time": "11:20",
@@ -76,6 +61,21 @@
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 1,
+			"date": "2026-04-26",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "3vmZv9nLmq",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
+			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
+			"address": "Avondale Heights Reserve Pitch 1 - Half Field B",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 2,
 			"status": "complete"
 		},
 		{
@@ -273,20 +273,6 @@
 		},
 		{
 			"round": 4,
-			"date": "2026-05-16",
-			"day": "Sunday",
-			"time": "08:45",
-			"homeTeamId": "bye",
-			"awayTeamId": "3vmZv3vbmq",
-			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
-			"address": "",
-			"coordinates": "",
-			"homeScore": 6,
-			"awayScore": 4,
-			"status": "complete"
-		},
-		{
-			"round": 4,
 			"date": "2026-05-17",
 			"day": "Sunday",
 			"time": "14:30",
@@ -358,6 +344,20 @@
 			"coordinates": "",
 			"homeScore": 1,
 			"awayScore": 18,
+			"status": "complete"
+		},
+		{
+			"round": 4,
+			"date": "2026-05-17",
+			"day": "Sunday",
+			"time": "08:45",
+			"homeTeamId": "bye",
+			"awayTeamId": "3vmZv3vbmq",
+			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
+			"address": "",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 4,
 			"status": "complete"
 		},
 		{
@@ -451,21 +451,6 @@
 		},
 		{
 			"round": 6,
-			"date": "2026-05-30",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
-			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
-			"address": "AW Bond Reserve Half B",
-			"coordinates": "",
-			"homeScore": 3,
-			"awayScore": 3,
-			"status": "complete"
-		},
-		{
-			"round": 6,
 			"date": "2026-05-31",
 			"day": "Sunday",
 			"time": "12:15",
@@ -521,6 +506,21 @@
 			"address": "HC Kim Reserve Pitch 3A",
 			"coordinates": "",
 			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 6,
+			"date": "2026-05-31",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
+			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
+			"address": "AW Bond Reserve Half B",
+			"coordinates": "",
+			"homeScore": 3,
 			"awayScore": 3,
 			"status": "complete"
 		},
@@ -591,7 +591,7 @@
 		},
 		{
 			"round": 8,
-			"date": "2026-06-20",
+			"date": "2026-06-21",
 			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "8nm7PgVNOq",
@@ -604,7 +604,7 @@
 		},
 		{
 			"round": 8,
-			"date": "2026-06-20",
+			"date": "2026-06-21",
 			"day": "Sunday",
 			"time": "09:30",
 			"homeTeamId": "Bjma0RXqdR",
