@@ -8,14 +8,14 @@
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
 			"position": 1,
-			"played": 4,
-			"wins": 4,
+			"played": 5,
+			"wins": 5,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 16,
+			"goalsFor": 22,
 			"goalsAgainst": 1,
-			"goalDifference": 15,
-			"points": 12
+			"goalDifference": 21,
+			"points": 15
 		},
 		{
 			"teamId": "jmaBLM1YNR",
@@ -38,13 +38,13 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 3,
-			"played": 5,
+			"played": 6,
 			"wins": 3,
 			"draws": 0,
-			"losses": 2,
+			"losses": 3,
 			"goalsFor": 9,
-			"goalsAgainst": 9,
-			"goalDifference": 0,
+			"goalsAgainst": 15,
+			"goalDifference": -6,
 			"points": 9
 		},
 		{

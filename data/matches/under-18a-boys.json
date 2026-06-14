@@ -351,6 +351,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "OEN2Z5GlNq",
+			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
+			"awayTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
+			"address": "Waste Sense Park Pitch 2",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "nPmr7WjNow",
 			"awayTeamId": "6lNbpDpwdx",
@@ -371,19 +386,6 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "OEN2Z5GlNq",
-			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
-			"awayTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
-			"address": "Waste Sense Park Pitch 2",
-			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
 		{

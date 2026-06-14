@@ -488,6 +488,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "7ZKRa2oNkB",
+			"awayTeamId": "7MNGvobEmA",
+			"homeTeamName": "Pascoe Vale FC Seniors",
+			"awayTeamName": "Altona East SC Seniors",
+			"address": "Hosken Reserve Pitch 1 South",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "13:30",
 			"homeTeamId": "08NOpe1bKZ",
 			"awayTeamId": "6lNbpDpwdx",
@@ -509,19 +524,6 @@
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
 			"status": "washout reschedule"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "7ZKRa2oNkB",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Pascoe Vale FC Seniors",
-			"awayTeamName": "Altona East SC Seniors",
-			"address": "Hosken Reserve Pitch 1 South",
-			"coordinates": "-37.725117,144.957411",
-			"status": "pending"
 		},
 		{
 			"round": 8,

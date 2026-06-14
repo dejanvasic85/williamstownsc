@@ -528,6 +528,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "8nm7PgVNOq",
+			"homeTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
+			"awayTeamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
+			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
+			"coordinates": "",
+			"homeScore": 12,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "AnmYz1R1Nz",
 			"awayTeamId": "6lNbpD56dx",
@@ -576,19 +591,6 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"address": "Avondale Heights Reserve Pitch 1 - Half Field A",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
-			"awayTeamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
-			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
-			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
