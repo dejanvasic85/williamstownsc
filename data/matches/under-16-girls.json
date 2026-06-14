@@ -284,8 +284,10 @@
 			"homeTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
 			"address": "Keilor Lodge Reserve Pitch 3",
-			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 7,
@@ -323,7 +325,7 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 8,

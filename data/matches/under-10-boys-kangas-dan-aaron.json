@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 18,
+	"totalFixtures": 16,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Yarraville Glory FC U10 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Avondale FC U10 MiniRoos - Kangaroos Mixed U10 - Miniroos - Boys - Jacob",
-			"address": "McIvor Reserve  Pitch 2 - Half (A+B)",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:55",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Altona Magic SC U10 MiniRoos - Kangaroos Mixed U10 Black",
-			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"address": "Paisley Park - Altona Magic SC Pitch 2 - Half Field (A)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
 		{
 			"round": 7,
 			"date": "2026-06-14",
@@ -79,7 +53,7 @@
 			"homeTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 8,

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 52,
+	"totalFixtures": 51,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -518,19 +518,6 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "09:45",
-			"homeTeamId": "wOmejJVeN0",
-			"awayTeamId": "gld4pGXGdW",
-			"homeTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
-			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"address": "Keilor Lodge Reserve Pitch 1",
-			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "10:45",
 			"homeTeamId": "3pmvQW0Edv",
 			"awayTeamId": "8nm7PgVNOq",
@@ -538,7 +525,7 @@
 			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
+			"status": "postponed"
 		},
 		{
 			"round": 7,

@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 132,
+	"totalFixtures": 131,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -953,6 +953,21 @@
 			"round": 11,
 			"date": "2026-06-13",
 			"day": "Saturday",
+			"time": "13:00",
+			"homeTeamId": "7MNGvxzpmA",
+			"awayTeamId": "Bjma0G87dR",
+			"homeTeamName": "Corio SC Reserves",
+			"awayTeamName": "Uni Hill Eagles FC Reserves",
+			"address": "Hume Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-13",
+			"day": "Saturday",
 			"time": "12:45",
 			"homeTeamId": "7MNGgM7NAz",
 			"awayTeamId": "3pmvQp0Ldv",
@@ -963,32 +978,6 @@
 			"homeScore": 2,
 			"awayScore": 2,
 			"status": "complete"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-13",
-			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "7MNGvxzpmA",
-			"awayTeamId": "Bjma0G87dR",
-			"homeTeamName": "Corio SC Reserves",
-			"awayTeamName": "Uni Hill Eagles FC Reserves",
-			"address": "Hume Reserve Pitch 1",
-			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-06-13",
-			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "6lNbpDlAdx",
-			"homeTeamName": "Geelong Rangers SC Reserves",
-			"awayTeamName": "Altona North SC Reserves",
-			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
 		},
 		{
 			"round": 12,

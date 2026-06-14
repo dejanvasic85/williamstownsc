@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 15,
+	"totalFixtures": 12,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "Tarneit North FC U08 MiniRoos - Joeys Mixed U8 Sunday West",
-			"awayTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Michael",
-			"address": "Polly Parade Reserve Main Pitch - Midi (7v7) A",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "1pN6RBQN0g",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Avondale FC U08 MiniRoos - Joeys Mixed U8 - MiniRoos - Boys - Adam",
-			"awayTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Roberto)",
-			"address": "Fairbairn Park Pitch 2 - Midi B (7v7)",
-			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:30",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Newport Storm FC U08 MiniRoos - Joeys Mixed Fofana",
-			"awayTeamName": "Barnstoneworth United FC U08 MiniRoos - Joeys Mixed BUFC U8",
-			"address": "AW Bond Reserve Midi A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
 		{
 			"round": 7,
 			"date": "2026-06-14",
@@ -66,7 +27,7 @@
 			"homeTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Jess",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 8,

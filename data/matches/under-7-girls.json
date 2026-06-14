@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 12,
+	"totalFixtures": 10,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Altona Magic SC U07 MiniRoos - Joeys Female U7 Girls",
-			"awayTeamName": "Melbourne City FC U07 MiniRoos - Joeys Female U7 Girls White",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Mini C (4v4)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "bam1nkkrNw",
-			"homeTeamName": "West Point SC U07 MiniRoos - Joeys Female U7 Girls Keith",
-			"awayTeamName": "Footscray Rangers FC U07 MiniRoos - Joeys Female Charlotte & Sophie",
-			"address": "Webster Street Reserve Pitch 1A Mini 4v4",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
 		{
 			"round": 7,
 			"date": "2026-06-14",

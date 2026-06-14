@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 18,
+	"totalFixtures": 14,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Kangaroos Mixed Boys U8 - Kangaroos",
-			"awayTeamName": "Tarneit United SC U08 MiniRoos - Kangaroos Mixed",
-			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpDlAdx",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Masnou",
-			"awayTeamName": "Williams Landing SC U08 MiniRoos - Kangaroos Mixed WLFC U8A - Portland Timbers",
-			"address": "AB Shaw Reserve Pitch 1 - Midi A (7v7)",
-			"coordinates": "-37.865571,144.783747",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8s Jeremy",
-			"awayTeamName": "Point Cook SC U08 MiniRoos - Kangaroos Mixed U8 Cyclones",
-			"address": "Costas Mitre 10 Park Pitch 4C, Galvin Park Reserve - Quarter Field (7v7)",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:30",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Newport Storm FC U08 MiniRoos - Kangaroos Mixed Hakimi",
-			"awayTeamName": "Yarraville Glory FC U08 MiniRoos - Kangaroos Mixed",
-			"address": "AW Bond Reserve Midi B",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
 		{
 			"round": 7,
 			"date": "2026-06-14",

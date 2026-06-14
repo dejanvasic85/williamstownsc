@@ -1,61 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 21,
+	"totalFixtures": 17,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Truganina Hornets SC U08 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Werribee City FC U08 MiniRoos - Joeys Mixed U8 Mario",
-			"address": "Arndell Park Reserve Midi",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Joeys Mixed Boys U8 - Joeys (A)",
-			"awayTeamName": "Williams Landing SC U08 MiniRoos - Joeys Mixed WLFC U8 - White",
-			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Point Cook SC U08 MiniRoos - Joeys Mixed U8 Hunters",
-			"awayTeamName": "Wyndham FC U08 MiniRoos - Joeys Mixed Under 8 Joeys KK",
-			"address": "Saltwater Reserve Pitch 3 SSF3 (U9)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Hoppers Crossing SC U08 MiniRoos - Joeys Mixed u8 Matt",
-			"awayTeamName": "Laverton FC U08 MiniRoos - Joeys Mixed Laverton FC U8",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 2 - Midi Pitch B",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
 		{
 			"round": 7,
 			"date": "2026-06-14",

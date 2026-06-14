@@ -548,6 +548,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "R1K3BvL3NQ",
+			"homeTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys Blue Dan",
+			"awayTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys White Cang",
+			"address": "Edwards Reserve Main Pitch A",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 9,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "10:10",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "bgdMXan2KE",
@@ -555,19 +570,6 @@
 			"awayTeamName": "Tarneit United SC U12 Juniors - C Mixed",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys Blue Dan",
-			"awayTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys White Cang",
-			"address": "Edwards Reserve Main Pitch A",
-			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{

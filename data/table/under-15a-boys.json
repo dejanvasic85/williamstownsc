@@ -53,14 +53,14 @@
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
 			"position": 4,
-			"played": 6,
-			"wins": 3,
+			"played": 7,
+			"wins": 4,
 			"draws": 0,
 			"losses": 3,
-			"goalsFor": 6,
+			"goalsFor": 11,
 			"goalsAgainst": 11,
-			"goalDifference": -5,
-			"points": 9
+			"goalDifference": 0,
+			"points": 12
 		},
 		{
 			"teamId": "4KLzEovDmq",
@@ -98,13 +98,13 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 7,
-			"played": 6,
+			"played": 7,
 			"wins": 1,
 			"draws": 2,
-			"losses": 3,
+			"losses": 4,
 			"goalsFor": 5,
-			"goalsAgainst": 12,
-			"goalDifference": -7,
+			"goalsAgainst": 17,
+			"goalDifference": -12,
 			"points": 5
 		},
 		{
