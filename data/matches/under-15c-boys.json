@@ -368,14 +368,31 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "nPmrBwrPmo",
+			"awayTeamId": "A4KLxz3GKq",
+			"homeTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
+			"awayTeamName": "Bundoora United FC U15 Juniors - C Mixed BUFC U15's Orange B's",
+			"address": "Gladstone Park Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "10:30",
 			"homeTeamId": "7MNGvobEmA",
 			"awayTeamId": "gld4pz60dW",
 			"homeTeamName": "Altona East SC U15 Juniors - C Mixed",
 			"awayTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 7,
@@ -394,26 +411,13 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "nPmrBwrPmo",
-			"awayTeamId": "A4KLxz3GKq",
-			"homeTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
-			"awayTeamName": "Bundoora United FC U15 Juniors - C Mixed BUFC U15's Orange B's",
-			"address": "Gladstone Park Reserve Pitch 1",
-			"coordinates": "-37.686596,144.887219",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "6lNbpD56dx",
 			"awayTeamId": "bye",
 			"homeTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 7,

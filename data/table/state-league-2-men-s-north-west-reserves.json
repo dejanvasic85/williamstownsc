@@ -98,14 +98,14 @@
 			"clubName": "Uni Hill Eagles FC",
 			"logoUrl": "https://ocean.dribl.com/f6ee1164568a48acbf1095f9723768f8",
 			"position": 7,
-			"played": 10,
+			"played": 11,
 			"wins": 4,
-			"draws": 2,
+			"draws": 3,
 			"losses": 4,
-			"goalsFor": 22,
-			"goalsAgainst": 15,
+			"goalsFor": 25,
+			"goalsAgainst": 18,
 			"goalDifference": 7,
-			"points": 14
+			"points": 15
 		},
 		{
 			"teamId": "am1q9Wvzmw",
@@ -158,14 +158,14 @@
 			"clubName": "Corio SC",
 			"logoUrl": "https://ocean.dribl.com/0e5506977eaf4897ab6a47e63ceb7a66",
 			"position": 11,
-			"played": 10,
+			"played": 11,
 			"wins": 2,
-			"draws": 1,
+			"draws": 2,
 			"losses": 7,
-			"goalsFor": 14,
-			"goalsAgainst": 25,
+			"goalsFor": 17,
+			"goalsAgainst": 28,
 			"goalDifference": -11,
-			"points": 7
+			"points": 8
 		},
 		{
 			"teamId": "emA1Dq0qmB",

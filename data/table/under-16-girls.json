@@ -8,14 +8,14 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 1,
-			"played": 6,
-			"wins": 5,
+			"played": 7,
+			"wins": 6,
 			"draws": 0,
 			"losses": 1,
-			"goalsFor": 21,
+			"goalsFor": 27,
 			"goalsAgainst": 6,
-			"goalDifference": 15,
-			"points": 15
+			"goalDifference": 21,
+			"points": 18
 		},
 		{
 			"teamId": "1K3v5AlRNQ",
@@ -98,13 +98,13 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 6,
+			"played": 7,
 			"wins": 0,
 			"draws": 0,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 1,
-			"goalsAgainst": 23,
-			"goalDifference": -22,
+			"goalsAgainst": 29,
+			"goalDifference": -28,
 			"points": 0
 		}
 	]

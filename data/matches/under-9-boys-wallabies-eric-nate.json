@@ -1,74 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 24,
+	"totalFixtures": 19,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Point Cook SC U09 MiniRoos - Wallabies Mixed U9 Phantoms",
-			"awayTeamName": "Williams Landing SC U09 MiniRoos - Wallabies Mixed",
-			"address": "Saltwater Reserve Pitch 3 SSF4 (U9)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Altona Magic SC U09 MiniRoos - Wallabies Mixed U9 Black",
-			"awayTeamName": "Truganina Lions FC U09 MiniRoos - Wallabies Mixed Boys U9 - Kangaroos",
-			"address": "Paisley Park - Altona Magic SC Pitch 1 - Midi B (7v7)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Altona Magic SC U09 MiniRoos - Wallabies Mixed U9 Red",
-			"awayTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Mixed",
-			"address": "Paisley Park - Altona Magic SC Pitch 2 - Midi Field (7v7) (A)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Phil",
-			"awayTeamName": "Point Cook SC U09 MiniRoos - Wallabies Mixed U9 Boomerangs",
-			"address": "Webster Street Reserve Pitch 3A Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "09:30",
-			"homeTeamId": "08NOpe5WKZ",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Middle Park FC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Altona City SC U09 MiniRoos - Wallabies Mixed",
-			"address": "JL Murphy Reserve Pitch 3C (7v7)",
-			"coordinates": "-37.834006,144.92755",
-			"status": "pending"
-		},
 		{
 			"round": 7,
 			"date": "2026-06-14",
@@ -105,7 +40,7 @@
 			"homeTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 8,

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 53,
+	"totalFixtures": 52,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -533,27 +533,16 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "09:45",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Surf Coast FC U13 Juniors - A Mixed",
-			"awayTeamName": "Tarneit United SC U13 Juniors - A Mixed",
-			"address": "Banyul-Warri Reserve Parwan Pitch 1B (S) (South)",
-			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "PydoLxGmD9",
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
 			"awayTeamName": "Altona City SC U13 Juniors - A Mixed",
 			"address": "Club Italia Sporting Club Pitch 2 - Half Field B",
-			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 7,
