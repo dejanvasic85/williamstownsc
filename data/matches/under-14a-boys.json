@@ -368,6 +368,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "bgdMXan2KE",
+			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
+			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"address": "Myers Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "3vmZv3vbmq",
@@ -375,19 +390,6 @@
 			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
 			"address": "Paisley Park - Altona Magic SC Pitch 1",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
-			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"address": "Myers Reserve Pitch 1",
-			"coordinates": "-38.09538,144.320027",
 			"status": "pending"
 		},
 		{

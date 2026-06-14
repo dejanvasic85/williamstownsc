@@ -548,6 +548,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "gld4pGXGdW",
+			"awayTeamId": "3pmvQp0Ldv",
+			"homeTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
+			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
+			"address": "Dixon Field Reserve Pitch D (U13)",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "nPmr7WjNow",
 			"awayTeamId": "vbd91WEDd4",
@@ -613,19 +628,6 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Female WLFC U12G - Gold",
 			"address": "Knights Stadium Pitch 1B - Half Pitch",
 			"coordinates": "-37.76258,144.845387",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
-			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
-			"address": "Dixon Field Reserve Pitch D (U13)",
-			"coordinates": "-37.483554,144.582761",
 			"status": "pending"
 		},
 		{

@@ -3,11 +3,26 @@
 	"competition": "Girls' West 13C",
 	"entries": [
 		{
+			"teamId": "RNE6JAQAKv",
+			"teamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 1,
+			"played": 7,
+			"wins": 5,
+			"draws": 0,
+			"losses": 2,
+			"goalsFor": 26,
+			"goalsAgainst": 12,
+			"goalDifference": 14,
+			"points": 15
+		},
+		{
 			"teamId": "ld44B0ZDdW",
 			"teamName": "Gisborne SC U13 Juniors - C Female 13ML",
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
-			"position": 1,
+			"position": 2,
 			"played": 6,
 			"wins": 4,
 			"draws": 1,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 5,
 			"goalDifference": 27,
 			"points": 13
-		},
-		{
-			"teamId": "RNE6JAQAKv",
-			"teamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 2,
-			"played": 6,
-			"wins": 4,
-			"draws": 0,
-			"losses": 2,
-			"goalsFor": 20,
-			"goalsAgainst": 11,
-			"goalDifference": 9,
-			"points": 12
 		},
 		{
 			"teamId": "BdD95xlJmb",
@@ -98,13 +98,13 @@
 			"clubName": "Maribyrnong Swifts FC",
 			"logoUrl": "https://ocean.dribl.com/2bdcd22e002244f0affb3249fec1eb1f",
 			"position": 7,
-			"played": 4,
+			"played": 5,
 			"wins": 1,
 			"draws": 0,
-			"losses": 3,
-			"goalsFor": 5,
-			"goalsAgainst": 25,
-			"goalDifference": -20,
+			"losses": 4,
+			"goalsFor": 6,
+			"goalsAgainst": 31,
+			"goalDifference": -25,
 			"points": 3
 		},
 		{

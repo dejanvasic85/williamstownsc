@@ -548,6 +548,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Laverton FC U12 Juniors - C Mixed Laverton FC U12",
+			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
+			"address": "HD Graham Reserve Field 1 (North) Half A",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "10:15",
 			"homeTeamId": "R1K3BvL3NQ",
 			"awayTeamId": "R1K3BvL3NQ",
@@ -570,19 +585,6 @@
 			"awayTeamName": "Tarneit United SC U12 Juniors - C Mixed",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Laverton FC U12 Juniors - C Mixed Laverton FC U12",
-			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
-			"address": "HD Graham Reserve Field 1 (North) Half A",
-			"coordinates": "-37.878568,144.79544",
 			"status": "pending"
 		},
 		{
