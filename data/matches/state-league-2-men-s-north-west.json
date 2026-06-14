@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 131,
+	"totalFixtures": 132,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -962,6 +962,21 @@
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 11,
+			"date": "2026-06-13",
+			"day": "Saturday",
+			"time": "15:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "6lNbpDlAdx",
+			"homeTeamName": "Geelong Rangers SC Seniors",
+			"awayTeamName": "Altona North SC Seniors",
+			"address": "Myers Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 56,
+	"totalFixtures": 57,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -602,6 +602,21 @@
 			"coordinates": "",
 			"homeScore": 5,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "1pN6RBQN0g",
+			"awayTeamId": "OEN2Z5GlNq",
+			"homeTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
+			"awayTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
+			"address": "Fairbairn Park Pitch 3 - Half Field B",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 5,
 			"status": "complete"
 		},
 		{
