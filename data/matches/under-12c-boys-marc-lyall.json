@@ -548,6 +548,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
+			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
+			"address": "Alcock Road Reserve Pitch 2 - Half B",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "AnmYzg0xNz",
 			"awayTeamId": "6lNbpDpwdx",
@@ -585,19 +600,6 @@
 			"awayTeamName": "Tarneit United SC U12 Juniors - C Mixed",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
-			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{
