@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 84,
+	"totalFixtures": 82,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -392,31 +392,6 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 1,
-			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "3vmZv3BJmq",
-			"awayTeamId": "wOmejXOyN0",
-			"homeTeamName": "St Kilda SC Seniors Sundays",
-			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
-			"address": "Alma Park East Field 1",
-			"coordinates": "-37.860185,144.994366",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "17:00",
-			"homeTeamId": "bam1nklZNw",
-			"awayTeamId": "bye",
-			"homeTeamName": "Fitzroy Lions SC Seniors",
-			"address": "",
-			"coordinates": "",
 			"status": "complete"
 		},
 		{

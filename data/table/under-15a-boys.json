@@ -68,14 +68,14 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 5,
-			"played": 6,
-			"wins": 2,
+			"played": 7,
+			"wins": 3,
 			"draws": 1,
 			"losses": 3,
-			"goalsFor": 7,
+			"goalsFor": 10,
 			"goalsAgainst": 9,
-			"goalDifference": -2,
-			"points": 7
+			"goalDifference": 1,
+			"points": 10
 		},
 		{
 			"teamId": "3NPlg7yYNr",
@@ -113,13 +113,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 8,
-			"played": 6,
+			"played": 7,
 			"wins": 0,
 			"draws": 0,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 5,
-			"goalsAgainst": 32,
-			"goalDifference": -27,
+			"goalsAgainst": 35,
+			"goalDifference": -30,
 			"points": 0
 		}
 	]

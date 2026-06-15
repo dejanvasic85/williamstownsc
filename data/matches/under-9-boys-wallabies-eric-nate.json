@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 19,
+	"totalFixtures": 16,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Male JUNIOR STARS",
-			"awayTeamName": "Truganina Lions FC U09 MiniRoos - Wallabies Mixed Boys U9 - Wallabies",
-			"address": "Hummingbird Boulevard Reserve 1C (7V7)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
-			"address": "Arndell Park Reserve Midi",
-			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "bye",
-			"homeTeamName": "Werribee City FC U09 MiniRoos - Wallabies Mixed U9 Jasemin",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

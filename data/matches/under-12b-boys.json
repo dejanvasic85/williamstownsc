@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 50,
+	"totalFixtures": 47,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -553,45 +553,6 @@
 			"homeScore": 2,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "3vmZvwGMmq",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
-			"awayTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
-			"address": "Balmoral Park Juniors",
-			"coordinates": "-37.791615,144.765315",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
-			"awayTeamName": "Altona City SC U12 Juniors - B Mixed",
-			"address": "AW Bond Reserve Half B",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
-			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
-			"address": "Avondale Heights Reserve Pitch 1 - Half Field A",
-			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
 		},
 		{
 			"round": 8,

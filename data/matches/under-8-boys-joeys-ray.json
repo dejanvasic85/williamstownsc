@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 17,
+	"totalFixtures": 14,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "b8Nq3q27d9",
-			"homeTeamName": "West Point SC U08 MiniRoos - Joeys Mixed U8 Mixed - Matt",
-			"awayTeamName": "Tarneit North FC U08 MiniRoos - Joeys Mixed",
-			"address": "Webster Street Reserve Pitch 3B Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Ray)",
-			"awayTeamName": "Williamstown SC U08 MiniRoos - Joeys Mixed Boys Under 8J (Kate)",
-			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Joeys Mixed Boys U8 - Joeys (B)",
-			"awayTeamName": "Altona Magic SC U08 MiniRoos - Joeys Mixed U8 Red",
-			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

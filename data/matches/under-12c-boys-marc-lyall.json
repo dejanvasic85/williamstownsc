@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 54,
+	"totalFixtures": 51,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -588,45 +588,6 @@
 			"homeScore": 1,
 			"awayScore": 9,
 			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:10",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
-			"awayTeamName": "Tarneit United SC U12 Juniors - C Mixed",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
-			"awayTeamName": "Yarraville Glory FC U12 Juniors - C Mixed",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "13:25",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "R1K3BOqGNQ",
-			"homeTeamName": "Point Cook SC U12 Juniors - C Mixed U12 Strike Eagles",
-			"awayTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
-			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
 		},
 		{
 			"round": 8,

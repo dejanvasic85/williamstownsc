@@ -1,21 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 9,
+	"totalFixtures": 8,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "bye",
-			"homeTeamName": "Melbourne City FC U07 MiniRoos - Joeys Mixed U7 Boys White",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

@@ -1,34 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 12,
+	"totalFixtures": 10,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bam1nkkrNw",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Footscray Rangers FC U10 MiniRoos - Joeys Mixed Juan",
-			"awayTeamName": "Altona East SC U10 MiniRoos - Joeys Mixed",
-			"address": "Hansen Reserve Pitch 2 - Half Field A",
-			"coordinates": "-37.8042,144.872777",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bye",
-			"homeTeamName": "Altona City SC U10 MiniRoos - Joeys Mixed",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

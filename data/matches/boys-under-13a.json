@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 53,
+	"totalFixtures": 52,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -603,19 +603,6 @@
 			"homeScore": 4,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
-			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"address": "Webster Street Reserve Pitch 2B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
 		},
 		{
 			"round": 8,

@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 11,
+	"totalFixtures": 8,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Truganina Lions FC U09 MiniRoos - Joeys Mixed Boys U9 - Joeys (B)",
-			"awayTeamName": "Point Cook SC U09 MiniRoos - Joeys Mixed U9 Dragons",
-			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Williamstown SC U09 MiniRoos - Joeys Mixed Boys Under 9J (Cian/Dragan)",
-			"awayTeamName": "Wyndham FC U09 MiniRoos - Joeys Mixed U9 Joeys",
-			"address": "JT Gray Reserve Pitch 2A Mini A (4v4)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "Truganina Lions FC U09 MiniRoos - Joeys Mixed Boys U9 - Joeys (A)",
-			"awayTeamName": "Truganina Hornets SC U09 MiniRoos - Joeys Mixed",
-			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) A",
-			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",
