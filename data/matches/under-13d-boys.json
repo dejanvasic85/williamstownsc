@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 46,
+	"totalFixtures": 43,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -468,44 +468,6 @@
 			"homeScore": 2,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bye",
-			"homeTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:30",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
-			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"address": "Wyndham Vale North Reserve Main Pitch B - 9v9 (A)",
-			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
-			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
 		},
 		{
 			"round": 8,

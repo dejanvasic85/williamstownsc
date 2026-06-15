@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 10,
+	"totalFixtures": 8,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Newport Storm FC U07 MiniRoos - Joeys Female Lightning",
-			"awayTeamName": "Williamstown SC U07 MiniRoos - Joeys Female Girls Under 7 (Nate)",
-			"address": "AW Bond Reserve Mini A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Yarraville Glory FC U07 MiniRoos - Joeys Female White",
-			"awayTeamName": "Truganina Lions FC U07 MiniRoos - Joeys Female Girls U7 - Joeys",
-			"address": "McIvor Reserve  Pitch 1 - Mini (1/8) A.1",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

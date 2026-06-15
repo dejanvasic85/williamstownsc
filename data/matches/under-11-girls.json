@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 17,
+	"totalFixtures": 14,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "West Point SC U11 MiniRoos - Joeys Female U11 Girls - Antonio",
-			"awayTeamName": "Altona Magic SC U11 MiniRoos - Joeys Female U11 Girls",
-			"address": "Webster Street Reserve Pitch 4A",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:05",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Point Cook SC U11 MiniRoos - Joeys Female U11 Fireflies",
-			"awayTeamName": "Barnstoneworth United FC U11 MiniRoos - Joeys Female BUFC U11 Fierce Chillis",
-			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "bye",
-			"homeTeamName": "Tarneit United SC U11 MiniRoos - Joeys Female",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

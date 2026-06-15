@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Girls' Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 11,
+	"totalFixtures": 8,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "AnmYz1R1Nz",
-			"homeTeamName": "Albion Rovers FC U09 MiniRoos - Joeys Female Albion Mini Rovers Girls U9 (Leyla)",
-			"awayTeamName": "Western Suburbs SC U09 MiniRoos - Joeys Female U9 Girls - Joeys",
-			"address": "Waste Sense Park Pitch 3 - Midi 1 (7v7)",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "k2KpRwV8mY",
-			"homeTeamName": "Satellite City United SC U09 MiniRoos - Joeys Female Jaime-Lee",
-			"awayTeamName": "Westgate Sindjelich SC U09 MiniRoos - Joeys Female",
-			"address": "Kurunjang Recreation Reserve 2C (7V7)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "gld4pGXGdW",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Gisborne SC U09 MiniRoos - Joeys Female 9SL",
-			"awayTeamName": "Williamstown SC U09 MiniRoos - Joeys Female Girls Under 9 (Michael)",
-			"address": "Dixon Field Reserve Pitch C (U9)",
-			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 13,
+	"totalFixtures": 10,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "1pN6RBQN0g",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Avondale FC U09 MiniRoos - Kangaroos Mixed U9 - MiniRoos - Boys - Blake",
-			"awayTeamName": "Brimbank Stallions FC U09 MiniRoos - Kangaroos Mixed",
-			"address": "Fairbairn Park Pitch 3 - Midi A (7v7)",
-			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Yarraville Glory FC U09 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Moonee Valley Knights SC U09 MiniRoos - Kangaroos Mixed Moonee Valley Knights U9 Hakan",
-			"address": "McIvor Reserve  Pitch 1 - Midi (1/4) B",
-			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "bye",
-			"homeTeamName": "Newport Storm FC U09 MiniRoos - Kangaroos Mixed Rudiger",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

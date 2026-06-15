@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 37,
+	"totalFixtures": 33,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -378,56 +378,6 @@
 			"homeScore": 0,
 			"awayScore": 6,
 			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
-			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"address": "Paisley Park - Altona Magic SC Pitch 1",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "bye",
-			"homeTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "bye",
-			"awayTeamId": "Bjma0G03dR",
-			"awayTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "11:25",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Surf Coast FC U14 Juniors - A Mixed",
-			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
-			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
 		},
 		{
 			"round": 8,

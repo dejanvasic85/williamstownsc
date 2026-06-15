@@ -1,34 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 12,
+	"totalFixtures": 10,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "R1K3BvL3NQ",
-			"homeTeamName": "Tarneit United SC U08 MiniRoos - Joeys Mixed",
-			"awayTeamName": "Melbourne City FC U08 MiniRoos - Joeys Mixed U8 Boys",
-			"address": "Hummingbird Boulevard Reserve 1D (7V7)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "bam1nkkrNw",
-			"awayTeamId": "bye",
-			"homeTeamName": "Footscray Rangers FC U08 MiniRoos - Joeys Mixed Jess",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

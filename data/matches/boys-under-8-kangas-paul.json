@@ -1,35 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 14,
+	"totalFixtures": 12,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpDlAdx",
-			"homeTeamName": "Williamstown SC U08 MiniRoos - Kangaroos Mixed Boys Under 8K (Paul)",
-			"awayTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Oriol",
-			"address": "JT Gray Reserve Pitch 2B (7v7) - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Altona City SC U08 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8 Emad",
-			"address": "HC Kim Reserve Pitch 2 - Midi A (7v7)",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

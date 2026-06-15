@@ -1,22 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 11,
+	"totalFixtures": 10,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "AnmYzg4rNz",
-			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Maidstone United SC U08 MiniRoos - Wallabies Mixed Mango",
-			"awayTeamName": "Moonee Valley Knights SC U08 MiniRoos - Wallabies Mixed Moonee Valley Knights U8 (Blue)",
-			"address": "Scovell Reserve Quarter Pitch 7v7",
-			"coordinates": "-37.784639,144.878892",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

@@ -1,48 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 19,
+	"totalFixtures": 16,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Laverton FC U10 MiniRoos - Wallabies Mixed Laverton FC SAS U10W",
-			"awayTeamName": "Werribee City FC U10 MiniRoos - Wallabies Mixed U10s Morgan",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Tarneit United SC U10 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "West Point SC U10 MiniRoos - Wallabies Mixed U10W Mixed - Abbas",
-			"address": "Hummingbird Boulevard Reserve 2A (Half)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:05",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Point Cook SC U10 MiniRoos - Wallabies Mixed U10 Thunderbolts",
-			"awayTeamName": "Williamstown SC U10 MiniRoos - Wallabies Mixed Boys Under 10W (Bianca)",
-			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
-			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",

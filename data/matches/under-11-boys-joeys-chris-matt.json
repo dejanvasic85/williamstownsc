@@ -1,47 +1,9 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 13,
+	"totalFixtures": 10,
 	"totalRounds": 9,
 	"fixtures": [
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Williamstown SC U11 MiniRoos - Joeys Mixed Boys Under 11J (Lee)",
-			"awayTeamName": "Williamstown SC U11 MiniRoos - Joeys Mixed Boys Under 11J (Matt/Chris)",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "West Point SC U11 MiniRoos - Joeys Mixed U11 Mixed - Brett",
-			"awayTeamName": "Wyndham FC U11 MiniRoos - Joeys Mixed U11 Joeys",
-			"address": "Webster Street Reserve Pitch 4B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "bye",
-			"homeTeamName": "Truganina Lions FC U11 MiniRoos - Joeys Mixed Boys U11 - Joeys",
-			"address": "",
-			"coordinates": "",
-			"status": "complete"
-		},
 		{
 			"round": 8,
 			"date": "2026-06-21",
