@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 51,
+	"totalFixtures": 52,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -548,6 +548,21 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
+			"time": "13:25",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "R1K3BOqGNQ",
+			"homeTeamName": "Point Cook SC U12 Juniors - C Mixed U12 Strike Eagles",
+			"awayTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
+			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "k2KpRJ56mY",
 			"awayTeamId": "Bjma0RXqdR",
@@ -611,7 +626,7 @@
 			"awayTeamId": "AnmYzg0xNz",
 			"homeTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys White Cang",
 			"awayTeamName": "Laverton FC U12 Juniors - C Mixed Laverton FC U12",
-			"address": "Edwards Reserve Main Pitch A",
+			"address": "Edwards Reserve SSF",
 			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},

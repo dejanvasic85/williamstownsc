@@ -1,7 +1,7 @@
 {
 	"competition": "Men's Metropolitan League",
 	"season": 2026,
-	"totalFixtures": 82,
+	"totalFixtures": 83,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -396,6 +396,21 @@
 		},
 		{
 			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "3vmZv3BJmq",
+			"awayTeamId": "wOmejXOyN0",
+			"homeTeamName": "St Kilda SC Seniors Sundays",
+			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
+			"address": "Alma Park East Field 1",
+			"coordinates": "",
+			"homeScore": 6,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 7,
 			"date": "2026-08-09",
 			"day": "Sunday",
 			"time": "15:00",
@@ -693,6 +708,19 @@
 			"round": 12,
 			"date": "2026-07-19",
 			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "3vmZv3BJmq",
+			"awayTeamId": "bam1nklZNw",
+			"homeTeamName": "St Kilda SC Seniors Sundays",
+			"awayTeamName": "Fitzroy Lions SC Seniors",
+			"address": "Elwood Park (Esplanade Oval) Main Pitch",
+			"coordinates": "-37.890384,144.987087",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-19",
+			"day": "Sunday",
 			"time": "13:00",
 			"homeTeamId": "Bjma0GJMdR",
 			"awayTeamId": "wOmejvpyN0",
@@ -700,19 +728,6 @@
 			"awayTeamName": "Melbourne University SC Seniors",
 			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
 			"coordinates": "-37.843712,144.981104",
-			"status": "pending"
-		},
-		{
-			"round": 12,
-			"date": "2026-07-19",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "3vmZv3BJmq",
-			"awayTeamId": "bam1nklZNw",
-			"homeTeamName": "St Kilda SC Seniors Sundays",
-			"awayTeamName": "Fitzroy Lions SC Seniors",
-			"address": "Alma Park East Field 1",
-			"coordinates": "-37.860185,144.994366",
 			"status": "pending"
 		},
 		{

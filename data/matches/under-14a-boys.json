@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 33,
+	"totalFixtures": 34,
 	"totalRounds": 9,
 	"fixtures": [
 		{
@@ -374,6 +374,21 @@
 			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
 			"address": "Myers Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"address": "Paisley Park - Altona Magic SC Pitch 1",
 			"coordinates": "",
 			"homeScore": 0,
 			"awayScore": 6,

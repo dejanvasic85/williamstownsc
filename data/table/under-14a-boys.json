@@ -33,11 +33,26 @@
 			"points": 12
 		},
 		{
+			"teamId": "EN2nb2Z2Nq",
+			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"clubName": "Williams Landing SC",
+			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"position": 3,
+			"played": 5,
+			"wins": 3,
+			"draws": 0,
+			"losses": 2,
+			"goalsFor": 16,
+			"goalsAgainst": 11,
+			"goalDifference": 5,
+			"points": 9
+		},
+		{
 			"teamId": "8NOX3blaKZ",
 			"teamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
-			"position": 3,
+			"position": 4,
 			"played": 6,
 			"wins": 3,
 			"draws": 0,
@@ -52,7 +67,7 @@
 			"teamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
-			"position": 4,
+			"position": 5,
 			"played": 4,
 			"wins": 2,
 			"draws": 0,
@@ -60,21 +75,6 @@
 			"goalsFor": 7,
 			"goalsAgainst": 3,
 			"goalDifference": 4,
-			"points": 6
-		},
-		{
-			"teamId": "EN2nb2Z2Nq",
-			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"clubName": "Williams Landing SC",
-			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 5,
-			"played": 4,
-			"wins": 2,
-			"draws": 0,
-			"losses": 2,
-			"goalsFor": 10,
-			"goalsAgainst": 11,
-			"goalDifference": -1,
 			"points": 6
 		},
 		{
@@ -113,13 +113,13 @@
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
 			"position": 8,
-			"played": 5,
+			"played": 6,
 			"wins": 0,
 			"draws": 0,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 1,
-			"goalsAgainst": 17,
-			"goalDifference": -16,
+			"goalsAgainst": 23,
+			"goalDifference": -22,
 			"points": 0
 		}
 	]
