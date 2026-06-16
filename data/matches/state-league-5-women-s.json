@@ -540,7 +540,7 @@
 			"awayTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
 			"address": "JC Donath Reserve Pitch 8",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 8,
@@ -596,6 +596,19 @@
 		},
 		{
 			"round": 9,
+			"date": "2026-06-27",
+			"day": "Saturday",
+			"time": "11:00",
+			"homeTeamId": "vbd91VOJd4",
+			"awayTeamId": "6lNbpGXodx",
+			"homeTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
+			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
+			"address": "Delahey Reserve Main Pitch",
+			"coordinates": "-37.717437,144.776081",
+			"status": "pending"
+		},
+		{
+			"round": 9,
 			"date": "2026-06-28",
 			"day": "Sunday",
 			"time": "11:00",
@@ -605,19 +618,6 @@
 			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "vbd91VOJd4",
-			"awayTeamId": "6lNbpGXodx",
-			"homeTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
-			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
-			"address": "Delahey Reserve Main Pitch",
-			"coordinates": "-37.717437,144.776081",
 			"status": "pending"
 		},
 		{

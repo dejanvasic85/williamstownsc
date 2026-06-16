@@ -653,19 +653,6 @@
 			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
-			"time": "08:55",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Williams Landing SC U12 Juniors - B Female WLFC U12G - Gold",
-			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
-			"address": "Fairbairn Park Pitch 4  - Half Field B",
-			"coordinates": "-37.772808,144.9",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "R1K3pRLdQ9",
 			"awayTeamId": "gld450DmW5",
@@ -738,6 +725,19 @@
 			"awayTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
 			"address": "Springside Recreational Reserve Junior Pitch (S) - Half Field A",
 			"coordinates": "-37.712403,144.736088",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-21",
+			"day": "Sunday",
+			"time": "14:45",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "1pN6RBQN0g",
+			"homeTeamName": "Williams Landing SC U12 Juniors - B Female WLFC U12G - Gold",
+			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
+			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
+			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
