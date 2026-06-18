@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 107,
+	"totalFixtures": 108,
 	"totalRounds": 19,
 	"fixtures": [
 		{
@@ -906,6 +906,18 @@
 			"date": "2026-07-26",
 			"day": "Sunday",
 			"time": "00:00",
+			"homeTeamId": "OVdzwWpmGr",
+			"awayTeamId": "bye",
+			"homeTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"address": "",
+			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-26",
+			"day": "Sunday",
+			"time": "00:00",
 			"homeTeamId": "bye",
 			"awayTeamId": "nPmr7WjNow",
 			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
@@ -1461,15 +1473,15 @@
 		},
 		{
 			"round": 19,
-			"date": "2026-09-06",
+			"date": "2026-07-05",
 			"day": "Sunday",
-			"time": "11:00",
+			"time": "12:00",
 			"homeTeamId": "wOmejJVeN0",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
 			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"address": "Keilor Lodge Reserve Pitch 1",
-			"coordinates": "-37.688087,144.777598",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		}
 	]

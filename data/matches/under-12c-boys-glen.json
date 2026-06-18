@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 107,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -557,6 +557,21 @@
 			"coordinates": "",
 			"homeScore": 3,
 			"awayScore": 3,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
+			"awayTeamName": "Yarraville Glory FC U12 Juniors - C Mixed",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "",
+			"homeScore": 10,
+			"awayScore": 0,
 			"status": "complete"
 		},
 		{
