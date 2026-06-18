@@ -579,8 +579,10 @@
 			"homeTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 8,

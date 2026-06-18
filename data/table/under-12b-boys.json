@@ -8,14 +8,14 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 1,
-			"played": 1,
-			"wins": 1,
+			"played": 2,
+			"wins": 2,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 12,
-			"goalsAgainst": 1,
-			"goalDifference": 11,
-			"points": 3
+			"goalsFor": 20,
+			"goalsAgainst": 2,
+			"goalDifference": 18,
+			"points": 6
 		},
 		{
 			"teamId": "yKJbG1VrKY",
@@ -123,26 +123,11 @@
 			"points": 0
 		},
 		{
-			"teamId": "ld446WQAdW",
-			"teamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
-			"clubName": "Williams Landing SC",
-			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 9,
-			"played": 1,
-			"wins": 0,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 1,
-			"goalsAgainst": 8,
-			"goalDifference": -7,
-			"points": 0
-		},
-		{
 			"teamId": "JmX40vpMmn",
 			"teamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
-			"position": 10,
+			"position": 9,
 			"played": 1,
 			"wins": 0,
 			"draws": 0,
@@ -150,6 +135,21 @@
 			"goalsFor": 1,
 			"goalsAgainst": 12,
 			"goalDifference": -11,
+			"points": 0
+		},
+		{
+			"teamId": "ld446WQAdW",
+			"teamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
+			"clubName": "Williams Landing SC",
+			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
+			"position": 10,
+			"played": 2,
+			"wins": 0,
+			"draws": 0,
+			"losses": 2,
+			"goalsFor": 2,
+			"goalsAgainst": 16,
+			"goalDifference": -14,
 			"points": 0
 		}
 	]

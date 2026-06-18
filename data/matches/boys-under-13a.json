@@ -623,19 +623,6 @@
 			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
-			"time": "10:20",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
 			"time": "10:45",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "Bjma0BXAdR",
@@ -656,6 +643,19 @@
 			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
 			"address": "HC Kim Reserve Pitch 1B",
 			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 8,
+			"date": "2026-06-21",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
+			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
+			"address": "HD Graham Reserve Field 1 (North) Half A",
+			"coordinates": "-37.878568,144.79544",
 			"status": "pending"
 		},
 		{
