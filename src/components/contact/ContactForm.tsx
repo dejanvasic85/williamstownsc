@@ -75,6 +75,7 @@ export function ContactForm({
 		}
 	});
 
+	// eslint-disable-next-line react-hooks/incompatible-library
 	const selectedProgramId = watch('programId');
 
 	useEffect(() => {
