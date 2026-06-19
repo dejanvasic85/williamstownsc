@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 102,
+	"totalFixtures": 103,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -992,6 +992,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 12,
+			"date": "2026-06-19",
+			"day": "Friday",
+			"time": "18:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "Bjma0G87dR",
+			"homeTeamName": "Brimbank Stallions FC Reserves",
+			"awayTeamName": "Uni Hill Eagles FC Reserves",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 4,
 			"status": "complete"
 		},
 		{
