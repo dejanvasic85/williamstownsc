@@ -30,7 +30,7 @@ export function getClubByExternalId(externalId: string): Club | undefined {
 }
 
 function isByeFixture(fixture: Fixture): boolean {
-	return fixture.homeTeamId === 'bye' || fixture.awayTeamId === 'bye';
+	return fixture.homeTeamId === bye || fixture.awayTeamId === bye;
 }
 
 function findDuplicateClubIds(fixtures: Fixture[]): Set<string> {

@@ -54,7 +54,16 @@ const eslintConfig = defineConfig([
 		'test-results/**',
 		'playwright-report/**',
 		'playwright/.cache/**',
-		'*.config.ts'
+		// Root config files (not app code):
+		'*.config.ts',
+		'*.config.mjs',
+		'sanity.cli.ts',
+		// Auto-generated files:
+		'src/sanity/sanity.types.ts',
+		'src/sanity/schema.json',
+		// Static assets and data:
+		'public/**',
+		'data/**'
 	])
 ]);
 
