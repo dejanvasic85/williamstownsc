@@ -78,11 +78,26 @@
 			"points": 20
 		},
 		{
+			"teamId": "1K3YZLkBmQ",
+			"teamName": "Uni Hill Eagles FC Reserves",
+			"clubName": "Uni Hill Eagles FC",
+			"logoUrl": "https://ocean.dribl.com/f6ee1164568a48acbf1095f9723768f8",
+			"position": 6,
+			"played": 12,
+			"wins": 5,
+			"draws": 3,
+			"losses": 4,
+			"goalsFor": 29,
+			"goalsAgainst": 20,
+			"goalDifference": 9,
+			"points": 18
+		},
+		{
 			"teamId": "2KpvYAzomY",
 			"teamName": "Williamstown SC Reserves",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 6,
+			"position": 7,
 			"played": 11,
 			"wins": 5,
 			"draws": 1,
@@ -91,21 +106,6 @@
 			"goalsAgainst": 22,
 			"goalDifference": -2,
 			"points": 16
-		},
-		{
-			"teamId": "1K3YZLkBmQ",
-			"teamName": "Uni Hill Eagles FC Reserves",
-			"clubName": "Uni Hill Eagles FC",
-			"logoUrl": "https://ocean.dribl.com/f6ee1164568a48acbf1095f9723768f8",
-			"position": 7,
-			"played": 11,
-			"wins": 4,
-			"draws": 3,
-			"losses": 4,
-			"goalsFor": 25,
-			"goalsAgainst": 18,
-			"goalDifference": 7,
-			"points": 15
 		},
 		{
 			"teamId": "am1q9Wvzmw",
@@ -173,13 +173,13 @@
 			"clubName": "Brimbank Stallions FC",
 			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
 			"position": 12,
-			"played": 11,
+			"played": 12,
 			"wins": 1,
 			"draws": 2,
-			"losses": 8,
-			"goalsFor": 10,
-			"goalsAgainst": 21,
-			"goalDifference": -11,
+			"losses": 9,
+			"goalsFor": 12,
+			"goalsAgainst": 25,
+			"goalDifference": -13,
 			"points": 5
 		}
 	]
