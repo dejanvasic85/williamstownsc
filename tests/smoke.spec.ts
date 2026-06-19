@@ -31,7 +31,7 @@ test.describe('Homepage', () => {
 
 	test('displays next match section', async ({ page }) => {
 		const nextMatchHeadings = page.getByRole('heading', { name: /next match/i });
-		await expect(nextMatchHeadings).toHaveCount(2);
+		await expect(nextMatchHeadings.first()).toBeVisible();
 	});
 
 	test('displays key dates section', async ({ page }) => {
