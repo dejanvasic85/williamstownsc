@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 107,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -1007,6 +1007,21 @@
 			"coordinates": "",
 			"homeScore": 2,
 			"awayScore": 4,
+			"status": "complete"
+		},
+		{
+			"round": 12,
+			"date": "2026-06-20",
+			"day": "Saturday",
+			"time": "13:00",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Albion Rovers FC Reserves",
+			"awayTeamName": "Surf Coast FC Reserves",
+			"address": "Waste Sense Park Main Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
 			"status": "complete"
 		},
 		{

@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 42,
+	"totalFixtures": 43,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -407,6 +407,21 @@
 			"coordinates": "",
 			"homeScore": 6,
 			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-06-14",
+			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "R1K3pRLdQ9",
+			"homeTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
+			"awayTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
+			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
+			"coordinates": "",
+			"homeScore": 0,
+			"awayScore": 7,
 			"status": "complete"
 		},
 		{
