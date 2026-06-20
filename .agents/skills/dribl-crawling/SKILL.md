@@ -49,12 +49,12 @@ The dribl API uses hashed IDs (e.g. `season=nPmrj2rmow`) not human names. IDs ar
 
 **List endpoints (all require `tenant` param):**
 
-| What | Endpoint | Notes |
-|---|---|---|
-| Tenant ID | `api/tenants?mc_link=fv.dribl.com&slug=fv` | Returns single object `data.id` |
-| Season ID | `api/list/seasons?disable_paging=true&tenant=…` | Match on `name` = "2026" |
-| Competition ID | `api/list/competitions?disable_paging=true&tenant=…` | Match on `name` (full name from Sanity `competitionName`) |
-| League ID | `api/list/leagues?disable_paging=true&tenant=…&competition=…` | Match on `name`; skip `(Removed)` prefix entries |
+| What           | Endpoint                                                      | Notes                                                     |
+| -------------- | ------------------------------------------------------------- | --------------------------------------------------------- |
+| Tenant ID      | `api/tenants?mc_link=fv.dribl.com&slug=fv`                    | Returns single object `data.id`                           |
+| Season ID      | `api/list/seasons?disable_paging=true&tenant=…`               | Match on `name` = "2026"                                  |
+| Competition ID | `api/list/competitions?disable_paging=true&tenant=…`          | Match on `name` (full name from Sanity `competitionName`) |
+| League ID      | `api/list/leagues?disable_paging=true&tenant=…&competition=…` | Match on `name`; skip `(Removed)` prefix entries          |
 
 **Tenant note:** `api/tenants` returns `data` as a single object (not array). All other list endpoints return `data` as an array.
 
@@ -62,15 +62,15 @@ The dribl API uses hashed IDs (e.g. `season=nPmrj2rmow`) not human names. IDs ar
 
 ```json
 {
-  "tenant": "w8zdBWPmBX",
-  "leagues": {
-    "Girls' West 12B": {
-      "season": "nPmrj2rmow",
-      "competition": "Bjma0p6VdR",
-      "league": "lNba4aGomx",
-      "tenant": "w8zdBWPmBX"
-    }
-  }
+	"tenant": "w8zdBWPmBX",
+	"leagues": {
+		"Girls' West 12B": {
+			"season": "nPmrj2rmow",
+			"competition": "Bjma0p6VdR",
+			"league": "lNba4aGomx",
+			"tenant": "w8zdBWPmBX"
+		}
+	}
 }
 ```
 
@@ -78,24 +78,24 @@ The dribl API uses hashed IDs (e.g. `season=nPmrj2rmow`) not human names. IDs ar
 
 ```typescript
 export async function resolveLeagueIds(
-  page: Page,
-  leagueName: string,
-  competitionName: string,
-  seasonYear: string
+	page: Page,
+	leagueName: string,
+	competitionName: string,
+	seasonYear: string
 ): Promise<DriblLeagueIds> {
-  const cache = loadCache();
-  if (cache.leagues[leagueName]) return cache.leagues[leagueName]; // cache hit
+	const cache = loadCache();
+	if (cache.leagues[leagueName]) return cache.leagues[leagueName]; // cache hit
 
-  const tenant = cache.tenant || (await resolveTenant(page));
-  const season = await resolveSeasonId(page, tenant, seasonYear);
-  const competition = await resolveCompetitionId(page, tenant, competitionName);
-  const league = await resolveLeagueId(page, tenant, competition, leagueName);
+	const tenant = cache.tenant || (await resolveTenant(page));
+	const season = await resolveSeasonId(page, tenant, seasonYear);
+	const competition = await resolveCompetitionId(page, tenant, competitionName);
+	const league = await resolveLeagueId(page, tenant, competition, leagueName);
 
-  const ids = { season, competition, league, tenant };
-  cache.tenant = tenant;
-  cache.leagues[leagueName] = ids;
-  saveCache(cache);
-  return ids;
+	const ids = { season, competition, league, tenant };
+	cache.tenant = tenant;
+	cache.leagues[leagueName] = ids;
+	saveCache(cache);
+	return ids;
 }
 ```
 
@@ -109,10 +109,13 @@ Clubs still use SPA response interception (one-off list, not per-round). Pattern
 
 ```typescript
 const browser = await chromium.launch({ headless: false, channel: 'chrome' });
-const context = await browser.newContext({ userAgent: '...', viewport: { width: 1280, height: 720 } });
+const context = await browser.newContext({
+	userAgent: '...',
+	viewport: { width: 1280, height: 720 }
+});
 const [clubsResponse] = await Promise.all([
-  page.waitForResponse((r) => r.url().startsWith(clubsApiUrl) && r.ok(), { timeout: 60_000 }),
-  page.goto(url, { waitUntil: 'domcontentloaded' })
+	page.waitForResponse((r) => r.url().startsWith(clubsApiUrl) && r.ok(), { timeout: 60_000 }),
+	page.goto(url, { waitUntil: 'domcontentloaded' })
 ]);
 const rawData = await clubsResponse.json();
 const validated = externalApiResponseSchema.parse(rawData);
@@ -133,12 +136,12 @@ writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 
 ```typescript
 async function browserFetch(page: Page, url: string): Promise<unknown> {
-  const raw = await page.evaluate(async (u: string) => {
-    const r = await fetch(u, { headers: { accept: 'application/json' } });
-    if (!r.ok) throw new Error(`HTTP ${r.status} fetching ${u}`);
-    return r.text();
-  }, url);
-  return JSON.parse(raw as string);
+	const raw = await page.evaluate(async (u: string) => {
+		const r = await fetch(u, { headers: { accept: 'application/json' } });
+		if (!r.ok) throw new Error(`HTTP ${r.status} fetching ${u}`);
+		return r.text();
+	}, url);
+	return JSON.parse(raw as string);
 }
 ```
 
@@ -146,15 +149,15 @@ async function browserFetch(page: Page, url: string): Promise<unknown> {
 
 ```typescript
 function buildApiUrl(endpoint: string, ids: LeagueIds, extra?: Record<string, string>): string {
-  const params = new URLSearchParams({
-    season: ids.season,
-    competition: ids.competition,
-    league: ids.league,
-    tenant: ids.tenant,
-    timezone: 'Australia/Melbourne',
-    ...extra
-  });
-  return `https://mc-api.dribl.com/api/${endpoint}?${params.toString()}`;
+	const params = new URLSearchParams({
+		season: ids.season,
+		competition: ids.competition,
+		league: ids.league,
+		tenant: ids.tenant,
+		timezone: 'Australia/Melbourne',
+		...extra
+	});
+	return `https://mc-api.dribl.com/api/${endpoint}?${params.toString()}`;
 }
 ```
 
@@ -162,28 +165,31 @@ function buildApiUrl(endpoint: string, ids: LeagueIds, extra?: Record<string, st
 
 ```typescript
 async function crawlTeamByRounds(page, team, ids, outputDir) {
-  clearChunkFiles(outputDir); // wipe stale chunks first
+	clearChunkFiles(outputDir); // wipe stale chunks first
 
-  let chunkIndex = 0;
-  let emptyStreak = 0;
-  const maxConsecutiveEmptyRounds = 2;
-  const maxRounds = 40;
+	let chunkIndex = 0;
+	let emptyStreak = 0;
+	const maxConsecutiveEmptyRounds = 2;
+	const maxRounds = 40;
 
-  for (let round = 1; round <= maxRounds; round++) {
-    const url = buildApiUrl('fixtures', ids, { round: String(round) });
-    const json = await browserFetch(page, url);
-    const validated = externalFixturesApiResponseSchema.parse(json);
+	for (let round = 1; round <= maxRounds; round++) {
+		const url = buildApiUrl('fixtures', ids, { round: String(round) });
+		const json = await browserFetch(page, url);
+		const validated = externalFixturesApiResponseSchema.parse(json);
 
-    if (validated.data.length === 0) {
-      emptyStreak++;
-      if (emptyStreak >= maxConsecutiveEmptyRounds) break;
-      continue;
-    }
+		if (validated.data.length === 0) {
+			emptyStreak++;
+			if (emptyStreak >= maxConsecutiveEmptyRounds) break;
+			continue;
+		}
 
-    emptyStreak = 0;
-    writeFileSync(`${outputDir}/chunk-${chunkIndex}.json`, JSON.stringify(validated, null, '\t') + '\n');
-    chunkIndex++;
-  }
+		emptyStreak = 0;
+		writeFileSync(
+			`${outputDir}/chunk-${chunkIndex}.json`,
+			JSON.stringify(validated, null, '\t') + '\n'
+		);
+		chunkIndex++;
+	}
 }
 ```
 
@@ -193,29 +199,29 @@ async function crawlTeamByRounds(page, team, ids, outputDir) {
 
 ```typescript
 export async function crawlFixtures(teams) {
-  browser = await chromium.launch({ headless: false, channel: 'chrome' });
-  const page = await (await browser.newContext({ userAgent: '...' })).newPage();
+	browser = await chromium.launch({ headless: false, channel: 'chrome' });
+	const page = await (await browser.newContext({ userAgent: '...' })).newPage();
 
-  // ONE goto — establishes Cloudflare clearance for all subsequent fetch() calls
-  await page.goto('https://fv.dribl.com/fixtures/', { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(3000);
+	// ONE goto — establishes Cloudflare clearance for all subsequent fetch() calls
+	await page.goto('https://fv.dribl.com/fixtures/', { waitUntil: 'domcontentloaded' });
+	await page.waitForTimeout(3000);
 
-  for (const team of teams) {
-    const ids = await resolveLeagueIds(page, team.league, team.competition, team.season);
+	for (const team of teams) {
+		const ids = await resolveLeagueIds(page, team.league, team.competition, team.season);
 
-    clearChunkFiles(`data/external/results/${team.team}`); // clear old results dir
-    await crawlTeamByRounds(page, team.team, ids, `data/external/fixtures/${team.team}`);
-    await crawlTeamTable(page, team.team, ids, `data/external/table`);
-  }
+		clearChunkFiles(`data/external/results/${team.team}`); // clear old results dir
+		await crawlTeamByRounds(page, team.team, ids, `data/external/fixtures/${team.team}`);
+		await crawlTeamTable(page, team.team, ids, `data/external/table`);
+	}
 }
 ```
 
 **API endpoints:**
 
-| Endpoint | Params | Response |
-|---|---|---|
+| Endpoint       | Params                                               | Response                           |
+| -------------- | ---------------------------------------------------- | ---------------------------------- |
 | `api/fixtures` | season, competition, league, round, tenant, timezone | `{ data: fixture[], links, meta }` |
-| `api/ladders` | season, competition, league, tenant, timezone | `{ data: ladderEntry[] }` |
+| `api/ladders`  | season, competition, league, tenant, timezone        | `{ data: ladderEntry[] }`          |
 
 **Output:**
 
@@ -250,11 +256,11 @@ Table crawling is embedded in `crawlFixtures`. After round crawl, calls `api/lad
 
 ```typescript
 async function crawlTeamTable(page, team, ids, outputDir) {
-  const url = buildApiUrl('ladders', ids);
-  const json = await browserFetch(page, url);
-  const validated = externalTableApiResponseSchema.parse(json);
-  if (validated.data.length === 0) return; // no ladder (MiniRoos etc.)
-  writeFileSync(`${outputDir}/${team}.json`, JSON.stringify(validated, null, '\t') + '\n');
+	const url = buildApiUrl('ladders', ids);
+	const json = await browserFetch(page, url);
+	const validated = externalTableApiResponseSchema.parse(json);
+	if (validated.data.length === 0) return; // no ladder (MiniRoos etc.)
+	writeFileSync(`${outputDir}/${team}.json`, JSON.stringify(validated, null, '\t') + '\n');
 }
 ```
 
@@ -272,7 +278,7 @@ Reads `data/external/fixtures/{team}/chunk-*.json` and `data/external/results/{t
 
 ```typescript
 // Read chunks, validate
-const responses = await readExternalFixtureFiles(dir, required=false);
+const responses = await readExternalFixtureFiles(dir, (required = false));
 
 // Transform + merge results-first (so completed scores win dedup)
 const { fixtures, competition, season } = mergeFixtures([...resultResponses, ...fixtureResponses]);
@@ -281,7 +287,10 @@ const { fixtures, competition, season } = mergeFixtures([...resultResponses, ...
 const unique = deduplicateFixtures(fixtures);
 
 // Sort by round then date, write
-writeFileSync(outputPath, JSON.stringify({ competition, season, totalFixtures, totalRounds, fixtures: sorted }, null, '\t'));
+writeFileSync(
+	outputPath,
+	JSON.stringify({ competition, season, totalFixtures, totalRounds, fixtures: sorted }, null, '\t')
+);
 ```
 
 **Transform service**: `src/lib/matches/fixtureTransformService.ts`
@@ -365,20 +374,20 @@ writeFileSync(outputPath, JSON.stringify({ competition, season, totalFixtures, t
 let browser: Browser | undefined;
 const failures: string[] = [];
 try {
-  browser = await chromium.launch({ headless: false, channel: 'chrome' });
-  const page = await (await browser.newContext({ userAgent: '...' })).newPage();
-  await page.goto(siteUrl, { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(3000);
+	browser = await chromium.launch({ headless: false, channel: 'chrome' });
+	const page = await (await browser.newContext({ userAgent: '...' })).newPage();
+	await page.goto(siteUrl, { waitUntil: 'domcontentloaded' });
+	await page.waitForTimeout(3000);
 
-  for (const team of teams) {
-    try {
-      // direct API calls via browserFetch(page, url)
-    } catch (error) {
-      failures.push(team.slug);
-    }
-  }
+	for (const team of teams) {
+		try {
+			// direct API calls via browserFetch(page, url)
+		} catch (error) {
+			failures.push(team.slug);
+		}
+	}
 } finally {
-  if (browser) await browser.close();
+	if (browser) await browser.close();
 }
 if (failures.length > 0) throw new Error(`Failed: ${failures.join(', ')}`);
 ```
@@ -388,12 +397,12 @@ if (failures.length > 0) throw new Error(`Failed: ${failures.join(', ')}`);
 ```typescript
 const files = await fs.readdir(dir);
 const chunks = files
-  .filter((f) => f.match(/^chunk-\d+\.json$/))
-  .sort((a, b) => {
-    const numA = parseInt(a.match(/\d+/)?.[0] || '0', 10);
-    const numB = parseInt(b.match(/\d+/)?.[0] || '0', 10);
-    return numA - numB;
-  });
+	.filter((f) => f.match(/^chunk-\d+\.json$/))
+	.sort((a, b) => {
+		const numA = parseInt(a.match(/\d+/)?.[0] || '0', 10);
+		const numB = parseInt(b.match(/\d+/)?.[0] || '0', 10);
+		return numA - numB;
+	});
 ```
 
 **Deduplication:**
@@ -401,9 +410,9 @@ const chunks = files
 ```typescript
 const seen = new Set<string>();
 const unique = items.filter((item) => {
-  const key = computeKey(item);
-  if (seen.has(key)) return false;
-  seen.add(key);
-  return true;
+	const key = computeKey(item);
+	if (seen.has(key)) return false;
+	seen.add(key);
+	return true;
 });
 ```
