@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 60,
+	"totalFixtures": 59,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -528,19 +528,6 @@
 			"homeScore": 4,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "vbd91VOJd4",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
-			"awayTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
-			"address": "Delahey Reserve Main Pitch",
-			"coordinates": "-37.717437,144.776081",
-			"status": "pending"
 		},
 		{
 			"round": 14,

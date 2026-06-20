@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Men's",
 	"season": 2026,
-	"totalFixtures": 103,
+	"totalFixtures": 106,
 	"totalRounds": 22,
 	"fixtures": [
 		{
@@ -1010,17 +1010,64 @@
 			"status": "complete"
 		},
 		{
-			"round": 17,
-			"date": "2026-07-24",
-			"day": "Friday",
-			"time": "18:15",
+			"round": 12,
+			"date": "2026-06-20",
+			"day": "Saturday",
+			"time": "13:00",
+			"homeTeamId": "7MNGvxzpmA",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Corio SC Reserves",
+			"awayTeamName": "Williamstown SC Reserves",
+			"address": "Hume Reserve Pitch 1",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 15,
+			"status": "complete"
+		},
+		{
+			"round": 12,
+			"date": "2026-06-20",
+			"day": "Saturday",
+			"time": "13:00",
 			"homeTeamId": "AnmYzyArNz",
-			"awayTeamId": "6lNbpDlAdx",
+			"awayTeamId": "7MNGvappmA",
 			"homeTeamName": "FC Strathmore Split Reserves",
-			"awayTeamName": "Altona North SC Reserves",
+			"awayTeamName": "Geelong Rangers SC Reserves",
 			"address": "Strathnaver Reserve Pitch 1",
-			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"coordinates": "",
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 12,
+			"date": "2026-06-20",
+			"day": "Saturday",
+			"time": "12:45",
+			"homeTeamId": "6lNbpDlAdx",
+			"awayTeamId": "3vmZv8JJmq",
+			"homeTeamName": "Altona North SC Reserves",
+			"awayTeamName": "Western Eagles SC Reserves",
+			"address": "Duane Reserve Main Pitch",
+			"coordinates": "",
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
+		},
+		{
+			"round": 12,
+			"date": "2026-06-20",
+			"day": "Saturday",
+			"time": "12:45",
+			"homeTeamId": "7MNGgM7NAz",
+			"awayTeamId": "bam1nQWrNw",
+			"homeTeamName": "Whittlesea Ranges FC Reserves",
+			"awayTeamName": "Mill Park SC Reserves",
+			"address": "Epping Stadium Main Pitch",
+			"coordinates": "",
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 17,
