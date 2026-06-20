@@ -1,7 +1,7 @@
 {
 	"competition": "VETO Sports State League Women's",
 	"season": 2026,
-	"totalFixtures": 60,
+	"totalFixtures": 58,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -528,32 +528,6 @@
 			"homeScore": 2,
 			"awayScore": 1,
 			"status": "complete"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-07",
-			"day": "Friday",
-			"time": "19:30",
-			"homeTeamId": "6lNbVk6NxE",
-			"awayTeamId": "7ZKRa2oNkB",
-			"homeTeamName": "Brunswick City SC Seniors",
-			"awayTeamName": "Pascoe Vale FC Seniors",
-			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "LBdDxg8Qdb",
-			"awayTeamId": "bgdMXLR7KE",
-			"homeTeamName": "Whittlesea United SC Seniors",
-			"awayTeamName": "Keon Park SC Seniors",
-			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
-			"coordinates": "-37.666384,144.994017",
-			"status": "pending"
 		},
 		{
 			"round": 14,
