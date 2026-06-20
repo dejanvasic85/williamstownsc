@@ -1,396 +1,315 @@
 ---
 name: dribl-crawling
-description: Document patterns for crawling dribl.com fixtures website using playwright-core to extract clubs and fixtures data with Cloudflare protection. Covers extraction (crawling with API interception) and transformation (Zod validation, data merging) phases.
+description: Document patterns for crawling dribl.com fixtures website using playwright-core with direct API calls (Cloudflare bypass via browser context) to extract clubs and fixtures data. Covers ID resolution, round-based extraction, and transformation phases.
 ---
 
 # Dribl Crawling
 
 ## Overview
 
-Extract clubs and fixtures data from https://fv.dribl.com/fixtures/ (SPA with Cloudflare protection) using real browser automation with playwright-core. Two-phase workflow: extraction (raw API data) → transformation (validated, merged data).
+Extract clubs and fixtures data from `https://fv.dribl.com/fixtures/` (Cloudflare-protected SPA) using a real browser for Cloudflare clearance, then making direct API calls via `page.evaluate(fetch(...))` rather than driving the SPA UI.
 
 **Purpose**: Crawl dribl.com to maintain up-to-date clubs and fixtures.
+
+## Why direct API — not SPA scraping
+
+The SPA's default date-window views (Results tab + Fixtures upcoming) create a dead zone of 4+ rounds whenever a team is regraded to a new league mid-season. The dribl API accepts a `round` param; iterating `round=1..N` is deterministic and never drops rounds.
+
+Raw `curl` returns HTTP 403 (Cloudflare). The browser context has clearance cookies — `page.evaluate(fetch(...))` uses them transparently.
 
 ## Architecture
 
 **Data flow:**
 
 ```
-dribl API → data/external/fixtures/{team}/ (raw) → transform → data/matches/ (validated)
-dribl API → data/external/clubs/ (raw) → transform → data/clubs/ (validated)
+dribl list endpoints  →  data/external/dribl-ids.json  (ID cache, gitignored)
+dribl API (per round) →  data/external/fixtures/{team}/chunk-N.json  (raw, gitignored)
+dribl API (ladders)   →  data/external/table/{team}.json  (raw, gitignored)
+transform             →  data/matches/{team}.json  (committed)
+transform             →  data/table/{team}.json  (committed)
 ```
 
 **Two-phase pattern:**
 
-1. **Extraction**: Playwright intercepts API requests, saves raw JSON
-2. **Transformation**: Read raw data, validate with Zod, transform, deduplicate, save
+1. **Extraction**: Browser establishes Cloudflare clearance; direct API calls via `page.evaluate(fetch(...))`; saves raw JSON per round
+2. **Transformation**: Read chunk files, validate with Zod, transform, deduplicate, save
 
 **Key technologies:**
 
-- playwright-core (real Chrome browser)
+- playwright-core (real Chrome browser — only for Cloudflare clearance)
+- `page.evaluate(fetch(...))` — makes authenticated API calls from browser context
 - Zod validation schemas
 - TypeScript with tsx runner
+
+## ID Resolver
+
+**Reference**: `bin/commands/driblIdResolver.ts`
+
+The dribl API uses hashed IDs (e.g. `season=nPmrj2rmow`) not human names. IDs are resolved once from list endpoints and cached to `data/external/dribl-ids.json` keyed by `leagueName`. On regrade, the team's Sanity `leagueName` changes — the resolver finds no cache entry, re-resolves, and caches.
+
+**List endpoints (all require `tenant` param):**
+
+| What           | Endpoint                                                      | Notes                                                     |
+| -------------- | ------------------------------------------------------------- | --------------------------------------------------------- |
+| Tenant ID      | `api/tenants?mc_link=fv.dribl.com&slug=fv`                    | Returns single object `data.id`                           |
+| Season ID      | `api/list/seasons?disable_paging=true&tenant=…`               | Match on `name` = "2026"                                  |
+| Competition ID | `api/list/competitions?disable_paging=true&tenant=…`          | Match on `name` (full name from Sanity `competitionName`) |
+| League ID      | `api/list/leagues?disable_paging=true&tenant=…&competition=…` | Match on `name`; skip `(Removed)` prefix entries          |
+
+**Tenant note:** `api/tenants` returns `data` as a single object (not array). All other list endpoints return `data` as an array.
+
+**Cache file shape** (`data/external/dribl-ids.json`):
+
+```json
+{
+	"tenant": "w8zdBWPmBX",
+	"leagues": {
+		"Girls' West 12B": {
+			"season": "nPmrj2rmow",
+			"competition": "Bjma0p6VdR",
+			"league": "lNba4aGomx",
+			"tenant": "w8zdBWPmBX"
+		}
+	}
+}
+```
+
+**Pattern:**
+
+```typescript
+export async function resolveLeagueIds(
+	page: Page,
+	leagueName: string,
+	competitionName: string,
+	seasonYear: string
+): Promise<DriblLeagueIds> {
+	const cache = loadCache();
+	if (cache.leagues[leagueName]) return cache.leagues[leagueName]; // cache hit
+
+	const tenant = cache.tenant || (await resolveTenant(page));
+	const season = await resolveSeasonId(page, tenant, seasonYear);
+	const competition = await resolveCompetitionId(page, tenant, competitionName);
+	const league = await resolveLeagueId(page, tenant, competition, leagueName);
+
+	const ids = { season, competition, league, tenant };
+	cache.tenant = tenant;
+	cache.leagues[leagueName] = ids;
+	saveCache(cache);
+	return ids;
+}
+```
 
 ## Clubs Extraction
 
 **Reference**: `bin/commands/crawlClubs.ts`
 
+Clubs still use SPA response interception (one-off list, not per-round). Pattern unchanged.
+
 **Pattern:**
 
 ```typescript
-// Launch browser
-const browser = await chromium.launch({
-	headless: false,
-	channel: 'chrome'
-});
-
-// Custom user agent (bypass detection)
+const browser = await chromium.launch({ headless: false, channel: 'chrome' });
 const context = await browser.newContext({
-	userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36...',
+	userAgent: '...',
 	viewport: { width: 1280, height: 720 }
 });
-
-// Intercept API request
 const [clubsResponse] = await Promise.all([
-	page.waitForResponse((response) => response.url().startsWith(clubsApiUrl) && response.ok(), {
-		timeout: 60_000
-	}),
+	page.waitForResponse((r) => r.url().startsWith(clubsApiUrl) && r.ok(), { timeout: 60_000 }),
 	page.goto(url, { waitUntil: 'domcontentloaded' })
 ]);
-
-// Validate and save
 const rawData = await clubsResponse.json();
 const validated = externalApiResponseSchema.parse(rawData);
 writeFileSync(outputPath, JSON.stringify(validated, null, '\t') + '\n');
 ```
 
-**API endpoint:**
+**API endpoint:** `https://mc-api.dribl.com/api/list/clubs?disable_paging=true`
 
-- URL: `https://mc-api.dribl.com/api/list/clubs?disable_paging=true`
-- Response: JSON with `data` array of club objects
-- Validation: `externalApiResponseSchema` (src/types/matches.ts)
-
-**Output:**
-
-- Path: `data/external/clubs/clubs.json`
-- Format: Single JSON file with all clubs
-
-**CLI args:**
-
-- `--url <fixtures-page-url>` (optional, defaults to standard fixtures page)
+**Output:** `data/external/clubs/clubs.json`
 
 ## Fixtures Extraction
 
 **Reference**: `bin/commands/crawlFixtures.ts`
 
-**Single browser session for all teams.** The browser launches once, then each team's pages are crawled by reusing the same page instance. Each `page.goto()` resets the SPA's filter state, so `applyFilters` is idempotent on every navigation.
+**Single browser session for all teams.** One `page.goto()` at startup establishes Cloudflare clearance. Each team's rounds are fetched via `page.evaluate(fetch(...))` — no SPA navigation per team.
 
-**Pattern:**
+**Core helper:**
 
 ```typescript
-export async function crawlFixtures(teams: CrawlFixturesTeamOptions[]): Promise<void> {
-	let browser: Browser | undefined;
-	const failures: string[] = [];
+async function browserFetch(page: Page, url: string): Promise<unknown> {
+	const raw = await page.evaluate(async (u: string) => {
+		const r = await fetch(u, { headers: { accept: 'application/json' } });
+		if (!r.ok) throw new Error(`HTTP ${r.status} fetching ${u}`);
+		return r.text();
+	}, url);
+	return JSON.parse(raw as string);
+}
+```
 
-	try {
-		browser = await chromium.launch({ headless: false, channel: 'chrome' });
-		const context = await browser.newContext({
-			userAgent: '...',
-			viewport: { width: 1280, height: 720 }
-		});
-		const page = await context.newPage();
+**Round URL builder:**
 
-		const responses: Response[] = [];
-		page.on('response', async (response) => {
-			if (response.url().startsWith(driblApiBaseUrl) && response.ok()) {
-				responses.push(response);
-			}
-		});
+```typescript
+function buildApiUrl(endpoint: string, ids: LeagueIds, extra?: Record<string, string>): string {
+	const params = new URLSearchParams({
+		season: ids.season,
+		competition: ids.competition,
+		league: ids.league,
+		tenant: ids.tenant,
+		timezone: 'Australia/Melbourne',
+		...extra
+	});
+	return `https://mc-api.dribl.com/api/${endpoint}?${params.toString()}`;
+}
+```
 
-		for (const team of teams) {
-			try {
-				const filterArgs = {
-					league: team.league,
-					season: team.season,
-					competition: team.competition
-				};
+**Round loop pattern:**
 
-				// Crawl fixtures (upcoming)
-				responses.length = 0;
-				await crawlPage({
-					page,
-					responses,
-					url: fixturesBaseUrl,
-					outputDir: `.../${team.team}`,
-					filterArgs
-				});
+```typescript
+async function crawlTeamByRounds(page, team, ids, outputDir) {
+	clearChunkFiles(outputDir); // wipe stale chunks first
 
-				// Crawl results (past + scores)
-				responses.length = 0;
-				await crawlPage({
-					page,
-					responses,
-					url: resultsBaseUrl,
-					outputDir: `.../${team.team}`,
-					filterArgs
-				});
+	let chunkIndex = 0;
+	let emptyStreak = 0;
+	const maxConsecutiveEmptyRounds = 2;
+	const maxRounds = 40;
 
-				responses.length = 0;
-			} catch (error) {
-				failures.push(team.team);
-			}
+	for (let round = 1; round <= maxRounds; round++) {
+		const url = buildApiUrl('fixtures', ids, { round: String(round) });
+		const json = await browserFetch(page, url);
+		const validated = externalFixturesApiResponseSchema.parse(json);
+
+		if (validated.data.length === 0) {
+			emptyStreak++;
+			if (emptyStreak >= maxConsecutiveEmptyRounds) break;
+			continue;
 		}
-	} finally {
-		if (browser) await browser.close();
-	}
 
-	if (failures.length > 0) {
-		throw new Error(`Crawl failed for teams: ${failures.join(', ')}`);
+		emptyStreak = 0;
+		writeFileSync(
+			`${outputDir}/chunk-${chunkIndex}.json`,
+			JSON.stringify(validated, null, '\t') + '\n'
+		);
+		chunkIndex++;
 	}
 }
 ```
 
-**Steps per team:**
+**Why clear chunks:** the old crawl wrote to both `fixtures/` and `results/` dirs. New crawl writes everything to `fixtures/` only. `clearChunkFiles` removes stale round data so sync doesn't merge old chunks.
 
-1. Reset `responses.length = 0`
-2. Navigate to `https://fv.dribl.com/fixtures/` — SPA loads with default filters
-3. Apply filters: Season → Competition → League (via `clickFilterByText`)
-4. Paginate via "Load more..." button until exhausted
-5. Save each API response chunk as `chunk-{index}.json`
-6. Reset responses and repeat for `https://fv.dribl.com/results/`
+**Full crawlFixtures flow:**
 
-**API endpoint:**
+```typescript
+export async function crawlFixtures(teams) {
+	browser = await chromium.launch({ headless: false, channel: 'chrome' });
+	const page = await (await browser.newContext({ userAgent: '...' })).newPage();
 
-- URL: `https://mc-api.dribl.com/api/fixtures`
-- Query params: season, competition, league (from filters)
-- Response: JSON with `data` array, `links` (next/prev), `meta` (cursors)
-- Validation: `externalFixturesApiResponseSchema`
+	// ONE goto — establishes Cloudflare clearance for all subsequent fetch() calls
+	await page.goto('https://fv.dribl.com/fixtures/', { waitUntil: 'domcontentloaded' });
+	await page.waitForTimeout(3000);
+
+	for (const team of teams) {
+		const ids = await resolveLeagueIds(page, team.league, team.competition, team.season);
+
+		clearChunkFiles(`data/external/results/${team.team}`); // clear old results dir
+		await crawlTeamByRounds(page, team.team, ids, `data/external/fixtures/${team.team}`);
+		await crawlTeamTable(page, team.team, ids, `data/external/table`);
+	}
+}
+```
+
+**API endpoints:**
+
+| Endpoint       | Params                                               | Response                           |
+| -------------- | ---------------------------------------------------- | ---------------------------------- |
+| `api/fixtures` | season, competition, league, round, tenant, timezone | `{ data: fixture[], links, meta }` |
+| `api/ladders`  | season, competition, league, tenant, timezone        | `{ data: ladderEntry[] }`          |
 
 **Output:**
 
-- Path: `data/external/fixtures/{team}/chunk-0.json`, `chunk-1.json`, etc.
-- Path: `data/external/results/{team}/chunk-0.json`, `chunk-1.json`, etc.
-- Format: Multiple JSON files (one per "Load more" click)
+- Path: `data/external/fixtures/{team}/chunk-0.json`, `chunk-1.json`, … (one file per non-empty round)
+- Format: same `externalFixturesApiResponseSchema` shape
 
 **CLI args:**
 
-- `-t, --team <slug>` — repeatable; filters Sanity teams to these slugs (e.g., `-t slug1 -t slug2`)
+- `-t, --team <slug>` — repeatable; filters Sanity teams to these slugs
 - `-l, --league <name>` — manual mode only; requires exactly one `-t`
 - `-s, --season <year>` (optional, default to current year)
-- `-c, --competition <id>` (optional, default to FFV)
+- `-c, --competition <name>` — full competition name (e.g. "Junior Girls Sunday (U12 - U18)")
 
 **CLI usage examples:**
 
 ```bash
-# All Sanity teams (single browser session)
-npm run crawl:fixtures
+# All Sanity teams
+pnpm run crawl:fixtures
 
-# Specific teams from Sanity (single browser session)
-npm run crawl:fixtures -- -t state-league-2-men-s-north-west -t reserves
+# Specific team
+pnpm run crawl:fixtures -- -t under-12-girls
 
 # Manual mode: single team with explicit league
-npm run crawl:fixtures -- -t my-team -l "State League 2 Men's - North-West"
+pnpm run crawl:fixtures -- -t my-team -l "Girls' West 12B"
 ```
 
-## Table Extraction
+## Table (Ladder) Extraction
 
-**Reference**: `bin/commands/crawlFixtures.ts` — `crawlTeamTable()`
-
-Table crawling is embedded inside the fixtures crawl. After crawling results for each team, `crawlFixtures` clicks the "Ladders" nav tab and captures the single `mc-api.dribl.com/api/ladders` response using a scoped page listener. No separate browser session or separate command.
+Table crawling is embedded in `crawlFixtures`. After round crawl, calls `api/ladders` directly with the same IDs. No SPA navigation needed.
 
 **Pattern:**
 
 ```typescript
-async function crawlTeamTable(page: Page, team: string, outputDir: string): Promise<void> {
-	// Register listener BEFORE the click — the API response can fire during navigation
-	const tableResponses: Response[] = [];
-	const listener = (response: Response) => {
-		if (response.url().includes('mc-api.dribl.com/api/ladders') && response.ok()) {
-			tableResponses.push(response);
-		}
-	};
-	page.on('response', listener);
-
-	await clickNavTab(page, 'Ladders');
-
-	try {
-		// Race: API response vs "No Ladders" text (some competitions have no ladder)
-		const startTime = Date.now();
-		while (Date.now() - startTime < 15_000) {
-			if (tableResponses.length > 0) break;
-			if (await hasPageText(page, 'No Ladders')) return; // skip gracefully
-			await new Promise((r) => setTimeout(r, 200));
-		}
-
-		const rawData = await tableResponses[0].json();
-		const validated = externalTableApiResponseSchema.parse(rawData);
-		writeFileSync(resolve(outputDir, `${team}.json`), JSON.stringify(validated, null, '\t') + '\n');
-	} finally {
-		page.off('response', listener);
-	}
+async function crawlTeamTable(page, team, ids, outputDir) {
+	const url = buildApiUrl('ladders', ids);
+	const json = await browserFetch(page, url);
+	const validated = externalTableApiResponseSchema.parse(json);
+	if (validated.data.length === 0) return; // no ladder (MiniRoos etc.)
+	writeFileSync(`${outputDir}/${team}.json`, JSON.stringify(validated, null, '\t') + '\n');
 }
 ```
 
-**Empty state handling:** pages that show "No Ladders" (e.g. MiniRoos competitions) are skipped with a warn log — same pattern as "No Results" on the Results tab.
+**API endpoint:** `https://mc-api.dribl.com/api/ladders`
 
-**API endpoint:**
-
-- URL: `https://mc-api.dribl.com/api/ladders`
-- Response: JSON with `data` array of ladder entries
-- Validation: `externalTableApiResponseSchema` (`src/types/table.ts`)
-
-**Output:**
-
-- Path: `data/external/table/{team}.json`
-- Format: Single JSON file per team (not chunked — always one response)
-
-## Clubs Transformation
-
-**Reference**: `bin/commands/syncClubs.ts`
-
-**Pattern:**
-
-```typescript
-// Load external data
-const externalResponse = loadExternalData(); // from data/external/clubs/
-const validated = externalApiResponseSchema.parse(externalResponse);
-
-// Transform to internal format
-const apiClubs = externalResponse.data.map((externalClub) => transformExternalClub(externalClub));
-
-// Load existing clubs
-const existingFile = loadExistingClubs(); // from data/clubs/
-
-// Merge (deduplicate by externalId)
-const clubsMap = new Map<string, Club>();
-for (const club of existingClubs) {
-	clubsMap.set(club.externalId, club);
-}
-for (const apiClub of apiClubs) {
-	clubsMap.set(apiClub.externalId, apiClub); // update or add
-}
-
-// Sort by name
-const mergedClubs = Array.from(clubsMap.values()).sort((a, b) => a.name.localeCompare(b.name));
-
-// Save
-writeFileSync(CLUBS_FILE_PATH, JSON.stringify({ clubs: mergedClubs }, null, '\t'));
-```
-
-**Transform service**: `src/lib/clubService.ts`
-
-- `transformExternalClub()`: Converts external club format to internal format
-- Maps fields: id→externalId, attributes.name→name/displayName, etc.
-- Normalizes address (combines address_line_1 + address_line_2)
-- Maps socials array (name→platform, value→url)
-- Validates output with `clubSchema`
-
-**Output:**
-
-- Path: `data/clubs/clubs.json`
-- Format: `{ clubs: Club[] }`
+**Output:** `data/external/table/{team}.json` (single file per team)
 
 ## Fixtures Transformation
 
 **Reference**: `bin/commands/syncFixtures.ts`
 
+Reads `data/external/fixtures/{team}/chunk-*.json` and `data/external/results/{team}/chunk-*.json` (both optional). Results dir will typically be empty after new crawl — dedup handles any overlap.
+
 **Pattern:**
 
 ```typescript
-// Read all chunk files
-const teamDir = path.join(EXTERNAL_DIR, team);
-const files = await fs.readdir(teamDir);
-const chunkFiles = files.filter((f) => f.match(/^chunk-\d+\.json$/)).sort(); // natural number sort
+// Read chunks, validate
+const responses = await readExternalFixtureFiles(dir, (required = false));
 
-// Load and validate each chunk
-const responses: ExternalFixturesApiResponse[] = [];
-for (const file of chunkFiles) {
-	const content = await fs.readFile(path.join(teamDir, file), 'utf-8');
-	const validated = externalFixturesApiResponseSchema.parse(JSON.parse(content));
-	responses.push(validated);
-}
+// Transform + merge results-first (so completed scores win dedup)
+const { fixtures, competition, season } = mergeFixtures([...resultResponses, ...fixtureResponses]);
 
-// Transform all fixtures
-const allFixtures = [];
-for (const response of responses) {
-	for (const externalFixture of response.data) {
-		const fixture = transformExternalFixture(externalFixture);
-		allFixtures.push(fixture);
-	}
-}
+// Deduplicate by round + homeTeamId + awayTeamId
+const unique = deduplicateFixtures(fixtures);
 
-// Deduplicate (by round + homeTeamId + awayTeamId)
-const seen = new Set<string>();
-const deduplicated = allFixtures.filter((f) => {
-	const key = `${f.round}-${f.homeTeamId}-${f.awayTeamId}`;
-	if (seen.has(key)) return false;
-	seen.add(key);
-	return true;
-});
-
-// Sort by round, then date
-const sorted = deduplicated.sort((a, b) => {
-	if (a.round !== b.round) return a.round - b.round;
-	return a.date.localeCompare(b.date);
-});
-
-// Calculate metadata
-const totalRounds = Math.max(...sorted.map((f) => f.round), 0);
-
-// Save
-const fixtureData = {
-	competition: 'FFV',
-	season: 2025,
-	totalFixtures: sorted.length,
-	totalRounds,
-	fixtures: sorted
-};
-writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
+// Sort by round then date, write
+writeFileSync(
+	outputPath,
+	JSON.stringify({ competition, season, totalFixtures, totalRounds, fixtures: sorted }, null, '\t')
+);
 ```
 
 **Transform service**: `src/lib/matches/fixtureTransformService.ts`
 
-- `transformExternalFixture()`: Converts external fixture format to internal format
-- Parses round number (e.g., "R1" → 1)
-- Formats date/time/day strings (ISO date, 24h time, weekday name)
-- Combines ground + field names for address
-- Finds club external IDs by matching team names/logos
-- Validates output with `fixtureSchema`
-
-**Output:**
-
-- Path: `data/matches/{team}.json`
-- Format: `{ competition, season, totalFixtures, totalRounds, fixtures: Fixture[] }`
-
-**CLI args:**
-
-- `--team <slug>` (required) - Team slug to sync (e.g., "state-league-2-men-s-north-west")
+**Output:** `data/matches/{team}.json`
 
 ## Validation Schemas
 
-**Reference**: `src/types/matches.ts`
+**Reference**: `src/types/matches.ts`, `src/types/table.ts`
 
-**External schemas (API responses):**
+- `externalFixturesApiResponseSchema` — API response `{ data: fixture[], links?, meta? }`
+- `externalTableApiResponseSchema` — ladder response `{ data: ladderEntry[] }`
+- `fixtureSchema` / `fixtureDataSchema` — internal transformed shape
 
-- `externalApiResponseSchema`: Clubs API response
-- `externalClubSchema`: Single club object
-- `externalFixturesApiResponseSchema`: Fixtures API response
-- `externalFixtureSchema`: Single fixture object
-
-**Internal schemas (transformed data):**
-
-- `clubSchema`: Single club
-- `clubsSchema`: Clubs file (`{ clubs: Club[] }`)
-- `fixtureSchema`: Single fixture
-- `fixtureDataSchema`: Fixtures file (`{ competition, season, totalFixtures, totalRounds, fixtures }`)
-
-**Pattern**: Always validate at boundaries (API → external schema, transform → internal schema)
+**Always validate at boundaries** (API response → external schema, transform output → internal schema).
 
 ## CI Integration
 
 **Reference**: `.github/workflows/crawl.yml`
-
-**Linux setup (GitHub Actions):**
 
 ```yaml
 - name: Install Chrome
@@ -400,69 +319,80 @@ writeFileSync(outputPath, JSON.stringify(fixtureData, null, '\t'));
   run: npm run crawl:fixtures:ci
 ```
 
-**Key points:**
-
-- Use `xvfb-run --auto-servernum` prefix on Linux for headless Chrome (e.g., `xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures`)
-- Install with `--with-deps` flag to get system dependencies
-- No team args needed in CI — all Sanity teams are crawled in one browser session
-
-**Package.json scripts pattern:**
-
-```json
-{
-	"crawl:fixtures": "tsx bin/wsc.ts crawl fixtures",
-	"crawl:fixtures:ci": "xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures",
-	"sync:clubs": "tsx bin/wsc.ts sync clubs",
-	"sync:fixtures": "tsx bin/wsc.ts sync fixtures",
-	"sync:table": "tsx bin/wsc.ts sync table"
-}
-```
-
-> Table crawling runs automatically as part of `crawl:fixtures` — there is no separate `crawl:table` script.
+- `crawl:fixtures:ci` = `xvfb-run --auto-servernum tsx bin/wsc.ts crawl fixtures` (Linux needs xvfb)
+- Single browser session crawls all Sanity teams in one run
+- `dribl-ids.json` cache is rebuilt each CI run (not committed)
 
 ## Best Practices
+
+**Cloudflare clearance:**
+
+- One `page.goto()` per browser session is enough — clearance persists for all `fetch()` calls
+- Wait 3s after goto before starting API calls
+- Keep the same page alive; don't close and reopen between teams
+
+**Empty round handling:**
+
+- Stop after `maxConsecutiveEmptyRounds=2` consecutive empty rounds
+- Some comps have scheduling gaps mid-season — single empty round is not the end
+- `maxRounds=40` is a hard safety cap
+
+**Chunk file management:**
+
+- Always `clearChunkFiles(outputDir)` before writing new chunks for a team
+- Also clear the old `results/` dir so stale chunks don't pollute sync
+- One chunk file per non-empty round (not per "Load more" page like old approach)
+
+**ID cache:**
+
+- Re-resolve any `leagueName` not in cache — handles regrades automatically
+- Tenant ID is stable; only re-fetch if cache is empty
+- `(Removed)` prefix in league name = old/regraded league; skip it
 
 **Logging:**
 
 - Use pino logger with child loggers per module
-- Log counts and progress for large operations
+- Log round count per team, ID resolution events, and per-team completion
 
 **Error handling:**
 
-- Per-team failures are caught and collected — the session continues to the next team
-- A single throw at the end signals partial failure to the caller
+- Per-team failures are caught and collected; session continues to the next team
+- Single throw at the end signals partial failure to the caller
 - Browser closes in `finally` block regardless of failures
-- Special handling for ZodError (print issues) and missing Playwright executable
 
 **File operations:**
 
-- Always use `mkdirSync(path, { recursive: true })` before writing
-- Format JSON with tabs: `JSON.stringify(data, null, '\t')`
-- Add newline at end of file: `content + '\n'`
-- Use absolute paths with `resolve(currentDir, '../relative/path')`
-
-**Data separation:**
-
-- Keep raw external data in `data/external/` (gitignored)
-- Keep transformed data in `data/` (committed)
-- Never commit external API responses directly
-
-**Validation:**
-
-- Validate immediately after receiving API data
-- Validate before writing transformed data
-- Use descriptive error messages with file paths
-
-**CLI arguments:**
-
-- Use Commander library for consistent CLI parsing
-- `-t, --team` is repeatable (collector function): `-t slug1 -t slug2`
-- Manual mode requires exactly one `-t` plus the URL/league option
-- Sanity mode (no manual options) fetches team config from CMS
+- `mkdirSync(path, { recursive: true })` before writing
+- Format JSON with tabs: `JSON.stringify(data, null, '\t') + '\n'`
+- Absolute paths via `resolve(currentDir, '../../...')`
 
 ## Common Patterns
 
-**Reading chunks:**
+**Single-browser session:**
+
+```typescript
+let browser: Browser | undefined;
+const failures: string[] = [];
+try {
+	browser = await chromium.launch({ headless: false, channel: 'chrome' });
+	const page = await (await browser.newContext({ userAgent: '...' })).newPage();
+	await page.goto(siteUrl, { waitUntil: 'domcontentloaded' });
+	await page.waitForTimeout(3000);
+
+	for (const team of teams) {
+		try {
+			// direct API calls via browserFetch(page, url)
+		} catch (error) {
+			failures.push(team.slug);
+		}
+	}
+} finally {
+	if (browser) await browser.close();
+}
+if (failures.length > 0) throw new Error(`Failed: ${failures.join(', ')}`);
+```
+
+**Reading chunks (sync side):**
 
 ```typescript
 const files = await fs.readdir(dir);
@@ -485,34 +415,4 @@ const unique = items.filter((item) => {
 	seen.add(key);
 	return true;
 });
-```
-
-**Merge with existing:**
-
-```typescript
-const map = new Map<string, T>();
-existing.forEach((item) => map.set(item.id, item));
-incoming.forEach((item) => map.set(item.id, item)); // update or add
-const merged = Array.from(map.values());
-```
-
-**Single-browser session pattern:**
-
-```typescript
-let browser: Browser | undefined;
-const failures: string[] = [];
-try {
-	browser = await chromium.launch(...);
-	const page = await (await browser.newContext(...)).newPage();
-	for (const team of teams) {
-		try {
-			// work per team
-		} catch (error) {
-			failures.push(team.slug);
-		}
-	}
-} finally {
-	if (browser) await browser.close();
-}
-if (failures.length > 0) throw new Error(`Failed: ${failures.join(', ')}`);
 ```
