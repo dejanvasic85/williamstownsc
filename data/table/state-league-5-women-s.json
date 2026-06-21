@@ -33,11 +33,26 @@
 			"points": 18
 		},
 		{
+			"teamId": "am1QRrPXmw",
+			"teamName": "Yarraville Glory FC Seniors state league 6 women",
+			"clubName": "Yarraville Glory FC",
+			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
+			"position": 3,
+			"played": 8,
+			"wins": 5,
+			"draws": 2,
+			"losses": 1,
+			"goalsFor": 30,
+			"goalsAgainst": 3,
+			"goalDifference": 27,
+			"points": 17
+		},
+		{
 			"teamId": "lNbjPop6Nx",
 			"teamName": "Kensington City SC Seniors Kensington City SC State League 5",
 			"clubName": "Kensington City SC",
 			"logoUrl": "https://ocean.dribl.com/164d4108c9194bbfa868ceb938b6dab0",
-			"position": 3,
+			"position": 4,
 			"played": 7,
 			"wins": 5,
 			"draws": 2,
@@ -46,21 +61,6 @@
 			"goalsAgainst": 1,
 			"goalDifference": 21,
 			"points": 17
-		},
-		{
-			"teamId": "am1QRrPXmw",
-			"teamName": "Yarraville Glory FC Seniors state league 6 women",
-			"clubName": "Yarraville Glory FC",
-			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
-			"position": 4,
-			"played": 7,
-			"wins": 4,
-			"draws": 2,
-			"losses": 1,
-			"goalsFor": 26,
-			"goalsAgainst": 3,
-			"goalDifference": 23,
-			"points": 14
 		},
 		{
 			"teamId": "JmX4eOQlmn",
@@ -98,13 +98,13 @@
 			"clubName": "Barnstoneworth United FC",
 			"logoUrl": "https://ocean.dribl.com/fa250c47c9904e3496de00a27664dacc",
 			"position": 7,
-			"played": 7,
+			"played": 8,
 			"wins": 2,
 			"draws": 1,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 12,
-			"goalsAgainst": 26,
-			"goalDifference": -14,
+			"goalsAgainst": 30,
+			"goalDifference": -18,
 			"points": 7
 		},
 		{

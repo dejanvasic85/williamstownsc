@@ -596,7 +596,9 @@
 			"awayTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
 			"address": "McIvor Reserve  Pitch 1",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
