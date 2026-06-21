@@ -660,7 +660,9 @@
 			"awayTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
 			"address": "Churchill Reserve Pitch 2 - Half Field A",
 			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -673,7 +675,9 @@
 			"awayTeamName": "Green Gully SC U12 Juniors - B Female U12 Girls Taimoor",
 			"address": "Johnson Reserve Pitch 1A",
 			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -686,7 +690,9 @@
 			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Talia",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (A)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -699,7 +705,9 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - B Female Girls Under 12",
 			"address": "MacPherson Park Pitch 4 (U12/13s)",
 			"coordinates": "-37.63624,144.565487",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 8,

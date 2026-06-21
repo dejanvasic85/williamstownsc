@@ -448,7 +448,9 @@
 			"awayTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
 			"address": "Williams Landing Sports Reserve Pitch 1",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -461,7 +463,7 @@
 			"awayTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
 			"address": "Myers Reserve Pitch 2",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 8,

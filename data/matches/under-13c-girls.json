@@ -507,7 +507,9 @@
 			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -520,7 +522,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"address": "Churchill Reserve Pitch 1",
 			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 8,

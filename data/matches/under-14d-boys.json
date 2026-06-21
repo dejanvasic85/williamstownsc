@@ -763,7 +763,9 @@
 			"awayTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -776,7 +778,9 @@
 			"awayTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"address": "JT Gray Reserve Pitch 5 - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 8,
