@@ -31,7 +31,7 @@ jobs:
       - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.7.0
+          version: 11.8.0
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - id: chunk
@@ -49,7 +49,7 @@ jobs:
       - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.7.0
+          version: 11.8.0
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
@@ -82,7 +82,7 @@ jobs:
       - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.7.0
+          version: 11.8.0
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
@@ -136,7 +136,7 @@ jobs:
       - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.7.0
+          version: 11.8.0
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - uses: actions/download-artifact@v8
