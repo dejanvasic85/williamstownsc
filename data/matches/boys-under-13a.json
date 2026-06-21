@@ -701,7 +701,9 @@
 			"awayTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
 			"address": "Hummingbird Boulevard Reserve 2A (Half)",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,

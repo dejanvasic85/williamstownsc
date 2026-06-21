@@ -38,14 +38,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 3,
-			"played": 6,
-			"wins": 5,
+			"played": 7,
+			"wins": 6,
 			"draws": 0,
 			"losses": 1,
-			"goalsFor": 26,
+			"goalsFor": 28,
 			"goalsAgainst": 6,
-			"goalDifference": 20,
-			"points": 15
+			"goalDifference": 22,
+			"points": 18
 		},
 		{
 			"teamId": "yKJbE0lbKY",
@@ -53,13 +53,13 @@
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
 			"position": 4,
-			"played": 7,
+			"played": 8,
 			"wins": 5,
 			"draws": 0,
-			"losses": 2,
+			"losses": 3,
 			"goalsFor": 21,
-			"goalsAgainst": 16,
-			"goalDifference": 5,
+			"goalsAgainst": 18,
+			"goalDifference": 3,
 			"points": 15
 		},
 		{
