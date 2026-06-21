@@ -616,7 +616,9 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
 			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -668,7 +670,9 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 8,

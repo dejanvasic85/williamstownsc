@@ -648,7 +648,9 @@
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - B Mixed Coach Harris",
 			"address": "Webster Street Reserve Pitch 4B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -676,7 +678,9 @@
 			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
 			"address": "Avondale Heights Reserve Pitch 2",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,

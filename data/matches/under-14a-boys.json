@@ -542,7 +542,9 @@
 			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 8,
