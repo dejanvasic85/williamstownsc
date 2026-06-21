@@ -776,7 +776,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 8,
