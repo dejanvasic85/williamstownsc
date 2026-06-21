@@ -532,7 +532,9 @@
 			"awayTeamName": "Melbourne University SC Seniors",
 			"address": "Fawkner Park South Pavilion Pitch 2 (Lawn 20)",
 			"coordinates": "-37.8392,144.9919",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -558,7 +560,9 @@
 			"awayTeamName": "Fitzroy Lions SC Seniors",
 			"address": "Alcock Road Reserve Pitch 1",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 21,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -570,7 +574,7 @@
 			"homeTeamName": "Middle Park FC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,

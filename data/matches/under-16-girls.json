@@ -414,7 +414,9 @@
 			"awayTeamName": "Gisborne SC U16 Juniors - B Female 16JD",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -427,7 +429,9 @@
 			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 9,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -440,7 +444,9 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "HC Kim Reserve Pitch 3",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,

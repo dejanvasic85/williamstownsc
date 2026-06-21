@@ -78,11 +78,26 @@
 			"points": 10
 		},
 		{
+			"teamId": "ld4466rDdW",
+			"teamName": "Surf Coast FC U15 Juniors - A Mixed",
+			"clubName": "Surf Coast FC",
+			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
+			"position": 6,
+			"played": 8,
+			"wins": 2,
+			"draws": 2,
+			"losses": 4,
+			"goalsFor": 10,
+			"goalsAgainst": 17,
+			"goalDifference": -7,
+			"points": 8
+		},
+		{
 			"teamId": "3NPlg7yYNr",
 			"teamName": "Altona City SC U15 Juniors - A Mixed",
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
-			"position": 6,
+			"position": 7,
 			"played": 7,
 			"wins": 2,
 			"draws": 0,
@@ -93,33 +108,18 @@
 			"points": 6
 		},
 		{
-			"teamId": "ld4466rDdW",
-			"teamName": "Surf Coast FC U15 Juniors - A Mixed",
-			"clubName": "Surf Coast FC",
-			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
-			"position": 7,
-			"played": 7,
-			"wins": 1,
-			"draws": 2,
-			"losses": 4,
-			"goalsFor": 5,
-			"goalsAgainst": 17,
-			"goalDifference": -12,
-			"points": 5
-		},
-		{
 			"teamId": "ld44W2xxdW",
 			"teamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 8,
-			"played": 7,
+			"played": 8,
 			"wins": 0,
 			"draws": 0,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 5,
-			"goalsAgainst": 35,
-			"goalDifference": -30,
+			"goalsAgainst": 40,
+			"goalDifference": -35,
 			"points": 0
 		}
 	]

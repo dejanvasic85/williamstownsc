@@ -476,7 +476,9 @@
 			"awayTeamName": "Williamstown SC U15 Juniors - A Mixed Under 15A Boys",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,

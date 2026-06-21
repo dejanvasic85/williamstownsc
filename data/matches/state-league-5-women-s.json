@@ -553,7 +553,9 @@
 			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL5",
 			"address": "Princes Park Oval Pitch 6",
 			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -566,7 +568,9 @@
 			"awayTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
 			"address": "GH Mott Reserve Pitch 1",
 			"coordinates": "-37.744468,145.009898",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,

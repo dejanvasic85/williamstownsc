@@ -720,7 +720,9 @@
 			"awayTeamName": "Altona City SC U12 Juniors - B Female",
 			"address": "Waste Sense Park Pitch 2 - Half 1",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -733,7 +735,9 @@
 			"awayTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
 			"address": "Springside Recreational Reserve Junior Pitch (S) - Half Field A",
 			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -746,7 +750,9 @@
 			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
