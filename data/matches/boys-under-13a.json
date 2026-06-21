@@ -656,7 +656,9 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
 			"address": "HD Graham Reserve Field 1 (North) Half A",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 8,
