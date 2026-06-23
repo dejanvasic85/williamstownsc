@@ -113,14 +113,14 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 8,
-			"played": 6,
+			"played": 7,
 			"wins": 3,
-			"draws": 0,
+			"draws": 1,
 			"losses": 3,
-			"goalsFor": 10,
-			"goalsAgainst": 15,
+			"goalsFor": 13,
+			"goalsAgainst": 18,
 			"goalDifference": -5,
-			"points": 9
+			"points": 10
 		},
 		{
 			"teamId": "ZKRP0zWjmk",
@@ -143,14 +143,14 @@
 			"clubName": "Greenvale United SC",
 			"logoUrl": "https://ocean.dribl.com/4c443f48aa7346d19a9a6dead7f5acd3",
 			"position": 10,
-			"played": 5,
+			"played": 6,
 			"wins": 1,
-			"draws": 3,
+			"draws": 4,
 			"losses": 1,
-			"goalsFor": 11,
-			"goalsAgainst": 8,
+			"goalsFor": 14,
+			"goalsAgainst": 11,
 			"goalDifference": 3,
-			"points": 6
+			"points": 7
 		},
 		{
 			"teamId": "EN2n2RzrNq",

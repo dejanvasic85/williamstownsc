@@ -707,19 +707,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "00:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"awayTeamName": "Yarraville Glory FC U10 MiniRoos - Kangaroos Mixed",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "09:00",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "R1K3BbeoNQ",
@@ -740,6 +727,19 @@
 			"awayTeamName": "Avondale FC U10 MiniRoos - Kangaroos Mixed U10 - Miniroos - Boys - Jacob",
 			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Yarraville Glory FC U10 MiniRoos - Kangaroos Mixed",
+			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
+			"address": "McIvor Reserve  Pitch 2 - Half (C+D)",
+			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{
@@ -861,6 +861,19 @@
 			"round": 12,
 			"date": "2026-07-26",
 			"day": "Sunday",
+			"time": "08:30",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "1pN6RBQN0g",
+			"homeTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
+			"awayTeamName": "Avondale FC U10 MiniRoos - Kangaroos Mixed U10 - Miniroos - Boys - Jacob",
+			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
+			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-26",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "8nm7PgVNOq",
 			"awayTeamId": "gld450DmW5",
@@ -894,19 +907,6 @@
 			"awayTeamName": "Werribee City FC U10 MiniRoos - Kangaroos Mixed U10 Damian",
 			"address": "Avondale Heights Reserve Pitch 2",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 12,
-			"date": "2026-07-26",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"awayTeamName": "Avondale FC U10 MiniRoos - Kangaroos Mixed U10 - Miniroos - Boys - Jacob",
-			"address": "",
-			"coordinates": "",
 			"status": "pending"
 		},
 		{

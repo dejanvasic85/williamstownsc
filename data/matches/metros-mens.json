@@ -598,8 +598,8 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Kings Domain FC Seniors",
 			"awayTeamName": "Williamstown SC Seniors",
-			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
-			"coordinates": "-37.843712,144.981104",
+			"address": "Edmund Herring Memorial Oval Main Pitch",
+			"coordinates": "-37.832616,144.975505",
 			"status": "pending"
 		},
 		{
@@ -994,7 +994,7 @@
 			"awayTeamId": "wOmejXOyN0",
 			"homeTeamName": "Melbourne University SC Seniors",
 			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
-			"address": "Princes Park Oval Pitch 4",
+			"address": "Princes Park Oval Pitch 3",
 			"coordinates": "-37.787624,144.960651",
 			"status": "pending"
 		},
@@ -1148,7 +1148,7 @@
 			"awayTeamId": "nPmrB8Gpmo",
 			"homeTeamName": "Melbourne University SC Seniors",
 			"awayTeamName": "South Yarra SC Seniors",
-			"address": "Princes Park Oval Pitch 4",
+			"address": "Princes Park Oval Pitch 3",
 			"coordinates": "-37.787624,144.960651",
 			"status": "pending"
 		},

@@ -2,7 +2,7 @@
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
 	"totalFixtures": 72,
-	"totalRounds": 18,
+	"totalRounds": 19,
 	"fixtures": [
 		{
 			"round": 1,
@@ -451,19 +451,6 @@
 			"homeScore": 2,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "bgdMXLbQKE",
-			"homeTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
-			"awayTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
-			"address": "Myers Reserve Pitch 2",
-			"coordinates": "-38.09538,144.320027",
-			"status": "washout reschedule"
 		},
 		{
 			"round": 8,
@@ -999,6 +986,19 @@
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
+		},
+		{
+			"round": 19,
+			"date": "2026-07-05",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "bgdMXLbQKE",
+			"homeTeamName": "Geelong Rangers SC U15 Juniors - A Mixed U15 Metro",
+			"awayTeamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
+			"address": "Myers Reserve Pitch 2",
+			"coordinates": "-38.09538,144.320027",
+			"status": "washout reschedule"
 		}
 	]
 }

@@ -748,7 +748,9 @@
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -828,19 +830,6 @@
 			"date": "2026-06-28",
 			"day": "Sunday",
 			"time": "13:00",
-			"homeTeamId": "nPmr7WjNow",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
-			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
-			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "13:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "OVdzwWpmGr",
 			"homeTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
@@ -886,6 +875,19 @@
 			"awayTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
 			"address": "Ralph Reserve Main Pitch",
 			"coordinates": "-37.792903,144.799142",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-28",
+			"day": "Sunday",
+			"time": "17:00",
+			"homeTeamId": "nPmr7WjNow",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
+			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
+			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
+			"coordinates": "-37.714141,144.726888",
 			"status": "pending"
 		},
 		{

@@ -927,7 +927,7 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "12:15",
+			"time": "13:15",
 			"homeTeamId": "OEN2Z5GlNq",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
@@ -1551,19 +1551,6 @@
 			"round": 17,
 			"date": "2026-08-30",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "OEN2Z5GlNq",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
-			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - B Female",
-			"address": "Springside Recreational Reserve Junior Pitch (S) - Half Field A",
-			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
-		},
-		{
-			"round": 17,
-			"date": "2026-08-30",
-			"day": "Sunday",
 			"time": "12:15",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "vbd91WEDd4",
@@ -1571,6 +1558,19 @@
 			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - B Female Purple",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
+			"status": "pending"
+		},
+		{
+			"round": 17,
+			"date": "2026-08-30",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "nPmr7WjNow",
+			"homeTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
+			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - B Female",
+			"address": "Springside Recreational Reserve Junior Pitch (S) - Half Field A",
+			"coordinates": "-37.712403,144.736088",
 			"status": "pending"
 		},
 		{

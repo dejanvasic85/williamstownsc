@@ -2,7 +2,7 @@
 	"competition": "Junior Mixed Sunday (U12 - U16)",
 	"season": 2026,
 	"totalFixtures": 87,
-	"totalRounds": 18,
+	"totalRounds": 19,
 	"fixtures": [
 		{
 			"round": 1,
@@ -465,19 +465,6 @@
 			"homeScore": 6,
 			"awayScore": 4,
 			"status": "complete"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "11:45",
-			"homeTeamId": "gld4pz60dW",
-			"awayTeamId": "nPmrBwrPmo",
-			"homeTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
-			"awayTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
-			"address": "Aston Fields Pitch 1",
-			"coordinates": "-37.597457,144.890302",
-			"status": "postponed"
 		},
 		{
 			"round": 8,
@@ -1178,6 +1165,19 @@
 			"address": "",
 			"coordinates": "",
 			"status": "pending"
+		},
+		{
+			"round": 19,
+			"date": "2026-07-05",
+			"day": "Sunday",
+			"time": "11:45",
+			"homeTeamId": "gld4pz60dW",
+			"awayTeamId": "nPmrBwrPmo",
+			"homeTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
+			"awayTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
+			"address": "Aston Fields Pitch 1",
+			"coordinates": "-37.597457,144.890302",
+			"status": "postponed"
 		}
 	]
 }

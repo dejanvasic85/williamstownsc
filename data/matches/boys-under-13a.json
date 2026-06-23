@@ -630,7 +630,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"address": "Webster Street Reserve Pitch 4B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -643,7 +645,9 @@
 			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
 			"address": "HC Kim Reserve Pitch 1B",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,

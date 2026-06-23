@@ -501,20 +501,9 @@
 			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
 			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
-			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"address": "Myers Reserve Pitch 2",
-			"coordinates": "-38.09538,144.320027",
-			"status": "washout reschedule"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -543,7 +532,7 @@
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
 			"homeScore": 0,
-			"awayScore": 8,
+			"awayScore": 9,
 			"status": "complete"
 		},
 		{
@@ -1102,6 +1091,19 @@
 			"address": "Costas Mitre 10 Park Pitch 1, Galvin Park Reserve",
 			"coordinates": "-37.886177,144.651364",
 			"status": "pending"
+		},
+		{
+			"round": 19,
+			"date": "2026-07-05",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
+			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"address": "Myers Reserve Pitch 2",
+			"coordinates": "-38.09538,144.320027",
+			"status": "washout reschedule"
 		},
 		{
 			"round": 19,
