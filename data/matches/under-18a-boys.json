@@ -543,6 +543,19 @@
 			"round": 9,
 			"date": "2026-06-28",
 			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
+			"awayTeamName": "Altona City SC U18 Juniors - A Male",
+			"address": "Waste Sense Park Main Pitch",
+			"coordinates": "-37.758429,144.79484",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-28",
+			"day": "Sunday",
 			"time": "14:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "6lNbpDpwdx",
@@ -563,19 +576,6 @@
 			"awayTeamName": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
 			"address": "Springside Recreational Reserve Pitch 1 (S)",
 			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
-			"awayTeamName": "Altona City SC U18 Juniors - A Male",
-			"address": "Waste Sense Park Main Pitch",
-			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
 		{

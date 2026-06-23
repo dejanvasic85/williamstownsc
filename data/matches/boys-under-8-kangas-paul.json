@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 105,
+	"totalFixtures": 106,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -795,6 +795,19 @@
 			"awayTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Oriol",
 			"address": "AB Shaw Reserve Pitch 1 - Midi A (7v7)",
 			"coordinates": "-37.865571,144.783747",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Williams Landing SC U08 MiniRoos - Kangaroos Mixed WLFC U8A - Portland Timbers",
+			"awayTeamName": "Yarraville Glory FC U08 MiniRoos - Kangaroos Mixed",
+			"address": "Williams Landing Sports Reserve Pitch 6 Oval (7v7)",
+			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
