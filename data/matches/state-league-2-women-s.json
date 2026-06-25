@@ -616,19 +616,6 @@
 			"date": "2026-06-26",
 			"day": "Friday",
 			"time": "19:30",
-			"homeTeamId": "6lNbVk6NxE",
-			"awayTeamId": "LBdDxg8Qdb",
-			"homeTeamName": "Brunswick City SC Seniors",
-			"awayTeamName": "Whittlesea United SC Seniors",
-			"address": "Dunstan Reserve Pitch 1",
-			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-26",
-			"day": "Friday",
-			"time": "19:30",
 			"homeTeamId": "bgdMXLR7KE",
 			"awayTeamId": "7MNGvobEmA",
 			"homeTeamName": "Keon Park SC Seniors",
@@ -661,6 +648,19 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-08-12",
+			"day": "Wednesday",
+			"time": "19:30",
+			"homeTeamId": "6lNbVk6NxE",
+			"awayTeamId": "LBdDxg8Qdb",
+			"homeTeamName": "Brunswick City SC Seniors",
+			"awayTeamName": "Whittlesea United SC Seniors",
+			"address": "Dunstan Reserve Pitch 1",
+			"coordinates": "-37.755431,144.939902",
 			"status": "pending"
 		},
 		{

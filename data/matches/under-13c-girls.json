@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 79,
+	"totalFixtures": 80,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -564,6 +564,18 @@
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bye",
 			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
+			"address": "",
+			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-28",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "bye",
+			"homeTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"address": "",
 			"coordinates": "",
 			"status": "pending"
