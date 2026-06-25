@@ -461,6 +461,19 @@
 			"round": 9,
 			"date": "2026-06-28",
 			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "bam1nkkrNw",
+			"awayTeamId": "bgdMXLL2KE",
+			"homeTeamName": "Footscray Rangers FC U10 MiniRoos - Joeys Mixed Juan",
+			"awayTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
+			"address": "Hansen Reserve Main Pitch - Half Field A",
+			"coordinates": "-37.8042,144.872777",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-28",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "7MNGvobEmA",
@@ -481,19 +494,6 @@
 			"awayTeamName": "Melbourne City FC U10 MiniRoos - Joeys Mixed U10 Boys",
 			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "11:05",
-			"homeTeamId": "bam1nkkrNw",
-			"awayTeamId": "bgdMXLL2KE",
-			"homeTeamName": "Footscray Rangers FC U10 MiniRoos - Joeys Mixed Juan",
-			"awayTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
-			"address": "Hansen Reserve Pitch 2 - Half Field A",
-			"coordinates": "-37.8042,144.872777",
 			"status": "pending"
 		},
 		{
