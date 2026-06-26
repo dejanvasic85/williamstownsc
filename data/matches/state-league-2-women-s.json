@@ -501,19 +501,6 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "k2KpA9PdY5",
-			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
-			"awayTeamName": "North Sunshine Eagles SC Seniors",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "17:00",
 			"homeTeamId": "7ZKRa2oNkB",
 			"awayTeamId": "7MNGvobEmA",
@@ -524,6 +511,19 @@
 			"homeScore": 1,
 			"awayScore": 3,
 			"status": "complete"
+		},
+		{
+			"round": 7,
+			"date": "2026-07-31",
+			"day": "Friday",
+			"time": "15:00",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "k2KpA9PdY5",
+			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
+			"awayTeamName": "North Sunshine Eagles SC Seniors",
+			"address": "Sumner Park Main Pitch",
+			"coordinates": "-37.774141,144.986315",
+			"status": "pending"
 		},
 		{
 			"round": 8,
@@ -622,20 +622,9 @@
 			"awayTeamName": "Altona East SC Seniors",
 			"address": "JC Donath Reserve Pitch 8 KP",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "08NOpe1bKZ",
-			"awayTeamId": "7ZKRa2oNkB",
-			"homeTeamName": "Moreland Eagles FC Seniors",
-			"awayTeamName": "Pascoe Vale FC Seniors",
-			"address": "Wallace Reserve Pitch 1",
-			"coordinates": "-37.694764,144.935299",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -648,6 +637,19 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "08NOpe1bKZ",
+			"awayTeamId": "7ZKRa2oNkB",
+			"homeTeamName": "Moreland Eagles FC Seniors",
+			"awayTeamName": "Pascoe Vale FC Seniors",
+			"address": "Wallace Reserve Pitch 1",
+			"coordinates": "-37.694764,144.935299",
 			"status": "pending"
 		},
 		{

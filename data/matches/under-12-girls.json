@@ -759,19 +759,6 @@
 			"date": "2026-06-28",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "gld450DmW5",
-			"awayTeamId": "vbd91WEDd4",
-			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
-			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - B Female Purple",
-			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
-			"coordinates": "-37.777915,144.885698",
-			"status": "pending"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "OEN2Z5GlNq",
 			"homeTeamName": "Altona City SC U12 Juniors - B Female",
@@ -804,6 +791,19 @@
 			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 9,
+			"date": "2026-06-28",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "gld450DmW5",
+			"awayTeamId": "vbd91WEDd4",
+			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
+			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - B Female Purple",
+			"address": "Robert Barrett Reserve Main Pitch - Half Field B",
+			"coordinates": "-37.777915,144.885698",
 			"status": "pending"
 		},
 		{
