@@ -53,14 +53,14 @@
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
 			"position": 4,
-			"played": 8,
+			"played": 9,
 			"wins": 5,
-			"draws": 0,
+			"draws": 1,
 			"losses": 3,
-			"goalsFor": 21,
-			"goalsAgainst": 18,
+			"goalsFor": 24,
+			"goalsAgainst": 21,
 			"goalDifference": 3,
-			"points": 15
+			"points": 16
 		},
 		{
 			"teamId": "bd9W66jRN4",
@@ -98,14 +98,14 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 7,
-			"played": 8,
+			"played": 9,
 			"wins": 3,
-			"draws": 0,
+			"draws": 1,
 			"losses": 5,
-			"goalsFor": 10,
-			"goalsAgainst": 21,
+			"goalsFor": 13,
+			"goalsAgainst": 24,
 			"goalDifference": -11,
-			"points": 9
+			"points": 10
 		},
 		{
 			"teamId": "ZNQxkWyAmx",
