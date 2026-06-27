@@ -36,6 +36,14 @@ function resolveEntryDisplayName(entry: TableEntry, duplicateClubNames: Set<stri
 	return duplicateClubNames.has(entry.clubName) ? entry.teamName : entry.clubName;
 }
 
+const maxNameLength = 30;
+const backChars = 10;
+
+function truncateMiddle(text: string): string {
+	if (text.length <= maxNameLength) return text;
+	return `${text.slice(0, maxNameLength - backChars - 3)}...${text.slice(-backChars)}`;
+}
+
 export function LeagueTable({ entries }: LeagueTableProps) {
 	const { wscClubDriblName } = getClubConfig();
 	const duplicateClubNames = buildDuplicateClubNames(entries);
@@ -80,8 +88,11 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 											className="shrink-0 rounded-full object-contain"
 											unoptimized
 										/>
-										<span className="truncate">
-											{resolveEntryDisplayName(entry, duplicateClubNames)}
+										<span
+											className="truncate"
+											title={resolveEntryDisplayName(entry, duplicateClubNames)}
+										>
+											{truncateMiddle(resolveEntryDisplayName(entry, duplicateClubNames))}
 										</span>
 									</div>
 								</td>
