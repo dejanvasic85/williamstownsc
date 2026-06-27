@@ -611,7 +611,9 @@
 			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
 			"address": "Delahey Reserve Main Pitch",
 			"coordinates": "-37.717437,144.776081",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
