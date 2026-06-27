@@ -583,7 +583,9 @@
 			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
 			"address": "JJ Holland Park Main Pitch (S)",
 			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 8,
