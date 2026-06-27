@@ -14,11 +14,6 @@ type Column = {
 
 const columns: Column[] = [
 	{ label: 'Played', shortLabel: 'P', key: 'played' },
-	{ label: 'Won', shortLabel: 'W', key: 'wins' },
-	{ label: 'Drawn', shortLabel: 'D', key: 'draws' },
-	{ label: 'Lost', shortLabel: 'L', key: 'losses' },
-	{ label: 'Goals For', shortLabel: 'GF', key: 'goalsFor' },
-	{ label: 'Goals Against', shortLabel: 'GA', key: 'goalsAgainst' },
 	{ label: 'Goal Difference', shortLabel: 'GD', key: 'goalDifference' },
 	{ label: 'Points', shortLabel: 'Pts', key: 'points' }
 ];
