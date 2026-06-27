@@ -35,14 +35,14 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 	const duplicateClubNames = buildDuplicateClubNames(entries);
 
 	return (
-		<div className="overflow-x-auto">
+		<div className="w-full overflow-hidden">
 			<table className="table-zebra table w-full text-sm">
 				<thead>
 					<tr>
-						<th className="w-8 text-center">#</th>
-						<th>Team</th>
+						<th className="w-6 px-1 text-center">#</th>
+						<th className="min-w-0">Team</th>
 						{columns.map((col) => (
-							<th key={col.key} className="text-center">
+							<th key={col.key} className="w-10 px-1 text-center">
 								<span className="sr-only">{col.label}</span>
 								<span aria-hidden="true">{col.shortLabel}</span>
 							</th>
@@ -57,8 +57,8 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 								key={entry.teamId}
 								className={isWsc ? 'bg-secondary/10 font-semibold' : undefined}
 							>
-								<td className="text-center tabular-nums">{entry.position}</td>
-								<td>
+								<td className="px-1 text-center tabular-nums">{entry.position}</td>
+								<td className="max-w-0 min-w-0">
 									<div className="flex items-center gap-2">
 										<Image
 											src={entry.logoUrl}
@@ -74,7 +74,7 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 									</div>
 								</td>
 								{columns.map((col) => (
-									<td key={col.key} className="text-center tabular-nums">
+									<td key={col.key} className="px-1 text-center tabular-nums">
 										{entry[col.key] as number}
 									</td>
 								))}
