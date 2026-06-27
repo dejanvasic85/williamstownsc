@@ -1095,7 +1095,9 @@
 			"awayTeamName": "Whittlesea Ranges FC Reserves",
 			"address": "Strathnaver Reserve Pitch 1",
 			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1108,7 +1110,9 @@
 			"awayTeamName": "Altona North SC Reserves",
 			"address": "HR Uren Reserve Pitch 1",
 			"coordinates": "-37.68317,144.98957",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1121,7 +1125,9 @@
 			"awayTeamName": "Corio SC Reserves",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1134,7 +1140,9 @@
 			"awayTeamName": "Surf Coast FC Reserves",
 			"address": "Partridge Street Reserve Pitch 2",
 			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1160,7 +1168,9 @@
 			"awayTeamName": "Geelong Rangers SC Reserves",
 			"address": "Polish Sports & Recreation Complex Pitch 1",
 			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 14,

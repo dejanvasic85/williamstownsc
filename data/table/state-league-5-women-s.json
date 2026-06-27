@@ -33,11 +33,26 @@
 			"points": 18
 		},
 		{
+			"teamId": "lNbjPop6Nx",
+			"teamName": "Kensington City SC Seniors Kensington City SC State League 5",
+			"clubName": "Kensington City SC",
+			"logoUrl": "https://ocean.dribl.com/164d4108c9194bbfa868ceb938b6dab0",
+			"position": 3,
+			"played": 8,
+			"wins": 5,
+			"draws": 3,
+			"losses": 0,
+			"goalsFor": 23,
+			"goalsAgainst": 2,
+			"goalDifference": 21,
+			"points": 18
+		},
+		{
 			"teamId": "am1QRrPXmw",
 			"teamName": "Yarraville Glory FC Seniors state league 6 women",
 			"clubName": "Yarraville Glory FC",
 			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
-			"position": 3,
+			"position": 4,
 			"played": 8,
 			"wins": 5,
 			"draws": 2,
@@ -48,34 +63,19 @@
 			"points": 17
 		},
 		{
-			"teamId": "lNbjPop6Nx",
-			"teamName": "Kensington City SC Seniors Kensington City SC State League 5",
-			"clubName": "Kensington City SC",
-			"logoUrl": "https://ocean.dribl.com/164d4108c9194bbfa868ceb938b6dab0",
-			"position": 4,
-			"played": 7,
-			"wins": 5,
-			"draws": 2,
-			"losses": 0,
-			"goalsFor": 22,
-			"goalsAgainst": 1,
-			"goalDifference": 21,
-			"points": 17
-		},
-		{
 			"teamId": "JmX4eOQlmn",
 			"teamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
 			"clubName": "ETA Buffalo Club of Victoria",
 			"logoUrl": "https://ocean.dribl.com/c2cb3b372c9343378b25f0d1628fbc5f",
 			"position": 5,
-			"played": 8,
+			"played": 9,
 			"wins": 4,
-			"draws": 2,
+			"draws": 3,
 			"losses": 2,
-			"goalsFor": 21,
-			"goalsAgainst": 25,
+			"goalsFor": 22,
+			"goalsAgainst": 26,
 			"goalDifference": -4,
-			"points": 14
+			"points": 15
 		},
 		{
 			"teamId": "am1QRrxnmw",
