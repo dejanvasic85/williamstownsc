@@ -10,15 +10,16 @@ type Column = {
 	label: string;
 	shortLabel: string;
 	key: keyof TableEntry;
+	mobileHidden?: boolean;
 };
 
 const columns: Column[] = [
 	{ label: 'Played', shortLabel: 'P', key: 'played' },
-	{ label: 'Won', shortLabel: 'W', key: 'wins' },
-	{ label: 'Drawn', shortLabel: 'D', key: 'draws' },
-	{ label: 'Lost', shortLabel: 'L', key: 'losses' },
-	{ label: 'Goals For', shortLabel: 'GF', key: 'goalsFor' },
-	{ label: 'Goals Against', shortLabel: 'GA', key: 'goalsAgainst' },
+	{ label: 'Won', shortLabel: 'W', key: 'wins', mobileHidden: true },
+	{ label: 'Drawn', shortLabel: 'D', key: 'draws', mobileHidden: true },
+	{ label: 'Lost', shortLabel: 'L', key: 'losses', mobileHidden: true },
+	{ label: 'Goals For', shortLabel: 'GF', key: 'goalsFor', mobileHidden: true },
+	{ label: 'Goals Against', shortLabel: 'GA', key: 'goalsAgainst', mobileHidden: true },
 	{ label: 'Goal Difference', shortLabel: 'GD', key: 'goalDifference' },
 	{ label: 'Points', shortLabel: 'Pts', key: 'points' }
 ];
@@ -35,19 +36,33 @@ function resolveEntryDisplayName(entry: TableEntry, duplicateClubNames: Set<stri
 	return duplicateClubNames.has(entry.clubName) ? entry.teamName : entry.clubName;
 }
 
+const maxNameLength = 30;
+const backChars = 10;
+
+function truncateMiddle(text: string): string {
+	if (text.length <= maxNameLength) return text;
+	return `${text.slice(0, maxNameLength - backChars - 3)}...${text.slice(-backChars)}`;
+}
+
 export function LeagueTable({ entries }: LeagueTableProps) {
 	const { wscClubDriblName } = getClubConfig();
 	const duplicateClubNames = buildDuplicateClubNames(entries);
 
 	return (
-		<div className="overflow-x-auto">
+		<div className="overflow-hidden md:overflow-x-auto">
 			<table className="table-zebra table w-full text-sm">
 				<thead>
 					<tr>
-						<th className="w-8 text-center">#</th>
-						<th>Team</th>
+						<th className="w-6 px-1 text-center md:w-8 md:px-4">#</th>
+						<th className="min-w-0 md:min-w-fit">Team</th>
 						{columns.map((col) => (
-							<th key={col.key} className="text-center">
+							<th
+								key={col.key}
+								className={[
+									'w-10 px-1 text-center md:w-auto md:px-4',
+									col.mobileHidden ? 'hidden md:table-cell' : ''
+								].join(' ')}
+							>
 								<span className="sr-only">{col.label}</span>
 								<span aria-hidden="true">{col.shortLabel}</span>
 							</th>
@@ -62,8 +77,8 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 								key={entry.teamId}
 								className={isWsc ? 'bg-secondary/10 font-semibold' : undefined}
 							>
-								<td className="text-center tabular-nums">{entry.position}</td>
-								<td>
+								<td className="px-1 text-center tabular-nums md:px-4">{entry.position}</td>
+								<td className="max-w-0 min-w-0 md:max-w-64">
 									<div className="flex items-center gap-2">
 										<Image
 											src={entry.logoUrl}
@@ -73,13 +88,22 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 											className="shrink-0 rounded-full object-contain"
 											unoptimized
 										/>
-										<span className="truncate">
-											{resolveEntryDisplayName(entry, duplicateClubNames)}
+										<span
+											className="truncate"
+											title={resolveEntryDisplayName(entry, duplicateClubNames)}
+										>
+											{truncateMiddle(resolveEntryDisplayName(entry, duplicateClubNames))}
 										</span>
 									</div>
 								</td>
 								{columns.map((col) => (
-									<td key={col.key} className="text-center tabular-nums">
+									<td
+										key={col.key}
+										className={[
+											'px-1 text-center tabular-nums md:px-4',
+											col.mobileHidden ? 'hidden md:table-cell' : ''
+										].join(' ')}
+									>
 										{entry[col.key] as number}
 									</td>
 								))}
