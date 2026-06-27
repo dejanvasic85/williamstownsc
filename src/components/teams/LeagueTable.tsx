@@ -70,7 +70,7 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 								className={isWsc ? 'bg-secondary/10 font-semibold' : undefined}
 							>
 								<td className="px-1 text-center tabular-nums md:px-4">{entry.position}</td>
-								<td className="max-w-0 min-w-0 md:max-w-none">
+								<td className="max-w-0 min-w-0 md:max-w-64">
 									<div className="flex items-center gap-2">
 										<Image
 											src={entry.logoUrl}
