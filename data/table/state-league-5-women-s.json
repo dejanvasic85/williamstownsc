@@ -3,11 +3,26 @@
 	"competition": "State League 5 Women's - North-West",
 	"entries": [
 		{
+			"teamId": "8Nq7P2X7d9",
+			"teamName": "Williamstown SC Seniors Senior Women SL5",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 1,
+			"played": 8,
+			"wins": 6,
+			"draws": 1,
+			"losses": 1,
+			"goalsFor": 37,
+			"goalsAgainst": 7,
+			"goalDifference": 30,
+			"points": 19
+		},
+		{
 			"teamId": "ld443DpOdW",
 			"teamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
 			"clubName": "Dynamo Melbourne FC",
 			"logoUrl": "https://ocean.dribl.com/f052de0c3ad040c081d1945a110182d3",
-			"position": 1,
+			"position": 2,
 			"played": 7,
 			"wins": 6,
 			"draws": 1,
@@ -18,34 +33,19 @@
 			"points": 19
 		},
 		{
-			"teamId": "8Nq7P2X7d9",
-			"teamName": "Williamstown SC Seniors Senior Women SL5",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 2,
-			"played": 7,
-			"wins": 6,
-			"draws": 0,
-			"losses": 1,
-			"goalsFor": 35,
-			"goalsAgainst": 5,
-			"goalDifference": 30,
-			"points": 18
-		},
-		{
 			"teamId": "lNbjPop6Nx",
 			"teamName": "Kensington City SC Seniors Kensington City SC State League 5",
 			"clubName": "Kensington City SC",
 			"logoUrl": "https://ocean.dribl.com/164d4108c9194bbfa868ceb938b6dab0",
 			"position": 3,
-			"played": 8,
+			"played": 9,
 			"wins": 5,
-			"draws": 3,
+			"draws": 4,
 			"losses": 0,
-			"goalsFor": 23,
-			"goalsAgainst": 2,
+			"goalsFor": 25,
+			"goalsAgainst": 4,
 			"goalDifference": 21,
-			"points": 18
+			"points": 19
 		},
 		{
 			"teamId": "am1QRrPXmw",
