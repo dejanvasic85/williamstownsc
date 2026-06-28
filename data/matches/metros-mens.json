@@ -587,7 +587,9 @@
 			"awayTeamName": "South Yarra SC Seniors",
 			"address": "Alma Park East Field 1",
 			"coordinates": "-37.860185,144.994366",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 9,

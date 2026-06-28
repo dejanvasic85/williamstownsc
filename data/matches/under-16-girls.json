@@ -486,7 +486,9 @@
 			"awayTeamName": "Altona City SC U16 Juniors - B Female",
 			"address": "Saltwater Reserve Pitch 1",
 			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 9,
