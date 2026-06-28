@@ -3,11 +3,26 @@
 	"competition": "Mixed West 14A Blue",
 	"entries": [
 		{
+			"teamId": "BdD9yWzJmb",
+			"teamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"clubName": "Tarneit United SC",
+			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
+			"position": 1,
+			"played": 6,
+			"wins": 6,
+			"draws": 0,
+			"losses": 0,
+			"goalsFor": 23,
+			"goalsAgainst": 1,
+			"goalDifference": 22,
+			"points": 18
+		},
+		{
 			"teamId": "jmaBLM1YNR",
 			"teamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 1,
+			"position": 2,
 			"played": 7,
 			"wins": 6,
 			"draws": 0,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 6,
 			"goalDifference": 16,
 			"points": 18
-		},
-		{
-			"teamId": "BdD9yWzJmb",
-			"teamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"clubName": "Tarneit United SC",
-			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
-			"position": 2,
-			"played": 5,
-			"wins": 5,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 22,
-			"goalsAgainst": 1,
-			"goalDifference": 21,
-			"points": 15
 		},
 		{
 			"teamId": "EN2nb2Z2Nq",
@@ -98,13 +98,13 @@
 			"clubName": "Wyndham FC",
 			"logoUrl": "https://ocean.dribl.com/f20d0e1df69046dfb92cfe65f203cf7f",
 			"position": 7,
-			"played": 5,
+			"played": 6,
 			"wins": 1,
 			"draws": 0,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 6,
-			"goalsAgainst": 19,
-			"goalDifference": -13,
+			"goalsAgainst": 20,
+			"goalDifference": -14,
 			"points": 3
 		},
 		{

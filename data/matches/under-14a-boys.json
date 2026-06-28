@@ -602,7 +602,9 @@
 			"awayTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
 			"address": "Hummingbird Boulevard Reserve Pitch 1",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 10,

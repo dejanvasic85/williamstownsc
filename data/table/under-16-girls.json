@@ -53,14 +53,14 @@
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
 			"position": 4,
-			"played": 8,
-			"wins": 4,
+			"played": 9,
+			"wins": 5,
 			"draws": 0,
 			"losses": 4,
-			"goalsFor": 11,
+			"goalsFor": 19,
 			"goalsAgainst": 18,
-			"goalDifference": -7,
-			"points": 12
+			"goalDifference": 1,
+			"points": 15
 		},
 		{
 			"teamId": "bd9W01yYN4",
@@ -98,13 +98,13 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 7,
+			"played": 8,
 			"wins": 0,
 			"draws": 0,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 1,
-			"goalsAgainst": 29,
-			"goalDifference": -28,
+			"goalsAgainst": 37,
+			"goalDifference": -36,
 			"points": 0
 		}
 	]
