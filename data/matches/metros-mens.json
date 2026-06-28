@@ -600,7 +600,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Edmund Herring Memorial Oval Main Pitch",
 			"coordinates": "-37.832616,144.975505",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -625,7 +627,7 @@
 			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -638,7 +640,9 @@
 			"awayTeamName": "Middle Park FC Seniors",
 			"address": "Home of the Matildas Pitch 2 (S)",
 			"coordinates": "-37.721473,145.041196",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 10,

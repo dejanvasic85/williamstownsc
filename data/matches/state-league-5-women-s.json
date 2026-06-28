@@ -628,7 +628,9 @@
 			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -641,7 +643,9 @@
 			"awayTeamName": "Yarraville Glory FC Seniors state league 6 women",
 			"address": "JJ Holland Park Main Pitch (S)",
 			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -654,7 +658,9 @@
 			"awayTeamName": "Keon Park SC Seniors Senior Women SL5",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,

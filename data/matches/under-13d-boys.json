@@ -701,7 +701,9 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "Webster Street Reserve Pitch 4B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -714,7 +716,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
 			"address": "Alcock Road Reserve Pitch 3 - Half A",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -752,7 +756,7 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,

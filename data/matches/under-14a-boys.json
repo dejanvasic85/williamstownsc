@@ -559,7 +559,9 @@
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "Williams Landing Sports Reserve Pitch 1",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -572,7 +574,9 @@
 			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -585,7 +589,7 @@
 			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"status": "abandoned"
 		},
 		{
 			"round": 9,

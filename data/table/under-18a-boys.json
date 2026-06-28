@@ -8,14 +8,14 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 1,
-			"played": 8,
-			"wins": 5,
+			"played": 9,
+			"wins": 6,
 			"draws": 1,
 			"losses": 2,
-			"goalsFor": 20,
+			"goalsFor": 24,
 			"goalsAgainst": 13,
-			"goalDifference": 7,
-			"points": 16
+			"goalDifference": 11,
+			"points": 19
 		},
 		{
 			"teamId": "pN69gAbOm0",
@@ -33,11 +33,26 @@
 			"points": 16
 		},
 		{
+			"teamId": "yKJbo75JKY",
+			"teamName": "Altona City SC U18 Juniors - A Male",
+			"clubName": "Altona City SC",
+			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
+			"position": 3,
+			"played": 8,
+			"wins": 4,
+			"draws": 3,
+			"losses": 1,
+			"goalsFor": 19,
+			"goalsAgainst": 11,
+			"goalDifference": 8,
+			"points": 15
+		},
+		{
 			"teamId": "am1QjYJnmw",
 			"teamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
 			"clubName": "Caroline Springs George Cross FC",
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
-			"position": 3,
+			"position": 4,
 			"played": 7,
 			"wins": 4,
 			"draws": 2,
@@ -45,21 +60,6 @@
 			"goalsFor": 21,
 			"goalsAgainst": 6,
 			"goalDifference": 15,
-			"points": 14
-		},
-		{
-			"teamId": "yKJbo75JKY",
-			"teamName": "Altona City SC U18 Juniors - A Male",
-			"clubName": "Altona City SC",
-			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
-			"position": 4,
-			"played": 7,
-			"wins": 4,
-			"draws": 2,
-			"losses": 1,
-			"goalsFor": 19,
-			"goalsAgainst": 11,
-			"goalDifference": 8,
 			"points": 14
 		},
 		{
@@ -83,14 +83,14 @@
 			"clubName": "Albion Rovers FC",
 			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
 			"position": 6,
-			"played": 7,
+			"played": 8,
 			"wins": 3,
-			"draws": 0,
+			"draws": 1,
 			"losses": 4,
 			"goalsFor": 17,
 			"goalsAgainst": 21,
 			"goalDifference": -4,
-			"points": 9
+			"points": 10
 		},
 		{
 			"teamId": "ld44BkrxdW",
@@ -98,13 +98,13 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 7,
-			"played": 8,
+			"played": 9,
 			"wins": 1,
 			"draws": 0,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 9,
-			"goalsAgainst": 24,
-			"goalDifference": -15,
+			"goalsAgainst": 28,
+			"goalDifference": -19,
 			"points": 3
 		},
 		{
