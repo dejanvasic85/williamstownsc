@@ -8,14 +8,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 1,
-			"played": 7,
+			"played": 8,
 			"wins": 7,
-			"draws": 0,
+			"draws": 1,
 			"losses": 0,
-			"goalsFor": 34,
-			"goalsAgainst": 9,
+			"goalsFor": 35,
+			"goalsAgainst": 10,
 			"goalDifference": 25,
-			"points": 21
+			"points": 22
 		},
 		{
 			"teamId": "RdkEpOQBNG",
@@ -38,14 +38,14 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 3,
-			"played": 8,
-			"wins": 5,
+			"played": 9,
+			"wins": 6,
 			"draws": 0,
 			"losses": 3,
-			"goalsFor": 21,
+			"goalsFor": 28,
 			"goalsAgainst": 15,
-			"goalDifference": 6,
-			"points": 15
+			"goalDifference": 13,
+			"points": 18
 		},
 		{
 			"teamId": "ZNQxp79gmx",
@@ -68,14 +68,14 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 5,
-			"played": 7,
+			"played": 8,
 			"wins": 2,
-			"draws": 0,
+			"draws": 1,
 			"losses": 5,
-			"goalsFor": 29,
-			"goalsAgainst": 16,
+			"goalsFor": 30,
+			"goalsAgainst": 17,
 			"goalDifference": 13,
-			"points": 6
+			"points": 7
 		},
 		{
 			"teamId": "emAeLAaBmB",
@@ -83,13 +83,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 6,
-			"played": 7,
+			"played": 8,
 			"wins": 1,
 			"draws": 0,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 5,
-			"goalsAgainst": 37,
-			"goalDifference": -32,
+			"goalsAgainst": 44,
+			"goalDifference": -39,
 			"points": 3
 		},
 		{

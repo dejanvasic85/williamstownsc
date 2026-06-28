@@ -566,7 +566,7 @@
 			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -578,7 +578,7 @@
 			"homeTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -591,7 +591,9 @@
 			"awayTeamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,

@@ -815,7 +815,7 @@
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
 			"address": "JL Murphy Reserve Pitch 3C (7v7)",
 			"coordinates": "-37.834006,144.92755",
-			"status": "pending"
+			"status": "postponed"
 		},
 		{
 			"round": 9,
@@ -853,7 +853,7 @@
 			"awayTeamName": "Tarneit United SC U09 MiniRoos - Wallabies Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 10,

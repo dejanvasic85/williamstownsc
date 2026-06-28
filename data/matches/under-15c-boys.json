@@ -515,7 +515,7 @@
 			"awayTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -527,7 +527,7 @@
 			"homeTeamName": "Whittlesea Ranges FC U15 Juniors - C Mixed U15 Kon",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -539,7 +539,7 @@
 			"homeTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -551,7 +551,7 @@
 			"awayTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -564,7 +564,9 @@
 			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -577,7 +579,9 @@
 			"awayTeamName": "Bundoora United FC U15 Juniors - C Mixed BUFC U15's Orange B's",
 			"address": "Arndell Park Reserve Pitch 3 (S)",
 			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
+			"homeScore": 10,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 10,

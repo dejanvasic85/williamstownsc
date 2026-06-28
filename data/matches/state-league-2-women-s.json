@@ -641,7 +641,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 9,
