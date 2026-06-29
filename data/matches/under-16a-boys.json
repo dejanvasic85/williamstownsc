@@ -823,7 +823,9 @@
 			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
 			"address": "Keilor Lodge Reserve Pitch 3",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -866,7 +868,9 @@
 			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
