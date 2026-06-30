@@ -617,7 +617,9 @@
 			"awayTeamName": "Truganina Lions FC Seniors",
 			"address": "Princes Park Oval Pitch 1",
 			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"homeScore": 6,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,

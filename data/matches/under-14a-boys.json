@@ -589,7 +589,9 @@
 			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
-			"status": "abandoned"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,
