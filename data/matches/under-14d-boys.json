@@ -855,7 +855,9 @@
 			"awayTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -868,7 +870,9 @@
 			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
 			"address": "Scovell Reserve Main Pitch",
 			"coordinates": "-37.784639,144.878892",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -911,7 +915,9 @@
 			"awayTeamName": "Melbourne City FC U14 Juniors - D Mixed",
 			"address": "Tarneit Rise Synthetic Pitch Tarneit Rise Synthetic Pitch",
 			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,
