@@ -87,9 +87,9 @@
 			"wins": 2,
 			"draws": 2,
 			"losses": 3,
-			"goalsFor": 15,
+			"goalsFor": 16,
 			"goalsAgainst": 22,
-			"goalDifference": -7,
+			"goalDifference": -6,
 			"points": 8
 		},
 		{
@@ -133,8 +133,8 @@
 			"draws": 0,
 			"losses": 8,
 			"goalsFor": 7,
-			"goalsAgainst": 60,
-			"goalDifference": -53,
+			"goalsAgainst": 61,
+			"goalDifference": -54,
 			"points": 0
 		}
 	]

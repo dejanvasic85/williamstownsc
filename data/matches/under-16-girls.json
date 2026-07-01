@@ -521,6 +521,19 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
 			"time": "11:20",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "wOmejJVeN0",
@@ -541,19 +554,6 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
