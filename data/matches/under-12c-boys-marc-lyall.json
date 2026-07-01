@@ -731,7 +731,9 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
 			"address": "Alcock Road Reserve Pitch 2 - Half A",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -821,19 +823,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "nPmrBk05mo",
-			"homeTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
-			"awayTeamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
-			"address": "Webster Street Reserve Pitch 2B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMXan2KE",
@@ -867,6 +856,19 @@
 			"awayTeamName": "Laverton FC U12 Juniors - C Mixed Laverton FC U12",
 			"address": "McIvor Reserve  Pitch 2 - Half (C+D)",
 			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "Bjma0RXqdR",
+			"awayTeamId": "nPmrBk05mo",
+			"homeTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
+			"awayTeamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
+			"address": "Webster Street Reserve Pitch 1A",
+			"coordinates": "-37.88838,144.714084",
 			"status": "pending"
 		},
 		{
