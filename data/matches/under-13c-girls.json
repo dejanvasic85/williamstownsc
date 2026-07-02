@@ -1,7 +1,7 @@
 {
 	"competition": "Junior Girls Sunday (U12 - U18)",
 	"season": 2026,
-	"totalFixtures": 80,
+	"totalFixtures": 81,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -634,7 +634,7 @@
 			"awayTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
 			"address": "McIvor Reserve  Pitch 2 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
+			"status": "postponed"
 		},
 		{
 			"round": 10,
@@ -998,6 +998,19 @@
 			"awayTeamName": "Altona East SC U13 Juniors - C Female",
 			"address": "Johnson Reserve Pitch 1A",
 			"coordinates": "-37.791812,144.874864",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Williams Landing SC U13 Juniors - C Female",
+			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
+			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
+			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
