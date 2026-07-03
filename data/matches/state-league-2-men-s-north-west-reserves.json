@@ -1207,7 +1207,7 @@
 			"awayTeamId": "7MNGgM7NAz",
 			"homeTeamName": "Geelong Rangers SC Reserves",
 			"awayTeamName": "Whittlesea Ranges FC Reserves",
-			"address": "Myers Reserve Pitch 1",
+			"address": "Myers Reserve Pitch 2",
 			"coordinates": "-38.09538,144.320027",
 			"status": "pending"
 		},
@@ -1233,8 +1233,8 @@
 			"awayTeamId": "AnmYzyArNz",
 			"homeTeamName": "Surf Coast FC Reserves",
 			"awayTeamName": "FC Strathmore Split Reserves",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
+			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},
 		{
