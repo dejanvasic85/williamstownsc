@@ -33,8 +33,8 @@ importers:
         specifier: 7.23.0
         version: 7.23.0
       '@sanity/icons':
-        specifier: 4.1.0
-        version: 4.1.0(react@19.2.7)
+        specifier: 5.0.0
+        version: 5.0.0(react@19.2.7)
       '@sanity/image-url':
         specifier: 2.1.1
         version: 2.1.1
@@ -2670,8 +2670,8 @@ packages:
     peerDependencies:
       react: ^18.3 || ^19.0.0-0
 
-  '@sanity/icons@4.1.0':
-    resolution: {integrity: sha512-UssuBHPNXSdm4jK2bb7SKdK9VdbodWHqB5KUMuioYSe+xZw4+IUkEnVjT71mKP3bHOKIgCRheiFHN7WsWgiDDQ==}
+  '@sanity/icons@5.0.0':
+    resolution: {integrity: sha512-fINQLovVnCANwQbQ63iO2mUVh2ZX3T4h3hiSEaIStvladI5tmrGAuT+XbUuk3jTmBwOHDGD0EL9lpsghGAS+Sg==}
     engines: {node: '>=22.12'}
     peerDependencies:
       react: ^19
@@ -3313,9 +3313,6 @@ packages:
 
   '@types/mdurl@2.0.0':
     resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==}
-
-  '@types/node@26.0.1':
-    resolution: {integrity: sha512-fc3KiUoBt6kie0N9bIW3E47vZsuaMf0PM2AaUpLCLT0s/LvX1nxAim6Fc049cNxODPpGm6qRAuUOB86SkRuPQw==}
 
   '@types/node@26.1.0':
     resolution: {integrity: sha512-O0A1G3xPGy4w7AgQdAQYUlQ+BKk2Oovw8eRpofyp5KdBZULnbe+WqaOVNrm705SHphCiG4XHsACrSmPu1f+Kgw==}
@@ -10322,7 +10319,7 @@ snapshots:
     dependencies:
       react: 19.2.7
 
-  '@sanity/icons@4.1.0(react@19.2.7)':
+  '@sanity/icons@5.0.0(react@19.2.7)':
     dependencies:
       react: 19.2.7
 
@@ -11211,10 +11208,6 @@ snapshots:
       '@types/mdurl': 2.0.0
 
   '@types/mdurl@2.0.0': {}
-
-  '@types/node@26.0.1':
-    dependencies:
-      undici-types: 8.3.0
 
   '@types/node@26.1.0':
     dependencies:
@@ -13411,7 +13404,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 26.0.1
+      '@types/node': 26.1.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
