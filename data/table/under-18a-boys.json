@@ -23,13 +23,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 2,
-			"played": 8,
+			"played": 9,
 			"wins": 5,
 			"draws": 1,
-			"losses": 2,
-			"goalsFor": 17,
-			"goalsAgainst": 12,
-			"goalDifference": 5,
+			"losses": 3,
+			"goalsFor": 18,
+			"goalsAgainst": 14,
+			"goalDifference": 4,
 			"points": 16
 		},
 		{
@@ -93,11 +93,26 @@
 			"points": 10
 		},
 		{
+			"teamId": "BdD95X6Gmb",
+			"teamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
+			"clubName": "Geelong Rangers SC",
+			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
+			"position": 7,
+			"played": 9,
+			"wins": 1,
+			"draws": 2,
+			"losses": 6,
+			"goalsFor": 10,
+			"goalsAgainst": 28,
+			"goalDifference": -18,
+			"points": 5
+		},
+		{
 			"teamId": "ld44BkrxdW",
 			"teamName": "Spring Hills FC U18 Juniors - A Male North-West U18 A BOYS - LUCAS",
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
-			"position": 7,
+			"position": 8,
 			"played": 9,
 			"wins": 1,
 			"draws": 0,
@@ -106,21 +121,6 @@
 			"goalsAgainst": 28,
 			"goalDifference": -19,
 			"points": 3
-		},
-		{
-			"teamId": "BdD95X6Gmb",
-			"teamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
-			"clubName": "Geelong Rangers SC",
-			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
-			"position": 8,
-			"played": 8,
-			"wins": 0,
-			"draws": 2,
-			"losses": 6,
-			"goalsFor": 8,
-			"goalsAgainst": 27,
-			"goalDifference": -19,
-			"points": 2
 		}
 	]
 }
