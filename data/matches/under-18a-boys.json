@@ -1065,7 +1065,9 @@
 			"awayTeamName": "Altona City SC U18 Juniors - A Male",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 19,
@@ -1078,7 +1080,9 @@
 			"awayTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
 			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		}
 	]
 }
