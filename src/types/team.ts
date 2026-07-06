@@ -30,12 +30,7 @@ export type AgeGroup =
 	| '18';
 
 export type TabCategory =
-	| 'seniors'
-	| 'reserves'
-	| 'juniorBoys'
-	| 'juniorGirls'
-	| 'masters'
-	| 'metros';
+	'seniors' | 'reserves' | 'juniorBoys' | 'juniorGirls' | 'masters' | 'metros';
 
 export type PersonPhoto = {
 	asset: {
