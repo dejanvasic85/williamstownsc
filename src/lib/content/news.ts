@@ -60,41 +60,39 @@ export async function getNewsArticles(
 
 	const { width, height } = imageSizeConfigValue[imageSize];
 
-	return articles.map(
-		(article): TransformedNewsArticle => ({
-			_id: article._id,
-			title: article.title || '',
-			slug: article.slug?.current || '',
-			publishedAt: article.publishedAt || '',
-			featuredImage: {
-				url: article.featuredImage
-					? urlFor(article.featuredImage)
-							.width(width)
-							.height(height)
+	return articles.map((article): TransformedNewsArticle => ({
+		_id: article._id,
+		title: article.title || '',
+		slug: article.slug?.current || '',
+		publishedAt: article.publishedAt || '',
+		featuredImage: {
+			url: article.featuredImage
+				? urlFor(article.featuredImage)
+						.width(width)
+						.height(height)
+						.fit('crop')
+						.quality(90)
+						.format('webp')
+						.url()
+				: '',
+			alt: article.featuredImage?.alt
+		},
+		mobileImage:
+			imageSize === 'large' && article.mobileImage
+				? {
+						url: urlFor(article.mobileImage)
+							.width(1080)
+							.height(1080)
 							.fit('crop')
 							.quality(90)
 							.format('webp')
-							.url()
-					: '',
-				alt: article.featuredImage?.alt
-			},
-			mobileImage:
-				imageSize === 'large' && article.mobileImage
-					? {
-							url: urlFor(article.mobileImage)
-								.width(1080)
-								.height(1080)
-								.fit('crop')
-								.quality(90)
-								.format('webp')
-								.url(),
-							alt: article.mobileImage.alt
-						}
-					: undefined,
-			excerpt: article.excerpt || '',
-			featured: article.featured || false
-		})
-	);
+							.url(),
+						alt: article.mobileImage.alt
+					}
+				: undefined,
+		excerpt: article.excerpt || '',
+		featured: article.featured || false
+	}));
 }
 
 export async function getArticleBySlug(slug: string) {

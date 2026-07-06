@@ -32,22 +32,20 @@ export async function getActivePrograms(): Promise<TransformedProgram[]> {
 
 	const programs = await client.fetch<Program[]>(query, {}, { next: { tags: ['program'] } });
 
-	return programs.map(
-		(program): TransformedProgram => ({
-			_id: program._id,
-			name: program.name || '',
-			slug: program.slug?.current || '',
-			startDate: program.startDate || '',
-			endDate: program.endDate || '',
-			minAge: program.minAge || 0,
-			maxAge: program.maxAge || 0,
-			image: program.image
-				? {
-						url: urlFor(program.image).width(800).height(600).fit('crop').url(),
-						alt: program.image.alt
-					}
-				: undefined,
-			description: program.description ? toPlainText(program.description) : undefined
-		})
-	);
+	return programs.map((program): TransformedProgram => ({
+		_id: program._id,
+		name: program.name || '',
+		slug: program.slug?.current || '',
+		startDate: program.startDate || '',
+		endDate: program.endDate || '',
+		minAge: program.minAge || 0,
+		maxAge: program.maxAge || 0,
+		image: program.image
+			? {
+					url: urlFor(program.image).width(800).height(600).fit('crop').url(),
+					alt: program.image.alt
+				}
+			: undefined,
+		description: program.description ? toPlainText(program.description) : undefined
+	}));
 }

@@ -37,9 +37,7 @@ Top-level response shape:
 
 ```json
 {
-	"data": [
-		/* array of ladder-entry objects */
-	],
+	"data": [/* array of ladder-entry objects */],
 	"point_adjustments": null
 }
 ```
@@ -83,16 +81,10 @@ Each `data` entry shape:
 		"byes": 0, // int
 		"point_adjustment": 0, // int
 		"pool_name": null, // nullable string
-		"upcoming_matches": [
-			/* array */
-		],
-		"recent_matches": [
-			/* array */
-		]
+		"upcoming_matches": [/* array */],
+		"recent_matches": [/* array */]
 	},
-	"links": {
-		/* ignored */
-	}
+	"links": {/* ignored */}
 }
 ```
 
