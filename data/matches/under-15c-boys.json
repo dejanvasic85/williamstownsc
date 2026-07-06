@@ -1181,7 +1181,9 @@
 			"awayTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
 			"address": "Aston Fields Pitch 1",
 			"coordinates": "-37.597457,144.890302",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		}
 	]
 }

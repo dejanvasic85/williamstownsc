@@ -540,19 +540,6 @@
 			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "wOmejXOyN0",
-			"awayTeamId": "Bjma0GJMdR",
-			"homeTeamName": "Brunswick Zebras FC Seniors The Old Lady",
-			"awayTeamName": "Kings Domain FC Seniors",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
-			"status": "postponed"
-		},
-		{
-			"round": 8,
-			"date": "2026-06-21",
-			"day": "Sunday",
 			"time": "15:00",
 			"homeTeamId": "k2KpRJ56mY",
 			"awayTeamId": "bam1nklZNw",
@@ -575,6 +562,19 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
+		},
+		{
+			"round": 8,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "17:15",
+			"homeTeamId": "wOmejXOyN0",
+			"awayTeamId": "Bjma0GJMdR",
+			"homeTeamName": "Brunswick Zebras FC Seniors The Old Lady",
+			"awayTeamName": "Kings Domain FC Seniors",
+			"address": "Ryder Oval Ryder Oval",
+			"coordinates": "-37.778822,144.955931",
+			"status": "pending"
 		},
 		{
 			"round": 9,

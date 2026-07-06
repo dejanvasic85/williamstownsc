@@ -531,19 +531,6 @@
 		},
 		{
 			"round": 8,
-			"date": "2026-06-19",
-			"day": "Friday",
-			"time": "19:30",
-			"homeTeamId": "bgdMXLR7KE",
-			"awayTeamId": "AnmYzglzNz",
-			"homeTeamName": "Keon Park SC Seniors Senior Women SL5",
-			"awayTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
-			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 8,
 			"date": "2026-06-21",
 			"day": "Sunday",
 			"time": "13:00",
@@ -601,6 +588,19 @@
 			"homeScore": 4,
 			"awayScore": 0,
 			"status": "complete"
+		},
+		{
+			"round": 8,
+			"date": "2026-08-07",
+			"day": "Friday",
+			"time": "18:30",
+			"homeTeamId": "bgdMXLR7KE",
+			"awayTeamId": "AnmYzglzNz",
+			"homeTeamName": "Keon Park SC Seniors Senior Women SL5",
+			"awayTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
+			"address": "JC Donath Reserve Pitch 8 KP",
+			"coordinates": "-37.700848,145.017287",
+			"status": "pending"
 		},
 		{
 			"round": 9,

@@ -488,19 +488,6 @@
 			"round": 7,
 			"date": "2026-06-14",
 			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "08NOpe1bKZ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Moreland Eagles FC Seniors",
-			"awayTeamName": "Williamstown SC Seniors",
-			"address": "Wallace Reserve Pitch 1",
-			"coordinates": "-37.694764,144.935299",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 7,
-			"date": "2026-06-14",
-			"day": "Sunday",
 			"time": "17:00",
 			"homeTeamId": "7ZKRa2oNkB",
 			"awayTeamId": "7MNGvobEmA",
@@ -523,6 +510,19 @@
 			"awayTeamName": "North Sunshine Eagles SC Seniors",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
+			"status": "pending"
+		},
+		{
+			"round": 7,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "13:30",
+			"homeTeamId": "08NOpe1bKZ",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Moreland Eagles FC Seniors",
+			"awayTeamName": "Williamstown SC Seniors",
+			"address": "Wallace Reserve Pitch 2",
+			"coordinates": "-37.694764,144.935299",
 			"status": "pending"
 		},
 		{
@@ -680,9 +680,9 @@
 			"awayTeamId": "7ZKRa2oNkB",
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Pascoe Vale FC Seniors",
-			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
-			"status": "washout reschedule"
+			"address": "",
+			"coordinates": "",
+			"status": "pending"
 		},
 		{
 			"round": 10,
