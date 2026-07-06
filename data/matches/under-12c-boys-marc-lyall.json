@@ -658,7 +658,9 @@
 			"awayTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
 			"address": "Hummingbird Boulevard Reserve 2A (Half)",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 8,

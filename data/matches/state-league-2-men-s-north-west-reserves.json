@@ -1183,7 +1183,9 @@
 			"awayTeamName": "Albion Rovers FC Reserves",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,

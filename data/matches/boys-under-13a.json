@@ -829,19 +829,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"awayTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
-			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "10:10",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "LBdDx0GQdb",
@@ -849,6 +836,19 @@
 			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
 			"address": "Webster Street Reserve Pitch 4B",
 			"coordinates": "-37.88838,144.714084",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "PydoLxGmD9",
+			"homeTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
+			"awayTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
+			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
+			"coordinates": "-37.878568,144.79544",
 			"status": "pending"
 		},
 		{
