@@ -858,19 +858,6 @@
 			"date": "2026-07-12",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "Williamstown SC U11 MiniRoos - Wallabies Mixed Boys Under 10K (Dan/Aaron)",
-			"awayTeamName": "Truganina Hornets SC U11 MiniRoos - Wallabies Mixed",
-			"address": "JT Gray Reserve Pitch 5 - Half Field (B)",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "Bjma0BXAdR",
 			"homeTeamName": "Werribee City FC U11 MiniRoos - Wallabies Mixed U11 Darren",
@@ -903,6 +890,19 @@
 			"awayTeamName": "Williams Landing SC U11 MiniRoos - Wallabies Mixed WLFC U11 - Gold",
 			"address": "Tom Roberts Reserve Pitch 2 - Half A",
 			"coordinates": "-37.894491,144.726104",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "6lNbpD56dx",
+			"homeTeamName": "Williamstown SC U11 MiniRoos - Wallabies Mixed Boys Under 10K (Dan/Aaron)",
+			"awayTeamName": "Truganina Hornets SC U11 MiniRoos - Wallabies Mixed",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{

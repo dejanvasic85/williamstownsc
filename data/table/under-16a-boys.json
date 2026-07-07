@@ -3,11 +3,26 @@
 	"competition": "Mixed North-West 16A",
 	"entries": [
 		{
+			"teamId": "BdD9L8w8mb",
+			"teamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 1,
+			"played": 8,
+			"wins": 6,
+			"draws": 1,
+			"losses": 1,
+			"goalsFor": 29,
+			"goalsAgainst": 13,
+			"goalDifference": 16,
+			"points": 19
+		},
+		{
 			"teamId": "vdWv14OyKO",
 			"teamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
 			"clubName": "Caroline Springs George Cross FC",
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
-			"position": 1,
+			"position": 2,
 			"played": 9,
 			"wins": 5,
 			"draws": 2,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 14,
 			"goalDifference": 15,
 			"points": 17
-		},
-		{
-			"teamId": "BdD9L8w8mb",
-			"teamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 2,
-			"played": 7,
-			"wins": 5,
-			"draws": 1,
-			"losses": 1,
-			"goalsFor": 24,
-			"goalsAgainst": 13,
-			"goalDifference": 11,
-			"points": 16
 		},
 		{
 			"teamId": "1K3vWMnRNQ",
@@ -173,13 +173,13 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 12,
-			"played": 7,
+			"played": 8,
 			"wins": 0,
 			"draws": 1,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 4,
-			"goalsAgainst": 32,
-			"goalDifference": -28,
+			"goalsAgainst": 37,
+			"goalDifference": -33,
 			"points": 1
 		}
 	]

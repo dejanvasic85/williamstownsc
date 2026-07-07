@@ -1641,7 +1641,9 @@
 			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		}
 	]
 }
