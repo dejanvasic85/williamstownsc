@@ -1,7 +1,7 @@
 'use client';
 
 import { type CSSProperties, useCallback, useState } from 'react';
-import { DownloadIcon } from '@sanity/icons';
+import { DownloadIcon } from '@sanity/icons/Download';
 import { Box, Button, Card, Flex, Heading, Label, Select, Stack, Text } from '@sanity/ui';
 import { useClient } from 'sanity';
 import { downloadCsv, serializeToCsv } from './csvSerializer';
