@@ -1,4 +1,4 @@
-import { DownloadIcon } from '@sanity/icons';
+import { DownloadIcon } from '@sanity/icons/Download';
 import { definePlugin } from 'sanity';
 import { CsvExportTool } from './csvExportTool';
 
