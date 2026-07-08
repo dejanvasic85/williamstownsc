@@ -604,19 +604,6 @@
 			"date": "2026-07-12",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "b8Nq3q27d9",
-			"awayTeamId": "Bjma0G03dR",
-			"homeTeamName": "Tarneit North FC U11 MiniRoos - Joeys Mixed U11 Sunday West",
-			"awayTeamName": "Wyndham FC U11 MiniRoos - Joeys Mixed U11 Joeys",
-			"address": "Polly Parade Reserve Main Pitch - Half B",
-			"coordinates": "-37.823802,144.683866",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Williamstown SC U11 MiniRoos - Joeys Mixed Boys Under 11J (Lee)",
@@ -636,6 +623,19 @@
 			"awayTeamName": "Truganina Lions FC U11 MiniRoos - Joeys Mixed Boys U11 - Joeys",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
 			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "b8Nq3q27d9",
+			"awayTeamId": "Bjma0G03dR",
+			"homeTeamName": "Tarneit North FC U11 MiniRoos - Joeys Mixed U11 Sunday West",
+			"awayTeamName": "Wyndham FC U11 MiniRoos - Joeys Mixed U11 Joeys",
+			"address": "Polly Parade Reserve Main Pitch - Half B",
+			"coordinates": "-37.823802,144.683866",
 			"status": "pending"
 		},
 		{
