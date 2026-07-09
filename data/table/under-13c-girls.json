@@ -83,14 +83,14 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 6,
-			"played": 6,
-			"wins": 1,
+			"played": 7,
+			"wins": 2,
 			"draws": 0,
 			"losses": 5,
-			"goalsFor": 13,
+			"goalsFor": 16,
 			"goalsAgainst": 28,
-			"goalDifference": -15,
-			"points": 3
+			"goalDifference": -12,
+			"points": 6
 		},
 		{
 			"teamId": "vdWvpPMkKO",
@@ -98,13 +98,13 @@
 			"clubName": "Maribyrnong Swifts FC",
 			"logoUrl": "https://ocean.dribl.com/2bdcd22e002244f0affb3249fec1eb1f",
 			"position": 7,
-			"played": 7,
+			"played": 8,
 			"wins": 1,
 			"draws": 0,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 8,
-			"goalsAgainst": 44,
-			"goalDifference": -36,
+			"goalsAgainst": 47,
+			"goalDifference": -39,
 			"points": 3
 		},
 		{

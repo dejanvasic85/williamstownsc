@@ -1148,19 +1148,6 @@
 			"round": 13,
 			"date": "2026-06-27",
 			"day": "Saturday",
-			"time": "13:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Williamstown SC Reserves",
-			"awayTeamName": "Brimbank Stallions FC Reserves",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "abandoned"
-		},
-		{
-			"round": 13,
-			"date": "2026-06-27",
-			"day": "Saturday",
 			"time": "16:00",
 			"homeTeamId": "3vmZv8JJmq",
 			"awayTeamId": "7MNGvappmA",
@@ -1171,6 +1158,19 @@
 			"homeScore": 0,
 			"awayScore": 1,
 			"status": "complete"
+		},
+		{
+			"round": 13,
+			"date": "2026-07-28",
+			"day": "Tuesday",
+			"time": "19:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "PydoLxGmD9",
+			"homeTeamName": "Williamstown SC Reserves",
+			"awayTeamName": "Brimbank Stallions FC Reserves",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
 		},
 		{
 			"round": 14,

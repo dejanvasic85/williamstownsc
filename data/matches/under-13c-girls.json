@@ -647,7 +647,9 @@
 			"awayTeamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 10,
