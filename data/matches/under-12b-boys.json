@@ -785,6 +785,19 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "3vmZv9nLmq",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
+			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
+			"address": "Avondale Heights Reserve Pitch 1 - Half Field A",
+			"coordinates": "-37.76242,144.858824",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-12",
+			"day": "Sunday",
 			"time": "12:30",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "AnmYz1R1Nz",
@@ -805,19 +818,6 @@
 			"awayTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "3vmZv9nLmq",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
-			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
-			"address": "Avondale Heights Reserve Pitch 2",
-			"coordinates": "-37.76242,144.858824",
 			"status": "pending"
 		},
 		{
