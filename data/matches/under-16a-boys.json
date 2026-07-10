@@ -932,19 +932,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Surf Coast FC U16 Juniors - A Mixed",
-			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
-			"address": "NewFlo Stadium Pitch 2",
-			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "12:30",
 			"homeTeamId": "3pmvQW0Edv",
 			"awayTeamId": "OVdzwWpmGr",
@@ -978,6 +965,19 @@
 			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"address": "HR Uren Reserve Pitch 2",
 			"coordinates": "-37.68317,144.98957",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-31",
+			"day": "Friday",
+			"time": "19:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Surf Coast FC U16 Juniors - A Mixed",
+			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
+			"address": "NewFlo Stadium Pitch 2",
+			"coordinates": "-38.306639,-38.306639",
 			"status": "pending"
 		},
 		{

@@ -704,7 +704,9 @@
 			"awayTeamName": "Melbourne University SC Seniors",
 			"address": "George Knott Reserve George Knott Reserve",
 			"coordinates": "-37.784108,145.001458",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 10,

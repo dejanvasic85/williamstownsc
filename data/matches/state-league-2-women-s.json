@@ -755,7 +755,9 @@
 			"awayTeamName": "Brunswick City SC Seniors",
 			"address": "Springside Recreational Reserve Pitch 1 (S)",
 			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -768,7 +770,9 @@
 			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
 			"address": "Hosken Reserve Pitch 1 South",
 			"coordinates": "-37.725117,144.957411",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -779,7 +783,7 @@
 			"awayTeamId": "bgdMXLR7KE",
 			"homeTeamName": "Moreland Eagles FC Seniors",
 			"awayTeamName": "Keon Park SC Seniors",
-			"address": "Wallace Reserve Pitch 1",
+			"address": "Wallace Reserve Pitch 3",
 			"coordinates": "-37.694764,144.935299",
 			"status": "pending"
 		},

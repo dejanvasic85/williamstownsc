@@ -1109,8 +1109,8 @@
 			"awayTeamId": "nPmrBk05mo",
 			"homeTeamName": "West Point SC U11 MiniRoos - Wallabies Mixed U11W Paul",
 			"awayTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed u11 Steve",
-			"address": "Tom Roberts Reserve Pitch 2 - Half A",
-			"coordinates": "-37.894491,144.726104",
+			"address": "Webster Street Reserve Pitch 2A",
+			"coordinates": "-37.88838,144.714084",
 			"status": "pending"
 		},
 		{
@@ -1313,19 +1313,6 @@
 			"date": "2026-08-09",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "West Point SC U11 MiniRoos - Wallabies Mixed U11W Paul",
-			"awayTeamName": "Altona Magic SC U11 MiniRoos - Wallabies Mixed U11 Boys",
-			"address": "Tom Roberts Reserve Pitch 2 - Half A",
-			"coordinates": "-37.894491,144.726104",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Williamstown SC U11 MiniRoos - Wallabies Mixed Boys Under 10K (Dan/Aaron)",
@@ -1345,6 +1332,19 @@
 			"awayTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed u11 Steve",
 			"address": "Costas Mitre 10 Park Pitch 1A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "Bjma0RXqdR",
+			"awayTeamId": "8nm7PgVNOq",
+			"homeTeamName": "West Point SC U11 MiniRoos - Wallabies Mixed U11W Paul",
+			"awayTeamName": "Altona Magic SC U11 MiniRoos - Wallabies Mixed U11 Boys",
+			"address": "Webster Street Reserve Pitch 2B",
+			"coordinates": "-37.88838,144.714084",
 			"status": "pending"
 		},
 		{
@@ -1473,8 +1473,8 @@
 			"awayTeamId": "k2KpRJ56mY",
 			"homeTeamName": "West Point SC U11 MiniRoos - Wallabies Mixed U11W Paul",
 			"awayTeamName": "Truganina Lions FC U11 MiniRoos - Wallabies Mixed Boys U11 - Wallabies",
-			"address": "Tom Roberts Reserve Pitch 2 - Half A",
-			"coordinates": "-37.894491,144.726104",
+			"address": "Webster Street Reserve Pitch 2A",
+			"coordinates": "-37.88838,144.714084",
 			"status": "pending"
 		},
 		{
