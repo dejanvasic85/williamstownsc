@@ -731,7 +731,9 @@
 			"awayTeamName": "Middle Park FC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
