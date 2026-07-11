@@ -8,13 +8,13 @@
 			"clubName": "Middle Park FC",
 			"logoUrl": "https://ocean.dribl.com/c0d7b86f07b54f389f1ff44d8ee76c02",
 			"position": 1,
-			"played": 9,
+			"played": 10,
 			"wins": 5,
 			"draws": 3,
-			"losses": 1,
-			"goalsFor": 24,
-			"goalsAgainst": 10,
-			"goalDifference": 14,
+			"losses": 2,
+			"goalsFor": 26,
+			"goalsAgainst": 13,
+			"goalDifference": 13,
 			"points": 18
 		},
 		{
@@ -78,11 +78,26 @@
 			"points": 17
 		},
 		{
+			"teamId": "EN2n0rxrNq",
+			"teamName": "Williamstown SC Seniors",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 6,
+			"played": 8,
+			"wins": 2,
+			"draws": 3,
+			"losses": 3,
+			"goalsFor": 16,
+			"goalsAgainst": 21,
+			"goalDifference": -5,
+			"points": 9
+		},
+		{
 			"teamId": "nmYZRY8bNz",
 			"teamName": "Melbourne University SC Seniors",
 			"clubName": "Melbourne University SC",
 			"logoUrl": "https://ocean.dribl.com/6435e190252342ac9faa3809e5a12f6b",
-			"position": 6,
+			"position": 7,
 			"played": 8,
 			"wins": 2,
 			"draws": 2,
@@ -91,21 +106,6 @@
 			"goalsAgainst": 27,
 			"goalDifference": -10,
 			"points": 8
-		},
-		{
-			"teamId": "EN2n0rxrNq",
-			"teamName": "Williamstown SC Seniors",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 7,
-			"played": 7,
-			"wins": 1,
-			"draws": 3,
-			"losses": 3,
-			"goalsFor": 13,
-			"goalsAgainst": 19,
-			"goalDifference": -6,
-			"points": 6
 		},
 		{
 			"teamId": "jdylGGa3K5",

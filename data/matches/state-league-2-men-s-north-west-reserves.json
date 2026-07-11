@@ -1286,7 +1286,9 @@
 			"awayTeamName": "Surf Coast FC Reserves",
 			"address": "Harvest Home Recreation Reserve Pitch 2",
 			"coordinates": "-37.624506,145.02702",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1299,7 +1301,9 @@
 			"awayTeamName": "Altona North SC Reserves",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1312,7 +1316,9 @@
 			"awayTeamName": "Uni Hill Eagles FC Reserves",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1325,7 +1331,9 @@
 			"awayTeamName": "Corio SC Reserves",
 			"address": "Strathnaver Reserve Pitch 1",
 			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1338,7 +1346,9 @@
 			"awayTeamName": "Western Eagles SC Reserves",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
