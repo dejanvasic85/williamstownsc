@@ -913,7 +913,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
 			"address": "Keilor Lodge Reserve Pitch 3",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -939,7 +941,7 @@
 			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 10,
@@ -952,7 +954,9 @@
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Ralph Reserve Main Pitch",
 			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,

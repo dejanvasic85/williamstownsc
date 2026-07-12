@@ -597,7 +597,9 @@
 			"awayTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -610,7 +612,9 @@
 			"awayTeamName": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
 			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -636,7 +640,9 @@
 			"awayTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
 			"address": "HC Kim Reserve Pitch 1",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,

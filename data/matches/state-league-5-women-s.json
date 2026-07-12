@@ -774,7 +774,9 @@
 			"awayTeamName": "Melbourne University SC Seniors Senior Women SL5",
 			"address": "JJ Holland Park Oval 2",
 			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -787,7 +789,9 @@
 			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"address": "JT Gray Reserve Pitch 4 - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -800,7 +804,9 @@
 			"awayTeamName": "Williamstown SC Seniors Senior Women SL5",
 			"address": "JJ Holland Park Main Pitch (S)",
 			"coordinates": "-37.797653,144.926161",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -813,7 +819,9 @@
 			"awayTeamName": "ETA Buffalo Club of Victoria Seniors Senior Women SL5",
 			"address": "McIvor Reserve  Pitch 1",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,

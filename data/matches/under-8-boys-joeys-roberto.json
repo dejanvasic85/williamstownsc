@@ -591,7 +591,7 @@
 			"awayTeamName": "Tarneit North FC U08 MiniRoos - Joeys Mixed U8 Sunday West",
 			"address": "Edwards Reserve Main Pitch D - Quarter Pitch 7v7",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
+			"status": "washout cancelled"
 		},
 		{
 			"round": 10,
@@ -642,7 +642,7 @@
 			"homeTeamName": "Barnstoneworth United FC U08 MiniRoos - Joeys Mixed BUFC U8",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 11,

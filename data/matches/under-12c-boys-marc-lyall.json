@@ -819,7 +819,7 @@
 			"awayTeamName": "Point Cook SC U12 Juniors - C Mixed U12 Strike Eagles",
 			"address": "Alcock Road Reserve Pitch 2 - Half B",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 10,
@@ -845,7 +845,7 @@
 			"awayTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
 			"address": "Edwards Reserve Main Pitch A",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 10,
@@ -871,7 +871,9 @@
 			"awayTeamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
 			"address": "Webster Street Reserve Pitch 1A",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 10,
