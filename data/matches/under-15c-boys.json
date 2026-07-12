@@ -594,7 +594,9 @@
 			"awayTeamName": "Meadow Park SC U15 Juniors - C Mixed Adam",
 			"address": "Arena Recreation Reserve Pitch 1",
 			"coordinates": "-37.618866,144.916762",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -607,7 +609,7 @@
 			"awayTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
 			"address": "Harvest Home Recreation Reserve Pitch 3",
 			"coordinates": "-37.624506,145.02702",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 10,
@@ -619,7 +621,7 @@
 			"homeTeamName": "Satellite City United SC U15 Juniors - C Mixed Frank",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 10,

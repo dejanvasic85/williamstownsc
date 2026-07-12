@@ -3,11 +3,26 @@
 	"competition": "State League 2 Women's - North-West",
 	"entries": [
 		{
+			"teamId": "ydoJPoqYKD",
+			"teamName": "Whittlesea United SC Seniors",
+			"clubName": "Whittlesea United SC",
+			"logoUrl": "https://ocean.dribl.com/73ef9c6f9e6742cdac796b3d1ad386c0",
+			"position": 1,
+			"played": 10,
+			"wins": 8,
+			"draws": 1,
+			"losses": 1,
+			"goalsFor": 40,
+			"goalsAgainst": 6,
+			"goalDifference": 34,
+			"points": 25
+		},
+		{
 			"teamId": "xm89qPR2Nr",
 			"teamName": "Brunswick City SC Seniors",
 			"clubName": "Brunswick City SC",
 			"logoUrl": "https://ocean.dribl.com/a9c59ac29c724966999fd327bb5e1f7a",
-			"position": 1,
+			"position": 2,
 			"played": 10,
 			"wins": 7,
 			"draws": 2,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 10,
 			"goalDifference": 19,
 			"points": 23
-		},
-		{
-			"teamId": "ydoJPoqYKD",
-			"teamName": "Whittlesea United SC Seniors",
-			"clubName": "Whittlesea United SC",
-			"logoUrl": "https://ocean.dribl.com/73ef9c6f9e6742cdac796b3d1ad386c0",
-			"position": 2,
-			"played": 9,
-			"wins": 7,
-			"draws": 1,
-			"losses": 1,
-			"goalsFor": 34,
-			"goalsAgainst": 6,
-			"goalDifference": 28,
-			"points": 22
 		},
 		{
 			"teamId": "pN69x6pOm0",
@@ -53,14 +53,14 @@
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
 			"position": 4,
-			"played": 9,
-			"wins": 5,
+			"played": 10,
+			"wins": 6,
 			"draws": 1,
 			"losses": 3,
-			"goalsFor": 24,
+			"goalsFor": 25,
 			"goalsAgainst": 21,
-			"goalDifference": 3,
-			"points": 16
+			"goalDifference": 4,
+			"points": 19
 		},
 		{
 			"teamId": "bd9W66jRN4",
@@ -113,13 +113,13 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 8,
-			"played": 10,
+			"played": 11,
 			"wins": 3,
 			"draws": 2,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 13,
-			"goalsAgainst": 24,
-			"goalDifference": -11,
+			"goalsAgainst": 30,
+			"goalDifference": -17,
 			"points": 11
 		},
 		{
@@ -143,13 +143,13 @@
 			"clubName": "Moreland Eagles FC",
 			"logoUrl": "https://ocean.dribl.com/65de87f4eb5d4064a54a1b5f92a1b9d7",
 			"position": 10,
-			"played": 8,
+			"played": 9,
 			"wins": 0,
 			"draws": 0,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 4,
-			"goalsAgainst": 37,
-			"goalDifference": -33,
+			"goalsAgainst": 38,
+			"goalDifference": -34,
 			"points": 0
 		}
 	]

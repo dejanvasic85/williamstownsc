@@ -810,7 +810,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -836,7 +838,9 @@
 			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
 			"address": "Webster Street Reserve Pitch 4B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -849,7 +853,9 @@
 			"awayTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
 			"address": "HD Graham Reserve Pitch 2 (South) - Half A",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -875,7 +881,9 @@
 			"awayTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
 			"address": "Hummingbird Boulevard Reserve 2B (Half)",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 11,

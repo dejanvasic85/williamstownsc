@@ -782,7 +782,9 @@
 			"awayTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"address": "HD Graham Reserve Field 1 (North) Half B",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 10,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -794,7 +796,7 @@
 			"homeTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -820,7 +822,9 @@
 			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 10,

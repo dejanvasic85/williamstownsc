@@ -973,7 +973,9 @@
 			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
 			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -986,7 +988,9 @@
 			"awayTeamName": "Tarneit United SC U14 Juniors - D Mixed (second)",
 			"address": "Langama Park Pitch 2 - Full Field",
 			"coordinates": "-37.586728,144.709286",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -999,7 +1003,9 @@
 			"awayTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -1025,7 +1031,7 @@
 			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
 			"address": "Edwards Reserve Main Pitch",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
+			"status": "washout reschedule"
 		},
 		{
 			"round": 10,

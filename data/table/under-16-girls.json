@@ -8,14 +8,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 1,
-			"played": 8,
-			"wins": 7,
+			"played": 9,
+			"wins": 8,
 			"draws": 1,
 			"losses": 0,
-			"goalsFor": 35,
+			"goalsFor": 53,
 			"goalsAgainst": 10,
-			"goalDifference": 25,
-			"points": 22
+			"goalDifference": 43,
+			"points": 25
 		},
 		{
 			"teamId": "RdkEpOQBNG",
@@ -23,14 +23,14 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 2,
-			"played": 8,
-			"wins": 7,
+			"played": 9,
+			"wins": 8,
 			"draws": 0,
 			"losses": 1,
-			"goalsFor": 29,
+			"goalsFor": 30,
 			"goalsAgainst": 6,
-			"goalDifference": 23,
-			"points": 21
+			"goalDifference": 24,
+			"points": 24
 		},
 		{
 			"teamId": "RNE6nBzXKv",
@@ -53,13 +53,13 @@
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
 			"position": 4,
-			"played": 9,
+			"played": 10,
 			"wins": 5,
 			"draws": 0,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 19,
-			"goalsAgainst": 18,
-			"goalDifference": 1,
+			"goalsAgainst": 19,
+			"goalDifference": 0,
 			"points": 15
 		},
 		{
@@ -98,13 +98,13 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 8,
+			"played": 9,
 			"wins": 0,
 			"draws": 0,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 1,
-			"goalsAgainst": 37,
-			"goalDifference": -36,
+			"goalsAgainst": 55,
+			"goalDifference": -54,
 			"points": 0
 		}
 	]

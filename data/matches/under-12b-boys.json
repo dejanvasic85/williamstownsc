@@ -766,7 +766,9 @@
 			"awayTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
 			"address": "HC Kim Reserve Pitch 2B",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -779,7 +781,9 @@
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - B Mixed Coach Harris",
 			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half B",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -792,7 +796,9 @@
 			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
 			"address": "Avondale Heights Reserve Pitch 1 - Half Field A",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -805,7 +811,9 @@
 			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
 			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -818,7 +826,9 @@
 			"awayTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 11,
