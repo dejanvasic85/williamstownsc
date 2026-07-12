@@ -1018,7 +1018,9 @@
 			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
 			"address": "Alcock Road Reserve Pitch 2",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,

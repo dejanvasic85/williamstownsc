@@ -761,7 +761,9 @@
 			"awayTeamName": "Kings Domain FC Seniors",
 			"address": "Alcock Road Reserve Pitch 1",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 16,
+			"status": "complete"
 		},
 		{
 			"round": 11,

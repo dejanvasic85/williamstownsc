@@ -18,11 +18,26 @@
 			"points": 12
 		},
 		{
+			"teamId": "emAeyo3gmB",
+			"teamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
+			"clubName": "Aintree SC",
+			"logoUrl": "https://ocean.dribl.com/86f34bc0855a4f519dd696483def4a47",
+			"position": 2,
+			"played": 4,
+			"wins": 3,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 10,
+			"goalsAgainst": 3,
+			"goalDifference": 7,
+			"points": 10
+		},
+		{
 			"teamId": "Wdgpyl9lmR",
 			"teamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
 			"clubName": "Footscray Rangers FC",
 			"logoUrl": "https://ocean.dribl.com/5e2e9e7edb394ffeb3135af38dbab749",
-			"position": 2,
+			"position": 3,
 			"played": 4,
 			"wins": 3,
 			"draws": 0,
@@ -37,7 +52,7 @@
 			"teamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
-			"position": 3,
+			"position": 4,
 			"played": 3,
 			"wins": 3,
 			"draws": 0,
@@ -45,21 +60,6 @@
 			"goalsFor": 13,
 			"goalsAgainst": 3,
 			"goalDifference": 10,
-			"points": 9
-		},
-		{
-			"teamId": "emAeyo3gmB",
-			"teamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
-			"clubName": "Aintree SC",
-			"logoUrl": "https://ocean.dribl.com/86f34bc0855a4f519dd696483def4a47",
-			"position": 4,
-			"played": 3,
-			"wins": 3,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 8,
-			"goalsAgainst": 1,
-			"goalDifference": 7,
 			"points": 9
 		},
 		{
@@ -93,11 +93,26 @@
 			"points": 6
 		},
 		{
+			"teamId": "lNbjwx5wNx",
+			"teamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
+			"clubName": "Truganina Lions FC",
+			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
+			"position": 7,
+			"played": 4,
+			"wins": 1,
+			"draws": 2,
+			"losses": 1,
+			"goalsFor": 7,
+			"goalsAgainst": 6,
+			"goalDifference": 1,
+			"points": 5
+		},
+		{
 			"teamId": "pN69DQyQm0",
 			"teamName": "Melbourne City FC U14 Juniors - D Mixed",
 			"clubName": "Melbourne City FC",
 			"logoUrl": "https://ocean.dribl.com/f36dcde3f3634df6919129024a40eaf3",
-			"position": 7,
+			"position": 8,
 			"played": 3,
 			"wins": 1,
 			"draws": 1,
@@ -105,21 +120,6 @@
 			"goalsFor": 10,
 			"goalsAgainst": 8,
 			"goalDifference": 2,
-			"points": 4
-		},
-		{
-			"teamId": "lNbjwx5wNx",
-			"teamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
-			"clubName": "Truganina Lions FC",
-			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
-			"position": 8,
-			"played": 3,
-			"wins": 1,
-			"draws": 1,
-			"losses": 1,
-			"goalsFor": 5,
-			"goalsAgainst": 4,
-			"goalDifference": 1,
 			"points": 4
 		},
 		{
