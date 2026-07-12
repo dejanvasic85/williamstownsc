@@ -33,11 +33,26 @@
 			"points": 20
 		},
 		{
+			"teamId": "JmX4eOrnmn",
+			"teamName": "Kings Domain FC Seniors",
+			"clubName": "Kings Domain FC",
+			"logoUrl": "https://ocean.dribl.com/fd0c1d9381c24a9789cf4875e22b37ca",
+			"position": 3,
+			"played": 9,
+			"wins": 6,
+			"draws": 2,
+			"losses": 1,
+			"goalsFor": 39,
+			"goalsAgainst": 14,
+			"goalDifference": 25,
+			"points": 20
+		},
+		{
 			"teamId": "ZKRPlQ4ymk",
 			"teamName": "Middle Park FC Seniors",
 			"clubName": "Middle Park FC",
 			"logoUrl": "https://ocean.dribl.com/c0d7b86f07b54f389f1ff44d8ee76c02",
-			"position": 3,
+			"position": 4,
 			"played": 10,
 			"wins": 5,
 			"draws": 3,
@@ -52,7 +67,7 @@
 			"teamName": "South Yarra SC Seniors",
 			"clubName": "South Yarra SC",
 			"logoUrl": "https://ocean.dribl.com/644170b8a93a493196bcac5a05af176d",
-			"position": 4,
+			"position": 5,
 			"played": 9,
 			"wins": 5,
 			"draws": 2,
@@ -60,21 +75,6 @@
 			"goalsFor": 39,
 			"goalsAgainst": 18,
 			"goalDifference": 21,
-			"points": 17
-		},
-		{
-			"teamId": "JmX4eOrnmn",
-			"teamName": "Kings Domain FC Seniors",
-			"clubName": "Kings Domain FC",
-			"logoUrl": "https://ocean.dribl.com/fd0c1d9381c24a9789cf4875e22b37ca",
-			"position": 5,
-			"played": 8,
-			"wins": 5,
-			"draws": 2,
-			"losses": 1,
-			"goalsFor": 23,
-			"goalsAgainst": 13,
-			"goalDifference": 10,
 			"points": 17
 		},
 		{
@@ -128,13 +128,13 @@
 			"clubName": "Truganina Lions FC",
 			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
 			"position": 9,
-			"played": 9,
+			"played": 10,
 			"wins": 0,
 			"draws": 0,
-			"losses": 9,
-			"goalsFor": 7,
-			"goalsAgainst": 74,
-			"goalDifference": -67,
+			"losses": 10,
+			"goalsFor": 8,
+			"goalsAgainst": 90,
+			"goalDifference": -82,
 			"points": 0
 		}
 	]
