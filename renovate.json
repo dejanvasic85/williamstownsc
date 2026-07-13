@@ -3,9 +3,9 @@
 	"extends": ["github>dejanvasic85/renovate-config:nextjs"],
 	"packageRules": [
 		{
-			"description": "pnpm 11.12.0 breaks pnpm/action-setup self-install (createFullPkgId integrity crash). See pnpm/action-setup#276. Unblock once pnpm ships a fix.",
+			"description": "pnpm 11.12.0 breaks pnpm/action-setup self-install (createFullPkgId integrity crash). See pnpm/action-setup#276. Only this version is excluded; later releases are allowed.",
 			"matchPackageNames": ["pnpm"],
-			"allowedVersions": "<11.12.0"
+			"allowedVersions": "!=11.12.0"
 		},
 		{
 			"description": "TypeScript 7 is the native (Go) compiler and ships platform binaries instead of the JS module Next.js loads, so next build fails to detect TypeScript. Unblock once Next.js supports the native compiler.",
