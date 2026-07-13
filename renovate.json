@@ -6,6 +6,11 @@
 			"description": "pnpm 11.12.0 breaks pnpm/action-setup self-install (createFullPkgId integrity crash). See pnpm/action-setup#276. Unblock once pnpm ships a fix.",
 			"matchPackageNames": ["pnpm"],
 			"allowedVersions": "<11.12.0"
+		},
+		{
+			"description": "TypeScript 7 is the native (Go) compiler and ships platform binaries instead of the JS module Next.js loads, so next build fails to detect TypeScript. Unblock once Next.js supports the native compiler.",
+			"matchPackageNames": ["typescript"],
+			"allowedVersions": "<7.0.0"
 		}
 	]
 }
