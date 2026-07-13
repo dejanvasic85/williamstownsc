@@ -32,6 +32,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.12.0
+          standalone: true
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - id: chunk
@@ -50,6 +51,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.12.0
+          standalone: true
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
@@ -83,6 +85,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.12.0
+          standalone: true
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
@@ -137,6 +140,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.12.0
+          standalone: true
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - uses: actions/download-artifact@v8

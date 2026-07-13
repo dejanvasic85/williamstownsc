@@ -37,6 +37,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.12.0
+          standalone: true
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Pull environment variables from Vercel
@@ -64,6 +65,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           version: 11.12.0
+          standalone: true
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Install Playwright browsers
