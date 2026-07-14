@@ -686,7 +686,9 @@
 			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"address": "Princes Park Oval Pitch 2",
 			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -834,7 +836,9 @@
 			"awayTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
 			"address": "Delahey Reserve Main Pitch",
 			"coordinates": "-37.717437,144.776081",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,

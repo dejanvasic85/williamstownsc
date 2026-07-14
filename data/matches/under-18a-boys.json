@@ -627,7 +627,9 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "Springside Recreational Reserve Pitch 1 (S)",
 			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,

@@ -98,14 +98,14 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 7,
-			"played": 9,
-			"wins": 1,
+			"played": 10,
+			"wins": 2,
 			"draws": 2,
 			"losses": 6,
-			"goalsFor": 10,
+			"goalsFor": 12,
 			"goalsAgainst": 28,
-			"goalDifference": -18,
-			"points": 5
+			"goalDifference": -16,
+			"points": 8
 		},
 		{
 			"teamId": "ld44BkrxdW",
@@ -113,13 +113,13 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 8,
-			"played": 9,
+			"played": 10,
 			"wins": 1,
 			"draws": 0,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 9,
-			"goalsAgainst": 28,
-			"goalDifference": -19,
+			"goalsAgainst": 30,
+			"goalDifference": -21,
 			"points": 3
 		}
 	]

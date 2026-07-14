@@ -3,11 +3,26 @@
 	"competition": "Girls' West 13C",
 	"entries": [
 		{
+			"teamId": "ld44B0ZDdW",
+			"teamName": "Gisborne SC U13 Juniors - C Female 13ML",
+			"clubName": "Gisborne SC",
+			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
+			"position": 1,
+			"played": 9,
+			"wins": 7,
+			"draws": 1,
+			"losses": 1,
+			"goalsFor": 46,
+			"goalsAgainst": 9,
+			"goalDifference": 37,
+			"points": 22
+		},
+		{
 			"teamId": "BdD95xlJmb",
 			"teamName": "Altona East SC U13 Juniors - C Female",
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
-			"position": 1,
+			"position": 2,
 			"played": 9,
 			"wins": 6,
 			"draws": 3,
@@ -22,7 +37,7 @@
 			"teamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 2,
+			"position": 3,
 			"played": 9,
 			"wins": 7,
 			"draws": 0,
@@ -31,21 +46,6 @@
 			"goalsAgainst": 13,
 			"goalDifference": 18,
 			"points": 21
-		},
-		{
-			"teamId": "ld44B0ZDdW",
-			"teamName": "Gisborne SC U13 Juniors - C Female 13ML",
-			"clubName": "Gisborne SC",
-			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
-			"position": 3,
-			"played": 8,
-			"wins": 6,
-			"draws": 1,
-			"losses": 1,
-			"goalsFor": 40,
-			"goalsAgainst": 8,
-			"goalDifference": 32,
-			"points": 19
 		},
 		{
 			"teamId": "lNbjwEw3Nx",
@@ -113,13 +113,13 @@
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
 			"position": 8,
-			"played": 8,
+			"played": 9,
 			"wins": 0,
 			"draws": 0,
-			"losses": 8,
-			"goalsFor": 3,
-			"goalsAgainst": 46,
-			"goalDifference": -43,
+			"losses": 9,
+			"goalsFor": 4,
+			"goalsAgainst": 52,
+			"goalDifference": -48,
 			"points": 0
 		}
 	]
