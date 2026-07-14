@@ -1350,7 +1350,9 @@
 			"awayTeamName": "Western Eagles SC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "abandoned"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 16,

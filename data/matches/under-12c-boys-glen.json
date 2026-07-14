@@ -761,7 +761,9 @@
 			"awayTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys White Cang",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -918,19 +920,6 @@
 			"round": 11,
 			"date": "2026-07-19",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "R1K3BOqGNQ",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
-			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
-			"address": "Kurunjang Recreation Reserve 1B (Half)",
-			"coordinates": "-37.6742,144.584",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-07-19",
-			"day": "Sunday",
 			"time": "10:05",
 			"homeTeamId": "Bjma0BXAdR",
 			"awayTeamId": "6lNbpDpwdx",
@@ -964,6 +953,19 @@
 			"awayTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys White Cang",
 			"address": "Hummingbird Boulevard Reserve 2A (Half)",
 			"coordinates": "-37.837381,144.663287",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "R1K3BOqGNQ",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
+			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
+			"address": "Korumburra Recreational Reserve Pitch 2A",
+			"coordinates": "-38.436527,145.831796",
 			"status": "pending"
 		},
 		{

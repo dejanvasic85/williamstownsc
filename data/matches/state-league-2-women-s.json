@@ -503,13 +503,13 @@
 			"round": 7,
 			"date": "2026-07-31",
 			"day": "Friday",
-			"time": "15:00",
+			"time": "19:45",
 			"homeTeamId": "wOmejXOyN0",
 			"awayTeamId": "k2KpA9PdY5",
 			"homeTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
 			"awayTeamName": "North Sunshine Eagles SC Seniors",
-			"address": "Sumner Park Main Pitch",
-			"coordinates": "-37.774141,144.986315",
+			"address": "Clifton Park Synthetic",
+			"coordinates": "-37.767831,144.954905",
 			"status": "pending"
 		},
 		{
@@ -806,16 +806,16 @@
 		},
 		{
 			"round": 11,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "15:00",
+			"date": "2026-07-21",
+			"day": "Tuesday",
+			"time": "19:30",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "k2KpA9PdY5",
 			"homeTeamName": "Williamstown SC Seniors",
 			"awayTeamName": "North Sunshine Eagles SC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "washout reschedule"
+			"status": "pending"
 		},
 		{
 			"round": 12,

@@ -769,7 +769,9 @@
 			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -1022,19 +1024,6 @@
 			"round": 13,
 			"date": "2026-08-02",
 			"day": "Sunday",
-			"time": "10:20",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "R1K3BbeoNQ",
-			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
-			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
 			"time": "10:30",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "Bjma0G03dR",
@@ -1068,6 +1057,19 @@
 			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "Alcock Road Reserve Pitch 2 - Half B",
 			"coordinates": "-37.829359,144.720192",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "R1K3BbeoNQ",
+			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
+			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
+			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{

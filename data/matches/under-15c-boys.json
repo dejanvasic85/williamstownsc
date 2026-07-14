@@ -634,7 +634,9 @@
 			"awayTeamName": "Altona East SC U15 Juniors - C Mixed",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -647,7 +649,9 @@
 			"awayTeamName": "Bundoora United FC U15 Juniors - C Mixed BUFC U15's Orange B's",
 			"address": "Aston Fields Pitch 2",
 			"coordinates": "-37.597457,144.890302",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -973,19 +977,6 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "nPmrB8Rjmo",
-			"awayTeamId": "PydoLxGmD9",
-			"homeTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"awayTeamName": "Brimbank Stallions FC U15 Juniors - C Mixed",
-			"address": "Arena Recreation Reserve Pitch 1",
-			"coordinates": "-37.618866,144.916762",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
 			"time": "11:45",
 			"homeTeamId": "R1K3BOqGNQ",
 			"awayTeamId": "7MNGgM7NAz",
@@ -1005,6 +996,19 @@
 			"awayTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
 			"address": "",
 			"coordinates": "",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "nPmrB8Rjmo",
+			"homeTeamName": "Brimbank Stallions FC U15 Juniors - C Mixed",
+			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+			"address": "Club Italia Sporting Club Pitch 2",
+			"coordinates": "-37.759892,144.819492",
 			"status": "pending"
 		},
 		{

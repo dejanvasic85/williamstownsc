@@ -1046,7 +1046,9 @@
 			"awayTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"address": "Avondale Heights Reserve Pitch 1",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,

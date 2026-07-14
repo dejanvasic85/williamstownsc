@@ -8,14 +8,14 @@
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
 			"position": 1,
-			"played": 8,
-			"wins": 8,
+			"played": 9,
+			"wins": 9,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 35,
+			"goalsFor": 38,
 			"goalsAgainst": 1,
-			"goalDifference": 34,
-			"points": 24
+			"goalDifference": 37,
+			"points": 27
 		},
 		{
 			"teamId": "EN2nb2Z2Nq",
@@ -98,13 +98,13 @@
 			"clubName": "Wyndham FC",
 			"logoUrl": "https://ocean.dribl.com/f20d0e1df69046dfb92cfe65f203cf7f",
 			"position": 7,
-			"played": 7,
+			"played": 8,
 			"wins": 1,
 			"draws": 0,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 7,
-			"goalsAgainst": 32,
-			"goalDifference": -25,
+			"goalsAgainst": 35,
+			"goalDifference": -28,
 			"points": 3
 		},
 		{
