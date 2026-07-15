@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 106,
+	"totalFixtures": 107,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -795,6 +795,19 @@
 			"awayTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Oriol",
 			"address": "AB Shaw Reserve Pitch 1 - Midi A (7v7)",
 			"coordinates": "-37.865571,144.783747",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Truganina Lions FC U08 MiniRoos - Kangaroos Mixed Boys U8 - Kangaroos",
+			"awayTeamName": "Point Cook SC U08 MiniRoos - Kangaroos Mixed U8 Cyclones",
+			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) A",
+			"coordinates": "-37.829359,144.720192",
 			"status": "pending"
 		},
 		{
