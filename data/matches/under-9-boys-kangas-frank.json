@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 88,
+	"totalFixtures": 89,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -681,6 +681,19 @@
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Kangaroos Mixed Boys Under 9K (Frank/Tim)",
 			"address": "Avondale Heights Reserve Pitch 2 - Midi (7v7)",
 			"coordinates": "-37.76242,144.858824",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Kangaroos Mixed Rudiger",
+			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Kangaroos Mixed",
+			"address": "AW Bond Reserve Midi A",
+			"coordinates": "-37.827591,144.845123",
 			"status": "pending"
 		},
 		{
