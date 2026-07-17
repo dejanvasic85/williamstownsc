@@ -828,7 +828,9 @@
 			"awayTeamName": "Spring Hills FC Seniors state league 2 women",
 			"address": "JC Donath Reserve Pitch 8 KP",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,

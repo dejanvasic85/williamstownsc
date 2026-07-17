@@ -1365,7 +1365,9 @@
 			"awayTeamName": "FC Strathmore Split Seniors",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 16,
