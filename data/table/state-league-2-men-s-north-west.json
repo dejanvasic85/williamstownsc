@@ -8,14 +8,14 @@
 			"clubName": "FC Strathmore Split",
 			"logoUrl": "https://ocean.dribl.com/eea604f0133145cfaa26c37f5c596ee5",
 			"position": 1,
-			"played": 15,
-			"wins": 11,
+			"played": 16,
+			"wins": 12,
 			"draws": 1,
 			"losses": 3,
-			"goalsFor": 45,
+			"goalsFor": 46,
 			"goalsAgainst": 21,
-			"goalDifference": 24,
-			"points": 34
+			"goalDifference": 25,
+			"points": 37
 		},
 		{
 			"teamId": "lNb3LEqyKx",
@@ -128,13 +128,13 @@
 			"clubName": "Brimbank Stallions FC",
 			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
 			"position": 9,
-			"played": 15,
+			"played": 16,
 			"wins": 5,
 			"draws": 3,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 20,
-			"goalsAgainst": 28,
-			"goalDifference": -8,
+			"goalsAgainst": 29,
+			"goalDifference": -9,
 			"points": 18
 		},
 		{

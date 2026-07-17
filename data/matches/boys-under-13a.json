@@ -889,19 +889,6 @@
 			"round": 11,
 			"date": "2026-07-19",
 			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
-			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-07-19",
-			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "bgdMXan2KE",
@@ -961,6 +948,19 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1A (S) (North)",
 			"coordinates": "-38.306639,144.324553",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "AnmYzg0xNz",
+			"homeTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
+			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
+			"address": "Costas Mitre 10 Park Pitch 4A, Galvin Park Reserve - Half Field",
+			"coordinates": "-37.886177,144.651364",
 			"status": "pending"
 		},
 		{

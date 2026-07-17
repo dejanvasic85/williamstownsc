@@ -676,19 +676,6 @@
 			"round": 11,
 			"date": "2026-07-19",
 			"day": "Sunday",
-			"time": "15:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
-			"awayTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
-			"address": "Williams Landing Sports Reserve Pitch 2",
-			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
-		},
-		{
-			"round": 11,
-			"date": "2026-07-19",
-			"day": "Sunday",
 			"time": "15:15",
 			"homeTeamId": "nPmr7WjNow",
 			"awayTeamId": "7MNGvappmA",
@@ -696,6 +683,19 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
 			"coordinates": "-37.714141,144.726888",
+			"status": "pending"
+		},
+		{
+			"round": 11,
+			"date": "2026-07-19",
+			"day": "Sunday",
+			"time": "16:30",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "3pmvQp0Ldv",
+			"homeTeamName": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
+			"awayTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
+			"address": "Williams Landing Sports Reserve Pitch 2",
+			"coordinates": "-37.861747,144.749995",
 			"status": "pending"
 		},
 		{
@@ -949,7 +949,7 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "17:00",
+			"time": "17:30",
 			"homeTeamId": "OEN2Z5GlNq",
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",

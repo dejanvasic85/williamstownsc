@@ -1361,7 +1361,9 @@
 			"awayTeamName": "FC Strathmore Split Reserves",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1411,7 +1413,7 @@
 			"awayTeamId": "7MNGvappmA",
 			"homeTeamName": "Surf Coast FC Reserves",
 			"awayTeamName": "Geelong Rangers SC Reserves",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},
