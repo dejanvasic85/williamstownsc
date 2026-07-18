@@ -1380,7 +1380,9 @@
 			"awayTeamName": "Mill Park SC Seniors",
 			"address": "Duane Reserve Main Pitch",
 			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1393,7 +1395,9 @@
 			"awayTeamName": "Whittlesea Ranges FC Seniors",
 			"address": "Hume Reserve Pitch 1",
 			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1406,7 +1410,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Findon Reserve Pitch 1",
 			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1419,7 +1425,9 @@
 			"awayTeamName": "Geelong Rangers SC Seniors",
 			"address": "NewFlo Stadium Pitch 2",
 			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
