@@ -32,7 +32,7 @@
 		"test:e2e:report": "playwright show-report"
 	},
 	"dependencies": {
-		"@aws-sdk/client-ses": "3.1089.0",
+		"@aws-sdk/client-ses": "3.1090.0",
 		"@date-fns/tz": "1.5.0",
 		"@fontsource/exo": "5.2.8",
 		"@fontsource/outfit": "5.2.8",
@@ -50,7 +50,7 @@
 		"clsx": "2.1.1",
 		"daisyui": "5.6.18",
 		"date-fns": "4.4.0",
-		"lucide-react": "1.24.0",
+		"lucide-react": "1.25.0",
 		"next": "16.2.10",
 		"next-sanity": "13.1.3",
 		"pino": "10.3.1",
