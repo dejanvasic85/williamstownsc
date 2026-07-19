@@ -108,11 +108,26 @@
 			"points": 21
 		},
 		{
+			"teamId": "BdD1lGG3mb",
+			"teamName": "Mill Park SC Reserves",
+			"clubName": "Mill Park SC",
+			"logoUrl": "https://ocean.dribl.com/6e5cc0f97e4942e2a8b24cdbe74c187f",
+			"position": 8,
+			"played": 16,
+			"wins": 6,
+			"draws": 2,
+			"losses": 8,
+			"goalsFor": 17,
+			"goalsAgainst": 24,
+			"goalDifference": -7,
+			"points": 20
+		},
+		{
 			"teamId": "bd9XyEElK4",
 			"teamName": "Surf Coast FC Reserves",
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
-			"position": 8,
+			"position": 9,
 			"played": 16,
 			"wins": 5,
 			"draws": 4,
@@ -127,7 +142,7 @@
 			"teamName": "Whittlesea Ranges FC Reserves",
 			"clubName": "Whittlesea Ranges FC",
 			"logoUrl": "https://ocean.dribl.com/9401c2e005d04d0387d64725a022b69d",
-			"position": 9,
+			"position": 10,
 			"played": 16,
 			"wins": 5,
 			"draws": 3,
@@ -136,21 +151,6 @@
 			"goalsAgainst": 35,
 			"goalDifference": -11,
 			"points": 18
-		},
-		{
-			"teamId": "BdD1lGG3mb",
-			"teamName": "Mill Park SC Reserves",
-			"clubName": "Mill Park SC",
-			"logoUrl": "https://ocean.dribl.com/6e5cc0f97e4942e2a8b24cdbe74c187f",
-			"position": 10,
-			"played": 15,
-			"wins": 5,
-			"draws": 2,
-			"losses": 8,
-			"goalsFor": 14,
-			"goalsAgainst": 22,
-			"goalDifference": -8,
-			"points": 17
 		},
 		{
 			"teamId": "Pmrke44rNo",
@@ -173,13 +173,13 @@
 			"clubName": "Brimbank Stallions FC",
 			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
 			"position": 12,
-			"played": 14,
+			"played": 15,
 			"wins": 1,
 			"draws": 3,
-			"losses": 10,
-			"goalsFor": 15,
-			"goalsAgainst": 29,
-			"goalDifference": -14,
+			"losses": 11,
+			"goalsFor": 17,
+			"goalsAgainst": 32,
+			"goalDifference": -15,
 			"points": 6
 		}
 	]

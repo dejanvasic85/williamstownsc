@@ -1273,7 +1273,9 @@
 			"awayTeamName": "Brimbank Stallions FC Reserves",
 			"address": "Partridge Street Reserve Pitch 2",
 			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
