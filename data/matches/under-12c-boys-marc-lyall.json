@@ -901,7 +901,9 @@
 			"awayTeamName": "Yarraville Glory FC U12 Juniors - C Mixed",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -914,7 +916,9 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Ben)",
 			"address": "HD Graham Reserve Field 1 (North) Half A",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -927,7 +931,9 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
 			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
 			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -940,7 +946,9 @@
 			"awayTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
 			"address": "Edwards Reserve Main Pitch B",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -953,7 +961,9 @@
 			"awayTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys White Cang",
 			"address": "Hummingbird Boulevard Reserve 2A (Half)",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 11,

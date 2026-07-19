@@ -38,13 +38,13 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 3,
-			"played": 9,
+			"played": 10,
 			"wins": 6,
 			"draws": 0,
-			"losses": 3,
-			"goalsFor": 28,
-			"goalsAgainst": 15,
-			"goalDifference": 13,
+			"losses": 4,
+			"goalsFor": 29,
+			"goalsAgainst": 21,
+			"goalDifference": 8,
 			"points": 18
 		},
 		{
@@ -68,14 +68,14 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 5,
-			"played": 8,
-			"wins": 2,
+			"played": 9,
+			"wins": 3,
 			"draws": 1,
 			"losses": 5,
-			"goalsFor": 30,
-			"goalsAgainst": 17,
-			"goalDifference": 13,
-			"points": 7
+			"goalsFor": 36,
+			"goalsAgainst": 18,
+			"goalDifference": 18,
+			"points": 10
 		},
 		{
 			"teamId": "emAeLAaBmB",
@@ -83,13 +83,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 6,
-			"played": 8,
+			"played": 9,
 			"wins": 1,
 			"draws": 0,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 5,
-			"goalsAgainst": 44,
-			"goalDifference": -39,
+			"goalsAgainst": 47,
+			"goalDifference": -42,
 			"points": 3
 		},
 		{
@@ -98,14 +98,14 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 9,
-			"wins": 0,
+			"played": 10,
+			"wins": 1,
 			"draws": 0,
 			"losses": 9,
-			"goalsFor": 1,
+			"goalsFor": 4,
 			"goalsAgainst": 55,
-			"goalDifference": -54,
-			"points": 0
+			"goalDifference": -51,
+			"points": 3
 		}
 	]
 }

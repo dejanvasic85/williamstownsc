@@ -997,7 +997,9 @@
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Keilor Lodge Reserve Pitch 3",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1010,7 +1012,9 @@
 			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
 			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1023,7 +1027,9 @@
 			"awayTeamName": "Surf Coast FC U16 Juniors - A Mixed",
 			"address": "Dixon Field Reserve Pitch A",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1036,7 +1042,9 @@
 			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
 			"address": "HR Uren Reserve Pitch 1",
 			"coordinates": "-37.68317,144.98957",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1049,7 +1057,9 @@
 			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1062,7 +1072,9 @@
 			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
 			"address": "Ralph Reserve Main Pitch",
 			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,

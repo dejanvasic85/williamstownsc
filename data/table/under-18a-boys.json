@@ -8,14 +8,14 @@
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
 			"position": 1,
-			"played": 10,
-			"wins": 6,
+			"played": 11,
+			"wins": 7,
 			"draws": 3,
 			"losses": 1,
-			"goalsFor": 23,
-			"goalsAgainst": 11,
-			"goalDifference": 12,
-			"points": 21
+			"goalsFor": 26,
+			"goalsAgainst": 13,
+			"goalDifference": 13,
+			"points": 24
 		},
 		{
 			"teamId": "am1QjYJnmw",
@@ -23,14 +23,14 @@
 			"clubName": "Caroline Springs George Cross FC",
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
 			"position": 2,
-			"played": 10,
-			"wins": 6,
+			"played": 11,
+			"wins": 7,
 			"draws": 2,
 			"losses": 2,
-			"goalsFor": 28,
+			"goalsFor": 33,
 			"goalsAgainst": 11,
-			"goalDifference": 17,
-			"points": 20
+			"goalDifference": 22,
+			"points": 23
 		},
 		{
 			"teamId": "BdD9ZQbJmb",
@@ -98,13 +98,13 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 7,
-			"played": 10,
+			"played": 11,
 			"wins": 2,
 			"draws": 2,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 12,
-			"goalsAgainst": 28,
-			"goalDifference": -16,
+			"goalsAgainst": 33,
+			"goalDifference": -21,
 			"points": 8
 		},
 		{
@@ -113,13 +113,13 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 8,
-			"played": 10,
+			"played": 11,
 			"wins": 1,
 			"draws": 0,
-			"losses": 9,
-			"goalsFor": 9,
-			"goalsAgainst": 30,
-			"goalDifference": -21,
+			"losses": 10,
+			"goalsFor": 11,
+			"goalsAgainst": 33,
+			"goalDifference": -22,
 			"points": 3
 		}
 	]

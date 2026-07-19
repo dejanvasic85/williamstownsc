@@ -843,7 +843,9 @@
 			"awayTeamName": "Altona East SC Seniors",
 			"address": "More Park Northern Field",
 			"coordinates": "-37.772482,144.796616",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -856,7 +858,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Dunstan Reserve Pitch 1",
 			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -869,7 +873,9 @@
 			"awayTeamName": "Moreland Eagles FC Seniors",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -882,7 +888,9 @@
 			"awayTeamName": "Pascoe Vale FC Seniors",
 			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
 			"coordinates": "-37.666384,144.994017",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 13,

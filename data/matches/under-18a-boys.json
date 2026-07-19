@@ -670,7 +670,9 @@
 			"awayTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
 			"address": "HC Kim Reserve Pitch 1",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -683,7 +685,9 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,

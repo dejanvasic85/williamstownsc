@@ -865,7 +865,9 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
 			"address": "Alcock Road Reserve Pitch 2 - Half B",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 12,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -890,7 +892,7 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 11,
