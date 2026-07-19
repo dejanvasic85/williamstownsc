@@ -1061,7 +1061,9 @@
 			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
 			"address": "Romsey Recreation Reserve Pitch 2",
 			"coordinates": "-37.353194,144.749117",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1074,7 +1076,9 @@
 			"awayTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
 			"address": "Scovell Reserve Main Pitch",
 			"coordinates": "-37.784639,144.878892",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1087,7 +1091,9 @@
 			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1100,7 +1106,9 @@
 			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1113,7 +1121,9 @@
 			"awayTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
 			"address": "Hansen Reserve Pitch 2 - Junior Pitch",
 			"coordinates": "-37.8042,144.872777",
-			"status": "pending"
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1126,7 +1136,9 @@
 			"awayTeamName": "Melbourne City FC U14 Juniors - D Mixed",
 			"address": "Aintree North Recreation Reserve Field 1",
 			"coordinates": "-37.714012,144.665373",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1139,7 +1151,9 @@
 			"awayTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
 			"address": "Tarneit Rise Synthetic Pitch Tarneit Rise Synthetic Pitch",
 			"coordinates": "-37.835861,144.664274",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 12,

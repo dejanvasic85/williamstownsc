@@ -818,7 +818,9 @@
 			"awayTeamName": "South Yarra SC Seniors",
 			"address": "Albert Park Field 16 (Middle Park FC)",
 			"coordinates": "-37.849418,144.970479",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -831,7 +833,9 @@
 			"awayTeamName": "Fitzroy Lions SC Seniors",
 			"address": "Lagoon Reserve Main Pitch",
 			"coordinates": "-37.840912,144.944188",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -844,7 +848,9 @@
 			"awayTeamName": "Melbourne University SC Seniors",
 			"address": "Fawkner Park North Pavilion Pitch 1 (Soccer 8)",
 			"coordinates": "-37.843712,144.981104",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -856,7 +862,7 @@
 			"awayTeamName": "Truganina Lions FC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 13,

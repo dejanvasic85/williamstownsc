@@ -600,7 +600,9 @@
 			"awayTeamName": "Altona City SC U15 Juniors - A Mixed",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -613,7 +615,9 @@
 			"awayTeamName": "Altona Magic SC U15 Juniors - A Mixed U15 Black",
 			"address": "Taylors Hill Recreation Reserve Pitch 2",
 			"coordinates": "-37.713377,144.75485",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -626,7 +630,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U15 Juniors - A Mixed",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -639,7 +645,9 @@
 			"awayTeamName": "Williams Landing SC U15 Juniors - A Mixed WLFC U15A - Benfica",
 			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 12,

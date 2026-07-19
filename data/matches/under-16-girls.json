@@ -596,7 +596,9 @@
 			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
 			"address": "Saltwater Reserve Pitch 1",
 			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -609,7 +611,9 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -621,7 +625,7 @@
 			"awayTeamName": "Altona City SC U16 Juniors - B Female",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 12,

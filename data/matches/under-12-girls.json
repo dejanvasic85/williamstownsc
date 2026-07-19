@@ -973,7 +973,9 @@
 			"awayTeamName": "Green Gully SC U12 Juniors - B Female U12 Girls Taimoor",
 			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
 			"coordinates": "-37.777915,144.885698",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -986,7 +988,9 @@
 			"awayTeamName": "St Albans Saints Dinamo SC U12 Juniors - B Female St Albans Dinamo U12 Girls",
 			"address": "HC Kim Reserve Pitch 3A",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -999,7 +1003,9 @@
 			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
 			"address": "Fairbairn Park Pitch 5A - Half Field",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1012,7 +1018,9 @@
 			"awayTeamName": "Maribyrnong Swifts FC U12 Juniors - B Female Purple",
 			"address": "Dixon Field Reserve Pitch D (U13)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1025,7 +1033,9 @@
 			"awayTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
 			"address": "MacPherson Park Pitch 4 (U12/13s)",
 			"coordinates": "-37.63624,144.565487",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1038,7 +1048,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Female WLFC U12G - Gold",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -1051,7 +1063,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - B Female",
 			"address": "Fairbairn Park Pitch 5B - Half Field",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 12,

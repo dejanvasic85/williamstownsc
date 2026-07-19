@@ -38,14 +38,14 @@
 			"clubName": "Western Eagles SC",
 			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
 			"position": 3,
-			"played": 15,
-			"wins": 7,
+			"played": 16,
+			"wins": 8,
 			"draws": 3,
 			"losses": 5,
-			"goalsFor": 29,
+			"goalsFor": 32,
 			"goalsAgainst": 21,
-			"goalDifference": 8,
-			"points": 24
+			"goalDifference": 11,
+			"points": 27
 		},
 		{
 			"teamId": "jmaVW6lGNR",
@@ -98,13 +98,13 @@
 			"clubName": "Albion Rovers FC",
 			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
 			"position": 7,
-			"played": 15,
+			"played": 16,
 			"wins": 6,
 			"draws": 3,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 18,
-			"goalsAgainst": 20,
-			"goalDifference": -2,
+			"goalsAgainst": 23,
+			"goalDifference": -5,
 			"points": 21
 		},
 		{

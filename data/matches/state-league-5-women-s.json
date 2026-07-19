@@ -851,7 +851,9 @@
 			"awayTeamName": "Yarraville Glory FC Seniors state league 6 women",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -864,7 +866,9 @@
 			"awayTeamName": "Kensington City SC Seniors Kensington City SC State League 5",
 			"address": "W H Robinson Reserve Pitch 1",
 			"coordinates": "-37.747615,144.981522",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -890,7 +894,9 @@
 			"awayTeamName": "Barnstoneworth United FC Seniors Barnstoneworth United FC Ladies",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,

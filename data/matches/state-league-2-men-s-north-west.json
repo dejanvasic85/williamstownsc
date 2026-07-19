@@ -1440,7 +1440,9 @@
 			"awayTeamName": "Albion Rovers FC Seniors",
 			"address": "Polish Sports & Recreation Complex Pitch 1",
 			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 17,
