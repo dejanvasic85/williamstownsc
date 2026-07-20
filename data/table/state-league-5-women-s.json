@@ -83,14 +83,14 @@
 			"clubName": "Melbourne University SC",
 			"logoUrl": "https://ocean.dribl.com/6435e190252342ac9faa3809e5a12f6b",
 			"position": 6,
-			"played": 10,
+			"played": 11,
 			"wins": 3,
-			"draws": 1,
+			"draws": 2,
 			"losses": 6,
-			"goalsFor": 22,
-			"goalsAgainst": 22,
+			"goalsFor": 23,
+			"goalsAgainst": 23,
 			"goalDifference": 0,
-			"points": 10
+			"points": 11
 		},
 		{
 			"teamId": "emAeLp38mB",
@@ -143,14 +143,14 @@
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
 			"position": 10,
-			"played": 10,
+			"played": 11,
 			"wins": 0,
-			"draws": 1,
+			"draws": 2,
 			"losses": 9,
-			"goalsFor": 3,
-			"goalsAgainst": 47,
+			"goalsFor": 4,
+			"goalsAgainst": 48,
 			"goalDifference": -44,
-			"points": 1
+			"points": 2
 		}
 	]
 }

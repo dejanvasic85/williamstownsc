@@ -18,11 +18,26 @@
 			"points": 12
 		},
 		{
+			"teamId": "RdkEVqyRNG",
+			"teamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
+			"clubName": "Point Cook SC",
+			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
+			"position": 2,
+			"played": 3,
+			"wins": 3,
+			"draws": 0,
+			"losses": 0,
+			"goalsFor": 18,
+			"goalsAgainst": 4,
+			"goalDifference": 14,
+			"points": 9
+		},
+		{
 			"teamId": "1K3v3Lk7NQ",
 			"teamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"clubName": "Laverton FC",
 			"logoUrl": "https://ocean.dribl.com/39543e69e63546e88b5e228b21717c94",
-			"position": 2,
+			"position": 3,
 			"played": 4,
 			"wins": 2,
 			"draws": 0,
@@ -30,21 +45,6 @@
 			"goalsFor": 22,
 			"goalsAgainst": 10,
 			"goalDifference": 12,
-			"points": 6
-		},
-		{
-			"teamId": "RdkEVqyRNG",
-			"teamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
-			"clubName": "Point Cook SC",
-			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
-			"position": 3,
-			"played": 2,
-			"wins": 2,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 13,
-			"goalsAgainst": 3,
-			"goalDifference": 10,
 			"points": 6
 		},
 		{
@@ -78,26 +78,11 @@
 			"points": 6
 		},
 		{
-			"teamId": "nmYZ7RapNz",
-			"teamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
-			"clubName": "Barnstoneworth United FC",
-			"logoUrl": "https://ocean.dribl.com/fa250c47c9904e3496de00a27664dacc",
-			"position": 6,
-			"played": 1,
-			"wins": 1,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 7,
-			"goalsAgainst": 0,
-			"goalDifference": 7,
-			"points": 3
-		},
-		{
 			"teamId": "emAe5MMxmB",
 			"teamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
-			"position": 7,
+			"position": 6,
 			"played": 3,
 			"wins": 1,
 			"draws": 0,
@@ -105,6 +90,21 @@
 			"goalsFor": 17,
 			"goalsAgainst": 13,
 			"goalDifference": 4,
+			"points": 3
+		},
+		{
+			"teamId": "nmYZ7RapNz",
+			"teamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
+			"clubName": "Barnstoneworth United FC",
+			"logoUrl": "https://ocean.dribl.com/fa250c47c9904e3496de00a27664dacc",
+			"position": 7,
+			"played": 2,
+			"wins": 1,
+			"draws": 0,
+			"losses": 1,
+			"goalsFor": 8,
+			"goalsAgainst": 5,
+			"goalDifference": 3,
 			"points": 3
 		},
 		{

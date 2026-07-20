@@ -1044,19 +1044,6 @@
 			"round": 18,
 			"date": "2026-09-06",
 			"day": "Sunday",
-			"time": "00:00",
-			"homeTeamId": "3vmZv3vbmq",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 18,
-			"date": "2026-09-06",
-			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "bgdMM4ZdE2",
@@ -1064,6 +1051,19 @@
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 18,
+			"date": "2026-09-06",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "3vmZv3vbmq",
+			"awayTeamId": "bgdMXan2KE",
+			"homeTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"address": "",
+			"coordinates": "",
 			"status": "pending"
 		},
 		{

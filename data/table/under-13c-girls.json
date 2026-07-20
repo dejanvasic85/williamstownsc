@@ -48,11 +48,26 @@
 			"points": 21
 		},
 		{
+			"teamId": "ZKRP0gkPmk",
+			"teamName": "Yarraville Glory FC U13 Juniors - C Female",
+			"clubName": "Yarraville Glory FC",
+			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
+			"position": 4,
+			"played": 8,
+			"wins": 4,
+			"draws": 2,
+			"losses": 2,
+			"goalsFor": 30,
+			"goalsAgainst": 10,
+			"goalDifference": 20,
+			"points": 14
+		},
+		{
 			"teamId": "lNbjwEw3Nx",
 			"teamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
 			"clubName": "St Albans Saints Dinamo SC",
 			"logoUrl": "https://ocean.dribl.com/64ca90acfaee4722b5315caaa7f06c2f",
-			"position": 4,
+			"position": 5,
 			"played": 9,
 			"wins": 4,
 			"draws": 2,
@@ -61,21 +76,6 @@
 			"goalsAgainst": 9,
 			"goalDifference": 19,
 			"points": 14
-		},
-		{
-			"teamId": "ZKRP0gkPmk",
-			"teamName": "Yarraville Glory FC U13 Juniors - C Female",
-			"clubName": "Yarraville Glory FC",
-			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
-			"position": 5,
-			"played": 7,
-			"wins": 3,
-			"draws": 2,
-			"losses": 2,
-			"goalsFor": 21,
-			"goalsAgainst": 10,
-			"goalDifference": 11,
-			"points": 11
 		},
 		{
 			"teamId": "pN69EgY0m0",
@@ -98,13 +98,13 @@
 			"clubName": "Maribyrnong Swifts FC",
 			"logoUrl": "https://ocean.dribl.com/2bdcd22e002244f0affb3249fec1eb1f",
 			"position": 7,
-			"played": 9,
+			"played": 10,
 			"wins": 1,
 			"draws": 0,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 10,
-			"goalsAgainst": 50,
-			"goalDifference": -40,
+			"goalsAgainst": 59,
+			"goalDifference": -49,
 			"points": 3
 		},
 		{
