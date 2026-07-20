@@ -34,8 +34,8 @@
 	"dependencies": {
 		"@aws-sdk/client-ses": "3.1090.0",
 		"@date-fns/tz": "1.5.0",
-		"@fontsource/exo": "5.2.8",
-		"@fontsource/outfit": "5.2.8",
+		"@fontsource/exo": "5.3.0",
+		"@fontsource/outfit": "5.3.0",
 		"@next/third-parties": "16.2.10",
 		"@portabletext/toolkit": "5.0.2",
 		"@portabletext/types": "4.0.2",
@@ -58,7 +58,7 @@
 		"react-dom": "19.2.7",
 		"react-hook-form": "7.82.0",
 		"sanity": "6.5.0",
-		"styled-components": "6.4.3",
+		"styled-components": "6.4.4",
 		"zod": "4.4.3"
 	},
 	"devDependencies": {
