@@ -881,7 +881,9 @@
 			"awayTeamName": "Keon Park SC Seniors Senior Women SL5",
 			"address": "Princes Park Oval Pitch 1",
 			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,
