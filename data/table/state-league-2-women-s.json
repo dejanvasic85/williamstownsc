@@ -18,11 +18,26 @@
 			"points": 28
 		},
 		{
+			"teamId": "pN69x6pOm0",
+			"teamName": "Williamstown SC Seniors",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 2,
+			"played": 11,
+			"wins": 8,
+			"draws": 1,
+			"losses": 2,
+			"goalsFor": 40,
+			"goalsAgainst": 12,
+			"goalDifference": 28,
+			"points": 25
+		},
+		{
 			"teamId": "xm89qPR2Nr",
 			"teamName": "Brunswick City SC Seniors",
 			"clubName": "Brunswick City SC",
 			"logoUrl": "https://ocean.dribl.com/a9c59ac29c724966999fd327bb5e1f7a",
-			"position": 2,
+			"position": 3,
 			"played": 11,
 			"wins": 7,
 			"draws": 3,
@@ -31,21 +46,6 @@
 			"goalsAgainst": 11,
 			"goalDifference": 19,
 			"points": 24
-		},
-		{
-			"teamId": "pN69x6pOm0",
-			"teamName": "Williamstown SC Seniors",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 3,
-			"played": 10,
-			"wins": 7,
-			"draws": 1,
-			"losses": 2,
-			"goalsFor": 35,
-			"goalsAgainst": 12,
-			"goalDifference": 23,
-			"points": 22
 		},
 		{
 			"teamId": "yKJbE0lbKY",
@@ -113,13 +113,13 @@
 			"clubName": "North Sunshine Eagles SC",
 			"logoUrl": "https://ocean.dribl.com/2251bf99c3fd423b8cb51a515d4354fe",
 			"position": 8,
-			"played": 10,
+			"played": 11,
 			"wins": 3,
 			"draws": 2,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 14,
-			"goalsAgainst": 21,
-			"goalDifference": -7,
+			"goalsAgainst": 26,
+			"goalDifference": -12,
 			"points": 11
 		},
 		{

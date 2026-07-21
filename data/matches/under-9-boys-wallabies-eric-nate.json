@@ -1194,6 +1194,19 @@
 			"round": 13,
 			"date": "2026-08-02",
 			"day": "Sunday",
+			"time": "09:30",
+			"homeTeamId": "Bjma0RXqdR",
+			"awayTeamId": "6lNbpD56dx",
+			"homeTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Phil",
+			"awayTeamName": "Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
+			"address": "Webster Street Reserve Pitch 4A Midi 7v7",
+			"coordinates": "-37.88838,144.714084",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "bgdMXan2KE",
 			"awayTeamId": "Bjma0BXAdR",
@@ -1240,19 +1253,6 @@
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
 			"address": "Alcock Road Reserve Pitch 1 - Midi (7v7) A",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
-			"time": "11:30",
-			"homeTeamId": "Bjma0RXqdR",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "West Point SC U09 MiniRoos - Wallabies Mixed U9W Mixed - Phil",
-			"awayTeamName": "Truganina Hornets SC U09 MiniRoos - Wallabies Mixed",
-			"address": "Webster Street Reserve Pitch 3A Midi 7v7",
-			"coordinates": "-37.88838,144.714084",
 			"status": "pending"
 		},
 		{
