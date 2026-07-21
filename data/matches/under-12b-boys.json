@@ -856,7 +856,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"address": "Arndell Park Reserve Pitch 3 (S) - Half Field A",
 			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
+			"homeScore": 14,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
