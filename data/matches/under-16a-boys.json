@@ -921,19 +921,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "12:30",
-			"homeTeamId": "3pmvQW0Edv",
-			"awayTeamId": "OVdzwWpmGr",
-			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
-			"address": "Barrymore Road Recreation Reserve Pitch 1",
-			"coordinates": "-37.649063,144.894037",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "13:45",
 			"homeTeamId": "AnmYz1R1Nz",
 			"awayTeamId": "7MNGvappmA",
@@ -959,6 +946,19 @@
 			"homeScore": 2,
 			"awayScore": 1,
 			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-07-29",
+			"day": "Wednesday",
+			"time": "19:30",
+			"homeTeamId": "3pmvQW0Edv",
+			"awayTeamId": "OVdzwWpmGr",
+			"homeTeamName": "Greenvale United SC U16 Juniors - A Mixed",
+			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
+			"address": "Barrymore Road Recreation Reserve Pitch 1",
+			"coordinates": "-37.649063,144.894037",
+			"status": "pending"
 		},
 		{
 			"round": 10,

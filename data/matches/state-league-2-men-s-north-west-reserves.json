@@ -1576,6 +1576,19 @@
 			"round": 18,
 			"date": "2026-08-01",
 			"day": "Saturday",
+			"time": "13:00",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "LBdDx0GQdb",
+			"homeTeamName": "Brimbank Stallions FC Reserves",
+			"awayTeamName": "Surf Coast FC Reserves",
+			"address": "Club Italia Sporting Club Pitch 1",
+			"coordinates": "-37.759892,144.819492",
+			"status": "pending"
+		},
+		{
+			"round": 18,
+			"date": "2026-08-01",
+			"day": "Saturday",
 			"time": "14:30",
 			"homeTeamId": "3vmZv8JJmq",
 			"awayTeamId": "AnmYzyArNz",
@@ -1583,19 +1596,6 @@
 			"awayTeamName": "FC Strathmore Split Reserves",
 			"address": "Polish Sports & Recreation Complex Pitch 1",
 			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
-		},
-		{
-			"round": 18,
-			"date": "2026-08-01",
-			"day": "Saturday",
-			"time": "15:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "LBdDx0GQdb",
-			"homeTeamName": "Brimbank Stallions FC Reserves",
-			"awayTeamName": "Surf Coast FC Reserves",
-			"address": "Club Italia Sporting Club Pitch 1",
-			"coordinates": "-37.759892,144.819492",
 			"status": "pending"
 		},
 		{
