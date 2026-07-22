@@ -1643,19 +1643,6 @@
 			"round": 18,
 			"date": "2026-09-06",
 			"day": "Sunday",
-			"time": "10:15",
-			"homeTeamId": "OVdz1bpKGr",
-			"awayTeamId": "OEN2Z5GlNq",
-			"homeTeamName": "Green Gully SC U12 Juniors - B Female U12 Girls Taimoor",
-			"awayTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
-			"address": "Green Gully Reserve Pitch 3 - Half Field A",
-			"coordinates": "-37.724344,144.817872",
-			"status": "pending"
-		},
-		{
-			"round": 18,
-			"date": "2026-09-06",
-			"day": "Sunday",
 			"time": "10:30",
 			"homeTeamId": "nPmr7WjNow",
 			"awayTeamId": "3vmZv3vbmq",
@@ -1670,12 +1657,12 @@
 			"date": "2026-09-06",
 			"day": "Sunday",
 			"time": "10:30",
-			"homeTeamId": "gld450DmW5",
-			"awayTeamId": "3pmvQp0Ldv",
-			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
-			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
-			"address": "Robert Barrett Reserve Pitch 2 Half B",
-			"coordinates": "-37.777915,144.885698",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "gld450DmW5",
+			"homeTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
+			"awayTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
+			"address": "Waste Sense Park Pitch 2 - Half 1",
+			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
 		{
@@ -1689,6 +1676,19 @@
 			"awayTeamName": "Melton Phoenix FC U12 Juniors - B Female",
 			"address": "Fairbairn Park Pitch 5A - Half Field",
 			"coordinates": "-37.772808,144.9",
+			"status": "pending"
+		},
+		{
+			"round": 18,
+			"date": "2026-09-06",
+			"day": "Sunday",
+			"time": "12:15",
+			"homeTeamId": "OEN2Z5GlNq",
+			"awayTeamId": "OVdz1bpKGr",
+			"homeTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
+			"awayTeamName": "Green Gully SC U12 Juniors - B Female U12 Girls Taimoor",
+			"address": "Springside Recreational Reserve Junior Pitch (S) - Half Field A",
+			"coordinates": "-37.712403,144.736088",
 			"status": "pending"
 		},
 		{

@@ -673,19 +673,6 @@
 		},
 		{
 			"round": 10,
-			"date": "2026-07-03",
-			"day": "Friday",
-			"time": "19:30",
-			"homeTeamId": "bgdMXLR7KE",
-			"awayTeamId": "7ZKRa2oNkB",
-			"homeTeamName": "Keon Park SC Seniors",
-			"awayTeamName": "Pascoe Vale FC Seniors",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 10,
 			"date": "2026-07-05",
 			"day": "Sunday",
 			"time": "13:00",
@@ -743,6 +730,19 @@
 			"homeScore": 0,
 			"awayScore": 0,
 			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-09-02",
+			"day": "Wednesday",
+			"time": "19:30",
+			"homeTeamId": "bgdMXLR7KE",
+			"awayTeamId": "7ZKRa2oNkB",
+			"homeTeamName": "Keon Park SC Seniors",
+			"awayTeamName": "Pascoe Vale FC Seniors",
+			"address": "",
+			"coordinates": "",
+			"status": "pending"
 		},
 		{
 			"round": 11,

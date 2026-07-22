@@ -867,6 +867,19 @@
 			"date": "2026-07-26",
 			"day": "Sunday",
 			"time": "09:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Altona City SC U08 MiniRoos - Kangaroos Mixed",
+			"awayTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8s Jeremy",
+			"address": "HC Kim Reserve Pitch 1 - Midi A (7v7)",
+			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-26",
+			"day": "Sunday",
+			"time": "09:00",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8 Emad",
@@ -912,19 +925,6 @@
 			"awayTeamName": "Truganina Lions FC U08 MiniRoos - Kangaroos Mixed Boys U8 - Kangaroos",
 			"address": "AW Bond Reserve Midi B",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 12,
-			"date": "2026-07-26",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Altona City SC U08 MiniRoos - Kangaroos Mixed",
-			"awayTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8s Jeremy",
-			"address": "HC Kim Reserve Pitch 3 - Midi A (7v7)",
-			"coordinates": "-37.863721,144.839985",
 			"status": "pending"
 		},
 		{
