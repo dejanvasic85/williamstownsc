@@ -737,25 +737,25 @@
 			"date": "2026-07-26",
 			"day": "Sunday",
 			"time": "15:00",
-			"homeTeamId": "3pmvQp0Ldv",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
-			"awayTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
-			"address": "Waste Sense Park Pitch 3",
-			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
-		},
-		{
-			"round": 12,
-			"date": "2026-07-26",
-			"day": "Sunday",
-			"time": "15:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "nPmr7WjNow",
 			"homeTeamName": "Altona City SC U18 Juniors - A Male",
 			"awayTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
 			"address": "HC Kim Reserve Pitch 3",
 			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-26",
+			"day": "Sunday",
+			"time": "15:30",
+			"homeTeamId": "3pmvQp0Ldv",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Albion Rovers FC U18 Juniors - A Male Albion Juniors 18 (Tuncay)",
+			"awayTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
+			"address": "Waste Sense Park Pitch 3",
+			"coordinates": "-37.758429,144.79484",
 			"status": "pending"
 		},
 		{

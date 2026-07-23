@@ -886,7 +886,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
 			"address": "AW Bond Reserve Half A",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 11,

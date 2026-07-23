@@ -966,19 +966,6 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMXan2KE",
-			"homeTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
-			"address": "JT Gray Reserve Pitch 5 - BUFC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "8nm7PgVNOq",
@@ -986,6 +973,19 @@
 			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "15:45",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "bgdMXan2KE",
+			"homeTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
+			"address": "JT Gray Reserve Pitch 3 - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
