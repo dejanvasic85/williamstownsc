@@ -1318,19 +1318,6 @@
 			"date": "2026-08-23",
 			"day": "Sunday",
 			"time": "11:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "AnmYzg0xNz",
-			"homeTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
-			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
-			"address": "JT Gray Reserve Pitch 3B - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "11:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "PydoLxGmD9",
 			"homeTeamName": "Geelong Rangers SC U13 Juniors - A Mixed U13 Metro",
@@ -1350,6 +1337,19 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
 			"address": "HC Kim Reserve Pitch 3A",
 			"coordinates": "-37.863721,144.839985",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "AnmYzg0xNz",
+			"homeTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
+			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
+			"address": "JT Gray Reserve Pitch 3B - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{

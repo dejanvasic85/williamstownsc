@@ -8,14 +8,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 1,
-			"played": 9,
+			"played": 10,
 			"wins": 8,
-			"draws": 1,
+			"draws": 2,
 			"losses": 0,
-			"goalsFor": 53,
-			"goalsAgainst": 10,
+			"goalsFor": 54,
+			"goalsAgainst": 11,
 			"goalDifference": 43,
-			"points": 25
+			"points": 26
 		},
 		{
 			"teamId": "RdkEpOQBNG",
@@ -23,14 +23,14 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 2,
-			"played": 9,
+			"played": 10,
 			"wins": 8,
-			"draws": 0,
+			"draws": 1,
 			"losses": 1,
-			"goalsFor": 30,
-			"goalsAgainst": 6,
+			"goalsFor": 31,
+			"goalsAgainst": 7,
 			"goalDifference": 24,
-			"points": 24
+			"points": 25
 		},
 		{
 			"teamId": "RNE6nBzXKv",
