@@ -1455,7 +1455,9 @@
 			"awayTeamName": "Altona North SC Seniors",
 			"address": "Strathnaver Reserve Pitch 1",
 			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 17,
@@ -1468,7 +1470,9 @@
 			"awayTeamName": "Western Eagles SC Seniors",
 			"address": "Partridge Street Reserve Pitch 2",
 			"coordinates": "-37.663361,145.023019",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 17,
@@ -1481,7 +1485,9 @@
 			"awayTeamName": "Brimbank Stallions FC Seniors",
 			"address": "Harvest Home Recreation Reserve Pitch 2",
 			"coordinates": "-37.624506,145.02702",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 17,

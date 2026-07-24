@@ -23,14 +23,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 2,
-			"played": 11,
-			"wins": 8,
+			"played": 12,
+			"wins": 9,
 			"draws": 1,
 			"losses": 2,
-			"goalsFor": 40,
-			"goalsAgainst": 12,
-			"goalDifference": 28,
-			"points": 25
+			"goalsFor": 42,
+			"goalsAgainst": 13,
+			"goalDifference": 29,
+			"points": 28
 		},
 		{
 			"teamId": "xm89qPR2Nr",
@@ -53,14 +53,14 @@
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
 			"position": 4,
-			"played": 11,
+			"played": 12,
 			"wins": 7,
-			"draws": 1,
+			"draws": 2,
 			"losses": 3,
 			"goalsFor": 29,
 			"goalsAgainst": 21,
 			"goalDifference": 8,
-			"points": 22
+			"points": 23
 		},
 		{
 			"teamId": "bd9W66jRN4",
@@ -68,14 +68,14 @@
 			"clubName": "Brunswick Zebras FC",
 			"logoUrl": "https://ocean.dribl.com/fcd9c186ffec46b08881b3573b897206",
 			"position": 5,
-			"played": 11,
+			"played": 12,
 			"wins": 5,
-			"draws": 3,
+			"draws": 4,
 			"losses": 3,
 			"goalsFor": 20,
 			"goalsAgainst": 14,
 			"goalDifference": 6,
-			"points": 18
+			"points": 19
 		},
 		{
 			"teamId": "yKJbGMx3KY",
@@ -83,13 +83,13 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 6,
-			"played": 12,
+			"played": 13,
 			"wins": 4,
 			"draws": 2,
-			"losses": 6,
-			"goalsFor": 16,
-			"goalsAgainst": 27,
-			"goalDifference": -11,
+			"losses": 7,
+			"goalsFor": 17,
+			"goalsAgainst": 29,
+			"goalDifference": -12,
 			"points": 14
 		},
 		{

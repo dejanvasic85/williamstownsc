@@ -911,7 +911,9 @@
 			"awayTeamName": "Darebin Womens SC Seniors Darebin Falcons State League 5",
 			"address": "JC Donath Reserve Pitch 6 KP",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 13,
