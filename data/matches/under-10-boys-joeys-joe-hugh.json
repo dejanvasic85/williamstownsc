@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 83,
+	"totalFixtures": 84,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -801,6 +801,19 @@
 			"awayTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
 			"address": "Castley Reserve Main Pitch - Half Field A",
 			"coordinates": "-37.790938,144.815634",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Melbourne City FC U10 MiniRoos - Joeys Mixed U10 Boys",
+			"awayTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed White",
+			"address": "Edwards Reserve Main Pitch B",
+			"coordinates": "-37.827616,144.870036",
 			"status": "pending"
 		},
 		{

@@ -784,19 +784,6 @@
 			"round": 13,
 			"date": "2026-08-02",
 			"day": "Sunday",
-			"time": "00:00",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
-			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"address": "",
-			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "3vmZv3vbmq",
@@ -830,6 +817,19 @@
 			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "13:00",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"address": "Paisley Park - Altona Magic SC Pitch 2",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{

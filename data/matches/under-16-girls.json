@@ -633,6 +633,19 @@
 			"round": 12,
 			"date": "2026-07-26",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "7MNGvobEmA",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Altona East SC U16 Juniors - B Female",
+			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 12,
+			"date": "2026-07-26",
+			"day": "Sunday",
 			"time": "11:20",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "wOmejJVeN0",
@@ -640,19 +653,6 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 12,
-			"date": "2026-07-26",
-			"day": "Sunday",
-			"time": "11:45",
-			"homeTeamId": "7MNGvobEmA",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Altona East SC U16 Juniors - B Female",
-			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
-			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
-			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{

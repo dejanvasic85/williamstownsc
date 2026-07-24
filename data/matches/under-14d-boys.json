@@ -1367,6 +1367,19 @@
 			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
+			"time": "11:15",
+			"homeTeamId": "Bjma0G03dR",
+			"awayTeamId": "1pN6pqv7d0",
+			"homeTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
+			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
+			"address": "Wyndham Vale North Reserve Main Pitch A",
+			"coordinates": "-37.898902,144.624443",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "kemAbxpxNB",
 			"awayTeamId": "3vmZv3YLmq",
@@ -1387,19 +1400,6 @@
 			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
 			"address": "JT Gray Reserve Pitch 3 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "Bjma0G03dR",
-			"awayTeamId": "1pN6pqv7d0",
-			"homeTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
-			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"address": "Wyndham Vale North Reserve Main Pitch A",
-			"coordinates": "-37.898902,144.624443",
 			"status": "pending"
 		},
 		{
@@ -1523,7 +1523,7 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "09:35",
+			"time": "09:30",
 			"homeTeamId": "bgdMXLL2KE",
 			"awayTeamId": "Bjma0G03dR",
 			"homeTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",

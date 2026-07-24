@@ -905,7 +905,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Springside Recreational Reserve Pitch 1 (S)",
 			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -918,7 +920,9 @@
 			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
 			"address": "JC Donath Reserve Pitch 6 KP",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
