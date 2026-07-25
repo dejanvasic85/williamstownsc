@@ -1496,7 +1496,9 @@
 			"awayTeamName": "Uni Hill Eagles FC Reserves",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 17,
@@ -1509,7 +1511,9 @@
 			"awayTeamName": "Williamstown SC Reserves",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 17,
@@ -1522,7 +1526,9 @@
 			"awayTeamName": "Corio SC Reserves",
 			"address": "NewFlo Stadium Pitch 2",
 			"coordinates": "-38.306639,-38.306639",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 18,
