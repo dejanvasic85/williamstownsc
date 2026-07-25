@@ -948,7 +948,9 @@
 			"awayTeamName": "Whittlesea United SC Seniors",
 			"address": "Wallace Reserve Pitch 1",
 			"coordinates": "-37.694764,144.935299",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 13,

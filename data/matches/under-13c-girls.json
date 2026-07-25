@@ -752,7 +752,9 @@
 			"awayTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 10,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
