@@ -929,7 +929,9 @@
 			"awayTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
 			"address": "Williams Landing Sports Reserve Pitch 1",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 9,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -942,7 +944,9 @@
 			"awayTeamName": "Western Suburbs SC U12 Juniors - B Mixed U12 Billy - B",
 			"address": "AW Bond Reserve Half A",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -955,7 +959,9 @@
 			"awayTeamName": "Truganina Hornets SC U12 Juniors - B Mixed Coach Harris",
 			"address": "Avondale Heights Reserve Pitch 1 - Half Field A",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -968,7 +974,9 @@
 			"awayTeamName": "West Point SC U12 Juniors - B Mixed U12 Mixed B - Ketan",
 			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 13,

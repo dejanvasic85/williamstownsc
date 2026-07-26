@@ -640,7 +640,9 @@
 			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -653,7 +655,9 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -666,7 +670,9 @@
 			"awayTeamName": "Gisborne SC U16 Juniors - B Female 16JD",
 			"address": "HC Kim Reserve Pitch 3",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -678,7 +684,7 @@
 			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 13,
