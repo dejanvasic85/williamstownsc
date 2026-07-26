@@ -8,14 +8,14 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 1,
-			"played": 10,
+			"played": 11,
 			"wins": 8,
-			"draws": 1,
+			"draws": 2,
 			"losses": 1,
 			"goalsFor": 49,
 			"goalsAgainst": 10,
 			"goalDifference": 39,
-			"points": 25
+			"points": 26
 		},
 		{
 			"teamId": "BdD95xlJmb",
@@ -53,14 +53,14 @@
 			"clubName": "Yarraville Glory FC",
 			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
 			"position": 4,
-			"played": 8,
+			"played": 9,
 			"wins": 4,
-			"draws": 2,
+			"draws": 3,
 			"losses": 2,
 			"goalsFor": 30,
 			"goalsAgainst": 10,
 			"goalDifference": 20,
-			"points": 14
+			"points": 15
 		},
 		{
 			"teamId": "lNbjwEw3Nx",
@@ -83,14 +83,14 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 6,
-			"played": 9,
-			"wins": 3,
+			"played": 10,
+			"wins": 4,
 			"draws": 0,
 			"losses": 6,
-			"goalsFor": 20,
-			"goalsAgainst": 37,
-			"goalDifference": -17,
-			"points": 9
+			"goalsFor": 23,
+			"goalsAgainst": 38,
+			"goalDifference": -15,
+			"points": 12
 		},
 		{
 			"teamId": "vdWvpPMkKO",
@@ -113,13 +113,13 @@
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
 			"position": 8,
-			"played": 10,
+			"played": 11,
 			"wins": 0,
 			"draws": 0,
-			"losses": 10,
-			"goalsFor": 4,
-			"goalsAgainst": 62,
-			"goalDifference": -58,
+			"losses": 11,
+			"goalsFor": 5,
+			"goalsAgainst": 65,
+			"goalDifference": -60,
 			"points": 0
 		}
 	]

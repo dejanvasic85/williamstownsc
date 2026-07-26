@@ -946,7 +946,9 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
 			"address": "HD Graham Reserve Field 1 (North) Half A",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -958,7 +960,7 @@
 			"homeTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -971,7 +973,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
 			"address": "AW Bond Reserve Half A",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 14,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -984,7 +988,9 @@
 			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -997,7 +1003,9 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
 			"address": "Wyndham Vale North Reserve Main Pitch B - 9v9 (A)",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 13,

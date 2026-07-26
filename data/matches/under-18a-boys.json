@@ -717,7 +717,9 @@
 			"awayTeamName": "Spring Hills FC U18 Juniors - A Male U18 A BOYS - LUCAS",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -730,7 +732,9 @@
 			"awayTeamName": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
 			"address": "Myers Reserve Pitch 2",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -743,7 +747,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U18 Juniors - A Male",
 			"address": "HC Kim Reserve Pitch 3",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -756,7 +762,9 @@
 			"awayTeamName": "Williamstown SC U18 Juniors - A Male Under 18A Boys",
 			"address": "Waste Sense Park Pitch 3",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 13,
