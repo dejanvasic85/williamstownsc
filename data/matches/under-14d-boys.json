@@ -1194,7 +1194,9 @@
 			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 2",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,

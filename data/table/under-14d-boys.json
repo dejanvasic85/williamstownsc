@@ -3,11 +3,26 @@
 	"competition": "Mixed West 14D",
 	"entries": [
 		{
+			"teamId": "BdD95wGgmb",
+			"teamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
+			"clubName": "Hoppers Crossing SC",
+			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
+			"position": 1,
+			"played": 6,
+			"wins": 5,
+			"draws": 1,
+			"losses": 0,
+			"goalsFor": 20,
+			"goalsAgainst": 5,
+			"goalDifference": 15,
+			"points": 16
+		},
+		{
 			"teamId": "ydoJpx3aKD",
 			"teamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
 			"clubName": "Sunbury United FC",
 			"logoUrl": "https://ocean.dribl.com/c2d7cb601af445688a1d500797857c0d",
-			"position": 1,
+			"position": 2,
 			"played": 5,
 			"wins": 5,
 			"draws": 0,
@@ -15,21 +30,6 @@
 			"goalsFor": 28,
 			"goalsAgainst": 5,
 			"goalDifference": 23,
-			"points": 15
-		},
-		{
-			"teamId": "BdD95wGgmb",
-			"teamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
-			"clubName": "Hoppers Crossing SC",
-			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
-			"position": 2,
-			"played": 5,
-			"wins": 5,
-			"draws": 0,
-			"losses": 0,
-			"goalsFor": 19,
-			"goalsAgainst": 4,
-			"goalDifference": 15,
 			"points": 15
 		},
 		{
@@ -53,14 +53,14 @@
 			"clubName": "Aintree SC",
 			"logoUrl": "https://ocean.dribl.com/86f34bc0855a4f519dd696483def4a47",
 			"position": 4,
-			"played": 5,
+			"played": 6,
 			"wins": 3,
-			"draws": 1,
+			"draws": 2,
 			"losses": 1,
-			"goalsFor": 13,
-			"goalsAgainst": 8,
+			"goalsFor": 14,
+			"goalsAgainst": 9,
 			"goalDifference": 5,
-			"points": 10
+			"points": 11
 		},
 		{
 			"teamId": "ZNQxLk0Jmx",

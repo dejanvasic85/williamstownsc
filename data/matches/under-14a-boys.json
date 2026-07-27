@@ -784,7 +784,9 @@
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -881,13 +883,13 @@
 			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
-			"time": "11:15",
+			"time": "11:30",
 			"homeTeamId": "bgdMXan2KE",
 			"awayTeamId": "8nm7PgVNOq",
 			"homeTeamName": "Tarneit United SC U14 Juniors - A Mixed",
 			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
-			"address": "Tarneit Rise Synthetic Pitch Tarneit Rise Synthetic Pitch",
-			"coordinates": "-37.835861,144.664274",
+			"address": "Hummingbird Boulevard Reserve Pitch 1",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{

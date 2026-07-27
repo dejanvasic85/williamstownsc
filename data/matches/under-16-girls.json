@@ -551,19 +551,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
-			"awayTeamName": "Altona East SC U16 Juniors - B Female",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "13:45",
 			"homeTeamId": "bye",
 			"awayTeamId": "gld4pGXGdW",
@@ -571,6 +558,19 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-08-13",
+			"day": "Thursday",
+			"time": "19:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "7MNGvobEmA",
+			"homeTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
+			"awayTeamName": "Altona East SC U16 Juniors - B Female",
+			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
+			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
 		},
 		{
 			"round": 11,

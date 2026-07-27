@@ -748,7 +748,9 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - C Mixed Under 12 Boys (Marc/Lyall)",
 			"address": "Kurunjang Recreation Reserve 1B (Half)",
 			"coordinates": "-37.6742,144.584",
-			"status": "pending"
+			"homeScore": 6,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -976,7 +978,9 @@
 			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
 			"address": "Kurunjang Recreation Reserve 2A (Half)",
 			"coordinates": "-37.6742,144.584",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,
