@@ -880,7 +880,9 @@
 			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"address": "Webster Street Reserve Pitch 2B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 11,

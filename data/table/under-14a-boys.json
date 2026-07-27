@@ -53,14 +53,14 @@
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
 			"position": 4,
-			"played": 9,
-			"wins": 5,
+			"played": 10,
+			"wins": 6,
 			"draws": 0,
 			"losses": 4,
-			"goalsFor": 14,
+			"goalsFor": 16,
 			"goalsAgainst": 14,
-			"goalDifference": 0,
-			"points": 15
+			"goalDifference": 2,
+			"points": 18
 		},
 		{
 			"teamId": "lNbjllRpNx",
@@ -98,13 +98,13 @@
 			"clubName": "Wyndham FC",
 			"logoUrl": "https://ocean.dribl.com/f20d0e1df69046dfb92cfe65f203cf7f",
 			"position": 7,
-			"played": 9,
+			"played": 10,
 			"wins": 1,
 			"draws": 1,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 10,
-			"goalsAgainst": 38,
-			"goalDifference": -28,
+			"goalsAgainst": 40,
+			"goalDifference": -30,
 			"points": 4
 		},
 		{

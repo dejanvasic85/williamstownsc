@@ -1499,6 +1499,19 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
+			"time": "10:15",
+			"homeTeamId": "OVdz1bpKGr",
+			"awayTeamId": "LBdDx1O8db",
+			"homeTeamName": "Green Gully SC U12 Juniors - B Female U12 Girls Taimoor",
+			"awayTeamName": "Melton Phoenix FC U12 Juniors - B Female",
+			"address": "Green Gully Reserve Pitch 3 - Half Field A",
+			"coordinates": "-37.724344,144.817872",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
 			"time": "11:00",
 			"homeTeamId": "gld450DmW5",
 			"awayTeamId": "6lNbpDpwdx",
@@ -1519,19 +1532,6 @@
 			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (A)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "OVdz1bpKGr",
-			"awayTeamId": "LBdDx1O8db",
-			"homeTeamName": "Green Gully SC U12 Juniors - B Female U12 Girls Taimoor",
-			"awayTeamName": "Melton Phoenix FC U12 Juniors - B Female",
-			"address": "Green Gully Reserve Pitch 3 - Half Field A",
-			"coordinates": "-37.724344,144.817872",
 			"status": "pending"
 		},
 		{
