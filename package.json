@@ -50,7 +50,7 @@
 		"clsx": "2.1.1",
 		"daisyui": "5.7.4",
 		"date-fns": "4.4.0",
-		"lucide-react": "1.26.0",
+		"lucide-react": "1.27.0",
 		"next": "16.2.12",
 		"next-sanity": "13.2.1",
 		"pino": "10.3.1",
