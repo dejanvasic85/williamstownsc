@@ -47,7 +47,7 @@ To run the site locally, follow these steps:
 
 ### Prerequisites
 
-- Node.js installed (managed by Mise)
+- Node.js installed (version pinned in `.nvmrc`, e.g. via nvm/fnm)
 - pnpm
 - A Sanity account and project set up
 

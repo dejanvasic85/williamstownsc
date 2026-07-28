@@ -28,10 +28,13 @@ jobs:
       chunks: ${{ steps.chunk.outputs.chunks }}
     steps:
       - uses: actions/checkout@v7
-      - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
           version: 11.17.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - id: chunk
@@ -46,10 +49,13 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
-      - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
           version: 11.17.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
@@ -79,10 +85,13 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v7
-      - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
           version: 11.17.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Cache Playwright browsers
@@ -133,10 +142,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: jdx/mise-action@v4
       - uses: pnpm/action-setup@v6
         with:
           version: 11.17.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - uses: actions/download-artifact@v8

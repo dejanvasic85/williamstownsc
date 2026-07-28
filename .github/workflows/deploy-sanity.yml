@@ -19,11 +19,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - uses: jdx/mise-action@v4
-
       - uses: pnpm/action-setup@v6
         with:
           version: 11.17.0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
