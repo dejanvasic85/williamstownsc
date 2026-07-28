@@ -1179,19 +1179,6 @@
 			"round": 13,
 			"date": "2026-08-02",
 			"day": "Sunday",
-			"time": "11:15",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Surf Coast FC U16 Juniors - A Mixed",
-			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
-			"address": "Connewarre Reserve Pitch 2",
-			"coordinates": "-38.264844,144.396621",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
 			"time": "12:30",
 			"homeTeamId": "OVdzwWpmGr",
 			"awayTeamId": "3pmvQW0Edv",
@@ -1251,6 +1238,19 @@
 			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "15:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "nPmr7WjNow",
+			"homeTeamName": "Surf Coast FC U16 Juniors - A Mixed",
+			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
+			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},
 		{

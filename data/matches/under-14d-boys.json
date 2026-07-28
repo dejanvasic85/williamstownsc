@@ -1239,7 +1239,9 @@
 			"awayTeamName": "Footscray Rangers FC U14 Juniors - C Mixed Martin",
 			"address": "Avondale Heights Reserve Pitch 1",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,
