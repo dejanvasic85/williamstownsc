@@ -8,14 +8,14 @@
 			"clubName": "Dynamo Melbourne FC",
 			"logoUrl": "https://ocean.dribl.com/f052de0c3ad040c081d1945a110182d3",
 			"position": 1,
-			"played": 12,
-			"wins": 11,
+			"played": 13,
+			"wins": 12,
 			"draws": 1,
 			"losses": 0,
-			"goalsFor": 59,
+			"goalsFor": 62,
 			"goalsAgainst": 8,
-			"goalDifference": 51,
-			"points": 34
+			"goalDifference": 54,
+			"points": 37
 		},
 		{
 			"teamId": "lNbjPop6Nx",
@@ -143,13 +143,13 @@
 			"clubName": "Keon Park SC",
 			"logoUrl": "https://ocean.dribl.com/acf724855e4443ca99adb4e9ddc079c1",
 			"position": 10,
-			"played": 12,
+			"played": 13,
 			"wins": 0,
 			"draws": 2,
-			"losses": 10,
+			"losses": 11,
 			"goalsFor": 6,
-			"goalsAgainst": 52,
-			"goalDifference": -46,
+			"goalsAgainst": 55,
+			"goalDifference": -49,
 			"points": 2
 		}
 	]

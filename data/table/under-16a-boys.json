@@ -48,11 +48,26 @@
 			"points": 19
 		},
 		{
+			"teamId": "BdD9a1J8mb",
+			"teamName": "Greenvale United SC U16 Juniors - A Mixed",
+			"clubName": "Greenvale United SC",
+			"logoUrl": "https://ocean.dribl.com/4c443f48aa7346d19a9a6dead7f5acd3",
+			"position": 4,
+			"played": 10,
+			"wins": 5,
+			"draws": 4,
+			"losses": 1,
+			"goalsFor": 27,
+			"goalsAgainst": 14,
+			"goalDifference": 13,
+			"points": 19
+		},
+		{
 			"teamId": "2KpprE0bKY",
 			"teamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 4,
+			"position": 5,
 			"played": 10,
 			"wins": 6,
 			"draws": 1,
@@ -61,21 +76,6 @@
 			"goalsAgainst": 20,
 			"goalDifference": 9,
 			"points": 19
-		},
-		{
-			"teamId": "BdD9a1J8mb",
-			"teamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"clubName": "Greenvale United SC",
-			"logoUrl": "https://ocean.dribl.com/4c443f48aa7346d19a9a6dead7f5acd3",
-			"position": 5,
-			"played": 9,
-			"wins": 4,
-			"draws": 4,
-			"losses": 1,
-			"goalsFor": 24,
-			"goalsAgainst": 13,
-			"goalDifference": 11,
-			"points": 16
 		},
 		{
 			"teamId": "pN69jM02m0",
@@ -128,13 +128,13 @@
 			"clubName": "Northcote City FC",
 			"logoUrl": "https://ocean.dribl.com/ec9db56b702f499dbe52a5a818301df2",
 			"position": 9,
-			"played": 10,
+			"played": 11,
 			"wins": 3,
 			"draws": 2,
-			"losses": 5,
-			"goalsFor": 18,
-			"goalsAgainst": 21,
-			"goalDifference": -3,
+			"losses": 6,
+			"goalsFor": 19,
+			"goalsAgainst": 24,
+			"goalDifference": -5,
 			"points": 11
 		},
 		{

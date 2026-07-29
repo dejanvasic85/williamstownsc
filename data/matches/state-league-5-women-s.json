@@ -600,7 +600,9 @@
 			"awayTeamName": "Dynamo Melbourne FC Seniors Senior Women SL5",
 			"address": "JC Donath Reserve Pitch 8 KP",
 			"coordinates": "-37.700848,145.017287",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 9,
