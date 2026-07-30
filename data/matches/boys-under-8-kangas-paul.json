@@ -932,19 +932,6 @@
 			"date": "2026-08-02",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "Bjma0BXAdR",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Point Cook SC U08 MiniRoos - Kangaroos Mixed U8 Cyclones",
-			"awayTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8 Emad",
-			"address": "Costas Mitre 10 Park Pitch 3D, Galvin Park Reserve - Quarter Field (7v7)",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Altona North SC U08 MiniRoos - Kangaroos Mixed Masnou",
@@ -990,6 +977,19 @@
 			"awayTeamName": "Newport Storm FC U08 MiniRoos - Kangaroos Mixed Hakimi",
 			"address": "Costas Mitre 10 Park Pitch 4D, Galvin Park Reserve - Quarter Field (7v7)",
 			"coordinates": "-37.886177,144.651364",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "Bjma0BXAdR",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Point Cook SC U08 MiniRoos - Kangaroos Mixed U8 Cyclones",
+			"awayTeamName": "Werribee City FC U08 MiniRoos - Kangaroos Mixed U8 Emad",
+			"address": "Saltwater Reserve Pitch 3 SSF3 (U9)",
+			"coordinates": "-37.908433,144.755511",
 			"status": "pending"
 		},
 		{

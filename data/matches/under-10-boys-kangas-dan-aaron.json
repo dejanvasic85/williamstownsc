@@ -1169,6 +1169,19 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
+			"time": "09:30",
+			"homeTeamId": "AnmYzg4rNz",
+			"awayTeamId": "3vmZv9nLmq",
+			"homeTeamName": "Maidstone United SC U10 MiniRoos - Kangaroos Mixed Josh",
+			"awayTeamName": "Moonee Valley Knights SC U10 MiniRoos - Kangaroos Mixed Moonee  Valley Knights (Emad)",
+			"address": "Scovell Reserve Half Pitch",
+			"coordinates": "-37.784639,144.878892",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "6lNbpDlAdx",
 			"awayTeamId": "3vmZv3vbmq",
@@ -1202,19 +1215,6 @@
 			"awayTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
 			"address": "McIvor Reserve  Pitch 1 - Half (C+D)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "AnmYzg4rNz",
-			"awayTeamId": "3vmZv9nLmq",
-			"homeTeamName": "Maidstone United SC U10 MiniRoos - Kangaroos Mixed Josh",
-			"awayTeamName": "Moonee Valley Knights SC U10 MiniRoos - Kangaroos Mixed Moonee  Valley Knights (Emad)",
-			"address": "Scovell Reserve Quarter Pitch 7v7",
-			"coordinates": "-37.784639,144.878892",
 			"status": "pending"
 		},
 		{
