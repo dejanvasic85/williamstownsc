@@ -1027,19 +1027,6 @@
 			"date": "2026-07-12",
 			"day": "Sunday",
 			"time": "12:30",
-			"homeTeamId": "R1K3BvL3NQ",
-			"awayTeamId": "gld4pGXGdW",
-			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
-			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
-			"address": "Edwards Reserve Main Pitch",
-			"coordinates": "-37.827616,144.870036",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
-			"time": "12:30",
 			"homeTeamId": "3vmZv9nLmq",
 			"awayTeamId": "nPmrBk05mo",
 			"homeTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
@@ -1049,6 +1036,19 @@
 			"homeScore": 1,
 			"awayScore": 2,
 			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-09-13",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BvL3NQ",
+			"awayTeamId": "gld4pGXGdW",
+			"homeTeamName": "Melbourne City FC U14 Juniors - D Mixed",
+			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
+			"address": "Edwards Reserve Main Pitch",
+			"coordinates": "-37.827616,144.870036",
+			"status": "pending"
 		},
 		{
 			"round": 11,

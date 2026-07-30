@@ -1,7 +1,7 @@
 {
 	"competition": "Coles MiniRoos Mixed Sunday (U6 - U11)",
 	"season": 2026,
-	"totalFixtures": 89,
+	"totalFixtures": 90,
 	"totalRounds": 18,
 	"fixtures": [
 		{
@@ -1052,6 +1052,19 @@
 			"awayTeamName": "Avondale FC U09 MiniRoos - Kangaroos Mixed U9 - MiniRoos - Boys - Blake",
 			"address": "AW Bond Reserve Midi A",
 			"coordinates": "-37.827591,144.845123",
+			"status": "pending"
+		},
+		{
+			"round": 17,
+			"date": "2026-08-30",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "OVdz1bpKGr",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Green Gully SC U09 MiniRoos - Kangaroos Mixed U9 Boys Ethan & Rafi",
+			"awayTeamName": "Yarraville Glory FC U09 MiniRoos - Kangaroos Mixed",
+			"address": "Green Gully Reserve Pitch 2 - Midi Field B",
+			"coordinates": "-37.724344,144.817872",
 			"status": "pending"
 		},
 		{
