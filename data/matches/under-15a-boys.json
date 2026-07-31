@@ -690,7 +690,9 @@
 			"awayTeamName": "Surf Coast FC U15 Juniors - A Mixed",
 			"address": "City Vista Pavilion & Sports Field Pitch 3 (S)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,

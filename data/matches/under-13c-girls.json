@@ -797,7 +797,9 @@
 			"awayTeamName": "Maribyrnong Swifts FC U13 Juniors - C Female Silver",
 			"address": "Churchill Reserve Pitch 2 - Half Field A",
 			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -810,7 +812,9 @@
 			"awayTeamName": "Altona East SC U13 Juniors - C Female",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 12,

@@ -158,14 +158,14 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 11,
-			"played": 17,
-			"wins": 3,
+			"played": 18,
+			"wins": 4,
 			"draws": 6,
 			"losses": 8,
-			"goalsFor": 16,
-			"goalsAgainst": 27,
-			"goalDifference": -11,
-			"points": 15
+			"goalsFor": 18,
+			"goalsAgainst": 28,
+			"goalDifference": -10,
+			"points": 18
 		},
 		{
 			"teamId": "2KpvYnezmY",
@@ -173,13 +173,13 @@
 			"clubName": "Corio SC",
 			"logoUrl": "https://ocean.dribl.com/0e5506977eaf4897ab6a47e63ceb7a66",
 			"position": 12,
-			"played": 17,
+			"played": 18,
 			"wins": 4,
 			"draws": 2,
-			"losses": 11,
-			"goalsFor": 15,
-			"goalsAgainst": 32,
-			"goalDifference": -17,
+			"losses": 12,
+			"goalsFor": 16,
+			"goalsAgainst": 34,
+			"goalDifference": -18,
 			"points": 14
 		}
 	]

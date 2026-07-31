@@ -870,19 +870,6 @@
 			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "LBdDx0GQdb",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Surf Coast FC U14 Juniors - A Mixed",
-			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"address": "Connewarre Reserve Pitch 2",
-			"coordinates": "-38.264844,144.396621",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
 			"time": "11:30",
 			"homeTeamId": "bgdMXan2KE",
 			"awayTeamId": "8nm7PgVNOq",
@@ -890,6 +877,19 @@
 			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
 			"address": "Hummingbird Boulevard Reserve Pitch 1",
 			"coordinates": "-37.837381,144.663287",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "LBdDx0GQdb",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Surf Coast FC U14 Juniors - A Mixed",
+			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
+			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"coordinates": "-38.306639,144.324553",
 			"status": "pending"
 		},
 		{

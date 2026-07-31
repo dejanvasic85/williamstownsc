@@ -3,11 +3,26 @@
 	"competition": "Men's Metropolitan League 1",
 	"entries": [
 		{
+			"teamId": "BdD9E376mb",
+			"teamName": "South Yarra SC Seniors",
+			"clubName": "South Yarra SC",
+			"logoUrl": "https://ocean.dribl.com/644170b8a93a493196bcac5a05af176d",
+			"position": 1,
+			"played": 12,
+			"wins": 8,
+			"draws": 2,
+			"losses": 2,
+			"goalsFor": 49,
+			"goalsAgainst": 19,
+			"goalDifference": 30,
+			"points": 26
+		},
+		{
 			"teamId": "RdkE6xe2NG",
 			"teamName": "Fitzroy Lions SC Seniors",
 			"clubName": "Fitzroy Lions SC",
 			"logoUrl": "https://ocean.dribl.com/45b56101b9ae45d581ba6cfff3097f29",
-			"position": 1,
+			"position": 2,
 			"played": 11,
 			"wins": 7,
 			"draws": 2,
@@ -15,21 +30,6 @@
 			"goalsFor": 48,
 			"goalsAgainst": 17,
 			"goalDifference": 31,
-			"points": 23
-		},
-		{
-			"teamId": "BdD9E376mb",
-			"teamName": "South Yarra SC Seniors",
-			"clubName": "South Yarra SC",
-			"logoUrl": "https://ocean.dribl.com/644170b8a93a493196bcac5a05af176d",
-			"position": 2,
-			"played": 11,
-			"wins": 7,
-			"draws": 2,
-			"losses": 2,
-			"goalsFor": 44,
-			"goalsAgainst": 19,
-			"goalDifference": 25,
 			"points": 23
 		},
 		{
@@ -98,13 +98,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 7,
-			"played": 9,
+			"played": 10,
 			"wins": 2,
 			"draws": 3,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 18,
-			"goalsAgainst": 25,
-			"goalDifference": -7,
+			"goalsAgainst": 30,
+			"goalDifference": -12,
 			"points": 9
 		},
 		{

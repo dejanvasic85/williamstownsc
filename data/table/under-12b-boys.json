@@ -98,14 +98,14 @@
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
 			"position": 7,
-			"played": 5,
+			"played": 6,
 			"wins": 1,
-			"draws": 1,
+			"draws": 2,
 			"losses": 3,
-			"goalsFor": 12,
-			"goalsAgainst": 24,
+			"goalsFor": 15,
+			"goalsAgainst": 27,
 			"goalDifference": -12,
-			"points": 4
+			"points": 5
 		},
 		{
 			"teamId": "JmX4x75kmn",
@@ -113,14 +113,14 @@
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
 			"position": 8,
-			"played": 4,
+			"played": 5,
 			"wins": 1,
-			"draws": 0,
+			"draws": 1,
 			"losses": 3,
-			"goalsFor": 5,
-			"goalsAgainst": 11,
+			"goalsFor": 8,
+			"goalsAgainst": 14,
 			"goalDifference": -6,
-			"points": 3
+			"points": 4
 		},
 		{
 			"teamId": "8Nq73VLzd9",
