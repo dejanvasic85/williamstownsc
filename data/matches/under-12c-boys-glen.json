@@ -993,7 +993,9 @@
 			"awayTeamName": "Satellite City United SC U12 Juniors - C Mixed Soloman",
 			"address": "McIvor Reserve  Pitch 2 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 14,
+			"status": "complete"
 		},
 		{
 			"round": 12,
@@ -1051,7 +1053,9 @@
 			"awayTeamName": "Hoppers Crossing SC U12 Juniors - C Mixed u12 Shane D",
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,

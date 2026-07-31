@@ -510,7 +510,9 @@
 			"awayTeamName": "North Sunshine Eagles SC Seniors",
 			"address": "Clifton Park Synthetic",
 			"coordinates": "-37.767831,144.954905",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 7,

@@ -1545,7 +1545,9 @@
 			"awayTeamName": "Geelong Rangers SC Seniors",
 			"address": "Hume Reserve Pitch 1",
 			"coordinates": "-38.106011,144.339988",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 18,

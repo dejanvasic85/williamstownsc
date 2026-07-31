@@ -1236,19 +1236,6 @@
 			"day": "Sunday",
 			"time": "10:20",
 			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed chris",
-			"awayTeamName": "Williamstown SC U11 MiniRoos - Wallabies Mixed Boys Under 10K (Dan/Aaron)",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
-			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
-			"time": "10:20",
-			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "bgdMXan2KE",
 			"homeTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed u11 Steve",
 			"awayTeamName": "Tarneit United SC U11 MiniRoos - Wallabies Mixed",
@@ -1267,6 +1254,19 @@
 			"awayTeamName": "Truganina Lions FC U11 MiniRoos - Wallabies Mixed Boys U11 - Wallabies",
 			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Half Field (A)",
 			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "11:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed chris",
+			"awayTeamName": "Williamstown SC U11 MiniRoos - Wallabies Mixed Boys Under 10K (Dan/Aaron)",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
+			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{

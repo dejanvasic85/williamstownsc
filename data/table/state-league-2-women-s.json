@@ -68,14 +68,14 @@
 			"clubName": "Brunswick Zebras FC",
 			"logoUrl": "https://ocean.dribl.com/fcd9c186ffec46b08881b3573b897206",
 			"position": 5,
-			"played": 12,
-			"wins": 5,
+			"played": 13,
+			"wins": 6,
 			"draws": 4,
 			"losses": 3,
-			"goalsFor": 20,
+			"goalsFor": 24,
 			"goalsAgainst": 14,
-			"goalDifference": 6,
-			"points": 19
+			"goalDifference": 10,
+			"points": 22
 		},
 		{
 			"teamId": "WdgpaP8XmR",
@@ -113,13 +113,13 @@
 			"clubName": "North Sunshine Eagles SC",
 			"logoUrl": "https://ocean.dribl.com/2251bf99c3fd423b8cb51a515d4354fe",
 			"position": 8,
-			"played": 12,
+			"played": 13,
 			"wins": 3,
 			"draws": 2,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 15,
-			"goalsAgainst": 28,
-			"goalDifference": -13,
+			"goalsAgainst": 32,
+			"goalDifference": -17,
 			"points": 11
 		},
 		{

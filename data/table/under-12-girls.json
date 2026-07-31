@@ -188,14 +188,14 @@
 			"clubName": "Avondale FC",
 			"logoUrl": "https://ocean.dribl.com/aa620c163b524970beec05f0b0d95879",
 			"position": 13,
-			"played": 4,
-			"wins": 0,
+			"played": 5,
+			"wins": 1,
 			"draws": 1,
 			"losses": 3,
-			"goalsFor": 4,
+			"goalsFor": 7,
 			"goalsAgainst": 15,
-			"goalDifference": -11,
-			"points": 1
+			"goalDifference": -8,
+			"points": 4
 		},
 		{
 			"teamId": "8NOXEDy7KZ",
@@ -203,13 +203,13 @@
 			"clubName": "Green Gully SC",
 			"logoUrl": "https://ocean.dribl.com/d80a40a9a3014228ace8964a1b227744",
 			"position": 14,
-			"played": 5,
+			"played": 6,
 			"wins": 0,
 			"draws": 1,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 2,
-			"goalsAgainst": 13,
-			"goalDifference": -11,
+			"goalsAgainst": 16,
+			"goalDifference": -14,
 			"points": 1
 		}
 	]

@@ -1138,7 +1138,9 @@
 			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
 			"address": "Fairbairn Park Pitch 2",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,

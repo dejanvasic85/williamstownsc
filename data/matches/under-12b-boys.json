@@ -916,7 +916,9 @@
 			"awayTeamName": "Altona City SC U12 Juniors - B Mixed",
 			"address": "Paisley Park - Altona Magic SC Pitch 1 - Half A",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,

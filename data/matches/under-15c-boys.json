@@ -766,7 +766,9 @@
 			"awayTeamName": "Craigieburn City FC U15 Juniors - C Mixed Craigieburn City FC Black",
 			"address": "Kurunjang Recreation Reserve Pitch 1 (S)",
 			"coordinates": "-37.6742,144.584",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 12,

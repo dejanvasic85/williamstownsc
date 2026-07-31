@@ -1166,7 +1166,9 @@
 			"awayTeamName": "Melbourne City FC U14 Juniors - D Mixed",
 			"address": "Langama Park Pitch 2 - Full Field",
 			"coordinates": "-37.586728,144.709286",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 12,
