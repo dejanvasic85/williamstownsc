@@ -1223,19 +1223,6 @@
 			"date": "2026-08-02",
 			"day": "Sunday",
 			"time": "14:45",
-			"homeTeamId": "8nm7PgVNOq",
-			"awayTeamId": "wOmejJVeN0",
-			"homeTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
-			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
-			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ Clement)",
-			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
-		},
-		{
-			"round": 13,
-			"date": "2026-08-02",
-			"day": "Sunday",
-			"time": "14:45",
 			"homeTeamId": "gld4pGXGdW",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
@@ -1255,6 +1242,19 @@
 			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
+			"status": "pending"
+		},
+		{
+			"round": 13,
+			"date": "2026-08-02",
+			"day": "Sunday",
+			"time": "15:15",
+			"homeTeamId": "8nm7PgVNOq",
+			"awayTeamId": "wOmejJVeN0",
+			"homeTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
+			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
+			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ Clement)",
+			"coordinates": "-37.846664,144.856335",
 			"status": "pending"
 		},
 		{
