@@ -8,14 +8,14 @@
 			"clubName": "FC Strathmore Split",
 			"logoUrl": "https://ocean.dribl.com/eea604f0133145cfaa26c37f5c596ee5",
 			"position": 1,
-			"played": 17,
-			"wins": 12,
+			"played": 18,
+			"wins": 13,
 			"draws": 2,
 			"losses": 3,
-			"goalsFor": 46,
+			"goalsFor": 47,
 			"goalsAgainst": 21,
-			"goalDifference": 25,
-			"points": 38
+			"goalDifference": 26,
+			"points": 41
 		},
 		{
 			"teamId": "lNb3LEqyKx",
@@ -38,13 +38,13 @@
 			"clubName": "Western Eagles SC",
 			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
 			"position": 3,
-			"played": 17,
+			"played": 18,
 			"wins": 9,
 			"draws": 3,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 34,
-			"goalsAgainst": 21,
-			"goalDifference": 13,
+			"goalsAgainst": 22,
+			"goalDifference": 12,
 			"points": 30
 		},
 		{
