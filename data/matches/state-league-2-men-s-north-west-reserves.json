@@ -1560,7 +1560,9 @@
 			"awayTeamName": "Mill Park SC Reserves",
 			"address": "Findon Reserve Pitch 1",
 			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 18,
