@@ -855,7 +855,9 @@
 			"awayTeamName": "Gisborne SC U13 Juniors - C Female 13ML",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 13,

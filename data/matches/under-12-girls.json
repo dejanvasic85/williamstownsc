@@ -1209,7 +1209,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U12 Juniors - B Female",
 			"address": "HC Kim Reserve Pitch 3B",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
