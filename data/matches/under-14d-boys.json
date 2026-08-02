@@ -1301,7 +1301,9 @@
 			"awayTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"address": "Romsey Recreation Reserve Pitch 2",
 			"coordinates": "-37.353194,144.749117",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 13,
+			"status": "complete"
 		},
 		{
 			"round": 13,
