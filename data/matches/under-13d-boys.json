@@ -839,7 +839,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 6,
+			"awayScore": 10,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -1024,7 +1026,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
 			"address": "Alcock Road Reserve Pitch 2 - Half B",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1036,7 +1040,7 @@
 			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1062,7 +1066,9 @@
 			"awayTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"address": "Webster Street Reserve Pitch 2B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1075,7 +1081,9 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"address": "Saltwater Reserve Pitch 2 - SSF2 (U12)",
 			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
+			"homeScore": 9,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1088,7 +1096,9 @@
 			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "Alcock Road Reserve Pitch 2 - Half B",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 14,

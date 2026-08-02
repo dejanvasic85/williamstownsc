@@ -991,7 +991,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"address": "HC Kim Reserve Pitch 1A",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1017,7 +1019,9 @@
 			"awayTeamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
 			"address": "Ralph Reserve Main Pitch A (Half Field)",
 			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1030,7 +1034,9 @@
 			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
 			"address": "Balmoral Park Main Oval - Half A",
 			"coordinates": "-37.791615,144.765315",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1043,7 +1049,9 @@
 			"awayTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
 			"address": "Webster Street Reserve Pitch 4B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 14,

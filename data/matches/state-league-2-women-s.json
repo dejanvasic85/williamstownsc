@@ -525,7 +525,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Wallace Reserve Pitch 2",
 			"coordinates": "-37.694764,144.935299",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 8,

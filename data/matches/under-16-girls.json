@@ -697,7 +697,9 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -710,7 +712,9 @@
 			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 6,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -735,7 +739,7 @@
 			"awayTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 14,
