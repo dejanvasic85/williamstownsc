@@ -8,13 +8,13 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 1,
-			"played": 11,
+			"played": 12,
 			"wins": 9,
 			"draws": 1,
-			"losses": 1,
-			"goalsFor": 35,
-			"goalsAgainst": 7,
-			"goalDifference": 28,
+			"losses": 2,
+			"goalsFor": 36,
+			"goalsAgainst": 9,
+			"goalDifference": 27,
 			"points": 28
 		},
 		{
@@ -38,14 +38,14 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 3,
-			"played": 11,
-			"wins": 6,
+			"played": 12,
+			"wins": 7,
 			"draws": 0,
 			"losses": 5,
-			"goalsFor": 29,
+			"goalsFor": 35,
 			"goalsAgainst": 25,
-			"goalDifference": 4,
-			"points": 18
+			"goalDifference": 10,
+			"points": 21
 		},
 		{
 			"teamId": "ZNQxp79gmx",
@@ -68,14 +68,14 @@
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 5,
-			"played": 10,
-			"wins": 4,
+			"played": 11,
+			"wins": 5,
 			"draws": 1,
 			"losses": 5,
-			"goalsFor": 41,
-			"goalsAgainst": 18,
-			"goalDifference": 23,
-			"points": 13
+			"goalsFor": 43,
+			"goalsAgainst": 19,
+			"goalDifference": 24,
+			"points": 16
 		},
 		{
 			"teamId": "emAeLAaBmB",
@@ -98,13 +98,13 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 11,
+			"played": 12,
 			"wins": 1,
 			"draws": 0,
-			"losses": 10,
+			"losses": 11,
 			"goalsFor": 4,
-			"goalsAgainst": 60,
-			"goalDifference": -56,
+			"goalsAgainst": 66,
+			"goalDifference": -62,
 			"points": 3
 		}
 	]

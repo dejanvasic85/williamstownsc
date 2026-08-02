@@ -8,14 +8,14 @@
 			"clubName": "Caroline Springs George Cross FC",
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
 			"position": 1,
-			"played": 12,
-			"wins": 8,
+			"played": 13,
+			"wins": 9,
 			"draws": 2,
 			"losses": 2,
-			"goalsFor": 35,
+			"goalsFor": 40,
 			"goalsAgainst": 11,
-			"goalDifference": 24,
-			"points": 26
+			"goalDifference": 29,
+			"points": 29
 		},
 		{
 			"teamId": "yKJbo75JKY",
@@ -23,14 +23,14 @@
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
 			"position": 2,
-			"played": 12,
-			"wins": 7,
+			"played": 13,
+			"wins": 8,
 			"draws": 3,
 			"losses": 2,
-			"goalsFor": 26,
+			"goalsFor": 27,
 			"goalsAgainst": 15,
-			"goalDifference": 11,
-			"points": 24
+			"goalDifference": 12,
+			"points": 27
 		},
 		{
 			"teamId": "BdD9ZQbJmb",
@@ -68,13 +68,13 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 5,
-			"played": 12,
+			"played": 13,
 			"wins": 5,
 			"draws": 3,
-			"losses": 4,
+			"losses": 5,
 			"goalsFor": 32,
-			"goalsAgainst": 29,
-			"goalDifference": 3,
+			"goalsAgainst": 34,
+			"goalDifference": -2,
 			"points": 18
 		},
 		{
@@ -83,14 +83,14 @@
 			"clubName": "Albion Rovers FC",
 			"logoUrl": "https://ocean.dribl.com/a4cad5d980954d13a105d4665394e5d3",
 			"position": 6,
-			"played": 12,
+			"played": 13,
 			"wins": 4,
-			"draws": 2,
+			"draws": 3,
 			"losses": 6,
-			"goalsFor": 24,
-			"goalsAgainst": 29,
+			"goalsFor": 26,
+			"goalsAgainst": 31,
 			"goalDifference": -5,
-			"points": 14
+			"points": 15
 		},
 		{
 			"teamId": "BdD95X6Gmb",
@@ -98,13 +98,13 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 7,
-			"played": 12,
+			"played": 13,
 			"wins": 2,
 			"draws": 2,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 12,
-			"goalsAgainst": 34,
-			"goalDifference": -22,
+			"goalsAgainst": 35,
+			"goalDifference": -23,
 			"points": 8
 		},
 		{
@@ -113,14 +113,14 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 8,
-			"played": 12,
+			"played": 13,
 			"wins": 1,
-			"draws": 0,
+			"draws": 1,
 			"losses": 11,
-			"goalsFor": 11,
-			"goalsAgainst": 36,
+			"goalsFor": 13,
+			"goalsAgainst": 38,
 			"goalDifference": -25,
-			"points": 3
+			"points": 4
 		}
 	]
 }

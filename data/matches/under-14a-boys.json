@@ -799,7 +799,9 @@
 			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
 			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -812,7 +814,9 @@
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "Hummingbird Boulevard Reserve Pitch 1",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -825,7 +829,9 @@
 			"awayTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -838,7 +844,9 @@
 			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 14,

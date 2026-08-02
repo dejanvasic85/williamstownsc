@@ -881,7 +881,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 14,
