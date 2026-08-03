@@ -83,14 +83,14 @@
 			"clubName": "Melbourne University SC",
 			"logoUrl": "https://ocean.dribl.com/6435e190252342ac9faa3809e5a12f6b",
 			"position": 6,
-			"played": 12,
+			"played": 13,
 			"wins": 3,
-			"draws": 2,
+			"draws": 3,
 			"losses": 7,
-			"goalsFor": 23,
-			"goalsAgainst": 27,
+			"goalsFor": 24,
+			"goalsAgainst": 28,
 			"goalDifference": -4,
-			"points": 11
+			"points": 12
 		},
 		{
 			"teamId": "emAeLp38mB",
@@ -98,14 +98,14 @@
 			"clubName": "Barnstoneworth United FC",
 			"logoUrl": "https://ocean.dribl.com/fa250c47c9904e3496de00a27664dacc",
 			"position": 7,
-			"played": 12,
+			"played": 13,
 			"wins": 3,
-			"draws": 1,
+			"draws": 2,
 			"losses": 8,
-			"goalsFor": 19,
-			"goalsAgainst": 46,
+			"goalsFor": 20,
+			"goalsAgainst": 47,
 			"goalDifference": -27,
-			"points": 10
+			"points": 11
 		},
 		{
 			"teamId": "jdylGGY6K5",

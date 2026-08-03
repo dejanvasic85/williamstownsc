@@ -808,19 +808,6 @@
 			"round": 9,
 			"date": "2026-06-28",
 			"day": "Sunday",
-			"time": "09:00",
-			"homeTeamId": "08NOpe5WKZ",
-			"awayTeamId": "6lNbpDpwdx",
-			"homeTeamName": "Middle Park FC U09 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
-			"address": "JL Murphy Reserve Pitch 3C (7v7)",
-			"coordinates": "-37.834006,144.92755",
-			"status": "postponed"
-		},
-		{
-			"round": 9,
-			"date": "2026-06-28",
-			"day": "Sunday",
 			"time": "10:00",
 			"homeTeamId": "bgdMXan2KE",
 			"awayTeamId": "Bjma0BXAdR",
@@ -854,6 +841,19 @@
 			"address": "",
 			"coordinates": "",
 			"status": "complete"
+		},
+		{
+			"round": 9,
+			"date": "2026-08-06",
+			"day": "Thursday",
+			"time": "17:15",
+			"homeTeamId": "08NOpe5WKZ",
+			"awayTeamId": "6lNbpDpwdx",
+			"homeTeamName": "Middle Park FC U09 MiniRoos - Wallabies Mixed",
+			"awayTeamName": "Williamstown SC U09 MiniRoos - Wallabies Mixed Boys Under 9W (Eric/Nate)",
+			"address": "JL Murphy Reserve Pitch 3C (7v7)",
+			"coordinates": "-37.834006,144.92755",
+			"status": "pending"
 		},
 		{
 			"round": 10,
