@@ -588,7 +588,9 @@
 			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "Wyndham Vale North Reserve Main Pitch B - 9v9 (A)",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 7,
@@ -661,7 +663,9 @@
 			"awayTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"address": "AW Bond Reserve Half A",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 8,
@@ -1053,7 +1057,9 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 13,

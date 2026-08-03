@@ -83,14 +83,14 @@
 			"clubName": "Barnstoneworth United FC",
 			"logoUrl": "https://ocean.dribl.com/fa250c47c9904e3496de00a27664dacc",
 			"position": 6,
-			"played": 4,
-			"wins": 2,
+			"played": 5,
+			"wins": 3,
 			"draws": 0,
 			"losses": 2,
-			"goalsFor": 12,
-			"goalsAgainst": 8,
-			"goalDifference": 4,
-			"points": 6
+			"goalsFor": 17,
+			"goalsAgainst": 9,
+			"goalDifference": 8,
+			"points": 9
 		},
 		{
 			"teamId": "emAe5MMxmB",
@@ -98,14 +98,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 7,
-			"played": 5,
-			"wins": 2,
+			"played": 6,
+			"wins": 3,
 			"draws": 0,
 			"losses": 3,
-			"goalsFor": 25,
-			"goalsAgainst": 24,
-			"goalDifference": 1,
-			"points": 6
+			"goalsFor": 32,
+			"goalsAgainst": 25,
+			"goalDifference": 7,
+			"points": 9
 		},
 		{
 			"teamId": "gdME0g4QdE",
@@ -128,13 +128,13 @@
 			"clubName": "Wyndham FC",
 			"logoUrl": "https://ocean.dribl.com/f20d0e1df69046dfb92cfe65f203cf7f",
 			"position": 9,
-			"played": 4,
+			"played": 6,
 			"wins": 1,
 			"draws": 1,
-			"losses": 2,
-			"goalsFor": 7,
-			"goalsAgainst": 17,
-			"goalDifference": -10,
+			"losses": 4,
+			"goalsFor": 9,
+			"goalsAgainst": 25,
+			"goalDifference": -16,
 			"points": 4
 		},
 		{
@@ -158,14 +158,14 @@
 			"clubName": "Newport Storm FC",
 			"logoUrl": "https://ocean.dribl.com/016071f6159842959c3a997cdfc93490",
 			"position": 11,
-			"played": 3,
-			"wins": 0,
+			"played": 5,
+			"wins": 1,
 			"draws": 0,
-			"losses": 3,
-			"goalsFor": 2,
-			"goalsAgainst": 21,
-			"goalDifference": -19,
-			"points": 0
+			"losses": 4,
+			"goalsFor": 6,
+			"goalsAgainst": 29,
+			"goalDifference": -23,
+			"points": 3
 		}
 	]
 }

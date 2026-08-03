@@ -1151,7 +1151,9 @@
 			"awayTeamName": "Altona City SC U13 Juniors - A Mixed",
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 14,

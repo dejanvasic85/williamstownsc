@@ -820,7 +820,9 @@
 			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
 			"address": "Aston Fields Pitch 3",
 			"coordinates": "-37.597457,144.890302",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 13,

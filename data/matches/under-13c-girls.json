@@ -606,7 +606,9 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - C Female",
 			"address": "McIvor Reserve  Pitch 1 - Half (C+D)",
 			"coordinates": "-37.821079,144.869684",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -870,7 +872,9 @@
 			"awayTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"address": "Johnson Reserve Pitch 1A",
 			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 13,

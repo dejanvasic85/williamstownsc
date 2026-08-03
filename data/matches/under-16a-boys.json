@@ -1263,7 +1263,9 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
 			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ Clement)",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,
