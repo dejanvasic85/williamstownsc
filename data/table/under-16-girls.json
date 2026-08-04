@@ -8,14 +8,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 1,
-			"played": 11,
-			"wins": 9,
+			"played": 12,
+			"wins": 10,
 			"draws": 2,
 			"losses": 0,
-			"goalsFor": 55,
+			"goalsFor": 58,
 			"goalsAgainst": 11,
-			"goalDifference": 44,
-			"points": 29
+			"goalDifference": 47,
+			"points": 32
 		},
 		{
 			"teamId": "RdkEpOQBNG",
@@ -38,13 +38,13 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 3,
-			"played": 12,
+			"played": 13,
 			"wins": 7,
 			"draws": 0,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 35,
-			"goalsAgainst": 25,
-			"goalDifference": 10,
+			"goalsAgainst": 28,
+			"goalDifference": 7,
 			"points": 21
 		},
 		{

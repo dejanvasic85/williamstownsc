@@ -53,14 +53,14 @@
 			"clubName": "Lalor United FC",
 			"logoUrl": "https://ocean.dribl.com/ada34c636e4f49878c9550a35fc4c510",
 			"position": 4,
-			"played": 12,
-			"wins": 6,
+			"played": 13,
+			"wins": 7,
 			"draws": 2,
 			"losses": 4,
-			"goalsFor": 42,
+			"goalsFor": 45,
 			"goalsAgainst": 29,
-			"goalDifference": 13,
-			"points": 20
+			"goalDifference": 16,
+			"points": 23
 		},
 		{
 			"teamId": "BdD9a1J8mb",
@@ -158,13 +158,13 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 11,
-			"played": 12,
+			"played": 13,
 			"wins": 3,
 			"draws": 1,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 20,
-			"goalsAgainst": 30,
-			"goalDifference": -10,
+			"goalsAgainst": 33,
+			"goalDifference": -13,
 			"points": 10
 		},
 		{

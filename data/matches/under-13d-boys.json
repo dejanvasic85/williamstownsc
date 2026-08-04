@@ -735,7 +735,9 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"address": "Wyndham Vale North Reserve Main Pitch B - 9v9 (A)",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 9,
@@ -748,7 +750,9 @@
 			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "Alcock Road Reserve Pitch 3 - Half B",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,

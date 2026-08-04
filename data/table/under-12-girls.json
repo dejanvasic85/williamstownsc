@@ -153,11 +153,26 @@
 			"points": 8
 		},
 		{
+			"teamId": "JmX40j1Lmn",
+			"teamName": "St Albans Saints Dinamo SC U12 Juniors - B Female St Albans Dinamo U12 Girls",
+			"clubName": "St Albans Saints Dinamo SC",
+			"logoUrl": "https://ocean.dribl.com/64ca90acfaee4722b5315caaa7f06c2f",
+			"position": 11,
+			"played": 6,
+			"wins": 1,
+			"draws": 2,
+			"losses": 3,
+			"goalsFor": 5,
+			"goalsAgainst": 9,
+			"goalDifference": -4,
+			"points": 5
+		},
+		{
 			"teamId": "EN2nWqkVNq",
 			"teamName": "Williamstown SC U12 Juniors - B Female Girls Under 12",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 11,
+			"position": 12,
 			"played": 7,
 			"wins": 1,
 			"draws": 2,
@@ -168,34 +183,19 @@
 			"points": 5
 		},
 		{
-			"teamId": "JmX40j1Lmn",
-			"teamName": "St Albans Saints Dinamo SC U12 Juniors - B Female St Albans Dinamo U12 Girls",
-			"clubName": "St Albans Saints Dinamo SC",
-			"logoUrl": "https://ocean.dribl.com/64ca90acfaee4722b5315caaa7f06c2f",
-			"position": 12,
-			"played": 5,
-			"wins": 1,
-			"draws": 1,
-			"losses": 3,
-			"goalsFor": 4,
-			"goalsAgainst": 8,
-			"goalDifference": -4,
-			"points": 4
-		},
-		{
 			"teamId": "EN2n23OENq",
 			"teamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Remi & Clarissa",
 			"clubName": "Avondale FC",
 			"logoUrl": "https://ocean.dribl.com/aa620c163b524970beec05f0b0d95879",
 			"position": 13,
-			"played": 6,
+			"played": 7,
 			"wins": 1,
-			"draws": 1,
+			"draws": 2,
 			"losses": 4,
-			"goalsFor": 8,
-			"goalsAgainst": 21,
+			"goalsFor": 9,
+			"goalsAgainst": 22,
 			"goalDifference": -13,
-			"points": 4
+			"points": 5
 		},
 		{
 			"teamId": "8NOXEDy7KZ",

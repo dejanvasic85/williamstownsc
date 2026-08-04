@@ -38,14 +38,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 3,
-			"played": 12,
-			"wins": 8,
+			"played": 11,
+			"wins": 7,
 			"draws": 0,
 			"losses": 4,
-			"goalsFor": 37,
+			"goalsFor": 34,
 			"goalsAgainst": 19,
-			"goalDifference": 18,
-			"points": 24
+			"goalDifference": 15,
+			"points": 21
 		},
 		{
 			"teamId": "ZKRP0gkPmk",
@@ -53,13 +53,13 @@
 			"clubName": "Yarraville Glory FC",
 			"logoUrl": "https://ocean.dribl.com/8b733b01a7cb49a39fa17f4cdbe84873",
 			"position": 4,
-			"played": 10,
+			"played": 9,
 			"wins": 5,
 			"draws": 3,
-			"losses": 2,
+			"losses": 1,
 			"goalsFor": 35,
-			"goalsAgainst": 11,
-			"goalDifference": 24,
+			"goalsAgainst": 8,
+			"goalDifference": 27,
 			"points": 18
 		},
 		{
