@@ -1330,7 +1330,9 @@
 			"awayTeamName": "Surf Coast FC U16 Juniors - A Mixed",
 			"address": "HR Uren Reserve Pitch 1",
 			"coordinates": "-37.68317,144.98957",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,

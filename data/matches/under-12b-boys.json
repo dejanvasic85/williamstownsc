@@ -757,7 +757,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"address": "AW Bond Reserve Half A",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
+			"homeScore": 10,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 10,

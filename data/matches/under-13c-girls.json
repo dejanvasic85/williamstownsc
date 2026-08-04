@@ -674,21 +674,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "bgdMXaXpKE",
-			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
-			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
-			"address": "JT Gray Reserve Pitch 3A - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"homeScore": 3,
-			"awayScore": 0,
-			"status": "complete"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "13:45",
 			"homeTeamId": "gld4pGXGdW",
 			"awayTeamId": "bgdMM4ZdE2",
@@ -711,6 +696,19 @@
 			"awayTeamName": "St Albans Saints Dinamo SC U13 Juniors - C Female St Albans Dinamo U13 Girls",
 			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-08-18",
+			"day": "Tuesday",
+			"time": "18:00",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "bgdMXaXpKE",
+			"homeTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
+			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
+			"address": "JT Gray Reserve Pitch 3A - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{

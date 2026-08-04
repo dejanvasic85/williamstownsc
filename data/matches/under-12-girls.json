@@ -825,7 +825,9 @@
 			"awayTeamName": "St Albans Saints Dinamo SC U12 Juniors - B Female St Albans Dinamo U12 Girls",
 			"address": "Fairbairn Park Pitch 5B - Half Field",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 9,
