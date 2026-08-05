@@ -1308,19 +1308,6 @@
 			"date": "2026-08-09",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "gld450DmW5",
-			"awayTeamId": "gld4pGXGdW",
-			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
-			"awayTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
-			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
-			"coordinates": "-37.777915,144.885698",
-			"status": "pending"
-		},
-		{
-			"round": 14,
-			"date": "2026-08-09",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "R1K3pRLdQ9",
 			"awayTeamId": "3pmvQp0Ldv",
 			"homeTeamName": "St Albans Saints Dinamo SC U12 Juniors - B Female St Albans Dinamo U12 Girls",
@@ -1353,6 +1340,19 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - B Female Girls Under 12",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (B)",
 			"coordinates": "-37.714141,144.726888",
+			"status": "pending"
+		},
+		{
+			"round": 14,
+			"date": "2026-08-09",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "gld450DmW5",
+			"awayTeamId": "gld4pGXGdW",
+			"homeTeamName": "Melbourne Knights FC U12 Juniors - B Female MKFC U12 Girls B",
+			"awayTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
+			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
+			"coordinates": "-37.777915,144.885698",
 			"status": "pending"
 		},
 		{
