@@ -1377,19 +1377,6 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
-			"time": "13:15",
-			"homeTeamId": "6lNbpDpwdx",
-			"awayTeamId": "nPmr7WjNow",
-			"homeTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
-			"address": "JT Gray Reserve Pitch 3 - WSC",
-			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
 			"time": "13:30",
 			"homeTeamId": "3pmvQW0Edv",
 			"awayTeamId": "gld4pGXGdW",
@@ -1423,6 +1410,19 @@
 			"awayTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
+			"time": "15:15",
+			"homeTeamId": "6lNbpDpwdx",
+			"awayTeamId": "nPmr7WjNow",
+			"homeTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
+			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
 		{
