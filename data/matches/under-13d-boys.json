@@ -812,19 +812,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
-			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
-			"address": "AW Bond Reserve Half A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "10:10",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "Bjma0RXqdR",
@@ -862,6 +849,19 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-09-13",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
+			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
+			"address": "AW Bond Reserve Half A",
+			"coordinates": "-37.827591,144.845123",
 			"status": "pending"
 		},
 		{
