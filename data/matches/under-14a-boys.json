@@ -1140,16 +1140,16 @@
 		},
 		{
 			"round": 19,
-			"date": "2026-07-05",
-			"day": "Sunday",
-			"time": "19:00",
+			"date": "2026-08-22",
+			"day": "Saturday",
+			"time": "11:30",
 			"homeTeamId": "7MNGvappmA",
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"awayTeamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"address": "Myers Reserve Pitch 2",
+			"address": "Myers Reserve Pitch 3",
 			"coordinates": "-38.09538,144.320027",
-			"status": "washout reschedule"
+			"status": "pending"
 		},
 		{
 			"round": 19,
