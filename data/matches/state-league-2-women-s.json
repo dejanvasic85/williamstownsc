@@ -984,7 +984,9 @@
 			"awayTeamName": "Pascoe Vale FC Seniors",
 			"address": "Dunstan Reserve Pitch 1",
 			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,

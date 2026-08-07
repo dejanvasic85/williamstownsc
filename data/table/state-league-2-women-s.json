@@ -38,14 +38,14 @@
 			"clubName": "Brunswick City SC",
 			"logoUrl": "https://ocean.dribl.com/a9c59ac29c724966999fd327bb5e1f7a",
 			"position": 3,
-			"played": 12,
-			"wins": 7,
+			"played": 13,
+			"wins": 8,
 			"draws": 4,
 			"losses": 1,
-			"goalsFor": 31,
+			"goalsFor": 38,
 			"goalsAgainst": 12,
-			"goalDifference": 19,
-			"points": 25
+			"goalDifference": 26,
+			"points": 28
 		},
 		{
 			"teamId": "yKJbE0lbKY",
@@ -128,13 +128,13 @@
 			"clubName": "Pascoe Vale FC",
 			"logoUrl": "https://ocean.dribl.com/28902757e425496ebb9fbcef551db4cf",
 			"position": 9,
-			"played": 11,
+			"played": 12,
 			"wins": 1,
 			"draws": 1,
-			"losses": 9,
+			"losses": 10,
 			"goalsFor": 9,
-			"goalsAgainst": 34,
-			"goalDifference": -25,
+			"goalsAgainst": 41,
+			"goalDifference": -32,
 			"points": 4
 		},
 		{
