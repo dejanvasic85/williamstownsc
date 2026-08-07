@@ -61,6 +61,10 @@ jobs:
     timeout-minutes: 20
     needs: [changes, test]
     if: ${{ needs.changes.outputs.app == 'true' }}
+    permissions:
+      contents: read
+      deployments: read
+      statuses: read
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -76,17 +80,15 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
       - name: Pull environment variables from Vercel
         run: pnpm dlx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
-      - name: Wait for Vercel preview deployment
-        uses: patrickedqvist/wait-for-vercel-preview@v1.3.3
+      - name: Wait for Vercel deployment
+        uses: vercel/wait-for-deployment-action@0e2b0c5c5cce31f1648108aeec56467187aca037
         id: wait_for_vercel
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 300
-          check_interval: 10
+          environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
       - name: Run E2E tests
         run: pnpm run test:e2e
         env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ steps.wait_for_vercel.outputs.url }}
+          PLAYWRIGHT_TEST_BASE_URL: ${{ steps.wait_for_vercel.outputs.deployment-url }}
       - name: Upload test results
         uses: actions/upload-artifact@v7
         if: failure()
