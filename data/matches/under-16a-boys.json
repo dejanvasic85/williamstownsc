@@ -720,7 +720,7 @@
 			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
+			"status": "postponed"
 		},
 		{
 			"round": 8,
@@ -981,12 +981,12 @@
 			"round": 10,
 			"date": "2026-08-08",
 			"day": "Saturday",
-			"time": "14:00",
+			"time": "12:45",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "gld4pGXGdW",
 			"homeTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
 			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
-			"address": "JT Gray Reserve Pitch 1 - WSC",
+			"address": "JT Gray Reserve Pitch 3 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
