@@ -164,6 +164,7 @@ type FeedArticleQueryResult = Omit<NewsArticle, 'featuredImage'> & {
 	featuredImage?: {
 		alt?: string;
 		asset?: {
+			_id?: string;
 			extension?: string;
 			mimeType?: string;
 		};
@@ -180,6 +181,7 @@ export async function getAllArticlesForFeed() {
 		featuredImage {
 			...,
 			asset-> {
+				_id,
 				extension,
 				mimeType
 			}
