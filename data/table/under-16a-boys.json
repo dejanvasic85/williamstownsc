@@ -8,14 +8,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 1,
-			"played": 11,
+			"played": 12,
 			"wins": 8,
-			"draws": 2,
+			"draws": 3,
 			"losses": 1,
 			"goalsFor": 33,
 			"goalsAgainst": 15,
 			"goalDifference": 18,
-			"points": 26
+			"points": 27
 		},
 		{
 			"teamId": "2KpprE0bKY",
@@ -113,14 +113,14 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 8,
-			"played": 11,
+			"played": 12,
 			"wins": 4,
-			"draws": 2,
+			"draws": 3,
 			"losses": 5,
 			"goalsFor": 13,
 			"goalsAgainst": 19,
 			"goalDifference": -6,
-			"points": 14
+			"points": 15
 		},
 		{
 			"teamId": "EN2n2RzrNq",

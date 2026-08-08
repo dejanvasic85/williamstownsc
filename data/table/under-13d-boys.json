@@ -33,11 +33,26 @@
 			"points": 15
 		},
 		{
+			"teamId": "ZKRPZ6Wymk",
+			"teamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 3,
+			"played": 7,
+			"wins": 4,
+			"draws": 1,
+			"losses": 2,
+			"goalsFor": 17,
+			"goalsAgainst": 15,
+			"goalDifference": 2,
+			"points": 13
+		},
+		{
 			"teamId": "nmYZ7RapNz",
 			"teamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"clubName": "Barnstoneworth United FC",
 			"logoUrl": "https://ocean.dribl.com/fa250c47c9904e3496de00a27664dacc",
-			"position": 3,
+			"position": 4,
 			"played": 6,
 			"wins": 4,
 			"draws": 0,
@@ -46,21 +61,6 @@
 			"goalsAgainst": 9,
 			"goalDifference": 9,
 			"points": 12
-		},
-		{
-			"teamId": "ZKRPZ6Wymk",
-			"teamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 4,
-			"played": 6,
-			"wins": 3,
-			"draws": 1,
-			"losses": 2,
-			"goalsFor": 13,
-			"goalsAgainst": 15,
-			"goalDifference": -2,
-			"points": 10
 		},
 		{
 			"teamId": "1K3v3Lk7NQ",
@@ -138,26 +138,11 @@
 			"points": 4
 		},
 		{
-			"teamId": "8Nq73QQyd9",
-			"teamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"clubName": "Truganina Lions FC",
-			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
-			"position": 10,
-			"played": 5,
-			"wins": 1,
-			"draws": 0,
-			"losses": 4,
-			"goalsFor": 9,
-			"goalsAgainst": 32,
-			"goalDifference": -23,
-			"points": 3
-		},
-		{
 			"teamId": "8Nq73zvgd9",
 			"teamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"clubName": "Newport Storm FC",
 			"logoUrl": "https://ocean.dribl.com/016071f6159842959c3a997cdfc93490",
-			"position": 11,
+			"position": 10,
 			"played": 5,
 			"wins": 1,
 			"draws": 0,
@@ -165,6 +150,21 @@
 			"goalsFor": 6,
 			"goalsAgainst": 29,
 			"goalDifference": -23,
+			"points": 3
+		},
+		{
+			"teamId": "8Nq73QQyd9",
+			"teamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
+			"clubName": "Truganina Lions FC",
+			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
+			"position": 11,
+			"played": 6,
+			"wins": 1,
+			"draws": 0,
+			"losses": 5,
+			"goalsFor": 9,
+			"goalsAgainst": 36,
+			"goalDifference": -27,
 			"points": 3
 		}
 	]
