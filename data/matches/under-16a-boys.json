@@ -1280,7 +1280,9 @@
 			"awayTeamName": "Northcote City FC U16 Juniors - A Mixed Northcote City FC - U16 Boys Blue Community",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1293,7 +1295,9 @@
 			"awayTeamName": "Western Suburbs SC U16 Juniors - A Mixed U16 Arthur - A",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1319,7 +1323,9 @@
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Dixon Field Reserve Pitch A",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1347,7 +1353,9 @@
 			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
 			"address": "Paisley Park - Altona Magic SC Pitch 1",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 15,

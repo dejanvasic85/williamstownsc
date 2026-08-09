@@ -504,7 +504,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Princes Park Oval Pitch 2",
 			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 8,

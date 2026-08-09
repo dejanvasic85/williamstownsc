@@ -999,7 +999,9 @@
 			"awayTeamName": "Keon Park SC Seniors",
 			"address": "Gilwell Park (Mosaic Reserve) Pitch 1",
 			"coordinates": "-37.666384,144.994017",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1012,7 +1014,9 @@
 			"awayTeamName": "Moreland Eagles FC Seniors",
 			"address": "More Park Northern Field",
 			"coordinates": "-37.772482,144.796616",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1025,7 +1029,9 @@
 			"awayTeamName": "Spring Hills FC Seniors state league 2 women",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1038,7 +1044,9 @@
 			"awayTeamName": "Altona East SC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,

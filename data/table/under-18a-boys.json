@@ -8,14 +8,14 @@
 			"clubName": "Caroline Springs George Cross FC",
 			"logoUrl": "https://ocean.dribl.com/3532cecf8a87412ea102902cfce8a70d",
 			"position": 1,
-			"played": 13,
-			"wins": 9,
+			"played": 14,
+			"wins": 10,
 			"draws": 2,
 			"losses": 2,
-			"goalsFor": 40,
-			"goalsAgainst": 11,
-			"goalDifference": 29,
-			"points": 29
+			"goalsFor": 42,
+			"goalsAgainst": 12,
+			"goalDifference": 30,
+			"points": 32
 		},
 		{
 			"teamId": "yKJbo75JKY",
@@ -38,13 +38,13 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 3,
-			"played": 13,
+			"played": 14,
 			"wins": 8,
 			"draws": 1,
-			"losses": 4,
-			"goalsFor": 28,
-			"goalsAgainst": 22,
-			"goalDifference": 6,
+			"losses": 5,
+			"goalsFor": 29,
+			"goalsAgainst": 24,
+			"goalDifference": 5,
 			"points": 25
 		},
 		{
@@ -53,13 +53,13 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 4,
-			"played": 13,
+			"played": 14,
 			"wins": 7,
 			"draws": 1,
-			"losses": 5,
+			"losses": 6,
 			"goalsFor": 28,
-			"goalsAgainst": 20,
-			"goalDifference": 8,
+			"goalsAgainst": 22,
+			"goalDifference": 6,
 			"points": 22
 		},
 		{
@@ -113,14 +113,14 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 8,
-			"played": 13,
-			"wins": 1,
+			"played": 14,
+			"wins": 2,
 			"draws": 1,
 			"losses": 11,
-			"goalsFor": 13,
+			"goalsFor": 15,
 			"goalsAgainst": 38,
-			"goalDifference": -25,
-			"points": 4
+			"goalDifference": -23,
+			"points": 7
 		}
 	]
 }

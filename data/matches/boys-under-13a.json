@@ -1166,7 +1166,9 @@
 			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
 			"address": "AB Shaw Reserve Pitch 1 - Half A",
 			"coordinates": "-37.865571,144.783747",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1179,7 +1181,9 @@
 			"awayTeamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
 			"address": "HC Kim Reserve Pitch 2A",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1192,7 +1196,9 @@
 			"awayTeamName": "Williams Landing SC U13 Juniors - A Mixed WLFC U13A - Eintracht Frankfurt",
 			"address": "Myers Reserve Pitch 1A - Half (9v9)",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1218,7 +1224,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"address": "Club Italia Sporting Club Pitch 2 - Half Field A",
 			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1231,7 +1239,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
 			"address": "Hummingbird Boulevard Reserve 2A (Half)",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,

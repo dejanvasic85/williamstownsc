@@ -859,7 +859,9 @@
 			"awayTeamName": "Wyndham FC U14 Juniors - A Mixed Under 14 A SPA",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -872,7 +874,9 @@
 			"awayTeamName": "Werribee City FC U14 Juniors - A Mixed U14 Nick D",
 			"address": "Myers Reserve Pitch 3",
 			"coordinates": "-38.09538,144.320027",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -891,14 +895,16 @@
 			"round": 14,
 			"date": "2026-08-09",
 			"day": "Sunday",
-			"time": "12:00",
+			"time": "12:15",
 			"homeTeamId": "LBdDx0GQdb",
 			"awayTeamId": "3vmZv3vbmq",
 			"homeTeamName": "Surf Coast FC U14 Juniors - A Mixed",
 			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
-			"address": "Banyul-Warri Reserve Yurrock Pitch 3",
+			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
