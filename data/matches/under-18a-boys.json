@@ -867,7 +867,9 @@
 			"awayTeamName": "Sydenham Park SC U18 Juniors - A Male U18 Boys Zoran - A",
 			"address": "HC Kim Reserve Pitch 3",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 14,
