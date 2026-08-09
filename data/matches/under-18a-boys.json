@@ -882,7 +882,9 @@
 			"awayTeamName": "Geelong Rangers SC U18 Juniors - A Male U18 Metro",
 			"address": "Waste Sense Park Pitch 3",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
