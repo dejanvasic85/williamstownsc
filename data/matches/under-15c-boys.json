@@ -895,7 +895,9 @@
 			"awayTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
 			"address": "Gladstone Park Reserve Pitch 1",
 			"coordinates": "-37.686596,144.887219",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,
