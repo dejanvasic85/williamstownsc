@@ -98,14 +98,14 @@
 			"clubName": "Melbourne University SC",
 			"logoUrl": "https://ocean.dribl.com/6435e190252342ac9faa3809e5a12f6b",
 			"position": 7,
-			"played": 11,
+			"played": 12,
 			"wins": 3,
-			"draws": 2,
+			"draws": 3,
 			"losses": 6,
-			"goalsFor": 21,
-			"goalsAgainst": 34,
+			"goalsFor": 24,
+			"goalsAgainst": 37,
 			"goalDifference": -13,
-			"points": 11
+			"points": 12
 		},
 		{
 			"teamId": "EN2n0rxrNq",
@@ -113,14 +113,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 8,
-			"played": 10,
+			"played": 11,
 			"wins": 2,
-			"draws": 3,
+			"draws": 4,
 			"losses": 5,
-			"goalsFor": 18,
-			"goalsAgainst": 30,
+			"goalsFor": 21,
+			"goalsAgainst": 33,
 			"goalDifference": -12,
-			"points": 9
+			"points": 10
 		},
 		{
 			"teamId": "Wdgp40YEmR",

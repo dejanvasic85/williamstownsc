@@ -904,7 +904,9 @@
 			"awayTeamName": "Werribee City FC U13 Juniors - C Female U13 Kylie",
 			"address": "Churchill Reserve Pitch 1",
 			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -917,7 +919,9 @@
 			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 4 - Half Field A",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -930,7 +934,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"address": "Johnson Reserve Pitch 1B",
 			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 10,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -943,7 +949,9 @@
 			"awayTeamName": "Gisborne SC U13 Juniors - C Female 13ML",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 15,

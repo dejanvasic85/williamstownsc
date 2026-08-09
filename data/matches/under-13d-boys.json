@@ -1123,7 +1123,9 @@
 			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "AW Bond Reserve Half A",
 			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1135,7 +1137,7 @@
 			"homeTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1148,7 +1150,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
 			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1159,9 +1163,11 @@
 			"awayTeamId": "k2KpRJ56mY",
 			"homeTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - D",
-			"address": "Webster Street Reserve Pitch 4B",
-			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"address": "",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1174,7 +1180,9 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1187,7 +1195,9 @@
 			"awayTeamName": "Truganina Lions FC U13 Juniors - D Mixed Boys U13 - E",
 			"address": "Wyndham Vale North Reserve Main Pitch B - 9v9 (B)",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 15,

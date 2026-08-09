@@ -1288,7 +1288,9 @@
 			"awayTeamName": "Avondale FC U12 Juniors - B Female U12 - Junior Girls - Talia",
 			"address": "Fairbairn Park Pitch 5B - Half Field",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1301,7 +1303,9 @@
 			"awayTeamName": "Spring Hills FC U12 Juniors - B Female U12 GIRLS B - DEAN",
 			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1314,7 +1318,9 @@
 			"awayTeamName": "Albion Rovers FC U12 Juniors - B Female Albion Mini Rovers Girls U12 (Kai)",
 			"address": "Churchill Reserve Pitch 3 - Half Field B",
 			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1340,7 +1346,9 @@
 			"awayTeamName": "Williamstown SC U12 Juniors - B Female Girls Under 12",
 			"address": "City Vista Pavilion & Sports Field Pitch 4 (S) - Half Field (B)",
 			"coordinates": "-37.714141,144.726888",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1353,7 +1361,9 @@
 			"awayTeamName": "Gisborne SC U12 Juniors - B Female 12MS",
 			"address": "Robert Barrett Reserve Main Pitch - Half Field A",
 			"coordinates": "-37.777915,144.885698",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1366,7 +1376,9 @@
 			"awayTeamName": "Altona City SC U12 Juniors - B Female",
 			"address": "Green Gully Reserve Pitch 3 - Half Field B",
 			"coordinates": "-37.724344,144.817872",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
