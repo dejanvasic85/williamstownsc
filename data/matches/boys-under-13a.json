@@ -861,8 +861,8 @@
 		},
 		{
 			"round": 10,
-			"date": "2026-08-13",
-			"day": "Thursday",
+			"date": "2026-08-12",
+			"day": "Wednesday",
 			"time": "19:00",
 			"homeTeamId": "8zdBbr2dBX",
 			"awayTeamId": "6lNbpDlAdx",
@@ -1211,7 +1211,9 @@
 			"awayTeamName": "Surf Coast FC U13 Juniors - A Mixed",
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 14,

@@ -1012,7 +1012,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
 			"address": "Arndell Park Reserve Pitch 3 (S) - Half Field B",
 			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 13,

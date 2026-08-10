@@ -576,7 +576,9 @@
 			"awayTeamName": "Kings Domain FC Seniors",
 			"address": "Clifton Park Synthetic",
 			"coordinates": "-37.767831,144.954905",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 9,

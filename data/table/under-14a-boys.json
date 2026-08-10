@@ -8,14 +8,14 @@
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
 			"position": 1,
-			"played": 12,
-			"wins": 12,
+			"played": 13,
+			"wins": 13,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 53,
-			"goalsAgainst": 2,
-			"goalDifference": 51,
-			"points": 36
+			"goalsFor": 66,
+			"goalsAgainst": 3,
+			"goalDifference": 63,
+			"points": 39
 		},
 		{
 			"teamId": "EN2nb2Z2Nq",
@@ -113,13 +113,13 @@
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
 			"position": 8,
-			"played": 11,
+			"played": 12,
 			"wins": 0,
 			"draws": 1,
-			"losses": 10,
-			"goalsFor": 5,
-			"goalsAgainst": 46,
-			"goalDifference": -41,
+			"losses": 11,
+			"goalsFor": 6,
+			"goalsAgainst": 59,
+			"goalDifference": -53,
 			"points": 1
 		}
 	]
