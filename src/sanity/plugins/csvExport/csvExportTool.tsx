@@ -154,7 +154,7 @@ export function CsvExportTool() {
 
 	return (
 		<Card padding={4}>
-			<Stack space={5}>
+			<Stack gap={5}>
 				<Heading as="h1" size={2}>
 					Export Form Submissions
 				</Heading>
@@ -165,14 +165,14 @@ export function CsvExportTool() {
 				</Text>
 
 				<Card padding={4} radius={2} shadow={1}>
-					<Stack space={4}>
+					<Stack gap={4}>
 						<Heading as="h2" size={1}>
 							Filters
 						</Heading>
 
 						<Flex gap={4} wrap="wrap">
 							<Box flex={1} style={{ minWidth: 200 }}>
-								<Stack space={2}>
+								<Stack gap={2}>
 									<Label size={1}>Contact Type</Label>
 									<Select
 										value={contactType}
@@ -190,7 +190,7 @@ export function CsvExportTool() {
 							</Box>
 
 							<Box flex={1} style={{ minWidth: 200 }}>
-								<Stack space={2}>
+								<Stack gap={2}>
 									<Label size={1}>Status</Label>
 									<Select
 										value={status}
@@ -208,7 +208,7 @@ export function CsvExportTool() {
 							</Box>
 
 							<Box flex={1} style={{ minWidth: 200 }}>
-								<Stack space={2}>
+								<Stack gap={2}>
 									<Label size={1}>From Date</Label>
 									<input
 										type="date"
@@ -220,7 +220,7 @@ export function CsvExportTool() {
 							</Box>
 
 							<Box flex={1} style={{ minWidth: 200 }}>
-								<Stack space={2}>
+								<Stack gap={2}>
 									<Label size={1}>To Date</Label>
 									<input
 										type="date"
