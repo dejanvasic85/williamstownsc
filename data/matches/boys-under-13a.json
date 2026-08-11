@@ -861,19 +861,6 @@
 		},
 		{
 			"round": 10,
-			"date": "2026-08-12",
-			"day": "Wednesday",
-			"time": "19:00",
-			"homeTeamId": "8zdBbr2dBX",
-			"awayTeamId": "6lNbpDlAdx",
-			"homeTeamName": "Altona City SC U13 Juniors - A Mixed",
-			"awayTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
-			"address": "HC Kim Reserve Pitch 1A",
-			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
-		},
-		{
-			"round": 10,
 			"date": "2026-08-20",
 			"day": "Thursday",
 			"time": "18:45",
@@ -883,6 +870,19 @@
 			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 10,
+			"date": "2026-08-26",
+			"day": "Wednesday",
+			"time": "19:00",
+			"homeTeamId": "8zdBbr2dBX",
+			"awayTeamId": "6lNbpDlAdx",
+			"homeTeamName": "Altona City SC U13 Juniors - A Mixed",
+			"awayTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
+			"address": "HC Kim Reserve Pitch 1A",
+			"coordinates": "-37.863721,144.839985",
 			"status": "pending"
 		},
 		{

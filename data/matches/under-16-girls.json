@@ -855,6 +855,19 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
+			"time": "09:30",
+			"homeTeamId": "nPmrBk05mo",
+			"awayTeamId": "7MNGvobEmA",
+			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
+			"awayTeamName": "Altona East SC U16 Juniors - B Female",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
+			"coordinates": "-37.861006,144.67653",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "gld4pGXGdW",
@@ -887,19 +900,6 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "13:00",
-			"homeTeamId": "nPmrBk05mo",
-			"awayTeamId": "7MNGvobEmA",
-			"homeTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
-			"awayTeamName": "Altona East SC U16 Juniors - B Female",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
-			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
 		{
