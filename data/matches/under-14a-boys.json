@@ -614,19 +614,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "7MNGvappmA",
-			"awayTeamId": "8nm7PgVNOq",
-			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
-			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
-			"address": "Myers Reserve Pitch 2",
-			"coordinates": "-38.09538,144.320027",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "11:20",
 			"homeTeamId": "3vmZv3vbmq",
 			"awayTeamId": "6lNbpDpwdx",
@@ -667,6 +654,19 @@
 			"homeScore": 0,
 			"awayScore": 3,
 			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-09-13",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "7MNGvappmA",
+			"awayTeamId": "8nm7PgVNOq",
+			"homeTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
+			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
+			"address": "Myers Reserve Pitch 2",
+			"coordinates": "-38.09538,144.320027",
+			"status": "pending"
 		},
 		{
 			"round": 11,
