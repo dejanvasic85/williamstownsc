@@ -104,7 +104,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Moreland Eagles FC Seniors",
 			"address": "JC Donath Reserve Pitch 7 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"homeScore": 6,
 			"awayScore": 2,
 			"status": "complete"
@@ -329,7 +329,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Whittlesea United SC Seniors",
 			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"homeScore": 4,
 			"awayScore": 3,
 			"status": "complete"
@@ -464,7 +464,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Brunswick City SC Seniors",
 			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"homeScore": 0,
 			"awayScore": 4,
 			"status": "complete"
@@ -629,7 +629,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Altona East SC Seniors",
 			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"homeScore": 3,
 			"awayScore": 3,
 			"status": "complete"
@@ -673,7 +673,9 @@
 			"awayTeamName": "Whittlesea United SC Seniors",
 			"address": "Dunstan Reserve Pitch 1",
 			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -833,7 +835,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Spring Hills FC Seniors state league 2 women",
 			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"homeScore": 4,
 			"awayScore": 0,
 			"status": "complete"
@@ -923,7 +925,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Brunswick Zebras FC Seniors Senior Women SL2",
 			"address": "JC Donath Reserve Pitch 6 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"homeScore": 0,
 			"awayScore": 0,
 			"status": "complete"
@@ -1058,7 +1060,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "North Sunshine Eagles SC Seniors",
 			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"status": "pending"
 		},
 		{
@@ -1201,7 +1203,7 @@
 			"homeTeamName": "Keon Park SC Seniors",
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "JC Donath Reserve Pitch 8 KP",
-			"coordinates": "-37.700848,145.017287",
+			"coordinates": "-37.701368,145.016464",
 			"status": "pending"
 		},
 		{

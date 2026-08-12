@@ -1132,25 +1132,25 @@
 			"date": "2026-08-16",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "3vmZv3vbmq",
-			"homeTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
-			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
-			"address": "AW Bond Reserve Half A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "bgdMXaXpKE",
 			"awayTeamId": "gld450DmW5",
 			"homeTeamName": "Yarraville Glory FC U10 MiniRoos - Kangaroos Mixed",
 			"awayTeamName": "Melbourne Knights FC U10 MiniRoos - Kangaroos Mixed MKFC U10's Kangaroos",
 			"address": "McIvor Reserve  Pitch 1 - Half (A+B)",
 			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
+			"time": "12:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "3vmZv3vbmq",
+			"homeTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
+			"awayTeamName": "Williams Landing SC U10 MiniRoos - Kangaroos Mixed WLFC U10A - Malmo",
+			"address": "AW Bond Reserve Half B",
+			"coordinates": "-37.827591,144.845123",
 			"status": "pending"
 		},
 		{

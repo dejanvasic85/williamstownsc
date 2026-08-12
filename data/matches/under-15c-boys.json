@@ -602,19 +602,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "10:55",
-			"homeTeamId": "7MNGgM7NAz",
-			"awayTeamId": "6lNbpD56dx",
-			"homeTeamName": "Whittlesea Ranges FC U15 Juniors - C Mixed U15 Kon",
-			"awayTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
-			"address": "Harvest Home Recreation Reserve Pitch 3",
-			"coordinates": "-37.624506,145.02702",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "12:00",
 			"homeTeamId": "R1K3BOqGNQ",
 			"awayTeamId": "bye",
@@ -652,6 +639,19 @@
 			"homeScore": 8,
 			"awayScore": 0,
 			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-09-13",
+			"day": "Sunday",
+			"time": "10:55",
+			"homeTeamId": "7MNGgM7NAz",
+			"awayTeamId": "6lNbpD56dx",
+			"homeTeamName": "Whittlesea Ranges FC U15 Juniors - C Mixed U15 Kon",
+			"awayTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
+			"address": "Harvest Home Recreation Reserve Pitch 3",
+			"coordinates": "-37.624506,145.02702",
+			"status": "pending"
 		},
 		{
 			"round": 11,
