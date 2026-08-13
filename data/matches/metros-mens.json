@@ -894,7 +894,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "George Knott Reserve George Knott Reserve",
 			"coordinates": "-37.784108,145.001458",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1057,8 +1059,8 @@
 			"awayTeamId": "nPmrB8Gpmo",
 			"homeTeamName": "Fitzroy Lions SC Seniors",
 			"awayTeamName": "South Yarra SC Seniors",
-			"address": "George Knott Reserve George Knott Reserve",
-			"coordinates": "-37.784108,145.001458",
+			"address": "Monash University Playing Fields Pitch 2",
+			"coordinates": "-37.911108,145.138342",
 			"status": "pending"
 		},
 		{

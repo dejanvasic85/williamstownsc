@@ -968,6 +968,19 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
+			"time": "12:30",
+			"homeTeamId": "6lNbpD56dx",
+			"awayTeamId": "nPmrB8Rjmo",
+			"homeTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
+			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
+			"address": "Arndell Park Reserve Pitch 3 (S)",
+			"coordinates": "-37.863107,144.727995",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
 			"time": "13:45",
 			"homeTeamId": "A4KLxz3GKq",
 			"awayTeamId": "7MNGvobEmA",
@@ -975,19 +988,6 @@
 			"awayTeamName": "Altona East SC U15 Juniors - C Mixed",
 			"address": "Hillsview Recreation Reserve Pitch 1 (S)",
 			"coordinates": "-37.640164,145.077838",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
-			"time": "14:00",
-			"homeTeamId": "6lNbpD56dx",
-			"awayTeamId": "nPmrB8Rjmo",
-			"homeTeamName": "Truganina Hornets SC U15 Juniors - C Mixed",
-			"awayTeamName": "Roxburgh Park United SC U15 Juniors - C Mixed U15C",
-			"address": "Arndell Park Reserve Pitch 3 (S)",
-			"coordinates": "-37.863107,144.727995",
 			"status": "pending"
 		},
 		{
