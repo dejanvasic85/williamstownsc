@@ -15,8 +15,8 @@ importers:
         specifier: 1.5.0
         version: 1.5.0
       '@dejanvasic85/matchday-sdk':
-        specifier: 0.1.0
-        version: 0.1.0
+        specifier: 0.2.0
+        version: 0.2.0
       '@fontsource/exo':
         specifier: 5.3.0
         version: 5.3.0
@@ -1010,8 +1010,8 @@ packages:
   '@date-fns/utc@2.1.1':
     resolution: {integrity: sha512-SlJDfG6RPeEX8wEVv6ZB3kak4MmbtyiI2qX/5zuKdordbrhB/iaJ58GVMZgJ6P1sJaM1gMgENFYYeg1JWrCFrA==}
 
-  '@dejanvasic85/matchday-sdk@0.1.0':
-    resolution: {integrity: sha512-/6l4YdHIVNz+X/s9z8I/PsPDQdpMyZuQYboiDClQxqDbcD7WYfaH7jS28dj8/tIFdxxHN6adjtXHiNQ/OXXkaw==, tarball: https://npm.pkg.github.com/download/@dejanvasic85/matchday-sdk/0.1.0/dd90480081c665b14bf90f39674b070f9b58d7ed}
+  '@dejanvasic85/matchday-sdk@0.2.0':
+    resolution: {integrity: sha512-AWE44QD9PjbcfN8US1ZQyRa+Mab17u3fZDzM9t/uQNzAGAgxkeB1YzrsFsKUWOVEFxPN+nj7aZlL5ItWHnGg2g==, tarball: https://npm.pkg.github.com/download/@dejanvasic85/matchday-sdk/0.2.0/78a5799955125c1a67f5f6c1e6203173d1384786}
 
   '@dnd-kit/accessibility@3.1.1':
     resolution: {integrity: sha512-2P+YgaXF+gRsIihwwY1gCsQSYnu9Zyj2py8kY5fFvUM1qm2WA2u639R6YNVfU4GWr+ZM5mqEsfHZZLoRONbemw==}
@@ -8378,7 +8378,7 @@ snapshots:
 
   '@date-fns/utc@2.1.1': {}
 
-  '@dejanvasic85/matchday-sdk@0.1.0':
+  '@dejanvasic85/matchday-sdk@0.2.0':
     dependencies:
       openapi-fetch: 0.17.0
 
