@@ -40,8 +40,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Pull environment variables from Vercel
         run: pnpm dlx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Build
@@ -74,8 +75,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
       - name: Pull environment variables from Vercel

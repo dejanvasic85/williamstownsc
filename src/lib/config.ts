@@ -46,6 +46,12 @@ const socialPublishConfigSchema = z.object({
 	socialPublishSecret: z.string().min(1, 'Social publish secret is required')
 });
 
+// Server-only matchday API config schema
+const matchdayConfigSchema = z.object({
+	matchdayApiToken: z.string().min(1, 'Matchday API token is required'),
+	matchdayApiBaseUrl: z.string().url('Matchday API base URL is required')
+});
+
 export type ClubConfig = {
 	wscClubDriblId: string;
 	wscClubDriblName: string;
@@ -57,6 +63,7 @@ export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
 export type SanityWriteConfig = z.infer<typeof sanityWriteConfigSchema>;
 export type MetaConfig = z.infer<typeof metaConfigSchema>;
 export type SocialPublishConfig = z.infer<typeof socialPublishConfigSchema>;
+export type MatchdayConfig = z.infer<typeof matchdayConfigSchema>;
 
 let cachedClientConfig: ClientConfig | null = null;
 
@@ -166,4 +173,15 @@ export function getSocialPublishConfig(): SocialPublishConfig {
 
 export function getClubConfig(): ClubConfig {
 	return { wscClubDriblId: '6lNbpDpwdx', wscClubDriblName: 'Williamstown' };
+}
+
+/**
+ * Get matchday API config (server-only)
+ * Contains the bearer token and base URL for the matchday SDK client
+ */
+export function getMatchdayConfig(): MatchdayConfig {
+	return matchdayConfigSchema.parse({
+		matchdayApiToken: process.env.MATCHDAY_API_TOKEN,
+		matchdayApiBaseUrl: process.env.MATCHDAY_API_BASE_URL
+	});
 }

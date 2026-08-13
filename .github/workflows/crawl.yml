@@ -35,8 +35,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - id: chunk
         name: Compute chunks
         run: |
@@ -56,8 +57,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
@@ -92,8 +94,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
@@ -149,8 +152,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           pattern: clubs-data

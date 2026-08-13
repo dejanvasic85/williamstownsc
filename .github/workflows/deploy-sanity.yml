@@ -28,8 +28,9 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/pnpm-install
+        with:
+          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
 
       - name: Deploy to Sanity
         run: pnpm run deploy:sanity -- --yes
