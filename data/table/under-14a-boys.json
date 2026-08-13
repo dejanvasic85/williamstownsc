@@ -8,14 +8,14 @@
 			"clubName": "Tarneit United SC",
 			"logoUrl": "https://ocean.dribl.com/78ab01fef2d54d56a97d145648b8d899",
 			"position": 1,
-			"played": 13,
-			"wins": 13,
+			"played": 14,
+			"wins": 14,
 			"draws": 0,
 			"losses": 0,
-			"goalsFor": 66,
+			"goalsFor": 69,
 			"goalsAgainst": 3,
-			"goalDifference": 63,
-			"points": 39
+			"goalDifference": 66,
+			"points": 42
 		},
 		{
 			"teamId": "EN2nb2Z2Nq",
@@ -68,13 +68,13 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 5,
-			"played": 13,
+			"played": 14,
 			"wins": 5,
 			"draws": 0,
-			"losses": 8,
+			"losses": 9,
 			"goalsFor": 27,
-			"goalsAgainst": 28,
-			"goalDifference": -1,
+			"goalsAgainst": 31,
+			"goalDifference": -4,
 			"points": 15
 		},
 		{

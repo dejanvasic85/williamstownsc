@@ -818,19 +818,6 @@
 			"round": 10,
 			"date": "2026-07-12",
 			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "k2KpRJ56mY",
-			"awayTeamId": "Bjma0BXAdR",
-			"homeTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
-			"awayTeamName": "Point Cook SC U12 Juniors - C Mixed U12 Strike Eagles",
-			"address": "Alcock Road Reserve Pitch 2 - Half B",
-			"coordinates": "-37.829359,144.720192",
-			"status": "washout reschedule"
-		},
-		{
-			"round": 10,
-			"date": "2026-07-12",
-			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "bgdMXaXpKE",
 			"awayTeamId": "AnmYzg0xNz",
@@ -866,7 +853,9 @@
 			"awayTeamName": "Tarneit United SC U12 Juniors - C Mixed",
 			"address": "JT Gray Reserve Pitch 1 - 4v4 (B)",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -879,7 +868,24 @@
 			"awayTeamName": "Melbourne City FC U12 Juniors - C Mixed U12 Boys Blue Dan",
 			"address": "JT Gray Reserve Pitch 1 - 4v4 (A)",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
+		},
+		{
+			"round": 10,
+			"date": "2026-08-13",
+			"day": "Thursday",
+			"time": "19:00",
+			"homeTeamId": "k2KpRJ56mY",
+			"awayTeamId": "Bjma0BXAdR",
+			"homeTeamName": "Truganina Lions FC U12 Juniors - C Mixed Boys U12 - C",
+			"awayTeamName": "Point Cook SC U12 Juniors - C Mixed U12 Strike Eagles",
+			"address": "Alcock Road Reserve Pitch 2 - Half B",
+			"coordinates": "-37.829359,144.720192",
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 10,
@@ -1336,6 +1342,19 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "bgdMXaXpKE",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Yarraville Glory FC U12 Juniors - C Mixed",
+			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
+			"address": "McIvor Reserve  Pitch 2 - Half (C+D)",
+			"coordinates": "-37.821079,144.869684",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
 			"time": "10:10",
 			"homeTeamId": "nPmrBk05mo",
 			"awayTeamId": "Bjma0BXAdR",
@@ -1343,19 +1362,6 @@
 			"awayTeamName": "Point Cook SC U12 Juniors - C Mixed U12 Strike Eagles",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch A",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "11:00",
-			"homeTeamId": "bgdMXaXpKE",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Yarraville Glory FC U12 Juniors - C Mixed",
-			"awayTeamName": "West Point SC U12 Juniors - C Mixed U12C Phil",
-			"address": "McIvor Reserve  Pitch 2 - Half (C+D)",
-			"coordinates": "-37.821079,144.869684",
 			"status": "pending"
 		},
 		{

@@ -38,14 +38,14 @@
 			"clubName": "Westside Strikers Caroline Springs FC",
 			"logoUrl": "https://ocean.dribl.com/50c8bc8e46774af5b6c1e2525d060a3e",
 			"position": 3,
-			"played": 13,
+			"played": 14,
 			"wins": 7,
-			"draws": 3,
+			"draws": 4,
 			"losses": 3,
-			"goalsFor": 26,
-			"goalsAgainst": 14,
+			"goalsFor": 27,
+			"goalsAgainst": 15,
 			"goalDifference": 12,
-			"points": 24
+			"points": 25
 		},
 		{
 			"teamId": "emAe9D69mB",
@@ -83,14 +83,14 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 6,
-			"played": 13,
+			"played": 14,
 			"wins": 4,
-			"draws": 2,
+			"draws": 3,
 			"losses": 7,
-			"goalsFor": 18,
-			"goalsAgainst": 21,
+			"goalsFor": 19,
+			"goalsAgainst": 22,
 			"goalDifference": -3,
-			"points": 14
+			"points": 15
 		},
 		{
 			"teamId": "ld4466rDdW",

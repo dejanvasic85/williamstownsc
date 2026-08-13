@@ -1381,6 +1381,19 @@
 			"date": "2026-08-16",
 			"day": "Sunday",
 			"time": "09:00",
+			"homeTeamId": "AnmYzg0xNz",
+			"awayTeamId": "Bjma0RXqdR",
+			"homeTeamName": "Laverton FC U10 MiniRoos - Wallabies Mixed Laverton FC SAS U10W",
+			"awayTeamName": "West Point SC U10 MiniRoos - Wallabies Mixed U10W Mixed - Abbas",
+			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
+			"coordinates": "-37.878568,144.79544",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
+			"time": "09:00",
 			"homeTeamId": "k2KpRJ56mY",
 			"awayTeamId": "bgdMXan2KE",
 			"homeTeamName": "Truganina Lions FC U10 MiniRoos - Wallabies Mixed Boys U10 - Wallabies",
@@ -1426,19 +1439,6 @@
 			"awayTeamName": "Truganina Lions FC U10 MiniRoos - Wallabies Mixed Boys U10 - Kangaroos",
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "AnmYzg0xNz",
-			"awayTeamId": "Bjma0RXqdR",
-			"homeTeamName": "Laverton FC U10 MiniRoos - Wallabies Mixed Laverton FC SAS U10W",
-			"awayTeamName": "West Point SC U10 MiniRoos - Wallabies Mixed U10W Mixed - Abbas",
-			"address": "HD Graham Reserve Pitch 2 (South) - Half B",
-			"coordinates": "-37.878568,144.79544",
 			"status": "pending"
 		},
 		{

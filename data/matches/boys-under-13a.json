@@ -1249,6 +1249,19 @@
 			"round": 15,
 			"date": "2026-08-16",
 			"day": "Sunday",
+			"time": "09:00",
+			"homeTeamId": "PydoLxGmD9",
+			"awayTeamId": "bgdMM4ZdE2",
+			"homeTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
+			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
+			"address": "Club Italia Sporting Club Pitch 2 - Half Field B",
+			"coordinates": "-37.759892,144.819492",
+			"status": "pending"
+		},
+		{
+			"round": 15,
+			"date": "2026-08-16",
+			"day": "Sunday",
 			"time": "09:30",
 			"homeTeamId": "Bjma0RXqdR",
 			"awayTeamId": "8zdBbr2dBX",
@@ -1256,19 +1269,6 @@
 			"awayTeamName": "Altona City SC U13 Juniors - A Mixed",
 			"address": "Webster Street Reserve Pitch 4A",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
-		},
-		{
-			"round": 15,
-			"date": "2026-08-16",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "PydoLxGmD9",
-			"awayTeamId": "bgdMM4ZdE2",
-			"homeTeamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
-			"awayTeamName": "Werribee City FC U13 Juniors - A Mixed U13 Nick",
-			"address": "Club Italia Sporting Club Pitch 2 - Half Field B",
-			"coordinates": "-37.759892,144.819492",
 			"status": "pending"
 		},
 		{
