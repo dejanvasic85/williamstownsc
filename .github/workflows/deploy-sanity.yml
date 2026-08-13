@@ -30,6 +30,8 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
 
       - name: Deploy to Sanity
         run: pnpm run deploy:sanity -- --yes

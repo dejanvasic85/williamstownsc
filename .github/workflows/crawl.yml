@@ -37,6 +37,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - id: chunk
         name: Compute chunks
         run: |
@@ -58,6 +60,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
@@ -94,6 +98,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
@@ -151,6 +157,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           pattern: clubs-data

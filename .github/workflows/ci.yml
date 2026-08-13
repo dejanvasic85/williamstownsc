@@ -42,6 +42,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Pull environment variables from Vercel
         run: pnpm dlx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Build
@@ -76,6 +78,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
       - name: Pull environment variables from Vercel
