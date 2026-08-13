@@ -41,7 +41,7 @@
 		"@fontsource/exo": "5.3.0",
 		"@fontsource/outfit": "5.3.0",
 		"@next/third-parties": "16.3.0",
-		"@portabletext/toolkit": "5.0.2",
+		"@portabletext/toolkit": "6.0.0",
 		"@portabletext/types": "4.0.2",
 		"@sanity/client": "7.26.2",
 		"@sanity/icons": "5.2.1",
