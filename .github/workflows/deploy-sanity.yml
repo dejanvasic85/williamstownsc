@@ -28,10 +28,13 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
 
+      - name: Configure GitHub Packages auth
+        run: |
+          pnpm config set "@dejanvasic85:registry" "https://npm.pkg.github.com"
+          pnpm config set "//npm.pkg.github.com/:_authToken" "${{ secrets.MATCHDAY_SDK_TOKEN }}"
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          MATCHDAY_SDK_TOKEN: ${{ secrets.MATCHDAY_SDK_TOKEN }}
 
       - name: Deploy to Sanity
         run: pnpm run deploy:sanity -- --yes
