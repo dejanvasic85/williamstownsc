@@ -43,7 +43,7 @@
 		"@next/third-parties": "16.3.0",
 		"@portabletext/toolkit": "6.0.0",
 		"@portabletext/types": "4.0.2",
-		"@sanity/client": "7.26.2",
+		"@sanity/client": "8.0.0",
 		"@sanity/icons": "5.2.1",
 		"@sanity/image-url": "2.1.1",
 		"@sanity/ui": "4.0.2",
