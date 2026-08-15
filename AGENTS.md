@@ -1,16 +1,17 @@
 # Environment & Commands
 
-- **IMPORTANT**: Dev server runs on port 3003 (not 3000): `pnpm run dev`
+- **IMPORTANT**: Dev server runs on port 3003 (not 3000)
 - Node version pinned in `.nvmrc` / `package.json` engines (24.12.0)
 - TypeScript path aliases: `@/*` (src), `@data/*` (data)
 - Required env vars: see .env.example (Sanity, AWS SES, reCAPTCHA)
 - Sanity Studio: separate at /studio path
+- Prettier line width: 100 chars (not default 80)
 
 ## Key Commands (see package.json for full list)
 
 - `pnpm run dev` - Dev server on port 3003
 - `pnpm run test:e2e[:ui|:debug|:report]` - Playwright E2E tests
-- `pnpm run crawl:[clubs|fixtures]` - Playwright-based web scraping
+- `pnpm run crawl:[clubs|fixtures]` - Playwright-based web scraping (uses playwright-core)
 - `pnpm run sync:[clubs|fixtures]` - Sync scraped data to Sanity
 - `pnpm run type:gen` - Regenerate Sanity types after schema changes
 
@@ -18,10 +19,6 @@
 
 - Framework: Playwright only (no unit test framework)
 - Tests run against http://localhost:3003
-- Run E2E tests: `pnpm run test:e2e`
-- Run with UI mode: `pnpm run test:e2e:ui`
-- Debug mode: `pnpm run test:e2e:debug`
-- View report: `pnpm run test:e2e:report`
 
 # Technical Requirements
 
@@ -78,26 +75,3 @@ All changes MUST follow the following workflow
 
 - Ensure to find the latest version of a package before adding it
 - Avoid using deprecated packages or APIs
-
-# Plan Creation
-
-- Store plans as markdown files in `docs/plans/`
-- File naming: `YYYY-MM-DD-description.md` (e.g. `2026-02-26-homepage-sponsors-layout.md`)
-- Use docs/todo.md for organizing higher level features and tasks - keep this up to date when completing work
-- Make plans extremely concise - sacrifice grammar for concision
-- At end of each plan, list unresolved questions if any
-- Update plans when completing tasks
-- Each plan must include:
-  - Purpose: clarify the intended outcome and scope
-  - Requirements: list constraints, dependencies, and acceptance criteria
-  - Todo list: ordered, actionable tasks (checkboxes encouraged) with owners/status when known
-
-# Important Notes
-
-- **IMPORTANT**: Dev server port 3003 (affects Playwright config & testing)
-- **MUST**: Sanity queries MUST be in lib/content modules, not inline
-- **NEVER**: create "helpers" or "utils" (use services/mappers/transformers)
-- Playwright-based web scraping: crawl scripts use playwright-core for data extraction
-- Pre-commit hooks auto-run: changes will trigger prettier + eslint
-- Run `pnpm run type:gen` after Sanity schema changes
-- Prettier line width: 100 chars (not default 80)
