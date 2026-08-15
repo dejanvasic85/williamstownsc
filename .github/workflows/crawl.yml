@@ -37,7 +37,7 @@ jobs:
           cache: 'pnpm'
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - id: chunk
         name: Compute chunks
         run: |
@@ -59,7 +59,7 @@ jobs:
           cache: 'pnpm'
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
@@ -96,7 +96,7 @@ jobs:
           cache: 'pnpm'
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
@@ -154,7 +154,7 @@ jobs:
           cache: 'pnpm'
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - uses: actions/download-artifact@v8
         with:
           pattern: clubs-data

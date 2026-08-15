@@ -2,7 +2,7 @@ name: pnpm install
 description: Configures GitHub Packages auth for @dejanvasic85 and runs pnpm install --frozen-lockfile
 
 inputs:
-  matchday-sdk-token:
+  matchday-github-token:
     description: read:packages token for the @dejanvasic85 GitHub Packages registry
     required: true
 
@@ -13,7 +13,7 @@ runs:
       shell: bash
       run: |
         pnpm config set "@dejanvasic85:registry" "https://npm.pkg.github.com"
-        pnpm config set "//npm.pkg.github.com/:_authToken" "${{ inputs.matchday-sdk-token }}"
+        pnpm config set "//npm.pkg.github.com/:_authToken" "${{ inputs.matchday-github-token }}"
     - name: Install dependencies
       shell: bash
       run: pnpm install --frozen-lockfile
