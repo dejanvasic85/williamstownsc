@@ -1,4 +1,7 @@
 import { StructureBuilder } from 'sanity/structure';
+import { getClientConfig } from '@/lib/config';
+
+const { sanityApiVersion } = getClientConfig();
 
 export const structure = (S: StructureBuilder) =>
 	S.list()
@@ -31,6 +34,7 @@ export const structure = (S: StructureBuilder) =>
 								.child(
 									S.documentTypeList('formSubmission')
 										.title('New Submissions')
+										.apiVersion(sanityApiVersion)
 										.filter('status == $status')
 										.params({ status: 'new' })
 										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
@@ -41,6 +45,7 @@ export const structure = (S: StructureBuilder) =>
 								.child(
 									S.documentTypeList('formSubmission')
 										.title('Player Enquiries')
+										.apiVersion(sanityApiVersion)
 										.filter('contactType == $contactType')
 										.params({ contactType: 'player' })
 										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
@@ -50,6 +55,7 @@ export const structure = (S: StructureBuilder) =>
 								.child(
 									S.documentTypeList('formSubmission')
 										.title('Coach Enquiries')
+										.apiVersion(sanityApiVersion)
 										.filter('contactType == $contactType')
 										.params({ contactType: 'coach' })
 										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
@@ -59,6 +65,7 @@ export const structure = (S: StructureBuilder) =>
 								.child(
 									S.documentTypeList('formSubmission')
 										.title('Sponsorship Enquiries')
+										.apiVersion(sanityApiVersion)
 										.filter('contactType == $contactType')
 										.params({ contactType: 'sponsor' })
 										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
@@ -68,6 +75,7 @@ export const structure = (S: StructureBuilder) =>
 								.child(
 									S.documentTypeList('formSubmission')
 										.title('Program Enquiries')
+										.apiVersion(sanityApiVersion)
 										.filter('contactType == $contactType')
 										.params({ contactType: 'program' })
 										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
@@ -77,6 +85,7 @@ export const structure = (S: StructureBuilder) =>
 								.child(
 									S.documentTypeList('formSubmission')
 										.title('General Enquiries')
+										.apiVersion(sanityApiVersion)
 										.filter('contactType == $contactType')
 										.params({ contactType: 'general' })
 										.defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
