@@ -1,6 +1,7 @@
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
+import { StudioLayout } from './src/sanity/components/StudioLayout';
 import { csvExportPlugin } from './src/sanity/plugins/csvExport';
 import { schemaTypes } from './src/sanity/schema/index';
 import { structure } from './src/sanity/structure';
@@ -14,5 +15,10 @@ export default defineConfig({
 	plugins: [structureTool({ structure }), visionTool(), csvExportPlugin()],
 	schema: {
 		types: schemaTypes
+	},
+	studio: {
+		components: {
+			layout: StudioLayout
+		}
 	}
 });
