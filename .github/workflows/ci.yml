@@ -42,7 +42,7 @@ jobs:
           cache: 'pnpm'
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - name: Pull environment variables from Vercel
         run: pnpm dlx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Build
@@ -77,7 +77,7 @@ jobs:
           cache: 'pnpm'
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
       - name: Pull environment variables from Vercel

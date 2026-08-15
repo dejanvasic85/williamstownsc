@@ -30,7 +30,7 @@ jobs:
 
       - uses: ./.github/actions/pnpm-install
         with:
-          matchday-sdk-token: ${{ secrets.MATCHDAY_SDK_TOKEN }}
+          matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
 
       - name: Deploy to Sanity
         run: pnpm run deploy:sanity -- --yes
