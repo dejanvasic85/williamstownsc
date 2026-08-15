@@ -1,7 +1,6 @@
 import { StructureBuilder } from 'sanity/structure';
-import { getClientConfig } from '@/lib/config';
 
-const { sanityApiVersion } = getClientConfig();
+const sanityApiVersion = '2024-01-01';
 
 export const structure = (S: StructureBuilder) =>
 	S.list()
