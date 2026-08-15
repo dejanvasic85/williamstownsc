@@ -10,9 +10,7 @@ import type { LeagueOption } from '@/types/matchday';
 
 type AutocompleteOption = LeagueOption & { value: string };
 
-const defaultSiteUrl = 'https://www.williamstownsc.com';
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl;
-const leaguesEndpoint = `${siteUrl}/api/studio/leagues`;
+const leaguesEndpoint = `/api/studio/leagues`;
 const leaguesQueryKey = ['studio-leagues'];
 
 async function fetchLeagueOptions(): Promise<LeagueOption[]> {
