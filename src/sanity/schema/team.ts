@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { LeagueIdInput } from '@/sanity/components/LeagueIdInput';
 
 export const team = defineType({
 	name: 'team',
@@ -184,6 +185,28 @@ export const team = defineType({
 			title: 'Fixtures URL',
 			type: 'url',
 			description: 'External link to team fixtures page (e.g. Dribl)'
+		}),
+		defineField({
+			name: 'matchday',
+			title: 'Matchday',
+			type: 'object',
+			fields: [
+				defineField({
+					name: 'leagueId',
+					title: 'League',
+					type: 'string',
+					description:
+						'The Matchday league this team is subscribed to. Optional until the team has been backfilled — see docs/plans/2026-08-15-team-league-picker-design-spike.md.',
+					components: { input: LeagueIdInput },
+					validation: (Rule) =>
+						Rule.custom((value) => {
+							if (typeof value !== 'string' || value.length === 0) {
+								return true;
+							}
+							return /^lea_/.test(value) || 'Must be a Matchday league id (lea_...)';
+						})
+				})
+			]
 		}),
 		defineField({
 			name: 'enableFixturesCrawler',
