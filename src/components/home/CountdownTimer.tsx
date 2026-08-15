@@ -19,6 +19,26 @@ type CountdownTimerProps = {
 	countdownClassName?: string;
 };
 
+type TimeUnitProps = {
+	label: string;
+	value: string | number;
+	countdownClassName: string;
+};
+
+function TimeUnit({ label, value, countdownClassName }: TimeUnitProps) {
+	return (
+		<div className="flex flex-col items-center">
+			<div
+				className={clsx(countdownClassName, 'text-xl font-bold md:text-3xl')}
+				suppressHydrationWarning
+			>
+				{value}
+			</div>
+			<div className="text-base-content/70 text-xs">{label}</div>
+		</div>
+	);
+}
+
 function calculateTimeRemaining(targetDate: string, targetTime: string): TimeRemaining {
 	const now = new Date();
 	const target = parseISO(`${targetDate}T${targetTime}`);
@@ -91,30 +111,18 @@ export function CountdownTimer({
 
 	return (
 		<div className="grid grid-cols-4 gap-2 md:gap-3">
-			<div className="flex flex-col items-center">
-				<div className={clsx(countdownClassName, 'text-xl font-bold md:text-3xl')}>
-					{timeRemaining.days}
-				</div>
-				<div className="text-base-content/70 text-xs">Days</div>
-			</div>
-			<div className="flex flex-col items-center">
-				<div className={clsx(countdownClassName, 'text-xl font-bold md:text-3xl')}>
-					{timeRemaining.hours}
-				</div>
-				<div className="text-base-content/70 text-xs">Hours</div>
-			</div>
-			<div className="flex flex-col items-center">
-				<div className={clsx(countdownClassName, 'text-xl font-bold md:text-3xl')}>
-					{timeRemaining.minutes}
-				</div>
-				<div className="text-base-content/70 text-xs">Mins</div>
-			</div>
-			<div className="flex flex-col items-center">
-				<div className={clsx(countdownClassName, 'text-xl font-bold md:text-3xl')}>
-					{timeRemaining.seconds}
-				</div>
-				<div className="text-base-content/70 text-xs">Secs</div>
-			</div>
+			<TimeUnit label="Days" value={timeRemaining.days} countdownClassName={countdownClassName} />
+			<TimeUnit label="Hours" value={timeRemaining.hours} countdownClassName={countdownClassName} />
+			<TimeUnit
+				label="Mins"
+				value={timeRemaining.minutes}
+				countdownClassName={countdownClassName}
+			/>
+			<TimeUnit
+				label="Secs"
+				value={timeRemaining.seconds}
+				countdownClassName={countdownClassName}
+			/>
 		</div>
 	);
 }

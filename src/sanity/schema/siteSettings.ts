@@ -362,6 +362,26 @@ export const siteSettings = defineType({
 				Rule.uri({
 					scheme: ['https']
 				}).required()
+		}),
+
+		// Matchday integration
+		defineField({
+			name: 'matchday',
+			title: 'Matchday',
+			type: 'object',
+			fields: [
+				defineField({
+					name: 'clubId',
+					title: 'Matchday Club ID',
+					type: 'string',
+					description: 'The club ID from the matchday API (e.g., clb_oYMz8JCwdjuG)',
+					validation: (Rule) =>
+						Rule.required().regex(/^clb_/, {
+							name: 'Matchday club ID format',
+							invert: false
+						})
+				})
+			]
 		})
 	],
 	preview: {

@@ -2,6 +2,7 @@ import type { NextConfig } from 'next';
 import { withSentryConfig } from '@sentry/nextjs';
 
 const nextConfig: NextConfig = {
+	devIndicators: false,
 	serverExternalPackages: ['pino', 'pino-pretty'],
 	images: {
 		deviceSizes: [640, 828, 1200],
