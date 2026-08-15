@@ -5,38 +5,51 @@ import { getClubLeagueOptions } from '@/lib/matchday/leagueOptionService';
 
 const log = logger.child({ route: '/api/studio/leagues' });
 const studioPathPrefix = '/studio';
+const standaloneStudioOrigin = 'https://williamstownsc.sanity.studio';
 
 /**
- * Soft guard, not real auth: rejects requests without a same-origin /studio referer to keep
- * this off casual/scripted hits and spare the matchday API token's quota. A determined caller
- * can still spoof the header — the data here (league names) isn't sensitive, so that's an
- * accepted tradeoff (docs/plans/2026-08-15-team-league-picker-design-spike.md).
+ * Soft guard, not real auth: rejects requests without a referer from either the
+ * Next.js-embedded studio (same origin, /studio path) or the standalone deployed studio
+ * (williamstownsc.sanity.studio) to keep this off casual/scripted hits and spare the
+ * matchday API token's quota. A determined caller can still spoof the header — the data
+ * here (league names) isn't sensitive, so that's an accepted tradeoff
+ * (docs/plans/2026-08-15-team-league-picker-design-spike.md).
  */
-function isFromStudio(request: NextRequest): boolean {
+function isFromStudio(refererUrl: URL, requestOrigin: string): boolean {
+	const isEmbeddedStudio =
+		refererUrl.origin === requestOrigin && refererUrl.pathname.startsWith(studioPathPrefix);
+	const isStandaloneStudio = refererUrl.origin === standaloneStudioOrigin;
+
+	return isEmbeddedStudio || isStandaloneStudio;
+}
+
+function parseRefererUrl(request: NextRequest): URL | null {
 	const referer = request.headers.get('referer');
 	if (!referer) {
-		return false;
+		return null;
 	}
 
 	try {
-		const refererUrl = new URL(referer);
-		return (
-			refererUrl.origin === request.nextUrl.origin &&
-			refererUrl.pathname.startsWith(studioPathPrefix)
-		);
+		return new URL(referer);
 	} catch {
-		return false;
+		return null;
 	}
 }
 
 export async function GET(request: NextRequest) {
-	if (!isFromStudio(request)) {
+	const refererUrl = parseRefererUrl(request);
+	if (!refererUrl || !isFromStudio(refererUrl, request.nextUrl.origin)) {
 		return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 	}
 
+	const corsHeaders =
+		refererUrl.origin === standaloneStudioOrigin
+			? { 'Access-Control-Allow-Origin': standaloneStudioOrigin }
+			: undefined;
+
 	try {
 		const options = await getClubLeagueOptions();
-		return NextResponse.json({ options });
+		return NextResponse.json({ options }, { headers: corsHeaders });
 	} catch (error) {
 		Sentry.captureException(error);
 		log.error({ err: error }, 'studio leagues API error');
@@ -48,6 +61,6 @@ export async function GET(request: NextRequest) {
 			responseBody.details = error.message;
 		}
 
-		return NextResponse.json(responseBody, { status: 500 });
+		return NextResponse.json(responseBody, { status: 500, headers: corsHeaders });
 	}
 }
