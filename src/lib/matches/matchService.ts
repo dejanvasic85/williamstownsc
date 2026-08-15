@@ -1,7 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { cache } from 'react';
-import { TZDate } from '@date-fns/tz';
 import { addMinutes, isBefore } from 'date-fns';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
@@ -9,17 +8,19 @@ import {
 	resolveTeamDisplayName
 } from '@/lib/clubService';
 import { getClubConfig } from '@/lib/config';
+import { getTeamLeagueId } from '@/lib/content/teamDetail';
+import { getLeagueMeta } from '@/lib/matchday/matchdayLeagueMetaService';
+import {
+	getMatchdayFixturesForLeague,
+	resolveMatchdayNextMatch,
+	resolveMatchdayPreviousMatch
+} from '@/lib/matchday/matchdayMatchService';
+import { getMatchdayClubId } from '@/lib/matchday/matchdaySiteConfig';
+import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
 import { bye, fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
-const melbourneTimezone = 'Australia/Melbourne';
-
-function parseFixtureDateTime(date: string, time: string): TZDate {
-	const [year, month, day] = date.split('-').map(Number);
-	const [hour, minute] = time.split(':').map(Number);
-	return new TZDate(year, month - 1, day, hour, minute, melbourneTimezone);
-}
 
 export function getClubs(): Club[] {
 	return getClubsFromService();
@@ -118,6 +119,15 @@ export async function getFixturesForTeam(slug: string): Promise<{
 	competition: string;
 	season: number;
 } | null> {
+	const leagueId = await getTeamLeagueId(slug);
+	if (leagueId) {
+		const [fixtures, { competition, season }] = await Promise.all([
+			getMatchdayFixturesForLeague(leagueId),
+			getLeagueMeta(leagueId)
+		]);
+		return { fixtures, competition, season };
+	}
+
 	const fixtureData = await loadFixture(slug);
 
 	if (!fixtureData) {
@@ -132,6 +142,12 @@ export async function getFixturesForTeam(slug: string): Promise<{
 }
 
 export async function hasFixtures(slug: string): Promise<boolean> {
+	const leagueId = await getTeamLeagueId(slug);
+	if (leagueId) {
+		const fixtures = await getMatchdayFixturesForLeague(leagueId);
+		return fixtures.length > 0;
+	}
+
 	const fixtureData = await loadFixture(slug);
 	return Boolean(fixtureData?.fixtures.length);
 }
@@ -189,6 +205,24 @@ export async function getTeamMatches(teamSlug: string): Promise<{
 	nextMatch: EnrichedFixture | null;
 	previousMatch: EnrichedFixture | null;
 }> {
+	const leagueId = await getTeamLeagueId(teamSlug);
+	if (leagueId) {
+		const [fixtures, matchdayClubId] = await Promise.all([
+			getMatchdayFixturesForLeague(leagueId),
+			getMatchdayClubId()
+		]);
+
+		if (fixtures.length === 0 || !matchdayClubId) {
+			return { hasFixtures: fixtures.length > 0, nextMatch: null, previousMatch: null };
+		}
+
+		return {
+			hasFixtures: true,
+			nextMatch: resolveMatchdayNextMatch(fixtures, matchdayClubId),
+			previousMatch: resolveMatchdayPreviousMatch(fixtures, matchdayClubId)
+		};
+	}
+
 	const fixtureData = await loadFixture(teamSlug);
 
 	if (!fixtureData?.fixtures.length) {
@@ -206,6 +240,15 @@ export async function getTeamMatches(teamSlug: string): Promise<{
 }
 
 export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
+	const leagueId = await getTeamLeagueId(teamSlug);
+	if (leagueId) {
+		const [fixtures, matchdayClubId] = await Promise.all([
+			getMatchdayFixturesForLeague(leagueId),
+			getMatchdayClubId()
+		]);
+		return matchdayClubId ? resolveMatchdayNextMatch(fixtures, matchdayClubId) : null;
+	}
+
 	const fixtureData = await loadFixture(teamSlug);
 	if (!fixtureData) return null;
 	const { wscClubDriblId } = getClubConfig();
@@ -213,6 +256,15 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 }
 
 export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
+	const leagueId = await getTeamLeagueId(teamSlug);
+	if (leagueId) {
+		const [fixtures, matchdayClubId] = await Promise.all([
+			getMatchdayFixturesForLeague(leagueId),
+			getMatchdayClubId()
+		]);
+		return matchdayClubId ? resolveMatchdayPreviousMatch(fixtures, matchdayClubId) : null;
+	}
+
 	const fixtureData = await loadFixture(teamSlug);
 	if (!fixtureData) return null;
 	const { wscClubDriblId } = getClubConfig();

@@ -20,7 +20,10 @@ function renderScore(fixture: EnrichedFixture) {
 				</span>
 			);
 		case 'washout reschedule':
+		case 'postponed':
 			return <span className="badge badge-neutral">Postponed</span>;
+		case 'cancelled':
+			return <span className="badge badge-error">Cancelled</span>;
 		default:
 			return <span className="text-base-content/50">-</span>;
 	}

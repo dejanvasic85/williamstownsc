@@ -10,7 +10,8 @@ type MatchCardMobileProps = {
 
 export function MatchCardMobile({ fixture, formattedDate, formattedTime }: MatchCardMobileProps) {
 	const isComplete = fixture.status === 'complete';
-	const isWashout = fixture.status === 'washout reschedule';
+	const isPostponed = fixture.status === 'washout reschedule' || fixture.status === 'postponed';
+	const isCancelled = fixture.status === 'cancelled';
 
 	return (
 		<div className="flex flex-col gap-3">
@@ -58,7 +59,8 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 				</div>
 			</div>
 
-			{isWashout && <span className="badge badge-neutral">Postponed</span>}
+			{isPostponed && <span className="badge badge-neutral">Postponed</span>}
+			{isCancelled && <span className="badge badge-error">Cancelled</span>}
 
 			{/* Venue */}
 			<a

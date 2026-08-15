@@ -1,6 +1,8 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { cache } from 'react';
+import { getTeamLeagueId } from '@/lib/content/teamDetail';
+import { getMatchdayTableForLeague } from '@/lib/matchday/matchdayTableService';
 import { tableDataSchema } from '@/types/table';
 import type { TableData } from '@/types/table';
 
@@ -26,5 +28,10 @@ const loadTable = cache(async function loadTable(slug: string): Promise<TableDat
 });
 
 export async function getTableForTeam(slug: string): Promise<TableData | null> {
+	const leagueId = await getTeamLeagueId(slug);
+	if (leagueId) {
+		return getMatchdayTableForLeague(leagueId);
+	}
+
 	return loadTable(slug);
 }

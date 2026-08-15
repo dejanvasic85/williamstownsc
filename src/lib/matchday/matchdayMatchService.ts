@@ -1,0 +1,169 @@
+import { cache } from 'react';
+import { addMinutes, isBefore } from 'date-fns';
+import logger from '@/lib/logger';
+import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
+import { type FixtureTeam, getFixtureTeamsById } from '@/lib/matchday/matchdayClubService';
+import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
+import type { EnrichedFixture } from '@/types/matches';
+
+const log = logger.child({ service: 'matchdayMatchService' });
+const matchdayRequestTimeoutMs = 10_000;
+const matchDurationMinutes = 120;
+const melbourneTimezone = 'Australia/Melbourne';
+
+type MatchdayFixtureStatus = 'scheduled' | 'in_progress' | 'completed' | 'postponed' | 'cancelled';
+
+type MatchdayFixture = {
+	id: string;
+	round: number | null;
+	homeTeamId: string | null;
+	awayTeamId: string | null;
+	venue: string | null;
+	latitude: number | null;
+	longitude: number | null;
+	kickoffAt: string | null;
+	status: MatchdayFixtureStatus;
+	homeScore: number | null;
+	awayScore: number | null;
+	isBye: boolean;
+};
+
+/** Mirrors the two statuses the UI already special-cases, plus the matchday-only ones added
+ * alongside (docs/plans/2026-08-15-matchday-fixtures-table-swap.md). */
+function mapStatus(status: MatchdayFixtureStatus): string {
+	return status === 'completed' ? 'complete' : status;
+}
+
+function formatKickoff(kickoffAt: string): { date: string; time: string; day: string } {
+	const kickoff = new Date(kickoffAt);
+	const date = kickoff.toLocaleDateString('en-CA', {
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		timeZone: melbourneTimezone
+	});
+	const time = kickoff.toLocaleTimeString('en-AU', {
+		hour: '2-digit',
+		minute: '2-digit',
+		hour12: false,
+		timeZone: melbourneTimezone
+	});
+	const day = kickoff.toLocaleDateString('en-AU', {
+		weekday: 'long',
+		timeZone: melbourneTimezone
+	});
+	return { date, time, day };
+}
+
+function mapFixture(
+	fixture: MatchdayFixture,
+	teamsById: Map<string, FixtureTeam>
+): EnrichedFixture | null {
+	if (fixture.isBye || fixture.round === null || !fixture.kickoffAt) {
+		return null;
+	}
+
+	if (!fixture.homeTeamId || !fixture.awayTeamId) {
+		log.warn({ fixtureId: fixture.id }, 'non-bye matchday fixture missing a team id');
+		return null;
+	}
+
+	const homeTeam = teamsById.get(fixture.homeTeamId);
+	const awayTeam = teamsById.get(fixture.awayTeamId);
+	if (!homeTeam || !awayTeam) {
+		log.warn({ fixtureId: fixture.id }, 'matchday fixture references an unresolved team');
+		return null;
+	}
+
+	const { date, time, day } = formatKickoff(fixture.kickoffAt);
+
+	return {
+		round: fixture.round,
+		date,
+		day,
+		time,
+		homeTeam: homeTeam.club,
+		awayTeam: awayTeam.club,
+		homeTeamDisplayName: homeTeam.teamName,
+		awayTeamDisplayName: awayTeam.teamName,
+		address: fixture.venue ?? '',
+		coordinates:
+			fixture.latitude != null && fixture.longitude != null
+				? `${fixture.latitude},${fixture.longitude}`
+				: '',
+		homeScore: fixture.homeScore ?? undefined,
+		awayScore: fixture.awayScore ?? undefined,
+		status: mapStatus(fixture.status)
+	};
+}
+
+/** All non-bye, mapped fixtures for a league — the matchday equivalent of a team's
+ * `data/matches/{slug}.json`, which is scoped per-league too, not per-team.
+ * `cache()`-wrapped so the several call sites that need this per request (layout + page, or
+ * next/previous match resolution) share one real API call, same as `loadFixture` does for the
+ * local-JSON path. */
+export const getMatchdayFixturesForLeague = cache(async function getMatchdayFixturesForLeague(
+	leagueId: string
+): Promise<EnrichedFixture[]> {
+	const client = getMatchdayClient();
+	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
+	const [fixturesResult, teamsById] = await Promise.all([
+		client.GET('/leagues/{id}/fixtures', { params: { path: { id: leagueId } }, signal }),
+		getFixtureTeamsById()
+	]);
+
+	if (fixturesResult.error || !fixturesResult.data) {
+		throw new Error(`Failed to load fixtures for league ${leagueId}`);
+	}
+
+	return fixturesResult.data
+		.map((fixture) => mapFixture(fixture, teamsById))
+		.filter((fixture): fixture is EnrichedFixture => fixture !== null)
+		.sort((a, b) => a.round - b.round);
+});
+
+function isClubFixture(fixture: EnrichedFixture, clubId: string): boolean {
+	return fixture.homeTeam.externalId === clubId || fixture.awayTeam.externalId === clubId;
+}
+
+export function resolveMatchdayNextMatch(
+	fixtures: EnrichedFixture[],
+	clubId: string
+): EnrichedFixture | null {
+	const now = new Date();
+	const upcoming = fixtures
+		.filter((fixture) => isClubFixture(fixture, clubId))
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
+		}))
+		.filter(({ matchDateTime }) => isBefore(now, addMinutes(matchDateTime, matchDurationMinutes)));
+
+	if (upcoming.length === 0) {
+		return null;
+	}
+
+	upcoming.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
+	return upcoming[0].fixture;
+}
+
+export function resolveMatchdayPreviousMatch(
+	fixtures: EnrichedFixture[],
+	clubId: string
+): EnrichedFixture | null {
+	const now = new Date();
+	const completed = fixtures
+		.filter((fixture) => fixture.status === 'complete' && isClubFixture(fixture, clubId))
+		.map((fixture) => ({
+			fixture,
+			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
+		}))
+		.filter(({ matchDateTime }) => isBefore(matchDateTime, now));
+
+	if (completed.length === 0) {
+		return null;
+	}
+
+	completed.sort((a, b) => b.matchDateTime.getTime() - a.matchDateTime.getTime());
+	return completed[0].fixture;
+}
