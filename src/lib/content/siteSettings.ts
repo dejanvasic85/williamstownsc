@@ -18,7 +18,8 @@ export async function getSiteSettings() {
 			contactEmails,
 			canonicalUrl,
 			foundingDate,
-			contact
+			contact,
+			matchday
 		}`,
 		{},
 		{ next: { tags: ['siteSettings'] } }
