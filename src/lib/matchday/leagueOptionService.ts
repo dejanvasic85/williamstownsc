@@ -5,6 +5,8 @@ import type { LeagueOption } from '@/types/matchday';
 
 const log = logger.child({ service: 'leagueOptionService' });
 
+const matchdayRequestTimeoutMs = 10_000;
+
 type League = {
 	id: string;
 	name: string;
@@ -37,10 +39,13 @@ export async function getClubLeagueOptions(): Promise<LeagueOption[]> {
 	}
 
 	const client = getMatchdayClient();
+	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
+	// No per-id/batch filter exists for /competitions or /seasons (only /{id}), so this fetches
+	// the full catalog rather than N+1 single-id requests — fine at the current catalog size.
 	const [leaguesResult, competitionsResult, seasonsResult] = await Promise.all([
-		client.GET('/leagues', { params: { query: { clubId } } }),
-		client.GET('/competitions'),
-		client.GET('/seasons')
+		client.GET('/leagues', { params: { query: { clubId } }, signal }),
+		client.GET('/competitions', { signal }),
+		client.GET('/seasons', { signal })
 	]);
 
 	if (leaguesResult.error || !leaguesResult.data) {

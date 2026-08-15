@@ -47,12 +47,19 @@ export function LeagueIdInput(props: StringInputProps) {
 
 	if (isLoading) {
 		return (
-			<Flex align="center" gap={2} padding={2}>
-				<Spinner muted />
-				<Text muted size={1}>
-					Loading leagues…
-				</Text>
-			</Flex>
+			<Stack gap={3}>
+				<Flex align="center" gap={2} padding={2}>
+					<Spinner muted />
+					<Text muted size={1}>
+						Loading leagues…
+					</Text>
+				</Flex>
+				{value && (
+					<Text size={1} muted>
+						Current value: {value}
+					</Text>
+				)}
+			</Stack>
 		);
 	}
 
