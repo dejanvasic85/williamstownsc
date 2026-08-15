@@ -68,7 +68,8 @@ All changes MUST follow the following workflow
   2. `pnpm run lint`
   3. `pnpm run type:check`
   4. `pnpm run build`
-  5. `pnpm run test:e2e`
+  5. `pnpm run test:e2e` only when there are changes to the application
+  6. Run /caveman-review skill and address issues that you agree are worth fixing
 - Never push without running these checks — commit any formatting changes before pushing
 - Pre-commit hooks auto-run: Husky runs lint-staged (prettier + eslint)
 - Update any plan files with progress to help with issue tracking
