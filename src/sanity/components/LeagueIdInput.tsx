@@ -11,15 +11,11 @@ import type { LeagueOption } from '@/types/matchday';
 
 type AutocompleteOption = LeagueOption & { value: string };
 
-// When embedded in the Next.js app (/studio route), siteUrl is unset and the relative
-// URL resolves against the app's own origin; the standalone Studio deploy needs it set
-// explicitly so it can reach the Next.js app cross-origin.
-
 const leaguesQueryKey = ['studio-leagues'];
 
 async function fetchLeagueOptions(): Promise<LeagueOption[]> {
 	const { siteUrl } = getStudioConfig();
-	const leaguesEndpoint = siteUrl ? `${siteUrl}/api/studio/leagues` : '/api/studio/leagues';
+	const leaguesEndpoint = `${siteUrl}/api/studio/leagues`;
 	const response = await fetch(leaguesEndpoint);
 	if (!response.ok) {
 		throw new Error(`Request failed with status ${response.status}`);
