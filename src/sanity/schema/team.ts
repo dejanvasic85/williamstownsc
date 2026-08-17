@@ -153,7 +153,7 @@ export const team = defineType({
 		}),
 		defineField({
 			name: 'showOnHomepage',
-			title: 'Show on football section in homepage',
+			title: 'Show in the homepage Football section',
 			type: 'boolean',
 			description: 'Display this team in the homepage Football section',
 			initialValue: false

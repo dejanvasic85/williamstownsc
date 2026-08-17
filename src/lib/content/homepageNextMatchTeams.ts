@@ -9,7 +9,7 @@ const maxHomepageNextMatchTeams = 2;
 export const homepageNextMatchTeamsQuery = groq`
   *[_type == "team" && showNextMatchOnHomepage == true] {
     "slug": slug.current,
-    "displayName": coalesce(homepageDisplayName, name),
+    "displayName": select(homepageDisplayName != null && homepageDisplayName != "" => homepageDisplayName, name),
     "sortOrder": coalesce(homepageNextMatchOrder, order)
   } | order(sortOrder asc) [0...${maxHomepageNextMatchTeams}] {
     slug,
