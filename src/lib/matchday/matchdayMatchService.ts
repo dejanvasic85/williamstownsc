@@ -1,4 +1,4 @@
-import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 import logger from '@/lib/logger';
 import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 import { type FixtureTeam, getFixtureTeamsById } from '@/lib/matchday/matchdayClubService';
@@ -94,14 +94,7 @@ function mapFixture(
 	};
 }
 
-/** All non-bye, mapped fixtures for a league — the matchday equivalent of a team's
- * `data/matches/{slug}.json`, which is scoped per-league too, not per-team.
- * `cache()`-wrapped so the several call sites that need this per request (layout + page, or
- * next/previous match resolution) share one real API call, same as `loadFixture` does for the
- * local-JSON path. */
-export const getMatchdayFixturesForLeague = cache(async function getMatchdayFixturesForLeague(
-	leagueId: string
-): Promise<EnrichedFixture[]> {
+async function loadFixturesForLeague(leagueId: string): Promise<EnrichedFixture[]> {
 	const client = getMatchdayClient();
 	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
 	const [fixturesResult, teamsById] = await Promise.all([
@@ -117,4 +110,15 @@ export const getMatchdayFixturesForLeague = cache(async function getMatchdayFixt
 		.map((fixture) => mapFixture(fixture, teamsById))
 		.filter((fixture): fixture is EnrichedFixture => fixture !== null)
 		.sort((a, b) => a.round - b.round);
-});
+}
+
+/** All non-bye, mapped fixtures for a league — the matchday equivalent of a team's
+ * `data/matches/{slug}.json`, which is scoped per-league too, not per-team.
+ * `unstable_cache()`-wrapped (Next's Data Cache, shared across the whole build/all requests
+ * within the revalidate window) — a team's /matches and /table pages are separate static-
+ * generation passes, so per-request memoization alone doesn't share this across them. */
+export const getMatchdayFixturesForLeague = unstable_cache(
+	loadFixturesForLeague,
+	['matchday-fixtures'],
+	{ revalidate: 300, tags: ['matchday-fixtures'] }
+);

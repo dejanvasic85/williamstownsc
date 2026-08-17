@@ -1,4 +1,4 @@
-import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 
 export type LeagueMeta = {
@@ -6,12 +6,7 @@ export type LeagueMeta = {
 	season: number;
 };
 
-/** Resolves a league's competition/season display names — two targeted GET /{id} calls, not
- * the full-catalog fetch used for the league picker (this is one league, not many).
- * `cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague`. */
-export const getLeagueMeta = cache(async function getLeagueMeta(
-	leagueId: string
-): Promise<LeagueMeta> {
+async function loadLeagueMeta(leagueId: string): Promise<LeagueMeta> {
 	const client = getMatchdayClient();
 	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
 
@@ -36,4 +31,12 @@ export const getLeagueMeta = cache(async function getLeagueMeta(
 		competition: competitionResult.data?.name ?? leagueResult.data.competitionId,
 		season: Number(seasonResult.data?.name) || new Date().getFullYear()
 	};
+}
+
+/** Resolves a league's competition/season display names — two targeted GET /{id} calls, not
+ * the full-catalog fetch used for the league picker (this is one league, not many).
+ * `unstable_cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague`. */
+export const getLeagueMeta = unstable_cache(loadLeagueMeta, ['matchday-league-meta'], {
+	revalidate: 300,
+	tags: ['matchday-league-meta']
 });

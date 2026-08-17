@@ -1,4 +1,4 @@
-import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 import logger from '@/lib/logger';
 import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 import {
@@ -52,11 +52,7 @@ function mapTableEntry(entry: MatchdayTableEntry, teamsById: Map<string, Fixture
 	};
 }
 
-/** `cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague` — layout + page both call
- * `getTableForTeam` per request. */
-export const getMatchdayTableForLeague = cache(async function getMatchdayTableForLeague(
-	leagueId: string
-): Promise<TableData> {
+async function loadTableForLeague(leagueId: string): Promise<TableData> {
 	const client = getMatchdayClient();
 	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
 
@@ -75,4 +71,12 @@ export const getMatchdayTableForLeague = cache(async function getMatchdayTableFo
 		.sort((a, b) => a.position - b.position);
 
 	return { season, competition, entries };
+}
+
+/** `unstable_cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague` — a team's
+ * /matches and /table pages are separate static-generation passes, so this needs to be shared
+ * across the whole build, not just within one request. */
+export const getMatchdayTableForLeague = unstable_cache(loadTableForLeague, ['matchday-table'], {
+	revalidate: 300,
+	tags: ['matchday-table']
 });
