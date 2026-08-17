@@ -1,14 +1,11 @@
 import { cache } from 'react';
-import { addMinutes, isBefore } from 'date-fns';
 import logger from '@/lib/logger';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import { type FixtureTeam, getFixtureTeamsById } from '@/lib/matchday/matchdayClubService';
-import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
 import type { EnrichedFixture } from '@/types/matches';
 
 const log = logger.child({ service: 'matchdayMatchService' });
 const matchdayRequestTimeoutMs = 10_000;
-const matchDurationMinutes = 120;
 const melbourneTimezone = 'Australia/Melbourne';
 
 type MatchdayFixtureStatus = 'scheduled' | 'in_progress' | 'completed' | 'postponed' | 'cancelled';
@@ -121,49 +118,3 @@ export const getMatchdayFixturesForLeague = cache(async function getMatchdayFixt
 		.filter((fixture): fixture is EnrichedFixture => fixture !== null)
 		.sort((a, b) => a.round - b.round);
 });
-
-function isClubFixture(fixture: EnrichedFixture, clubId: string): boolean {
-	return fixture.homeTeam.externalId === clubId || fixture.awayTeam.externalId === clubId;
-}
-
-export function resolveMatchdayNextMatch(
-	fixtures: EnrichedFixture[],
-	clubId: string
-): EnrichedFixture | null {
-	const now = new Date();
-	const upcoming = fixtures
-		.filter((fixture) => isClubFixture(fixture, clubId))
-		.map((fixture) => ({
-			fixture,
-			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
-		}))
-		.filter(({ matchDateTime }) => isBefore(now, addMinutes(matchDateTime, matchDurationMinutes)));
-
-	if (upcoming.length === 0) {
-		return null;
-	}
-
-	upcoming.sort((a, b) => a.matchDateTime.getTime() - b.matchDateTime.getTime());
-	return upcoming[0].fixture;
-}
-
-export function resolveMatchdayPreviousMatch(
-	fixtures: EnrichedFixture[],
-	clubId: string
-): EnrichedFixture | null {
-	const now = new Date();
-	const completed = fixtures
-		.filter((fixture) => fixture.status === 'complete' && isClubFixture(fixture, clubId))
-		.map((fixture) => ({
-			fixture,
-			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)
-		}))
-		.filter(({ matchDateTime }) => isBefore(matchDateTime, now));
-
-	if (completed.length === 0) {
-		return null;
-	}
-
-	completed.sort((a, b) => b.matchDateTime.getTime() - a.matchDateTime.getTime());
-	return completed[0].fixture;
-}

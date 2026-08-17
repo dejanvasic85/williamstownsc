@@ -1,4 +1,4 @@
-import { getSiteSettings } from '@/lib/content/siteSettings';
+import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import type { LeagueOption } from '@/types/matchday';
@@ -30,8 +30,7 @@ function buildLabel(
  * than dropping the league entirely (docs/plans/2026-08-15-team-league-picker-design-spike.md).
  */
 export async function getClubLeagueOptions(): Promise<LeagueOption[]> {
-	const siteSettings = await getSiteSettings();
-	const clubId = siteSettings?.matchday?.clubId;
+	const clubId = await getMatchdayClubId();
 
 	if (!clubId) {
 		log.warn('siteSettings.matchday.clubId is not set — cannot resolve league options');

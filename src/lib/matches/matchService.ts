@@ -8,15 +8,15 @@ import {
 	resolveTeamDisplayName
 } from '@/lib/clubService';
 import { getClubConfig } from '@/lib/config';
+import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import { getTeamLeagueId } from '@/lib/content/teamDetail';
 import { getLeagueMeta } from '@/lib/matchday/matchdayLeagueMetaService';
+import { getMatchdayFixturesForLeague } from '@/lib/matchday/matchdayMatchService';
+import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
 import {
-	getMatchdayFixturesForLeague,
 	resolveMatchdayNextMatch,
 	resolveMatchdayPreviousMatch
-} from '@/lib/matchday/matchdayMatchService';
-import { getMatchdayClubId } from '@/lib/matchday/matchdaySiteConfig';
-import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
+} from '@/lib/matches/matchResolverService';
 import { bye, fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 

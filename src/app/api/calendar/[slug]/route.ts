@@ -1,8 +1,8 @@
 import { TZDate } from '@date-fns/tz';
 import { addHours } from 'date-fns';
 import { getClubConfig } from '@/lib/config';
+import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import { getTeamLeagueId } from '@/lib/content/teamDetail';
-import { getMatchdayClubId } from '@/lib/matchday/matchdaySiteConfig';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
 import type { EnrichedFixture } from '@/types/matches';
 
