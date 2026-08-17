@@ -5,8 +5,11 @@ const clientConfigSchema = z.object({
 	sanityProjectId: z.string().min(1, 'Sanity project ID is required'),
 	sanityDataset: z.string().min(1, 'Sanity dataset is required'),
 	sanityApiVersion: z.string().default('2024-01-01'),
-	recaptchaSiteKey: z.string().optional(),
-	siteUrl: z.string().url().default('https://www.williamstownsc.com')
+	recaptchaSiteKey: z.string().optional()
+});
+
+const studioConfigSchema = z.object({
+	siteUrl: z.url()
 });
 
 // Server-only AWS config schema
@@ -58,6 +61,7 @@ export type ClubConfig = {
 	wscClubDriblName: string;
 };
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
+export type StudioConfig = z.infer<typeof studioConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
 export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
@@ -81,12 +85,21 @@ export function getClientConfig(): ClientConfig {
 		sanityProjectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
 		sanityDataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
 		sanityApiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-		recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-		siteUrl: process.env.NEXT_PUBLIC_SITE_URL
+		recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 	});
 
 	cachedClientConfig = config;
 	return config;
+}
+
+/**
+ * Get Sanity Studio-bundled config
+ * Only reads SANITY_STUDIO_-prefixed vars, the only prefix Sanity's Studio build inlines
+ */
+export function getStudioConfig(): StudioConfig {
+	return studioConfigSchema.parse({
+		siteUrl: process.env.SANITY_STUDIO_SITE_URL
+	});
 }
 
 /**
