@@ -5,7 +5,8 @@ const clientConfigSchema = z.object({
 	sanityProjectId: z.string().min(1, 'Sanity project ID is required'),
 	sanityDataset: z.string().min(1, 'Sanity dataset is required'),
 	sanityApiVersion: z.string().default('2024-01-01'),
-	recaptchaSiteKey: z.string().optional()
+	recaptchaSiteKey: z.string().optional(),
+	siteUrl: z.string().url().default('https://www.williamstownsc.com')
 });
 
 // Server-only AWS config schema
@@ -80,7 +81,8 @@ export function getClientConfig(): ClientConfig {
 		sanityProjectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
 		sanityDataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
 		sanityApiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-		recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+		recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+		siteUrl: process.env.NEXT_PUBLIC_SITE_URL
 	});
 
 	cachedClientConfig = config;
