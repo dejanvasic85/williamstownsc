@@ -1,7 +1,5 @@
 import { cache } from 'react';
-import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
-
-const matchdayRequestTimeoutMs = 10_000;
+import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 
 export type LeagueMeta = {
 	competition: string;

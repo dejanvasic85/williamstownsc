@@ -50,7 +50,7 @@ untouched, still reading local JSON.
 - [x] New `src/lib/matchday/matchdayMatchService.ts` — `GET /leagues/{id}/fixtures`, map to `EnrichedFixture[]`, byes via `isBye`, status mapping per Decisions
 - [x] New `src/lib/matchday/matchdayTableService.ts` — `GET /leagues/{id}/table`, map to `TableData`
 - [x] New `src/lib/matchday/matchdayLeagueMetaService.ts` — competition/season name resolution shared by fixtures + table
-- [x] New `src/lib/matchday/matchdaySiteConfig.ts` — `getMatchdayClubId()`, the matchday equivalent of `wscClubDriblId`
+- [x] `getMatchdayClubId()` — the matchday equivalent of `wscClubDriblId` — lives in `src/lib/content/siteSettings.ts`, next to `getSiteSettings()` which it wraps (moved from a short-lived `matchdaySiteConfig.ts` during the reorg below; it's a Sanity reader, not a matchday API wrapper)
 - [x] New `src/lib/matches/fixtureDateTimeService.ts` — extracted `parseFixtureDateTime` to a neutral module (avoids a circular import between `matchService.ts` and `matchdayMatchService.ts`)
 - [x] Branch `matchService.ts`/`tableService.ts` public functions on `leagueId` presence; use `siteSettings.matchday.clubId` instead of `wscClubDriblId` on the matchday path
 - [x] `MatchCardMobile` + `MatchCardDesktop`: broaden postponed check, add cancelled badge
@@ -59,8 +59,10 @@ untouched, still reading local JSON.
 - [x] All matchday service functions `cache()`-wrapped (caveman-review finding: layout.tsx + page.tsx both call `getTeamMatches`/`getTableForTeam` per request, which would otherwise double the real API calls for a matchday-backed team)
 - [x] Verified fixture/next-match/previous-match/table mapping against the real matchday API directly (leagueId `lea_gHqdp7GCkAGS`, bypassing Sanity) — all correct, including the real WSC next/previous match
 - [x] `pnpm run format`/`lint`/`type:check`/`build` all pass; `test:e2e` 22/23 (1 known local-only Playwright quirk, unrelated — see memory)
-- [ ] **Blocked on user**: `under-12-girls` team's `matchday.leagueId` isn't actually saved in Sanity (checked directly via the API including drafts — still `null`) — need this fixed before the real page can be browser-verified end-to-end
-- [ ] Browser-verify `/football/teams/under-12-girls` (team/matches/table pages) + homepage countdown once the above is resolved
+- [x] Reorg (user review feedback): moved `getMatchdayClubId` into `lib/content/siteSettings.ts`; split the pure `resolveMatchdayNextMatch`/`resolveMatchdayPreviousMatch` out of `matchdayMatchService.ts` into a new `matchResolverService.ts`, so every `matchday*Service.ts` file is now fetch+map only, no mixed-in pure logic
+- [x] Coderabbit fixes on #841: `getTeamLeagueId` no longer swallows Sanity errors (a lookup failure must not be treated as "not configured for matchday" and silently fall back to stale local JSON); matchday API failures in `matchService.ts`/`tableService.ts` now caught and degrade to the same null/false/empty contract the local path uses instead of a 500; `matchdayClubService` uses `safeParse` so one malformed club record doesn't fail the whole catalog; `matchdayTableService` keeps a row with a placeholder name/logo instead of dropping it (was leaving gaps in ladder position numbering); fixture status strings centralized in `fixtureStatusService.ts`; kickoff time formatting uses `hourCycle: 'h23'` instead of `hour12: false`; `matchdayRequestTimeoutMs` centralized in `matchdayClient.ts`
+- [ ] User fixing the `under-12-girls` Sanity save, then testing `/football/teams/under-12-girls` (team/matches/table pages) locally
+- [ ] Remove the legacy Dribl-crawler code path once the above is confirmed working (same PR)
 
 ## Unresolved questions
 

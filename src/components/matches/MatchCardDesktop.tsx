@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import { fixtureStatusValue } from '@/lib/matches/fixtureStatusService';
 import type { EnrichedFixture } from '@/types/matches';
 
 type MatchCardDesktopProps = {
@@ -10,7 +11,7 @@ type MatchCardDesktopProps = {
 
 function renderScore(fixture: EnrichedFixture) {
 	switch (fixture.status) {
-		case 'complete':
+		case fixtureStatusValue.complete:
 			if (fixture.homeScore == null || fixture.awayScore == null) {
 				return <span className="text-base-content/50">-</span>;
 			}
@@ -19,10 +20,10 @@ function renderScore(fixture: EnrichedFixture) {
 					{fixture.homeScore} - {fixture.awayScore}
 				</span>
 			);
-		case 'washout reschedule':
-		case 'postponed':
+		case fixtureStatusValue.postponedWashout:
+		case fixtureStatusValue.postponed:
 			return <span className="badge badge-neutral">Postponed</span>;
-		case 'cancelled':
+		case fixtureStatusValue.cancelled:
 			return <span className="badge badge-error">Cancelled</span>;
 		default:
 			return <span className="text-base-content/50">-</span>;

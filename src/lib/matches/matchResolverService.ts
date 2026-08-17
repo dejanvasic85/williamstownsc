@@ -1,5 +1,6 @@
 import { addMinutes, isBefore } from 'date-fns';
 import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
+import { isFixtureComplete } from '@/lib/matches/fixtureStatusService';
 import type { EnrichedFixture } from '@/types/matches';
 
 const matchDurationMinutes = 120;
@@ -39,7 +40,7 @@ export function resolveMatchdayPreviousMatch(
 ): EnrichedFixture | null {
 	const now = new Date();
 	const completed = fixtures
-		.filter((fixture) => fixture.status === 'complete' && isClubFixture(fixture, clubId))
+		.filter((fixture) => isFixtureComplete(fixture.status) && isClubFixture(fixture, clubId))
 		.map((fixture) => ({
 			fixture,
 			matchDateTime: parseFixtureDateTime(fixture.date, fixture.time)

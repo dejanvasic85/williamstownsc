@@ -1,12 +1,17 @@
 import { cache } from 'react';
 import logger from '@/lib/logger';
-import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
-import { type FixtureTeam, getFixtureTeamsById } from '@/lib/matchday/matchdayClubService';
+import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
+import {
+	type FixtureTeam,
+	clubPlaceholderLogoUrl,
+	getFixtureTeamsById
+} from '@/lib/matchday/matchdayClubService';
 import { getLeagueMeta } from '@/lib/matchday/matchdayLeagueMetaService';
 import type { TableData, TableEntry } from '@/types/table';
 
 const log = logger.child({ service: 'matchdayTableService' });
-const matchdayRequestTimeoutMs = 10_000;
+const unresolvedTeamName = 'Unknown team';
+const unresolvedClubName = 'Unknown club';
 
 type MatchdayTableEntry = {
 	teamId: string;
@@ -21,21 +26,20 @@ type MatchdayTableEntry = {
 	points: number;
 };
 
-function mapTableEntry(
-	entry: MatchdayTableEntry,
-	teamsById: Map<string, FixtureTeam>
-): TableEntry | null {
+/** Never drops a row — an unresolved team still holds its ladder position, just with a
+ * placeholder name/logo, so the table doesn't render with a gap in position numbering
+ * (1, 2, 4, ...) and no indication a row went missing. */
+function mapTableEntry(entry: MatchdayTableEntry, teamsById: Map<string, FixtureTeam>): TableEntry {
 	const team = teamsById.get(entry.teamId);
 	if (!team) {
 		log.warn({ teamId: entry.teamId }, 'matchday table entry references an unresolved team');
-		return null;
 	}
 
 	return {
 		teamId: entry.teamId,
-		teamName: team.teamName,
-		clubName: team.club.name,
-		logoUrl: team.club.logoUrl,
+		teamName: team?.teamName ?? unresolvedTeamName,
+		clubName: team?.club.name ?? unresolvedClubName,
+		logoUrl: team?.club.logoUrl ?? clubPlaceholderLogoUrl,
 		position: entry.position,
 		played: entry.played,
 		wins: entry.won,
@@ -68,7 +72,6 @@ export const getMatchdayTableForLeague = cache(async function getMatchdayTableFo
 
 	const entries = tableResult.data
 		.map((entry) => mapTableEntry(entry, teamsById))
-		.filter((entry): entry is TableEntry => entry !== null)
 		.sort((a, b) => a.position - b.position);
 
 	return { season, competition, entries };

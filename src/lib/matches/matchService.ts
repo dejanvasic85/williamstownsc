@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { cache } from 'react';
+import * as Sentry from '@sentry/nextjs';
 import { addMinutes, isBefore } from 'date-fns';
 import {
 	getClubByExternalId as getClubByExternalIdFromService,
@@ -10,6 +11,7 @@ import {
 import { getClubConfig } from '@/lib/config';
 import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import { getTeamLeagueId } from '@/lib/content/teamDetail';
+import logger from '@/lib/logger';
 import { getLeagueMeta } from '@/lib/matchday/matchdayLeagueMetaService';
 import { getMatchdayFixturesForLeague } from '@/lib/matchday/matchdayMatchService';
 import { parseFixtureDateTime } from '@/lib/matches/fixtureDateTimeService';
@@ -20,6 +22,7 @@ import {
 import { bye, fixtureDataSchema } from '@/types/matches';
 import type { Club, EnrichedFixture, Fixture, FixtureData } from '@/types/matches';
 
+const log = logger.child({ service: 'matchService' });
 const fixturesDirectory = path.join(process.cwd(), 'data', 'matches');
 
 export function getClubs(): Club[] {
@@ -121,11 +124,17 @@ export async function getFixturesForTeam(slug: string): Promise<{
 } | null> {
 	const leagueId = await getTeamLeagueId(slug);
 	if (leagueId) {
-		const [fixtures, { competition, season }] = await Promise.all([
-			getMatchdayFixturesForLeague(leagueId),
-			getLeagueMeta(leagueId)
-		]);
-		return { fixtures, competition, season };
+		try {
+			const [fixtures, { competition, season }] = await Promise.all([
+				getMatchdayFixturesForLeague(leagueId),
+				getLeagueMeta(leagueId)
+			]);
+			return { fixtures, competition, season };
+		} catch (error) {
+			Sentry.captureException(error);
+			log.error({ err: error, leagueId }, 'failed to load matchday fixtures');
+			return null;
+		}
 	}
 
 	const fixtureData = await loadFixture(slug);
@@ -144,8 +153,14 @@ export async function getFixturesForTeam(slug: string): Promise<{
 export async function hasFixtures(slug: string): Promise<boolean> {
 	const leagueId = await getTeamLeagueId(slug);
 	if (leagueId) {
-		const fixtures = await getMatchdayFixturesForLeague(leagueId);
-		return fixtures.length > 0;
+		try {
+			const fixtures = await getMatchdayFixturesForLeague(leagueId);
+			return fixtures.length > 0;
+		} catch (error) {
+			Sentry.captureException(error);
+			log.error({ err: error, leagueId }, 'failed to load matchday fixtures');
+			return false;
+		}
 	}
 
 	const fixtureData = await loadFixture(slug);
@@ -200,6 +215,32 @@ function resolvePreviousMatch(fixtures: Fixture[], wscClubDriblId: string): Enri
 	return enrichFixture(completed[0].fixture, duplicateClubIds);
 }
 
+type MatchdayContext = {
+	fixtures: EnrichedFixture[];
+	matchdayClubId: string | null;
+};
+
+/**
+ * Shared by getTeamMatches/getNextMatch/getPreviousMatch — the three matchday call sites that
+ * all need "this league's fixtures + our club id" to resolve next/previous match. Swallows
+ * matchday API failures (unlike getTeamLeagueId) and returns null, so a transient matchday
+ * outage degrades to "no next/previous match" the same way the local-JSON path degrades on a
+ * missing/corrupt file, instead of a 500.
+ */
+async function loadMatchdayContext(leagueId: string): Promise<MatchdayContext | null> {
+	try {
+		const [fixtures, matchdayClubId] = await Promise.all([
+			getMatchdayFixturesForLeague(leagueId),
+			getMatchdayClubId()
+		]);
+		return { fixtures, matchdayClubId };
+	} catch (error) {
+		Sentry.captureException(error);
+		log.error({ err: error, leagueId }, 'failed to load matchday fixtures');
+		return null;
+	}
+}
+
 export async function getTeamMatches(teamSlug: string): Promise<{
 	hasFixtures: boolean;
 	nextMatch: EnrichedFixture | null;
@@ -207,19 +248,20 @@ export async function getTeamMatches(teamSlug: string): Promise<{
 }> {
 	const leagueId = await getTeamLeagueId(teamSlug);
 	if (leagueId) {
-		const [fixtures, matchdayClubId] = await Promise.all([
-			getMatchdayFixturesForLeague(leagueId),
-			getMatchdayClubId()
-		]);
+		const context = await loadMatchdayContext(leagueId);
 
-		if (fixtures.length === 0 || !matchdayClubId) {
-			return { hasFixtures: fixtures.length > 0, nextMatch: null, previousMatch: null };
+		if (!context || context.fixtures.length === 0 || !context.matchdayClubId) {
+			return {
+				hasFixtures: Boolean(context?.fixtures.length),
+				nextMatch: null,
+				previousMatch: null
+			};
 		}
 
 		return {
 			hasFixtures: true,
-			nextMatch: resolveMatchdayNextMatch(fixtures, matchdayClubId),
-			previousMatch: resolveMatchdayPreviousMatch(fixtures, matchdayClubId)
+			nextMatch: resolveMatchdayNextMatch(context.fixtures, context.matchdayClubId),
+			previousMatch: resolveMatchdayPreviousMatch(context.fixtures, context.matchdayClubId)
 		};
 	}
 
@@ -242,11 +284,10 @@ export async function getTeamMatches(teamSlug: string): Promise<{
 export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
 	const leagueId = await getTeamLeagueId(teamSlug);
 	if (leagueId) {
-		const [fixtures, matchdayClubId] = await Promise.all([
-			getMatchdayFixturesForLeague(leagueId),
-			getMatchdayClubId()
-		]);
-		return matchdayClubId ? resolveMatchdayNextMatch(fixtures, matchdayClubId) : null;
+		const context = await loadMatchdayContext(leagueId);
+		return context?.matchdayClubId
+			? resolveMatchdayNextMatch(context.fixtures, context.matchdayClubId)
+			: null;
 	}
 
 	const fixtureData = await loadFixture(teamSlug);
@@ -258,11 +299,10 @@ export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | 
 export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
 	const leagueId = await getTeamLeagueId(teamSlug);
 	if (leagueId) {
-		const [fixtures, matchdayClubId] = await Promise.all([
-			getMatchdayFixturesForLeague(leagueId),
-			getMatchdayClubId()
-		]);
-		return matchdayClubId ? resolveMatchdayPreviousMatch(fixtures, matchdayClubId) : null;
+		const context = await loadMatchdayContext(leagueId);
+		return context?.matchdayClubId
+			? resolveMatchdayPreviousMatch(context.fixtures, context.matchdayClubId)
+			: null;
 	}
 
 	const fixtureData = await loadFixture(teamSlug);

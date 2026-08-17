@@ -1,11 +1,11 @@
 import { cache } from 'react';
 import logger from '@/lib/logger';
-import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
+import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 import { type FixtureTeam, getFixtureTeamsById } from '@/lib/matchday/matchdayClubService';
+import { fixtureStatusValue } from '@/lib/matches/fixtureStatusService';
 import type { EnrichedFixture } from '@/types/matches';
 
 const log = logger.child({ service: 'matchdayMatchService' });
-const matchdayRequestTimeoutMs = 10_000;
 const melbourneTimezone = 'Australia/Melbourne';
 
 type MatchdayFixtureStatus = 'scheduled' | 'in_progress' | 'completed' | 'postponed' | 'cancelled';
@@ -28,7 +28,7 @@ type MatchdayFixture = {
 /** Mirrors the two statuses the UI already special-cases, plus the matchday-only ones added
  * alongside (docs/plans/2026-08-15-matchday-fixtures-table-swap.md). */
 function mapStatus(status: MatchdayFixtureStatus): string {
-	return status === 'completed' ? 'complete' : status;
+	return status === 'completed' ? fixtureStatusValue.complete : status;
 }
 
 function formatKickoff(kickoffAt: string): { date: string; time: string; day: string } {
@@ -42,7 +42,7 @@ function formatKickoff(kickoffAt: string): { date: string; time: string; day: st
 	const time = kickoff.toLocaleTimeString('en-AU', {
 		hour: '2-digit',
 		minute: '2-digit',
-		hour12: false,
+		hourCycle: 'h23',
 		timeZone: melbourneTimezone
 	});
 	const day = kickoff.toLocaleDateString('en-AU', {

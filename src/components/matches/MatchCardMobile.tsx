@@ -1,5 +1,10 @@
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import {
+	isFixtureCancelled,
+	isFixtureComplete,
+	isFixturePostponed
+} from '@/lib/matches/fixtureStatusService';
 import type { EnrichedFixture } from '@/types/matches';
 
 type MatchCardMobileProps = {
@@ -9,9 +14,9 @@ type MatchCardMobileProps = {
 };
 
 export function MatchCardMobile({ fixture, formattedDate, formattedTime }: MatchCardMobileProps) {
-	const isComplete = fixture.status === 'complete';
-	const isPostponed = fixture.status === 'washout reschedule' || fixture.status === 'postponed';
-	const isCancelled = fixture.status === 'cancelled';
+	const isComplete = isFixtureComplete(fixture.status);
+	const isPostponed = isFixturePostponed(fixture.status);
+	const isCancelled = isFixtureCancelled(fixture.status);
 
 	return (
 		<div className="flex flex-col gap-3">

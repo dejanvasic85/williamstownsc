@@ -97,20 +97,18 @@ const teamLeagueIdQuery = groq`
  * document) to decide whether to read fixtures/table from the matchday API or local JSON.
  * `cache()`-wrapped so the several call sites that need this per request (matches/table
  * services, calendar route) share one query.
+ *
+ * Deliberately does NOT catch its own errors — a failed lookup is not the same as "this team
+ * has no leagueId", and callers must not treat a Sanity outage as permission to silently render
+ * a matchday-backed team's (now-stale) local JSON fallback. Let it throw.
  */
 export const getTeamLeagueId = cache(async function getTeamLeagueId(
 	slug: string
 ): Promise<string | null> {
-	try {
-		const leagueId = await client.fetch<string | null>(
-			teamLeagueIdQuery,
-			{ slug },
-			{ next: { tags: ['team'] } }
-		);
-		return leagueId ?? null;
-	} catch (error) {
-		Sentry.captureException(error);
-		log.error({ err: error, slug }, 'error fetching team leagueId');
-		return null;
-	}
+	const leagueId = await client.fetch<string | null>(
+		teamLeagueIdQuery,
+		{ slug },
+		{ next: { tags: ['team'] } }
+	);
+	return leagueId ?? null;
 });

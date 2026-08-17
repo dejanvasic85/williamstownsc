@@ -1,11 +1,9 @@
 import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
-import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
+import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 import type { LeagueOption } from '@/types/matchday';
 
 const log = logger.child({ service: 'leagueOptionService' });
-
-const matchdayRequestTimeoutMs = 10_000;
 
 type League = {
 	id: string;

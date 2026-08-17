@@ -1,12 +1,11 @@
 import { cache } from 'react';
 import logger from '@/lib/logger';
-import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
+import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
 import { clubSchema } from '@/types/matches';
 import type { Club } from '@/types/matches';
 
 const log = logger.child({ service: 'matchdayClubService' });
-const matchdayRequestTimeoutMs = 10_000;
-const clubPlaceholderLogoUrl = '/img/club-placeholder.svg';
+export const clubPlaceholderLogoUrl = '/img/club-placeholder.svg';
 
 type MatchdayClub = {
 	id: string;
@@ -19,13 +18,14 @@ export type FixtureTeam = {
 	teamName: string;
 };
 
-function mapMatchdayClub(club: MatchdayClub): Club {
-	return clubSchema.parse({
+function mapMatchdayClub(club: MatchdayClub): Club | null {
+	const result = clubSchema.safeParse({
 		externalId: club.id,
 		name: club.name,
 		displayName: club.name,
 		logoUrl: club.logoUrl ?? clubPlaceholderLogoUrl
 	});
+	return result.success ? result.data : null;
 }
 
 /**
@@ -67,7 +67,13 @@ export const getFixtureTeamsById = cache(async function getFixtureTeamsById(): P
 			continue;
 		}
 
-		fixtureTeamsById.set(team.id, { club: mapMatchdayClub(club), teamName: team.name });
+		const mappedClub = mapMatchdayClub(club);
+		if (!mappedClub) {
+			log.warn({ clubId: club.id }, 'matchday club failed schema validation, skipping');
+			continue;
+		}
+
+		fixtureTeamsById.set(team.id, { club: mappedClub, teamName: team.name });
 	}
 
 	return fixtureTeamsById;
