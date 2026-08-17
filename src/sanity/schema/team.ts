@@ -153,10 +153,26 @@ export const team = defineType({
 		}),
 		defineField({
 			name: 'showOnHomepage',
-			title: 'Show on homepage',
+			title: 'Show on football section in homepage',
 			type: 'boolean',
 			description: 'Display this team in the homepage Football section',
 			initialValue: false
+		}),
+		defineField({
+			name: 'showNextMatchOnHomepage',
+			title: 'Show next match on homepage',
+			type: 'boolean',
+			description:
+				'Feature this team’s next match countdown on the homepage (max 2 teams — the earliest 2 by Order win if more are enabled)',
+			initialValue: false
+		}),
+		defineField({
+			name: 'homepageDisplayName',
+			title: 'Homepage display name',
+			type: 'string',
+			description:
+				'Short label for the homepage next-match card, e.g. "Senior Men’s". Falls back to the team name if left blank.',
+			hidden: ({ document }) => !document?.showNextMatchOnHomepage
 		}),
 		defineField({
 			name: 'description',
