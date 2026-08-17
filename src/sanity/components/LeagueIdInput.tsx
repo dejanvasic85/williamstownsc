@@ -6,14 +6,15 @@ import { Autocomplete } from '@sanity/ui/autocomplete';
 import { useQuery } from '@tanstack/react-query';
 import { set, unset } from 'sanity';
 import type { StringInputProps } from 'sanity';
+import { getClientConfig } from '@/lib/config';
 import type { LeagueOption } from '@/types/matchday';
 
 type AutocompleteOption = LeagueOption & { value: string };
 
-const leaguesEndpoint = `/api/studio/leagues`;
 const leaguesQueryKey = ['studio-leagues'];
 
 async function fetchLeagueOptions(): Promise<LeagueOption[]> {
+	const leaguesEndpoint = `${getClientConfig().siteUrl}/api/studio/leagues`;
 	const response = await fetch(leaguesEndpoint);
 	if (!response.ok) {
 		throw new Error(`Request failed with status ${response.status}`);
