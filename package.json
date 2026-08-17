@@ -8,7 +8,8 @@
 	},
 	"scripts": {
 		"dev": "next dev --port 3003",
-		"build": "pnpm run type:gen && next build",
+		"build": "pnpm run type:gen && pnpm run warm:matchday && next build",
+		"warm:matchday": "dotenv -e .env.local -- tsx bin/warmMatchdayApi.ts",
 		"build:sanity": "sanity build",
 		"deploy:sanity": "sanity deploy",
 		"start": "next start",
