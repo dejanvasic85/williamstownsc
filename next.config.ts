@@ -26,6 +26,12 @@ const nextConfig: NextConfig = {
 				hostname: 'ocean.dribl.com',
 				port: '',
 				pathname: '/**'
+			},
+			{
+				protocol: 'https',
+				hostname: 'pub-a66fe1e7187a4eecb94f84decc945814.r2.dev',
+				port: '',
+				pathname: '/**'
 			}
 		]
 	}
