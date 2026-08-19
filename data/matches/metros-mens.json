@@ -1035,7 +1035,7 @@
 			"homeTeamName": "Kings Domain FC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1048,7 +1048,9 @@
 			"awayTeamName": "Brunswick Zebras FC Seniors The Old Lady",
 			"address": "Princes Park Oval Pitch 3",
 			"coordinates": "-37.787624,144.960651",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1074,7 +1076,9 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Alcock Road Reserve Pitch 1",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 16,

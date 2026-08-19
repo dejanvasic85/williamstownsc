@@ -1436,7 +1436,9 @@
 			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
 			"address": "JT Gray Reserve Pitch 6- BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1479,7 +1481,9 @@
 			"awayTeamName": "Moonee Valley Knights SC U14 Juniors - D Mixed Moonee Valley Knights U14 (David)",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1492,7 +1496,9 @@
 			"awayTeamName": "Barnstoneworth United FC U14 Juniors - D Mixed BUFC U14",
 			"address": "Langama Park Pitch 2 - Full Field",
 			"coordinates": "-37.586728,144.709286",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1505,7 +1511,9 @@
 			"awayTeamName": "Macedon Rangers SC U14 Juniors - D Mixed U14 Mixed Juniors MRSC",
 			"address": "Hansen Reserve Pitch 3 - Senior Pitch",
 			"coordinates": "-37.8042,144.872777",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1518,7 +1526,9 @@
 			"awayTeamName": "Hoppers Crossing SC U14 Juniors - D Mixed u14 Frank",
 			"address": "Scovell Reserve Main Pitch",
 			"coordinates": "-37.784639,144.878892",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1531,7 +1541,9 @@
 			"awayTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
 			"address": "Edwards Reserve Main Pitch",
 			"coordinates": "-37.827616,144.870036",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1544,7 +1556,9 @@
 			"awayTeamName": "Truganina Lions FC U14 Juniors - D Mixed Boys U14 - D",
 			"address": "Hummingbird Boulevard Reserve Pitch 1",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1557,7 +1571,9 @@
 			"awayTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
 			"address": "Aintree North Recreation Reserve Field 1",
 			"coordinates": "-37.714012,144.665373",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
