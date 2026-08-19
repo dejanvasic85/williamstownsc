@@ -76,7 +76,7 @@ export const clubsSchema = z.object({
 });
 
 const externalFixtureAttributesSchema = z.object({
-	name: z.string(),
+	name: z.string().nullable(),
 	date: z.string(),
 	round: z.string(),
 	full_round: z.string(),
