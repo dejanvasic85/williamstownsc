@@ -1102,7 +1102,9 @@
 			"awayTeamName": "Altona Magic SC U12 Juniors - B Mixed U12 Black",
 			"address": "Williams Landing Sports Reserve Pitch 4 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 14,
@@ -1145,7 +1147,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U12 - Navy",
 			"address": "Ralph Reserve Main Pitch A (Half Field)",
 			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
+			"homeScore": 9,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1158,7 +1162,9 @@
 			"awayTeamName": "Balmoral FC U12 Juniors - B Mixed Balmoral FC - Đerzelez",
 			"address": "Arndell Park Reserve Pitch 1 (S) - Half Field B",
 			"coordinates": "-37.863107,144.727995",
-			"status": "pending"
+			"homeScore": 8,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1171,7 +1177,9 @@
 			"awayTeamName": "Newport Storm FC U12 Juniors - B Mixed Benzema",
 			"address": "Webster Street Reserve Pitch 2B",
 			"coordinates": "-37.88838,144.714084",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1184,7 +1192,9 @@
 			"awayTeamName": "Williams Landing SC U12 Juniors - B Mixed WLFC U11A - Heerenveen",
 			"address": "HC Kim Reserve Pitch 3B",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1197,7 +1207,9 @@
 			"awayTeamName": "Moonee Valley Knights SC U12 Juniors - B Mixed Moonee Valley Knights U12B (Black)",
 			"address": "Paisley Park - Altona Magic SC Pitch 3 (SJ) - Half Field (A)",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 16,

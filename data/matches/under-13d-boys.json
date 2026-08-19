@@ -1210,7 +1210,9 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "Alcock Road Reserve Pitch 2 - Half B",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1223,7 +1225,9 @@
 			"awayTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"address": "Alcock Road Reserve Pitch 2 - Half A",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1236,7 +1240,9 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dion",
 			"address": "JT Gray Reserve Pitch 7 (U12/U13) - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1249,7 +1255,9 @@
 			"awayTeamName": "Laverton FC U13 Juniors - D Mixed Laverton FC U13",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 7,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1261,7 +1269,7 @@
 			"awayTeamName": "Wyndham FC U13 Juniors - D Mixed U13 E",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1274,7 +1282,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - D Mixed Under 13D Boys",
 			"address": "Saltwater Reserve Pitch 2 - SSF1 (U12)",
 			"coordinates": "-37.908433,144.755511",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 16,
