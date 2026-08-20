@@ -1297,7 +1297,9 @@
 			"awayTeamName": "Craigieburn City FC U15 Juniors - D Mixed",
 			"address": "Gilwell Park (Mosaic Reserve) Pitch 2",
 			"coordinates": "-37.666384,144.994017",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 14,
