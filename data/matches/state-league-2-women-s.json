@@ -651,19 +651,6 @@
 		},
 		{
 			"round": 9,
-			"date": "2026-08-02",
-			"day": "Sunday",
-			"time": "13:30",
-			"homeTeamId": "08NOpe1bKZ",
-			"awayTeamId": "7ZKRa2oNkB",
-			"homeTeamName": "Moreland Eagles FC Seniors",
-			"awayTeamName": "Pascoe Vale FC Seniors",
-			"address": "Wallace Reserve Pitch 1",
-			"coordinates": "-37.694764,144.935299",
-			"status": "postponed"
-		},
-		{
-			"round": 9,
 			"date": "2026-08-12",
 			"day": "Wednesday",
 			"time": "19:30",
@@ -676,6 +663,19 @@
 			"homeScore": 1,
 			"awayScore": 2,
 			"status": "complete"
+		},
+		{
+			"round": 9,
+			"date": "2026-08-25",
+			"day": "Tuesday",
+			"time": "19:30",
+			"homeTeamId": "08NOpe1bKZ",
+			"awayTeamId": "7ZKRa2oNkB",
+			"homeTeamName": "Moreland Eagles FC Seniors",
+			"awayTeamName": "Pascoe Vale FC Seniors",
+			"address": "Hosken Reserve Pitch 1 South",
+			"coordinates": "-37.725117,144.957411",
+			"status": "pending"
 		},
 		{
 			"round": 10,

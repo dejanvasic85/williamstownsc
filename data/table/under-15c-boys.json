@@ -93,19 +93,19 @@
 			"points": 12
 		},
 		{
-			"teamId": "1K3vVlkONQ",
-			"teamName": "Whittlesea United SC U15 Juniors - D Mixed Whittlesea United Hasan/Abdul U15",
-			"clubName": "Whittlesea United SC",
-			"logoUrl": "https://ocean.dribl.com/73ef9c6f9e6742cdac796b3d1ad386c0",
+			"teamId": "RNE6Ml0gKv",
+			"teamName": "Craigieburn City FC U15 Juniors - D Mixed",
+			"clubName": "Craigieburn City FC",
+			"logoUrl": "https://ocean.dribl.com/5a5e334701b545bf8a1970648d7975ac",
 			"position": 7,
 			"played": 8,
-			"wins": 2,
-			"draws": 2,
+			"wins": 3,
+			"draws": 1,
 			"losses": 4,
-			"goalsFor": 15,
-			"goalsAgainst": 19,
-			"goalDifference": -4,
-			"points": 8
+			"goalsFor": 14,
+			"goalsAgainst": 13,
+			"goalDifference": 1,
+			"points": 10
 		},
 		{
 			"teamId": "lNbjz68DNx",
@@ -123,19 +123,19 @@
 			"points": 8
 		},
 		{
-			"teamId": "RNE6Ml0gKv",
-			"teamName": "Craigieburn City FC U15 Juniors - D Mixed",
-			"clubName": "Craigieburn City FC",
-			"logoUrl": "https://ocean.dribl.com/5a5e334701b545bf8a1970648d7975ac",
+			"teamId": "1K3vVlkONQ",
+			"teamName": "Whittlesea United SC U15 Juniors - D Mixed Whittlesea United Hasan/Abdul U15",
+			"clubName": "Whittlesea United SC",
+			"logoUrl": "https://ocean.dribl.com/73ef9c6f9e6742cdac796b3d1ad386c0",
 			"position": 9,
-			"played": 7,
+			"played": 9,
 			"wins": 2,
-			"draws": 1,
-			"losses": 4,
-			"goalsFor": 10,
-			"goalsAgainst": 12,
-			"goalDifference": -2,
-			"points": 7
+			"draws": 2,
+			"losses": 5,
+			"goalsFor": 16,
+			"goalsAgainst": 23,
+			"goalDifference": -7,
+			"points": 8
 		},
 		{
 			"teamId": "jmaBLjg3NR",

@@ -73,8 +73,8 @@
 			"draws": 1,
 			"losses": 5,
 			"goalsFor": 52,
-			"goalsAgainst": 24,
-			"goalDifference": 28,
+			"goalsAgainst": 25,
+			"goalDifference": 27,
 			"points": 28
 		},
 		{
@@ -102,9 +102,9 @@
 			"wins": 8,
 			"draws": 3,
 			"losses": 4,
-			"goalsFor": 41,
+			"goalsFor": 42,
 			"goalsAgainst": 17,
-			"goalDifference": 24,
+			"goalDifference": 25,
 			"points": 27
 		},
 		{
@@ -128,21 +128,36 @@
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
 			"position": 9,
-			"played": 14,
+			"played": 15,
 			"wins": 3,
 			"draws": 0,
-			"losses": 11,
-			"goalsFor": 17,
-			"goalsAgainst": 55,
-			"goalDifference": -38,
+			"losses": 12,
+			"goalsFor": 18,
+			"goalsAgainst": 60,
+			"goalDifference": -42,
 			"points": 9
+		},
+		{
+			"teamId": "nmYZ7pAbNz",
+			"teamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 10,
+			"played": 15,
+			"wins": 2,
+			"draws": 1,
+			"losses": 12,
+			"goalsFor": 14,
+			"goalsAgainst": 46,
+			"goalDifference": -32,
+			"points": 7
 		},
 		{
 			"teamId": "WdgpbAAxmR",
 			"teamName": "Brimbank Stallions FC U13 Juniors - A Mixed",
 			"clubName": "Brimbank Stallions FC",
 			"logoUrl": "https://ocean.dribl.com/c55d90802500448a9dc37a9e67332286",
-			"position": 10,
+			"position": 11,
 			"played": 15,
 			"wins": 2,
 			"draws": 1,
@@ -157,7 +172,7 @@
 			"teamName": "Laverton FC U13 Juniors - A Mixed Laverton FC SAS U13 Blue",
 			"clubName": "Laverton FC",
 			"logoUrl": "https://ocean.dribl.com/39543e69e63546e88b5e228b21717c94",
-			"position": 11,
+			"position": 12,
 			"played": 15,
 			"wins": 2,
 			"draws": 0,
@@ -166,21 +181,6 @@
 			"goalsAgainst": 57,
 			"goalDifference": -47,
 			"points": 6
-		},
-		{
-			"teamId": "nmYZ7pAbNz",
-			"teamName": "Williamstown SC U13 Juniors - A Mixed Under 13A Boys",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 12,
-			"played": 14,
-			"wins": 1,
-			"draws": 1,
-			"losses": 12,
-			"goalsFor": 9,
-			"goalsAgainst": 45,
-			"goalDifference": -36,
-			"points": 4
 		}
 	]
 }
