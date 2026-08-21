@@ -1091,7 +1091,9 @@
 			"awayTeamName": "Melbourne University SC Seniors",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1102,9 +1104,11 @@
 			"awayTeamId": "k2KpRJ56mY",
 			"homeTeamName": "South Yarra SC Seniors",
 			"awayTeamName": "Truganina Lions FC Seniors",
-			"address": "Fawkner Park South Pavilion Pitch 2 (Lawn 20)",
-			"coordinates": "-37.8392,144.9919",
-			"status": "pending"
+			"address": "",
+			"coordinates": "",
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
