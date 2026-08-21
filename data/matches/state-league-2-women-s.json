@@ -1136,7 +1136,9 @@
 			"awayTeamName": "Keon Park SC Seniors",
 			"address": "Dunstan Reserve Pitch 2",
 			"coordinates": "-37.755431,144.939902",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 16,

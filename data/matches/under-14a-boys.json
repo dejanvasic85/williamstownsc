@@ -1005,7 +1005,9 @@
 			"awayTeamName": "Altona Magic SC U14 Juniors - A Mixed U14 Black",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,

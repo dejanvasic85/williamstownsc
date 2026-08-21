@@ -1482,19 +1482,6 @@
 			"date": "2026-08-23",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Tarneit United SC U11 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Altona City SC U11 MiniRoos - Wallabies Mixed Maroon",
-			"address": "Hummingbird Boulevard Reserve 1B (Half)",
-			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "8nm7PgVNOq",
 			"homeTeamName": "Werribee City FC U11 MiniRoos - Wallabies Mixed U11 Darren",
@@ -1514,6 +1501,19 @@
 			"awayTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed u11 Steve",
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Tarneit United SC U11 MiniRoos - Wallabies Mixed",
+			"awayTeamName": "Altona City SC U11 MiniRoos - Wallabies Mixed Maroon",
+			"address": "Hummingbird Boulevard Reserve 1B (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{

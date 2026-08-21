@@ -1136,7 +1136,9 @@
 			"awayTeamName": "Yarraville Glory FC Seniors state league 6 women",
 			"address": "JC Donath Reserve Pitch 8 KP",
 			"coordinates": "-37.701368,145.016464",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 16,
