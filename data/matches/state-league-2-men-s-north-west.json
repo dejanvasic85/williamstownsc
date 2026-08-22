@@ -1725,7 +1725,9 @@
 			"awayTeamName": "Mill Park SC Seniors",
 			"address": "Waste Sense Park Main Pitch",
 			"coordinates": "-37.758429,144.79484",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 20,
@@ -1751,7 +1753,9 @@
 			"awayTeamName": "Geelong Rangers SC Seniors",
 			"address": "Club Italia Sporting Club Pitch 1",
 			"coordinates": "-37.759892,144.819492",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 20,

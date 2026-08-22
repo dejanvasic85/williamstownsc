@@ -1046,19 +1046,6 @@
 			"date": "2026-08-30",
 			"day": "Sunday",
 			"time": "10:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "1pN6RBQN0g",
-			"homeTeamName": "Newport Storm FC U09 MiniRoos - Kangaroos Mixed Rudiger",
-			"awayTeamName": "Avondale FC U09 MiniRoos - Kangaroos Mixed U9 - MiniRoos - Boys - Blake",
-			"address": "AW Bond Reserve Midi A",
-			"coordinates": "-37.827591,144.845123",
-			"status": "pending"
-		},
-		{
-			"round": 17,
-			"date": "2026-08-30",
-			"day": "Sunday",
-			"time": "10:00",
 			"homeTeamId": "OVdz1bpKGr",
 			"awayTeamId": "bgdMXaXpKE",
 			"homeTeamName": "Green Gully SC U09 MiniRoos - Kangaroos Mixed U9 Boys Ethan & Rafi",
@@ -1078,6 +1065,19 @@
 			"awayTeamName": "Williamstown SC U09 MiniRoos - Kangaroos Mixed Boys Under 9K (Frank/Tim)",
 			"address": "Avondale Heights Reserve Midi A (S) (7v7)",
 			"coordinates": "-37.76242,144.858824",
+			"status": "pending"
+		},
+		{
+			"round": 17,
+			"date": "2026-08-30",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "1pN6RBQN0g",
+			"homeTeamName": "Newport Storm FC U09 MiniRoos - Kangaroos Mixed Rudiger",
+			"awayTeamName": "Avondale FC U09 MiniRoos - Kangaroos Mixed U9 - MiniRoos - Boys - Blake",
+			"address": "AW Bond Reserve Midi A",
+			"coordinates": "-37.827591,144.845123",
 			"status": "pending"
 		},
 		{
