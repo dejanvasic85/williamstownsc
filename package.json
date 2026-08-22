@@ -93,7 +93,7 @@
 		"vitest": "4.1.11"
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx,json}": [
+		"*.{js,jsx,ts,tsx,json,md}": [
 			"prettier . --write",
 			"eslint ."
 		]
