@@ -9,6 +9,7 @@ import {
 	SponsorsSection
 } from '@/components/home';
 import { KeyDatesSection } from '@/components/home/KeyDatesSection';
+import type { MatchColor } from '@/components/home/MatchCountdownSection';
 import {
 	getAnnouncements,
 	getFeaturedSponsors,
@@ -16,11 +17,14 @@ import {
 	getNewsArticles,
 	getSiteSettings
 } from '@/lib/content';
+import { getHomepageNextMatchTeams } from '@/lib/content/homepageNextMatchTeams';
 import { getNextKeyDate } from '@/lib/content/keyDates';
 import { getPageMetadata } from '@/lib/content/page';
 import { getNextMatch } from '@/lib/matches/matchService';
 import { buildSocialLinks } from '@/lib/socialLinks';
 import { urlFor } from '@/sanity/lib/image';
+
+const nextMatchCardColors: MatchColor[] = ['blue', 'purple'];
 
 export const revalidate = 86400;
 
@@ -35,8 +39,7 @@ export default async function Home() {
 		homePageData,
 		featuredSponsors,
 		announcements,
-		seniorMensNextMatch,
-		seniorWomensNextMatch,
+		nextMatchTeams,
 		nextKeyDate
 	] = await Promise.all([
 		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
@@ -44,10 +47,17 @@ export default async function Home() {
 		getHomePageData(),
 		getFeaturedSponsors(),
 		getAnnouncements(),
-		getNextMatch('state-league-2-men-s-north-west'),
-		getNextMatch('state-league-2-women-s'),
+		getHomepageNextMatchTeams(),
 		getNextKeyDate()
 	]);
+
+	const nextMatchCards = await Promise.all(
+		nextMatchTeams.map(async (team, index) => ({
+			...team,
+			match: await getNextMatch(team.slug),
+			color: nextMatchCardColors[index]
+		}))
+	);
 
 	const hasAnnouncements = announcements.length > 0;
 	const logoUrl = siteSettings?.logo
@@ -83,18 +93,15 @@ export default async function Home() {
 
 				<div className="container mx-auto">
 					<div className="grid items-stretch gap-8 md:grid-cols-3">
-						<MatchCountdownSection
-							match={seniorMensNextMatch}
-							teamSlug="state-league-2-men-s-north-west"
-							teamName="Senior Men's"
-							color="blue"
-						/>
-						<MatchCountdownSection
-							match={seniorWomensNextMatch}
-							teamSlug="state-league-2-women-s"
-							teamName="Senior Women's"
-							color="purple"
-						/>
+						{nextMatchCards.map((card) => (
+							<MatchCountdownSection
+								key={card.slug}
+								match={card.match}
+								teamSlug={card.slug}
+								teamName={card.displayName}
+								color={card.color}
+							/>
+						))}
 						<KeyDatesSection
 							heading={homePageData?.keyDatesSection?.heading}
 							leadingText={homePageData?.keyDatesSection?.leadingText}
