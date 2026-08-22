@@ -1740,7 +1740,9 @@
 			"awayTeamName": "Corio SC Seniors",
 			"address": "Duane Reserve Main Pitch",
 			"coordinates": "-37.823133,144.842838",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 20,

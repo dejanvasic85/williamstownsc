@@ -1785,7 +1785,9 @@
 			"awayTeamName": "Surf Coast FC Reserves",
 			"address": "Polish Sports & Recreation Complex Pitch 1",
 			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 20,
