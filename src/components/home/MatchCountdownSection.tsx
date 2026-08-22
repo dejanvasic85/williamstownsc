@@ -5,6 +5,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { format, parseISO } from 'date-fns';
 import { MapPin } from 'lucide-react';
+import { buildAddressDirectionsUrl } from '@/lib/address';
 import type { EnrichedFixture } from '@/types/matches';
 import { CountdownTimer } from './CountdownTimer';
 
@@ -117,10 +118,15 @@ export function MatchCountdownSection({
 						{formattedDate} • {formattedTime}
 					</p>
 					{match.address && (
-						<div className="text-base-content/70 flex items-center justify-center gap-1 text-base">
-							<MapPin className="h-5 w-5" />
+						<a
+							href={buildAddressDirectionsUrl(match.address)}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-base-content/70 hover:text-base-content flex items-center justify-center gap-1 text-base transition-colors"
+						>
+							<MapPin className="h-5 w-5" aria-hidden="true" />
 							<span>{match.address}</span>
-						</div>
+						</a>
 					)}
 				</div>
 

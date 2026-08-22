@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import { buildAddressDirectionsUrl } from '@/lib/address';
 import type { EnrichedFixture } from '@/types/matches';
 
 type MatchCardDesktopProps = {
@@ -42,7 +43,7 @@ export function MatchCardDesktop({ fixture, formattedDate, formattedTime }: Matc
 						</span>
 					</time>
 					<a
-						href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fixture.address)}`}
+						href={buildAddressDirectionsUrl(fixture.address)}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="text-base-content/70 hover:text-base-content flex items-start gap-1.5 text-sm transition-colors"
