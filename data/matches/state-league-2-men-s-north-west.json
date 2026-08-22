@@ -1768,7 +1768,9 @@
 			"awayTeamName": "Whittlesea Ranges FC Seniors",
 			"address": "Findon Reserve Pitch 1",
 			"coordinates": "-37.666285,145.04727",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 20,
@@ -1796,7 +1798,9 @@
 			"awayTeamName": "Surf Coast FC Seniors",
 			"address": "Polish Sports & Recreation Complex Pitch 1",
 			"coordinates": "-37.770859,144.807385",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 21,
