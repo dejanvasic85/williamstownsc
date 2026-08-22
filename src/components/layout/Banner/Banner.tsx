@@ -37,8 +37,24 @@ function subscribeToDismissed(callback: () => void): () => void {
 	return () => window.removeEventListener(dismissedAnnouncementsEvent, callback);
 }
 
+function readDismissedAnnouncements(): string | null {
+	try {
+		return localStorage.getItem(dismissedAnnouncementsKey);
+	} catch {
+		return null;
+	}
+}
+
+function writeDismissedAnnouncements(raw: string): void {
+	try {
+		localStorage.setItem(dismissedAnnouncementsKey, raw);
+	} catch {
+		// storage unavailable (privacy mode, blocked storage, etc.) - dismissal won't persist
+	}
+}
+
 function getDismissedSnapshot(): string[] {
-	const raw = localStorage.getItem(dismissedAnnouncementsKey);
+	const raw = readDismissedAnnouncements();
 	if (raw !== cachedRaw) {
 		cachedRaw = raw;
 		cachedParsed = parseDismissed(raw);
@@ -58,9 +74,9 @@ export const Banner = ({ messages }: BannerProps) => {
 	);
 
 	const handleDismiss = (bannerId: string) => {
-		const current = parseDismissed(localStorage.getItem(dismissedAnnouncementsKey));
+		const current = parseDismissed(readDismissedAnnouncements());
 		const updated = Array.from(new Set([...current, bannerId]));
-		localStorage.setItem(dismissedAnnouncementsKey, JSON.stringify(updated));
+		writeDismissedAnnouncements(JSON.stringify(updated));
 		window.dispatchEvent(new Event(dismissedAnnouncementsEvent));
 	};
 

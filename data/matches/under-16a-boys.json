@@ -711,7 +711,7 @@
 		},
 		{
 			"round": 7,
-			"date": "2026-08-07",
+			"date": "2026-08-28",
 			"day": "Friday",
 			"time": "19:00",
 			"homeTeamId": "3pmvQW0Edv",
@@ -720,7 +720,7 @@
 			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "postponed"
+			"status": "pending"
 		},
 		{
 			"round": 8,
@@ -1192,7 +1192,9 @@
 			"awayTeamName": "Greenvale United SC U16 Juniors - A Mixed",
 			"address": "John Cain Memorial Park Pitch 1",
 			"coordinates": "-37.763663,145.023846",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 13,
@@ -1370,7 +1372,9 @@
 			"awayTeamName": "Geelong Rangers SC U16 Juniors - A Mixed U16 Metro",
 			"address": "Banyul-Warri Reserve Parwan Pitch 1 (Synthetic)",
 			"coordinates": "-38.306639,144.324553",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1383,7 +1387,9 @@
 			"awayTeamName": "Williams Landing SC U16 Juniors - A Mixed WLFC U16A - Paris Saint Germain",
 			"address": "Ralph Reserve Main Pitch",
 			"coordinates": "-37.792903,144.799142",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1396,7 +1402,9 @@
 			"awayTeamName": "Gisborne SC U16 Juniors - A Mixed 16SS",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1409,7 +1417,9 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
 			"address": "John Cain Memorial Park Pitch 1",
 			"coordinates": "-37.763663,145.023846",
-			"status": "pending"
+			"homeScore": 5,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1422,7 +1432,9 @@
 			"awayTeamName": "Lalor United FC U16 Juniors - A Mixed Lalor United 16A (Jiggy)",
 			"address": "Paisley Park - Altona Magic SC Pitch 2",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -1435,7 +1447,9 @@
 			"awayTeamName": "Caroline Springs George Cross FC U16 Juniors - A Mixed",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1695,8 +1709,8 @@
 			"awayTeamId": "6lNbpDpwdx",
 			"homeTeamName": "Sydenham Park SC U16 Juniors - A Mixed U16 Boys Alex - A",
 			"awayTeamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
-			"address": "",
-			"coordinates": "",
+			"address": "Keilor Lodge Reserve Pitch 2",
+			"coordinates": "-37.688087,144.777598",
 			"homeScore": 0,
 			"awayScore": 5,
 			"status": "complete"

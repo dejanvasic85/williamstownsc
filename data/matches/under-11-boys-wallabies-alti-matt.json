@@ -1460,7 +1460,7 @@
 			"awayTeamId": "6lNbpD56dx",
 			"homeTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed chris",
 			"awayTeamName": "Truganina Hornets SC U11 MiniRoos - Wallabies Mixed",
-			"address": "Grange Reserve - Hoppers Crossing Pitch 2 - Half Pitch A",
+			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Midi Pitch A",
 			"coordinates": "-37.861006,144.67653",
 			"status": "pending"
 		},
@@ -1481,26 +1481,13 @@
 			"round": 16,
 			"date": "2026-08-23",
 			"day": "Sunday",
-			"time": "09:00",
+			"time": "10:00",
 			"homeTeamId": "bgdMM4ZdE2",
 			"awayTeamId": "8nm7PgVNOq",
 			"homeTeamName": "Werribee City FC U11 MiniRoos - Wallabies Mixed U11 Darren",
 			"awayTeamName": "Altona Magic SC U11 MiniRoos - Wallabies Mixed U11 Boys",
-			"address": "Costas Mitre 10 Park Pitch 1A, Galvin Park Reserve - Half Field",
+			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "10:00",
-			"homeTeamId": "bgdMXan2KE",
-			"awayTeamId": "8zdBbr2dBX",
-			"homeTeamName": "Tarneit United SC U11 MiniRoos - Wallabies Mixed",
-			"awayTeamName": "Altona City SC U11 MiniRoos - Wallabies Mixed Maroon",
-			"address": "Hummingbird Boulevard Reserve 1B (Half)",
-			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
@@ -1514,6 +1501,19 @@
 			"awayTeamName": "Hoppers Crossing SC U11 MiniRoos - Wallabies Mixed u11 Steve",
 			"address": "JT Gray Reserve Pitch 3B - WSC",
 			"coordinates": "-37.857002,144.865559",
+			"status": "pending"
+		},
+		{
+			"round": 16,
+			"date": "2026-08-23",
+			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "bgdMXan2KE",
+			"awayTeamId": "8zdBbr2dBX",
+			"homeTeamName": "Tarneit United SC U11 MiniRoos - Wallabies Mixed",
+			"awayTeamName": "Altona City SC U11 MiniRoos - Wallabies Mixed Maroon",
+			"address": "Hummingbird Boulevard Reserve 1B (Half)",
+			"coordinates": "-37.837381,144.663287",
 			"status": "pending"
 		},
 		{
@@ -1677,19 +1677,6 @@
 			"date": "2026-09-06",
 			"day": "Sunday",
 			"time": "09:00",
-			"homeTeamId": "bgdMM4ZdE2",
-			"awayTeamId": "k2KpRJ56mY",
-			"homeTeamName": "Werribee City FC U11 MiniRoos - Wallabies Mixed U11 Darren",
-			"awayTeamName": "Truganina Lions FC U11 MiniRoos - Wallabies Mixed Boys U11 - Wallabies",
-			"address": "Costas Mitre 10 Park Pitch 1A, Galvin Park Reserve - Half Field",
-			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
-		},
-		{
-			"round": 18,
-			"date": "2026-09-06",
-			"day": "Sunday",
-			"time": "09:00",
 			"homeTeamId": "Bjma0BXAdR",
 			"awayTeamId": "nPmrBk05mo",
 			"homeTeamName": "Point Cook SC U11 MiniRoos - Wallabies Mixed U11 Harriers",
@@ -1722,6 +1709,19 @@
 			"awayTeamName": "West Point SC U11 MiniRoos - Wallabies Mixed U11W Paul",
 			"address": "Hummingbird Boulevard Reserve 1B (Half)",
 			"coordinates": "-37.837381,144.663287",
+			"status": "pending"
+		},
+		{
+			"round": 18,
+			"date": "2026-09-06",
+			"day": "Sunday",
+			"time": "10:00",
+			"homeTeamId": "bgdMM4ZdE2",
+			"awayTeamId": "k2KpRJ56mY",
+			"homeTeamName": "Werribee City FC U11 MiniRoos - Wallabies Mixed U11 Darren",
+			"awayTeamName": "Truganina Lions FC U11 MiniRoos - Wallabies Mixed Boys U11 - Wallabies",
+			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
+			"coordinates": "-37.886177,144.651364",
 			"status": "pending"
 		},
 		{

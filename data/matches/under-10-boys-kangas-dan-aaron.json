@@ -1163,7 +1163,7 @@
 			"awayTeamName": "Tarneit United SC U10 MiniRoos - Kangaroos Mixed",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1285,6 +1285,19 @@
 			"round": 17,
 			"date": "2026-08-30",
 			"day": "Sunday",
+			"time": "11:00",
+			"homeTeamId": "R1K3BbeoNQ",
+			"awayTeamId": "6lNbpDlAdx",
+			"homeTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
+			"awayTeamName": "Altona North SC U10 MiniRoos - Kangaroos Mixed Oriol",
+			"address": "AW Bond Reserve Half A",
+			"coordinates": "-37.827591,144.845123",
+			"status": "pending"
+		},
+		{
+			"round": 17,
+			"date": "2026-08-30",
+			"day": "Sunday",
 			"time": "11:15",
 			"homeTeamId": "3vmZv9nLmq",
 			"awayTeamId": "8nm7PgVNOq",
@@ -1292,19 +1305,6 @@
 			"awayTeamName": "Altona Magic SC U10 MiniRoos - Kangaroos Mixed U10 Black",
 			"address": "Avondale Heights Reserve Pitch 2",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
-		},
-		{
-			"round": 17,
-			"date": "2026-08-30",
-			"day": "Sunday",
-			"time": "12:00",
-			"homeTeamId": "R1K3BbeoNQ",
-			"awayTeamId": "6lNbpDlAdx",
-			"homeTeamName": "Newport Storm FC U10 MiniRoos - Kangaroos Mixed Gundogan",
-			"awayTeamName": "Altona North SC U10 MiniRoos - Kangaroos Mixed Oriol",
-			"address": "AW Bond Reserve Half B",
-			"coordinates": "-37.827591,144.845123",
 			"status": "pending"
 		},
 		{

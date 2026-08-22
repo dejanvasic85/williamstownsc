@@ -130,7 +130,7 @@
 			"awayTeamId": "bgdMXaXpKE",
 			"homeTeamName": "Barnstoneworth United FC U10 MiniRoos - Joeys Mixed BUFC U10 Piqué Blinders",
 			"awayTeamName": "Yarraville Glory FC U10 MiniRoos - Joeys Mixed White",
-			"address": "JT Gray Reserve Pitch 6- BUFC",
+			"address": "JT Gray Reserve Pitch 6 - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},
@@ -890,7 +890,7 @@
 			"awayTeamName": "Footscray Rangers FC U10 MiniRoos - Joeys Mixed Juan",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 16,

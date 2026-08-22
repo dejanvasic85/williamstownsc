@@ -570,7 +570,9 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 11,
@@ -782,7 +784,7 @@
 			"awayTeamId": "8zdBbr2dBX",
 			"homeTeamName": "Williamstown SC U16 Juniors - B Female Girls Under 16",
 			"awayTeamName": "Altona City SC U16 Juniors - B Female",
-			"address": "JT Gray Reserve Pitch 6- BUFC",
+			"address": "JT Gray Reserve Pitch 6 - BUFC",
 			"coordinates": "-37.857002,144.865559",
 			"homeScore": 2,
 			"awayScore": 7,
@@ -811,7 +813,9 @@
 			"awayTeamName": "Hoppers Crossing SC U16 Juniors - B Female u16 girls",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -824,7 +828,9 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "Dixon Field Reserve Pitch E (Junior)",
 			"coordinates": "-37.483554,144.582761",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -837,7 +843,9 @@
 			"awayTeamName": "Altona City SC U16 Juniors - B Female",
 			"address": "Paisley Park - Altona East Phoenix SC AE Pitch 3",
 			"coordinates": "-37.846664,144.856335",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
@@ -849,7 +857,7 @@
 			"homeTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 16,

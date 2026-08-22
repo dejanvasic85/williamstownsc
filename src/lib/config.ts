@@ -8,6 +8,10 @@ const clientConfigSchema = z.object({
 	recaptchaSiteKey: z.string().optional()
 });
 
+const studioConfigSchema = z.object({
+	siteUrl: z.url()
+});
+
 // Server-only AWS config schema
 const awsConfigSchema = z.object({
 	awsRegion: z.string().min(1, 'AWS region is required'),
@@ -57,6 +61,7 @@ export type ClubConfig = {
 	wscClubDriblName: string;
 };
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
+export type StudioConfig = z.infer<typeof studioConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
 export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
@@ -85,6 +90,16 @@ export function getClientConfig(): ClientConfig {
 
 	cachedClientConfig = config;
 	return config;
+}
+
+/**
+ * Get Sanity Studio-bundled config
+ * Only reads SANITY_STUDIO_-prefixed vars, the only prefix Sanity's Studio build inlines
+ */
+export function getStudioConfig(): StudioConfig {
+	return studioConfigSchema.parse({
+		siteUrl: process.env.SANITY_STUDIO_SITE_URL
+	});
 }
 
 /**
