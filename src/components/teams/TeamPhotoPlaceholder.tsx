@@ -5,7 +5,7 @@ export function TeamPhotoPlaceholder({ name, className }: Props) {
 		<figure
 			className={
 				className ??
-				'bg-primary relative flex h-48 w-full items-center justify-center overflow-hidden rounded-xl md:h-64'
+				'bg-primary relative flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-xl'
 			}
 		>
 			<span className="text-accent/90 text-5xl font-black tracking-widest uppercase select-none">
