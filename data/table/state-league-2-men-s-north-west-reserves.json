@@ -53,14 +53,14 @@
 			"clubName": "Western Eagles SC",
 			"logoUrl": "https://ocean.dribl.com/1460023d5c184751bd1b2ad8fe46bdf6",
 			"position": 4,
-			"played": 19,
+			"played": 20,
 			"wins": 9,
-			"draws": 5,
+			"draws": 6,
 			"losses": 5,
 			"goalsFor": 42,
 			"goalsAgainst": 29,
 			"goalDifference": 13,
-			"points": 32
+			"points": 33
 		},
 		{
 			"teamId": "nmYykb5Dmz",
@@ -128,14 +128,14 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 9,
-			"played": 19,
+			"played": 20,
 			"wins": 6,
-			"draws": 4,
+			"draws": 5,
 			"losses": 9,
 			"goalsFor": 24,
 			"goalsAgainst": 34,
 			"goalDifference": -10,
-			"points": 22
+			"points": 23
 		},
 		{
 			"teamId": "am1q9Wvzmw",
