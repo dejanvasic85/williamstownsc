@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { TZDate } from '@date-fns/tz';
 import { format } from 'date-fns';
 import { MapPin } from 'lucide-react';
+import { buildAddressDirectionsUrl } from '@/lib/address';
 import type { EnrichedFixture } from '@/types/matches';
 
 type TeamMatchesPreviewProps = {
@@ -70,10 +71,15 @@ function MatchPreviewCard({ title, fixture, showScore = false }: MatchPreviewCar
 			</div>
 
 			{fixture.address && (
-				<div className="text-base-content/60 flex items-start gap-1.5 text-sm">
+				<a
+					href={buildAddressDirectionsUrl(fixture.address)}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-base-content/60 hover:text-base-content flex items-start gap-1.5 text-sm transition-colors"
+				>
 					<MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
 					<span>{fixture.address}</span>
-				</div>
+				</a>
 			)}
 		</div>
 	);

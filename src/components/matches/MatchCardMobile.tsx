@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import { buildAddressDirectionsUrl } from '@/lib/address';
 import type { EnrichedFixture } from '@/types/matches';
 
 type MatchCardMobileProps = {
@@ -62,7 +63,7 @@ export function MatchCardMobile({ fixture, formattedDate, formattedTime }: Match
 
 			{/* Venue */}
 			<a
-				href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fixture.address)}`}
+				href={buildAddressDirectionsUrl(fixture.address)}
 				target="_blank"
 				rel="noopener noreferrer"
 				className="text-base-content/60 hover:text-base-content grid grid-cols-[auto_1fr] items-start gap-1.5 text-sm transition-colors"
