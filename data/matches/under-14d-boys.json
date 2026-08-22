@@ -1655,14 +1655,14 @@
 		},
 		{
 			"round": 16,
-			"date": "2026-08-23",
-			"day": "Sunday",
-			"time": "14:30",
+			"date": "2026-09-02",
+			"day": "Wednesday",
+			"time": "19:00",
 			"homeTeamId": "6lNbpDpwdx",
 			"awayTeamId": "1pN6pqv7d0",
 			"homeTeamName": "Williamstown SC U14 Juniors - D Mixed Under 14D Boys",
 			"awayTeamName": "Sunbury United FC U14 Juniors - D Mixed Sunbury United FC U14",
-			"address": "JT Gray Reserve Pitch 3 - WSC",
+			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
 			"status": "pending"
 		},

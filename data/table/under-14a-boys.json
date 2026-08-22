@@ -18,11 +18,26 @@
 			"points": 42
 		},
 		{
+			"teamId": "jmaBLM1YNR",
+			"teamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
+			"clubName": "Williamstown SC",
+			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
+			"position": 2,
+			"played": 14,
+			"wins": 10,
+			"draws": 1,
+			"losses": 3,
+			"goalsFor": 39,
+			"goalsAgainst": 14,
+			"goalDifference": 25,
+			"points": 31
+		},
+		{
 			"teamId": "EN2nb2Z2Nq",
 			"teamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
-			"position": 2,
+			"position": 3,
 			"played": 14,
 			"wins": 9,
 			"draws": 2,
@@ -31,21 +46,6 @@
 			"goalsAgainst": 20,
 			"goalDifference": 35,
 			"points": 29
-		},
-		{
-			"teamId": "jmaBLM1YNR",
-			"teamName": "Williamstown SC U14 Juniors - A Mixed Under 14A Boys",
-			"clubName": "Williamstown SC",
-			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 3,
-			"played": 13,
-			"wins": 9,
-			"draws": 1,
-			"losses": 3,
-			"goalsFor": 35,
-			"goalsAgainst": 14,
-			"goalDifference": 21,
-			"points": 28
 		},
 		{
 			"teamId": "am1Q20nkmw",
@@ -83,13 +83,13 @@
 			"clubName": "Geelong Rangers SC",
 			"logoUrl": "https://ocean.dribl.com/768855ad601948019fa4c0f9d03044a5",
 			"position": 6,
-			"played": 12,
+			"played": 13,
 			"wins": 4,
 			"draws": 1,
-			"losses": 7,
+			"losses": 8,
 			"goalsFor": 12,
-			"goalsAgainst": 37,
-			"goalDifference": -25,
+			"goalsAgainst": 41,
+			"goalDifference": -29,
 			"points": 13
 		},
 		{
