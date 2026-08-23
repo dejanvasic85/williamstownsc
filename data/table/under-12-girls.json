@@ -143,14 +143,14 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 10,
-			"played": 9,
-			"wins": 3,
+			"played": 10,
+			"wins": 4,
 			"draws": 2,
 			"losses": 4,
-			"goalsFor": 14,
+			"goalsFor": 15,
 			"goalsAgainst": 15,
-			"goalDifference": -1,
-			"points": 11
+			"goalDifference": 0,
+			"points": 14
 		},
 		{
 			"teamId": "EN2nWqkVNq",
@@ -173,13 +173,13 @@
 			"clubName": "St Albans Saints Dinamo SC",
 			"logoUrl": "https://ocean.dribl.com/64ca90acfaee4722b5315caaa7f06c2f",
 			"position": 12,
-			"played": 9,
+			"played": 10,
 			"wins": 1,
 			"draws": 2,
-			"losses": 6,
+			"losses": 7,
 			"goalsFor": 7,
-			"goalsAgainst": 21,
-			"goalDifference": -14,
+			"goalsAgainst": 22,
+			"goalDifference": -15,
 			"points": 5
 		},
 		{
