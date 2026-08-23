@@ -8,14 +8,14 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 1,
-			"played": 15,
-			"wins": 11,
+			"played": 16,
+			"wins": 12,
 			"draws": 0,
 			"losses": 4,
-			"goalsFor": 49,
+			"goalsFor": 56,
 			"goalsAgainst": 18,
-			"goalDifference": 31,
-			"points": 33
+			"goalDifference": 38,
+			"points": 36
 		},
 		{
 			"teamId": "OmeX2AjGd0",
@@ -128,13 +128,13 @@
 			"clubName": "Werribee City FC",
 			"logoUrl": "https://ocean.dribl.com/3a0a89bf994d464e9460ac5cfcf04e9d",
 			"position": 9,
-			"played": 15,
+			"played": 16,
 			"wins": 3,
 			"draws": 0,
-			"losses": 12,
+			"losses": 13,
 			"goalsFor": 18,
-			"goalsAgainst": 60,
-			"goalDifference": -42,
+			"goalsAgainst": 67,
+			"goalDifference": -49,
 			"points": 9
 		},
 		{

@@ -1363,7 +1363,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - A Mixed U13 Bulldogs",
 			"address": "Costas Mitre 10 Park Pitch 3A, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 16,
