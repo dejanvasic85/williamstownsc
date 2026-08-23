@@ -23,14 +23,14 @@
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
 			"position": 2,
-			"played": 15,
-			"wins": 9,
+			"played": 16,
+			"wins": 10,
 			"draws": 4,
 			"losses": 2,
-			"goalsFor": 31,
-			"goalsAgainst": 17,
-			"goalDifference": 14,
-			"points": 31
+			"goalsFor": 34,
+			"goalsAgainst": 18,
+			"goalDifference": 16,
+			"points": 34
 		},
 		{
 			"teamId": "pN69gAbOm0",
@@ -113,13 +113,13 @@
 			"clubName": "Spring Hills FC",
 			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
 			"position": 8,
-			"played": 15,
+			"played": 16,
 			"wins": 2,
 			"draws": 1,
-			"losses": 12,
-			"goalsFor": 15,
-			"goalsAgainst": 41,
-			"goalDifference": -26,
+			"losses": 13,
+			"goalsFor": 16,
+			"goalsAgainst": 44,
+			"goalDifference": -28,
 			"points": 7
 		}
 	]
