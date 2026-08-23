@@ -1309,7 +1309,7 @@
 			"homeTeamName": "West Point SC U13 Juniors - D Mixed U13D Mixed - Dumindu",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1322,7 +1322,9 @@
 			"awayTeamName": "Barnstoneworth United FC U13 Juniors - D Mixed BUFC U13 Gold",
 			"address": "HD Graham Reserve Field 1 (North) Half B",
 			"coordinates": "-37.878568,144.79544",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1348,7 +1350,9 @@
 			"awayTeamName": "Hoppers Crossing SC U13 Juniors - D Mixed u13 Dennis",
 			"address": "JT Gray Reserve Pitch 3A - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1361,7 +1365,9 @@
 			"awayTeamName": "Point Cook SC U13 Juniors - D Mixed U13 Falcons",
 			"address": "Wyndham Vale North Reserve Main Pitch B - 9v9 (A)",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 17,

@@ -8,14 +8,14 @@
 			"clubName": "Hoppers Crossing SC",
 			"logoUrl": "https://ocean.dribl.com/6c3e2b0fde7442d7bf2f746b93b794b0",
 			"position": 1,
-			"played": 13,
-			"wins": 11,
+			"played": 14,
+			"wins": 12,
 			"draws": 2,
 			"losses": 0,
-			"goalsFor": 67,
+			"goalsFor": 68,
 			"goalsAgainst": 11,
-			"goalDifference": 56,
-			"points": 35
+			"goalDifference": 57,
+			"points": 38
 		},
 		{
 			"teamId": "RdkEpOQBNG",
@@ -33,34 +33,34 @@
 			"points": 34
 		},
 		{
-			"teamId": "bd9W01yYN4",
-			"teamName": "Altona East SC U16 Juniors - B Female",
-			"clubName": "Altona East SC",
-			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
-			"position": 3,
-			"played": 13,
-			"wins": 7,
-			"draws": 1,
-			"losses": 5,
-			"goalsFor": 46,
-			"goalsAgainst": 19,
-			"goalDifference": 27,
-			"points": 22
-		},
-		{
 			"teamId": "ZNQxp79gmx",
 			"teamName": "Altona City SC U16 Juniors - B Female",
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
+			"position": 3,
+			"played": 15,
+			"wins": 8,
+			"draws": 0,
+			"losses": 7,
+			"goalsFor": 32,
+			"goalsAgainst": 23,
+			"goalDifference": 9,
+			"points": 24
+		},
+		{
+			"teamId": "bd9W01yYN4",
+			"teamName": "Altona East SC U16 Juniors - B Female",
+			"clubName": "Altona East SC",
+			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
 			"position": 4,
 			"played": 14,
 			"wins": 7,
-			"draws": 0,
-			"losses": 7,
-			"goalsFor": 30,
-			"goalsAgainst": 23,
-			"goalDifference": 7,
-			"points": 21
+			"draws": 1,
+			"losses": 6,
+			"goalsFor": 46,
+			"goalsAgainst": 20,
+			"goalDifference": 26,
+			"points": 22
 		},
 		{
 			"teamId": "RNE6nBzXKv",
@@ -68,14 +68,14 @@
 			"clubName": "Gisborne SC",
 			"logoUrl": "https://ocean.dribl.com/559a13620e2f468d816d0da3a1b667af",
 			"position": 5,
-			"played": 14,
+			"played": 15,
 			"wins": 7,
-			"draws": 0,
+			"draws": 1,
 			"losses": 7,
-			"goalsFor": 35,
-			"goalsAgainst": 30,
+			"goalsFor": 37,
+			"goalsAgainst": 32,
 			"goalDifference": 5,
-			"points": 21
+			"points": 22
 		},
 		{
 			"teamId": "emAeLAaBmB",
@@ -83,14 +83,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 6,
-			"played": 13,
+			"played": 14,
 			"wins": 1,
-			"draws": 0,
+			"draws": 1,
 			"losses": 12,
-			"goalsFor": 7,
-			"goalsAgainst": 69,
+			"goalsFor": 9,
+			"goalsAgainst": 71,
 			"goalDifference": -62,
-			"points": 3
+			"points": 4
 		},
 		{
 			"teamId": "emAe96VRmB",
@@ -98,13 +98,13 @@
 			"clubName": "Point Cook SC",
 			"logoUrl": "https://ocean.dribl.com/b7c9554cb0b146e0ae696fe205418974",
 			"position": 7,
-			"played": 13,
+			"played": 14,
 			"wins": 1,
 			"draws": 0,
-			"losses": 12,
+			"losses": 13,
 			"goalsFor": 4,
-			"goalsAgainst": 69,
-			"goalDifference": -65,
+			"goalsAgainst": 71,
+			"goalDifference": -67,
 			"points": 3
 		}
 	]

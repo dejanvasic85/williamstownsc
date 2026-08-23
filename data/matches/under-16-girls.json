@@ -870,7 +870,9 @@
 			"awayTeamName": "Altona East SC U16 Juniors - B Female",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 1",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -883,7 +885,9 @@
 			"awayTeamName": "Gisborne SC U16 Juniors - B Female 16JD",
 			"address": "JT Gray Reserve Pitch 1 - WSC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -896,7 +900,9 @@
 			"awayTeamName": "Point Cook SC U16 Juniors - B Female U16C Girls",
 			"address": "HC Kim Reserve Pitch 2",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -908,7 +914,7 @@
 			"awayTeamName": "Sydenham Park SC U16 Juniors - B Female U16 Girls David - B",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 17,
