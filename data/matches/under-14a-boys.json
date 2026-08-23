@@ -979,7 +979,9 @@
 			"awayTeamName": "Williams Landing SC U14 Juniors - A Mixed WLFC U14A - Fulham",
 			"address": "Costas Mitre 10 Park Pitch 2, Galvin Park Reserve",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -992,7 +994,9 @@
 			"awayTeamName": "Geelong Rangers SC U14 Juniors - A Mixed U14 Metro",
 			"address": "Wyndham Vale North Reserve Main Pitch A",
 			"coordinates": "-37.898902,144.624443",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1020,7 +1024,9 @@
 			"awayTeamName": "Tarneit United SC U14 Juniors - A Mixed",
 			"address": "JT Gray Reserve Pitch 6 - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 17,

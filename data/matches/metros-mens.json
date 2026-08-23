@@ -1121,7 +1121,9 @@
 			"awayTeamName": "Kings Domain FC Seniors",
 			"address": "Albert Park Field 16 (Middle Park FC)",
 			"coordinates": "-37.849418,144.970479",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1134,7 +1136,9 @@
 			"awayTeamName": "St Kilda SC Seniors Sundays",
 			"address": "Sumner Park Main Pitch",
 			"coordinates": "-37.774141,144.986315",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1146,7 +1150,7 @@
 			"awayTeamName": "Fitzroy Lions SC Seniors",
 			"address": "",
 			"coordinates": "",
-			"status": "pending"
+			"status": "complete"
 		},
 		{
 			"round": 17,

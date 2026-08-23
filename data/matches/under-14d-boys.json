@@ -1586,7 +1586,9 @@
 			"awayTeamName": "Wyndham FC U14 Juniors - D Mixed Under 14 D",
 			"address": "JT Gray Reserve Pitch 6 - BUFC",
 			"coordinates": "-37.857002,144.865559",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 4,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1599,7 +1601,9 @@
 			"awayTeamName": "Maidstone United SC U14 Juniors - D Mixed Mick",
 			"address": "Romsey Recreation Reserve Pitch 2",
 			"coordinates": "-37.353194,144.749117",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1625,7 +1629,9 @@
 			"awayTeamName": "Aintree SC U14 Juniors - D Mixed AINTREE BOYS",
 			"address": "Hansen Reserve Pitch 3 - Senior Pitch",
 			"coordinates": "-37.8042,144.872777",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1638,7 +1644,9 @@
 			"awayTeamName": "Melbourne City FC U14 Juniors - D Mixed",
 			"address": "Avondale Heights Reserve Pitch 1",
 			"coordinates": "-37.76242,144.858824",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 1,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1651,7 +1659,9 @@
 			"awayTeamName": "Gisborne SC U14 Juniors - D Mixed 14JS",
 			"address": "Alcock Road Reserve Pitch 3",
 			"coordinates": "-37.829359,144.720192",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 16,
