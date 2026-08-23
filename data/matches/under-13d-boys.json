@@ -1339,7 +1339,9 @@
 			"awayTeamName": "Newport Storm FC U13 Juniors - D Mixed Zidane",
 			"address": "Grange Reserve - Hoppers Crossing Pitch 3 - Synthetic - Half Pitch B",
 			"coordinates": "-37.861006,144.67653",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 16,
