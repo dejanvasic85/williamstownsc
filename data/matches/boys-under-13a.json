@@ -1421,7 +1421,9 @@
 			"awayTeamName": "West Point SC U13 Juniors - A Mixed U13A Mixed - Anthony",
 			"address": "Hummingbird Boulevard Reserve 2B (Half)",
 			"coordinates": "-37.837381,144.663287",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 17,
