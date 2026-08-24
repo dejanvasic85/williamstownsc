@@ -113,14 +113,14 @@
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
 			"position": 8,
-			"played": 7,
-			"wins": 2,
+			"played": 8,
+			"wins": 3,
 			"draws": 2,
 			"losses": 3,
-			"goalsFor": 9,
-			"goalsAgainst": 15,
-			"goalDifference": -6,
-			"points": 8
+			"goalsFor": 18,
+			"goalsAgainst": 16,
+			"goalDifference": 2,
+			"points": 11
 		},
 		{
 			"teamId": "1K3vVlkONQ",
@@ -173,13 +173,13 @@
 			"clubName": "Pascoe Vale FC",
 			"logoUrl": "https://ocean.dribl.com/28902757e425496ebb9fbcef551db4cf",
 			"position": 12,
-			"played": 7,
+			"played": 8,
 			"wins": 1,
 			"draws": 1,
-			"losses": 5,
-			"goalsFor": 9,
-			"goalsAgainst": 30,
-			"goalDifference": -21,
+			"losses": 6,
+			"goalsFor": 10,
+			"goalsAgainst": 39,
+			"goalDifference": -29,
 			"points": 1
 		}
 	]

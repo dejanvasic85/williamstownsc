@@ -1545,7 +1545,9 @@
 			"awayTeamName": "Altona City SC U12 Juniors - B Female",
 			"address": "Fairbairn Park Pitch 5B - Half Field",
 			"coordinates": "-37.772808,144.9",
-			"status": "pending"
+			"homeScore": 4,
+			"awayScore": 6,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1558,7 +1560,9 @@
 			"awayTeamName": "Melton Phoenix FC U12 Juniors - B Female",
 			"address": "Green Gully Reserve Pitch 3 - Half Field A",
 			"coordinates": "-37.724344,144.817872",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 5,
+			"status": "complete"
 		},
 		{
 			"round": 16,
