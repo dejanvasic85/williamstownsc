@@ -53,14 +53,14 @@
 			"clubName": "Williams Landing SC",
 			"logoUrl": "https://ocean.dribl.com/0ac9182c1e214673a4fbb6bd8e9e1e04",
 			"position": 4,
-			"played": 15,
+			"played": 16,
 			"wins": 7,
-			"draws": 2,
+			"draws": 3,
 			"losses": 6,
-			"goalsFor": 29,
-			"goalsAgainst": 23,
+			"goalsFor": 32,
+			"goalsAgainst": 26,
 			"goalDifference": 6,
-			"points": 23
+			"points": 24
 		},
 		{
 			"teamId": "1K3v3E9oNQ",
@@ -68,14 +68,14 @@
 			"clubName": "Sydenham Park SC",
 			"logoUrl": "https://ocean.dribl.com/478cee2e57c84fc4a018a69cb29ee23a",
 			"position": 5,
-			"played": 15,
+			"played": 16,
 			"wins": 6,
-			"draws": 3,
+			"draws": 4,
 			"losses": 6,
-			"goalsFor": 36,
-			"goalsAgainst": 39,
+			"goalsFor": 39,
+			"goalsAgainst": 42,
 			"goalDifference": -3,
-			"points": 21
+			"points": 22
 		},
 		{
 			"teamId": "WdgpyrRpmR",

@@ -1549,7 +1549,9 @@
 			"awayTeamName": "Williamstown SC U15 Juniors - D Mixed Under 15C Boys",
 			"address": "Hosken Reserve Pitch 2",
 			"coordinates": "-37.725117,144.957411",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 9,
+			"status": "complete"
 		},
 		{
 			"round": 17,

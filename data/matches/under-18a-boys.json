@@ -957,7 +957,9 @@
 			"awayTeamName": "Williams Landing SC U18 Juniors - A Male WLFC U18A - West Ham United",
 			"address": "Keilor Lodge Reserve Pitch 1",
 			"coordinates": "-37.688087,144.777598",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 3,
+			"status": "complete"
 		},
 		{
 			"round": 16,
