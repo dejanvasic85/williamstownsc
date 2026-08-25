@@ -675,7 +675,9 @@
 			"awayTeamName": "Pascoe Vale FC Seniors",
 			"address": "Hosken Reserve Pitch 1 South",
 			"coordinates": "-37.725117,144.957411",
-			"status": "pending"
+			"homeScore": 2,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 10,
