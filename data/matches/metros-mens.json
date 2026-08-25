@@ -1023,7 +1023,9 @@
 			"awayTeamName": "Middle Park FC Seniors",
 			"address": "Alma Park East Field 1",
 			"coordinates": "-37.860185,144.994366",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 15,
