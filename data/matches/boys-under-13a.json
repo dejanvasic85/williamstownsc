@@ -885,7 +885,9 @@
 			"awayTeamName": "Altona North SC U13 Juniors - A Mixed Oriol",
 			"address": "HC Kim Reserve Pitch 1A",
 			"coordinates": "-37.863721,144.839985",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 11,
