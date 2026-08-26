@@ -1026,7 +1026,9 @@
 			"awayTeamName": "Williamstown SC U13 Juniors - C Female Girls Under 13",
 			"address": "Costas Mitre 10 Park Pitch 3B, Galvin Park Reserve - Half Field",
 			"coordinates": "-37.886177,144.651364",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 8,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1039,7 +1041,9 @@
 			"awayTeamName": "Gisborne SC U13 Juniors - C Female 13ML",
 			"address": "Churchill Reserve Pitch 2 - Half Field B",
 			"coordinates": "-37.733167,144.815014",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1052,7 +1056,9 @@
 			"awayTeamName": "Altona East SC U13 Juniors - C Female",
 			"address": "Johnson Reserve Pitch 1A",
 			"coordinates": "-37.791812,144.874864",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 7,
+			"status": "complete"
 		},
 		{
 			"round": 16,
@@ -1065,7 +1071,9 @@
 			"awayTeamName": "Yarraville Glory FC U13 Juniors - C Female",
 			"address": "Williams Landing Sports Reserve Pitch 3 Oval (9v9)",
 			"coordinates": "-37.861747,144.749995",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 17,

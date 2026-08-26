@@ -32,14 +32,17 @@ export type AgeGroup =
 export type TabCategory =
 	'seniors' | 'reserves' | 'juniorBoys' | 'juniorGirls' | 'masters' | 'metros';
 
+export type ImageCrop = { top: number; bottom: number; left: number; right: number };
+export type ImageHotspot = { x: number; y: number; width: number; height: number };
+
 export type PersonPhoto = {
 	asset: {
 		_ref: string;
 		url: string;
 	};
 	alt: string;
-	crop?: { top: number; bottom: number; left: number; right: number };
-	hotspot?: { x: number; y: number; width: number; height: number };
+	crop?: ImageCrop;
+	hotspot?: ImageHotspot;
 };
 
 export interface Person {
@@ -76,6 +79,8 @@ export interface Team {
 			url: string;
 		};
 		alt?: string;
+		crop?: ImageCrop;
+		hotspot?: ImageHotspot;
 	};
 	gender?: 'male' | 'female' | 'mixed';
 	ageGroup: AgeGroup;

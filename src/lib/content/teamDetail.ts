@@ -17,7 +17,9 @@ export const teamDetailQuery = groq`
         _ref,
         url
       },
-      alt
+      alt,
+      crop,
+      hotspot
     },
     gender,
     ageGroup,

@@ -12,6 +12,9 @@ import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
+const teamHeroImageWidth = 1600;
+const teamHeroImageHeight = 900;
+
 type TeamDetailPageProps = {
 	params: Promise<{ slug: string }>;
 };
@@ -55,11 +58,15 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 				{team.photo?.asset?.url ? (
 					<Image
 						loader={sanityImageLoader}
-						src={team.photo.asset.url}
+						src={urlFor(team.photo)
+							.width(teamHeroImageWidth)
+							.height(teamHeroImageHeight)
+							.fit('crop')
+							.url()}
 						alt={team.photo.alt || team.name}
-						width={1200}
-						height={600}
-						className="h-48 w-full rounded-xl object-cover md:h-96"
+						width={teamHeroImageWidth}
+						height={teamHeroImageHeight}
+						className="aspect-[16/9] w-full rounded-xl object-cover"
 						sizes="(max-width: 768px) 100vw, (max-width: 1280px) calc(100vw - 2rem), 1280px"
 						priority
 					/>
