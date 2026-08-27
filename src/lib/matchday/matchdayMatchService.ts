@@ -1,7 +1,8 @@
-import { unstable_cache } from 'next/cache';
+import { cache } from 'react';
+import { unwrap } from '@dejanvasic85/matchday-sdk';
 import logger from '@/lib/logger';
-import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
-import { type FixtureTeam, getFixtureTeamsById } from '@/lib/matchday/matchdayClubService';
+import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
+import { type FixtureTeam, getFixtureTeamsForLeague } from '@/lib/matchday/matchdayClubService';
 import { fixtureStatusValue } from '@/lib/matches/fixtureStatusService';
 import type { EnrichedFixture } from '@/types/matches';
 
@@ -94,31 +95,27 @@ function mapFixture(
 	};
 }
 
-async function loadFixturesForLeague(leagueId: string): Promise<EnrichedFixture[]> {
-	const client = getMatchdayClient();
-	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
-	const [fixturesResult, teamsById] = await Promise.all([
-		client.GET('/leagues/{id}/fixtures', { params: { path: { id: leagueId } }, signal }),
-		getFixtureTeamsById()
-	]);
-
-	if (fixturesResult.error || !fixturesResult.data) {
-		throw new Error(`Failed to load fixtures for league ${leagueId}`);
-	}
-
-	return fixturesResult.data
-		.map((fixture) => mapFixture(fixture, teamsById))
-		.filter((fixture): fixture is EnrichedFixture => fixture !== null)
-		.sort((a, b) => a.round - b.round);
-}
-
 /** All non-bye, mapped fixtures for a league — the matchday equivalent of a team's
  * `data/matches/{slug}.json`, which is scoped per-league too, not per-team.
- * `unstable_cache()`-wrapped (Next's Data Cache, shared across the whole build/all requests
- * within the revalidate window) — a team's /matches and /table pages are separate static-
- * generation passes, so per-request memoization alone doesn't share this across them. */
-export const getMatchdayFixturesForLeague = unstable_cache(
-	loadFixturesForLeague,
-	['matchday-fixtures'],
-	{ revalidate: 300, tags: ['matchday-fixtures'] }
+ *
+ * No Data Cache layer: the matchday API caches upstream and the route's own `revalidate` bounds
+ * how often this runs. `cache()` only memoizes within a single render, where the layout and page
+ * both ask for the same league's fixtures. */
+export const getMatchdayFixturesForLeague = cache(
+	async (leagueId: string): Promise<EnrichedFixture[]> => {
+		const [fixturesOutcome, teamsById] = await Promise.all([
+			getMatchdayClient().GET('/leagues/{id}/fixtures', { params: { path: { id: leagueId } } }),
+			getFixtureTeamsForLeague(leagueId)
+		]);
+
+		const fixtures = unwrap(fixturesOutcome);
+		if (!fixtures.ok) {
+			throw new Error(`Failed to load fixtures for league ${leagueId}: ${fixtures.error.message}`);
+		}
+
+		return fixtures.value
+			.map((fixture) => mapFixture(fixture, teamsById))
+			.filter((fixture): fixture is EnrichedFixture => fixture !== null)
+			.sort((a, b) => a.round - b.round);
+	}
 );

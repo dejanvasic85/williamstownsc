@@ -1,31 +1,18 @@
+import { getClubLeagues } from '@dejanvasic85/matchday-sdk';
 import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
-import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
+import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import type { LeagueOption } from '@/types/matchday';
 
 const log = logger.child({ service: 'leagueOptionService' });
 
-type League = {
-	id: string;
-	name: string;
-	competitionId: string;
-	seasonId: string;
-};
-
-function buildLabel(
-	league: League,
-	competitionNamesById: Map<string, string>,
-	seasonNamesById: Map<string, string>
-): string {
-	const competitionName = competitionNamesById.get(league.competitionId) ?? league.competitionId;
-	const seasonName = seasonNamesById.get(league.seasonId) ?? league.seasonId;
-	return `${league.name} — ${competitionName} (${seasonName})`;
-}
-
 /**
  * Leagues this site's club plays in, labelled with their competition + season names.
- * Falls back to the raw competition/season id in the label if either lookup fails, rather
- * than dropping the league entirely (docs/plans/2026-08-15-team-league-picker-design-spike.md).
+ *
+ * One request: `League` embeds its competition and season, so the full `/competitions` and
+ * `/seasons` catalogs this used to fetch (purely to resolve two names) are gone, and with them
+ * the raw-id label fallbacks. Includes divisions that never publish a ladder, e.g. MiniRoos age
+ * groups, which the previous query silently omitted.
  */
 export async function getClubLeagueOptions(): Promise<LeagueOption[]> {
 	const clubId = await getMatchdayClubId();
@@ -35,38 +22,16 @@ export async function getClubLeagueOptions(): Promise<LeagueOption[]> {
 		return [];
 	}
 
-	const client = getMatchdayClient();
-	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
-	// No per-id/batch filter exists for /competitions or /seasons (only /{id}), so this fetches
-	// the full catalog rather than N+1 single-id requests — fine at the current catalog size.
-	const [leaguesResult, competitionsResult, seasonsResult] = await Promise.all([
-		client.GET('/leagues', { params: { query: { clubId } }, signal }),
-		client.GET('/competitions', { signal }),
-		client.GET('/seasons', { signal })
-	]);
+	const result = await getClubLeagues(getMatchdayClient(), clubId);
 
-	if (leaguesResult.error || !leaguesResult.data) {
-		throw new Error('Failed to load leagues from the matchday API');
+	if (!result.ok) {
+		throw new Error(`Failed to load leagues from the matchday API: ${result.error.message}`);
 	}
 
-	if (competitionsResult.error) {
-		log.warn({ err: competitionsResult.error }, 'Failed to load competitions, using raw ids');
-	}
-	if (seasonsResult.error) {
-		log.warn({ err: seasonsResult.error }, 'Failed to load seasons, using raw ids');
-	}
-
-	const competitionNamesById = new Map(
-		(competitionsResult.data ?? []).map((competition) => [competition.id, competition.name])
-	);
-	const seasonNamesById = new Map(
-		(seasonsResult.data ?? []).map((season) => [season.id, season.name])
-	);
-
-	return leaguesResult.data
+	return result.value
 		.map((league) => ({
 			leagueId: league.id,
-			label: buildLabel(league, competitionNamesById, seasonNamesById)
+			label: `${league.name} — ${league.competition.name} (${league.season.name})`
 		}))
 		.sort((a, b) => a.label.localeCompare(b.label));
 }

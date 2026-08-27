@@ -1,10 +1,11 @@
-import { unstable_cache } from 'next/cache';
+import { cache } from 'react';
+import { unwrap } from '@dejanvasic85/matchday-sdk';
 import logger from '@/lib/logger';
-import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
+import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import {
 	type FixtureTeam,
 	clubPlaceholderLogoUrl,
-	getFixtureTeamsById
+	getFixtureTeamsForLeague
 } from '@/lib/matchday/matchdayClubService';
 import { getLeagueMeta } from '@/lib/matchday/matchdayLeagueMetaService';
 import type { TableData, TableEntry } from '@/types/table';
@@ -52,31 +53,22 @@ function mapTableEntry(entry: MatchdayTableEntry, teamsById: Map<string, Fixture
 	};
 }
 
-async function loadTableForLeague(leagueId: string): Promise<TableData> {
-	const client = getMatchdayClient();
-	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
-
-	const [tableResult, teamsById, { competition, season }] = await Promise.all([
-		client.GET('/leagues/{id}/table', { params: { path: { id: leagueId } }, signal }),
-		getFixtureTeamsById(),
+/** `cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague`. */
+export const getMatchdayTableForLeague = cache(async (leagueId: string): Promise<TableData> => {
+	const [tableOutcome, teamsById, { competition, season }] = await Promise.all([
+		getMatchdayClient().GET('/leagues/{id}/table', { params: { path: { id: leagueId } } }),
+		getFixtureTeamsForLeague(leagueId),
 		getLeagueMeta(leagueId)
 	]);
 
-	if (tableResult.error || !tableResult.data) {
-		throw new Error(`Failed to load table for league ${leagueId}`);
+	const table = unwrap(tableOutcome);
+	if (!table.ok) {
+		throw new Error(`Failed to load table for league ${leagueId}: ${table.error.message}`);
 	}
 
-	const entries = tableResult.data
+	const entries = table.value
 		.map((entry) => mapTableEntry(entry, teamsById))
 		.sort((a, b) => a.position - b.position);
 
 	return { season, competition, entries };
-}
-
-/** `unstable_cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague` — a team's
- * /matches and /table pages are separate static-generation passes, so this needs to be shared
- * across the whole build, not just within one request. */
-export const getMatchdayTableForLeague = unstable_cache(loadTableForLeague, ['matchday-table'], {
-	revalidate: 300,
-	tags: ['matchday-table']
 });

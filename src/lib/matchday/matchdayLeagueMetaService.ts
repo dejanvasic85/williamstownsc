@@ -1,42 +1,26 @@
-import { unstable_cache } from 'next/cache';
-import { getMatchdayClient, matchdayRequestTimeoutMs } from '@/lib/matchday/matchdayClient';
+import { cache } from 'react';
+import { unwrap } from '@dejanvasic85/matchday-sdk';
+import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 
 export type LeagueMeta = {
 	competition: string;
 	season: number;
 };
 
-async function loadLeagueMeta(leagueId: string): Promise<LeagueMeta> {
-	const client = getMatchdayClient();
-	const signal = AbortSignal.timeout(matchdayRequestTimeoutMs);
+/** A league's competition/season display names. One request: `League` embeds both as summaries,
+ * so this no longer chases `/competitions/{id}` and `/seasons/{id}` afterwards. `cache()`-wrapped
+ * for per-request memoization, same reasoning as `getFixtureTeamsForLeague`. */
+export const getLeagueMeta = cache(async (leagueId: string): Promise<LeagueMeta> => {
+	const league = unwrap(
+		await getMatchdayClient().GET('/leagues/{id}', { params: { path: { id: leagueId } } })
+	);
 
-	const leagueResult = await client.GET('/leagues/{id}', {
-		params: { path: { id: leagueId } },
-		signal
-	});
-
-	if (leagueResult.error || !leagueResult.data) {
-		throw new Error(`Failed to load league ${leagueId}`);
+	if (!league.ok) {
+		throw new Error(`Failed to load league ${leagueId}: ${league.error.message}`);
 	}
 
-	const [competitionResult, seasonResult] = await Promise.all([
-		client.GET('/competitions/{id}', {
-			params: { path: { id: leagueResult.data.competitionId } },
-			signal
-		}),
-		client.GET('/seasons/{id}', { params: { path: { id: leagueResult.data.seasonId } }, signal })
-	]);
-
 	return {
-		competition: competitionResult.data?.name ?? leagueResult.data.competitionId,
-		season: Number(seasonResult.data?.name) || new Date().getFullYear()
+		competition: league.value.competition.name,
+		season: Number(league.value.season.name) || new Date().getFullYear()
 	};
-}
-
-/** Resolves a league's competition/season display names — two targeted GET /{id} calls, not
- * the full-catalog fetch used for the league picker (this is one league, not many).
- * `unstable_cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague`. */
-export const getLeagueMeta = unstable_cache(loadLeagueMeta, ['matchday-league-meta'], {
-	revalidate: 300,
-	tags: ['matchday-league-meta']
 });
