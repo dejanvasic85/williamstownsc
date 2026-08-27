@@ -1,8 +1,8 @@
 # Generating a Long-Lived Facebook Access Token (for Page Publishing)
 
-This guide explains how to generate a **long-lived User access token** and then derive a **Page access token** for posting to a Facebook Page via the Graph API.
+This guide explains how to generate a long-lived **User access token**, then use it to get a **Page access token** for posting to a Facebook Page through the Graph API.
 
-> Facebook does **not** issue long-lived Page tokens directly.  
+> Facebook does **not** issue long-lived Page tokens directly.
 > You must first create a long-lived **User** token.
 
 ---
@@ -45,9 +45,9 @@ This token is short-lived (≈1 hour).
 
 ---
 
-## Step 3 — Exchange for long-lived User token (should expire in 60 days)
+## Step 3 — Exchange for a long-lived User token (expires in about 60 days)
 
-Make a **GET** request to the OAuth endpoint and use the environment variables from vercel.
+Make a **GET** request to the OAuth endpoint, using the app credentials stored as environment variables in Vercel.
 
 ```sh
 curl -G \
@@ -58,26 +58,25 @@ curl -G \
   https://graph.facebook.com/v22.0/oauth/access_token
 ```
 
-Then we need to get an access token for specific pages:
+Next, get an access token for a specific page:
 
-Williamstown testing Page Example:
+Williamstown testing page example:
 
 ```sh
 curl "https://graph.facebook.com/v22.0/961368350398109?fields=access_token&access_token=LONG_LIVED_USER_TOKEN"
 ```
 
-Williamstown Production Page example:
+Williamstown production page example:
 
 ```sh
 curl "https://graph.facebook.com/v22.0/559699174041802?fields=access_token&access_token=LONG_LIVED_USER_TOKEN"
 ```
 
-Find the access token in that response for Williamstown Soccer Club page. You can put the token in the [debugger](https://developers.facebook.com/tools/debug/accesstoken/) to see the details. For example, is it a user token or a page token?
+Find the access token in that response for the Williamstown Soccer Club page. To check its details — including whether it's a user token or a page token — paste it into the [debugger](https://developers.facebook.com/tools/debug/accesstoken/).
 
-But most importantly, it should not expire.
-Set the environment variable `META_PAGE_ACCESS_TOKEN` in .env.local or Vercel.
+This page token should not expire. Set it as the `META_PAGE_ACCESS_TOKEN` environment variable in `.env.local` or Vercel.
 
-## Step 4 - Try call the API route to publish to the page
+## Step 4 — Call the API route to publish to the page
 
 ```sh
 curl -X POST http://localhost:3003/api/social-publish \

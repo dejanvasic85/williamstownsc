@@ -76,6 +76,11 @@ All changes MUST follow the following workflow
 - Ensure to find the latest version of a package before adding it
 - Avoid using deprecated packages or APIs
 
+# Communication
+
+- All writing shown to a person — chat responses, code comments, commit messages, PR descriptions — MUST follow ISO 24495-1:2023 plain language principles: use common words, keep sentences short and direct, put the main point first, avoid jargon and nominalizations (prefer "decide" over "make a decision"), organize content so the reader finds what they need on first read
+- This applies only to human-facing writing, not to internal reasoning/thinking or code logic itself
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
