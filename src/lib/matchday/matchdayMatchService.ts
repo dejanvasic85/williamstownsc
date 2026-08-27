@@ -80,8 +80,8 @@ function mapFixture(
 		time,
 		homeTeam: homeTeam.club,
 		awayTeam: awayTeam.club,
-		homeTeamDisplayName: homeTeam.teamName,
-		awayTeamDisplayName: awayTeam.teamName,
+		homeTeamDisplayName: homeTeam.displayName,
+		awayTeamDisplayName: awayTeam.displayName,
 		address: fixture.venue ?? '',
 		coordinates:
 			fixture.latitude != null && fixture.longitude != null

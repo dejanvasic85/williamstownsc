@@ -1,5 +1,6 @@
 import { cache } from 'react';
 import { getLeagueTeams } from '@dejanvasic85/matchday-sdk';
+import { resolveTeamDisplayName } from '@/lib/clubService';
 import logger from '@/lib/logger';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import { clubSchema } from '@/types/matches';
@@ -18,6 +19,9 @@ type MatchdayClubSummary = {
 export type FixtureTeam = {
 	club: Club;
 	teamName: string;
+	/** Club name, falling back to the longer team name only when the club fields two sides in
+	 * this league and the club name alone would be ambiguous. */
+	displayName: string;
 };
 
 function mapMatchdayClub(club: MatchdayClubSummary): Club | null {
@@ -40,7 +44,7 @@ export const getFixtureTeamsForLeague = cache(
 			throw new Error(`Failed to load teams for league ${leagueId}: ${result.error.message}`);
 		}
 
-		const teamsById = new Map<string, FixtureTeam>();
+		const resolved: Array<{ id: string; club: Club; teamName: string }> = [];
 		for (const team of result.value) {
 			if (team.type !== 'club') {
 				log.warn({ teamId: team.id }, 'matchday team is not affiliated to a club, skipping');
@@ -53,9 +57,27 @@ export const getFixtureTeamsForLeague = cache(
 				continue;
 			}
 
-			teamsById.set(team.id, { club, teamName: team.name });
+			resolved.push({ id: team.id, club, teamName: team.name });
 		}
 
-		return teamsById;
+		const teamCountByClubId = new Map<string, number>();
+		for (const { club } of resolved) {
+			teamCountByClubId.set(club.externalId, (teamCountByClubId.get(club.externalId) ?? 0) + 1);
+		}
+
+		return new Map(
+			resolved.map(({ id, club, teamName }) => [
+				id,
+				{
+					club,
+					teamName,
+					displayName: resolveTeamDisplayName(
+						teamName,
+						club,
+						(teamCountByClubId.get(club.externalId) ?? 0) > 1
+					)
+				}
+			])
+		);
 	}
 );
