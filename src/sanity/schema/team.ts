@@ -7,6 +7,11 @@ export const team = defineType({
 	type: 'document',
 	fieldsets: [
 		{
+			name: 'homepage',
+			title: 'Homepage',
+			options: { collapsible: true, collapsed: false }
+		},
+		{
 			name: 'fixturesCrawler',
 			title: 'Fixtures Crawler',
 			options: { collapsible: true, collapsed: true }
@@ -156,7 +161,8 @@ export const team = defineType({
 			title: 'Show in the homepage Football section',
 			type: 'boolean',
 			description: 'Display this team in the homepage Football section',
-			initialValue: false
+			initialValue: false,
+			fieldset: 'homepage'
 		}),
 		defineField({
 			name: 'showNextMatchOnHomepage',
@@ -164,7 +170,8 @@ export const team = defineType({
 			type: 'boolean',
 			description:
 				'Feature this team’s next match countdown on the homepage (max 2 teams — the lowest 2 by Homepage next match order win if more are enabled)',
-			initialValue: false
+			initialValue: false,
+			fieldset: 'homepage'
 		}),
 		defineField({
 			name: 'homepageDisplayName',
@@ -172,7 +179,8 @@ export const team = defineType({
 			type: 'string',
 			description:
 				'Short label for the homepage next-match card, e.g. "Senior Men’s". Falls back to the team name if left blank.',
-			hidden: ({ document }) => !document?.showNextMatchOnHomepage
+			hidden: ({ document }) => !document?.showNextMatchOnHomepage,
+			fieldset: 'homepage'
 		}),
 		defineField({
 			name: 'homepageNextMatchOrder',
@@ -180,7 +188,8 @@ export const team = defineType({
 			type: 'number',
 			description:
 				'Left-to-right position among featured homepage next-match cards (lower first). Independent of the general Order field above, which also controls team listing order elsewhere. Falls back to Order if left blank.',
-			hidden: ({ document }) => !document?.showNextMatchOnHomepage
+			hidden: ({ document }) => !document?.showNextMatchOnHomepage,
+			fieldset: 'homepage'
 		}),
 		defineField({
 			name: 'description',
