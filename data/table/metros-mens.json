@@ -8,14 +8,14 @@
 			"clubName": "Fitzroy Lions SC",
 			"logoUrl": "https://ocean.dribl.com/45b56101b9ae45d581ba6cfff3097f29",
 			"position": 1,
-			"played": 13,
-			"wins": 9,
-			"draws": 2,
+			"played": 15,
+			"wins": 10,
+			"draws": 3,
 			"losses": 2,
-			"goalsFor": 53,
-			"goalsAgainst": 18,
-			"goalDifference": 35,
-			"points": 29
+			"goalsFor": 57,
+			"goalsAgainst": 19,
+			"goalDifference": 38,
+			"points": 33
 		},
 		{
 			"teamId": "BdD9E376mb",
@@ -23,14 +23,14 @@
 			"clubName": "South Yarra SC",
 			"logoUrl": "https://ocean.dribl.com/644170b8a93a493196bcac5a05af176d",
 			"position": 2,
-			"played": 13,
+			"played": 14,
 			"wins": 9,
-			"draws": 2,
+			"draws": 3,
 			"losses": 2,
-			"goalsFor": 52,
-			"goalsAgainst": 19,
+			"goalsFor": 53,
+			"goalsAgainst": 20,
 			"goalDifference": 33,
-			"points": 29
+			"points": 30
 		},
 		{
 			"teamId": "JmX4eOrnmn",
@@ -128,13 +128,13 @@
 			"clubName": "Truganina Lions FC",
 			"logoUrl": "https://ocean.dribl.com/8b70371c5f4b46929d72b03609d3280d",
 			"position": 9,
-			"played": 14,
+			"played": 15,
 			"wins": 0,
 			"draws": 1,
-			"losses": 13,
+			"losses": 14,
 			"goalsFor": 14,
-			"goalsAgainst": 116,
-			"goalDifference": -102,
+			"goalsAgainst": 119,
+			"goalDifference": -105,
 			"points": 1
 		}
 	]
