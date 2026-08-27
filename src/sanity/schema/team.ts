@@ -229,7 +229,7 @@ export const team = defineType({
 					title: 'League',
 					type: 'string',
 					description:
-						'The Matchday league this team is subscribed to. Optional until the team has been backfilled — see docs/plans/2026-08-15-team-league-picker-design-spike.md.',
+						'Search for the league to display the teams fixtures, results and table on the website.	',
 					components: { input: LeagueIdInput },
 					validation: (Rule) =>
 						Rule.custom((value) => {
