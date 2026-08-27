@@ -94,16 +94,8 @@ const teamLeagueIdQuery = groq`
   *[_type == "team" && slug.current == $slug][0].matchday.leagueId
 `;
 
-/**
- * Cheap standalone lookup for callers that only need the matchday leagueId (not the full team
- * document) to decide whether to read fixtures/table from the matchday API or local JSON.
- * `cache()`-wrapped so the several call sites that need this per request (matches/table
- * services, calendar route) share one query.
- *
- * Deliberately does NOT catch its own errors — a failed lookup is not the same as "this team
- * has no leagueId", and callers must not treat a Sanity outage as permission to silently render
- * a matchday-backed team's (now-stale) local JSON fallback. Let it throw.
- */
+/** Throws rather than returning null on failure: a Sanity outage must not read as "no leagueId"
+ * and silently fall back to a matchday-backed team's stale local JSON. */
 export const getTeamLeagueId = cache(async function getTeamLeagueId(
 	slug: string
 ): Promise<string | null> {

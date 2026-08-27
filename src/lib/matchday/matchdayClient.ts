@@ -1,10 +1,8 @@
 import { createMatchdayClient } from '@dejanvasic85/matchday-sdk';
 import { getMatchdayConfig } from '@/lib/config';
 
-/** The SDK applies these per request and retries idempotent calls itself, so services no longer
- * pass an `AbortSignal.timeout()` of their own. 30s, not the more typical single-digit seconds:
- * the Vercel build region and the matchday API's Neon database are geographically distant
- * (Cleveland US East vs. Singapore). */
+/** 30s rather than single-digit seconds: the Vercel build region and the matchday API's Neon
+ * database are far apart (Cleveland US East vs. Singapore). */
 const clientOptionsValue = {
 	timeoutMs: 30_000,
 	retries: 2,

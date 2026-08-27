@@ -7,9 +7,7 @@ export type LeagueMeta = {
 	season: number;
 };
 
-/** A league's competition/season display names. One request: `League` embeds both as summaries,
- * so this no longer chases `/competitions/{id}` and `/seasons/{id}` afterwards. `cache()`-wrapped
- * for per-request memoization, same reasoning as `getFixtureTeamsForLeague`. */
+/** A league's competition and season display names. */
 export const getLeagueMeta = cache(async (leagueId: string): Promise<LeagueMeta> => {
 	const league = unwrap(
 		await getMatchdayClient().GET('/leagues/{id}', { params: { path: { id: leagueId } } })

@@ -22,10 +22,7 @@ export type HomepageNextMatchTeam = {
 	displayName: string;
 };
 
-/** Teams featured in the homepage next-match countdown — capped at 2 in the query itself
- * (lowest 2 by homepageNextMatchOrder win if more are enabled in Studio, falling back to the
- * general Order field if that's not set — see team.ts), so the caller never has to enforce
- * the limit. */
+/** Teams for the homepage next-match countdown. Capped at 2 in the query, so callers don't. */
 export async function getHomepageNextMatchTeams(): Promise<HomepageNextMatchTeam[]> {
 	try {
 		return await client.fetch<HomepageNextMatchTeam[]>(

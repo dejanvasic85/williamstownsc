@@ -9,8 +9,7 @@ function isClubFixture(fixture: EnrichedFixture, clubId: string): boolean {
 	return fixture.homeTeam.externalId === clubId || fixture.awayTeam.externalId === clubId;
 }
 
-/** Pure — no fetching. Finds the soonest fixture for `clubId` that hasn't finished yet (kickoff
- * plus a nominal match duration), from an already-fetched, already-enriched fixture list. */
+/** Soonest fixture for `clubId` that hasn't finished yet (kickoff plus match duration). */
 export function resolveMatchdayNextMatch(
 	fixtures: EnrichedFixture[],
 	clubId: string
@@ -32,8 +31,7 @@ export function resolveMatchdayNextMatch(
 	return upcoming[0].fixture;
 }
 
-/** Pure — no fetching. Finds the most recent completed fixture for `clubId`, from an
- * already-fetched, already-enriched fixture list. */
+/** Most recent completed fixture for `clubId`. */
 export function resolveMatchdayPreviousMatch(
 	fixtures: EnrichedFixture[],
 	clubId: string

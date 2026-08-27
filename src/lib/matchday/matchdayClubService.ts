@@ -30,16 +30,8 @@ function mapMatchdayClub(club: MatchdayClubSummary): Club | null {
 	return result.success ? result.data : null;
 }
 
-/**
- * Maps a league's team ids to their club + team name, for rendering fixture/table opponents.
- * Fixtures/table entries only carry a team id, so they need this join to render a name or badge.
- *
- * League-scoped rather than the full `/teams` + `/clubs` catalog this used to fetch and join in
- * memory: that was ~6500 teams and 2.4 MB to resolve the handful one league actually plays.
- *
- * `cache()`-wrapped for per-request memoization: a team's layout and page each resolve fixtures
- * and the table, so one render asks for the same league's teams three times.
- */
+/** Team id to club + name, for rendering fixture and table opponents. `cache()`-wrapped because a
+ * team's layout and page both resolve fixtures and the table, asking three times per render. */
 export const getFixtureTeamsForLeague = cache(
 	async (leagueId: string): Promise<Map<string, FixtureTeam>> => {
 		const result = await getLeagueTeams(getMatchdayClient(), leagueId);
@@ -50,9 +42,6 @@ export const getFixtureTeamsForLeague = cache(
 
 		const teamsById = new Map<string, FixtureTeam>();
 		for (const team of result.value) {
-			// Teams not yet bridged to a club are the rare, self-healing exception. Leaving them out
-			// means the table renders their row with a placeholder name/logo, and any fixture they
-			// appear in is dropped, which is what the previous null-`clubId` skip did too.
 			if (team.type !== 'club') {
 				log.warn({ teamId: team.id }, 'matchday team is not affiliated to a club, skipping');
 				continue;

@@ -26,8 +26,6 @@ type MatchdayFixture = {
 	isBye: boolean;
 };
 
-/** Mirrors the two statuses the UI already special-cases, plus the matchday-only ones added
- * alongside (docs/plans/2026-08-15-matchday-fixtures-table-swap.md). */
 function mapStatus(status: MatchdayFixtureStatus): string {
 	return status === 'completed' ? fixtureStatusValue.complete : status;
 }
@@ -95,12 +93,8 @@ function mapFixture(
 	};
 }
 
-/** All non-bye, mapped fixtures for a league — the matchday equivalent of a team's
- * `data/matches/{slug}.json`, which is scoped per-league too, not per-team.
- *
- * No Data Cache layer: the matchday API caches upstream and the route's own `revalidate` bounds
- * how often this runs. `cache()` only memoizes within a single render, where the layout and page
- * both ask for the same league's fixtures. */
+/** All non-bye fixtures for a league. No Data Cache layer: the API caches upstream and the route's
+ * `revalidate` bounds how often this runs, so `cache()` only dedupes within one render. */
 export const getMatchdayFixturesForLeague = cache(
 	async (leagueId: string): Promise<EnrichedFixture[]> => {
 		const [fixturesOutcome, teamsById] = await Promise.all([

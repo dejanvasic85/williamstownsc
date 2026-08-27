@@ -220,13 +220,8 @@ type MatchdayContext = {
 	matchdayClubId: string | null;
 };
 
-/**
- * Shared by getTeamMatches/getNextMatch/getPreviousMatch — the three matchday call sites that
- * all need "this league's fixtures + our club id" to resolve next/previous match. Swallows
- * matchday API failures (unlike getTeamLeagueId) and returns null, so a transient matchday
- * outage degrades to "no next/previous match" the same way the local-JSON path degrades on a
- * missing/corrupt file, instead of a 500.
- */
+/** Returns null on API failure, so an outage degrades to "no next/previous match" rather than
+ * a 500, matching how the local-JSON path handles a missing file. */
 async function loadMatchdayContext(leagueId: string): Promise<MatchdayContext | null> {
 	try {
 		const [fixtures, matchdayClubId] = await Promise.all([

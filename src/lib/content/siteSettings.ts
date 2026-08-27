@@ -29,9 +29,7 @@ export async function getSiteSettings() {
 	return siteSettings;
 }
 
-/** The matchday club id (`clb_...`) fixture/table code compares against to identify "our" side —
- * the matchday-sourced equivalent of `getClubConfig().wscClubDriblId`. `cache()`-wrapped since
- * several call sites need this per request. */
+/** The matchday club id fixture/table code compares against to identify "our" side. */
 export const getMatchdayClubId = cache(async function getMatchdayClubId(): Promise<string | null> {
 	const siteSettings = await getSiteSettings();
 	return siteSettings?.matchday?.clubId ?? null;

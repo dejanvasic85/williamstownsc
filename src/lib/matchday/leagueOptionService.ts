@@ -6,14 +6,8 @@ import type { LeagueOption } from '@/types/matchday';
 
 const log = logger.child({ service: 'leagueOptionService' });
 
-/**
- * Leagues this site's club plays in, labelled with their competition + season names.
- *
- * One request: `League` embeds its competition and season, so the full `/competitions` and
- * `/seasons` catalogs this used to fetch (purely to resolve two names) are gone, and with them
- * the raw-id label fallbacks. Includes divisions that never publish a ladder, e.g. MiniRoos age
- * groups, which the previous query silently omitted.
- */
+/** Leagues this site's club plays in, labelled with competition and season. Includes divisions
+ * that never publish a ladder, e.g. MiniRoos age groups. */
 export async function getClubLeagueOptions(): Promise<LeagueOption[]> {
 	const clubId = await getMatchdayClubId();
 

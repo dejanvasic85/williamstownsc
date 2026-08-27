@@ -26,8 +26,7 @@ import { urlFor } from '@/sanity/lib/image';
 
 const nextMatchCardColors: MatchColor[] = ['blue', 'purple'];
 
-// The match countdown reads live matchday fixtures, so this tracks the team routes' 3600 rather
-// than the 86400 the rest of the homepage's Sanity content would be happy with.
+// The match countdown reads live matchday fixtures, so it tracks the team routes' 3600.
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {

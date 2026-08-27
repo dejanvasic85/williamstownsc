@@ -27,9 +27,8 @@ type MatchdayTableEntry = {
 	points: number;
 };
 
-/** Never drops a row — an unresolved team still holds its ladder position, just with a
- * placeholder name/logo, so the table doesn't render with a gap in position numbering
- * (1, 2, 4, ...) and no indication a row went missing. */
+/** Never drops a row: an unresolved team keeps its ladder position with a placeholder name and
+ * logo, so positions don't render with a silent gap (1, 2, 4, ...). */
 function mapTableEntry(entry: MatchdayTableEntry, teamsById: Map<string, FixtureTeam>): TableEntry {
 	const team = teamsById.get(entry.teamId);
 	if (!team) {
@@ -53,7 +52,6 @@ function mapTableEntry(entry: MatchdayTableEntry, teamsById: Map<string, Fixture
 	};
 }
 
-/** `cache()`-wrapped, same reasoning as `getMatchdayFixturesForLeague`. */
 export const getMatchdayTableForLeague = cache(async (leagueId: string): Promise<TableData> => {
 	const [tableOutcome, teamsById, { competition, season }] = await Promise.all([
 		getMatchdayClient().GET('/leagues/{id}/table', { params: { path: { id: leagueId } } }),
