@@ -9,7 +9,7 @@ import { buildAddressDirectionsUrl } from '@/lib/address';
 import type { EnrichedFixture } from '@/types/matches';
 import { CountdownTimer } from './CountdownTimer';
 
-type MatchColor = 'blue' | 'purple';
+export type MatchColor = 'blue' | 'purple';
 
 type MatchCountdownSectionProps = {
 	match: EnrichedFixture | null;

@@ -12,6 +12,9 @@ import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
 
+// Next/previous match come from the live matchday API, not the layout's 86400 Sanity content.
+export const revalidate = 3600;
+
 const teamHeroImageWidth = 1600;
 const teamHeroImageHeight = 900;
 

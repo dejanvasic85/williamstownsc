@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { groq } from 'next-sanity';
 import logger from '@/lib/logger';
@@ -23,6 +24,7 @@ export const teamDetailQuery = groq`
     gender,
     ageGroup,
     fixturesUrl,
+    matchday,
     description,
     coachingStaff[] {
       photo {
@@ -87,3 +89,20 @@ export async function getTeamBySlug(slug: string): Promise<Team | null> {
 		return null;
 	}
 }
+
+const teamLeagueIdQuery = groq`
+  *[_type == "team" && slug.current == $slug][0].matchday.leagueId
+`;
+
+/** Throws rather than returning null on failure: a Sanity outage must not read as "no leagueId"
+ * and silently fall back to a matchday-backed team's stale local JSON. */
+export const getTeamLeagueId = cache(async function getTeamLeagueId(
+	slug: string
+): Promise<string | null> {
+	const leagueId = await client.fetch<string | null>(
+		teamLeagueIdQuery,
+		{ slug },
+		{ next: { tags: ['team'] } }
+	);
+	return leagueId ?? null;
+});

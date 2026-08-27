@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { client } from '@/sanity/lib/client';
 import { SiteSettings } from '@/sanity/sanity.types';
 
@@ -27,3 +28,9 @@ export async function getSiteSettings() {
 
 	return siteSettings;
 }
+
+/** The matchday club id fixture/table code compares against to identify "our" side. */
+export const getMatchdayClubId = cache(async function getMatchdayClubId(): Promise<string | null> {
+	const siteSettings = await getSiteSettings();
+	return siteSettings?.matchday?.clubId ?? null;
+});

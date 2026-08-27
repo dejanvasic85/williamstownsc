@@ -1,6 +1,8 @@
 import { TZDate } from '@date-fns/tz';
 import { addHours } from 'date-fns';
 import { getClubConfig } from '@/lib/config';
+import { getMatchdayClubId } from '@/lib/content/siteSettings';
+import { getTeamLeagueId } from '@/lib/content/teamDetail';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
 import type { EnrichedFixture } from '@/types/matches';
 
@@ -38,7 +40,12 @@ function buildVEvent(fixture: EnrichedFixture, slug: string): string {
 	);
 	const mapsUrl = fixture.coordinates ? `https://maps.google.com/?q=${fixture.coordinates}` : '';
 	const description = [escapeText(fixture.address), mapsUrl].filter(Boolean).join('\\n');
-	const status = fixture.status === 'complete' ? 'CONFIRMED' : 'TENTATIVE';
+	const status =
+		fixture.status === 'complete'
+			? 'CONFIRMED'
+			: fixture.status === 'cancelled'
+				? 'CANCELLED'
+				: 'TENTATIVE';
 
 	return [
 		'BEGIN:VEVENT',
@@ -81,10 +88,13 @@ export async function GET(_request: Request, { params }: RouteParams) {
 		return new Response('Not Found', { status: 404 });
 	}
 
-	const { wscClubDriblId } = getClubConfig();
-	const wscFixtures = fixtureData.fixtures.filter(
-		(f) => f.homeTeam.externalId === wscClubDriblId || f.awayTeam.externalId === wscClubDriblId
-	);
+	const leagueId = await getTeamLeagueId(slug);
+	const wscClubId = leagueId ? await getMatchdayClubId() : getClubConfig().wscClubDriblId;
+	const wscFixtures = wscClubId
+		? fixtureData.fixtures.filter(
+				(f) => f.homeTeam.externalId === wscClubId || f.awayTeam.externalId === wscClubId
+			)
+		: [];
 
 	const ical = buildIcal(wscFixtures, fixtureData.competition, fixtureData.season, slug);
 
