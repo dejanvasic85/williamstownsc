@@ -39,7 +39,7 @@
 
 ## Why We Built This
 
-This website serves as the digital home for Williamstown Soccer Club, providing a platform to share information about our teams, programs, and community. Built with modern web technologies, it ensures a fast, accessible, and maintainable solution that can grow with the club's needs.
+This site is the digital home for Williamstown Soccer Club. It shares information about our teams, programs, and community. We built it with modern web technologies so it stays fast, accessible, and easy to maintain as the club grows.
 
 ## Developing and Running Locally
 
