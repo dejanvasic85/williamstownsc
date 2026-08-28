@@ -5,6 +5,9 @@ import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getTableForTeam } from '@/lib/matches/tableService';
 
+// The ladder comes from the live matchday API; results land during a match day.
+export const revalidate = 3600;
+
 type TeamTablePageProps = {
 	params: Promise<{ slug: string }>;
 };

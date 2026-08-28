@@ -720,7 +720,9 @@
 			"awayTeamName": "Altona Magic SC U16 Juniors - A Mixed U16 Black",
 			"address": "Barrymore Road Recreation Reserve Pitch 1",
 			"coordinates": "-37.649063,144.894037",
-			"status": "pending"
+			"homeScore": 3,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 8,

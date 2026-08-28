@@ -92,6 +92,9 @@ export interface Team {
 	enableFixturesCrawler?: boolean;
 	competitionName?: string;
 	leagueName?: string;
+	matchday?: {
+		leagueId?: string;
+	};
 }
 
 export type TeamsByTab<T extends TeamBase = Team> = {

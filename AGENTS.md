@@ -75,3 +75,18 @@ All changes MUST follow the following workflow
 
 - Ensure to find the latest version of a package before adding it
 - Avoid using deprecated packages or APIs
+
+# Communication
+
+- All writing shown to a person — chat responses, code comments, commit messages, PR descriptions — MUST follow ISO 24495-1:2023 plain language principles: use common words, keep sentences short and direct, put the main point first, avoid jargon and nominalizations (prefer "decide" over "make a decision"), organize content so the reader finds what they need on first read
+- This applies only to human-facing writing, not to internal reasoning/thinking or code logic itself
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

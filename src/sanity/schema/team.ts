@@ -7,6 +7,11 @@ export const team = defineType({
 	type: 'document',
 	fieldsets: [
 		{
+			name: 'homepage',
+			title: 'Homepage',
+			options: { collapsible: true, collapsed: false }
+		},
+		{
 			name: 'fixturesCrawler',
 			title: 'Fixtures Crawler',
 			options: { collapsible: true, collapsed: true }
@@ -153,10 +158,38 @@ export const team = defineType({
 		}),
 		defineField({
 			name: 'showOnHomepage',
-			title: 'Show on homepage',
+			title: 'Show in the homepage Football section',
 			type: 'boolean',
 			description: 'Display this team in the homepage Football section',
-			initialValue: false
+			initialValue: false,
+			fieldset: 'homepage'
+		}),
+		defineField({
+			name: 'showNextMatchOnHomepage',
+			title: 'Show next match on homepage',
+			type: 'boolean',
+			description:
+				'Feature this team’s next match countdown on the homepage (max 2 teams — the lowest 2 by Homepage next match order win if more are enabled)',
+			initialValue: false,
+			fieldset: 'homepage'
+		}),
+		defineField({
+			name: 'homepageDisplayName',
+			title: 'Homepage display name',
+			type: 'string',
+			description:
+				'Short label for the homepage next-match card, e.g. "Senior Men’s". Falls back to the team name if left blank.',
+			hidden: ({ document }) => !document?.showNextMatchOnHomepage,
+			fieldset: 'homepage'
+		}),
+		defineField({
+			name: 'homepageNextMatchOrder',
+			title: 'Homepage next match order',
+			type: 'number',
+			description:
+				'Left-to-right position among featured homepage next-match cards (lower first). Independent of the general Order field above, which also controls team listing order elsewhere. Falls back to Order if left blank.',
+			hidden: ({ document }) => !document?.showNextMatchOnHomepage,
+			fieldset: 'homepage'
 		}),
 		defineField({
 			name: 'description',
@@ -196,7 +229,7 @@ export const team = defineType({
 					title: 'League',
 					type: 'string',
 					description:
-						'The Matchday league this team is subscribed to. Optional until the team has been backfilled — see docs/plans/2026-08-15-team-league-picker-design-spike.md.',
+						'Search for the league to display the teams fixtures, results and table on the website.	',
 					components: { input: LeagueIdInput },
 					validation: (Rule) =>
 						Rule.custom((value) => {

@@ -1,10 +1,10 @@
 # Cache Invalidation
 
-This document explains the cache invalidation strategy implemented for the Williamstown SC website.
+This document explains how the Williamstown SC website invalidates its cache.
 
 ## Overview
 
-The website uses Next.js cache tags to enable on-demand revalidation of cached content. When content is updated in Sanity CMS, you can trigger cache invalidation by calling the revalidation API endpoint.
+The website uses Next.js cache tags to refresh cached content on demand. When you update content in Sanity CMS, call the revalidation API endpoint to clear the cache for that content.
 
 ## API Endpoint
 
@@ -75,19 +75,19 @@ The following content types can be revalidated:
 
 ## Security and Authentication
 
-**IMPORTANT:** The `/api/revalidate` endpoint **must be protected** and should not be exposed without authentication.
+**IMPORTANT:** The `/api/revalidate` endpoint must be protected. Never expose it without authentication.
 
-### Why Authentication is Critical
+### Why Authentication Matters
 
-Without proper authentication, anyone who discovers your revalidation endpoint could:
+Without authentication, anyone who finds this endpoint could:
 
-- Repeatedly trigger cache invalidation, degrading performance
-- Cause unnecessary server load by forcing constant regeneration of cached pages
-- Use the endpoint as a denial-of-service vector
+- Trigger the cache to invalidate repeatedly and slow the site down
+- Force constant regeneration of cached pages and overload the server
+- Use the endpoint to run a denial-of-service attack
 
 ### Authentication Setup
 
-The endpoint requires a secret token to be passed in the `x-revalidate-secret` header. This token must match the `REVALIDATE_SECRET` environment variable configured on your server.
+The endpoint requires a secret token in the `x-revalidate-secret` header. This token must match the `REVALIDATE_SECRET` environment variable on your server.
 
 #### Environment Configuration
 
@@ -106,19 +106,19 @@ REVALIDATE_SECRET=your-secret-token-here
 
 ### Security Best Practices
 
-1. **Use HTTPS in production** - All API calls should use HTTPS to prevent secret exposure in transit
-2. **Generate strong secrets** - Use cryptographically secure random values, minimum 32 characters
-3. **Rotate secrets periodically** - Update the secret token regularly as part of security maintenance
-4. **Never commit secrets** - Keep `.env.local` in `.gitignore`, never commit secrets to version control
-5. **Sanity webhook signature** - For Sanity CMS webhooks, consider using Sanity's webhook signature verification as an additional security layer
+1. **Use HTTPS in production** - Prevents the secret from leaking in transit
+2. **Generate strong secrets** - Use a random value at least 32 characters long
+3. **Rotate secrets periodically** - Change the token regularly
+4. **Never commit secrets** - Keep `.env.local` in `.gitignore`
+5. **Add a Sanity webhook signature** - For extra protection, verify Sanity's webhook signature
 
-### Rate Limiting Consideration
+### Rate Limiting
 
-For production deployments with high traffic, consider implementing rate limiting to prevent abuse:
+For high-traffic production sites, add rate limiting to prevent abuse:
 
 - Use Vercel Edge Config for distributed rate limiting
-- Implement middleware-based rate limiting
-- Configure Sanity webhook retry limits to prevent excessive calls
+- Add rate limiting in middleware
+- Limit Sanity webhook retries
 
 ## Integration with Sanity CMS
 
@@ -135,9 +135,9 @@ When creating your Sanity webhook, use these settings:
 
 ### How It Works
 
-Our API automatically extracts the `_type` field from the Sanity webhook payload. You don't need to set any additional headers - Sanity includes the full document data in the webhook body by default.
+Our API reads the `_type` field from the Sanity webhook payload. You don't need extra headers — Sanity includes the full document in the webhook body by default.
 
-**Optional:** Use a GROQ projection `{_type}` to reduce payload size if desired.
+**Optional:** Use a GROQ projection `{_type}` to keep the payload small.
 
 ## Testing
 
@@ -181,11 +181,11 @@ When the `/api/revalidate` endpoint receives a POST request, it calls Next.js `r
 revalidateTag(contentType, 'max');
 ```
 
-This invalidates all cached data associated with that tag using stale-while-revalidate semantics, serving cached content while fetching fresh data in the background.
+This clears all cached data for that tag. Visitors keep seeing the cached page while the site fetches fresh data in the background (stale-while-revalidate).
 
 ## Benefits
 
-- **On-demand updates:** Content updates are reflected immediately without waiting for full rebuilds
-- **Improved performance:** Only invalidate specific content types instead of entire cache
-- **Better user experience:** Users see fresh content without manual cache clearing
-- **Efficient caching:** Combine the benefits of static generation with dynamic content updates
+- **On-demand updates:** Content changes show up right away, with no full rebuild
+- **Improved performance:** Only the affected content type is invalidated, not the whole cache
+- **Better user experience:** Visitors see fresh content with no manual cache clearing
+- **Efficient caching:** Static generation speed, with dynamic content updates
