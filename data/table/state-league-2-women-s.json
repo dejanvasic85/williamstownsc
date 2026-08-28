@@ -78,11 +78,26 @@
 			"points": 23
 		},
 		{
+			"teamId": "yKJbGMx3KY",
+			"teamName": "Spring Hills FC Seniors state league 2 women",
+			"clubName": "Spring Hills FC",
+			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
+			"position": 6,
+			"played": 17,
+			"wins": 6,
+			"draws": 3,
+			"losses": 8,
+			"goalsFor": 25,
+			"goalsAgainst": 35,
+			"goalDifference": -10,
+			"points": 21
+		},
+		{
 			"teamId": "WdgpaP8XmR",
 			"teamName": "Altona East SC Seniors",
 			"clubName": "Altona East SC",
 			"logoUrl": "https://ocean.dribl.com/85e0dae12788493ca0c552e0550d7dab",
-			"position": 6,
+			"position": 7,
 			"played": 16,
 			"wins": 5,
 			"draws": 4,
@@ -91,21 +106,6 @@
 			"goalsAgainst": 35,
 			"goalDifference": -10,
 			"points": 19
-		},
-		{
-			"teamId": "yKJbGMx3KY",
-			"teamName": "Spring Hills FC Seniors state league 2 women",
-			"clubName": "Spring Hills FC",
-			"logoUrl": "https://ocean.dribl.com/2c3fa2714acd458cbe67d4ec7b14df1e",
-			"position": 7,
-			"played": 16,
-			"wins": 5,
-			"draws": 3,
-			"losses": 8,
-			"goalsFor": 24,
-			"goalsAgainst": 35,
-			"goalDifference": -11,
-			"points": 18
 		},
 		{
 			"teamId": "ZNQxkWyAmx",
@@ -128,13 +128,13 @@
 			"clubName": "Pascoe Vale FC",
 			"logoUrl": "https://ocean.dribl.com/28902757e425496ebb9fbcef551db4cf",
 			"position": 9,
-			"played": 15,
+			"played": 16,
 			"wins": 1,
 			"draws": 2,
-			"losses": 12,
+			"losses": 13,
 			"goalsFor": 12,
-			"goalsAgainst": 52,
-			"goalDifference": -40,
+			"goalsAgainst": 53,
+			"goalDifference": -41,
 			"points": 5
 		},
 		{

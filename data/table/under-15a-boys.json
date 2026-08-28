@@ -33,11 +33,26 @@
 			"points": 32
 		},
 		{
+			"teamId": "nmYZ7kzpNz",
+			"teamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
+			"clubName": "Westside Strikers Caroline Springs FC",
+			"logoUrl": "https://ocean.dribl.com/50c8bc8e46774af5b6c1e2525d060a3e",
+			"position": 3,
+			"played": 17,
+			"wins": 8,
+			"draws": 5,
+			"losses": 4,
+			"goalsFor": 32,
+			"goalsAgainst": 18,
+			"goalDifference": 14,
+			"points": 29
+		},
+		{
 			"teamId": "3NPlg7yYNr",
 			"teamName": "Altona City SC U15 Juniors - A Mixed",
 			"clubName": "Altona City SC",
 			"logoUrl": "https://ocean.dribl.com/00f4b15358984725ad4e3df3af44989a",
-			"position": 3,
+			"position": 4,
 			"played": 16,
 			"wins": 8,
 			"draws": 2,
@@ -45,21 +60,6 @@
 			"goalsFor": 34,
 			"goalsAgainst": 22,
 			"goalDifference": 12,
-			"points": 26
-		},
-		{
-			"teamId": "nmYZ7kzpNz",
-			"teamName": "Westside Strikers Caroline Springs FC U15 Juniors - A Mixed U15A Ross",
-			"clubName": "Westside Strikers Caroline Springs FC",
-			"logoUrl": "https://ocean.dribl.com/50c8bc8e46774af5b6c1e2525d060a3e",
-			"position": 4,
-			"played": 16,
-			"wins": 7,
-			"draws": 5,
-			"losses": 4,
-			"goalsFor": 29,
-			"goalsAgainst": 18,
-			"goalDifference": 11,
 			"points": 26
 		},
 		{
@@ -98,13 +98,13 @@
 			"clubName": "Surf Coast FC",
 			"logoUrl": "https://ocean.dribl.com/a48fec07321346ad83e37163f65d97ea",
 			"position": 7,
-			"played": 16,
+			"played": 17,
 			"wins": 4,
 			"draws": 3,
-			"losses": 9,
+			"losses": 10,
 			"goalsFor": 19,
-			"goalsAgainst": 42,
-			"goalDifference": -23,
+			"goalsAgainst": 45,
+			"goalDifference": -26,
 			"points": 15
 		},
 		{
