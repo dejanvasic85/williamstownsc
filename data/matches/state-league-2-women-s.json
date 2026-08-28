@@ -1213,7 +1213,9 @@
 			"awayTeamName": "Pascoe Vale FC Seniors",
 			"address": "Springside Recreational Reserve Pitch 1 (S)",
 			"coordinates": "-37.712403,144.736088",
-			"status": "pending"
+			"homeScore": 1,
+			"awayScore": 0,
+			"status": "complete"
 		},
 		{
 			"round": 17,
