@@ -3,11 +3,26 @@
 	"competition": "Mixed North-West 16A",
 	"entries": [
 		{
+			"teamId": "BdD9a1J8mb",
+			"teamName": "Greenvale United SC U16 Juniors - A Mixed",
+			"clubName": "Greenvale United SC",
+			"logoUrl": "https://ocean.dribl.com/4c443f48aa7346d19a9a6dead7f5acd3",
+			"position": 1,
+			"played": 15,
+			"wins": 10,
+			"draws": 4,
+			"losses": 1,
+			"goalsFor": 43,
+			"goalsAgainst": 17,
+			"goalDifference": 26,
+			"points": 34
+		},
+		{
 			"teamId": "BdD9L8w8mb",
 			"teamName": "Williamstown SC U16 Juniors - A Mixed Under 16A Boys",
 			"clubName": "Williamstown SC",
 			"logoUrl": "https://ocean.dribl.com/355d84adb48649a0b4d562d8fa98c2bc",
-			"position": 1,
+			"position": 2,
 			"played": 15,
 			"wins": 10,
 			"draws": 4,
@@ -16,21 +31,6 @@
 			"goalsAgainst": 16,
 			"goalDifference": 22,
 			"points": 34
-		},
-		{
-			"teamId": "BdD9a1J8mb",
-			"teamName": "Greenvale United SC U16 Juniors - A Mixed",
-			"clubName": "Greenvale United SC",
-			"logoUrl": "https://ocean.dribl.com/4c443f48aa7346d19a9a6dead7f5acd3",
-			"position": 2,
-			"played": 14,
-			"wins": 9,
-			"draws": 4,
-			"losses": 1,
-			"goalsFor": 40,
-			"goalsAgainst": 17,
-			"goalDifference": 23,
-			"points": 31
 		},
 		{
 			"teamId": "vdWv14OyKO",
@@ -158,13 +158,13 @@
 			"clubName": "Altona Magic SC",
 			"logoUrl": "https://ocean.dribl.com/25c5cffeb68544f29b1777f8a45b215c",
 			"position": 11,
-			"played": 14,
+			"played": 15,
 			"wins": 4,
 			"draws": 1,
-			"losses": 9,
+			"losses": 10,
 			"goalsFor": 27,
-			"goalsAgainst": 47,
-			"goalDifference": -20,
+			"goalsAgainst": 50,
+			"goalDifference": -23,
 			"points": 13
 		},
 		{

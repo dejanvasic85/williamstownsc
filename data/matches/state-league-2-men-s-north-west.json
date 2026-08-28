@@ -1815,7 +1815,9 @@
 			"awayTeamName": "Albion Rovers FC Seniors",
 			"address": "Strathnaver Reserve Pitch 1",
 			"coordinates": "-37.718302,144.909132",
-			"status": "pending"
+			"homeScore": 0,
+			"awayScore": 2,
+			"status": "complete"
 		},
 		{
 			"round": 21,
@@ -1841,7 +1843,7 @@
 			"awayTeamName": "Williamstown SC Seniors",
 			"address": "Harvest Home Recreation Reserve Pitch 2",
 			"coordinates": "-37.624506,145.02702",
-			"status": "pending"
+			"status": "abandoned"
 		},
 		{
 			"round": 21,
@@ -1865,7 +1867,7 @@
 			"awayTeamId": "bam1nQWrNw",
 			"homeTeamName": "Geelong Rangers SC Seniors",
 			"awayTeamName": "Mill Park SC Seniors",
-			"address": "Myers Reserve Pitch 2",
+			"address": "Myers Reserve Pitch 1",
 			"coordinates": "-38.09538,144.320027",
 			"status": "pending"
 		},
