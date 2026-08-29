@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { unwrap } from '@dejanvasic85/matchday-sdk';
 import logger from '@/lib/logger';
+import { createMatchdayLeagueRequestInit } from '@/lib/matchday/matchdayCacheService';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import { type FixtureTeam, getFixtureTeamsForLeague } from '@/lib/matchday/matchdayClubService';
 import { fixtureStatusValue } from '@/lib/matches/fixtureStatusService';
@@ -93,12 +94,15 @@ function mapFixture(
 	};
 }
 
-/** All non-bye fixtures for a league. No Data Cache layer: the API caches upstream and the route's
- * `revalidate` bounds how often this runs, so `cache()` only dedupes within one render. */
+/** All non-bye fixtures for a league. Next's Data Cache persists the SDK requests across renders;
+ * `cache()` also dedupes repeated calls within one render. */
 export const getMatchdayFixturesForLeague = cache(
 	async (leagueId: string): Promise<EnrichedFixture[]> => {
 		const [fixturesOutcome, teamsById] = await Promise.all([
-			getMatchdayClient().GET('/leagues/{id}/fixtures', { params: { path: { id: leagueId } } }),
+			getMatchdayClient().GET('/leagues/{id}/fixtures', {
+				...createMatchdayLeagueRequestInit(leagueId),
+				params: { path: { id: leagueId } }
+			}),
 			getFixtureTeamsForLeague(leagueId)
 		]);
 

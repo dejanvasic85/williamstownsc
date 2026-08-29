@@ -1,5 +1,6 @@
 import { cache } from 'react';
 import { unwrap } from '@dejanvasic85/matchday-sdk';
+import { createMatchdayLeagueRequestInit } from '@/lib/matchday/matchdayCacheService';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 
 export type LeagueMeta = {
@@ -11,7 +12,10 @@ export type LeagueMeta = {
 /** A league's competition and season display names, and whether it publishes a table. */
 export const getLeagueMeta = cache(async (leagueId: string): Promise<LeagueMeta> => {
 	const league = unwrap(
-		await getMatchdayClient().GET('/leagues/{id}', { params: { path: { id: leagueId } } })
+		await getMatchdayClient().GET('/leagues/{id}', {
+			...createMatchdayLeagueRequestInit(leagueId),
+			params: { path: { id: leagueId } }
+		})
 	);
 
 	if (!league.ok) {
