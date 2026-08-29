@@ -33,7 +33,7 @@ function createDependencies(revalidatedLeagues: string[]): MatchdayWebhookDepend
 	};
 }
 
-test.describe('Matchday webhook', () => {
+test.describe('Matchday webhook delivery', () => {
 	test('revalidates the posted league when authenticated changes exist', async () => {
 		const revalidatedLeagues: string[] = [];
 		const outcome = await handleMatchdayWebhook(createDependencies(revalidatedLeagues), {
