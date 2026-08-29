@@ -45,7 +45,7 @@ function truncateMiddle(text: string): string {
 }
 
 export function LeagueTable({ entries }: LeagueTableProps) {
-	const { wscClubDriblName } = getClubConfig();
+	const { wscClubName } = getClubConfig();
 	const duplicateClubNames = buildDuplicateClubNames(entries);
 
 	return (
@@ -71,7 +71,7 @@ export function LeagueTable({ entries }: LeagueTableProps) {
 				</thead>
 				<tbody>
 					{entries.map((entry) => {
-						const isWsc = entry.clubName.includes(wscClubDriblName);
+						const isWsc = entry.clubName.includes(wscClubName);
 						return (
 							<tr
 								key={entry.teamId}

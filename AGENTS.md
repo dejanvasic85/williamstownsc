@@ -11,8 +11,6 @@
 
 - `pnpm run dev` - Dev server on port 3003
 - `pnpm run test:e2e[:ui|:debug|:report]` - Playwright E2E tests
-- `pnpm run crawl:[clubs|fixtures]` - Playwright-based web scraping (uses playwright-core)
-- `pnpm run sync:[clubs|fixtures]` - Sync scraped data to Sanity
 - `pnpm run type:gen` - Regenerate Sanity types after schema changes
 
 # Testing
@@ -47,7 +45,7 @@
 # React & Components
 
 - Always use Next.js Image component `<Image />` instead of `<img />`
-- **MUST**: All `<Image />` components that render external or Dribl URLs (club logos, fixture images) MUST include `unoptimized` prop to avoid Vercel image transformation charges
+- **MUST**: All `<Image />` components that render external URLs (club logos, fixture images) MUST include `unoptimized` prop to avoid Vercel image transformation charges
 - **MUST**: All `<Image />` components that render Sanity CDN images MUST use `loader={sanityImageLoader}` from `@/lib/sanityImageLoader` — never rely on Next.js to transform Sanity images
 - Each Component should declare its own prop types using TypeScript within the same file
 - **NEVER** use inline TypeScript types in function parameters - always declare a separate type or interface (e.g., `type MyProps = {...}` not `function MyComponent({ prop }: { prop: string })`)

@@ -10,11 +10,6 @@ export const team = defineType({
 			name: 'homepage',
 			title: 'Homepage',
 			options: { collapsible: true, collapsed: false }
-		},
-		{
-			name: 'fixturesCrawler',
-			title: 'Fixtures Crawler',
-			options: { collapsible: true, collapsed: true }
 		}
 	],
 	fields: [
@@ -217,7 +212,7 @@ export const team = defineType({
 			name: 'fixturesUrl',
 			title: 'Fixtures URL',
 			type: 'url',
-			description: 'External link to team fixtures page (e.g. Dribl)'
+			description: 'External link to the team fixtures page'
 		}),
 		defineField({
 			name: 'matchday',
@@ -240,49 +235,6 @@ export const team = defineType({
 						})
 				})
 			]
-		}),
-		defineField({
-			name: 'enableFixturesCrawler',
-			title: 'Enable fixtures crawler',
-			type: 'boolean',
-			description: 'When enabled, this team will be included in the automated fixtures crawl',
-			initialValue: false,
-			fieldset: 'fixturesCrawler'
-		}),
-		defineField({
-			name: 'competitionName',
-			title: 'Competition Name',
-			type: 'string',
-			description: 'Competition name for crawler filter e.g. "VETO Sports State League Men\'s"',
-			fieldset: 'fixturesCrawler',
-			hidden: ({ document }) => !document?.enableFixturesCrawler,
-			validation: (Rule) =>
-				Rule.custom((value) => {
-					if (typeof value === 'string' && value.trim().length === 0) {
-						return 'Competition name cannot be empty';
-					}
-					return true;
-				})
-		}),
-		defineField({
-			name: 'leagueName',
-			title: 'League Name',
-			type: 'string',
-			description:
-				'League name for crawler filter e.g. "State League 2 Men\'s - North-West Reserves"',
-			fieldset: 'fixturesCrawler',
-			hidden: ({ document }) => !document?.enableFixturesCrawler,
-			validation: (Rule) =>
-				Rule.custom((value, context) => {
-					const doc = context.document as { enableFixturesCrawler?: boolean } | undefined;
-					if (
-						doc?.enableFixturesCrawler &&
-						(typeof value !== 'string' || value.trim().length === 0)
-					) {
-						return 'League name is required when fixtures crawler is enabled';
-					}
-					return true;
-				})
 		})
 	],
 	preview: {

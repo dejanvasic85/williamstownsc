@@ -57,8 +57,7 @@ const matchdayConfigSchema = z.object({
 });
 
 export type ClubConfig = {
-	wscClubDriblId: string;
-	wscClubDriblName: string;
+	wscClubName: string;
 };
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
 export type StudioConfig = z.infer<typeof studioConfigSchema>;
@@ -187,7 +186,7 @@ export function getSocialPublishConfig(): SocialPublishConfig {
 }
 
 export function getClubConfig(): ClubConfig {
-	return { wscClubDriblId: '6lNbpDpwdx', wscClubDriblName: 'Williamstown' };
+	return { wscClubName: 'Williamstown' };
 }
 
 /**

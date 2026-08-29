@@ -1,6 +1,5 @@
 import { cache } from 'react';
 import { getLeagueTeams } from '@dejanvasic85/matchday-sdk';
-import { resolveTeamDisplayName } from '@/lib/clubService';
 import logger from '@/lib/logger';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import { clubSchema } from '@/types/matches';
@@ -23,6 +22,10 @@ export type FixtureTeam = {
 	 * this league and the club name alone would be ambiguous. */
 	displayName: string;
 };
+
+function resolveTeamDisplayName(teamName: string, club: Club, hasDuplicates: boolean): string {
+	return hasDuplicates ? teamName : club.displayName;
+}
 
 function mapMatchdayClub(club: MatchdayClubSummary): Club | null {
 	const result = clubSchema.safeParse({

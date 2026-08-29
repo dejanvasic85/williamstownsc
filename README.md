@@ -51,43 +51,15 @@ To run the site locally, follow these steps:
 - pnpm
 - A Sanity account and project set up
 
-### CLI tools
-
-The data CLI uses Playwright. Before running crawl commands, install the browser binaries:
-
-```bash
-pnpm exec playwright install --with-deps chromium
-```
-
 ### Install dependencies
 
 ```bash
 pnpm install
 ```
 
-### Running fixture crawls locally
-
-Fixtures are scraped from Dribl in two stages: crawl (scrapes raw data) then sync (transforms into `data/matches/`). League and competition names are read automatically from the Fixtures Crawler fields on each Team document in Sanity.
-
-Run for a single team:
-
-```bash
-pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures -t under-12-girls
-pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts sync fixtures -t under-12-girls
-```
-
-Omit `-t` to crawl all teams with `enableFixturesCrawler` enabled in Sanity:
-
-```bash
-pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures
-pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts sync fixtures
-```
-
-To override league and competition manually (useful before a team is configured in Sanity):
-
-```bash
-pnpm exec dotenv -e .env.local -- tsx bin/wsc.ts crawl fixtures -t <team-slug> -l "<League Name>" -c "<Competition Name>"
-```
+Fixtures, results and league tables come from the matchday API; there is no local data to
+generate. Set `MATCHDAY_API_TOKEN` and `MATCHDAY_API_BASE_URL` (see `.env.example`), and set each
+team's League field in Sanity Studio.
 
 ## Content Management
 

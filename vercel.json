@@ -2,7 +2,6 @@
 	"$schema": "https://openapi.vercel.sh/vercel.json",
 	"installCommand": "pnpm config set \"@dejanvasic85:registry\" \"https://npm.pkg.github.com\" && pnpm config set \"//npm.pkg.github.com/:_authToken\" \"$MATCHDAY_GITHUB_TOKEN\" && pnpm install",
 	"buildCommand": "npm run build",
-	"ignoreCommand": "bash bin/vercel-ignore-build.sh",
 	"redirects": [
 		{ "source": "/about", "destination": "/club/about", "permanent": true },
 		{ "source": "/calendar", "destination": "/key-dates", "permanent": true },
