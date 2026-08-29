@@ -52,21 +52,27 @@ function mapTableEntry(entry: MatchdayTableEntry, teamsById: Map<string, Fixture
 	};
 }
 
-export const getMatchdayTableForLeague = cache(async (leagueId: string): Promise<TableData> => {
-	const [tableOutcome, teamsById, { competition, season }] = await Promise.all([
-		getMatchdayClient().GET('/leagues/{id}/table', { params: { path: { id: leagueId } } }),
-		getFixtureTeamsForLeague(leagueId),
-		getLeagueMeta(leagueId)
-	]);
+export const getMatchdayTableForLeague = cache(
+	async (leagueId: string): Promise<TableData | null> => {
+		const { competition, season, hasTable } = await getLeagueMeta(leagueId);
+		if (!hasTable) {
+			return null;
+		}
 
-	const table = unwrap(tableOutcome);
-	if (!table.ok) {
-		throw new Error(`Failed to load table for league ${leagueId}: ${table.error.message}`);
+		const [tableOutcome, teamsById] = await Promise.all([
+			getMatchdayClient().GET('/leagues/{id}/table', { params: { path: { id: leagueId } } }),
+			getFixtureTeamsForLeague(leagueId)
+		]);
+
+		const table = unwrap(tableOutcome);
+		if (!table.ok) {
+			throw new Error(`Failed to load table for league ${leagueId}: ${table.error.message}`);
+		}
+
+		const entries = table.value
+			.map((entry) => mapTableEntry(entry, teamsById))
+			.sort((a, b) => a.position - b.position);
+
+		return { season, competition, entries };
 	}
-
-	const entries = table.value
-		.map((entry) => mapTableEntry(entry, teamsById))
-		.sort((a, b) => a.position - b.position);
-
-	return { season, competition, entries };
-});
+);
