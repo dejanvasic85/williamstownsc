@@ -1,8 +1,6 @@
 import { TZDate } from '@date-fns/tz';
 import { addHours } from 'date-fns';
-import { getClubConfig } from '@/lib/config';
 import { getMatchdayClubId } from '@/lib/content/siteSettings';
-import { getTeamLeagueId } from '@/lib/content/teamDetail';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
 import type { EnrichedFixture } from '@/types/matches';
 
@@ -88,8 +86,7 @@ export async function GET(_request: Request, { params }: RouteParams) {
 		return new Response('Not Found', { status: 404 });
 	}
 
-	const leagueId = await getTeamLeagueId(slug);
-	const wscClubId = leagueId ? await getMatchdayClubId() : getClubConfig().wscClubDriblId;
+	const wscClubId = await getMatchdayClubId();
 	const wscFixtures = wscClubId
 		? fixtureData.fixtures.filter(
 				(f) => f.homeTeam.externalId === wscClubId || f.awayTeam.externalId === wscClubId

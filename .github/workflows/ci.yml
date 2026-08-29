@@ -11,26 +11,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  changes:
-    name: Detect changes
-    runs-on: ubuntu-latest
-    outputs:
-      app: ${{ steps.filter.outputs.app }}
-    steps:
-      - uses: actions/checkout@v7
-      - uses: dorny/paths-filter@v4
-        id: filter
-        with:
-          filters: |
-            app:
-              - '!(data/**)'
-
   test:
     name: Verify
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: changes
-    if: ${{ needs.changes.outputs.app == 'true' }}
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -60,8 +44,7 @@ jobs:
     name: E2E Tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    needs: [changes, test]
-    if: ${{ needs.changes.outputs.app == 'true' }}
+    needs: test
     permissions:
       contents: read
       deployments: read

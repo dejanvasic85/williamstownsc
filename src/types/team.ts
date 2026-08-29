@@ -89,9 +89,6 @@ export interface Team {
 	coachingStaff: Coach[];
 	players?: Player[];
 	fixturesUrl?: string;
-	enableFixturesCrawler?: boolean;
-	competitionName?: string;
-	leagueName?: string;
 	matchday?: {
 		leagueId?: string;
 	};
