@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { unwrap } from '@dejanvasic85/matchday-sdk';
 import logger from '@/lib/logger';
+import { createMatchdayLeagueRequestInit } from '@/lib/matchday/matchdayCacheService';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import {
 	type FixtureTeam,
@@ -60,7 +61,10 @@ export const getMatchdayTableForLeague = cache(
 		}
 
 		const [tableOutcome, teamsById] = await Promise.all([
-			getMatchdayClient().GET('/leagues/{id}/table', { params: { path: { id: leagueId } } }),
+			getMatchdayClient().GET('/leagues/{id}/table', {
+				...createMatchdayLeagueRequestInit(leagueId),
+				params: { path: { id: leagueId } }
+			}),
 			getFixtureTeamsForLeague(leagueId)
 		]);
 

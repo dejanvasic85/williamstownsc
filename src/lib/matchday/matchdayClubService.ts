@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { getLeagueTeams } from '@dejanvasic85/matchday-sdk';
 import logger from '@/lib/logger';
+import { createMatchdayLeagueRequestInit } from '@/lib/matchday/matchdayCacheService';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 import { clubSchema } from '@/types/matches';
 import type { Club } from '@/types/matches';
@@ -41,7 +42,11 @@ function mapMatchdayClub(club: MatchdayClubSummary): Club | null {
  * team's layout and page both resolve fixtures and the table, asking three times per render. */
 export const getFixtureTeamsForLeague = cache(
 	async (leagueId: string): Promise<Map<string, FixtureTeam>> => {
-		const result = await getLeagueTeams(getMatchdayClient(), leagueId);
+		const result = await getLeagueTeams(
+			getMatchdayClient(),
+			leagueId,
+			createMatchdayLeagueRequestInit(leagueId)
+		);
 
 		if (!result.ok) {
 			throw new Error(`Failed to load teams for league ${leagueId}: ${result.error.message}`);
