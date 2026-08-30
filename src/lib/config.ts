@@ -56,6 +56,10 @@ const matchdayConfigSchema = z.object({
 	matchdayApiBaseUrl: z.string().url('Matchday API base URL is required')
 });
 
+const matchdayWebhookConfigSchema = z.object({
+	matchdayWebhookSecret: z.string().min(1, 'Matchday webhook secret is required')
+});
+
 export type ClubConfig = {
 	wscClubName: string;
 };
@@ -68,6 +72,7 @@ export type SanityWriteConfig = z.infer<typeof sanityWriteConfigSchema>;
 export type MetaConfig = z.infer<typeof metaConfigSchema>;
 export type SocialPublishConfig = z.infer<typeof socialPublishConfigSchema>;
 export type MatchdayConfig = z.infer<typeof matchdayConfigSchema>;
+export type MatchdayWebhookConfig = z.infer<typeof matchdayWebhookConfigSchema>;
 
 let cachedClientConfig: ClientConfig | null = null;
 
@@ -197,5 +202,11 @@ export function getMatchdayConfig(): MatchdayConfig {
 	return matchdayConfigSchema.parse({
 		matchdayApiToken: process.env.MATCHDAY_API_TOKEN,
 		matchdayApiBaseUrl: process.env.MATCHDAY_API_BASE_URL
+	});
+}
+
+export function getMatchdayWebhookConfig(): MatchdayWebhookConfig {
+	return matchdayWebhookConfigSchema.parse({
+		matchdayWebhookSecret: process.env.MATCHDAY_WEBHOOK_SECRET
 	});
 }

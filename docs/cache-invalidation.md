@@ -4,9 +4,10 @@ This document explains how the Williamstown SC website invalidates its cache.
 
 ## Overview
 
-The website uses Next.js cache tags to refresh cached content on demand. When you update content in Sanity CMS, call the revalidation API endpoint to clear the cache for that content.
+The website uses Next.js cache tags to refresh cached content on demand. Sanity refreshes content
+tags, while league update webhooks refresh Matchday data for one league.
 
-## API Endpoint
+## Sanity Endpoint
 
 **URL:** `/api/revalidate`
 
@@ -73,7 +74,49 @@ The following content types can be revalidated:
 - `siteSettings` - Site-wide settings
 - Individual page types: `homePage`, `aboutPage`, `teamsPage`, etc.
 
-## Security and Authentication
+## League Updates Endpoint
+
+Matchday sends one signed notification after it crawls a subscribed league for Williamstown's
+followed club.
+
+**URL:** `/api/webhooks/league-updates`
+
+**Method:** `POST`
+
+**Headers:**
+
+- `X-Matchday-Signature`: HMAC-SHA256 signature in the form `sha256=<hex>`
+- `Content-Type`: `application/json`
+
+**Request body:**
+
+```json
+{
+	"leagueId": "lea_abc123",
+	"hasChanges": true,
+	"crawledAt": "2026-08-29T12:00:00.000Z"
+}
+```
+
+The route verifies the signature against the exact request body before it parses or trusts
+`leagueId`. When `hasChanges` is `true`, it immediately expires the
+`matchday:league:<leagueId>` cache tag. When it is `false`, the route accepts the notification
+without changing the cache.
+
+Tag expiry does not rebuild every page during the webhook request. Next.js regenerates an
+affected page when it is next requested.
+
+### Matchday Setup
+
+1. Deploy the endpoint.
+2. Run `mday client set-webhook --client <name> --club <name> --url <production-url>`.
+3. Copy the secret shown by the command into `MATCHDAY_WEBHOOK_SECRET` in Vercel.
+4. Redeploy the website with the new environment variable.
+
+The command shows the secret once. Running it again rotates the secret, so update Vercel and
+redeploy after each rotation.
+
+## Sanity Security and Authentication
 
 **IMPORTANT:** The `/api/revalidate` endpoint must be protected. Never expose it without authentication.
 
@@ -182,6 +225,13 @@ revalidateTag(contentType, 'max');
 ```
 
 This clears all cached data for that tag. Visitors keep seeing the cached page while the site fetches fresh data in the background (stale-while-revalidate).
+
+League update webhooks instead use immediate expiry because scores and tables should not remain
+stale after an authenticated change:
+
+```typescript
+revalidateTag(`matchday:league:${leagueId}`, { expire: 0 });
+```
 
 ## Benefits
 
