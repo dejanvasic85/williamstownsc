@@ -4,6 +4,7 @@ import { getAllArticlesForSitemap } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { getAllTeamsForSitemap } from '@/lib/content/teams';
 import logger from '@/lib/logger';
+import { buildUrl } from '@/lib/url/buildUrl';
 
 const log = logger.child({ module: 'sitemap' });
 
@@ -16,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		);
 	}
 
-	const baseUrl = siteSettings.canonicalUrl.replace(/\/$/, '');
+	const baseUrl = buildUrl(siteSettings.canonicalUrl);
 
 	const staticRoutesValue: MetadataRoute.Sitemap = [
 		{

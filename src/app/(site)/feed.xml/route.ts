@@ -2,6 +2,7 @@ import * as Sentry from '@sentry/nextjs';
 import { getAllArticlesForFeed } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
+import { buildUrl } from '@/lib/url/buildUrl';
 
 const log = logger.child({ route: '/feed.xml' });
 
@@ -23,7 +24,7 @@ export async function GET() {
 			getSiteSettings()
 		]);
 
-		const siteUrl = siteSettings?.canonicalUrl || 'https://www.williamstownsc.com';
+		const siteUrl = buildUrl(siteSettings?.canonicalUrl || 'https://www.williamstownsc.com');
 		const siteTitle = siteSettings?.seoDefaults?.siteTitle || siteSettings?.clubName || '';
 		const siteDescription = siteSettings?.seoDefaults?.siteDescription || '';
 

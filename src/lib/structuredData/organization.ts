@@ -1,3 +1,4 @@
+import { buildUrl } from '@/lib/url/buildUrl';
 import { urlFor } from '@/sanity/lib/image';
 import type { SiteSettings } from '@/sanity/sanity.types';
 
@@ -39,7 +40,7 @@ export function generateOrganizationSchema(
 		'@type': 'SportsOrganization',
 		sport: 'Soccer',
 		name: siteSettings.clubName || '',
-		url: siteSettings.canonicalUrl || ''
+		url: siteSettings.canonicalUrl ? buildUrl(siteSettings.canonicalUrl) : ''
 	};
 
 	if (logoUrl) {
