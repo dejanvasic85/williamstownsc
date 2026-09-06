@@ -11,6 +11,10 @@
  * @example
  * buildUrl('https://example.com', '/news/', '/article-slug/')
  * // => 'https://example.com/news/article-slug'
+ *
+ * @example
+ * buildUrl('https://example.com/')
+ * // => 'https://example.com'
  */
 export function buildUrl(baseUrl: string, ...paths: string[]): string {
 	if (!baseUrl) {
@@ -25,7 +29,8 @@ export function buildUrl(baseUrl: string, ...paths: string[]): string {
 
 	if (normalizedPaths.length > 0) {
 		url.pathname = `/${normalizedPaths.join('/')}`;
+		return url.toString();
 	}
 
-	return url.toString();
+	return url.toString().replace(/\/$/, '');
 }

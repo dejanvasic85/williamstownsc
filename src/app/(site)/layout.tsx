@@ -9,6 +9,7 @@ import { navItems } from '@/lib/navigation';
 import { buildFooterNavLinks, filterNavItems } from '@/lib/navigationTransformer';
 import { QueryProvider } from '@/lib/providers/QueryProvider';
 import { generateOrganizationSchema } from '@/lib/structuredData';
+import { buildUrl } from '@/lib/url/buildUrl';
 import { urlFor } from '@/sanity/lib/image';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	const title = siteSettings?.seoDefaults?.siteTitle;
 	const description = siteSettings?.seoDefaults?.siteDescription;
-	const siteUrl = siteSettings?.canonicalUrl || 'https://www.williamstownsc.com';
+	const siteUrl = buildUrl(siteSettings?.canonicalUrl || 'https://www.williamstownsc.com');
 
 	return {
 		title,

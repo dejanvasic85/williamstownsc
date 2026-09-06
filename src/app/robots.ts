@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getSiteSettings } from '@/lib/content/siteSettings';
+import { buildUrl } from '@/lib/url/buildUrl';
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
 	const siteSettings = await getSiteSettings();
@@ -10,8 +11,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
 		);
 	}
 
-	const baseUrl = siteSettings.canonicalUrl;
-
 	return {
 		rules: [
 			{
@@ -20,6 +19,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
 				disallow: ['/studio/', '/api/']
 			}
 		],
-		sitemap: `${baseUrl}/sitemap.xml`
+		sitemap: buildUrl(siteSettings.canonicalUrl, 'sitemap.xml')
 	};
 }
