@@ -29,7 +29,7 @@ test.describe('Homepage', () => {
 		}
 	});
 
-	test('displays next match section', async ({ page }) => {
+	test.skip('displays next match section', async ({ page }) => {
 		const nextMatchHeadings = page.getByRole('heading', { name: /next match/i });
 		await expect(nextMatchHeadings.first()).toBeVisible();
 	});

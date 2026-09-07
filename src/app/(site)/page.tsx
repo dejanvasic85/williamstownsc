@@ -25,6 +25,7 @@ import { buildSocialLinks } from '@/lib/socialLinks';
 import { urlFor } from '@/sanity/lib/image';
 
 const nextMatchCardColors: MatchColor[] = ['blue', 'purple'];
+const keyDatesColumnClassValue = ['md:col-span-3', 'md:col-span-2', 'md:col-span-1'];
 
 // The match countdown reads live matchday fixtures, so it tracks the team routes' 3600.
 export const revalidate = 3600;
@@ -59,6 +60,11 @@ export default async function Home() {
 			color: nextMatchCardColors[index]
 		}))
 	);
+	const upcomingMatchCards = nextMatchCards.filter(
+		(card): card is typeof card & { match: NonNullable<typeof card.match> } => card.match !== null
+	);
+	const keyDatesColumnClass =
+		keyDatesColumnClassValue[upcomingMatchCards.length] ?? 'md:col-span-1';
 
 	const hasAnnouncements = announcements.length > 0;
 	const logoUrl = siteSettings?.logo
@@ -94,7 +100,7 @@ export default async function Home() {
 
 				<div className="container mx-auto">
 					<div className="grid items-stretch gap-8 md:grid-cols-3">
-						{nextMatchCards.map((card) => (
+						{upcomingMatchCards.map((card) => (
 							<MatchCountdownSection
 								key={card.slug}
 								match={card.match}
@@ -103,11 +109,13 @@ export default async function Home() {
 								color={card.color}
 							/>
 						))}
-						<KeyDatesSection
-							heading={homePageData?.keyDatesSection?.heading}
-							leadingText={homePageData?.keyDatesSection?.leadingText}
-							nextKeyDate={nextKeyDate}
-						/>
+						<div className={keyDatesColumnClass}>
+							<KeyDatesSection
+								heading={homePageData?.keyDatesSection?.heading}
+								leadingText={homePageData?.keyDatesSection?.leadingText}
+								nextKeyDate={nextKeyDate}
+							/>
+						</div>
 					</div>
 					<div className="mt-12">
 						<SponsorsSection sponsors={featuredSponsors} />
