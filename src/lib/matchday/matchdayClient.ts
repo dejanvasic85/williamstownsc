@@ -1,4 +1,4 @@
-import { createMatchdayClient } from '@dejanvasic85/matchday-sdk';
+import { createMatchdayClient } from 'matchday-sdk';
 import { getMatchdayConfig } from '@/lib/config';
 
 /** 30s rather than single-digit seconds: the Vercel build region and the matchday API's Neon
