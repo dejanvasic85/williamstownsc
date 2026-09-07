@@ -2,7 +2,7 @@
 	"name": "williamstownsc",
 	"version": "1.0.0",
 	"private": true,
-	"packageManager": "pnpm@11.25.0",
+	"packageManager": "pnpm@12.3.4",
 	"engines": {
 		"node": "24.12.0"
 	},
@@ -58,7 +58,7 @@
 	},
 	"devDependencies": {
 		"@faker-js/faker": "10.6.0",
-		"@playwright/test": "1.62.1",
+		"@playwright/test": "1.63.0",
 		"@tailwindcss/postcss": "4.3.3",
 		"@trivago/prettier-plugin-sort-imports": "6.0.2",
 		"@types/node": "26.4.1",
@@ -78,7 +78,7 @@
 		"prettier-plugin-tailwindcss": "0.8.1",
 		"tailwindcss": "4.3.3",
 		"typescript": "6.0.3",
-		"vitest": "4.1.11"
+		"vitest": "5.0.0"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,json,md}": [
