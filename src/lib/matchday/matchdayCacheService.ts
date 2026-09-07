@@ -1,4 +1,4 @@
-import type { MatchdayRequestInit } from '@dejanvasic85/matchday-sdk';
+import type { MatchdayRequestInit } from 'matchday-sdk';
 
 const matchdayLeagueCacheTagPrefix = 'matchday:league';
 const matchdayCacheRevalidationSeconds = 3600;

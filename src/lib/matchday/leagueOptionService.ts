@@ -1,4 +1,4 @@
-import { getClubLeagues } from '@dejanvasic85/matchday-sdk';
+import { getClubLeagues } from 'matchday-sdk';
 import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
