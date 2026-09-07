@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.25.0
+          version: 12.3.4
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
@@ -28,7 +28,7 @@ jobs:
         with:
           matchday-github-token: ${{ secrets.MATCHDAY_GITHUB_TOKEN }}
       - name: Pull environment variables from Vercel
-        run: pnpm dlx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
+        run: pnpm dlx --allow-build=esbuild vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Build
         run: pnpm run build
       - name: Lint
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.25.0
+          version: 12.3.4
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
@@ -64,7 +64,7 @@ jobs:
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
       - name: Pull environment variables from Vercel
-        run: pnpm dlx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
+        run: pnpm dlx --allow-build=esbuild vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }} --yes
       - name: Wait for Vercel deployment
         uses: vercel/wait-for-deployment-action@0e2b0c5c5cce31f1648108aeec56467187aca037
         id: wait_for_vercel
