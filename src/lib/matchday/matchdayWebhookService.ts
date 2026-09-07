@@ -1,4 +1,4 @@
-import { verifyWebhookSignature } from '@dejanvasic85/matchday-sdk';
+import { verifyWebhookSignature } from 'matchday-sdk';
 import { z } from 'zod';
 
 const leagueIdPattern = /^lea_[A-Za-z0-9_-]+$/;

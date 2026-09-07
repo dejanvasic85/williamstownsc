@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { unwrap } from '@dejanvasic85/matchday-sdk';
+import { unwrap } from 'matchday-sdk';
 import { createMatchdayLeagueRequestInit } from '@/lib/matchday/matchdayCacheService';
 import { getMatchdayClient } from '@/lib/matchday/matchdayClient';
 
