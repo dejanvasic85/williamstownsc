@@ -43,13 +43,17 @@ type Tenant = {
 	domains: string[]; // apex + www + any extra production host
 	sanityProjectId: string;
 	sanityDataset: string; // 'production'
-	secretSuffix: string; // 'WILLIAMSTOWN' -> SANITY_WRITE_TOKEN_WILLIAMSTOWN
 };
 ```
 
 The slug is a URL segment, so the grammar is lowercase words joined by hyphens. The JavaScript
 identifier rule that `next/root-params` imposes applies to the folder name `[tenant]`, not to the
 slug value, so hyphenated slugs like `altona-city` are fine.
+
+The secret suffix is **derived from the slug**, not stored as its own field:
+`altona-city` becomes `ALTONA_CITY`, giving `SANITY_WRITE_TOKEN_ALTONA_CITY`. A separate field could
+be set to the same value for two clubs, which would quietly point them at one set of credentials.
+Deriving it makes that impossible, because the slug is already unique.
 
 The registry builds its lookup map with the same host normalisation the proxy uses, and the zod
 schema fails the build if two clubs claim the same normalised host or the same slug. Without that
@@ -85,11 +89,18 @@ app/[tenant]/(site)/news/page.tsx
 Two mechanisms, because Next.js supports root parameters in Server Components but not yet in Route
 Handlers.
 
-| Where                                        | How                                        |
-| -------------------------------------------- | ------------------------------------------ |
-| Server Components, layouts, server utilities | `await tenant()` from `next/root-params`   |
-| Route Handlers and Server Actions            | the `x-tenant` request header              |
-| Client Components                            | props, passed down from a Server Component |
+| Where                                                          | How                                        |
+| -------------------------------------------------------------- | ------------------------------------------ |
+| Server Components, layouts, server utilities                   | `await tenant()` from `next/root-params`   |
+| Route Handlers under `[tenant]` (sitemap, robots, manifest)    | the `params` prop                          |
+| Route Handlers authenticating a webhook (revalidate, Matchday) | the validated `Host`, bound to the secret  |
+| All other Route Handlers, and Server Actions                   | the `x-tenant` request header              |
+| Client Components                                              | props, passed down from a Server Component |
+
+The three server-side rows are not interchangeable. A handler that lives under `[tenant]` reads
+`params` and never looks at `x-tenant`. A handler that authenticates a webhook derives the tenant
+from `Host` and checks the secret against that tenant, so the caller cannot name a club. Everything
+else uses the proxy-issued header.
 
 `next/root-params` arrived in Next.js 16.3.0 and this project is on 16.3.4. Because `[tenant]` sits
 above the root layout, the getter works in any Server Component without prop drilling and without
@@ -100,8 +111,11 @@ Actions, Route Handlers or `unstable_cache`.
 
 `x-tenant` is a trusted value only because the proxy controls it. The proxy deletes any inbound
 `x-tenant` header before setting its own, so a client cannot pick a club by sending the header
-itself. Any Route Handler that receives a missing or unknown `x-tenant` returns 400 and does no
-work. No handler falls back to a default club.
+itself. A handler in the "all other Route Handlers" row that receives a missing or unknown
+`x-tenant` returns 400 and does no work.
+
+Whichever of the three mechanisms a handler uses, no handler ever falls back to a default club, and
+no handler takes the tenant from a query parameter or request body.
 
 ### The `[tenant]` segment cannot be chosen by the caller either
 
