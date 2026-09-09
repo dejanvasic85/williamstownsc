@@ -39,13 +39,21 @@ src/tenants/
 
 ```ts
 type Tenant = {
-	slug: string; // 'williamstown', a valid JS identifier segment
+	slug: string; // 'altona-city', matches /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 	domains: string[]; // apex + www + any extra production host
 	sanityProjectId: string;
 	sanityDataset: string; // 'production'
 	secretSuffix: string; // 'WILLIAMSTOWN' -> SANITY_WRITE_TOKEN_WILLIAMSTOWN
 };
 ```
+
+The slug is a URL segment, so the grammar is lowercase words joined by hyphens. The JavaScript
+identifier rule that `next/root-params` imposes applies to the folder name `[tenant]`, not to the
+slug value, so hyphenated slugs like `altona-city` are fine.
+
+The registry builds its lookup map with the same host normalisation the proxy uses, and the zod
+schema fails the build if two clubs claim the same normalised host or the same slug. Without that
+check, two entries can resolve to one host and requests go to whichever wins.
 
 Everything else about a club (name, logo, contact emails, socials, SEO defaults, canonical URL,
 Matchday club id) already lives in that club's `siteSettings` document. Do not duplicate it here.
@@ -60,6 +68,7 @@ proxy.ts
   - strip any inbound x-tenant header from the client
   - normalise Host: lower-case, strip port, strip leading 'www.'
   - look up the tenant in the registry; unknown host -> 404
+  - reject any path whose first segment is already a tenant slug -> 404
   - set x-tenant: altona-city on the request
   - rewrite page paths: /news -> /altona-city/news
   |
@@ -93,6 +102,20 @@ Actions, Route Handlers or `unstable_cache`.
 `x-tenant` header before setting its own, so a client cannot pick a club by sending the header
 itself. Any Route Handler that receives a missing or unknown `x-tenant` returns 400 and does no
 work. No handler falls back to a default club.
+
+### The `[tenant]` segment cannot be chosen by the caller either
+
+After the rewrite, `/altona-city/news` is a real internal path, so the `[tenant]` segment needs the
+same protection as the header. Three rules keep it bound to the host:
+
+- The proxy **rejects any request whose first path segment is a known tenant slug**, before
+  rewriting. So `williamstownsc.com/altona-city/news` is a 404, not a route into another club.
+- The proxy rewrites every page path unconditionally, so `[tenant]` can only ever hold the slug the
+  proxy resolved from the host.
+- `dynamicParams = false` on the `[tenant]` segment rejects slugs that are not in the registry.
+
+Doing the check in the proxy rather than in the layout matters: a layout that compared `[tenant]`
+against `headers()` would force every route dynamic and undo the static generation.
 
 ## Local and preview hosts
 
@@ -177,19 +200,31 @@ through route groups:
 ```text
 src/app/
   [tenant]/
-    layout.tsx          root layout: <html data-tenant>, imports tenants/themes.css
-    (site)/...          club pages
+    layout.tsx                      root layout: <html data-tenant>, imports themes.css
+    (site)/...                      club pages
+    sitemap.ts                      -> /<slug>/sitemap.xml
+    robots.txt/route.ts             -> /<slug>/robots.txt
+    manifest.webmanifest/route.ts   -> /<slug>/manifest.webmanifest
   studio/
-    layout.tsx          root layout for the Studio
-  api/...               route handlers, no layout
-  robots.ts             resolves the tenant from Host
-  sitemap.ts            resolves the tenant from Host
-  manifest.ts           resolves the tenant from Host
+    layout.tsx                      root layout for the Studio
+  api/...                           route handlers, no layout
 ```
 
-`robots.ts`, `sitemap.ts` and `manifest.ts` are route handlers, so they cannot use root parameters
-and resolve the tenant from the host instead. They are dynamic as a result, which is fine for three
-small responses. The proxy does not rewrite their paths.
+### Metadata routes go under `[tenant]` too
+
+`src/app/sitemap.ts` today exports `revalidate = 86400`. If it stayed at the app root and resolved
+the club from `Host`, that shared revalidation would cache one club's sitemap under a single key and
+serve it to every domain. The same hazard applies to robots, the manifest and the generated icons.
+
+Putting them under `[tenant]` fixes it by construction: the path itself carries the slug, so the
+cache key is per club and `revalidate` stays safe. The proxy rewrites `/sitemap.xml`,
+`/robots.txt` and `/manifest.webmanifest` along with every other page path.
+
+- `sitemap.ts` nests in a route segment, which Next.js supports directly.
+- `robots.txt` and `manifest.webmanifest` are documented only at the app root as metadata
+  conventions, so they become plain Route Handlers instead. Those read the slug from the `params`
+  prop, which works in Route Handlers even though `next/root-params` does not.
+- `/studio` reads `x-tenant`, so it is dynamic already and must not be statically cached.
 
 ## Branding
 
@@ -220,8 +255,28 @@ a reference project.
 - No per-club Vercel project. One deployment serves every domain.
 - No shared Sanity dataset with a club field. Project-per-club already isolates the data.
 - No self-serve club onboarding. See below.
-- No tenant-aware `vercel.json` redirects. The current redirects are legacy Williamstown URLs and
-  stay global until a second club needs its own. Per-club redirects then move into `proxy.ts`.
+
+## Legacy redirects
+
+The ten redirects in `vercel.json` are legacy Williamstown URLs matched on path only, so today they
+would fire on every club's domain. `/shop` would redirect on `altonacity.com` even though Altona
+City never had that page.
+
+Scope them to Williamstown before the second domain goes live. `vercel.json` supports a host
+condition:
+
+```json
+{
+	"source": "/shop",
+	"destination": "/football/merchandise",
+	"permanent": true,
+	"has": [{ "type": "host", "value": { "inc": ["williamstownsc.com", "www.williamstownsc.com"] } }]
+}
+```
+
+The alternative is moving them into `proxy.ts`, which already resolves the tenant. Prefer
+`vercel.json` while the rules stay simple, since those redirects run at the edge before any
+function.
 
 ## Adding a club
 
@@ -244,7 +299,7 @@ Improve later, when the club count justifies it:
 ## Sequencing
 
 Work is tracked in the [Multi-tenant platform](https://github.com/dejanvasic85/williamstownsc/milestone/2)
-milestone (issues MT-01 to MT-18), in three phases:
+milestone (issues MT-01 to MT-19), in three phases:
 
 1. **Foundations** - registry, proxy, per-tenant Sanity client and secrets.
 2. **Tenant-aware app** - route restructure, content modules, metadata, theming, API routes, Studio.
