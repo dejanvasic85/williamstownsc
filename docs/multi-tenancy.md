@@ -12,25 +12,66 @@ www.altonacity.com,     altonacity.com      ->  altona-city
 
 ## Decisions
 
-| Decision          | Choice                                               | Why                                                                                               |
-| ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Hosting           | One Vercel project, every club domain attached       | One deploy, one build, one set of shared secrets                                                  |
-| Content isolation | One Sanity project per club                          | Hard data separation, per-club billing and editor roles, a club can leave with its own project    |
-| Tenant resolution | `proxy.ts` maps `Host` to a tenant slug              | Runs before the cache, so pages stay static per tenant                                            |
-| Route shape       | `app/[tenant]` is the root layout                    | The tenant is a root parameter, readable anywhere on the server without forcing dynamic rendering |
-| Tenant registry   | Typed config module in the repo, one folder per club | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy  |
-| Theme             | One CSS file per club, scoped by `data-tenant`       | Colours live beside the club's config, not in a shared file that every club edits                 |
+| Decision          | Choice                                               | Why                                                                                              |
+| ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Hosting           | One Vercel project, every club domain attached       | One deploy, one build, one set of shared secrets                                                 |
+| Content isolation | One Sanity project per club                          | Hard data separation, per-club billing and roles, a club can leave with its own project          |
+| Tenant resolution | `proxy.ts` maps `Host` to a tenant slug              | Runs before the cache, so pages stay static per tenant                                           |
+| Route shape       | `app/[tenant]` is the root layout                    | The tenant becomes a root parameter, readable anywhere on the server without going dynamic       |
+| Tenant registry   | Typed config module in the repo, one folder per club | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy |
+| Theme             | One CSS file per club, scoped by `data-tenant`       | Colours sit beside the club's config, not in a shared file every club edits                      |
+
+## How a request flows
+
+```text
+GET https://www.altonacity.com/news
+  |
+  v
+proxy.ts
+  - drop any x-tenant header the client sent
+  - normalise Host: lower-case, strip port, strip leading 'www.'
+  - look up the tenant; unknown host -> 404
+  - path already starts with a tenant slug -> 404
+  - set x-tenant: altona-city
+  - rewrite /news -> /altona-city/news
+  |
+  v
+app/[tenant]/(site)/news/page.tsx
+  - generateStaticParams() returns every tenant slug
+  - await tenant() from next/root-params -> 'altona-city'
+  - getSanityClient('altona-city') -> that club's Sanity project
+  - cache tag: altona-city:news
+```
+
+## Adding a club
+
+Onboarding is manual on purpose. It takes a code change, a review and a deploy. At a handful of
+clubs that is the right trade: the registry stays type-checked, the theme stays in version control,
+and every club that goes live has been through a PR.
+
+1. Create the Sanity project, deploy the schema, seed `siteSettings`.
+2. Add `src/tenants/<slug>/tenant.ts` and `src/tenants/<slug>/theme.css`, and register both.
+3. Add the club's secrets in Vercel.
+4. Attach the domains to the Vercel project and point DNS at Vercel.
+5. Scope any legacy redirects to that club's domains.
+6. Deploy.
+
+Improve later, when the club count justifies it:
+
+- Move the domain map to Edge Config, so a new club needs no deploy.
+- Move the palette into `siteSettings`, so a club can change its own colours.
+- Script steps 1 to 3 as a provisioning command.
 
 ## Tenant files
 
-Everything that defines a club at build time lives in one folder, so onboarding touches one place.
+Everything that defines a club at build time lives in one folder.
 
 ```text
 src/tenants/
   index.ts              registry: imports each tenant.ts, validates with zod
   themes.css            imports every club theme file
   williamstown/
-    tenant.ts           slug, domains, Sanity project, secret suffix
+    tenant.ts           slug, domains, Sanity project
     theme.css           [data-tenant='williamstown'] { --color-primary: ... }
   altona-city/
     tenant.ts
@@ -46,122 +87,59 @@ type Tenant = {
 };
 ```
 
-The slug is a URL segment, so the grammar is lowercase words joined by hyphens. The JavaScript
-identifier rule that `next/root-params` imposes applies to the folder name `[tenant]`, not to the
-slug value, so hyphenated slugs like `altona-city` are fine.
+The slug is a URL segment, so it is lowercase words joined by hyphens. The JavaScript identifier
+rule that `next/root-params` imposes applies to the folder name `[tenant]`, not to the slug value.
 
-The secret suffix is **derived from the slug**, not stored as its own field:
-`altona-city` becomes `ALTONA_CITY`, giving `SANITY_WRITE_TOKEN_ALTONA_CITY`. A separate field could
-be set to the same value for two clubs, which would quietly point them at one set of credentials.
-Deriving it makes that impossible, because the slug is already unique.
+Environment variable names derive from the slug: `altona-city` gives `ALTONA_CITY`, so the write
+token is `SANITY_WRITE_TOKEN_ALTONA_CITY`.
 
-The registry builds its lookup map with the same host normalisation the proxy uses, and the zod
-schema fails the build if two clubs claim the same normalised host or the same slug. Without that
-check, two entries can resolve to one host and requests go to whichever wins.
-
-Everything else about a club (name, logo, contact emails, socials, SEO defaults, canonical URL,
-Matchday club id) already lives in that club's `siteSettings` document. Do not duplicate it here.
-
-## How a request flows
-
-```text
-GET https://www.altonacity.com/news
-  |
-  v
-proxy.ts
-  - strip any inbound x-tenant header from the client
-  - normalise Host: lower-case, strip port, strip leading 'www.'
-  - look up the tenant in the registry; unknown host -> 404
-  - reject any path whose first segment is already a tenant slug -> 404
-  - set x-tenant: altona-city on the request
-  - rewrite page paths: /news -> /altona-city/news
-  |
-  v
-app/[tenant]/(site)/news/page.tsx
-  - generateStaticParams() returns every tenant slug
-  - await tenant() from next/root-params -> 'altona-city'
-  - getSanityClient('altona-city') -> that club's Sanity project
-  - cache tag: altona-city:news
-```
+Everything else about a club lives in its `siteSettings` document: name, logo, contact emails,
+socials, SEO defaults, canonical URL, Matchday club id. Do not duplicate any of it here.
 
 ## Reading the tenant
 
-Two mechanisms, because Next.js supports root parameters in Server Components but not yet in Route
-Handlers.
+Server code gets the tenant three ways, depending on where it runs. They are not interchangeable.
 
-| Where                                                          | How                                        |
-| -------------------------------------------------------------- | ------------------------------------------ |
-| Server Components, layouts, server utilities                   | `await tenant()` from `next/root-params`   |
-| Route Handlers under `[tenant]` (sitemap, robots, manifest)    | the `params` prop                          |
-| Route Handlers authenticating a webhook (revalidate, Matchday) | the validated `Host`, bound to the secret  |
-| All other Route Handlers, and Server Actions                   | the `x-tenant` request header              |
-| Client Components                                              | props, passed down from a Server Component |
+| Where                                                         | How                                       |
+| ------------------------------------------------------------- | ----------------------------------------- |
+| Server Components, layouts, server utilities                  | `await tenant()` from `next/root-params`  |
+| Route Handlers under `[tenant]`: sitemap, robots, manifest    | the `params` prop                         |
+| Route Handlers authenticating a webhook: revalidate, Matchday | the validated `Host`, bound to the secret |
+| Every other Route Handler, and Server Actions                 | the `x-tenant` request header             |
+| Client Components                                             | props, from a Server Component            |
 
-The three server-side rows are not interchangeable. A handler that lives under `[tenant]` reads
-`params` and never looks at `x-tenant`. A handler that authenticates a webhook derives the tenant
-from `Host` and checks the secret against that tenant, so the caller cannot name a club. Everything
-else uses the proxy-issued header.
-
-`next/root-params` arrived in Next.js 16.3.0 and this project is on 16.3.4. Because `[tenant]` sits
+`next/root-params` arrived in Next.js 16.3.0 and this project runs 16.3.4. Because `[tenant]` sits
 above the root layout, the getter works in any Server Component without prop drilling and without
-`headers()`, so pages stay statically generated. It does not work in Client Components, Server
-Actions, Route Handlers or `unstable_cache`.
+`headers()`, so pages stay static. It does not work in Client Components, Server Actions, Route
+Handlers or `unstable_cache`.
 
-### x-tenant is proxy-issued, never client-supplied
-
-`x-tenant` is a trusted value only because the proxy controls it. The proxy deletes any inbound
-`x-tenant` header before setting its own, so a client cannot pick a club by sending the header
-itself. A handler in the "all other Route Handlers" row that receives a missing or unknown
-`x-tenant` returns 400 and does no work.
-
-Whichever of the three mechanisms a handler uses, no handler ever falls back to a default club, and
-no handler takes the tenant from a query parameter or request body.
-
-### The `[tenant]` segment cannot be chosen by the caller either
-
-After the rewrite, `/altona-city/news` is a real internal path, so the `[tenant]` segment needs the
-same protection as the header. Three rules keep it bound to the host:
-
-- The proxy **rejects any request whose first path segment is a known tenant slug**, before
-  rewriting. So `williamstownsc.com/altona-city/news` is a 404, not a route into another club.
-- The proxy rewrites every page path unconditionally, so `[tenant]` can only ever hold the slug the
-  proxy resolved from the host.
-- `dynamicParams = false` on the `[tenant]` segment rejects slugs that are not in the registry.
-
-Doing the check in the proxy rather than in the layout matters: a layout that compared `[tenant]`
-against `headers()` would force every route dynamic and undo the static generation.
+Content modules call `await tenant()` themselves, so the 18 modules in `lib/content` keep their
+current signatures. Code called from a Route Handler or Server Action takes an explicit tenant
+argument instead.
 
 ## Local and preview hosts
 
-Registry entries list production domains only. Non-production hosts are resolved by a rule that is
-disabled in production:
+The registry lists production domains only. A separate rule handles everything else, and it is off
+in production:
 
-- `<slug>.localhost` and `<slug>.localhost:3003` match the tenant with that slug. Browsers resolve
-  any `.localhost` subdomain without a hosts-file change.
-- A Vercel preview host (`*.vercel.app`) with no registry match falls back to a default tenant named
-  by an environment variable, so preview deployments still render.
+- `<slug>.localhost` and `<slug>.localhost:3003` match the club with that slug. Browsers resolve any
+  `.localhost` subdomain with no hosts-file change.
+- An unmatched `*.vercel.app` preview host falls back to a default club named by an environment
+  variable.
 
-In production the rule is off, so an unmapped host is a 404 and never resolves to a club.
+## Sanity access
 
-## Sanity access and caching
+`getSanityClient(tenant)` replaces the module-level client, memoised in a map keyed by slug. The
+same goes for the write client, which takes that club's write token.
 
-`getSanityClient(tenant)` replaces the module-level client. Two rules follow from it:
-
-- **Every cache is keyed by tenant slug.** The current `cachedClientConfig` singleton in
-  `lib/config.ts` becomes a map keyed by slug. Any `React.cache` wrapper, such as
-  `getMatchdayClubId`, takes the tenant as its first argument so the slug is part of the cache key.
-- **No module-level client or config.** A module-scope value computed at import time cannot vary by
-  club and will silently serve one club's data to another.
-
-Content modules read the tenant themselves with `await tenant()` rather than taking it as an
-argument, so the 18 modules in `lib/content` keep their current signatures. The exception is code
-called from a Route Handler or Server Action, which must accept an explicit tenant argument.
+`getClientConfig()` stops reading `NEXT_PUBLIC_SANITY_PROJECT_ID`. The project id and dataset come
+from the registry.
 
 ## Secrets
 
-Shared across all tenants: AWS SES credentials, reCAPTCHA, Sentry, `SOCIAL_PUBLISH_SECRET`.
+Shared by every club: AWS SES, reCAPTCHA, Sentry, `SOCIAL_PUBLISH_SECRET`, `MATCHDAY_API_BASE_URL`.
 
-Per tenant, resolved by suffix through `getTenantSecret(name, tenant)` in `lib/config`:
+Per club, read through `getTenantSecret(name, tenant)`:
 
 ```text
 SANITY_WRITE_TOKEN_WILLIAMSTOWN
@@ -173,43 +151,19 @@ META_FACEBOOK_PAGE_ID_WILLIAMSTOWN
 META_INSTAGRAM_ACCOUNT_ID_WILLIAMSTOWN
 ```
 
-`getClientConfig()` stops reading `NEXT_PUBLIC_SANITY_PROJECT_ID`. The project id and dataset come
-from the tenant registry instead.
-
 ## Cache tags
 
-Every tag gets a tenant prefix. Without it, revalidating one club clears another club's pages.
+Every tag carries a tenant prefix, built by one shared function.
 
 ```text
 siteSettings  ->  williamstown:siteSettings
 news          ->  williamstown:news
 ```
 
-One function builds every tag, and readers and invalidators must move together in a single change.
-If readers adopt `tenant:contentType` while `/api/revalidate` still calls `revalidateTag('news')`,
-nothing invalidates. If unprefixed tags survive anywhere, one club's revalidation clears every club.
+## Routes and layouts
 
-## Revalidation and webhooks
-
-`/api/revalidate` today authenticates one shared `REVALIDATE_SECRET` and revalidates an unprefixed
-tag. A shared credential plus a caller-supplied tenant would let anyone holding the secret clear any
-club's cache. So the tenant is bound to the credential, not chosen by the caller:
-
-- `REVALIDATE_SECRET` becomes per tenant. The handler resolves the tenant from the validated `Host`,
-  then checks the request secret against that tenant's secret. A secret that does not match the
-  tenant fails, so one club's Sanity project cannot revalidate another club.
-- `/api/webhooks/league-updates` does the same, verifying `X-Matchday-Signature` with that club's
-  `MATCHDAY_WEBHOOK_SECRET` and revalidating only that club's tags.
-- Each club's Sanity project and Matchday club point their webhooks at that club's own domain.
-
-## Layout structure
-
-`src/app/layout.tsx` currently owns `<html>` and sits above `[tenant]`, so it cannot see the club.
-Reading `headers()` there would make every route dynamic and undo the static generation the design
-depends on.
-
-The fix is to remove the top-level layout and use multiple root layouts, which Next.js supports
-through route groups:
+`src/app/layout.tsx` owns `<html>` and sits above `[tenant]`, so it cannot see the club. It goes
+away. Next.js allows multiple root layouts, so the club pages and the Studio each get their own.
 
 ```text
 src/app/
@@ -224,97 +178,91 @@ src/app/
   api/...                           route handlers, no layout
 ```
 
-### Metadata routes go under `[tenant]` too
+The metadata routes sit under `[tenant]` so their paths carry the slug. `sitemap.ts` nests in a
+route segment directly. `robots.txt` and `manifest.webmanifest` are app-root-only conventions, so
+they become plain Route Handlers that read the slug from `params`.
 
-`src/app/sitemap.ts` today exports `revalidate = 86400`. If it stayed at the app root and resolved
-the club from `Host`, that shared revalidation would cache one club's sitemap under a single key and
-serve it to every domain. The same hazard applies to robots, the manifest and the generated icons.
-
-Putting them under `[tenant]` fixes it by construction: the path itself carries the slug, so the
-cache key is per club and `revalidate` stays safe. The proxy rewrites `/sitemap.xml`,
-`/robots.txt` and `/manifest.webmanifest` along with every other page path.
-
-- `sitemap.ts` nests in a route segment, which Next.js supports directly.
-- `robots.txt` and `manifest.webmanifest` are documented only at the app root as metadata
-  conventions, so they become plain Route Handlers instead. Those read the slug from the `params`
-  prop, which works in Route Handlers even though `next/root-params` does not.
-- `/studio` reads `x-tenant`, so it is dynamic already and must not be statically cached.
+Public URLs do not change. The slug is only visible after the rewrite.
 
 ## Branding
 
-- **Colours**: `<html data-tenant="williamstown">` in the root layout, set from the root parameter,
-  so it is known at build time. Each club's `theme.css` scopes its overrides of `--color-primary`,
-  `--color-secondary` and `--color-brand` under `[data-tenant='<slug>']`, for both light and dark.
-  `themes.css` imports them all and the root layout imports that. No inline styles.
+- **Colours**: the root layout sets `<html data-tenant="williamstown">` from the root parameter, so
+  it is known at build time. Each `theme.css` scopes its overrides of `--color-primary`,
+  `--color-secondary` and `--color-brand` under `[data-tenant='<slug>']`, in both light and dark.
+  `themes.css` imports them all, and the root layout imports that. No inline styles.
 - **Logo**: already in `siteSettings`.
-- **Favicons and PWA icons**: replace the static files in `public/favicon/` with generated routes
-  built from the club logo in Sanity.
-- **Copy**: every hardcoded "Williamstown SC" string moves to `siteSettings`. Known sites are the
+- **Favicons and PWA icons**: replace the static files in `public/favicon/` with routes under
+  `[tenant]`, generated from the club logo in Sanity.
+- **Copy**: every hardcoded "Williamstown SC" string moves to `siteSettings`. Known spots are the
   root layout, `not-found.tsx`, the news, sponsors and football sections, the contact email
   template, the calendar feed UID, and the Meta publish hashtags.
 
 ## Sanity Studio
 
 `/studio` binds to the Sanity project of the requesting domain, so `williamstownsc.com/studio` edits
-Williamstown and `altonacity.com/studio` edits Altona City. The Studio route resolves the tenant
-from `x-tenant` server-side and passes `projectId` and `dataset` into `NextStudio` instead of
-reading `NEXT_PUBLIC_` variables. A missing or unknown tenant renders an error, not a default club.
+Williamstown and `altonacity.com/studio` edits Altona City. The route reads `x-tenant` on the server
+and passes `projectId` and `dataset` into `NextStudio`, rather than reading `NEXT_PUBLIC_` variables.
 
-The schema stays one shared set of TypeScript files. Deploying the schema and generating types run
-per project. Types are identical across projects, so `sanity.types.ts` is still generated once from
-a reference project.
+The schema stays one shared set of TypeScript files. Schema deploys and type generation run per
+project. The types are identical across projects, so `sanity.types.ts` is generated once from a
+reference project.
+
+Open question for MT-14: the root `sanity.config.ts` hardcodes a project id. Either generate one
+config per club for standalone deploys, or drop standalone deploys and keep only the app-hosted
+Studio.
+
+## Rules that keep clubs apart
+
+These are the constraints the whole design rests on. Break one and a club can read, edit or clear
+another club's data.
+
+1. **The proxy owns `x-tenant`.** It deletes any inbound header before setting its own. Otherwise a
+   client picks its own club by sending the header.
+2. **The proxy rejects paths that already start with a tenant slug.** After the rewrite
+   `/altona-city/news` is a real path, so `williamstownsc.com/altona-city/news` must 404. The check
+   belongs in the proxy: a layout comparing `[tenant]` against `headers()` would force every route
+   dynamic.
+3. **`dynamicParams = false` on `[tenant]`.** An unregistered slug cannot render.
+4. **No handler falls back to a default club**, and none reads the tenant from a query parameter or
+   request body. A handler with a missing or unknown `x-tenant` returns 400.
+5. **Webhook handlers bind the tenant to the credential.** `/api/revalidate` and
+   `/api/webhooks/league-updates` resolve the club from the validated `Host`, then check the secret
+   against that club's secret. A shared secret plus a caller-named club would let anyone holding it
+   clear any club's cache. Each club points its webhooks at its own domain.
+6. **Every cache is keyed by tenant slug.** The `cachedClientConfig` singleton becomes a map keyed
+   by slug. `React.cache` wrappers such as `getMatchdayClubId` take the tenant as their first
+   argument, so the slug lands in the cache key.
+7. **No module-level Sanity client or config.** A value computed at import time cannot vary by club,
+   and will serve one club's data to another.
+8. **Readers and invalidators adopt prefixed cache tags in the same change.** Half-migrated, either
+   nothing invalidates or one club's revalidation clears every club.
+9. **Responses that vary by club vary by path.** `src/app/sitemap.ts` exports `revalidate = 86400`;
+   at the app root, resolving the club from `Host` would cache one club's sitemap and serve it to
+   every domain. Under `[tenant]` the cache key is per club by construction.
+10. **The registry fails the build on collisions.** Two clubs sharing a normalised host or a slug
+    would otherwise route at random. Deriving env var names from the slug rules out a third
+    collision.
+11. **Legacy redirects are scoped by host.** The ten path-only redirects in `vercel.json` would fire
+    on every club's domain, so `/shop` would redirect on `altonacity.com`. Add a host condition:
+
+    ```json
+    "has": [{ "type": "host", "value": { "inc": ["williamstownsc.com", "www.williamstownsc.com"] } }]
+    ```
+
+    Keep them in `vercel.json` while the rules stay simple, since edge redirects run before any
+    function. Note that `has` conditions do not work under `vercel dev`.
 
 ## What we are not doing
 
 - No per-club Vercel project. One deployment serves every domain.
 - No shared Sanity dataset with a club field. Project-per-club already isolates the data.
-- No self-serve club onboarding. See below.
-
-## Legacy redirects
-
-The ten redirects in `vercel.json` are legacy Williamstown URLs matched on path only, so today they
-would fire on every club's domain. `/shop` would redirect on `altonacity.com` even though Altona
-City never had that page.
-
-Scope them to Williamstown before the second domain goes live. `vercel.json` supports a host
-condition:
-
-```json
-{
-	"source": "/shop",
-	"destination": "/football/merchandise",
-	"permanent": true,
-	"has": [{ "type": "host", "value": { "inc": ["williamstownsc.com", "www.williamstownsc.com"] } }]
-}
-```
-
-The alternative is moving them into `proxy.ts`, which already resolves the tenant. Prefer
-`vercel.json` while the rules stay simple, since those redirects run at the edge before any
-function.
-
-## Adding a club
-
-Onboarding is a manual process, on purpose. It needs a code change, a review and a deploy. At a
-handful of clubs that is the right trade: the registry stays type-checked, the theme stays in
-version control, and every club that goes live has been through a PR.
-
-1. Create the Sanity project, deploy the schema, seed `siteSettings`.
-2. Add `src/tenants/<slug>/tenant.ts` and `src/tenants/<slug>/theme.css`, and register both.
-3. Add the per-tenant secrets in Vercel.
-4. Add the domains to the Vercel project and point DNS at Vercel.
-5. Deploy.
-
-Improve later, when the club count justifies it:
-
-- Move the domain map to Edge Config so a new club needs no deploy.
-- Move the palette into `siteSettings` so a club can change its own colours.
-- Script steps 1 to 3 as a provisioning command.
+- No self-serve onboarding. See "Adding a club".
 
 ## Sequencing
 
 Work is tracked in the [Multi-tenant platform](https://github.com/dejanvasic85/williamstownsc/milestone/2)
-milestone (issues MT-01 to MT-19), in three phases:
+milestone (MT-01 to MT-19), in three phases:
 
 1. **Foundations** - registry, proxy, per-tenant Sanity client and secrets.
-2. **Tenant-aware app** - route restructure, content modules, metadata, theming, API routes, Studio.
+2. **Tenant-aware app** - routes, content modules, metadata, theming, API routes, Studio.
 3. **Operations** - env conventions, provisioning runbook, test matrix, second club onboarded.
