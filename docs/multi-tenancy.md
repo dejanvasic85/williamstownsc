@@ -120,7 +120,7 @@ socials, SEO defaults, canonical URL, Matchday club id. Do not duplicate any of 
 
 ## Reading the tenant
 
-Server code gets the tenant three ways, depending on where it runs. They are not interchangeable.
+Server code gets the tenant four ways, depending on where it runs. They are not interchangeable.
 
 | Where                                                      | How                                       |
 | ---------------------------------------------------------- | ----------------------------------------- |
