@@ -18,7 +18,7 @@ www.altonacity.com,     altonacity.com      ->  altona-city
 | Content isolation | One Sanity project per club                           | Hard data separation, per-club billing and roles, a club can leave with its own project          |
 | Tenant resolution | `proxy.ts` maps `Host` to a tenant slug               | Runs before the cache, so pages stay static per tenant                                           |
 | Route shape       | `app/[tenant]` is the root layout                     | The tenant becomes a root parameter, readable anywhere on the server without going dynamic       |
-| Tenant registry   | Typed config module in the repo, one folder per club  | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy |
+| Tenant registry   | Typed config module in the repo, one file per club    | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy |
 | Theme             | Server-only tokens per club, emitted as one `<style>` | Colours sit beside the club's config, never reach a JS bundle, and stay readable from the server |
 | Secrets           | Per-club manifest declaring where each value lives    | Reviewable, verifiable in CI, and the store can change per club without touching call sites      |
 
@@ -51,7 +51,7 @@ clubs that is the right trade: the registry stays type-checked, the theme stays 
 and every club that goes live has been through a PR.
 
 1. Create the Sanity project, deploy the schema, seed `siteSettings`.
-2. Add the `src/tenants/<slug>/` folder and register it.
+2. Add `src/tenants/<slug>.ts` and register it.
 3. Store the club's five secrets wherever its manifest says they live.
 4. Attach the domains to the Vercel project and point DNS at Vercel.
 5. Scope any legacy redirects to that club's domains.
@@ -65,40 +65,48 @@ Improve later, when the club count justifies it:
 
 ## Tenant files
 
-One folder per club, holding a manifest of everything that defines it.
+One file per club, named after the club, holding everything that defines it.
 
 ```text
 src/tenants/
-  index.ts              registry: imports each manifest, validates with zod
-  williamstown/
-    tenant.ts           public: slug, domains, Sanity project
-    secrets.ts          server-only: where each secret comes from
-    theme.ts            server-only: colour tokens
-  altona-city/
-    ...
+  index.ts           registry: imports each club file, validates with zod
+  williamstown.ts
+  altona-city.ts
 ```
 
 ```ts
-// tenant.ts
+// williamstown.ts
+import 'server-only';
+
 export const williamstown = defineTenant({
 	slug: 'williamstown', // matches /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 	domains: ['williamstownsc.com', 'www.williamstownsc.com'],
-	sanity: { projectId: '1ougwkz1', dataset: 'production' }
+	sanity: { projectId: '1ougwkz1', dataset: 'production' },
+	secrets: {
+		sanityWriteToken: { from: 'env', key: 'WILLIAMSTOWN_SANITY_WRITE_TOKEN' },
+		revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' },
+		metaPageAccessToken: { from: 'env', key: 'WILLIAMSTOWN_META_PAGE_ACCESS_TOKEN' },
+		metaFacebookPageId: { from: 'env', key: 'WILLIAMSTOWN_META_FACEBOOK_PAGE_ID' },
+		metaInstagramAccountId: { from: 'env', key: 'WILLIAMSTOWN_META_INSTAGRAM_ACCOUNT_ID' }
+	},
+	theme: {
+		light: { primary: '#1a4ba6', secondary: '#c9a900', brand: '#1a4ba6' },
+		dark: { primary: 'oklch(72% 0.18 260)', secondary: '#c9a900', brand: '#1a4ba6' }
+	}
 });
 ```
 
-```ts
-// secrets.ts
-import 'server-only';
+The whole file is server-only, including the public parts. Nothing on the client needs it:
 
-export const williamstownSecrets = defineSecrets({
-	sanityWriteToken: { from: 'env', key: 'WILLIAMSTOWN_SANITY_WRITE_TOKEN' },
-	revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' },
-	metaPageAccessToken: { from: 'env', key: 'WILLIAMSTOWN_META_PAGE_ACCESS_TOKEN' },
-	metaFacebookPageId: { from: 'env', key: 'WILLIAMSTOWN_META_FACEBOOK_PAGE_ID' },
-	metaInstagramAccountId: { from: 'env', key: 'WILLIAMSTOWN_META_INSTAGRAM_ACCOUNT_ID' }
-});
-```
+- `sanityImageLoader` only rewrites query parameters on a URL it is already given, so it never needs
+  the project id.
+- Client Components that show the club name, such as `MobileHeader` and `DesktopNavbar`, take it as
+  a prop from a Server Component.
+- Theme tokens reach the browser as CSS, emitted by the root layout, never as JavaScript.
+
+Check during MT-01 that `server-only` resolves in `proxy.ts`, which imports the registry. It should,
+because the proxy runs on the server, but this project is on Next.js 16 and worth confirming rather
+than assuming.
 
 The manifest declares **where a secret comes from**, never the value. That buys three things:
 
@@ -161,7 +169,7 @@ from the registry.
 ## Secrets
 
 Five secrets are per club, read through `getTenantSecret(name, tenant)`, which resolves them from
-that club's `secrets.ts` manifest:
+that club's manifest:
 
 | Per club                 | Used by                    |
 | ------------------------ | -------------------------- |
@@ -218,10 +226,10 @@ Public URLs do not change. The slug is only visible after the rewrite.
 
 ## Branding
 
-- **Colours**: each club's tokens live in `src/tenants/<slug>/theme.ts`, which starts with
-  `import 'server-only'`. The root layout is a Server Component, so it reads the active club's
-  tokens and emits one `<style>` element overriding `--color-primary`, `--color-secondary` and
-  `--color-brand` on `:root`, for light and dark.
+- **Colours**: each club's tokens live in the `theme` block of `src/tenants/<slug>.ts`, which is
+  server-only. The root layout is a Server Component, so it reads the active club's tokens and emits
+  one `<style>` element overriding `--color-primary`, `--color-secondary` and `--color-brand` on
+  `:root`, for light and dark.
 
   Only the active club's colours reach the HTML, and no club's tokens reach a JavaScript bundle.
   The `server-only` import turns a mistake into a build error rather than a review comment. This is
