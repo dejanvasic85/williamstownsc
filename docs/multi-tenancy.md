@@ -12,14 +12,15 @@ www.altonacity.com,     altonacity.com      ->  altona-city
 
 ## Decisions
 
-| Decision          | Choice                                               | Why                                                                                              |
-| ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Hosting           | One Vercel project, every club domain attached       | One deploy, one build, one set of shared secrets                                                 |
-| Content isolation | One Sanity project per club                          | Hard data separation, per-club billing and roles, a club can leave with its own project          |
-| Tenant resolution | `proxy.ts` maps `Host` to a tenant slug              | Runs before the cache, so pages stay static per tenant                                           |
-| Route shape       | `app/[tenant]` is the root layout                    | The tenant becomes a root parameter, readable anywhere on the server without going dynamic       |
-| Tenant registry   | Typed config module in the repo, one folder per club | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy |
-| Theme             | One CSS file per club, scoped by `data-tenant`       | Colours sit beside the club's config, not in a shared file every club edits                      |
+| Decision          | Choice                                                | Why                                                                                              |
+| ----------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Hosting           | One Vercel project, every club domain attached        | One deploy, one build, one set of shared secrets                                                 |
+| Content isolation | One Sanity project per club                           | Hard data separation, per-club billing and roles, a club can leave with its own project          |
+| Tenant resolution | `proxy.ts` maps `Host` to a tenant slug               | Runs before the cache, so pages stay static per tenant                                           |
+| Route shape       | `app/[tenant]` is the root layout                     | The tenant becomes a root parameter, readable anywhere on the server without going dynamic       |
+| Tenant registry   | Typed config module in the repo, one folder per club  | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy |
+| Theme             | Server-only tokens per club, emitted as one `<style>` | Colours sit beside the club's config, never reach a JS bundle, and stay readable from the server |
+| Secrets           | Per-club manifest declaring where each value lives    | Reviewable, verifiable in CI, and the store can change per club without touching call sites      |
 
 ## How a request flows
 
@@ -121,13 +122,14 @@ socials, SEO defaults, canonical URL, Matchday club id. Do not duplicate any of 
 
 Server code gets the tenant three ways, depending on where it runs. They are not interchangeable.
 
-| Where                                                         | How                                       |
-| ------------------------------------------------------------- | ----------------------------------------- |
-| Server Components, layouts, server utilities                  | `await tenant()` from `next/root-params`  |
-| Route Handlers under `[tenant]`: sitemap, robots, manifest    | the `params` prop                         |
-| Route Handlers authenticating a webhook: revalidate, Matchday | the validated `Host`, bound to the secret |
-| Every other Route Handler, and Server Actions                 | the `x-tenant` request header             |
-| Client Components                                             | props, from a Server Component            |
+| Where                                                      | How                                       |
+| ---------------------------------------------------------- | ----------------------------------------- |
+| Server Components, layouts, server utilities               | `await tenant()` from `next/root-params`  |
+| Route Handlers under `[tenant]`: sitemap, robots, manifest | the `params` prop                         |
+| `/api/revalidate`                                          | the validated `Host`, bound to the secret |
+| `/api/webhooks/league-updates`                             | the payload, after the signature verifies |
+| Every other Route Handler, and Server Actions              | the `x-tenant` request header             |
+| Client Components                                          | props, from a Server Component            |
 
 `next/root-params` arrived in Next.js 16.3.0 and this project runs 16.3.4. Because `[tenant]` sits
 above the root layout, the getter works in any Server Component without prop drilling and without
