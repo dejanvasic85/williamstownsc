@@ -50,11 +50,11 @@ clubs that is the right trade: the registry stays type-checked, the theme stays 
 and every club that goes live has been through a PR.
 
 1. Create the Sanity project, deploy the schema, seed `siteSettings`.
-2. Add `src/tenants/<slug>/tenant.ts` and `src/tenants/<slug>/theme.css`, and register both.
-3. Add the club's secrets in Vercel.
+2. Add the `src/tenants/<slug>/` folder and register it.
+3. Store the club's five secrets wherever its manifest says they live.
 4. Attach the domains to the Vercel project and point DNS at Vercel.
 5. Scope any legacy redirects to that club's domains.
-6. Deploy.
+6. Run the preflight check, then deploy.
 
 Improve later, when the club count justifies it:
 
@@ -64,34 +64,55 @@ Improve later, when the club count justifies it:
 
 ## Tenant files
 
-Everything that defines a club at build time lives in one folder.
+One folder per club, holding a manifest of everything that defines it.
 
 ```text
 src/tenants/
-  index.ts              registry: imports each tenant.ts, validates with zod
-  themes.css            imports every club theme file
+  index.ts              registry: imports each manifest, validates with zod
   williamstown/
-    tenant.ts           slug, domains, Sanity project
-    theme.css           [data-tenant='williamstown'] { --color-primary: ... }
+    tenant.ts           public: slug, domains, Sanity project
+    secrets.ts          server-only: where each secret comes from
+    theme.ts            server-only: colour tokens
   altona-city/
-    tenant.ts
-    theme.css
+    ...
 ```
 
 ```ts
-type Tenant = {
-	slug: string; // 'altona-city', matches /^[a-z0-9]+(?:-[a-z0-9]+)*$/
-	domains: string[]; // apex + www + any extra production host
-	sanityProjectId: string;
-	sanityDataset: string; // 'production'
-};
+// tenant.ts
+export const williamstown = defineTenant({
+	slug: 'williamstown', // matches /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+	domains: ['williamstownsc.com', 'www.williamstownsc.com'],
+	sanity: { projectId: '1ougwkz1', dataset: 'production' }
+});
 ```
+
+```ts
+// secrets.ts
+import 'server-only';
+
+export const williamstownSecrets = defineSecrets({
+	sanityWriteToken: { from: 'env', key: 'WILLIAMSTOWN_SANITY_WRITE_TOKEN' },
+	revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' },
+	metaPageAccessToken: { from: 'env', key: 'WILLIAMSTOWN_META_PAGE_ACCESS_TOKEN' },
+	metaFacebookPageId: { from: 'env', key: 'WILLIAMSTOWN_META_FACEBOOK_PAGE_ID' },
+	metaInstagramAccountId: { from: 'env', key: 'WILLIAMSTOWN_META_INSTAGRAM_ACCOUNT_ID' }
+});
+```
+
+The manifest declares **where a secret comes from**, never the value. That buys three things:
+
+- **Per-club, per-secret sources.** `from: 'env'` today, `from: 'ssm'` for one club tomorrow. No
+  global migration and no flag day. `getTenantSecret` dispatches on `from`.
+- **A preflight check.** Because every secret is declared, a script can walk the registry and assert
+  each one resolves. CI catches a missing value before deploy, instead of a code path hitting it in
+  production.
+- **No naming convention to remember.** The key is written down.
+
+Every per-club secret is read at request time, so a runtime store works for all of them. Nothing
+club-specific is needed during `next build`.
 
 The slug is a URL segment, so it is lowercase words joined by hyphens. The JavaScript identifier
 rule that `next/root-params` imposes applies to the folder name `[tenant]`, not to the slug value.
-
-Environment variable names derive from the slug: `altona-city` gives `ALTONA_CITY`, so the write
-token is `SANITY_WRITE_TOKEN_ALTONA_CITY`.
 
 Everything else about a club lives in its `siteSettings` document: name, logo, contact emails,
 socials, SEO defaults, canonical URL, Matchday club id. Do not duplicate any of it here.
@@ -137,19 +158,28 @@ from the registry.
 
 ## Secrets
 
-Shared by every club: AWS SES, reCAPTCHA, Sentry, `SOCIAL_PUBLISH_SECRET`, `MATCHDAY_API_BASE_URL`.
+Five secrets are per club, read through `getTenantSecret(name, tenant)`, which resolves them from
+that club's `secrets.ts` manifest:
 
-Per club, read through `getTenantSecret(name, tenant)`:
+| Per club                 | Used by                    |
+| ------------------------ | -------------------------- |
+| `sanityWriteToken`       | form submissions           |
+| `revalidateSecret`       | that club's Sanity webhook |
+| `metaPageAccessToken`    | social publishing          |
+| `metaFacebookPageId`     | social publishing          |
+| `metaInstagramAccountId` | social publishing          |
 
-```text
-SANITY_WRITE_TOKEN_WILLIAMSTOWN
-MATCHDAY_API_TOKEN_WILLIAMSTOWN
-MATCHDAY_WEBHOOK_SECRET_WILLIAMSTOWN
-REVALIDATE_SECRET_WILLIAMSTOWN
-META_PAGE_ACCESS_TOKEN_WILLIAMSTOWN
-META_FACEBOOK_PAGE_ID_WILLIAMSTOWN
-META_INSTAGRAM_ACCOUNT_ID_WILLIAMSTOWN
-```
+Everything else is system-wide and stays a plain environment variable:
+
+| System-wide                                         | Note                                       |
+| --------------------------------------------------- | ------------------------------------------ |
+| `MATCHDAY_API_TOKEN`, `MATCHDAY_API_BASE_URL`       | one API for every club                     |
+| `MATCHDAY_WEBHOOK_SECRET`                           | one webhook for every club                 |
+| `MATCHDAY_GITHUB_TOKEN`                             | `pnpm install` only, never read by the app |
+| AWS SES, reCAPTCHA, Sentry, `SOCIAL_PUBLISH_SECRET` | unchanged                                  |
+
+Matchday is one service with one token. The club is identified by `siteSettings.matchday.clubId`,
+not by a per-club credential.
 
 ## Cache tags
 
@@ -168,7 +198,7 @@ away. Next.js allows multiple root layouts, so the club pages and the Studio eac
 ```text
 src/app/
   [tenant]/
-    layout.tsx                      root layout: <html data-tenant>, imports themes.css
+    layout.tsx                      root layout: <html data-tenant>, emits theme tokens
     (site)/...                      club pages
     sitemap.ts                      -> /<slug>/sitemap.xml
     robots.txt/route.ts             -> /<slug>/robots.txt
@@ -186,10 +216,22 @@ Public URLs do not change. The slug is only visible after the rewrite.
 
 ## Branding
 
-- **Colours**: the root layout sets `<html data-tenant="williamstown">` from the root parameter, so
-  it is known at build time. Each `theme.css` scopes its overrides of `--color-primary`,
-  `--color-secondary` and `--color-brand` under `[data-tenant='<slug>']`, in both light and dark.
-  `themes.css` imports them all, and the root layout imports that. No inline styles.
+- **Colours**: each club's tokens live in `src/tenants/<slug>/theme.ts`, which starts with
+  `import 'server-only'`. The root layout is a Server Component, so it reads the active club's
+  tokens and emits one `<style>` element overriding `--color-primary`, `--color-secondary` and
+  `--color-brand` on `:root`, for light and dark.
+
+  Only the active club's colours reach the HTML, and no club's tokens reach a JavaScript bundle.
+  The `server-only` import turns a mistake into a build error rather than a review comment. This is
+  a `<style>` element, not a style attribute, so it stays inside the no-inline-styles rule, and the
+  values are known at build time so the layout stays static.
+
+  Keeping the tokens in TypeScript rather than CSS also means the PWA manifest can read
+  `theme_color` directly. CSS is not readable from a Route Handler.
+
+  `<html data-tenant="williamstown">` stays, for debugging and any club-specific rule beyond the
+  tokens.
+
 - **Logo**: already in `siteSettings`.
 - **Favicons and PWA icons**: replace the static files in `public/favicon/` with routes under
   `[tenant]`, generated from the club logo in Sanity.
@@ -225,10 +267,17 @@ another club's data.
 3. **`dynamicParams = false` on `[tenant]`.** An unregistered slug cannot render.
 4. **No handler falls back to a default club**, and none reads the tenant from a query parameter or
    request body. A handler with a missing or unknown `x-tenant` returns 400.
-5. **Webhook handlers bind the tenant to the credential.** `/api/revalidate` and
-   `/api/webhooks/league-updates` resolve the club from the validated `Host`, then check the secret
-   against that club's secret. A shared secret plus a caller-named club would let anyone holding it
-   clear any club's cache. Each club points its webhooks at its own domain.
+5. **Webhook handlers never let an unauthenticated caller name the club.** The two handlers do this
+   differently, because their senders differ:
+   - `/api/revalidate` takes the club from the validated `Host` and checks the request secret
+     against **that club's** `revalidateSecret`. Each club has its own Sanity project, so each has
+     its own secret and points its webhook at its own domain. A shared secret plus a caller-named
+     club would let anyone holding it clear any club's cache.
+   - `/api/webhooks/league-updates` verifies `X-Matchday-Signature` against the system-wide
+     `MATCHDAY_WEBHOOK_SECRET`, then reads the club from the **verified** payload. Matchday is one
+     service with one webhook, so there is no per-club credential to bind to. This is safe because
+     the payload is only trusted after the signature checks out. Reject the request if the payload
+     names a club that is not in the registry.
 6. **Every cache is keyed by tenant slug.** The `cachedClientConfig` singleton becomes a map keyed
    by slug. `React.cache` wrappers such as `getMatchdayClubId` take the tenant as their first
    argument, so the slug lands in the cache key.
@@ -261,7 +310,7 @@ another club's data.
 ## Sequencing
 
 Work is tracked in the [Multi-tenant platform](https://github.com/dejanvasic85/williamstownsc/milestone/2)
-milestone (MT-01 to MT-19), in three phases:
+milestone (MT-01 to MT-20), in three phases:
 
 1. **Foundations** - registry, proxy, per-tenant Sanity client and secrets.
 2. **Tenant-aware app** - routes, content modules, metadata, theming, API routes, Studio.
