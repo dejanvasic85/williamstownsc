@@ -18,7 +18,7 @@ www.altonacity.com,     altonacity.com      ->  altona-city
 | Content isolation | One Sanity project per club                           | Hard data separation, per-club billing and roles, a club can leave with its own project          |
 | Tenant resolution | `proxy.ts` maps `Host` to a tenant slug               | Runs before the cache, so pages stay static per tenant                                           |
 | Route shape       | `app/[tenant]` is the root layout                     | The tenant becomes a root parameter, readable anywhere on the server without going dynamic       |
-| Tenant registry   | Typed config module in the repo, one file per club    | Simple and type-safe at 2-5 clubs. Move to Edge Config when adding a club must not need a deploy |
+| Tenant registry   | Typed config module in the repo, one file per club    | Simple and type-safe at 2-5 clubs. Adding a club is a code change, on purpose                    |
 | Theme             | Server-only tokens per club, emitted as one `<style>` | Colours sit beside the club's config, never reach a JS bundle, and stay readable from the server |
 | Secrets           | Per-club manifest declaring where each value lives    | Reviewable, verifiable in CI, and the store can change per club without touching call sites      |
 
@@ -35,6 +35,9 @@ proxy.ts
   - path already starts with a tenant slug -> 404
   - set x-tenant: altona-city
   - rewrite /news -> /altona-city/news
+      rewritten:     page paths, /sitemap.xml, /robots.txt, /manifest.webmanifest
+      not rewritten: /api/..., /studio, /_next, static files
+      those still get x-tenant, they just keep their path
   |
   v
 app/[tenant]/(site)/news/page.tsx
@@ -59,9 +62,20 @@ and every club that goes live has been through a PR.
 
 Improve later, when the club count justifies it:
 
-- Move the domain map to Edge Config, so a new club needs no deploy.
-- Move the palette into `siteSettings`, so a club can change its own colours.
 - Script steps 1 to 3 as a provisioning command.
+- Move the palette into `siteSettings`, so a club can change its own colours.
+- Move the domain map to Edge Config, so **changing a club's domains** needs no deploy.
+
+That last one does not make **adding** a club deploy-free, and it is worth being clear about why.
+Three things still come from the build:
+
+- `generateStaticParams()` returns the slugs known at build time.
+- `dynamicParams = false` rejects any slug it did not generate.
+- The club's config file is code: secrets, theme and Sanity project.
+
+Adding a club without a deploy would mean moving all of that to runtime, turning `dynamicParams`
+back on and giving up per-club prerendering. That is a different architecture, not an increment.
+Deploy-free onboarding is not on this roadmap.
 
 ## Tenant files
 
@@ -150,13 +164,17 @@ argument instead.
 
 ## Local and preview hosts
 
-The registry lists production domains only. A separate rule handles everything else, and it is off
-in production:
+The registry lists production domains only. A separate rule handles everything else:
 
 - `<slug>.localhost` and `<slug>.localhost:3003` match the club with that slug. Browsers resolve any
   `.localhost` subdomain with no hosts-file change.
 - An unmatched `*.vercel.app` preview host falls back to a default club named by an environment
-  variable.
+  variable. Resolve that slug through the registry like any other, so an unknown default fails
+  loudly rather than routing.
+
+Gate the rule on `VERCEL_ENV !== 'production'`, not `NODE_ENV`. Next.js sets `NODE_ENV=production`
+for preview builds too, so `NODE_ENV` cannot tell a preview from production and the fallback would
+stay live in production.
 
 ## Sanity access
 
@@ -193,12 +211,29 @@ not by a per-club credential.
 
 ## Cache tags
 
-Every tag carries a tenant prefix, built by one shared function.
+Content pulled from a club's own Sanity project carries a tenant prefix, built by one shared
+function.
 
 ```text
 siteSettings  ->  williamstown:siteSettings
 news          ->  williamstown:news
 ```
+
+**Matchday league tags are the exception and stay unprefixed.**
+
+```text
+matchday:league:<leagueId>    shared by every club in that league
+```
+
+League ladders and fixtures come from one Matchday API with one system token, and the response is
+the same whoever asks. A league also spans clubs, so two clubs in the same division legitimately
+read the same data. Prefixing it per club would store the same payload once per club and multiply
+Matchday API calls by the number of clubs, for no isolation gain.
+
+The test for any tag: **does the response depend on which club is asking?** Sanity content does, so
+it gets a prefix. Matchday league data does not, so it does not. Club-specific rendering on top of
+league data, such as picking out that club's fixtures, happens at render time and is covered by the
+page's own prefixed tags.
 
 ## Routes and layouts
 
@@ -284,17 +319,17 @@ another club's data.
      its own secret and points its webhook at its own domain. A shared secret plus a caller-named
      club would let anyone holding it clear any club's cache.
    - `/api/webhooks/league-updates` verifies `X-Matchday-Signature` against the system-wide
-     `MATCHDAY_WEBHOOK_SECRET`, then reads the club from the **verified** payload. Matchday is one
-     service with one webhook, so there is no per-club credential to bind to. This is safe because
-     the payload is only trusted after the signature checks out. Reject the request if the payload
-     names a club that is not in the registry.
+     `MATCHDAY_WEBHOOK_SECRET`, then revalidates `matchday:league:<leagueId>`. It needs no club
+     binding, because the payload names a **league**, not a club, and a league spans clubs. The tag
+     it clears is exactly the data that webhook owns, so its blast radius is already correct.
 6. **Every cache is keyed by tenant slug.** The `cachedClientConfig` singleton becomes a map keyed
    by slug. `React.cache` wrappers such as `getMatchdayClubId` take the tenant as their first
    argument, so the slug lands in the cache key.
 7. **No module-level Sanity client or config.** A value computed at import time cannot vary by club,
    and will serve one club's data to another.
 8. **Readers and invalidators adopt prefixed cache tags in the same change.** Half-migrated, either
-   nothing invalidates or one club's revalidation clears every club.
+   nothing invalidates or one club's revalidation clears every club. The one exception is data that
+   does not depend on the club, currently `matchday:league:*`, which stays unprefixed on purpose.
 9. **Responses that vary by club vary by path.** `src/app/sitemap.ts` exports `revalidate = 86400`;
    at the app root, resolving the club from `Host` would cache one club's sitemap and serve it to
    every domain. Under `[tenant]` the cache key is per club by construction.
