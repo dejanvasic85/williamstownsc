@@ -194,24 +194,60 @@ Content modules call `await tenant()` themselves, so the 18 modules in `lib/cont
 current signatures. Code called from a Route Handler or Server Action takes an explicit tenant
 argument instead.
 
-## Local and preview hosts
+## Environments
 
-The registry lists production domains only. A separate rule handles everything else:
+The registry lists production domains only. Everything else resolves through rules that are off in
+production.
 
-- `<slug>.localhost` and `<slug>.localhost:3003` match the club with that slug. Browsers resolve any
-  `.localhost` subdomain with no hosts-file change.
-- An unmatched `*.vercel.app` preview host falls back to the demo club. Resolve that slug through
-  the registry like any other, so an unknown default fails loudly rather than routing.
-- On a preview host, a path that starts with a slug resolves to that club instead of returning 404,
-  so `preview-abc.vercel.app/altona-city/news` works. Those routes already exist, because
-  `generateStaticParams` generates them. Rule 2 is the only thing blocking them, and it exists to
-  stop one club's **production domain** reaching another club. A preview host is nobody's domain,
-  so there is nothing to protect. Without this a preview can only ever show one club, which makes a
-  multi-tenant PR impossible to review.
+| Environment    | Host                               | Club comes from     | Real host resolution |
+| -------------- | ---------------------------------- | ------------------- | -------------------- |
+| Local          | `<slug>.localhost:3003`            | the subdomain       | yes                  |
+| Per-PR preview | the generated deployment URL       | the path, else demo | no                   |
+| Staging        | `<slug>.staging.<platform-domain>` | the `Host` header   | yes                  |
+| Production     | the club's own domains             | the `Host` header   | yes                  |
 
-Gate the rule on `VERCEL_ENV !== 'production'`, not `NODE_ENV`. Next.js sets `NODE_ENV=production`
-for preview builds too, so `NODE_ENV` cannot tell a preview from production and the fallback would
-stay live in production.
+Gate the non-production rules on `VERCEL_ENV !== 'production'`, not `NODE_ENV`. Next.js sets
+`NODE_ENV=production` for preview builds too, so `NODE_ENV` cannot tell a preview from production
+and the fallbacks would stay live in production.
+
+### Local
+
+`<slug>.localhost` and `<slug>.localhost:3003` match the club with that slug. Browsers resolve any
+`.localhost` subdomain with no hosts-file change.
+
+### Per-PR previews
+
+Each deployment gets one generated URL, so there is no per-club host to use. Two rules make it
+workable:
+
+- A bare preview URL falls back to the demo club. Resolve that slug through the registry like any
+  other, so an unknown default fails loudly rather than routing.
+- A path that starts with a slug resolves to that club rather than returning 404, so
+  `<preview-url>/altona-city/news` works. Those routes already exist, because `generateStaticParams`
+  generates them. Rule 2 is the only thing blocking them, and it exists to stop one club's
+  **production domain** reaching another club. A preview host is nobody's domain, so there is
+  nothing to protect.
+
+On Pro, a preview deployment suffix rebrands the generated URL from `*.vercel.app` to
+`*.preview.<platform-domain>`. Worth doing for cookies and for looking less throwaway, but it does
+not change the shape above: it is still one host per deployment, not one per club.
+
+### Staging, and why it matters
+
+**The path prefix bypasses host resolution, which is the mechanism most likely to break.** A preview
+that only ever reaches clubs by path never exercises `Host` lookup, normalisation, the `www.` strip,
+or rule 2. Those are the parts worth testing.
+
+So point a per-club subdomain at a long-lived branch. Vercel project domains take a `gitBranch`
+link, so `williamstown.staging.<platform-domain>` and `demo.staging.<platform-domain>` can both
+track the same branch and behave exactly like production hosts.
+
+The isolation suite runs here, not against a PR preview. Several of its tests are meaningless
+without real per-club hosts: a spoofed `x-tenant` needs a host to contradict, and a cross-club 404
+needs rule 2 switched on.
+
+One open question: the platform now needs a neutral domain of its own. Previews and staging for
+Altona City should not sit under `williamstownsc.com`.
 
 ## Sanity access
 
@@ -470,7 +506,9 @@ suite splits three ways.
 The project matrix is generated from `getAllTenants()`, so adding a club adds structural coverage
 automatically and the matrix cannot drift from the registry.
 
-The isolation suite is the one that matters most, and it tests the rules directly:
+The isolation suite is the one that matters most, and it tests the rules directly. It runs against
+staging, where each club has a real host, because a path-prefixed preview cannot exercise the rules
+it checks:
 
 - A spoofed `x-tenant` header on one club's domain does not change which club renders.
 - `williamstownsc.com/demo/news` returns 404 in production.
