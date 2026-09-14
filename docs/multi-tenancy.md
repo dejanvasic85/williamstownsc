@@ -500,6 +500,30 @@ another club's data.
     Keep them in `vercel.json` while the rules stay simple, since edge redirects run before any
     function. Note that `has` conditions do not work under `vercel dev`.
 
+## Shipping this to a live site
+
+Williamstown is in production the whole time, so the order matters more than the dependency graph
+alone shows. Three groups:
+
+**Additive, safe on their own.** The registry, the per-club Sanity client factory and the secret
+resolver can all ship with nothing using them yet. Add `getSanityClient` alongside the existing
+singleton rather than replacing it, so nothing breaks while callers still import the old one.
+
+**The cutover, which ships as one deploy.** The proxy and the route move go together. The proxy
+rewrites every page path to `/<slug>/...`, and those routes do not exist until the move happens, so
+shipping the proxy first takes the site down. Still one club at this point, so the singleton client
+is still correct and the site should look identical.
+
+**Everything after, incremental.** Content modules, cache tags, metadata, theming and the rest each
+ship on their own.
+
+One ordering trap: the demo club cannot arrive until the content modules take a tenant **and** cache
+tags carry a prefix. Land it earlier and the second club renders Williamstown's content from a
+shared cache, because the singleton client and the unprefixed tags are both still club-blind.
+
+Rollback is a Vercel redeploy of the previous build. Nothing here migrates data, and no public URL
+changes, so there is nothing to undo beyond the deployment itself.
+
 ## Testing
 
 Confidence comes from three layers, each running where it is cheapest.
