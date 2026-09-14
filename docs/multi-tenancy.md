@@ -35,9 +35,9 @@ proxy.ts
   - path already starts with a tenant slug -> 404
   - set x-tenant: altona-city
   - rewrite /news -> /altona-city/news
-      rewritten:     page paths, /sitemap.xml, /robots.txt,
-                     /manifest.webmanifest, /favicon.ico, /icon.svg
-      not rewritten: /api/..., /studio, /_next, static files
+      rewritten:     page paths, /sitemap.xml, /robots.txt, /manifest.webmanifest
+                     icons -> /tenants/<slug>/... (static files)
+      not rewritten: /api/..., /studio, /_next, other static files
       those still get x-tenant, they just keep their path
   |
   v
@@ -56,14 +56,15 @@ and every club that goes live has been through a PR.
 
 1. Create the Sanity project, deploy the schema, seed `siteSettings`.
 2. Add `src/tenants/<slug>.ts` and register it.
-3. Store the club's five secrets wherever its manifest says they live.
-4. Attach the domains to the Vercel project and point DNS at Vercel.
-5. Scope any legacy redirects to that club's domains.
-6. Run the preflight check, then deploy.
+3. Add the club's icons to `public/tenants/<slug>/`.
+4. Store the club's five secrets wherever its manifest says they live.
+5. Attach the domains to the Vercel project and point DNS at Vercel.
+6. Scope any legacy redirects to that club's domains.
+7. Run the preflight check, then deploy.
 
 Improve later, when the club count justifies it:
 
-- Script steps 1 to 3 as a provisioning command.
+- Script steps 1 to 4 as a provisioning command.
 - Move the palette into `siteSettings`, so a club can change its own colours.
 - Move the domain map to Edge Config, so **changing a club's domains** needs no deploy.
 
@@ -118,6 +119,9 @@ The whole file is server-only, including the public parts. Nothing on the client
 - Client Components that show the club name, such as `MobileHeader` and `DesktopNavbar`, take it as
   a prop from a Server Component.
 - Theme tokens reach the browser as CSS, emitted by the root layout, never as JavaScript.
+- `ConfigProvider` does hand `ClientConfig` to the browser, but the only field any Client Component
+  reads is `recaptchaSiteKey`, through `useConfig` in `ReCaptcha` and `ContactForm`. That is
+  system-wide, not per club. `ClientConfig` can drop its Sanity fields entirely.
 
 Check during MT-01 that `server-only` resolves in `proxy.ts`, which imports the registry. It should,
 because the proxy runs on the server, but this project is on Next.js 16 and worth confirming rather
@@ -250,7 +254,6 @@ src/app/
     sitemap.xml/route.ts            -> /<slug>/sitemap.xml
     robots.txt/route.ts             -> /<slug>/robots.txt
     manifest.webmanifest/route.ts   -> /<slug>/manifest.webmanifest
-    icon.svg/route.ts               -> /<slug>/icon.svg
   studio/
     layout.tsx                      root layout for the Studio
   api/...                           route handlers, no layout
@@ -303,14 +306,59 @@ active, so removing the root layout does not affect it.
   `<html data-tenant="williamstown">` stays, for debugging and any club-specific rule beyond the
   tokens.
 
-- **Logo**: already in `siteSettings`.
-- **Favicons and PWA icons**: replace the static files in `public/favicon/` with routes under
-  `[tenant]`, generated from the club logo in Sanity. The `<link>` tags the layout emits point at
-  `/<slug>/icon.svg`, but browsers still request `/favicon.ico` at the root on their own, so the
-  proxy rewrites that path too.
+- **Logo**: already in `siteSettings`. That is the in-page header logo, a different job from the
+  icons below.
 - **Copy**: every hardcoded "Williamstown SC" string moves to `siteSettings`. Known spots are the
   root layout, the 404 pages, the news, sponsors and football sections, the contact email
   template, the calendar feed UID, and the Meta publish hashtags.
+
+## Icons and the PWA manifest
+
+Icons are static files per club. The manifest is a Route Handler. They are solved differently
+because one is a design asset and the other reads content.
+
+### Icons: static files, not generated
+
+```text
+public/tenants/williamstown/
+  favicon.ico
+  icon.svg
+  apple-icon.png     180x180
+  icon-192.png       maskable
+  icon-512.png       maskable
+```
+
+Not generated from the Sanity logo, for three reasons:
+
+- Maskable icons need a padded safe zone at exact square sizes. Cropping an arbitrary logo upload
+  to that automatically gives poor results.
+- Static files are served by the CDN with no function call and no image transformation charge,
+  which `AGENTS.md` already tells us to avoid.
+- A club's crest changes about never. Treating it as a committed asset matches the rest of
+  onboarding, which is a code change on purpose.
+
+Delete `src/app/favicon.ico`, `src/app/icon.svg` and `src/app/apple-icon.png`. Those are Next.js
+metadata file conventions, so leaving them in place makes Next emit root-level icon links that
+compete with the per-club ones. Delete `public/favicon/` too. While replacing them, note that the
+current `icon.svg` is 257KB and worth shrinking.
+
+### Manifest: a Route Handler
+
+`src/app/[tenant]/manifest.webmanifest/route.ts` reads the slug from `params`, takes `name` and
+`short_name` from that club's `siteSettings.clubName`, `theme_color` and `background_color` from its
+`theme` block, and points `icons` at the static paths above. Keeping it a handler means the club
+name is not written down a second time.
+
+### Two traps
+
+**Emitted links stay unprefixed.** The layout points at `/icon.svg` and `/manifest.webmanifest`,
+never `/williamstown/icon.svg`, and the proxy rewrites them. A slug-prefixed link would be a request
+whose path starts with a known slug, which rule 2 rejects with a 404.
+
+**Do not use the boilerplate proxy matcher.** The common Next.js matcher excludes `favicon.ico` by
+name. Copy it and a bare `/favicon.ico` never reaches the proxy, so every club falls back to
+whatever sits at the root. Browsers request that path on their own whatever the page links to, so it
+has to be matched and rewritten.
 
 ## Sanity Studio
 
