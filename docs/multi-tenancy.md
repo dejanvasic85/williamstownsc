@@ -10,6 +10,10 @@ www.williamstownsc.com, williamstownsc.com  ->  williamstown
 www.altonacity.com,     altonacity.com      ->  altona-city
 ```
 
+Each club keeps its own domain in production. Everything else, meaning previews, staging and the
+demo club, sits on `stadly.com.au`, since these sites are an addon to Stadly rather than a
+Williamstown product.
+
 ## Decisions
 
 | Decision          | Choice                                                | Why                                                                                              |
@@ -94,9 +98,8 @@ customer. It exists to make the rest of the work testable, and it does three job
 It needs its own Sanity project, seeded with enough content to render every page. It has no Facebook
 page, so it omits the `socialPublishing` group, which is the case that forced optional secrets.
 
-Its host can start as a `*.vercel.app` domain attached to the project, which needs no DNS and no
-purchase. Once the platform has a neutral domain, `demo.<platform-domain>` is the better home, and
-it is the natural place to point anyone asking what the platform looks like.
+It lives at `demo.stadly.com.au`, so it doubles as the place to point a club asking what a Stadly
+site looks like.
 
 ## Tenant files
 
@@ -201,12 +204,12 @@ argument instead.
 The registry lists production domains only. Everything else resolves through rules that are off in
 production.
 
-| Environment    | Host                               | Club comes from     | Real host resolution |
-| -------------- | ---------------------------------- | ------------------- | -------------------- |
-| Local          | `<slug>.localhost:3003`            | the subdomain       | yes                  |
-| Per-PR preview | the generated deployment URL       | the path, else demo | no                   |
-| Staging        | `<slug>.staging.<platform-domain>` | the `Host` header   | yes                  |
-| Production     | the club's own domains             | the `Host` header   | yes                  |
+| Environment    | Host                           | Club comes from     | Real host resolution |
+| -------------- | ------------------------------ | ------------------- | -------------------- |
+| Local          | `<slug>.localhost:3003`        | the subdomain       | yes                  |
+| Per-PR preview | the generated deployment URL   | the path, else demo | no                   |
+| Staging        | `<slug>.staging.stadly.com.au` | the `Host` header   | yes                  |
+| Production     | the club's own domains         | the `Host` header   | yes                  |
 
 Gate the non-production rules on `VERCEL_ENV !== 'production'`, not `NODE_ENV`. Next.js sets
 `NODE_ENV=production` for preview builds too, so `NODE_ENV` cannot tell a preview from production
@@ -231,7 +234,7 @@ workable:
   nothing to protect.
 
 On Pro, a preview deployment suffix rebrands the generated URL from `*.vercel.app` to
-`*.preview.<platform-domain>`. Worth doing for cookies and for looking less throwaway, but it does
+`*.preview.stadly.com.au`. Worth doing for cookies and for looking less throwaway, but it does
 not change the shape above: it is still one host per deployment, not one per club.
 
 ### Staging, and why it matters
@@ -241,15 +244,16 @@ that only ever reaches clubs by path never exercises `Host` lookup, normalisatio
 or rule 2. Those are the parts worth testing.
 
 So point a per-club subdomain at a long-lived branch. Vercel project domains take a `gitBranch`
-link, so `williamstown.staging.<platform-domain>` and `demo.staging.<platform-domain>` can both
+link, so `williamstown.staging.stadly.com.au` and `demo.staging.stadly.com.au` can both
 track the same branch and behave exactly like production hosts.
 
 The isolation suite runs here, not against a PR preview. Several of its tests are meaningless
 without real per-club hosts: a spoofed `x-tenant` needs a host to contradict, and a cross-club 404
 needs rule 2 switched on.
 
-One open question: the platform now needs a neutral domain of its own. Previews and staging for
-Altona City should not sit under `williamstownsc.com`.
+Everything outside production sits on `stadly.com.au`, the platform's own domain, rather than under
+any one club's. Altona City's staging site should not live at `altona-city.staging.williamstownsc.com`,
+and a preview link sent to their committee should not be a Williamstown URL.
 
 ## Sanity access
 
