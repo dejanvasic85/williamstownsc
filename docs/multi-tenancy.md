@@ -123,9 +123,9 @@ The whole file is server-only, including the public parts. Nothing on the client
   reads is `recaptchaSiteKey`, through `useConfig` in `ReCaptcha` and `ContactForm`. That is
   system-wide, not per club. `ClientConfig` can drop its Sanity fields entirely.
 
-Check during MT-01 that `server-only` resolves in `proxy.ts`, which imports the registry. It should,
-because the proxy runs on the server, but this project is on Next.js 16 and worth confirming rather
-than assuming.
+Check while building the registry that `server-only` resolves in `proxy.ts`, which imports it. It
+should, because the proxy runs on the server, but this project is on Next.js 16 and worth
+confirming rather than assuming.
 
 The manifest declares **where a secret comes from**, never the value. That buys three things:
 
@@ -370,7 +370,7 @@ The schema stays one shared set of TypeScript files. Schema deploys and type gen
 project. The types are identical across projects, so `sanity.types.ts` is generated once from a
 reference project.
 
-Open question for MT-14: the root `sanity.config.ts` hardcodes a project id. Either generate one
+Open question: the root `sanity.config.ts` hardcodes a project id. Either generate one
 config per club for standalone deploys, or drop standalone deploys and keep only the app-hosted
 Studio.
 
@@ -433,7 +433,8 @@ another club's data.
 ## Sequencing
 
 Work is tracked in the [Multi-tenant platform](https://github.com/dejanvasic85/williamstownsc/milestone/2)
-milestone (MT-01 to MT-20), in three phases:
+milestone, in three phases. Each issue names what blocks it, so the order lives there rather than
+being repeated here.
 
 1. **Foundations** - registry, proxy, per-tenant Sanity client and secrets.
 2. **Tenant-aware app** - routes, content modules, metadata, theming, API routes, Studio.
