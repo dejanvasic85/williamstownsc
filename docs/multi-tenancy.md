@@ -79,6 +79,23 @@ Adding a club without a deploy would mean moving all of that to runtime, turning
 back on and giving up per-club prerendering. That is a different architecture, not an increment.
 Deploy-free onboarding is not on this roadmap.
 
+## The demo club
+
+A white-label club, `demo`, is the second tenant and lands early rather than last. It is not a
+customer. It exists to make the rest of the work testable, and it does three jobs:
+
+- **Proof.** Multi-tenancy cannot be tested with one club. Every change after the routes move is
+  verified against two clubs rather than reasoned about.
+- **The preview default.** A bare preview URL renders the demo club, so a PR never shows a real
+  club's content by accident.
+- **A stable content fixture.** End-to-end content assertions run against it, so tests do not break
+  when someone edits a Williamstown news article.
+
+It needs its own Sanity project, seeded with enough content to render every page. Its host is a
+`*.vercel.app` domain attached to the project and listed in its `domains`, so it needs no DNS and
+no purchase. It has no Facebook page, so it omits the `socialPublishing` group, which is the case
+that forced optional secrets.
+
 ## Tenant files
 
 One file per club, named after the club, holding everything that defines it.
@@ -100,7 +117,10 @@ export const williamstown = defineTenant({
 	sanity: { projectId: '1ougwkz1', dataset: 'production' },
 	secrets: {
 		sanityWriteToken: { from: 'env', key: 'WILLIAMSTOWN_SANITY_WRITE_TOKEN' },
-		revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' },
+		revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' }
+	},
+	// optional: a club without a Facebook page omits this block entirely
+	socialPublishing: {
 		metaPageAccessToken: { from: 'env', key: 'WILLIAMSTOWN_META_PAGE_ACCESS_TOKEN' },
 		metaFacebookPageId: { from: 'env', key: 'WILLIAMSTOWN_META_FACEBOOK_PAGE_ID' },
 		metaInstagramAccountId: { from: 'env', key: 'WILLIAMSTOWN_META_INSTAGRAM_ACCOUNT_ID' }
@@ -135,6 +155,11 @@ The manifest declares **where a secret comes from**, never the value. That buys 
   each one resolves. CI catches a missing value before deploy, instead of a code path hitting it in
   production.
 - **No naming convention to remember.** The key is written down.
+
+Not every club uses every integration. `sanityWriteToken` and `revalidateSecret` are required, and
+`socialPublishing` is an optional group. A club without a Facebook page omits the whole block, and
+social publishing is then off for that club. Grouping the three rather than making each optional on
+its own stops a club being half-configured, with a page id but no token.
 
 Every per-club secret is read at request time, so a runtime store works for all of them. Nothing
 club-specific is needed during `next build`.
@@ -174,9 +199,14 @@ The registry lists production domains only. A separate rule handles everything e
 
 - `<slug>.localhost` and `<slug>.localhost:3003` match the club with that slug. Browsers resolve any
   `.localhost` subdomain with no hosts-file change.
-- An unmatched `*.vercel.app` preview host falls back to a default club named by an environment
-  variable. Resolve that slug through the registry like any other, so an unknown default fails
-  loudly rather than routing.
+- An unmatched `*.vercel.app` preview host falls back to the demo club. Resolve that slug through
+  the registry like any other, so an unknown default fails loudly rather than routing.
+- On a preview host, a path that starts with a slug resolves to that club instead of returning 404,
+  so `preview-abc.vercel.app/altona-city/news` works. Those routes already exist, because
+  `generateStaticParams` generates them. Rule 2 is the only thing blocking them, and it exists to
+  stop one club's **production domain** reaching another club. A preview host is nobody's domain,
+  so there is nothing to protect. Without this a preview can only ever show one club, which makes a
+  multi-tenant PR impossible to review.
 
 Gate the rule on `VERCEL_ENV !== 'production'`, not `NODE_ENV`. Next.js sets `NODE_ENV=production`
 for preview builds too, so `NODE_ENV` cannot tell a preview from production and the fallback would
@@ -195,13 +225,13 @@ from the registry.
 Five secrets are per club, read through `getTenantSecret(name, tenant)`, which resolves them from
 that club's manifest:
 
-| Per club                 | Used by                    |
-| ------------------------ | -------------------------- |
-| `sanityWriteToken`       | form submissions           |
-| `revalidateSecret`       | that club's Sanity webhook |
-| `metaPageAccessToken`    | social publishing          |
-| `metaFacebookPageId`     | social publishing          |
-| `metaInstagramAccountId` | social publishing          |
+| Per club                 | Used by                    | Required             |
+| ------------------------ | -------------------------- | -------------------- |
+| `sanityWriteToken`       | form submissions           | yes                  |
+| `revalidateSecret`       | that club's Sanity webhook | yes                  |
+| `metaPageAccessToken`    | social publishing          | only with that group |
+| `metaFacebookPageId`     | social publishing          | only with that group |
+| `metaInstagramAccountId` | social publishing          | only with that group |
 
 Everything else is system-wide and stays a plain environment variable:
 
@@ -384,7 +414,8 @@ another club's data.
 2. **The proxy rejects paths that already start with a tenant slug.** After the rewrite
    `/altona-city/news` is a real path, so `williamstownsc.com/altona-city/news` must 404. The check
    belongs in the proxy: a layout comparing `[tenant]` against `headers()` would force every route
-   dynamic.
+   dynamic. This rule protects production club domains, so it is off when
+   `VERCEL_ENV !== 'production'`, which is what makes preview URLs usable.
 3. **`dynamicParams = false` on `[tenant]`.** An unregistered slug cannot render.
 4. **No handler falls back to a default club**, and none reads the tenant from a query parameter or
    request body. A handler with a missing or unknown `x-tenant` returns 400.
@@ -423,6 +454,32 @@ another club's data.
 
     Keep them in `vercel.json` while the rules stay simple, since edge redirects run before any
     function. Note that `has` conditions do not work under `vercel dev`.
+
+## Testing
+
+Playwright is the only test framework here, so it carries the confidence for this whole change. The
+suite splits three ways.
+
+| Suite          | Runs               | Covers                                                          |
+| -------------- | ------------------ | --------------------------------------------------------------- |
+| **Structural** | once per club      | pages load, nav renders, robots, sitemap, manifest, theme, 404s |
+| **Content**    | once, on `demo`    | editorial assertions against content we control                 |
+| **Isolation**  | once, across clubs | the rules above, proved rather than assumed                     |
+
+The project matrix is generated from `getAllTenants()`, so adding a club adds structural coverage
+automatically and the matrix cannot drift from the registry.
+
+The isolation suite is the one that matters most, and it tests the rules directly:
+
+- A spoofed `x-tenant` header on one club's domain does not change which club renders.
+- `williamstownsc.com/demo/news` returns 404 in production.
+- An unknown host returns 404 with no club branding.
+- Revalidating one club leaves another club's cached pages alone.
+- Each domain serves its own robots, sitemap, manifest and icons, with no cross-club URL.
+- A contact form on one domain does not reach another club's inbox.
+
+Content assertions run against `demo` rather than Williamstown so they do not depend on live
+editorial content staying still.
 
 ## What we are not doing
 
