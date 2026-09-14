@@ -15,8 +15,10 @@
 
 # Testing
 
-- Framework: Playwright only (no unit test framework)
-- Tests run against http://localhost:3003
+- Vitest for unit tests: `pnpm run test`. Tests live beside the code as `src/**/*.test.ts`
+- Playwright for end-to-end: `pnpm run test:e2e`, against http://localhost:3003
+- Prefer a unit test when the logic is a pure function. Reach for Playwright when the test needs a
+  browser, a real request, or a rendered page
 
 # Technical Requirements
 

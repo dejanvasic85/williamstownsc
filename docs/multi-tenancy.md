@@ -511,8 +511,7 @@ Confidence comes from three layers, each running where it is cheapest.
 | **Content**    | Playwright | every PR, on `demo`  | editorial assertions against content we control                 |
 | **Isolation**  | Playwright | after deploy to prod | the rules, against real club domains                            |
 
-Note that `AGENTS.md` currently says Playwright is the only framework here. That is out of date:
-`vitest.config.ts` and `pnpm run test` already exist, with no tests written against them yet.
+Vitest is configured but unused so far, so this work writes the first tests against it.
 
 ### Unit
 
