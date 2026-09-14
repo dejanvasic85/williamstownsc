@@ -35,7 +35,8 @@ proxy.ts
   - path already starts with a tenant slug -> 404
   - set x-tenant: altona-city
   - rewrite /news -> /altona-city/news
-      rewritten:     page paths, /sitemap.xml, /robots.txt, /manifest.webmanifest
+      rewritten:     page paths, /sitemap.xml, /robots.txt,
+                     /manifest.webmanifest, /favicon.ico, /icon.svg
       not rewritten: /api/..., /studio, /_next, static files
       those still get x-tenant, they just keep their path
   |
@@ -142,12 +143,13 @@ socials, SEO defaults, canonical URL, Matchday club id. Do not duplicate any of 
 
 ## Reading the tenant
 
-Server code gets the tenant four ways, depending on where it runs. They are not interchangeable.
+Server code gets the tenant five ways, depending on where it runs. They are not interchangeable.
 
 | Where                                                      | How                                       |
 | ---------------------------------------------------------- | ----------------------------------------- |
 | Server Components, layouts, server utilities               | `await tenant()` from `next/root-params`  |
 | Route Handlers under `[tenant]`: sitemap, robots, manifest | the `params` prop                         |
+| `global-not-found.tsx`                                     | nothing, it is club-neutral               |
 | `/api/revalidate`                                          | the validated `Host`, bound to the secret |
 | `/api/webhooks/league-updates`                             | the payload, after the signature verifies |
 | Every other Route Handler, and Server Actions              | the `x-tenant` request header             |
@@ -245,19 +247,43 @@ src/app/
   [tenant]/
     layout.tsx                      root layout: <html data-tenant>, emits theme tokens
     (site)/...                      club pages
-    sitemap.ts                      -> /<slug>/sitemap.xml
+    sitemap.xml/route.ts            -> /<slug>/sitemap.xml
     robots.txt/route.ts             -> /<slug>/robots.txt
     manifest.webmanifest/route.ts   -> /<slug>/manifest.webmanifest
+    icon.svg/route.ts               -> /<slug>/icon.svg
   studio/
     layout.tsx                      root layout for the Studio
   api/...                           route handlers, no layout
+  global-not-found.tsx              club-neutral 404, owns its own <html>
+  global-error.tsx                  unchanged, already owns its own <html>
 ```
 
-The metadata routes sit under `[tenant]` so their paths carry the slug. `sitemap.ts` nests in a
-route segment directly. `robots.txt` and `manifest.webmanifest` are app-root-only conventions, so
-they become plain Route Handlers that read the slug from `params`.
+All four metadata routes are **plain Route Handlers**, not metadata file conventions. Next.js
+documents `robots.txt` and `manifest.webmanifest` only at the app root, and it documents a nested
+`sitemap.ts` receiving `id` from `generateSitemaps` but not `params` from a dynamic segment. Route
+Handlers definitely receive `params`, so all four use the same mechanism and none of it rests on
+undocumented behaviour.
 
 Public URLs do not change. The slug is only visible after the rewrite.
+
+### The 404 page
+
+Next.js names two cases that need `app/global-not-found.tsx` instead of `app/not-found.tsx`, and
+this design hits both: multiple root layouts, and a root layout under a top-level dynamic segment.
+With no layout at the app root, there is nothing for a root `not-found.tsx` to render inside.
+
+`global-not-found.tsx` returns a full HTML document, including `<html>` and `<body>`.
+
+It must be **club-neutral**. It renders for requests where no club could be resolved: an unknown
+host (rule 1), a path already carrying a slug (rule 2), and an unregistered slug (rule 3). There is
+no `siteSettings` to read and no theme to apply, so it carries no club name, logo or colours. The
+existing `src/app/not-found.tsx` hardcodes "Williamstown SC" and goes away.
+
+A 404 _inside_ a club, such as a missing news article, still renders that club's own
+`not-found.tsx` under `[tenant]`, with its branding intact.
+
+`global-error.tsx` already defines its own `<html>` and `<body>` and replaces the root layout when
+active, so removing the root layout does not affect it.
 
 ## Branding
 
@@ -279,9 +305,11 @@ Public URLs do not change. The slug is only visible after the rewrite.
 
 - **Logo**: already in `siteSettings`.
 - **Favicons and PWA icons**: replace the static files in `public/favicon/` with routes under
-  `[tenant]`, generated from the club logo in Sanity.
+  `[tenant]`, generated from the club logo in Sanity. The `<link>` tags the layout emits point at
+  `/<slug>/icon.svg`, but browsers still request `/favicon.ico` at the root on their own, so the
+  proxy rewrites that path too.
 - **Copy**: every hardcoded "Williamstown SC" string moves to `siteSettings`. Known spots are the
-  root layout, `not-found.tsx`, the news, sponsors and football sections, the contact email
+  root layout, the 404 pages, the news, sponsors and football sections, the contact email
   template, the calendar feed UID, and the Meta publish hashtags.
 
 ## Sanity Studio
@@ -330,12 +358,14 @@ another club's data.
 8. **Readers and invalidators adopt prefixed cache tags in the same change.** Half-migrated, either
    nothing invalidates or one club's revalidation clears every club. The one exception is data that
    does not depend on the club, currently `matchday:league:*`, which stays unprefixed on purpose.
-9. **Responses that vary by club vary by path.** `src/app/sitemap.ts` exports `revalidate = 86400`;
+9. **Responses that vary by club vary by path.** `src/app/sitemap.ts` exports `revalidate = 86400`
+   today;
    at the app root, resolving the club from `Host` would cache one club's sitemap and serve it to
    every domain. Under `[tenant]` the cache key is per club by construction.
-10. **The registry fails the build on collisions.** Two clubs sharing a normalised host or a slug
-    would otherwise route at random. Deriving env var names from the slug rules out a third
-    collision.
+10. **The registry fails the build on collisions.** Check three things: two clubs must not share a
+    normalised host, a slug, or a secret key. The first two would route at random. The third would
+    quietly point two clubs at one credential, and since the manifest writes keys out by hand rather
+    than deriving them from the slug, nothing else prevents it.
 11. **Legacy redirects are scoped by host.** The ten path-only redirects in `vercel.json` would fire
     on every club's domain, so `/shop` would redirect on `altonacity.com`. Add a host condition:
 
