@@ -10,9 +10,8 @@ www.williamstownsc.com, williamstownsc.com  ->  williamstown
 www.altonacity.com,     altonacity.com      ->  altona-city
 ```
 
-Each club keeps its own domain in production. Everything else, meaning previews, staging and the
-demo club, sits on `stadly.com.au`, since these sites are an addon to Stadly rather than a
-Williamstown product.
+Each club keeps its own domain in production. Previews and the demo club sit on `stadly.com.au`,
+since these sites are an addon to Stadly rather than a Williamstown product.
 
 ## Decisions
 
@@ -204,12 +203,14 @@ argument instead.
 The registry lists production domains only. Everything else resolves through rules that are off in
 production.
 
-| Environment    | Host                           | Club comes from     | Real host resolution |
-| -------------- | ------------------------------ | ------------------- | -------------------- |
-| Local          | `<slug>.localhost:3003`        | the subdomain       | yes                  |
-| Per-PR preview | the generated deployment URL   | the path, else demo | no                   |
-| Staging        | `<slug>.staging.stadly.com.au` | the `Host` header   | yes                  |
-| Production     | the club's own domains         | the `Host` header   | yes                  |
+| Environment    | Host                         | Club comes from     | Real host resolution |
+| -------------- | ---------------------------- | ------------------- | -------------------- |
+| Local          | `<slug>.localhost:3003`      | the subdomain       | yes                  |
+| Per-PR preview | the generated deployment URL | the path, else demo | no                   |
+| Production     | the club's own domains       | the `Host` header   | yes                  |
+
+There is no staging environment. Production already has real per-club hosts, so it is where
+host-dependent checks belong.
 
 Gate the non-production rules on `VERCEL_ENV !== 'production'`, not `NODE_ENV`. Next.js sets
 `NODE_ENV=production` for preview builds too, so `NODE_ENV` cannot tell a preview from production
@@ -234,26 +235,27 @@ workable:
   nothing to protect.
 
 On Pro, a preview deployment suffix rebrands the generated URL from `*.vercel.app` to
-`*.preview.stadly.com.au`. Worth doing for cookies and for looking less throwaway, but it does
-not change the shape above: it is still one host per deployment, not one per club.
+`*.preview.stadly.com.au`. Cosmetic, plus it scopes cookies to our own domain, and it means a link
+sent to a club is not a Williamstown URL. It does not change the shape above: still one host per
+deployment, not one per club.
 
-### Staging, and why it matters
+### What a preview cannot prove
 
-**The path prefix bypasses host resolution, which is the mechanism most likely to break.** A preview
-that only ever reaches clubs by path never exercises `Host` lookup, normalisation, the `www.` strip,
-or rule 2. Those are the parts worth testing.
+The path prefix reaches a club without touching `Host` resolution, so a preview never exercises the
+registry lookup, normalisation, the `www.` strip, or rule 2.
 
-So point a per-club subdomain at a long-lived branch. Vercel project domains take a `gitBranch`
-link, so `williamstown.staging.stadly.com.au` and `demo.staging.stadly.com.au` can both
-track the same branch and behave exactly like production hosts.
+That does not need a staging environment. It splits two ways:
 
-The isolation suite runs here, not against a PR preview. Several of its tests are meaningless
-without real per-club hosts: a spoofed `x-tenant` needs a host to contradict, and a cross-club 404
-needs rule 2 switched on.
+- **The logic is pure, so it belongs in vitest.** Host normalisation, registry lookup, collision
+  detection, rule 2's path check and secret resolution are all functions with no environment. Unit
+  tests are faster and cover more cases than any deployed environment could.
+- **The rest needs distinct real hosts, and production has them.** Once Williamstown and the demo
+  club are both live, a post-deploy check runs against the real domains. Those checks are read-only
+  apart from revalidation, which only busts a cache.
 
-Everything outside production sits on `stadly.com.au`, the platform's own domain, rather than under
-any one club's. Altona City's staging site should not live at `altona-city.staging.williamstownsc.com`,
-and a preview link sent to their committee should not be a Williamstown URL.
+That trades a small window, where a host-level integration bug is caught just after deploy rather
+than just before, against not running a whole extra environment. For a handful of club sites that is
+the right side of the trade.
 
 ## Sanity access
 
@@ -500,31 +502,52 @@ another club's data.
 
 ## Testing
 
-Playwright is the only test framework here, so it carries the confidence for this whole change. The
-suite splits three ways.
+Confidence comes from three layers, each running where it is cheapest.
 
-| Suite          | Runs               | Covers                                                          |
-| -------------- | ------------------ | --------------------------------------------------------------- |
-| **Structural** | once per club      | pages load, nav renders, robots, sitemap, manifest, theme, 404s |
-| **Content**    | once, on `demo`    | editorial assertions against content we control                 |
-| **Isolation**  | once, across clubs | the rules above, proved rather than assumed                     |
+| Layer          | Tool       | Runs                 | Covers                                                          |
+| -------------- | ---------- | -------------------- | --------------------------------------------------------------- |
+| **Unit**       | vitest     | every PR             | host resolution, registry, rule 2, secrets, cache tag building  |
+| **Structural** | Playwright | every PR, per club   | pages load, nav renders, robots, sitemap, manifest, theme, 404s |
+| **Content**    | Playwright | every PR, on `demo`  | editorial assertions against content we control                 |
+| **Isolation**  | Playwright | after deploy to prod | the rules, against real club domains                            |
 
-The project matrix is generated from `getAllTenants()`, so adding a club adds structural coverage
-automatically and the matrix cannot drift from the registry.
+Note that `AGENTS.md` currently says Playwright is the only framework here. That is out of date:
+`vitest.config.ts` and `pnpm run test` already exist, with no tests written against them yet.
 
-The isolation suite is the one that matters most, and it tests the rules directly. It runs against
-staging, where each club has a real host, because a path-prefixed preview cannot exercise the rules
-it checks:
+### Unit
+
+Most of the isolation rules are pure functions, so they need no environment at all:
+
+- Host normalisation: lower-case, strip port, strip leading `www.`.
+- Registry lookup, including an unknown host and the non-production rules.
+- Collision detection, so two clubs cannot share a host, slug or secret key.
+- Rule 2's check that a path does not already start with a slug.
+- Secret resolution, including an omitted optional group.
+
+These are faster and cover more cases than any deployed environment could, so put the work here
+first.
+
+### Structural and content
+
+The Playwright project matrix is generated from `getAllTenants()`, so adding a club adds coverage
+automatically and the matrix cannot drift from the registry. Structural tests assert shape, not
+copy. Content assertions run against `demo` rather than Williamstown, so they do not break when
+someone edits a live article.
+
+### Isolation
+
+These need distinct real hosts, so they run against production after a deploy, where Williamstown
+and `demo` are real domains. They are read-only apart from revalidation, which only busts a cache.
 
 - A spoofed `x-tenant` header on one club's domain does not change which club renders.
-- `williamstownsc.com/demo/news` returns 404 in production.
+- `williamstownsc.com/demo/news` returns 404.
 - An unknown host returns 404 with no club branding.
 - Revalidating one club leaves another club's cached pages alone.
 - Each domain serves its own robots, sitemap, manifest and icons, with no cross-club URL.
 - A contact form on one domain does not reach another club's inbox.
 
-Content assertions run against `demo` rather than Williamstown so they do not depend on live
-editorial content staying still.
+A failure here means rolling back, not blocking a merge. The unit layer is what stops most of these
+reaching production in the first place.
 
 ## What we are not doing
 
