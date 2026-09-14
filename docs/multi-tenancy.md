@@ -57,7 +57,7 @@ and every club that goes live has been through a PR.
 1. Create the Sanity project, deploy the schema, seed `siteSettings`.
 2. Add `src/tenants/<slug>.ts` and register it.
 3. Add the club's icons to `public/tenants/<slug>/`.
-4. Store the club's five secrets wherever its manifest says they live.
+4. Store the club's secrets wherever its manifest says they live.
 5. Attach the domains to the Vercel project and point DNS at Vercel.
 6. Scope any legacy redirects to that club's domains.
 7. Run the preflight check, then deploy.
@@ -104,6 +104,7 @@ One file per club, named after the club, holding everything that defines it.
 src/tenants/
   index.ts           registry: imports each club file, validates with zod
   williamstown.ts
+  demo.ts
   altona-city.ts
 ```
 
