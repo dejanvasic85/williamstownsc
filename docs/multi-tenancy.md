@@ -441,13 +441,9 @@ has to be matched and rewritten.
 Williamstown and `altonacity.com/studio` edits Altona City. The route reads `x-tenant` on the server
 and passes `projectId` and `dataset` into `NextStudio`, rather than reading `NEXT_PUBLIC_` variables.
 
-The schema stays one shared set of TypeScript files. Schema deploys and type generation run per
-project. The types are identical across projects, so `sanity.types.ts` is generated once from a
-reference project.
-
-Open question: the root `sanity.config.ts` hardcodes a project id. Either generate one
-config per club for standalone deploys, or drop standalone deploys and keep only the app-hosted
-Studio.
+The schema stays one shared set of TypeScript files, bundled into this Studio, so deploying the app
+updates every club at once. See "Schema and data across projects" for what that does and does not
+cover.
 
 ## Rules that keep clubs apart
 
@@ -499,6 +495,37 @@ another club's data.
 
     Keep them in `vercel.json` while the rules stay simple, since edge redirects run before any
     function. Note that `has` conditions do not work under `vercel dev`.
+
+## Schema and data across projects
+
+One Sanity project per club raises an obvious worry: does every schema change now need deploying N
+times? Mostly no, but there are two different things here and only one is hard.
+
+### Schema is code, so it deploys once
+
+The schema lives in `src/sanity/schema/*.ts` and is bundled into the Studio at `/studio`. Since that
+Studio binds to the requesting domain's project, deploying the app updates the schema for every club
+in one go. There is no per-project schema step.
+
+The exception is the standalone Studio at `williamstownsc.sanity.studio`, deployed by
+`.github/workflows/deploy-sanity.yml`. That one is tied to a single project and `studioHost`, so
+keeping it means one config, one host and one deploy per club, every schema change. Dropping it
+costs editors a bookmark and gains a club-branded URL they already have. That is the open question
+in the Sanity Studio section, and dropping it is the recommendation.
+
+`pnpm run type:gen` still runs against one reference project, which is correct because the schema is
+identical everywhere. Note that `sanity.cli.ts` currently reads the Sanity project id from
+`getClientConfig()`, which stops carrying it, so it needs pointing at a reference project directly.
+
+### Data does not migrate itself
+
+This is the real gap. Renaming a field, adding a required one or changing a type leaves existing
+documents untouched, and each club has its own documents. Sanity migrations run per project, so one
+change means N runs that must all succeed or the clubs drift apart.
+
+Sanity does not track which migrations have run. Rather than keeping our own ledger, write
+migrations to be idempotent, so re-running one is harmless and the recovery for a partial failure is
+simply to run it again.
 
 ## Shipping this to a live site
 
