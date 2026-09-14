@@ -91,10 +91,12 @@ customer. It exists to make the rest of the work testable, and it does three job
 - **A stable content fixture.** End-to-end content assertions run against it, so tests do not break
   when someone edits a Williamstown news article.
 
-It needs its own Sanity project, seeded with enough content to render every page. Its host is a
-`*.vercel.app` domain attached to the project and listed in its `domains`, so it needs no DNS and
-no purchase. It has no Facebook page, so it omits the `socialPublishing` group, which is the case
-that forced optional secrets.
+It needs its own Sanity project, seeded with enough content to render every page. It has no Facebook
+page, so it omits the `socialPublishing` group, which is the case that forced optional secrets.
+
+Its host can start as a `*.vercel.app` domain attached to the project, which needs no DNS and no
+purchase. Once the platform has a neutral domain, `demo.<platform-domain>` is the better home, and
+it is the natural place to point anyone asking what the platform looks like.
 
 ## Tenant files
 
