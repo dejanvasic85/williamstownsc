@@ -17,7 +17,7 @@
 		"format": "prettier . --write .",
 		"format:check": "prettier . --check",
 		"prepare": "husky",
-		"type:gen": "sanity schema extract --path src/sanity && sanity typegen generate",
+		"type:gen": "sanity schema extract --force --path src/sanity && sanity typegen generate",
 		"type:check": "tsc --noEmit",
 		"test": "vitest run --passWithNoTests",
 		"test:watch": "vitest",
@@ -53,6 +53,7 @@
 		"react-dom": "19.2.8",
 		"react-hook-form": "7.87.0",
 		"sanity": "6.11.0",
+		"server-only": "0.0.1",
 		"styled-components": "6.5.3",
 		"zod": "4.5.4"
 	},
