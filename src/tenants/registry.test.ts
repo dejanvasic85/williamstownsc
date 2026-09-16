@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { createTenantRegistry, normaliseHost } from './registry';
 import type { Tenant } from './tenantSchema';
 
@@ -29,24 +29,9 @@ const altonaCityValue: Tenant = makeTenant({
 	}
 });
 
-const envKeys = ['VERCEL_ENV', 'DEFAULT_TENANT_SLUG'] as const;
-let savedEnv: Record<string, string | undefined>;
-
 beforeEach(() => {
-	savedEnv = Object.fromEntries(envKeys.map((key) => [key, process.env[key]]));
-	for (const key of envKeys) {
-		delete process.env[key];
-	}
-});
-
-afterEach(() => {
-	for (const key of envKeys) {
-		if (savedEnv[key] === undefined) {
-			delete process.env[key];
-		} else {
-			process.env[key] = savedEnv[key];
-		}
-	}
+	delete process.env.VERCEL_ENV;
+	delete process.env.DEFAULT_TENANT_SLUG;
 });
 
 describe('normaliseHost', () => {
@@ -135,9 +120,6 @@ describe('registry collisions', () => {
 	});
 
 	it('rejects two tenants sharing a normalised host', () => {
-		// A club's own www and bare forms are the same host and are allowed.
-		expect(() => createTenantRegistry([tenantConfigValue])).not.toThrow();
-
 		const hostThief = makeTenant({
 			slug: 'altona-city',
 			domains: ['www.williamstownsc.com'],

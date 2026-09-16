@@ -1,24 +1,9 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { getAllTenants, getTenantByHost, getTenantBySlug } from './index';
 
-const envKeys = ['VERCEL_ENV', 'DEFAULT_TENANT_SLUG'] as const;
-let savedEnv: Record<string, string | undefined>;
-
 beforeEach(() => {
-	savedEnv = Object.fromEntries(envKeys.map((key) => [key, process.env[key]]));
-	for (const key of envKeys) {
-		delete process.env[key];
-	}
-});
-
-afterEach(() => {
-	for (const key of envKeys) {
-		if (savedEnv[key] === undefined) {
-			delete process.env[key];
-		} else {
-			process.env[key] = savedEnv[key];
-		}
-	}
+	delete process.env.VERCEL_ENV;
+	delete process.env.DEFAULT_TENANT_SLUG;
 });
 
 describe('the tenant registry', () => {
