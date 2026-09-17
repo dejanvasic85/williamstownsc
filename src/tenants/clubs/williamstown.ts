@@ -1,5 +1,5 @@
 import 'server-only';
-import { defineTenant } from './tenantSchema';
+import { defineTenant } from '../schema/tenantSchema';
 
 export const williamstown = defineTenant({
 	slug: 'williamstown',
