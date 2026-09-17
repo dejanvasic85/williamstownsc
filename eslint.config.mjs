@@ -22,6 +22,7 @@ const dependencyCheckConfigValue = {
 					'bin/**/*.{js,mjs,cjs,ts,tsx}',
 					'**/*.test.{js,jsx,ts,tsx}',
 					'**/*.spec.{js,jsx,ts,tsx}',
+					'src/testEnv.ts',
 					'**/tests/**/*.{js,jsx,ts,tsx}',
 					'playwright.config.ts',
 					'eslint.config.mjs',
