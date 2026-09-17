@@ -28,6 +28,9 @@ const unmatchedRoutePath = '/__unmatched_route__';
 // The health endpoint is system-wide, so any host may probe it without a club.
 const healthPath = '/api/health';
 
+// The registry is module data, so the slug list is known at load time.
+const tenantSlugsValue = getAllTenants().map((tenant) => tenant.slug);
+
 function isHealthPath(pathname: string): boolean {
 	return pathname === healthPath || pathname.startsWith(`${healthPath}/`);
 }
@@ -58,12 +61,7 @@ export function buildRewritePath(tenant: Tenant, pathname: string): string | nul
 	}
 
 	// A preview URL can reach a club by path prefix, so those paths are already real routes.
-	if (
-		isTenantPrefixedPath(
-			pathname,
-			getAllTenants().map((candidate) => candidate.slug)
-		)
-	) {
+	if (isTenantPrefixedPath(pathname, tenantSlugsValue)) {
 		return null;
 	}
 
@@ -90,12 +88,10 @@ export function proxy(request: NextRequest) {
 
 	// Rule 2: reject paths that already carry a tenant slug on a production club domain.
 	// Off outside production, which is what makes preview URLs reachable by path.
-	const isTenantPrefixed = isTenantPrefixedPath(
-		request.nextUrl.pathname,
-		getAllTenants().map((candidate) => candidate.slug)
-	);
-	if (isTenantPrefixed && process.env.VERCEL_ENV === 'production') {
-		return NextResponse.rewrite(new URL(unmatchedRoutePath, request.url));
+	if (isTenantPrefixedPath(request.nextUrl.pathname, tenantSlugsValue)) {
+		if (process.env.VERCEL_ENV === 'production') {
+			return NextResponse.rewrite(new URL(unmatchedRoutePath, request.url));
+		}
 	}
 
 	requestHeaders.set(tenantHeader, tenant.slug);
