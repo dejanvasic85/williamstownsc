@@ -2,7 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 
 const vercelURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined;
 
-const baseURL = process.env.PLAYWRIGHT_TEST_BASE_URL || vercelURL || 'http://localhost:3003';
+const baseURL =
+	process.env.PLAYWRIGHT_TEST_BASE_URL || vercelURL || 'http://williamstown.localhost:3003';
 
 export default defineConfig({
 	testDir: './tests',
@@ -27,7 +28,9 @@ export default defineConfig({
 	webServer: process.env.CI
 		? undefined
 		: {
-				command: 'npm run dev',
+				// VERCEL_ENV=preview keeps the non-production tenant rules on, so *.localhost
+				// hosts resolve even when .env.local carries production values from `vercel env pull`.
+				command: 'VERCEL_ENV=preview npm run dev',
 				url: 'http://localhost:3003/api/health',
 				reuseExistingServer: true,
 				timeout: 120 * 1000
