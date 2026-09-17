@@ -1,4 +1,4 @@
-import type { Tenant } from './tenantSchema';
+import type { Tenant } from '../schema/tenantSchema';
 
 const localHostPattern = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.localhost$/;
 const vercelAppSuffix = '.vercel.app';

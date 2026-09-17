@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { createTenantRegistry, normaliseHost } from './registry';
-import type { Tenant } from './tenantSchema';
+import type { Tenant } from '../schema/tenantSchema';
+import { createTenantRegistry, normaliseHost } from './tenantRegistry';
 
 const tenantConfigValue: Tenant = {
 	slug: 'williamstown',
