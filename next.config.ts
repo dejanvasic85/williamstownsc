@@ -3,6 +3,9 @@ import { withSentryConfig } from '@sentry/nextjs';
 
 const nextConfig: NextConfig = {
 	devIndicators: false,
+	experimental: {
+		globalNotFound: true
+	},
 	serverExternalPackages: ['pino', 'pino-pretty'],
 	images: {
 		deviceSizes: [640, 828, 1200],
