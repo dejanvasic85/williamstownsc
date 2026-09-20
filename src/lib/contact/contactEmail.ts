@@ -1,4 +1,5 @@
 import { getSiteSettings } from '@/lib/content';
+import { toEnquiryDetails } from './contactFormMapper';
 import type { ContactFormData } from './contactFormSchema';
 import { sendEmail } from './email';
 
@@ -68,27 +69,25 @@ function createTableRow(name: string, value: string | undefined) {
 		: '';
 }
 
+const detailLabels: Record<string, string> = {
+	ageGroup: 'Age Group',
+	experience: 'Experience',
+	position: 'Position',
+	qualifications: 'Qualifications',
+	ageGroupsInterest: 'Age Groups of Interest',
+	organization: 'Organization',
+	sponsorshipTier: 'Sponsorship Tier',
+	programName: 'Program',
+	subject: 'Subject'
+};
+
 function createAdditionalDetails(data: ContactFormData) {
-	switch (data.contactType) {
-		case 'player':
-			return `
-				${createTableRow('Age Group', data.ageGroup)}
-				${createTableRow('Experience', data.experience)}
-				${createTableRow('Position', data.position)}`;
-		case 'coach':
-			return `
-				${createTableRow('Qualifications', data.qualifications)}
-				${createTableRow('Experience', data.experience)}
-				${createTableRow('Age Groups of Interest', data.ageGroupsInterest)}`;
-		case 'sponsor':
-			return `
-				${createTableRow('Organization', data.organization)}
-				${createTableRow('Sponsorship Tier', data.sponsorshipTier)}`;
-		case 'program':
-			return createTableRow('Program', data.programName);
-		case 'general':
-			return createTableRow('Subject', data.subject);
-	}
+	return Object.entries(toEnquiryDetails(data))
+		.map(([key, value]) => {
+			const label = detailLabels[key];
+			return label ? createTableRow(label, value) : '';
+		})
+		.join('');
 }
 
 const bccEmail = 'dejanvasic24@gmail.com';

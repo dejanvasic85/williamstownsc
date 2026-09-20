@@ -4,11 +4,13 @@ import { headers } from 'next/headers';
 import { getClientConfig } from '@/lib/config';
 import { sendContactFormEmails } from '@/lib/contact/contactEmail';
 import { contactFormSchema } from '@/lib/contact/contactFormSchema';
+import { sendEnquiryToStadly } from '@/lib/contact/stadlyEnquiry';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
 import { getWriteClient } from '@/sanity/lib/writeClient';
+import { getTenantFromHeaders } from '@/tenants/request';
 
 const log = logger.child({ module: 'contact-form' });
 
@@ -161,6 +163,12 @@ export async function submitContactForm(
 
 		// Send emails
 		await sendContactFormEmails(data, emailFrom, recipientEmail);
+
+		// Forward to the club's stadly inbox last. Failures are logged there, never fatal here.
+		const tenant = await getTenantFromHeaders();
+		if (tenant) {
+			await sendEnquiryToStadly(data, tenant);
+		}
 
 		return {
 			success: true,
