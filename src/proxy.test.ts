@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
-import { buildRewritePath, isTenantPrefixedPath } from './proxy';
+import { buildRewritePath, isTenantPrefixedPath, withRewritePath } from './proxy';
 
 const williamstownValue: Tenant = {
 	slug: 'williamstown',
@@ -53,6 +53,26 @@ describe('buildRewritePath', () => {
 	it('leaves club-prefixed paths unrewritten so previews can reach them', () => {
 		expect(buildRewritePath(williamstownValue, '/williamstown/news')).toBeNull();
 		expect(buildRewritePath(williamstownValue, '/williamstown')).toBeNull();
+	});
+});
+
+describe('withRewritePath', () => {
+	it('keeps the query string when changing the path', () => {
+		const rewritten = withRewritePath(
+			new URL('https://williamstownsc.com/news?page=2'),
+			'/williamstown/news'
+		);
+
+		expect(rewritten.pathname).toBe('/williamstown/news');
+		expect(rewritten.search).toBe('?page=2');
+	});
+
+	it('does not mutate the original URL', () => {
+		const original = new URL('https://williamstownsc.com/news');
+
+		withRewritePath(original, '/williamstown/news');
+
+		expect(original.pathname).toBe('/news');
 	});
 });
 

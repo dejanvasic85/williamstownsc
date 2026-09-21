@@ -2,12 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { ChevronDown, MapPin, Search } from 'lucide-react';
 import { Icon } from '@/components/Icon';
 import { useSearchModal } from '@/components/search';
+import { useActivePathname } from '@/lib/hooks/useActivePathname';
 import { NavItem } from '@/lib/navigation';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
 
@@ -34,7 +34,7 @@ export function DesktopNavbar({
 	homeGroundLink,
 	hasAnnouncements
 }: DesktopNavbarProps) {
-	const pathname = usePathname();
+	const pathname = useActivePathname();
 	const { open: openSearchModal } = useSearchModal();
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -179,6 +179,7 @@ export function DesktopNavbar({
 
 	return (
 		<nav
+			aria-label="Primary"
 			className={clsx(
 				'fixed right-0 left-0 z-50 hidden lg:block',
 				hasAnnouncements ? 'top-(--banner-height)' : 'top-4'

@@ -17,7 +17,7 @@ export async function GET(_request: Request, { params }: RobotsRouteParams) {
 		return new Response('Unknown tenant', { status: 404 });
 	}
 
-	const siteSettings = await getSiteSettings();
+	const siteSettings = await getSiteSettings(tenant);
 	if (!siteSettings?.canonicalUrl) {
 		throw new Error(
 			'Canonical URL is not configured in site settings. Please configure it in Sanity CMS.'

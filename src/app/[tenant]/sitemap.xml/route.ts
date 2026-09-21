@@ -47,7 +47,7 @@ export async function GET(_request: Request, { params }: SitemapRouteParams) {
 	if (!tenant) {
 		return new Response('Unknown tenant', { status: 404 });
 	}
-	const siteSettings = await getSiteSettings();
+	const siteSettings = await getSiteSettings(tenant);
 
 	if (!siteSettings?.canonicalUrl) {
 		throw new Error(

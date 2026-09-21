@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
 import logger from '@/lib/logger';
 import { getClubLeagueOptions } from '@/lib/matchday/leagueOptionService';
+import { getTenantFromHeaders } from '@/tenants/request';
 
 const log = logger.child({ route: '/api/studio/leagues' });
 
@@ -11,7 +12,8 @@ const corsHeaders = { 'Access-Control-Allow-Origin': '*' };
 
 export async function GET() {
 	try {
-		const options = await getClubLeagueOptions();
+		const tenant = await getTenantFromHeaders();
+		const options = await getClubLeagueOptions(tenant ?? undefined);
 		return NextResponse.json({ options }, { headers: corsHeaders });
 	} catch (error) {
 		Sentry.captureException(error);

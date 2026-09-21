@@ -40,7 +40,7 @@ export async function GET(_request: Request, { params }: ManifestRouteParams) {
 		return new Response('Unknown tenant', { status: 404 });
 	}
 
-	const siteSettings = await getSiteSettings();
+	const siteSettings = await getSiteSettings(tenant);
 	const clubName = siteSettings?.clubName ?? tenant.slug;
 
 	return new Response(buildManifest(tenant, clubName), {

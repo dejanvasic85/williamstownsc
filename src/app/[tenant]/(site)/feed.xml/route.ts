@@ -4,16 +4,24 @@ import { getSiteSettings } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { buildUrl } from '@/lib/url/buildUrl';
 import { escapeXml } from '@/lib/url/escapeXml';
+import { getTenantBySlug } from '@/tenants';
 
 const log = logger.child({ route: '/feed.xml' });
 
 type FeedArticle = Awaited<ReturnType<typeof getAllArticlesForFeed>>[number];
 
-export async function GET() {
+type FeedRouteParams = {
+	params: Promise<{ tenant: string }>;
+};
+
+export async function GET(_request: Request, { params }: FeedRouteParams) {
 	try {
+		const { tenant: slug } = await params;
+		const tenant = getTenantBySlug(slug) ?? undefined;
+
 		const [articles, siteSettings] = await Promise.all([
 			getAllArticlesForFeed(),
-			getSiteSettings()
+			getSiteSettings(tenant)
 		]);
 
 		const siteUrl = buildUrl(siteSettings?.canonicalUrl || 'https://www.williamstownsc.com');

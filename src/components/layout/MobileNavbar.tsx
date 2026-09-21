@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import { Icon, type IconProps } from '@/components/Icon';
+import { useActivePathname } from '@/lib/hooks/useActivePathname';
 
 type NavItem = {
 	name: string;
@@ -19,7 +19,7 @@ const mobileNavItems: NavItem[] = [
 ];
 
 export function MobileNavbar() {
-	const pathname = usePathname();
+	const pathname = useActivePathname();
 
 	const handleNavClick = () => {
 		if (typeof window !== 'undefined' && 'vibrate' in navigator) {
@@ -37,7 +37,7 @@ export function MobileNavbar() {
 	return (
 		<>
 			{/* Bottom Navigation */}
-			<nav className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
+			<nav aria-label="Mobile" className="fixed right-4 bottom-4 left-4 z-50 lg:hidden">
 				<div className="bg-brand border-secondary mx-auto max-w-md rounded-full border-2 px-6 py-3 shadow-[0_0_30px_rgba(198,146,20,0.4)]">
 					<ul className="flex items-center justify-around gap-2">
 						{mobileNavItems.map((item) => {

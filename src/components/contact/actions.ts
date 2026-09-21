@@ -9,6 +9,7 @@ import logger from '@/lib/logger';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
 import { getWriteClient } from '@/sanity/lib/writeClient';
+import { getTenantFromHeaders } from '@/tenants/request';
 
 const log = logger.child({ module: 'contact-form' });
 
@@ -74,7 +75,9 @@ export async function submitContactForm(
 			}
 		}
 
-		const settings = await getSiteSettings();
+		const tenant = await getTenantFromHeaders();
+
+		const settings = await getSiteSettings(tenant ?? undefined);
 
 		if (!settings?.contactEmails) {
 			return {
@@ -160,7 +163,7 @@ export async function submitContactForm(
 		}
 
 		// Send emails
-		await sendContactFormEmails(data, emailFrom, recipientEmail);
+		await sendContactFormEmails(data, emailFrom, recipientEmail, tenant ?? undefined);
 
 		return {
 			success: true,

@@ -7,6 +7,7 @@ import { getSiteSettings } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { publishArticleToSocials } from '@/lib/social/metaPublishService';
 import { buildUrl } from '@/lib/url/buildUrl';
+import { getTenantFromHeaders } from '@/tenants/request';
 
 const log = logger.child({ route: '/api/social-publish' });
 
@@ -90,7 +91,8 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		const siteSettings = await getSiteSettings();
+		const tenant = await getTenantFromHeaders();
+		const siteSettings = await getSiteSettings(tenant ?? undefined);
 		if (!siteSettings?.canonicalUrl) {
 			return NextResponse.json(
 				{

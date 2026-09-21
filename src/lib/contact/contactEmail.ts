@@ -1,4 +1,5 @@
 import { getSiteSettings } from '@/lib/content';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 import type { ContactFormData } from './contactFormSchema';
 import { sendEmail } from './email';
 
@@ -32,8 +33,8 @@ function escapeHtml(text: string): string {
 	});
 }
 
-async function sendConfirmationEmail(name: string, email: string, from: string) {
-	const siteSettings = await getSiteSettings();
+async function sendConfirmationEmail(name: string, email: string, from: string, tenant?: Tenant) {
+	const siteSettings = await getSiteSettings(tenant);
 	const subject = `Thank you for contacting ${siteSettings.clubName}`;
 
 	const bodyHtml = `<!DOCTYPE html>
@@ -136,10 +137,11 @@ async function sendNotificationEmail(data: ContactFormData, recipientEmail: stri
 export async function sendContactFormEmails(
 	data: ContactFormData,
 	emailFrom: string,
-	recipientEmail: string
+	recipientEmail: string,
+	tenant?: Tenant
 ) {
 	await Promise.all([
-		sendConfirmationEmail(data.name, data.email, emailFrom),
+		sendConfirmationEmail(data.name, data.email, emailFrom, tenant),
 		sendNotificationEmail(data, recipientEmail, emailFrom)
 	]);
 }

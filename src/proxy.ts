@@ -45,6 +45,12 @@ function isUnrewrittenPath(pathname: string): boolean {
 	);
 }
 
+export function withRewritePath(url: URL, pathname: string): URL {
+	const rewritten = new URL(url);
+	rewritten.pathname = pathname;
+	return rewritten;
+}
+
 export function buildRewritePath(tenant: Tenant, pathname: string): string | null {
 	const iconFile = iconFileRewritesValue[pathname];
 	if (iconFile) {
@@ -76,21 +82,27 @@ export function proxy(request: NextRequest) {
 	const requestHeaders = new Headers(request.headers);
 	requestHeaders.delete(tenantHeader);
 
+	function renderNotFound(): NextResponse {
+		return NextResponse.rewrite(withRewritePath(request.nextUrl, unmatchedRoutePath), {
+			request: { headers: requestHeaders }
+		});
+	}
+
 	if (isHealthPath(request.nextUrl.pathname)) {
-		return NextResponse.next();
+		return NextResponse.next({ request: { headers: requestHeaders } });
 	}
 
 	// Requests with no club render the club-neutral 404. Rewriting to a path no route
 	// matches triggers global-not-found.tsx; a bare 404 response would be an empty page.
 	if (!tenant) {
-		return NextResponse.rewrite(new URL(unmatchedRoutePath, request.url));
+		return renderNotFound();
 	}
 
 	// Rule 2: reject paths that already carry a tenant slug on a production club domain.
 	// Off outside production, which is what makes preview URLs reachable by path.
 	if (isTenantPrefixedPath(request.nextUrl.pathname, tenantSlugsValue)) {
 		if (process.env.VERCEL_ENV === 'production') {
-			return NextResponse.rewrite(new URL(unmatchedRoutePath, request.url));
+			return renderNotFound();
 		}
 	}
 
@@ -98,7 +110,7 @@ export function proxy(request: NextRequest) {
 
 	const rewritePath = buildRewritePath(tenant, request.nextUrl.pathname);
 	if (rewritePath) {
-		const response = NextResponse.rewrite(new URL(rewritePath, request.url), {
+		const response = NextResponse.rewrite(withRewritePath(request.nextUrl, rewritePath), {
 			request: { headers: requestHeaders }
 		});
 		response.headers.set(tenantHeader, tenant.slug);

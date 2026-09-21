@@ -133,6 +133,29 @@ test.describe('League Table Page', () => {
 	});
 });
 
+test.describe('Navigation active state', () => {
+	test('marks the current page on a fresh load', async ({ page }) => {
+		await page.goto('/news');
+
+		await expect(
+			page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'News' })
+		).toHaveAttribute('aria-current', 'page');
+	});
+
+	test('updates after a client-side navigation', async ({ page }) => {
+		await page.goto('/');
+
+		const primaryNav = page.getByRole('navigation', { name: 'Primary' });
+		await primaryNav.getByRole('link', { name: 'News' }).click();
+
+		await expect(page).toHaveURL(/\/news$/);
+		await expect(primaryNav.getByRole('link', { name: 'News' })).toHaveAttribute(
+			'aria-current',
+			'page'
+		);
+	});
+});
+
 test.describe('Responsive', () => {
 	test('renders on mobile viewport', async ({ page }) => {
 		await page.setViewportSize({ width: 375, height: 667 });
