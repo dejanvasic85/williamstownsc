@@ -17,4 +17,11 @@ export function getAllTenants(): readonly Tenant[] {
 	return registryValue.getAll();
 }
 
+export function getTenantFromHeader(headerValue: string | null | undefined): Tenant | null {
+	if (!headerValue) {
+		return null;
+	}
+	return getTenantBySlug(headerValue);
+}
+
 export { normaliseHost };

@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { CalendarArrowDown, ExternalLink, LayoutList } from 'lucide-react';
+import { useActivePathname } from '@/lib/hooks/useActivePathname';
 
 type Tab = {
 	label: string;
@@ -29,7 +29,7 @@ export function TeamDetailNav({
 	hasTable,
 	fixturesUrl
 }: TeamDetailNavProps) {
-	const pathname = usePathname();
+	const pathname = useActivePathname();
 	const basePath = `/football/teams/${teamSlug}`;
 	const [isStuck, setIsStuck] = useState(false);
 	const sentinelRef = useRef<HTMLDivElement>(null);

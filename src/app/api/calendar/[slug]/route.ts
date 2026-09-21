@@ -2,6 +2,7 @@ import { TZDate } from '@date-fns/tz';
 import { addHours } from 'date-fns';
 import { getMatchdayClubId } from '@/lib/content/siteSettings';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
+import { getTenantFromHeaders } from '@/tenants/request';
 import type { EnrichedFixture } from '@/types/matches';
 
 const melbourneTimezone = 'Australia/Melbourne';
@@ -86,7 +87,8 @@ export async function GET(_request: Request, { params }: RouteParams) {
 		return new Response('Not Found', { status: 404 });
 	}
 
-	const wscClubId = await getMatchdayClubId();
+	const tenant = await getTenantFromHeaders();
+	const wscClubId = await getMatchdayClubId(tenant ?? undefined);
 	const wscFixtures = wscClubId
 		? fixtureData.fixtures.filter(
 				(f) => f.homeTeam.externalId === wscClubId || f.awayTeam.externalId === wscClubId

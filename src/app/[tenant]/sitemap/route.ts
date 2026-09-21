@@ -1,15 +1,53 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { getAllArticlesForSitemap } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import { getAllTeamsForSitemap } from '@/lib/content/teams';
 import logger from '@/lib/logger';
 import { buildUrl } from '@/lib/url/buildUrl';
+import { escapeXml } from '@/lib/url/escapeXml';
+import { getAllTenants, getTenantBySlug } from '@/tenants';
 
 const log = logger.child({ module: 'sitemap' });
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const siteSettings = await getSiteSettings();
+type SitemapRouteParams = {
+	params: Promise<{ tenant: string }>;
+};
+
+export async function generateStaticParams() {
+	return getAllTenants().map((tenant) => ({ tenant: tenant.slug }));
+}
+
+function buildSitemapXml(entries: MetadataRoute.Sitemap): string {
+	const urls = entries
+		.map((entry) => {
+			const parts = [
+				'<url>',
+				`<loc>${escapeXml(entry.url)}</loc>`,
+				`<lastmod>${new Date(entry.lastModified ?? new Date()).toISOString()}</lastmod>`
+			];
+			if (entry.changeFrequency) {
+				parts.push(`<changefreq>${entry.changeFrequency}</changefreq>`);
+			}
+			if (entry.priority !== undefined) {
+				parts.push(`<priority>${entry.priority.toFixed(1)}</priority>`);
+			}
+			parts.push('</url>');
+			return parts.join('');
+		})
+		.join('');
+
+	return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
+}
+
+export async function GET(_request: Request, { params }: SitemapRouteParams) {
+	const { tenant: slug } = await params;
+	const tenant = getTenantBySlug(slug);
+	if (!tenant) {
+		return new Response('Unknown tenant', { status: 404 });
+	}
+	const siteSettings = await getSiteSettings(tenant);
 
 	if (!siteSettings?.canonicalUrl) {
 		throw new Error(
@@ -148,20 +186,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 0.7
 		}));
 
-		log.info(
-			{
-				staticRoutes: staticRoutesValue.length,
-				newsRoutes: newsRoutes.length,
-				teamRoutes: teamRoutes.length
-			},
-			'sitemap generated'
-		);
+		log.info({ tenant, staticRoutes: staticRoutesValue.length }, 'sitemap generated');
 
-		return [...staticRoutesValue, ...newsRoutes, ...teamRoutes];
+		return new Response(buildSitemapXml([...staticRoutesValue, ...newsRoutes, ...teamRoutes]), {
+			headers: {
+				'Content-Type': 'application/xml; charset=utf-8'
+			}
+		});
 	} catch (error) {
 		Sentry.captureException(error);
 		log.error({ err: error }, 'error generating dynamic sitemap routes');
-		return staticRoutesValue;
+		return new Response(buildSitemapXml(staticRoutesValue), {
+			headers: {
+				'Content-Type': 'application/xml; charset=utf-8'
+			}
+		});
 	}
 }
 

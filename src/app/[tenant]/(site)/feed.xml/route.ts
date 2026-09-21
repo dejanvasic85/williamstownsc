@@ -3,25 +3,29 @@ import { getAllArticlesForFeed } from '@/lib/content/news';
 import { getSiteSettings } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { buildUrl } from '@/lib/url/buildUrl';
+import { escapeXml } from '@/lib/url/escapeXml';
+import { getTenantBySlug } from '@/tenants';
 
 const log = logger.child({ route: '/feed.xml' });
 
 type FeedArticle = Awaited<ReturnType<typeof getAllArticlesForFeed>>[number];
 
-function escapeXml(text: string): string {
-	return text
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;')
-		.replace(/"/g, '&quot;')
-		.replace(/'/g, '&apos;');
-}
+type FeedRouteParams = {
+	params: Promise<{ tenant: string }>;
+};
 
-export async function GET() {
+export async function GET(_request: Request, { params }: FeedRouteParams) {
 	try {
+		const { tenant: slug } = await params;
+		const tenant = getTenantBySlug(slug);
+
+		if (!tenant) {
+			return new Response('Unknown tenant', { status: 404 });
+		}
+
 		const [articles, siteSettings] = await Promise.all([
-			getAllArticlesForFeed(),
-			getSiteSettings()
+			getAllArticlesForFeed(tenant),
+			getSiteSettings(tenant)
 		]);
 
 		const siteUrl = buildUrl(siteSettings?.canonicalUrl || 'https://www.williamstownsc.com');
