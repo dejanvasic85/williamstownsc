@@ -69,7 +69,10 @@ jobs:
       - name: Run E2E tests
         run: pnpm run test:e2e
         env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ steps.wait_for_vercel.outputs.deployment-url }}
+          # On main, test the club domain rather than the per-deployment URL. Deployment URLs
+          # are unique per build, so they cannot be registry domains, and the non-production
+          # host rules that would resolve them are off when VERCEL_ENV is production.
+          PLAYWRIGHT_TEST_BASE_URL: ${{ github.ref == 'refs/heads/main' && 'https://www.williamstownsc.com' || steps.wait_for_vercel.outputs.deployment-url }}
       - name: Upload test results
         uses: actions/upload-artifact@v7
         if: failure()
