@@ -223,3 +223,20 @@ test.describe('Accessibility', () => {
 		}
 	});
 });
+
+test.describe('Metadata endpoints', () => {
+	test('serves the sitemap as XML', async ({ request }) => {
+		const response = await request.get('/sitemap.xml');
+
+		expect(response.status()).toBe(200);
+		expect(response.headers()['content-type']).toContain('application/xml');
+		expect(await response.text()).toContain('<urlset');
+	});
+
+	test('serves robots.txt with the sitemap URL', async ({ request }) => {
+		const response = await request.get('/robots.txt');
+
+		expect(response.status()).toBe(200);
+		expect(await response.text()).toContain('Sitemap:');
+	});
+});

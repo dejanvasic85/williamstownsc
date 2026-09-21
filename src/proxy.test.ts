@@ -26,7 +26,7 @@ describe('buildRewritePath', () => {
 	});
 
 	it('rewrites metadata files under the club slug', () => {
-		expect(buildRewritePath(williamstownValue, '/sitemap.xml')).toBe('/williamstown/sitemap.xml');
+		expect(buildRewritePath(williamstownValue, '/sitemap.xml')).toBe('/williamstown/sitemap');
 		expect(buildRewritePath(williamstownValue, '/robots.txt')).toBe('/williamstown/robots.txt');
 		expect(buildRewritePath(williamstownValue, '/manifest.webmanifest')).toBe(
 			'/williamstown/manifest.webmanifest'

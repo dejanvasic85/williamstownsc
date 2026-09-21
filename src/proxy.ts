@@ -5,8 +5,10 @@ import type { Tenant } from '@/tenants/schema/tenantSchema';
 const tenantHeader = 'x-tenant';
 
 // Metadata and icon requests keep their public path but must resolve per club.
+// The sitemap route lives at /[tenant]/sitemap (not sitemap.xml) because Next treats a
+// folder ending in sitemap.xml as a static metadata file and drops the tenant param.
 const metadataFileRewritesValue: Record<string, string> = {
-	'/sitemap.xml': '/sitemap.xml',
+	'/sitemap.xml': '/sitemap',
 	'/robots.txt': '/robots.txt',
 	'/manifest.webmanifest': '/manifest.webmanifest'
 };
