@@ -50,6 +50,11 @@ describe('buildRewritePath', () => {
 		expect(buildRewritePath(williamstownValue, '/_next/static/x.js')).toBeNull();
 	});
 
+	it('leaves public assets unrewritten so they keep their path', () => {
+		expect(buildRewritePath(williamstownValue, '/img/player-alt.webp')).toBeNull();
+		expect(buildRewritePath(williamstownValue, '/tenants/williamstown/icon.svg')).toBeNull();
+	});
+
 	it('leaves club-prefixed paths unrewritten so previews can reach them', () => {
 		expect(buildRewritePath(williamstownValue, '/williamstown/news')).toBeNull();
 		expect(buildRewritePath(williamstownValue, '/williamstown')).toBeNull();

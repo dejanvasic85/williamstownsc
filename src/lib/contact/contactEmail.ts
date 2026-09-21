@@ -35,7 +35,8 @@ function escapeHtml(text: string): string {
 
 async function sendConfirmationEmail(name: string, email: string, from: string, tenant?: Tenant) {
 	const siteSettings = await getSiteSettings(tenant);
-	const subject = `Thank you for contacting ${siteSettings.clubName}`;
+	const clubName = siteSettings.clubName ?? '';
+	const subject = `Thank you for contacting ${clubName}`;
 
 	const bodyHtml = `<!DOCTYPE html>
 <html>
@@ -44,13 +45,13 @@ async function sendConfirmationEmail(name: string, email: string, from: string, 
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
 	<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-		<h2 style="color: #2563eb;">Thank you for contacting Williamstown SC</h2>
+		<h2 style="color: #2563eb;">Thank you for contacting ${escapeHtml(clubName)}</h2>
 		<p>Dear ${escapeHtml(name)},</p>
-		<p>Thank you for contacting ${siteSettings.clubName}!</p>
+		<p>Thank you for contacting ${escapeHtml(clubName)}!</p>
 		<p>We have received your enquiry and someone from our team will get back to you as soon as possible.</p>
 		<p>For urgent matters, you can also contact us directly via the contact details on our website.</p>
 		<p>Best regards,<br>
-		<strong>${siteSettings.clubName} Team</strong></p>
+		<strong>${escapeHtml(clubName)} Team</strong></p>
 	</div>
 </body>
 </html>`;

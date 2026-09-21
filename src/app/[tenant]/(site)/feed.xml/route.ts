@@ -17,10 +17,14 @@ type FeedRouteParams = {
 export async function GET(_request: Request, { params }: FeedRouteParams) {
 	try {
 		const { tenant: slug } = await params;
-		const tenant = getTenantBySlug(slug) ?? undefined;
+		const tenant = getTenantBySlug(slug);
+
+		if (!tenant) {
+			return new Response('Unknown tenant', { status: 404 });
+		}
 
 		const [articles, siteSettings] = await Promise.all([
-			getAllArticlesForFeed(),
+			getAllArticlesForFeed(tenant),
 			getSiteSettings(tenant)
 		]);
 

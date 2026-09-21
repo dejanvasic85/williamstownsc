@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
+import { client, getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { NewsArticle } from '@/sanity/sanity.types';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
 	title: string;
@@ -171,7 +172,7 @@ type FeedArticleQueryResult = Omit<NewsArticle, 'featuredImage'> & {
 	};
 };
 
-export async function getAllArticlesForFeed() {
+export async function getAllArticlesForFeed(tenant: Tenant) {
 	const feedArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) [0...50] {
 		_id,
 		title,
@@ -188,7 +189,7 @@ export async function getAllArticlesForFeed() {
 		}
 	}`;
 
-	const articles = await client.fetch<FeedArticleQueryResult[]>(
+	const articles = await getSanityClient(tenant).fetch<FeedArticleQueryResult[]>(
 		feedArticlesQuery,
 		{},
 		{ next: { tags: ['newsArticle'] } }

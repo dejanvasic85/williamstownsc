@@ -19,8 +19,9 @@ const iconFileRewritesValue: Record<string, string> = {
 	'/icon-512.png': '/icon-512.png'
 };
 
-// Paths that are never rewritten to /<slug>/..., but still carry x-tenant.
-const unrewrittenPathPrefixesValue = ['/api', '/studio', '/_next'];
+// Paths that are never rewritten to /<slug>/..., but still carry x-tenant. Public files
+// under /img and /tenants keep their own path; the icon rewrite points at /tenants.
+const unrewrittenPathPrefixesValue = ['/api', '/studio', '/_next', '/img', '/tenants'];
 
 // Rewriting to a path no route matches renders global-not-found.tsx with a 404 status.
 const unmatchedRoutePath = '/__unmatched_route__';
