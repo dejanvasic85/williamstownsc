@@ -28,7 +28,9 @@ const sanityConfigSchema = z.object({
 
 const secretsSchema = z.object({
 	sanityWriteToken: secretSourceSchema,
-	revalidateSecret: secretSourceSchema
+	revalidateSecret: secretSourceSchema,
+	// Full stadly intake URL, token included. Unset means the club sends no enquiries there.
+	enquiryIntakeUrl: secretSourceSchema.optional()
 });
 
 // Optional group so a club without a Facebook page omits the whole block, never half of it.
