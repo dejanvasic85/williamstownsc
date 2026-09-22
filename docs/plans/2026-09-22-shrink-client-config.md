@@ -34,7 +34,6 @@ Out of scope: deleting the `client`/`writeClient` singletons, migrating `lib/con
 - [x] `getSanityWriteClient(tenant)` takes only `apiVersion` from config
 - [x] Fix `sanity.cli.ts`, which reads the Sanity project from `getClientConfig()`
 - [x] Confirm `verifyToken.ts` and `contact/actions.ts` still compile (site key only)
-- [x] Add a unit test: `getClientConfig()` returns only `recaptchaSiteKey` even when Sanity env set
 - [x] Run `pnpm run format`
 - [x] Run `pnpm run lint`
 - [x] Run `pnpm run type:check`
@@ -59,7 +58,6 @@ Out of scope: deleting the `client`/`writeClient` singletons, migrating `lib/con
 | `sanity.cli.ts`                        | Point at a fixed reference project instead of `getClientConfig()`               |
 | `src/app/[tenant]/layout.tsx`          | ConfigProvider now passes only the site key (no code change expected)           |
 | `src/lib/providers/ConfigProvider.tsx` | Unchanged; type shrinks with `ClientConfig`                                     |
-| `src/lib/config.test.ts`               | Asserts the client config carries only the site key                             |
 
 ## Unresolved Questions
 
