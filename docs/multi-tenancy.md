@@ -514,8 +514,8 @@ costs editors a bookmark and gains a club-branded URL they already have. That is
 in the Sanity Studio section, and dropping it is the recommendation.
 
 `pnpm run type:gen` still runs against one reference project, which is correct because the schema is
-identical everywhere. Note that `sanity.cli.ts` currently reads the Sanity project id from
-`getClientConfig()`, which stops carrying it, so it needs pointing at a reference project directly.
+identical everywhere. `sanity.cli.ts` points at that reference project directly, since
+`getClientConfig()` no longer carries the project id.
 
 ### Data does not migrate itself
 

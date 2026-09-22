@@ -1,13 +1,13 @@
 import { type SanityClient, createClient } from 'next-sanity';
-import { getClientConfig } from '@/lib/config';
+import { getSanityReadConfig } from '@/lib/config';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
-const config = getClientConfig();
+const sanityReadConfig = getSanityReadConfig();
 
 export const client = createClient({
-	projectId: config.sanityProjectId,
-	dataset: config.sanityDataset,
-	apiVersion: config.sanityApiVersion,
+	projectId: sanityReadConfig.projectId,
+	dataset: sanityReadConfig.dataset,
+	apiVersion: sanityReadConfig.apiVersion,
 	useCdn: true,
 	perspective: 'published'
 });
@@ -27,7 +27,7 @@ export function getSanityClient(tenant: Tenant): SanityClient {
 	const tenantClient = createClient({
 		projectId: tenant.sanity.projectId,
 		dataset: tenant.sanity.dataset,
-		apiVersion: config.sanityApiVersion,
+		apiVersion: sanityReadConfig.apiVersion,
 		useCdn: true,
 		perspective: 'published'
 	});

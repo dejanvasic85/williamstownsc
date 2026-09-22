@@ -1,16 +1,16 @@
 import { config as loadEnv } from 'dotenv';
 import { defineCliConfig } from 'sanity/cli';
-import { getClientConfig } from './src/lib/config';
 
 loadEnv({ path: '.env.local' });
 
-const config = getClientConfig();
+// The schema is identical for every club, so type generation runs against one reference project.
+const referenceProjectValue = {
+	projectId: '1ougwkz1',
+	dataset: 'production'
+};
 
 export default defineCliConfig({
-	api: {
-		projectId: config.sanityProjectId,
-		dataset: config.sanityDataset
-	},
+	api: referenceProjectValue,
 	studioHost: 'williamstownsc',
 	deployment: {
 		autoUpdates: true,
