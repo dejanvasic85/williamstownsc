@@ -62,7 +62,9 @@ function assertNoConflicts(tenants: readonly Tenant[]): void {
 		const secretKeys = [
 			...Object.values(tenant.secrets),
 			...Object.values(tenant.socialPublishing ?? {})
-		].map((secret) => secret.key);
+		]
+			.filter((secret) => secret !== undefined)
+			.map((secret) => secret.key);
 
 		for (const key of secretKeys) {
 			const keyOwner = secretKeyOwners.get(key);

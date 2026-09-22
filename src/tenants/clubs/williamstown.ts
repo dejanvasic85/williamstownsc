@@ -10,7 +10,8 @@ export const williamstown = defineTenant({
 	sanity: { projectId: '1ougwkz1', dataset: 'production' },
 	secrets: {
 		sanityWriteToken: { from: 'env', key: 'WILLIAMSTOWN_SANITY_WRITE_TOKEN' },
-		revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' }
+		revalidateSecret: { from: 'env', key: 'WILLIAMSTOWN_REVALIDATE_SECRET' },
+		enquiryIntakeUrl: { from: 'env', key: 'WILLIAMSTOWN_STADLY_ENQUIRY_URL' }
 	},
 	socialPublishing: {
 		metaPageAccessToken: { from: 'env', key: 'WILLIAMSTOWN_META_PAGE_ACCESS_TOKEN' },

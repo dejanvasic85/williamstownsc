@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { Tenant } from '../schema/tenantSchema';
-import { getTenantSecret } from './tenantSecrets';
+import { getOptionalTenantSecret, getTenantSecret } from './tenantSecrets';
 
 const tenantValue: Tenant = {
 	slug: 'williamstown',
@@ -36,5 +36,36 @@ describe('getTenantSecret', () => {
 		expect(() => getTenantSecret('metaPageAccessToken', tenantValue)).toThrow(
 			/Tenant "williamstown" does not configure the secret "metaPageAccessToken"/
 		);
+	});
+});
+
+describe('getOptionalTenantSecret', () => {
+	const optionalEnvKey = 'WILLIAMSTOWN_STADLY_ENQUIRY_URL';
+	const tenantWithIntake: Tenant = {
+		...tenantValue,
+		secrets: {
+			...tenantValue.secrets,
+			enquiryIntakeUrl: { from: 'env', key: optionalEnvKey }
+		}
+	};
+
+	beforeEach(() => {
+		delete process.env[optionalEnvKey];
+	});
+
+	it('reads an optional secret when it is set', () => {
+		process.env[optionalEnvKey] = 'https://www.stadly.com.au/api/public/enquiries/wf_test';
+
+		expect(getOptionalTenantSecret('enquiryIntakeUrl', tenantWithIntake)).toBe(
+			'https://www.stadly.com.au/api/public/enquiries/wf_test'
+		);
+	});
+
+	it('returns null when the club does not configure it', () => {
+		expect(getOptionalTenantSecret('enquiryIntakeUrl', tenantValue)).toBeNull();
+	});
+
+	it('returns null when the club configures it but the value is not set', () => {
+		expect(getOptionalTenantSecret('enquiryIntakeUrl', tenantWithIntake)).toBeNull();
 	});
 });
