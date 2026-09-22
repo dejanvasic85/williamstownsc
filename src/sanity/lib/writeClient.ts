@@ -1,35 +1,7 @@
 import { type SanityClient, createClient } from 'next-sanity';
-import { getSanityReadConfig, getSanityWriteConfig } from '@/lib/config';
+import { getSanityReadConfig } from '@/lib/config';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 import { getTenantSecret } from '@/tenants/secrets/tenantSecrets';
-
-let cachedWriteClient: SanityClient | null = null;
-
-/**
- * Get a server-side Sanity client with write permissions.
- * Lazily initializes the client on first use to avoid crashes
- * when SANITY_WRITE_TOKEN is missing on pages that don't need it.
- * IMPORTANT: Only use on the server - never expose write token to client
- */
-export function getWriteClient(): SanityClient {
-	if (cachedWriteClient) {
-		return cachedWriteClient;
-	}
-
-	const sanityReadConfig = getSanityReadConfig();
-	const writeConfig = getSanityWriteConfig();
-
-	cachedWriteClient = createClient({
-		projectId: sanityReadConfig.projectId,
-		dataset: sanityReadConfig.dataset,
-		apiVersion: sanityReadConfig.apiVersion,
-		useCdn: false, // Must be false for mutations
-		token: writeConfig.sanityWriteToken,
-		perspective: 'published'
-	});
-
-	return cachedWriteClient;
-}
 
 const sanityWriteClientByTenantValue = new Map<string, SanityClient>();
 

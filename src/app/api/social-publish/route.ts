@@ -92,7 +92,11 @@ export async function POST(request: NextRequest) {
 		}
 
 		const tenant = await getTenantFromHeaders();
-		const siteSettings = await getSiteSettings(tenant ?? undefined);
+		if (!tenant) {
+			return NextResponse.json({ error: 'Unknown club' }, { status: 400 });
+		}
+
+		const siteSettings = await getSiteSettings(tenant);
 		if (!siteSettings?.canonicalUrl) {
 			return NextResponse.json(
 				{
@@ -105,14 +109,17 @@ export async function POST(request: NextRequest) {
 
 		const articleUrl = buildUrl(siteSettings.canonicalUrl, 'news', article.slug);
 
-		const results = await publishArticleToSocials({
-			title: article.title,
-			excerpt: article.excerpt,
-			imageUrl: article.featuredImage.url,
-			articleUrl,
-			publishToFacebook: article.publishToFacebook,
-			publishToInstagram: article.publishToInstagram
-		});
+		const results = await publishArticleToSocials(
+			{
+				title: article.title,
+				excerpt: article.excerpt,
+				imageUrl: article.featuredImage.url,
+				articleUrl,
+				publishToFacebook: article.publishToFacebook,
+				publishToInstagram: article.publishToInstagram
+			},
+			tenant
+		);
 
 		const successCount = results.filter((r) => r.success).length;
 		const failureCount = results.filter((r) => !r.success).length;

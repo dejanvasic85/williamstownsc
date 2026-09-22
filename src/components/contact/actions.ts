@@ -9,7 +9,7 @@ import { getSiteSettings } from '@/lib/content/siteSettings';
 import logger from '@/lib/logger';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
 import { verifyRecaptchaToken } from '@/lib/recaptcha/verifyToken';
-import { getWriteClient } from '@/sanity/lib/writeClient';
+import { getSanityWriteClient } from '@/sanity/lib/writeClient';
 import { getTenantFromHeaders } from '@/tenants/request';
 
 const log = logger.child({ module: 'contact-form' });
@@ -78,7 +78,15 @@ export async function submitContactForm(
 
 		const tenant = await getTenantFromHeaders();
 
-		const settings = await getSiteSettings(tenant ?? undefined);
+		if (!tenant) {
+			return {
+				success: false,
+				message: 'Something went wrong. Please try again later.',
+				error: 'Unknown club'
+			};
+		}
+
+		const settings = await getSiteSettings(tenant);
 
 		if (!settings?.contactEmails) {
 			return {
@@ -155,7 +163,7 @@ export async function submitContactForm(
 					break;
 			}
 
-			await getWriteClient().create({
+			await getSanityWriteClient(tenant).create({
 				...submissionData,
 				...typeSpecificFields
 			});
@@ -164,12 +172,10 @@ export async function submitContactForm(
 		}
 
 		// Send emails
-		await sendContactFormEmails(data, emailFrom, recipientEmail, tenant ?? undefined);
+		await sendContactFormEmails(data, emailFrom, recipientEmail, tenant);
 
 		// Forward to the club's stadly inbox last. Failures are logged there, never fatal here.
-		if (tenant) {
-			await sendEnquiryToStadly(data, tenant);
-		}
+		await sendEnquiryToStadly(data, tenant);
 
 		return {
 			success: true,

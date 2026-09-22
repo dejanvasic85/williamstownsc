@@ -74,7 +74,7 @@ curl "https://graph.facebook.com/v22.0/559699174041802?fields=access_token&acces
 
 Find the access token in that response for the Williamstown Soccer Club page. To check its details — including whether it's a user token or a page token — paste it into the [debugger](https://developers.facebook.com/tools/debug/accesstoken/).
 
-This page token should not expire. Set it as the `META_PAGE_ACCESS_TOKEN` environment variable in `.env.local` or Vercel.
+This page token should not expire. Set it as the `WILLIAMSTOWN_META_PAGE_ACCESS_TOKEN` environment variable in `.env.local` or Vercel. The club manifest reads it through `getTenantSecret`, so a second club uses its own key.
 
 ## Step 4 — Call the API route to publish to the page
 

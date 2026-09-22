@@ -1,8 +1,9 @@
 import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
-import { getRevalidationConfig } from '@/lib/config';
 import logger from '@/lib/logger';
+import { getTenantFromHeaders } from '@/tenants/request';
+import { getTenantSecret } from '@/tenants/secrets/tenantSecrets';
 
 const log = logger.child({ route: '/api/revalidate' });
 
@@ -27,9 +28,15 @@ function isValidContentType(contentType: string): boolean {
 
 export async function POST(request: NextRequest) {
 	try {
-		// Verify authentication
+		// The club comes from the validated Host the proxy carries in x-tenant, never the caller.
+		const tenant = await getTenantFromHeaders();
+		if (!tenant) {
+			return NextResponse.json({ error: 'Unknown club' }, { status: 400 });
+		}
+
+		// Verify authentication against that club's own secret
 		const revalidateSecret = request.headers.get('x-revalidate-secret');
-		const { revalidateSecret: expectedSecret } = getRevalidationConfig();
+		const expectedSecret = getTenantSecret('revalidateSecret', tenant);
 
 		if (revalidateSecret !== expectedSecret) {
 			return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
