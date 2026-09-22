@@ -2,10 +2,15 @@ import { z } from 'zod';
 
 // Client-safe config schema (only public env vars)
 const clientConfigSchema = z.object({
-	sanityProjectId: z.string().min(1, 'Sanity project ID is required'),
-	sanityDataset: z.string().min(1, 'Sanity dataset is required'),
-	sanityApiVersion: z.string().default('2024-01-01'),
 	recaptchaSiteKey: z.string().optional()
+});
+
+// Server-only Sanity read config. Transitional: the read/write client singletons still need
+// a project to construct a connection, and they are removed in the tenant content migration.
+const sanityReadConfigSchema = z.object({
+	projectId: z.string().min(1, 'Sanity project ID is required'),
+	dataset: z.string().min(1, 'Sanity dataset is required'),
+	apiVersion: z.string().default('2024-01-01')
 });
 
 const studioConfigSchema = z.object({
@@ -64,6 +69,7 @@ export type ClubConfig = {
 	wscClubName: string;
 };
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
+export type SanityReadConfig = z.infer<typeof sanityReadConfigSchema>;
 export type StudioConfig = z.infer<typeof studioConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
@@ -74,26 +80,27 @@ export type SocialPublishConfig = z.infer<typeof socialPublishConfigSchema>;
 export type MatchdayConfig = z.infer<typeof matchdayConfigSchema>;
 export type MatchdayWebhookConfig = z.infer<typeof matchdayWebhookConfigSchema>;
 
-let cachedClientConfig: ClientConfig | null = null;
-
 /**
  * Get client-safe config (can be used in both server and client)
  * Only contains public environment variables
  */
 export function getClientConfig(): ClientConfig {
-	if (cachedClientConfig) {
-		return cachedClientConfig;
-	}
-
-	const config = clientConfigSchema.parse({
-		sanityProjectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-		sanityDataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-		sanityApiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+	return clientConfigSchema.parse({
 		recaptchaSiteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 	});
+}
 
-	cachedClientConfig = config;
-	return config;
+/**
+ * Get the Sanity read config (server-only).
+ * Transitional home for the read/write client singletons. Per-club project details come from the
+ * tenant registry once the content modules take a tenant.
+ */
+export function getSanityReadConfig(): SanityReadConfig {
+	return sanityReadConfigSchema.parse({
+		projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+		dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+		apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION
+	});
 }
 
 /**
