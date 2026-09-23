@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PageContainer } from '@/components/layout';
+import { getCurrentTenant } from '@/tenants/current';
 
 export const metadata: Metadata = {
 	title: 'Football',
@@ -26,9 +27,15 @@ const footballLinks = [
 	}
 ];
 
-export default function FootballPage() {
+export default async function FootballPage() {
+	const tenant = await getCurrentTenant();
+
 	return (
-		<PageContainer heading="Football" intro="Explore our football teams, programs, and merchandise">
+		<PageContainer
+			tenant={tenant}
+			heading="Football"
+			intro="Explore our football teams, programs, and merchandise"
+		>
 			<div className="mx-auto max-w-2xl">
 				<nav className="grid gap-4">
 					{footballLinks.map((link) => (

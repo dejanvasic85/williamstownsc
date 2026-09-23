@@ -1,8 +1,6 @@
 import { beforeEach } from 'vitest';
 
-// Sanity client config, needed because the module-level client parses it on import.
-process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ??= 'test-sanity-project';
-process.env.NEXT_PUBLIC_SANITY_DATASET ??= 'production';
+// Shared Sanity config, needed because the client modules parse it when they build a connection.
 process.env.NEXT_PUBLIC_SANITY_API_VERSION ??= '2024-01-01';
 
 // Reset process.env to its state at load time before every test, so a test that sets

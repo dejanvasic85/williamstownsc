@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 import type { CommitteeMember } from '@/types/committee';
 
 type CommitteePageData = {
@@ -27,7 +28,7 @@ type CommitteePageData = {
 	lastUpdated?: string;
 };
 
-export async function getCommitteePageData(): Promise<CommitteePageData | null> {
+export async function getCommitteePageData(tenant: Tenant): Promise<CommitteePageData | null> {
 	const committeePageQuery = groq`*[_type == "committeePage" && _id == "committeePage"][0]{
 		heading,
 		introduction,
@@ -69,7 +70,7 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<CommitteePageData>(
+	const data = await getSanityClient(tenant).fetch<CommitteePageData>(
 		committeePageQuery,
 		{},
 		{ next: { tags: ['page', 'committeePage'] } }
@@ -85,7 +86,7 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 		body: data.body,
 		featuredImage: data.featuredImage
 			? {
-					url: urlFor(data.featuredImage).width(1200).height(600).fit('crop').url(),
+					url: urlFor(tenant.sanity, data.featuredImage).width(1200).height(600).fit('crop').url(),
 					alt: data.featuredImage.alt || ''
 				}
 			: undefined,
@@ -99,7 +100,11 @@ export async function getCommitteePageData(): Promise<CommitteePageData | null> 
 					ogDescription: data.seo.ogDescription || undefined,
 					ogImage: data.seo.ogImage
 						? {
-								url: urlFor(data.seo.ogImage).width(1200).height(630).fit('crop').url(),
+								url: urlFor(tenant.sanity, data.seo.ogImage)
+									.width(1200)
+									.height(630)
+									.fit('crop')
+									.url(),
 								alt: data.seo.ogImage.alt || ''
 							}
 						: undefined,

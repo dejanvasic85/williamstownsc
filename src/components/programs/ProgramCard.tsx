@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { PortableTextBlock } from '@portabletext/types';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
+import type { SanityImageProject } from '@/sanity/lib/image';
 
 interface ProgramCardProps {
 	name: string;
@@ -13,6 +14,7 @@ interface ProgramCardProps {
 	description: PortableTextBlock[];
 	imageUrl?: string;
 	gradient: string;
+	sanity: SanityImageProject;
 }
 
 const gradientClasses = {
@@ -32,7 +34,8 @@ export function ProgramCard({
 	maxAge,
 	description,
 	imageUrl,
-	gradient
+	gradient,
+	sanity
 }: ProgramCardProps) {
 	const formatDate = (dateString: string) => {
 		return new Date(dateString).toLocaleDateString('en-AU', {
@@ -80,6 +83,7 @@ export function ProgramCard({
 					<div className="mb-6">
 						<PortableTextContent
 							blocks={description}
+							sanity={sanity}
 							className="text-white/90"
 							headingLevel="section"
 						/>

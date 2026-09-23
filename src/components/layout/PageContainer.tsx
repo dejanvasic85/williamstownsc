@@ -4,8 +4,10 @@ import clsx from 'clsx';
 import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { getAnnouncements } from '@/lib/content';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 type PageContainerProps = {
+	tenant: Tenant;
 	children?: ReactNode;
 	heading?: string;
 	intro?: string | unknown[];
@@ -17,13 +19,14 @@ type PageContainerProps = {
 };
 
 export async function PageContainer({
+	tenant,
 	children,
 	heading,
 	intro,
 	featuredImage,
 	layout = 'full-width'
 }: PageContainerProps) {
-	const announcements = await getAnnouncements();
+	const announcements = await getAnnouncements(tenant);
 	const hasAnnouncements = announcements.length > 0;
 
 	return (
@@ -45,7 +48,7 @@ export async function PageContainer({
 								{typeof intro === 'string' ? (
 									<p>{intro}</p>
 								) : (
-									<PortableTextContent blocks={intro} />
+									<PortableTextContent blocks={intro} sanity={tenant.sanity} />
 								)}
 							</div>
 						)}

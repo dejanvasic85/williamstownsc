@@ -81,14 +81,19 @@ function buildIcal(
 
 export async function GET(_request: Request, { params }: RouteParams) {
 	const { slug } = await params;
-	const fixtureData = await getFixturesForTeam(slug);
+
+	const tenant = await getTenantFromHeaders();
+	if (!tenant) {
+		return new Response('Unknown club', { status: 400 });
+	}
+
+	const fixtureData = await getFixturesForTeam(tenant, slug);
 
 	if (!fixtureData) {
 		return new Response('Not Found', { status: 404 });
 	}
 
-	const tenant = await getTenantFromHeaders();
-	const wscClubId = await getMatchdayClubId(tenant ?? undefined);
+	const wscClubId = await getMatchdayClubId(tenant);
 	const wscFixtures = wscClubId
 		? fixtureData.fixtures.filter(
 				(f) => f.homeTeam.externalId === wscClubId || f.awayTeam.externalId === wscClubId

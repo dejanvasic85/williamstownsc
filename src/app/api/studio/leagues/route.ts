@@ -13,7 +13,10 @@ const corsHeaders = { 'Access-Control-Allow-Origin': '*' };
 export async function GET() {
 	try {
 		const tenant = await getTenantFromHeaders();
-		const options = await getClubLeagueOptions(tenant ?? undefined);
+		if (!tenant) {
+			return NextResponse.json({ error: 'Unknown club' }, { status: 400, headers: corsHeaders });
+		}
+		const options = await getClubLeagueOptions(tenant);
 		return NextResponse.json({ options }, { headers: corsHeaders });
 	} catch (error) {
 		Sentry.captureException(error);

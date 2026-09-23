@@ -2,11 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
 import { searchContent } from '@/lib/content/search';
 import logger from '@/lib/logger';
+import { getTenantFromHeaders } from '@/tenants/request';
 
 const log = logger.child({ route: '/api/search' });
 
 export async function GET(request: NextRequest) {
 	try {
+		const tenant = await getTenantFromHeaders();
+		if (!tenant) {
+			return NextResponse.json({ error: 'Unknown club' }, { status: 400 });
+		}
+
 		const searchParams = request.nextUrl.searchParams;
 		const query = searchParams.get('q');
 
@@ -26,7 +32,7 @@ export async function GET(request: NextRequest) {
 			);
 		}
 
-		const results = await searchContent(trimmedQuery);
+		const results = await searchContent(tenant, trimmedQuery);
 
 		return NextResponse.json({
 			results,

@@ -4,16 +4,20 @@ import { PageContainer } from '@/components/layout';
 import { SponsorTierGroup } from '@/components/sponsors';
 import { getSponsorsGroupedByTier } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getPageMetadata('sponsorsPage');
+	const tenant = await getCurrentTenant();
+	return getPageMetadata(tenant, 'sponsorsPage');
 }
 
 export default async function SponsorsPage() {
-	const tiers = await getSponsorsGroupedByTier();
+	const tenant = await getCurrentTenant();
+	const tiers = await getSponsorsGroupedByTier(tenant);
 
 	return (
 		<PageContainer
+			tenant={tenant}
 			heading="Our Sponsors"
 			intro="We are grateful for the support of our sponsors who help make our club possible."
 		>

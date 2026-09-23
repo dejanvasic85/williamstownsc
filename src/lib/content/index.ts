@@ -12,8 +12,8 @@ export {
 } from './sponsors';
 export type { TransformedSponsor, SponsorTier, SponsorTypeData } from './sponsors';
 
-export { getActivePrograms } from './programs';
-export type { TransformedProgram } from './programs';
+export { getActivePrograms, getFeaturedPrograms } from './programs';
+export type { ProgramWithImage } from './programs';
 
 export { getHomePageData } from './homePage';
 

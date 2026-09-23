@@ -23,6 +23,7 @@ import { getPageMetadata } from '@/lib/content/page';
 import { getNextMatch } from '@/lib/matches/matchService';
 import { buildSocialLinks } from '@/lib/socialLinks';
 import { urlFor } from '@/sanity/lib/image';
+import { getCurrentTenant } from '@/tenants/current';
 
 const nextMatchCardColors: MatchColor[] = ['blue', 'purple'];
 const keyDatesColumnClassValue = ['md:col-span-3', 'md:col-span-2', 'md:col-span-1'];
@@ -31,10 +32,12 @@ const keyDatesColumnClassValue = ['md:col-span-3', 'md:col-span-2', 'md:col-span
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getPageMetadata('homePage');
+	const tenant = await getCurrentTenant();
+	return getPageMetadata(tenant, 'homePage');
 }
 
 export default async function Home() {
+	const tenant = await getCurrentTenant();
 	const [
 		carouselArticles,
 		siteSettings,
@@ -44,19 +47,19 @@ export default async function Home() {
 		nextMatchTeams,
 		nextKeyDate
 	] = await Promise.all([
-		getNewsArticles({ limit: 10, featured: true, imageSize: 'large' }),
-		getSiteSettings(),
-		getHomePageData(),
-		getFeaturedSponsors(),
-		getAnnouncements(),
-		getHomepageNextMatchTeams(),
-		getNextKeyDate()
+		getNewsArticles(tenant, { limit: 10, featured: true, imageSize: 'large' }),
+		getSiteSettings(tenant),
+		getHomePageData(tenant),
+		getFeaturedSponsors(tenant),
+		getAnnouncements(tenant),
+		getHomepageNextMatchTeams(tenant),
+		getNextKeyDate(tenant)
 	]);
 
 	const nextMatchCards = await Promise.all(
 		nextMatchTeams.map(async (team, index) => ({
 			...team,
-			match: await getNextMatch(team.slug),
+			match: await getNextMatch(tenant, team.slug),
 			color: nextMatchCardColors[index]
 		}))
 	);
@@ -68,7 +71,7 @@ export default async function Home() {
 
 	const hasAnnouncements = announcements.length > 0;
 	const logoUrl = siteSettings?.logo
-		? urlFor(siteSettings.logo).width(120).height(120).fit('crop').url()
+		? urlFor(tenant.sanity, siteSettings.logo).width(120).height(120).fit('crop').url()
 		: '';
 
 	const socialLinks = buildSocialLinks({
@@ -123,7 +126,7 @@ export default async function Home() {
 				</div>
 
 				{/* Football Section */}
-				<FootballSection />
+				<FootballSection tenant={tenant} />
 
 				{/* Expression of Interest Section */}
 				<ExpressionOfInterestSection />

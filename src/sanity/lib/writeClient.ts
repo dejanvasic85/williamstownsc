@@ -1,5 +1,5 @@
 import { type SanityClient, createClient } from 'next-sanity';
-import { getSanityReadConfig } from '@/lib/config';
+import { getSanityConfig } from '@/lib/config';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 import { getTenantSecret } from '@/tenants/secrets/tenantSecrets';
 
@@ -15,11 +15,11 @@ export function getSanityWriteClient(tenant: Tenant): SanityClient {
 		return cached;
 	}
 
-	const sanityReadConfig = getSanityReadConfig();
+	const { apiVersion } = getSanityConfig();
 	const tenantWriteClient = createClient({
 		projectId: tenant.sanity.projectId,
 		dataset: tenant.sanity.dataset,
-		apiVersion: sanityReadConfig.apiVersion,
+		apiVersion,
 		useCdn: false, // Must be false for mutations
 		token: getTenantSecret('sanityWriteToken', tenant),
 		perspective: 'published'
