@@ -1,7 +1,15 @@
-import { type MetaConfig, getMetaConfig, isLocal } from '@/lib/config';
+import { isLocal } from '@/lib/config';
 import logger from '@/lib/logger';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
+import { getTenantSecret } from '@/tenants/secrets/tenantSecrets';
 
 const log = logger.child({ module: 'social-publish' });
+
+export type MetaConfig = {
+	metaPageAccessToken: string;
+	metaFacebookPageId: string;
+	metaInstagramAccountId: string;
+};
 
 export type PublishResult = {
 	platform: 'facebook' | 'instagram';
@@ -212,25 +220,46 @@ export async function publishToInstagram(
 	}
 }
 
+/**
+ * Read a club's Meta credentials. Returns null when the club omits the socialPublishing group,
+ * which turns social publishing off for that club. A declared group with a missing value throws.
+ */
+function resolveMetaConfig(tenant: Tenant): MetaConfig | null {
+	if (!tenant.socialPublishing) {
+		return null;
+	}
+
+	return {
+		metaPageAccessToken: getTenantSecret('metaPageAccessToken', tenant),
+		metaFacebookPageId: getTenantSecret('metaFacebookPageId', tenant),
+		metaInstagramAccountId: getTenantSecret('metaInstagramAccountId', tenant)
+	};
+}
+
 export async function publishArticleToSocials(
-	article: SocialPublishArticle
+	article: SocialPublishArticle,
+	tenant: Tenant
 ): Promise<PublishResult[]> {
 	if (isLocal()) {
 		log.debug('skipping social media publishing in local environment');
 		return [];
 	}
 
-	const config = getMetaConfig();
+	const config = resolveMetaConfig(tenant);
+	if (!config) {
+		log.debug({ tenant: tenant.slug }, 'social publishing not configured for club');
+		return [];
+	}
 
 	const tasks: Promise<PublishResult>[] = [];
 	const taskPlatforms: Array<PublishResult['platform']> = [];
 
-	if (config.facebookEnabled && (article.publishToFacebook ?? true)) {
+	if (article.publishToFacebook ?? true) {
 		tasks.push(publishToFacebook(article, config));
 		taskPlatforms.push('facebook');
 	}
 
-	if (config.instagramEnabled && (article.publishToInstagram ?? true)) {
+	if (article.publishToInstagram ?? true) {
 		tasks.push(publishToInstagram(article, config));
 		taskPlatforms.push('instagram');
 	}

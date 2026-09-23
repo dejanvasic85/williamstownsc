@@ -31,25 +31,6 @@ const recaptchaConfigSchema = z.object({
 	riskScoreThreshold: z.number().min(0).max(1).default(0.5)
 });
 
-// Server-only revalidation config schema
-const revalidationConfigSchema = z.object({
-	revalidateSecret: z.string().min(1, 'Revalidation secret is required')
-});
-
-// Server-only Sanity write config schema
-const sanityWriteConfigSchema = z.object({
-	sanityWriteToken: z.string().min(1, 'Sanity write token is required')
-});
-
-// Server-only Meta API config schema
-const metaConfigSchema = z.object({
-	metaPageAccessToken: z.string().min(1, 'Meta page access token is required'),
-	metaFacebookPageId: z.string().min(1, 'Meta Facebook page ID is required'),
-	metaInstagramAccountId: z.string().min(1, 'Meta Instagram account ID is required'),
-	facebookEnabled: z.boolean().default(true),
-	instagramEnabled: z.boolean().default(true)
-});
-
 // Server-only social publish config schema
 const socialPublishConfigSchema = z.object({
 	socialPublishSecret: z.string().min(1, 'Social publish secret is required')
@@ -73,9 +54,6 @@ export type SanityReadConfig = z.infer<typeof sanityReadConfigSchema>;
 export type StudioConfig = z.infer<typeof studioConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
-export type RevalidationConfig = z.infer<typeof revalidationConfigSchema>;
-export type SanityWriteConfig = z.infer<typeof sanityWriteConfigSchema>;
-export type MetaConfig = z.infer<typeof metaConfigSchema>;
 export type SocialPublishConfig = z.infer<typeof socialPublishConfigSchema>;
 export type MatchdayConfig = z.infer<typeof matchdayConfigSchema>;
 export type MatchdayWebhookConfig = z.infer<typeof matchdayWebhookConfigSchema>;
@@ -150,40 +128,6 @@ export function getRecaptchaConfig(): RecaptchaConfig {
 		recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
 		googleCloudProjectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
 		riskScoreThreshold
-	});
-}
-
-/**
- * Get revalidation config (server-only)
- * Contains secret for cache revalidation endpoint
- */
-export function getRevalidationConfig(): RevalidationConfig {
-	return revalidationConfigSchema.parse({
-		revalidateSecret: process.env.REVALIDATE_SECRET
-	});
-}
-
-/**
- * Get Sanity write config (server-only)
- * Contains write token for creating/updating Sanity documents
- */
-export function getSanityWriteConfig(): SanityWriteConfig {
-	return sanityWriteConfigSchema.parse({
-		sanityWriteToken: process.env.SANITY_WRITE_TOKEN
-	});
-}
-
-/**
- * Get Meta API config (server-only)
- * Contains credentials for Facebook and Instagram publishing
- */
-export function getMetaConfig(): MetaConfig {
-	return metaConfigSchema.parse({
-		metaPageAccessToken: process.env.META_PAGE_ACCESS_TOKEN,
-		metaFacebookPageId: process.env.META_FACEBOOK_PAGE_ID,
-		metaInstagramAccountId: process.env.META_INSTAGRAM_ACCOUNT_ID,
-		facebookEnabled: process.env.META_FACEBOOK_ENABLED !== 'false',
-		instagramEnabled: process.env.META_INSTAGRAM_ENABLED !== 'false'
 	});
 }
 

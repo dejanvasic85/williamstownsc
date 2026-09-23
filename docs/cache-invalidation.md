@@ -15,7 +15,8 @@ tags, while league update webhooks refresh Matchday data for one league.
 
 **Headers:**
 
-- `x-revalidate-secret`: Secret token for authentication (must match `REVALIDATE_SECRET` env var)
+- `x-revalidate-secret`: Secret token for authentication (must match the club's
+  `WILLIAMSTOWN_REVALIDATE_SECRET` env var)
 
 **Request Body:**
 
@@ -130,21 +131,21 @@ Without authentication, anyone who finds this endpoint could:
 
 ### Authentication Setup
 
-The endpoint requires a secret token in the `x-revalidate-secret` header. This token must match the `REVALIDATE_SECRET` environment variable on your server.
+The endpoint requires a secret token in the `x-revalidate-secret` header. The route resolves the club from the requested host, then checks the token against **that club's** `revalidateSecret`, which its manifest reads from an env var such as `WILLIAMSTOWN_REVALIDATE_SECRET`. Each club has its own Sanity project and points its webhook at its own domain.
 
 #### Environment Configuration
 
 **Development (.env.local):**
 
 ```bash
-REVALIDATE_SECRET=your-secret-token-here
+WILLIAMSTOWN_REVALIDATE_SECRET=your-secret-token-here
 ```
 
 **Production (Vercel):**
 
 1. Go to your Vercel project settings
 2. Navigate to **Environment Variables**
-3. Add `REVALIDATE_SECRET` with a secure random value
+3. Add `WILLIAMSTOWN_REVALIDATE_SECRET` with a secure random value
 4. Use a strong, randomly generated secret (e.g., `openssl rand -base64 32`)
 
 ### Security Best Practices
@@ -174,7 +175,7 @@ When creating your Sanity webhook, use these settings:
 - **URL:** `https://your-domain.com/api/revalidate`
 - **HTTP method:** POST
 - **Custom Headers:**
-  - `x-revalidate-secret`: Your secret token (must match your `REVALIDATE_SECRET` environment variable)
+  - `x-revalidate-secret`: Your secret token (must match that club's `WILLIAMSTOWN_REVALIDATE_SECRET` env var)
 
 ### How It Works
 
