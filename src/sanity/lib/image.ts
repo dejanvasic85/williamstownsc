@@ -12,12 +12,12 @@ const imageUrlBuilderByProjectValue = new Map<string, ReturnType<typeof createIm
  */
 export function urlFor(sanity: SanityImageProject, source: SanityImageSource) {
 	const key = `${sanity.projectId}/${sanity.dataset}`;
-	const cached = imageUrlBuilderByProjectValue.get(key);
-	if (cached) {
-		return cached.image(source);
+	let builder = imageUrlBuilderByProjectValue.get(key);
+
+	if (!builder) {
+		builder = createImageUrlBuilder(sanity);
+		imageUrlBuilderByProjectValue.set(key, builder);
 	}
 
-	const builder = createImageUrlBuilder(sanity);
-	imageUrlBuilderByProjectValue.set(key, builder);
 	return builder.image(source);
 }

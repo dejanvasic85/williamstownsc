@@ -32,11 +32,9 @@ export async function getActivePrograms(
 	limit?: number
 ): Promise<ProgramWithImage[]> {
 	const query = buildProgramsQuery(limit);
-	const sanityClient = getSanityClient(tenant);
+	const params = limit ? { limit } : {};
 
-	return limit
-		? sanityClient.fetch(query, { limit }, { next: { tags: ['program'] } })
-		: sanityClient.fetch(query, {}, { next: { tags: ['program'] } });
+	return getSanityClient(tenant).fetch(query, params, { next: { tags: ['program'] } });
 }
 
 export async function getFeaturedPrograms(

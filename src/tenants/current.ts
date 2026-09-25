@@ -1,4 +1,5 @@
 import { tenant as tenantParam } from 'next/root-params';
+import { cache } from 'react';
 import { getTenantBySlug } from './registry';
 import type { Tenant } from './schema/tenantSchema';
 
@@ -6,8 +7,9 @@ import type { Tenant } from './schema/tenantSchema';
  * Resolve the club the current Server Component is rendering, from the `[tenant]` root parameter.
  * Throws when the parameter is missing or unknown. Neither can happen for a rendered site route,
  * because the layout's `generateStaticParams` covers every club and `dynamicParams` is false.
+ * Memoised per request so a route's layout, metadata and page share one lookup.
  */
-export async function getCurrentTenant(): Promise<Tenant> {
+export const getCurrentTenant = cache(async function getCurrentTenant(): Promise<Tenant> {
 	const slug = await tenantParam();
 	const tenant = slug ? getTenantBySlug(slug) : null;
 
@@ -16,4 +18,4 @@ export async function getCurrentTenant(): Promise<Tenant> {
 	}
 
 	return tenant;
-}
+});
