@@ -5,11 +5,9 @@ const clientConfigSchema = z.object({
 	recaptchaSiteKey: z.string().optional()
 });
 
-// Server-only Sanity read config. Transitional: the read/write client singletons still need
-// a project to construct a connection, and they are removed in the tenant content migration.
-const sanityReadConfigSchema = z.object({
-	projectId: z.string().min(1, 'Sanity project ID is required'),
-	dataset: z.string().min(1, 'Sanity dataset is required'),
+// Server-only Sanity config. Project id and dataset come from the tenant registry, so only the
+// API version stays in the environment.
+const sanityConfigSchema = z.object({
 	apiVersion: z.string().default('2024-01-01')
 });
 
@@ -50,7 +48,7 @@ export type ClubConfig = {
 	wscClubName: string;
 };
 export type ClientConfig = z.infer<typeof clientConfigSchema>;
-export type SanityReadConfig = z.infer<typeof sanityReadConfigSchema>;
+export type SanityConfig = z.infer<typeof sanityConfigSchema>;
 export type StudioConfig = z.infer<typeof studioConfigSchema>;
 export type AwsConfig = z.infer<typeof awsConfigSchema>;
 export type RecaptchaConfig = z.infer<typeof recaptchaConfigSchema>;
@@ -69,14 +67,11 @@ export function getClientConfig(): ClientConfig {
 }
 
 /**
- * Get the Sanity read config (server-only).
- * Transitional home for the read/write client singletons. Per-club project details come from the
- * tenant registry once the content modules take a tenant.
+ * Get the Sanity config that is shared by every club (server-only).
+ * The project id and dataset are per club and come from the tenant registry, not the environment.
  */
-export function getSanityReadConfig(): SanityReadConfig {
-	return sanityReadConfigSchema.parse({
-		projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-		dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+export function getSanityConfig(): SanityConfig {
+	return sanityConfigSchema.parse({
 		apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION
 	});
 }

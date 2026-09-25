@@ -9,11 +9,13 @@ import { getAllArticlesForSitemap } from '@/lib/content/news';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { buildUrl } from '@/lib/url';
 import { urlFor } from '@/sanity/lib/image';
+import { getCurrentTenant } from '@/tenants/current';
 
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
-	const articles = await getAllArticlesForSitemap();
+	const tenant = await getCurrentTenant();
+	const articles = await getAllArticlesForSitemap(tenant);
 	return articles.map((article) => ({ slug: article.slug }));
 }
 
@@ -23,8 +25,9 @@ interface ArticlePageProps {
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const article = await getArticleBySlug(slug);
-	const siteSettings = await getSiteSettings();
+	const tenant = await getCurrentTenant();
+	const article = await getArticleBySlug(tenant, slug);
+	const siteSettings = await getSiteSettings(tenant);
 
 	if (!article) {
 		notFound();
@@ -69,8 +72,9 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
 	const { slug } = await params;
-	const article = await getArticleBySlug(slug);
-	const siteSettings = await getSiteSettings();
+	const tenant = await getCurrentTenant();
+	const article = await getArticleBySlug(tenant, slug);
+	const siteSettings = await getSiteSettings(tenant);
 
 	if (!article) {
 		notFound();
@@ -112,7 +116,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 	};
 
 	return (
-		<PageContainer layout="article">
+		<PageContainer tenant={tenant} layout="article">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -149,7 +153,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 							components={{
 								types: {
 									image: ({ value }) => {
-										const imageUrl = value.asset ? urlFor(value.asset).width(1200).url() : '';
+										const imageUrl = value.asset
+											? urlFor(tenant.sanity, value.asset).width(1200).url()
+											: '';
 										return (
 											<figure className="my-8">
 												{imageUrl && (

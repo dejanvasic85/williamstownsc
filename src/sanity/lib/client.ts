@@ -1,16 +1,6 @@
 import { type SanityClient, createClient } from 'next-sanity';
-import { getSanityReadConfig } from '@/lib/config';
+import { getSanityConfig } from '@/lib/config';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
-
-const sanityReadConfig = getSanityReadConfig();
-
-export const client = createClient({
-	projectId: sanityReadConfig.projectId,
-	dataset: sanityReadConfig.dataset,
-	apiVersion: sanityReadConfig.apiVersion,
-	useCdn: true,
-	perspective: 'published'
-});
 
 const sanityClientByTenantValue = new Map<string, SanityClient>();
 
@@ -24,10 +14,11 @@ export function getSanityClient(tenant: Tenant): SanityClient {
 		return cached;
 	}
 
+	const { apiVersion } = getSanityConfig();
 	const tenantClient = createClient({
 		projectId: tenant.sanity.projectId,
 		dataset: tenant.sanity.dataset,
-		apiVersion: sanityReadConfig.apiVersion,
+		apiVersion,
 		useCdn: true,
 		perspective: 'published'
 	});

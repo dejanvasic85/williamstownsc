@@ -1,5 +1,5 @@
 import { buildUrl } from '@/lib/url/buildUrl';
-import { urlFor } from '@/sanity/lib/image';
+import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import type { SiteSettings } from '@/sanity/sanity.types';
 
 type OrganizationSchema = {
@@ -25,6 +25,7 @@ type OrganizationSchema = {
 };
 
 export function generateOrganizationSchema(
+	sanity: SanityImageProject,
 	siteSettings: SiteSettings | null
 ): OrganizationSchema | null {
 	if (!siteSettings) return null;
@@ -32,7 +33,7 @@ export function generateOrganizationSchema(
 	const homeLocation = siteSettings.locations?.find((loc) => loc.facilityType === 'home');
 
 	const logoUrl = siteSettings.logo
-		? urlFor(siteSettings.logo).width(800).height(800).fit('crop').url()
+		? urlFor(sanity, siteSettings.logo).width(800).height(800).fit('crop').url()
 		: undefined;
 
 	const schema: OrganizationSchema = {

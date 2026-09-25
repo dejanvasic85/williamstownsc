@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type PolicyDocument = {
 	_id: string;
@@ -74,7 +75,7 @@ function groupByCategory(documents: PolicyDocument[]): PolicyDocumentsByCategory
 	}));
 }
 
-export async function getPolicyDocuments(): Promise<PolicyDocumentsByCategory[]> {
+export async function getPolicyDocuments(tenant: Tenant): Promise<PolicyDocumentsByCategory[]> {
 	const policyDocumentsQuery = groq`*[_type == "policyDocument" && published == true] | order(category asc, order asc) {
 		_id,
 		title,
@@ -91,7 +92,7 @@ export async function getPolicyDocuments(): Promise<PolicyDocumentsByCategory[]>
 		order
 	}`;
 
-	const rawDocuments = await client.fetch<RawPolicyDocument[]>(
+	const rawDocuments = await getSanityClient(tenant).fetch<RawPolicyDocument[]>(
 		policyDocumentsQuery,
 		{},
 		{ next: { tags: ['policyDocument'] } }

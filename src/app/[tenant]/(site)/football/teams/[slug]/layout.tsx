@@ -8,11 +8,13 @@ import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getAllTeamsForSitemap } from '@/lib/content/teams';
 import { getTeamMatches } from '@/lib/matches/matchService';
 import { getTableForTeam } from '@/lib/matches/tableService';
+import { getCurrentTenant } from '@/tenants/current';
 
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
-	const teams = await getAllTeamsForSitemap();
+	const tenant = await getCurrentTenant();
+	const teams = await getAllTeamsForSitemap(tenant);
 	return teams.map((team) => ({ slug: team.slug }));
 }
 
@@ -23,12 +25,13 @@ type TeamDetailLayoutProps = {
 
 export default async function TeamDetailLayout({ children, params }: TeamDetailLayoutProps) {
 	const { slug } = await params;
+	const tenant = await getCurrentTenant();
 
 	const [team, teamMatches, announcements, tableData] = await Promise.all([
-		getTeamBySlug(slug),
-		getTeamMatches(slug),
-		getAnnouncements(),
-		getTableForTeam(slug)
+		getTeamBySlug(tenant, slug),
+		getTeamMatches(tenant, slug),
+		getAnnouncements(tenant),
+		getTableForTeam(tenant, slug)
 	]);
 
 	if (!team) {
@@ -54,7 +57,7 @@ export default async function TeamDetailLayout({ children, params }: TeamDetailL
 					</div>
 					{team.description && (
 						<div className="text-lg">
-							<PortableTextContent blocks={team.description} />
+							<PortableTextContent blocks={team.description} sanity={tenant.sanity} />
 						</div>
 					)}
 				</div>

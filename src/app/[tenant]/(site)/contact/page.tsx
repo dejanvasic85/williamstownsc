@@ -2,11 +2,13 @@ import { type Metadata } from 'next';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { PageContainer } from '@/components/layout';
 import { type ContactType, contactTypes } from '@/lib/contact/contactEmail';
+import { getActivePrograms } from '@/lib/content';
 import { getContactPageData, getEditablePageMetadata } from '@/lib/content/page';
-import { getActivePrograms } from '@/sanity/services/programService';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getEditablePageMetadata('contactPage');
+	const tenant = await getCurrentTenant();
+	return getEditablePageMetadata(tenant, 'contactPage');
 }
 
 type ContactPageProps = {
@@ -15,8 +17,9 @@ type ContactPageProps = {
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
 	const params = await searchParams;
-	const pageData = await getContactPageData();
-	const programs = await getActivePrograms();
+	const tenant = await getCurrentTenant();
+	const pageData = await getContactPageData(tenant);
+	const programs = await getActivePrograms(tenant);
 
 	if (!pageData) {
 		throw new Error('Contact page is missing critical content');
@@ -41,11 +44,17 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 	};
 
 	return (
-		<PageContainer heading={pageData.heading} intro={pageData.introduction} layout="article">
+		<PageContainer
+			tenant={tenant}
+			heading={pageData.heading}
+			intro={pageData.introduction}
+			layout="article"
+		>
 			<ContactForm
 				initialType={initialType}
 				initialProgramName={params.name}
 				programs={programsForForm}
+				sanity={tenant.sanity}
 				typeContentMap={typeContentMap}
 			/>
 		</PageContainer>

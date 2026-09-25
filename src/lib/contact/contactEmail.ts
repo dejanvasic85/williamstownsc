@@ -34,7 +34,7 @@ function escapeHtml(text: string): string {
 	});
 }
 
-async function sendConfirmationEmail(name: string, email: string, from: string, tenant?: Tenant) {
+async function sendConfirmationEmail(name: string, email: string, from: string, tenant: Tenant) {
 	const siteSettings = await getSiteSettings(tenant);
 	const clubName = siteSettings.clubName ?? '';
 	const subject = `Thank you for contacting ${clubName}`;
@@ -138,7 +138,7 @@ export async function sendContactFormEmails(
 	data: ContactFormData,
 	emailFrom: string,
 	recipientEmail: string,
-	tenant?: Tenant
+	tenant: Tenant
 ) {
 	await Promise.all([
 		sendConfirmationEmail(data.name, data.email, emailFrom, tenant),

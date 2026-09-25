@@ -169,8 +169,8 @@ export async function GET(_request: Request, { params }: SitemapRouteParams) {
 	];
 
 	try {
-		const articles = await getAllArticlesForSitemap();
-		const teams = await getAllTeamsForSitemap();
+		const articles = await getAllArticlesForSitemap(tenant);
+		const teams = await getAllTeamsForSitemap(tenant);
 
 		const newsRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
 			url: `${baseUrl}/news/${article.slug}`,

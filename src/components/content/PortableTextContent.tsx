@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
-import { urlFor } from '@/sanity/lib/image';
+import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 
 interface TextChild {
 	_key?: string;
@@ -35,12 +35,14 @@ type BlockOrList = SanityBlock | SanityImageBlock | ListGroup;
 
 interface PortableTextContentProps {
 	blocks: unknown[];
+	sanity: SanityImageProject;
 	className?: string;
 	headingLevel?: 'page' | 'section';
 }
 
 export function PortableTextContent({
 	blocks,
+	sanity,
 	className = 'prose max-w-none',
 	headingLevel = 'page'
 }: PortableTextContentProps) {
@@ -86,7 +88,7 @@ export function PortableTextContent({
 		// Handle images
 		if (block._type === 'image') {
 			const imageBlock = block as SanityImageBlock;
-			const imageUrl = urlFor(imageBlock).width(900).url();
+			const imageUrl = urlFor(sanity, imageBlock).width(900).url();
 			return (
 				<figure key={imageBlock._key || index} className="my-8">
 					<Image
