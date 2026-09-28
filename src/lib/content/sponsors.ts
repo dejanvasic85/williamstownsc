@@ -1,6 +1,7 @@
-import { client } from '@/sanity/lib/client';
-import { urlFor } from '@/sanity/lib/image';
+import { getSanityClient } from '@/sanity/lib/client';
+import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import { Sponsor } from '@/sanity/sanity.types';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 type CardSize = 'large' | 'medium' | 'small';
 
@@ -41,12 +42,17 @@ export type SponsorTypeData = {
 	order: number;
 };
 
-function transformSponsor(sponsor: SponsorWithExpandedType): TransformedSponsor {
+function transformSponsor(
+	sanity: SanityImageProject,
+	sponsor: SponsorWithExpandedType
+): TransformedSponsor {
 	return {
 		_id: sponsor._id,
 		name: sponsor.name || '',
 		logo: {
-			url: sponsor.logo ? urlFor(sponsor.logo).width(400).height(300).fit('crop').url() : '',
+			url: sponsor.logo
+				? urlFor(sanity, sponsor.logo).width(400).height(300).fit('crop').url()
+				: '',
 			alt: sponsor.logo?.alt
 		},
 		type: sponsor.type?.name ?? '',
@@ -55,7 +61,10 @@ function transformSponsor(sponsor: SponsorWithExpandedType): TransformedSponsor 
 	};
 }
 
-function groupSponsorsByTier(sponsors: SponsorWithExpandedType[]): SponsorTier[] {
+function groupSponsorsByTier(
+	sanity: SanityImageProject,
+	sponsors: SponsorWithExpandedType[]
+): SponsorTier[] {
 	const tierMap = new Map<string, SponsorTier>();
 
 	for (const sponsor of sponsors) {
@@ -63,7 +72,7 @@ function groupSponsorsByTier(sponsors: SponsorWithExpandedType[]): SponsorTier[]
 		const existing = tierMap.get(tierId);
 
 		if (existing) {
-			existing.sponsors.push(transformSponsor(sponsor));
+			existing.sponsors.push(transformSponsor(sanity, sponsor));
 		} else {
 			tierMap.set(tierId, {
 				_id: tierId,
@@ -71,7 +80,7 @@ function groupSponsorsByTier(sponsors: SponsorWithExpandedType[]): SponsorTier[]
 				order: sponsor.type?.order ?? 999,
 				description: sponsor.type?.description ?? '',
 				cardSize: sponsor.type?.cardSize ?? 'medium',
-				sponsors: [transformSponsor(sponsor)]
+				sponsors: [transformSponsor(sanity, sponsor)]
 			});
 		}
 	}
@@ -94,54 +103,58 @@ const sponsorFields = `
 	website
 `;
 
-export async function getAllSponsors(): Promise<TransformedSponsor[]> {
+export async function getAllSponsors(tenant: Tenant): Promise<TransformedSponsor[]> {
 	const query = `*[_type == "sponsor"] | order(order asc, name asc) {
 		${sponsorFields}
 	}`;
 
-	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
+	const sponsors = await getSanityClient(tenant).fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
 		{ next: { tags: ['sponsor', 'sponsorType'] } }
 	);
 
-	return sponsors.map(transformSponsor);
+	return sponsors.map((sponsor) => transformSponsor(tenant.sanity, sponsor));
 }
 
-export async function getFeaturedSponsors(): Promise<TransformedSponsor[]> {
+export async function getFeaturedSponsors(tenant: Tenant): Promise<TransformedSponsor[]> {
 	const query = `*[_type == "sponsor" && showOnHomepage == true] | order(order asc, name asc) {
 		${sponsorFields}
 	}`;
 
-	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
+	const sponsors = await getSanityClient(tenant).fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
 		{ next: { tags: ['sponsor', 'sponsorType'] } }
 	);
 
-	return sponsors.map(transformSponsor);
+	return sponsors.map((sponsor) => transformSponsor(tenant.sanity, sponsor));
 }
 
-export async function getSponsorsGroupedByTier(): Promise<SponsorTier[]> {
+export async function getSponsorsGroupedByTier(tenant: Tenant): Promise<SponsorTier[]> {
 	const query = `*[_type == "sponsor"] | order(type->order asc, order asc, name asc) {
 		${sponsorFields}
 	}`;
 
-	const sponsors = await client.fetch<SponsorWithExpandedType[]>(
+	const sponsors = await getSanityClient(tenant).fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
 		{ next: { tags: ['sponsor', 'sponsorType'] } }
 	);
 
-	return groupSponsorsByTier(sponsors);
+	return groupSponsorsByTier(tenant.sanity, sponsors);
 }
 
-export async function getAllSponsorTypes(): Promise<SponsorTypeData[]> {
+export async function getAllSponsorTypes(tenant: Tenant): Promise<SponsorTypeData[]> {
 	const query = `*[_type == "sponsorType"] | order(order asc) {
 		name,
 		description,
 		order
 	}`;
 
-	return client.fetch<SponsorTypeData[]>(query, {}, { next: { tags: ['sponsorType'] } });
+	return getSanityClient(tenant).fetch<SponsorTypeData[]>(
+		query,
+		{},
+		{ next: { tags: ['sponsorType'] } }
+	);
 }

@@ -4,9 +4,11 @@ import { FileDown, FileText } from 'lucide-react';
 import { PageContainer } from '@/components/layout';
 import { getPageData, getPageMetadata } from '@/lib/content/page';
 import { getPolicyDocuments } from '@/lib/content/policyDocuments';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getPageMetadata('policiesPage');
+	const tenant = await getCurrentTenant();
+	return getPageMetadata(tenant, 'policiesPage');
 }
 
 function formatFileSize(bytes?: number): string {
@@ -20,9 +22,10 @@ function formatFileSize(bytes?: number): string {
 }
 
 export default async function ClubPoliciesPage() {
+	const tenant = await getCurrentTenant();
 	const [pageData, policyDocumentsByCategory] = await Promise.all([
-		getPageData('policiesPage'),
-		getPolicyDocuments()
+		getPageData(tenant, 'policiesPage'),
+		getPolicyDocuments(tenant)
 	]);
 
 	if (!pageData) {
@@ -31,6 +34,7 @@ export default async function ClubPoliciesPage() {
 
 	return (
 		<PageContainer
+			tenant={tenant}
 			heading={pageData.heading || 'Policies and Regulations'}
 			intro={pageData.introduction}
 			layout="article"

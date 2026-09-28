@@ -11,12 +11,14 @@ import { QueryProvider } from '@/lib/providers/QueryProvider';
 import { generateOrganizationSchema } from '@/lib/structuredData';
 import { buildUrl } from '@/lib/url/buildUrl';
 import { urlFor } from '@/sanity/lib/image';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const siteSettings = await getSiteSettings();
+	const tenant = await getCurrentTenant();
+	const siteSettings = await getSiteSettings(tenant);
 
 	const ogImageUrl = siteSettings?.seoDefaults?.ogImage
-		? urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).url()
+		? urlFor(tenant.sanity, siteSettings.seoDefaults.ogImage).width(1200).height(630).url()
 		: undefined;
 
 	const title = siteSettings?.seoDefaults?.siteTitle;
@@ -48,10 +50,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: PropsWithChildren) {
+	const tenant = await getCurrentTenant();
 	const [siteSettings, announcements, visibility] = await Promise.all([
-		getSiteSettings(),
-		getAnnouncements(),
-		getNavigationVisibility()
+		getSiteSettings(tenant),
+		getAnnouncements(tenant),
+		getNavigationVisibility(tenant)
 	]);
 
 	const hasAnnouncements = announcements.length > 0;
@@ -60,7 +63,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 	const footerNavLinks = buildFooterNavLinks(visibility);
 
 	const logoUrl = siteSettings?.logo
-		? urlFor(siteSettings.logo).width(80).height(80).url()
+		? urlFor(tenant.sanity, siteSettings.logo).width(80).height(80).url()
 		: undefined;
 	const logoAlt = siteSettings?.logo?.alt;
 
@@ -75,7 +78,7 @@ export default async function SiteLayout({ children }: PropsWithChildren) {
 			? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(homeGroundAddress)}`
 			: undefined;
 
-	const organizationSchema = generateOrganizationSchema(siteSettings);
+	const organizationSchema = generateOrganizationSchema(tenant.sanity, siteSettings);
 
 	return (
 		<QueryProvider>

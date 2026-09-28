@@ -5,22 +5,28 @@ import { KeyDatesTimeline } from '@/components/keyDates/KeyDatesTimeline';
 import { PageContainer } from '@/components/layout';
 import { getKeyDatesPageData } from '@/lib/content';
 import { getEditablePageMetadata } from '@/lib/content/page';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getEditablePageMetadata('keyDatesPage');
+	const tenant = await getCurrentTenant();
+	return getEditablePageMetadata(tenant, 'keyDatesPage');
 }
 
 export default async function KeyDatesPage() {
-	const pageData = await getKeyDatesPageData();
+	const tenant = await getCurrentTenant();
+	const pageData = await getKeyDatesPageData(tenant);
 
 	return (
 		<PageContainer
+			tenant={tenant}
 			heading={pageData?.heading || 'Key Dates 2026'}
 			featuredImage={pageData?.featuredImage}
 			intro={pageData?.introduction}
 			layout="article"
 		>
-			{pageData?.body && pageData.body.length > 0 && <PortableTextContent blocks={pageData.body} />}
+			{pageData?.body && pageData.body.length > 0 && (
+				<PortableTextContent blocks={pageData.body} sanity={tenant.sanity} />
+			)}
 
 			{pageData?.keyDates && pageData.keyDates.length > 0 && (
 				<KeyDatesTimeline items={pageData.keyDates} />

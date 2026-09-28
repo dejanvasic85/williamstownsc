@@ -3,15 +3,18 @@ import { PageContainer } from '@/components/layout';
 import { NewsCard, NewsHero } from '@/components/news';
 import { getNewsArticles } from '@/lib/content';
 import { getPageMetadata } from '@/lib/content/page';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getPageMetadata('newsPage');
+	const tenant = await getCurrentTenant();
+	return getPageMetadata(tenant, 'newsPage');
 }
 
 export default async function NewsPage() {
+	const tenant = await getCurrentTenant();
 	const [articles, featuredPool] = await Promise.all([
-		getNewsArticles({ limit: 20 }),
-		getNewsArticles({ limit: 6, featured: true })
+		getNewsArticles(tenant, { limit: 20 }),
+		getNewsArticles(tenant, { limit: 6, featured: true })
 	]);
 
 	const heroArticle = articles[0];
@@ -31,6 +34,7 @@ export default async function NewsPage() {
 
 	return (
 		<PageContainer
+			tenant={tenant}
 			heading="News & Matches"
 			intro="Stay up to date with the latest news, match reports, and updates from Williamstown SC"
 		>

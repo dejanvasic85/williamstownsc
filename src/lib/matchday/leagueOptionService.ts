@@ -9,7 +9,7 @@ const log = logger.child({ service: 'leagueOptionService' });
 
 /** Leagues this site's club plays in, labelled with competition and season. Includes divisions
  * that never publish a ladder, e.g. MiniRoos age groups. */
-export async function getClubLeagueOptions(tenant?: Tenant): Promise<LeagueOption[]> {
+export async function getClubLeagueOptions(tenant: Tenant): Promise<LeagueOption[]> {
 	const clubId = await getMatchdayClubId(tenant);
 
 	if (!clubId) {

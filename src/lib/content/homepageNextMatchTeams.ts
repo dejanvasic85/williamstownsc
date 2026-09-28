@@ -1,7 +1,8 @@
 import * as Sentry from '@sentry/nextjs';
 import { groq } from 'next-sanity';
 import logger from '@/lib/logger';
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 const log = logger.child({ module: 'homepage-next-match-teams' });
 const maxHomepageNextMatchTeams = 2;
@@ -23,9 +24,9 @@ export type HomepageNextMatchTeam = {
 };
 
 /** Teams for the homepage next-match countdown. Capped at 2 in the query, so callers don't. */
-export async function getHomepageNextMatchTeams(): Promise<HomepageNextMatchTeam[]> {
+export async function getHomepageNextMatchTeams(tenant: Tenant): Promise<HomepageNextMatchTeam[]> {
 	try {
-		return await client.fetch<HomepageNextMatchTeam[]>(
+		return await getSanityClient(tenant).fetch<HomepageNextMatchTeam[]>(
 			homepageNextMatchTeamsQuery,
 			{},
 			{ next: { tags: ['team'] } }

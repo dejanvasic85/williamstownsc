@@ -5,14 +5,17 @@ import { LocationCard } from '@/components/locations';
 import { getSiteSettings } from '@/lib/content';
 import { getEditablePageMetadata, getPageData } from '@/lib/content/page';
 import { generateLocationsSchema } from '@/lib/structuredData';
+import { getCurrentTenant } from '@/tenants/current';
 
 export async function generateMetadata(): Promise<Metadata> {
-	return getEditablePageMetadata('locationsPage');
+	const tenant = await getCurrentTenant();
+	return getEditablePageMetadata(tenant, 'locationsPage');
 }
 
 export default async function ClubLocationsPage() {
-	const pageData = await getPageData('locationsPage');
-	const siteSettings = await getSiteSettings();
+	const tenant = await getCurrentTenant();
+	const pageData = await getPageData(tenant, 'locationsPage');
+	const siteSettings = await getSiteSettings(tenant);
 	const locations = siteSettings.locations ?? [];
 
 	if (!pageData || locations.length === 0) {
@@ -32,13 +35,14 @@ export default async function ClubLocationsPage() {
 				/>
 			))}
 			<PageContainer
+				tenant={tenant}
 				heading={pageData.heading}
 				featuredImage={pageData.featuredImage}
 				intro={pageData.introduction}
 				layout="article"
 			>
 				{pageData.body && pageData.body.length > 0 && (
-					<PortableTextContent blocks={pageData.body} />
+					<PortableTextContent blocks={pageData.body} sanity={tenant.sanity} />
 				)}
 				<div className="grid grid-cols-1 gap-6">
 					{locations.map((location) => (

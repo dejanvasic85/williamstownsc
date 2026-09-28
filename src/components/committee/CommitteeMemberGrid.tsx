@@ -1,13 +1,14 @@
 import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
-import { urlFor } from '@/sanity/lib/image';
+import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import type { CommitteeMember } from '@/types/committee';
 import { CommitteeMemberCard } from './CommitteeMemberCard';
 
 type CommitteeMemberGridProps = {
 	members: CommitteeMember[];
+	sanity: SanityImageProject;
 };
 
-export function CommitteeMemberGrid({ members }: CommitteeMemberGridProps) {
+export function CommitteeMemberGrid({ members, sanity }: CommitteeMemberGridProps) {
 	const sortedMembers = [...members].sort((a, b) => (a.order || 0) - (b.order || 0));
 
 	return (
@@ -21,7 +22,9 @@ export function CommitteeMemberGrid({ members }: CommitteeMemberGridProps) {
 						firstName={firstName}
 						lastName={lastName}
 						title={member.title}
-						photoUrl={photo?.asset ? urlFor(photo).width(512).url() : '/img/player-alt.webp'}
+						photoUrl={
+							photo?.asset ? urlFor(sanity, photo).width(512).url() : '/img/player-alt.webp'
+						}
 						photoAlt={photo?.alt || member.person.name}
 					/>
 				);

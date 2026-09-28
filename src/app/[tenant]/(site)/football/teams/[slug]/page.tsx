@@ -11,6 +11,7 @@ import { getTeamMatches } from '@/lib/matches/matchService';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
 import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
 import { urlFor } from '@/sanity/lib/image';
+import { getCurrentTenant } from '@/tenants/current';
 
 // Next/previous match come from the live matchday API, not the layout's 86400 Sanity content.
 export const revalidate = 3600;
@@ -24,8 +25,9 @@ type TeamDetailPageProps = {
 
 export async function generateMetadata({ params }: TeamDetailPageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const team = await getTeamBySlug(slug);
-	const siteSettings = await getSiteSettings();
+	const tenant = await getCurrentTenant();
+	const team = await getTeamBySlug(tenant, slug);
+	const siteSettings = await getSiteSettings(tenant);
 
 	if (!team) {
 		return {
@@ -46,8 +48,12 @@ export async function generateMetadata({ params }: TeamDetailPageProps): Promise
 
 export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 	const { slug } = await params;
+	const tenant = await getCurrentTenant();
 
-	const [team, teamMatches] = await Promise.all([getTeamBySlug(slug), getTeamMatches(slug)]);
+	const [team, teamMatches] = await Promise.all([
+		getTeamBySlug(tenant, slug),
+		getTeamMatches(tenant, slug)
+	]);
 
 	if (!team) {
 		notFound();
@@ -61,7 +67,7 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 				{team.photo?.asset?.url ? (
 					<Image
 						loader={sanityImageLoader}
-						src={urlFor(team.photo)
+						src={urlFor(tenant.sanity, team.photo)
 							.width(teamHeroImageWidth)
 							.height(teamHeroImageHeight)
 							.fit('crop')
@@ -94,7 +100,11 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 									firstName={firstName}
 									lastName={lastName}
 									role={coach.title}
-									photoUrl={photo?.asset ? urlFor(photo).width(512).url() : '/img/player-alt.webp'}
+									photoUrl={
+										photo?.asset
+											? urlFor(tenant.sanity, photo).width(512).url()
+											: '/img/player-alt.webp'
+									}
 									photoAlt={photo?.alt || coach.person.name}
 								/>
 							);
@@ -105,7 +115,7 @@ export default async function TeamDetailPage({ params }: TeamDetailPageProps) {
 
 			{team.players && team.players.length > 0 && (
 				<div className="mt-8">
-					<PlayerGrid players={team.players} />
+					<PlayerGrid players={team.players} sanity={tenant.sanity} />
 				</div>
 			)}
 		</>

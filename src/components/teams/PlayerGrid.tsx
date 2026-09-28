@@ -1,10 +1,11 @@
 import { resolvePersonPhoto, splitPersonName } from '@/lib/transformers/personTransformer';
-import { urlFor } from '@/sanity/lib/image';
+import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import type { Player } from '@/types/team';
 import { PlayerCard } from './PlayerCard';
 
 interface PlayerGridProps {
 	players: Player[];
+	sanity: SanityImageProject;
 }
 
 type AreaOfPitch = 'goalkeeper' | 'defender' | 'midfielder' | 'forward';
@@ -18,7 +19,7 @@ const positionLabels: Record<AreaOfPitch, string> = {
 
 const positionOrder: AreaOfPitch[] = ['goalkeeper', 'defender', 'midfielder', 'forward'];
 
-export function PlayerGrid({ players }: PlayerGridProps) {
+export function PlayerGrid({ players, sanity }: PlayerGridProps) {
 	const playersByPosition = players.reduce(
 		(acc, player) => {
 			const area = player.areaOfPitch;
@@ -64,7 +65,7 @@ export function PlayerGrid({ players }: PlayerGridProps) {
 										shirtNumber={player.shirtNumber || 0}
 										position={player.position || ''}
 										photoUrl={
-											photo?.asset ? urlFor(photo).width(512).url() : '/img/player-alt.webp'
+											photo?.asset ? urlFor(sanity, photo).width(512).url() : '/img/player-alt.webp'
 										}
 										photoAlt={photo?.alt || player.person.name}
 										isCaptain={player.isCaptain || false}

@@ -4,6 +4,7 @@ import { LeagueTable } from '@/components/teams/LeagueTable';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getTableForTeam } from '@/lib/matches/tableService';
+import { getCurrentTenant } from '@/tenants/current';
 
 // The ladder comes from the live matchday API; results land during a match day.
 export const revalidate = 3600;
@@ -14,13 +15,17 @@ type TeamTablePageProps = {
 
 export async function generateMetadata({ params }: TeamTablePageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const [team, siteSettings] = await Promise.all([getTeamBySlug(slug), getSiteSettings()]);
+	const tenant = await getCurrentTenant();
+	const [team, siteSettings] = await Promise.all([
+		getTeamBySlug(tenant, slug),
+		getSiteSettings(tenant)
+	]);
 
 	if (!team) {
 		return { title: `Team Not Found | ${siteSettings.clubName}` };
 	}
 
-	const tableData = await getTableForTeam(slug);
+	const tableData = await getTableForTeam(tenant, slug);
 	const description = tableData
 		? `${team.name} league standings in the ${tableData.competition} ${tableData.season} season.`
 		: `League table for ${team.name} at ${siteSettings.clubName}.`;
@@ -37,8 +42,12 @@ export async function generateMetadata({ params }: TeamTablePageProps): Promise<
 
 export default async function TeamTablePage({ params }: TeamTablePageProps) {
 	const { slug } = await params;
+	const tenant = await getCurrentTenant();
 
-	const [team, tableData] = await Promise.all([getTeamBySlug(slug), getTableForTeam(slug)]);
+	const [team, tableData] = await Promise.all([
+		getTeamBySlug(tenant, slug),
+		getTableForTeam(tenant, slug)
+	]);
 
 	if (!team || !tableData) {
 		notFound();

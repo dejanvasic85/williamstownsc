@@ -7,6 +7,7 @@ import { PortableTextContent } from '@/components/content/PortableTextContent';
 import { ContactType } from '@/lib/contact/contactEmail';
 import { useConfig } from '@/lib/hooks/useConfig';
 import { recaptchaAction } from '@/lib/recaptcha/constants';
+import type { SanityImageProject } from '@/sanity/lib/image';
 import { ContactTypeTabs } from './ContactTypeTabs';
 import { FormState, submitContactForm } from './actions';
 
@@ -20,6 +21,7 @@ type ContactFormProps = {
 	initialType?: ContactType;
 	initialProgramName?: string;
 	programs?: { _id: string; name: string }[];
+	sanity: SanityImageProject;
 	typeContentMap: {
 		player?: TypeContent;
 		coach?: TypeContent;
@@ -50,6 +52,7 @@ export function ContactForm({
 	initialType = 'general',
 	initialProgramName,
 	programs = [],
+	sanity,
 	typeContentMap
 }: ContactFormProps) {
 	const { recaptchaSiteKey } = useConfig();
@@ -135,7 +138,7 @@ export function ContactForm({
 						<div className="mb-6">
 							<h2 className="mb-4 text-lg font-bold">{typeContent.heading}</h2>
 							{typeContent.introduction && (
-								<PortableTextContent blocks={typeContent.introduction} />
+								<PortableTextContent blocks={typeContent.introduction} sanity={sanity} />
 							)}
 						</div>
 					)}

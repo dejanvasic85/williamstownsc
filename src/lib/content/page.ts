@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import type { SanityImageSource } from '@sanity/image-url';
 import { buildMetadata } from '@/lib/metadata/buildMetadata';
-import { client } from '@/sanity/lib/client';
-import { urlFor } from '@/sanity/lib/image';
+import { getSanityClient } from '@/sanity/lib/client';
+import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import type { SiteSettings } from '@/sanity/sanity.types';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 import { getSiteSettings } from './siteSettings';
 
 export type PageName =
@@ -49,7 +50,10 @@ export type EditablePageData = PageData & {
 	lastUpdated?: string;
 };
 
-export async function getPageData(pageName: PageName): Promise<EditablePageData | null> {
+export async function getPageData(
+	tenant: Tenant,
+	pageName: PageName
+): Promise<EditablePageData | null> {
 	const query = `*[_type == $pageName && _id == $pageId][0]{
 		heading,
 		introduction,
@@ -68,7 +72,7 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 		lastUpdated
 	}`;
 
-	const data = await client.fetch<EditablePageData>(
+	const data = await getSanityClient(tenant).fetch<EditablePageData>(
 		query,
 		{ pageName, pageId: pageName },
 		{ next: { tags: ['page', pageName] } }
@@ -83,10 +87,7 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 		introduction: data.introduction,
 		body: data.body,
 		featuredImage: data.featuredImage
-			? {
-					url: urlFor(data.featuredImage).width(1200).height(600).fit('crop').url(),
-					alt: data.featuredImage.alt || ''
-				}
+			? processImage(tenant.sanity, data.featuredImage, 1200, 600)
 			: undefined,
 		seo: data.seo
 			? {
@@ -96,10 +97,7 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 					ogTitle: data.seo.ogTitle || undefined,
 					ogDescription: data.seo.ogDescription || undefined,
 					ogImage: data.seo.ogImage
-						? {
-								url: urlFor(data.seo.ogImage).width(1200).height(630).fit('crop').url(),
-								alt: data.seo.ogImage.alt || ''
-							}
+						? processImage(tenant.sanity, data.seo.ogImage, 1200, 630)
 						: undefined,
 					noIndex: data.seo.noIndex || false
 				}
@@ -108,7 +106,7 @@ export async function getPageData(pageName: PageName): Promise<EditablePageData 
 	};
 }
 
-export async function getContactPageData() {
+export async function getContactPageData(tenant: Tenant) {
 	const query = `*[_type == "contactPage" && _id == "contactPage"][0]{
 		heading,
 		introduction,
@@ -148,7 +146,11 @@ export async function getContactPageData() {
 		}
 	}`;
 
-	const data = await client.fetch(query, {}, { next: { tags: ['page', 'contactPage'] } });
+	const data = await getSanityClient(tenant).fetch(
+		query,
+		{},
+		{ next: { tags: ['page', 'contactPage'] } }
+	);
 
 	if (!data) {
 		return null;
@@ -157,28 +159,34 @@ export async function getContactPageData() {
 	return data;
 }
 
-function processImage(image: SanityImageSource & { alt?: string }, width: number, height: number) {
+function processImage(
+	sanity: SanityImageProject,
+	image: SanityImageSource & { alt?: string },
+	width: number,
+	height: number
+) {
 	return {
-		url: urlFor(image).width(width).height(height).fit('crop').url(),
+		url: urlFor(sanity, image).width(width).height(height).fit('crop').url(),
 		alt: image.alt
 	};
 }
 
-function processSeoWithOgImage(seo: PageData['seo']): PageData['seo'] {
+function processSeoWithOgImage(sanity: SanityImageProject, seo: PageData['seo']): PageData['seo'] {
 	if (!seo?.ogImage) {
 		return seo;
 	}
 
 	return {
 		...seo,
-		ogImage: processImage(seo.ogImage, 1200, 630)
+		ogImage: processImage(sanity, seo.ogImage, 1200, 630)
 	};
 }
 
 function buildPageMetadata(
 	pageData: PageData | EditablePageData | null,
 	siteSettings: SiteSettings | null,
-	pageName: PageName
+	pageName: PageName,
+	sanity: SanityImageProject
 ): Metadata {
 	if (!pageData) {
 		return {
@@ -198,7 +206,11 @@ function buildPageMetadata(
 			? { url: editablePageData.featuredImage.url, alt: editablePageData.featuredImage.alt }
 			: siteSettings?.seoDefaults?.ogImage
 				? {
-						url: urlFor(siteSettings.seoDefaults.ogImage).width(1200).height(630).fit('crop').url(),
+						url: urlFor(sanity, siteSettings.seoDefaults.ogImage)
+							.width(1200)
+							.height(630)
+							.fit('crop')
+							.url(),
 						alt: ''
 					}
 				: undefined;
@@ -215,7 +227,7 @@ function buildPageMetadata(
 	});
 }
 
-export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
+export async function getPageMetadata(tenant: Tenant, pageName: PageName): Promise<Metadata> {
 	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
 		seo {
 			...,
@@ -224,18 +236,21 @@ export async function getPageMetadata(pageName: PageName): Promise<Metadata> {
 	}`;
 
 	const [pageData, siteSettings] = await Promise.all([
-		client.fetch<PageData>(pageDataQuery, { pageName, pageId: pageName }),
-		getSiteSettings()
+		getSanityClient(tenant).fetch<PageData>(pageDataQuery, { pageName, pageId: pageName }),
+		getSiteSettings(tenant)
 	]);
 
 	const processedPageData: PageData | null = pageData
-		? { ...pageData, seo: processSeoWithOgImage(pageData.seo) }
+		? { ...pageData, seo: processSeoWithOgImage(tenant.sanity, pageData.seo) }
 		: null;
 
-	return buildPageMetadata(processedPageData, siteSettings, pageName);
+	return buildPageMetadata(processedPageData, siteSettings, pageName, tenant.sanity);
 }
 
-export async function getEditablePageMetadata(pageName: PageName): Promise<Metadata> {
+export async function getEditablePageMetadata(
+	tenant: Tenant,
+	pageName: PageName
+): Promise<Metadata> {
 	const pageDataQuery = `*[_type == $pageName && _id == $pageId][0]{
 		heading,
 		featuredImage { ..., alt },
@@ -246,23 +261,23 @@ export async function getEditablePageMetadata(pageName: PageName): Promise<Metad
 	}`;
 
 	const [pageData, siteSettings] = await Promise.all([
-		client.fetch<EditablePageData>(
+		getSanityClient(tenant).fetch<EditablePageData>(
 			pageDataQuery,
 			{ pageName, pageId: pageName },
 			{ next: { tags: ['page', pageName] } }
 		),
-		getSiteSettings()
+		getSiteSettings(tenant)
 	]);
 
 	const processedPageData: EditablePageData | null = pageData
 		? {
 				...pageData,
 				featuredImage: pageData.featuredImage
-					? processImage(pageData.featuredImage, 1200, 630)
+					? processImage(tenant.sanity, pageData.featuredImage, 1200, 630)
 					: undefined,
-				seo: processSeoWithOgImage(pageData.seo)
+				seo: processSeoWithOgImage(tenant.sanity, pageData.seo)
 			}
 		: null;
 
-	return buildPageMetadata(processedPageData, siteSettings, pageName);
+	return buildPageMetadata(processedPageData, siteSettings, pageName, tenant.sanity);
 }

@@ -5,6 +5,7 @@ import { MatchList } from '@/components/matches/MatchList';
 import { getSiteSettings } from '@/lib/content';
 import { getTeamBySlug } from '@/lib/content/teamDetail';
 import { getFixturesForTeam } from '@/lib/matches/matchService';
+import { getCurrentTenant } from '@/tenants/current';
 import type { EnrichedFixture } from '@/types/matches';
 
 // Fixtures come from the live matchday API; results land during a match day.
@@ -24,8 +25,9 @@ type TeamMatchesPageProps = {
 
 export async function generateMetadata({ params }: TeamMatchesPageProps): Promise<Metadata> {
 	const { slug } = await params;
-	const team = await getTeamBySlug(slug);
-	const siteSettings = await getSiteSettings();
+	const tenant = await getCurrentTenant();
+	const team = await getTeamBySlug(tenant, slug);
+	const siteSettings = await getSiteSettings(tenant);
 
 	if (!team) {
 		return {
@@ -33,7 +35,7 @@ export async function generateMetadata({ params }: TeamMatchesPageProps): Promis
 		};
 	}
 
-	const fixtureData = await getFixturesForTeam(slug);
+	const fixtureData = await getFixturesForTeam(tenant, slug);
 
 	return {
 		title: `${team.name} - Matches | ${siteSettings.clubName}`,
@@ -51,13 +53,14 @@ export async function generateMetadata({ params }: TeamMatchesPageProps): Promis
 
 export default async function TeamMatchesPage({ params }: TeamMatchesPageProps) {
 	const { slug } = await params;
-	const team = await getTeamBySlug(slug);
+	const tenant = await getCurrentTenant();
+	const team = await getTeamBySlug(tenant, slug);
 
 	if (!team) {
 		notFound();
 	}
 
-	const fixtureData = await getFixturesForTeam(slug);
+	const fixtureData = await getFixturesForTeam(tenant, slug);
 
 	if (!fixtureData) {
 		notFound();

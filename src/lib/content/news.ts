@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity';
-import { client, getSanityClient } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { NewsArticle } from '@/sanity/sanity.types';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
@@ -31,6 +31,7 @@ const imageSizeConfigValue = {
 };
 
 export async function getNewsArticles(
+	tenant: Tenant,
 	filters: NewsFilters = {}
 ): Promise<TransformedNewsArticle[]> {
 	const { limit = 20, featured, imageSize = 'small' } = filters;
@@ -53,7 +54,7 @@ export async function getNewsArticles(
 		featured
 	}`;
 
-	const articles = await client.fetch<NewsArticle[]>(
+	const articles = await getSanityClient(tenant).fetch<NewsArticle[]>(
 		newsArticlesQuery,
 		{ limit },
 		{ next: { tags: ['newsArticle'] } }
@@ -68,7 +69,7 @@ export async function getNewsArticles(
 		publishedAt: article.publishedAt || '',
 		featuredImage: {
 			url: article.featuredImage
-				? urlFor(article.featuredImage)
+				? urlFor(tenant.sanity, article.featuredImage)
 						.width(width)
 						.height(height)
 						.fit('crop')
@@ -81,7 +82,7 @@ export async function getNewsArticles(
 		mobileImage:
 			imageSize === 'large' && article.mobileImage
 				? {
-						url: urlFor(article.mobileImage)
+						url: urlFor(tenant.sanity, article.mobileImage)
 							.width(1080)
 							.height(1080)
 							.fit('crop')
@@ -96,7 +97,7 @@ export async function getNewsArticles(
 	}));
 }
 
-export async function getArticleBySlug(slug: string) {
+export async function getArticleBySlug(tenant: Tenant, slug: string) {
 	const articleBySlugQuery = `*[_type == "newsArticle" && slug.current == $slug && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())][0] {
 		_id,
 		title,
@@ -108,7 +109,7 @@ export async function getArticleBySlug(slug: string) {
 		featured
 	}`;
 
-	const article = await client.fetch<NewsArticle>(
+	const article = await getSanityClient(tenant).fetch<NewsArticle>(
 		articleBySlugQuery,
 		{ slug },
 		{ next: { tags: ['newsArticle'] } }
@@ -125,7 +126,7 @@ export async function getArticleBySlug(slug: string) {
 		publishedAt: article.publishedAt || '',
 		featuredImage: {
 			url: article.featuredImage
-				? urlFor(article.featuredImage)
+				? urlFor(tenant.sanity, article.featuredImage)
 						.width(1920)
 						.height(1080)
 						.fit('crop')
@@ -141,17 +142,15 @@ export async function getArticleBySlug(slug: string) {
 	};
 }
 
-export async function getAllArticlesForSitemap() {
+export async function getAllArticlesForSitemap(tenant: Tenant) {
 	const allArticlesQuery = groq`*[_type == "newsArticle" && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())] | order(publishedAt desc) {
 		slug,
 		publishedAt
 	}`;
 
-	const articles = await client.fetch<Array<{ slug: { current: string }; publishedAt: string }>>(
-		allArticlesQuery,
-		{},
-		{ next: { tags: ['newsArticle'] } }
-	);
+	const articles = await getSanityClient(tenant).fetch<
+		Array<{ slug: { current: string }; publishedAt: string }>
+	>(allArticlesQuery, {}, { next: { tags: ['newsArticle'] } });
 
 	return articles
 		.filter((article) => article.slug?.current)
@@ -205,7 +204,11 @@ export async function getAllArticlesForFeed(tenant: Tenant) {
 			excerpt: article.excerpt || '',
 			featuredImage: article.featuredImage
 				? {
-						url: urlFor(article.featuredImage).width(1200).height(630).fit('crop').url(),
+						url: urlFor(tenant.sanity, article.featuredImage)
+							.width(1200)
+							.height(630)
+							.fit('crop')
+							.url(),
 						alt: article.featuredImage?.alt,
 						mimeType: article.featuredImage.asset?.mimeType
 					}
@@ -213,7 +216,7 @@ export async function getAllArticlesForFeed(tenant: Tenant) {
 		}));
 }
 
-export async function getArticleForSocialPublish(_id: string) {
+export async function getArticleForSocialPublish(tenant: Tenant, _id: string) {
 	const articleQuery = groq`*[_type == "newsArticle" && _id == $_id && publishedAt <= now() && (!defined(expiryDate) || expiryDate > now())][0] {
 		_id,
 		title,
@@ -235,7 +238,7 @@ export async function getArticleForSocialPublish(_id: string) {
 		| 'publishToInstagram'
 	>;
 
-	const article = await client.fetch<SocialPublishQueryResult>(
+	const article = await getSanityClient(tenant).fetch<SocialPublishQueryResult>(
 		articleQuery,
 		{ _id },
 		{ next: { tags: ['newsArticle'] } }
@@ -252,7 +255,7 @@ export async function getArticleForSocialPublish(_id: string) {
 		excerpt: article.excerpt || '',
 		featuredImage: article.featuredImage
 			? {
-					url: urlFor(article.featuredImage)
+					url: urlFor(tenant.sanity, article.featuredImage)
 						.width(1200)
 						.height(630)
 						.fit('crop')

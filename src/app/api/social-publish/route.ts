@@ -59,7 +59,12 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		const article = await getArticleForSocialPublish(_id);
+		const tenant = await getTenantFromHeaders();
+		if (!tenant) {
+			return NextResponse.json({ error: 'Unknown club' }, { status: 400 });
+		}
+
+		const article = await getArticleForSocialPublish(tenant, _id);
 
 		if (!article) {
 			return NextResponse.json(
@@ -89,11 +94,6 @@ export async function POST(request: NextRequest) {
 				},
 				{ status: 400 }
 			);
-		}
-
-		const tenant = await getTenantFromHeaders();
-		if (!tenant) {
-			return NextResponse.json({ error: 'Unknown club' }, { status: 400 });
 		}
 
 		const siteSettings = await getSiteSettings(tenant);

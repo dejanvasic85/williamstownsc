@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type AnnouncementType = 'info' | 'warning' | 'alert';
 
@@ -10,10 +11,10 @@ export interface AnnouncementData {
 	endDate: string;
 }
 
-export async function getAnnouncements(): Promise<AnnouncementData[]> {
+export async function getAnnouncements(tenant: Tenant): Promise<AnnouncementData[]> {
 	const today = format(new Date(), 'yyyy-MM-dd');
 
-	return await client.fetch<AnnouncementData[]>(
+	return await getSanityClient(tenant).fetch<AnnouncementData[]>(
 		`*[_type == "announcement" && endDate >= $today]{
 			_id,
 			type,

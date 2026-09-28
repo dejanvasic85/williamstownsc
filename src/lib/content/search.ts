@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
 import { contentTypeRoutes } from '@/lib/routes';
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type SearchResult = {
 	_id: string;
@@ -15,7 +16,7 @@ function sanitizeSearchTerm(term: string): string {
 	return term.replace(/[*\[\]{}()\\]/g, '\\$&').trim();
 }
 
-export async function searchContent(searchTerm: string): Promise<SearchResult[]> {
+export async function searchContent(tenant: Tenant, searchTerm: string): Promise<SearchResult[]> {
 	const sanitizedTerm = sanitizeSearchTerm(searchTerm);
 	const searchQuery = groq`
 		*[
@@ -61,7 +62,7 @@ export async function searchContent(searchTerm: string): Promise<SearchResult[]>
 		}
 	`;
 
-	const results = await client.fetch<
+	const results = await getSanityClient(tenant).fetch<
 		Array<{
 			_id: string;
 			_type: string;

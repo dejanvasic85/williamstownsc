@@ -1,31 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { PortableTextBlock } from '@portabletext/types';
-import * as Sentry from '@sentry/nextjs';
 import { Calendar, Users } from 'lucide-react';
 import { TeamPhotoPlaceholder } from '@/components/teams/TeamPhotoPlaceholder';
 import { GradientBackground } from '@/components/ui';
-import { homepageTeamsQuery } from '@/lib/content/homepageTeams';
-import logger from '@/lib/logger';
+import { getFeaturedPrograms } from '@/lib/content';
+import { getHomepageTeams } from '@/lib/content/homepageTeams';
 import { sanityImageLoader } from '@/lib/sanityImageLoader';
-import { client } from '@/sanity/lib/client';
-import { getFeaturedPrograms } from '@/sanity/services/programService';
-
-const log = logger.child({ module: 'football-section' });
-
-interface HomepageTeam {
-	_id: string;
-	name: string;
-	slug: string;
-	photo?: {
-		asset: {
-			_ref: string;
-			url: string;
-		};
-		alt?: string;
-	};
-	description: PortableTextBlock[];
-}
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 function formatDate(dateString: string): string {
 	const date = new Date(dateString);
@@ -46,18 +28,15 @@ function extractTextFromPortableText(blocks: PortableTextBlock[]): string {
 		.join(' ');
 }
 
-async function getHomepageTeams(): Promise<HomepageTeam[]> {
-	try {
-		return await client.fetch<HomepageTeam[]>(homepageTeamsQuery, {}, { next: { tags: ['team'] } });
-	} catch (error) {
-		Sentry.captureException(error);
-		log.error({ err: error }, 'error fetching homepage teams');
-		return [];
-	}
-}
+type FootballSectionProps = {
+	tenant: Tenant;
+};
 
-export async function FootballSection() {
-	const [homepageTeams, programs] = await Promise.all([getHomepageTeams(), getFeaturedPrograms(3)]);
+export async function FootballSection({ tenant }: FootballSectionProps) {
+	const [homepageTeams, programs] = await Promise.all([
+		getHomepageTeams(tenant),
+		getFeaturedPrograms(tenant, 3)
+	]);
 
 	return (
 		<GradientBackground className="py-16">

@@ -1,5 +1,6 @@
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
 import { NavigationSettings } from '@/sanity/sanity.types';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export interface NavigationVisibility {
 	programs: boolean;
@@ -13,8 +14,8 @@ export interface NavigationVisibility {
 	keyDates: boolean;
 }
 
-export async function getNavigationVisibility(): Promise<NavigationVisibility> {
-	const settings = await client.fetch<NavigationSettings>(
+export async function getNavigationVisibility(tenant: Tenant): Promise<NavigationVisibility> {
+	const settings = await getSanityClient(tenant).fetch<NavigationSettings>(
 		`*[_type == "navigationSettings"][0]{
 			programs,
 			merchandise,

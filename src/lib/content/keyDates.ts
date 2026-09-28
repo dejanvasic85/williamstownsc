@@ -1,7 +1,8 @@
 import { format } from 'date-fns';
 import { groq } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
+import { getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type KeyDateItem = {
 	title: string;
@@ -32,10 +33,10 @@ type KeyDatesPageData = {
 	};
 };
 
-export async function getNextKeyDate(): Promise<KeyDateItem | null> {
+export async function getNextKeyDate(tenant: Tenant): Promise<KeyDateItem | null> {
 	const today = format(new Date(), 'yyyy-MM-dd');
 
-	const data = await client.fetch<KeyDateItem | null>(
+	const data = await getSanityClient(tenant).fetch<KeyDateItem | null>(
 		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0].keyDates[date >= $today] | order(date asc)[0]{
 			title,
 			date,
@@ -48,8 +49,8 @@ export async function getNextKeyDate(): Promise<KeyDateItem | null> {
 	return data;
 }
 
-export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
-	const data = await client.fetch<KeyDatesPageData>(
+export async function getKeyDatesPageData(tenant: Tenant): Promise<KeyDatesPageData | null> {
+	const data = await getSanityClient(tenant).fetch<KeyDatesPageData>(
 		groq`*[_type == "keyDatesPage" && _id == "keyDatesPage"][0]{
 			heading,
 			introduction,
@@ -85,7 +86,7 @@ export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
 		body: data.body,
 		featuredImage: data.featuredImage
 			? {
-					url: urlFor(data.featuredImage).width(1200).height(600).fit('crop').url(),
+					url: urlFor(tenant.sanity, data.featuredImage).width(1200).height(600).fit('crop').url(),
 					alt: data.featuredImage.alt || ''
 				}
 			: undefined,
@@ -99,7 +100,11 @@ export async function getKeyDatesPageData(): Promise<KeyDatesPageData | null> {
 					ogDescription: data.seo.ogDescription || undefined,
 					ogImage: data.seo.ogImage
 						? {
-								url: urlFor(data.seo.ogImage).width(1200).height(630).fit('crop').url(),
+								url: urlFor(tenant.sanity, data.seo.ogImage)
+									.width(1200)
+									.height(630)
+									.fit('crop')
+									.url(),
 								alt: data.seo.ogImage.alt || ''
 							}
 						: undefined,

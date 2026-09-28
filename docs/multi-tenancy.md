@@ -194,9 +194,18 @@ above the root layout, the getter works in any Server Component without prop dri
 `headers()`, so pages stay static. It does not work in Client Components, Server Actions, Route
 Handlers or `unstable_cache`.
 
-Content modules call `await tenant()` themselves, so the 18 modules in `lib/content` keep their
-current signatures. Code called from a Route Handler or Server Action takes an explicit tenant
-argument instead.
+Every content function in `lib/content` takes the club as its first argument, `tenant: Tenant`, and
+reads through `getSanityClient(tenant)`. Pages, layouts and shared Server Components resolve the
+club once with `getCurrentTenant()` — the `[tenant]` root parameter plus `getTenantBySlug` — and pass
+it down. Route Handlers and Server Actions resolve it from `params` or the `x-tenant` header and pass
+it in the same way.
+
+One signature, one code path. Nothing in `lib/content` reads `headers()` or `next/root-params`, so
+the modules stay pure and unit-testable, and no function silently falls back to a default club.
+
+Image URLs follow the same rule. `urlFor(project, source)` takes the club's public Sanity project
+(`tenant.sanity`) rather than a module-level client, so a club's images never point at another
+club's project.
 
 ## Environments
 
@@ -259,8 +268,11 @@ the right side of the trade.
 
 ## Sanity access
 
-`getSanityClient(tenant)` replaces the module-level client, memoised in a map keyed by slug. The
-same goes for the write client, which takes that club's write token.
+`getSanityClient(tenant)` replaces the module-level client, memoised in a map keyed by slug. There is
+no read client singleton and no `NEXT_PUBLIC_SANITY_PROJECT_ID`: the project id and dataset come from
+the registry, and only the API version stays in config. `urlFor(project, source)` builds image URLs
+from the caller's club project the same way. The same goes for the write client, which takes that
+club's write token.
 
 `getClientConfig()` stops reading `NEXT_PUBLIC_SANITY_PROJECT_ID`. The project id and dataset come
 from the registry.

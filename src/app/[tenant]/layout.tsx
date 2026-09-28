@@ -7,7 +7,7 @@ import { getClientConfig, isLocal } from '@/lib/config';
 import { getSiteSettings } from '@/lib/content';
 import { exo, outfit } from '@/lib/fonts';
 import { ConfigProvider } from '@/lib/providers/ConfigProvider';
-import { getAllTenants } from '@/tenants';
+import { getAllTenants, getTenantBySlug } from '@/tenants';
 
 export const metadata: Metadata = {
 	manifest: '/manifest.webmanifest',
@@ -33,16 +33,20 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function TenantLayout({ children, params }: TenantLayoutProps) {
-	const { tenant } = await params;
+	const { tenant: tenantSlug } = await params;
+	const tenant = getTenantBySlug(tenantSlug);
+	if (!tenant) {
+		throw new Error(`Unknown tenant: ${tenantSlug}`);
+	}
 	const config = getClientConfig();
-	const siteSettings = await getSiteSettings();
+	const siteSettings = await getSiteSettings(tenant);
 
 	// Only load GTM in production with valid GTM ID
 	const gtmId = siteSettings?.analytics?.gtmId;
 	const shouldLoadGtm = !isLocal() && !!gtmId;
 
 	return (
-		<html lang="en" data-tenant={tenant}>
+		<html lang="en" data-tenant={tenantSlug}>
 			{shouldLoadGtm && gtmId && <GoogleTagManager gtmId={gtmId} />}
 			<body className={clsx(outfit.variable, exo.variable, 'antialiased')}>
 				<ConfigProvider config={config}>{children}</ConfigProvider>

@@ -8,6 +8,7 @@ import {
 	resolveMatchdayNextMatch,
 	resolveMatchdayPreviousMatch
 } from '@/lib/matches/matchResolverService';
+import type { Tenant } from '@/tenants/schema/tenantSchema';
 import type { EnrichedFixture } from '@/types/matches';
 
 const log = logger.child({ service: 'matchService' });
@@ -19,11 +20,14 @@ type MatchdayContext = {
 
 /** Returns null on API failure, so an outage degrades to "no next/previous match" rather than
  * a 500. */
-async function loadMatchdayContext(leagueId: string): Promise<MatchdayContext | null> {
+async function loadMatchdayContext(
+	tenant: Tenant,
+	leagueId: string
+): Promise<MatchdayContext | null> {
 	try {
 		const [fixtures, matchdayClubId] = await Promise.all([
 			getMatchdayFixturesForLeague(leagueId),
-			getMatchdayClubId()
+			getMatchdayClubId(tenant)
 		]);
 		return { fixtures, matchdayClubId };
 	} catch (error) {
@@ -33,12 +37,15 @@ async function loadMatchdayContext(leagueId: string): Promise<MatchdayContext | 
 	}
 }
 
-export async function getFixturesForTeam(slug: string): Promise<{
+export async function getFixturesForTeam(
+	tenant: Tenant,
+	slug: string
+): Promise<{
 	fixtures: EnrichedFixture[];
 	competition: string;
 	season: number;
 } | null> {
-	const leagueId = await getTeamLeagueId(slug);
+	const leagueId = await getTeamLeagueId(tenant, slug);
 	if (!leagueId) {
 		return null;
 	}
@@ -56,8 +63,8 @@ export async function getFixturesForTeam(slug: string): Promise<{
 	}
 }
 
-export async function hasFixtures(slug: string): Promise<boolean> {
-	const leagueId = await getTeamLeagueId(slug);
+export async function hasFixtures(tenant: Tenant, slug: string): Promise<boolean> {
+	const leagueId = await getTeamLeagueId(tenant, slug);
 	if (!leagueId) {
 		return false;
 	}
@@ -72,17 +79,20 @@ export async function hasFixtures(slug: string): Promise<boolean> {
 	}
 }
 
-export async function getTeamMatches(teamSlug: string): Promise<{
+export async function getTeamMatches(
+	tenant: Tenant,
+	teamSlug: string
+): Promise<{
 	hasFixtures: boolean;
 	nextMatch: EnrichedFixture | null;
 	previousMatch: EnrichedFixture | null;
 }> {
-	const leagueId = await getTeamLeagueId(teamSlug);
+	const leagueId = await getTeamLeagueId(tenant, teamSlug);
 	if (!leagueId) {
 		return { hasFixtures: false, nextMatch: null, previousMatch: null };
 	}
 
-	const context = await loadMatchdayContext(leagueId);
+	const context = await loadMatchdayContext(tenant, leagueId);
 
 	if (!context || context.fixtures.length === 0 || !context.matchdayClubId) {
 		return {
@@ -99,25 +109,31 @@ export async function getTeamMatches(teamSlug: string): Promise<{
 	};
 }
 
-export async function getNextMatch(teamSlug: string): Promise<EnrichedFixture | null> {
-	const leagueId = await getTeamLeagueId(teamSlug);
+export async function getNextMatch(
+	tenant: Tenant,
+	teamSlug: string
+): Promise<EnrichedFixture | null> {
+	const leagueId = await getTeamLeagueId(tenant, teamSlug);
 	if (!leagueId) {
 		return null;
 	}
 
-	const context = await loadMatchdayContext(leagueId);
+	const context = await loadMatchdayContext(tenant, leagueId);
 	return context?.matchdayClubId
 		? resolveMatchdayNextMatch(context.fixtures, context.matchdayClubId)
 		: null;
 }
 
-export async function getPreviousMatch(teamSlug: string): Promise<EnrichedFixture | null> {
-	const leagueId = await getTeamLeagueId(teamSlug);
+export async function getPreviousMatch(
+	tenant: Tenant,
+	teamSlug: string
+): Promise<EnrichedFixture | null> {
+	const leagueId = await getTeamLeagueId(tenant, teamSlug);
 	if (!leagueId) {
 		return null;
 	}
 
-	const context = await loadMatchdayContext(leagueId);
+	const context = await loadMatchdayContext(tenant, leagueId);
 	return context?.matchdayClubId
 		? resolveMatchdayPreviousMatch(context.fixtures, context.matchdayClubId)
 		: null;
