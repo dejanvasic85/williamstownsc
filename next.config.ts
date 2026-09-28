@@ -4,7 +4,12 @@ import { withSentryConfig } from '@sentry/nextjs/config';
 const nextConfig: NextConfig = {
 	devIndicators: false,
 	experimental: {
-		globalNotFound: true
+		globalNotFound: true,
+		// Vercel restores .next/cache/turbopack between deployments on the same branch. A build
+		// that gets killed mid-write (e.g. by a build timeout) can leave that persisted cache
+		// corrupted, causing every later build on the branch to hang at the same point. Disable
+		// the build-time cache so builds always start clean.
+		turbopackFileSystemCacheForBuild: false
 	},
 	serverExternalPackages: ['pino', 'pino-pretty'],
 	images: {
