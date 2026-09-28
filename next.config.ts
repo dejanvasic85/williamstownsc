@@ -46,7 +46,7 @@ export default withSentryConfig(nextConfig, {
 	silent: !process.env.CI,
 	widenClientFileUpload: true,
 	sourcemaps: { deleteSourcemapsAfterUpload: true },
-	webpack: {
-		reactComponentAnnotation: { enabled: true }
-	}
+	// reactComponentAnnotation was disabled after upgrading to @sentry/nextjs v11: it caused the
+	// Turbopack production build to hang indefinitely on Vercel (build exceeded the maximum time).
+	reactComponentAnnotation: { enabled: false }
 });
