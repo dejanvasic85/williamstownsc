@@ -6,6 +6,5 @@ Sentry.init({
 	tracesSampleRate: 0.05,
 	debug: false,
 	enabled: isSentryEnabled(),
-	enableLogs: true,
 	integrations: [Sentry.pinoIntegration()]
 });
