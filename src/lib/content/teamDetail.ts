@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/nextjs';
 import { groq } from 'next-sanity';
 import logger from '@/lib/logger';
 import { getSanityClient } from '@/sanity/lib/client';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 import type { Team } from '@/types/team';
 
@@ -86,7 +87,7 @@ export async function getTeamBySlug(tenant: Tenant, slug: string): Promise<Team 
 		return await getSanityClient(tenant).fetch<Team>(
 			teamDetailQuery,
 			{ slug },
-			{ next: { tags: ['team'] } }
+			{ next: { tags: [buildTenantCacheTag(tenant, 'team')] } }
 		);
 	} catch (error) {
 		Sentry.captureException(error);
@@ -108,7 +109,7 @@ export const getTeamLeagueId = cache(async function getTeamLeagueId(
 	const leagueId = await getSanityClient(tenant).fetch<string | null>(
 		teamLeagueIdQuery,
 		{ slug },
-		{ next: { tags: ['team'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'team')] } }
 	);
 	return leagueId ?? null;
 });

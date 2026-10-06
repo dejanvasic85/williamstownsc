@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
 import { contentTypeRoutes } from '@/lib/routes';
 import { getSanityClient } from '@/sanity/lib/client';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type SearchResult = {
@@ -77,7 +78,11 @@ export async function searchContent(tenant: Tenant, searchTerm: string): Promise
 			body?: unknown;
 			introduction?: unknown;
 		}>
-	>(searchQuery, { searchTerm: sanitizedTerm }, { next: { tags: ['search'] } });
+	>(
+		searchQuery,
+		{ searchTerm: sanitizedTerm },
+		{ next: { tags: [buildTenantCacheTag(tenant, 'search')] } }
+	);
 
 	return results.map((result) => {
 		const title = result.title || result.name || result.heading || 'Untitled';

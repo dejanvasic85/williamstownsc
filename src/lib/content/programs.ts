@@ -1,5 +1,6 @@
 import { getSanityClient } from '@/sanity/lib/client';
 import type { Program } from '@/sanity/sanity.types';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export interface ProgramWithImage extends Omit<Program, 'image'> {
@@ -34,7 +35,9 @@ export async function getActivePrograms(
 	const query = buildProgramsQuery(limit);
 	const params = limit ? { limit } : {};
 
-	return getSanityClient(tenant).fetch(query, params, { next: { tags: ['program'] } });
+	return getSanityClient(tenant).fetch(query, params, {
+		next: { tags: [buildTenantCacheTag(tenant, 'program')] }
+	});
 }
 
 export async function getFeaturedPrograms(

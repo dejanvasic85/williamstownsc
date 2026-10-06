@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import { groq } from 'next-sanity';
 import { getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type KeyDateItem = {
@@ -43,7 +44,11 @@ export async function getNextKeyDate(tenant: Tenant): Promise<KeyDateItem | null
 			description
 		}`,
 		{ today },
-		{ next: { tags: ['page', 'keyDatesPage'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'page'), buildTenantCacheTag(tenant, 'keyDatesPage')]
+			}
+		}
 	);
 
 	return data;
@@ -73,7 +78,11 @@ export async function getKeyDatesPageData(tenant: Tenant): Promise<KeyDatesPageD
 			}
 		}`,
 		{},
-		{ next: { tags: ['page', 'keyDatesPage'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'page'), buildTenantCacheTag(tenant, 'keyDatesPage')]
+			}
+		}
 	);
 
 	if (!data) {

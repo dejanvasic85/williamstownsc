@@ -2,6 +2,7 @@ import { groq } from 'next-sanity';
 import { getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { NewsArticle } from '@/sanity/sanity.types';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type TransformedNewsArticle = Pick<NewsArticle, '_id' | 'featured'> & {
@@ -57,7 +58,7 @@ export async function getNewsArticles(
 	const articles = await getSanityClient(tenant).fetch<NewsArticle[]>(
 		newsArticlesQuery,
 		{ limit },
-		{ next: { tags: ['newsArticle'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'newsArticle')] } }
 	);
 
 	const { width, height } = imageSizeConfigValue[imageSize];
@@ -112,7 +113,7 @@ export async function getArticleBySlug(tenant: Tenant, slug: string) {
 	const article = await getSanityClient(tenant).fetch<NewsArticle>(
 		articleBySlugQuery,
 		{ slug },
-		{ next: { tags: ['newsArticle'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'newsArticle')] } }
 	);
 
 	if (!article) {
@@ -150,7 +151,7 @@ export async function getAllArticlesForSitemap(tenant: Tenant) {
 
 	const articles = await getSanityClient(tenant).fetch<
 		Array<{ slug: { current: string }; publishedAt: string }>
-	>(allArticlesQuery, {}, { next: { tags: ['newsArticle'] } });
+	>(allArticlesQuery, {}, { next: { tags: [buildTenantCacheTag(tenant, 'newsArticle')] } });
 
 	return articles
 		.filter((article) => article.slug?.current)
@@ -191,7 +192,7 @@ export async function getAllArticlesForFeed(tenant: Tenant) {
 	const articles = await getSanityClient(tenant).fetch<FeedArticleQueryResult[]>(
 		feedArticlesQuery,
 		{},
-		{ next: { tags: ['newsArticle'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'newsArticle')] } }
 	);
 
 	return articles
@@ -241,7 +242,7 @@ export async function getArticleForSocialPublish(tenant: Tenant, _id: string) {
 	const article = await getSanityClient(tenant).fetch<SocialPublishQueryResult>(
 		articleQuery,
 		{ _id },
-		{ next: { tags: ['newsArticle'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'newsArticle')] } }
 	);
 
 	if (!article) {

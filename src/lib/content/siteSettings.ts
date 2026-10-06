@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { getSanityClient } from '@/sanity/lib/client';
 import { SiteSettings } from '@/sanity/sanity.types';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 /** Read the club's site settings from that club's own Sanity project. */
@@ -25,7 +26,7 @@ export async function getSiteSettings(tenant: Tenant) {
 			matchday
 		}`,
 		{},
-		{ next: { tags: ['siteSettings'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'siteSettings')] } }
 	);
 
 	return siteSettings;

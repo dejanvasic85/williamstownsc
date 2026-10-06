@@ -1,6 +1,7 @@
 import { getSanityClient } from '@/sanity/lib/client';
 import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import { Sponsor } from '@/sanity/sanity.types';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 type CardSize = 'large' | 'medium' | 'small';
@@ -111,7 +112,11 @@ export async function getAllSponsors(tenant: Tenant): Promise<TransformedSponsor
 	const sponsors = await getSanityClient(tenant).fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
-		{ next: { tags: ['sponsor', 'sponsorType'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'sponsor'), buildTenantCacheTag(tenant, 'sponsorType')]
+			}
+		}
 	);
 
 	return sponsors.map((sponsor) => transformSponsor(tenant.sanity, sponsor));
@@ -125,7 +130,11 @@ export async function getFeaturedSponsors(tenant: Tenant): Promise<TransformedSp
 	const sponsors = await getSanityClient(tenant).fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
-		{ next: { tags: ['sponsor', 'sponsorType'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'sponsor'), buildTenantCacheTag(tenant, 'sponsorType')]
+			}
+		}
 	);
 
 	return sponsors.map((sponsor) => transformSponsor(tenant.sanity, sponsor));
@@ -139,7 +148,11 @@ export async function getSponsorsGroupedByTier(tenant: Tenant): Promise<SponsorT
 	const sponsors = await getSanityClient(tenant).fetch<SponsorWithExpandedType[]>(
 		query,
 		{},
-		{ next: { tags: ['sponsor', 'sponsorType'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'sponsor'), buildTenantCacheTag(tenant, 'sponsorType')]
+			}
+		}
 	);
 
 	return groupSponsorsByTier(tenant.sanity, sponsors);
@@ -155,6 +168,6 @@ export async function getAllSponsorTypes(tenant: Tenant): Promise<SponsorTypeDat
 	return getSanityClient(tenant).fetch<SponsorTypeData[]>(
 		query,
 		{},
-		{ next: { tags: ['sponsorType'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'sponsorType')] } }
 	);
 }

@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import { getSanityClient } from '@/sanity/lib/client';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type AnnouncementType = 'info' | 'warning' | 'alert';
@@ -22,6 +23,6 @@ export async function getAnnouncements(tenant: Tenant): Promise<AnnouncementData
 			endDate
 		}`,
 		{ today },
-		{ next: { tags: ['announcement'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'announcement')] } }
 	);
 }
