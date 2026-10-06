@@ -1,5 +1,6 @@
 import { getSanityClient } from '@/sanity/lib/client';
 import { NavigationSettings } from '@/sanity/sanity.types';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export interface NavigationVisibility {
@@ -28,7 +29,7 @@ export async function getNavigationVisibility(tenant: Tenant): Promise<Navigatio
 			keyDates
 		}`,
 		{},
-		{ next: { tags: ['navigationSettings'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'navigationSettings')] } }
 	);
 
 	// Default all to true if settings don't exist yet

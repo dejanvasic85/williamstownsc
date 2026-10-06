@@ -2,6 +2,7 @@ import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
 import logger from '@/lib/logger';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import { getTenantFromHeaders } from '@/tenants/request';
 import { getTenantSecret } from '@/tenants/secrets/tenantSecrets';
 
@@ -67,7 +68,7 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		revalidateTag(contentType, 'max');
+		revalidateTag(buildTenantCacheTag(tenant, contentType), 'max');
 
 		return NextResponse.json({
 			revalidated: true,

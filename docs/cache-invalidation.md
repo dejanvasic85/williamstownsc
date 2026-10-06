@@ -7,6 +7,10 @@ This document explains how the Williamstown SC website invalidates its cache.
 The website uses Next.js cache tags to refresh cached content on demand. Sanity refreshes content
 tags, while league update webhooks refresh Matchday data for one league.
 
+Each club's tags start with its slug, such as `williamstown:newsArticle`, so a webhook for one club
+clears only that club's content. The one tag without a club prefix is `matchday:league:*`, because
+league data is shared across clubs. See Rule 8 in [the multi-tenant design](./multi-tenancy.md).
+
 ## Sanity Endpoint
 
 **URL:** `/api/revalidate`
@@ -211,18 +215,24 @@ This will return information about the endpoint:
 
 ### Cache Tags
 
-Each content fetching function uses Next.js cache tags to identify cached content:
+Each content fetching function builds a club-scoped tag with `buildTenantCacheTag`, so cached
+content is keyed by both the club and the content type:
 
 ```typescript
-const articles = await client.fetch<NewsArticle[]>(query, {}, { next: { tags: ['newsArticle'] } });
+const articles = await client.fetch<NewsArticle[]>(
+	query,
+	{},
+	{ next: { tags: [buildTenantCacheTag(tenant, 'newsArticle')] } }
+);
 ```
 
 ### Revalidation
 
-When the `/api/revalidate` endpoint receives a POST request, it calls Next.js `revalidateTag()` with the `'max'` profile:
+When the `/api/revalidate` endpoint receives a POST request, it calls Next.js `revalidateTag()` with
+the requesting club's tag and the `'max'` profile:
 
 ```typescript
-revalidateTag(contentType, 'max');
+revalidateTag(buildTenantCacheTag(tenant, contentType), 'max');
 ```
 
 This clears all cached data for that tag. Visitors keep seeing the cached page while the site fetches fresh data in the background (stale-while-revalidate).

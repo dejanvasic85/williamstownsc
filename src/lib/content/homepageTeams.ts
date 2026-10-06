@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/nextjs';
 import { groq } from 'next-sanity';
 import logger from '@/lib/logger';
 import { getSanityClient } from '@/sanity/lib/client';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 const log = logger.child({ module: 'homepage-teams' });
@@ -43,7 +44,7 @@ export async function getHomepageTeams(tenant: Tenant): Promise<HomepageTeam[]> 
 		return await getSanityClient(tenant).fetch<HomepageTeam[]>(
 			homepageTeamsQuery,
 			{},
-			{ next: { tags: ['team'] } }
+			{ next: { tags: [buildTenantCacheTag(tenant, 'team')] } }
 		);
 	} catch (error) {
 		Sentry.captureException(error);

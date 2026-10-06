@@ -4,6 +4,7 @@ import { buildMetadata } from '@/lib/metadata/buildMetadata';
 import { getSanityClient } from '@/sanity/lib/client';
 import { type SanityImageProject, urlFor } from '@/sanity/lib/image';
 import type { SiteSettings } from '@/sanity/sanity.types';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 import { getSiteSettings } from './siteSettings';
 
@@ -75,7 +76,7 @@ export async function getPageData(
 	const data = await getSanityClient(tenant).fetch<EditablePageData>(
 		query,
 		{ pageName, pageId: pageName },
-		{ next: { tags: ['page', pageName] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'page'), buildTenantCacheTag(tenant, pageName)] } }
 	);
 
 	if (!data) {
@@ -149,7 +150,11 @@ export async function getContactPageData(tenant: Tenant) {
 	const data = await getSanityClient(tenant).fetch(
 		query,
 		{},
-		{ next: { tags: ['page', 'contactPage'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'page'), buildTenantCacheTag(tenant, 'contactPage')]
+			}
+		}
 	);
 
 	if (!data) {
@@ -264,7 +269,11 @@ export async function getEditablePageMetadata(
 		getSanityClient(tenant).fetch<EditablePageData>(
 			pageDataQuery,
 			{ pageName, pageId: pageName },
-			{ next: { tags: ['page', pageName] } }
+			{
+				next: {
+					tags: [buildTenantCacheTag(tenant, 'page'), buildTenantCacheTag(tenant, pageName)]
+				}
+			}
 		),
 		getSiteSettings(tenant)
 	]);

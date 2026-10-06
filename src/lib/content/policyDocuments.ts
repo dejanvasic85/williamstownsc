@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
 import { getSanityClient } from '@/sanity/lib/client';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 
 export type PolicyDocument = {
@@ -95,7 +96,7 @@ export async function getPolicyDocuments(tenant: Tenant): Promise<PolicyDocument
 	const rawDocuments = await getSanityClient(tenant).fetch<RawPolicyDocument[]>(
 		policyDocumentsQuery,
 		{},
-		{ next: { tags: ['policyDocument'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'policyDocument')] } }
 	);
 
 	const documents = rawDocuments

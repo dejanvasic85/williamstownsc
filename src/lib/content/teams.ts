@@ -2,6 +2,7 @@ import * as Sentry from '@sentry/nextjs';
 import { groq } from 'next-sanity';
 import logger from '@/lib/logger';
 import { getSanityClient } from '@/sanity/lib/client';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 import type { TeamBase } from '@/types/team';
 
@@ -78,7 +79,7 @@ export async function getTeamsDirectory(tenant: Tenant): Promise<TeamBase[]> {
 		return await getSanityClient(tenant).fetch<TeamBase[]>(
 			teamsDirectoryQuery,
 			{},
-			{ next: { tags: ['team'] } }
+			{ next: { tags: [buildTenantCacheTag(tenant, 'team')] } }
 		);
 	} catch (error) {
 		Sentry.captureException(error);
@@ -97,7 +98,7 @@ export async function getAllTeamsForSitemap(tenant: Tenant) {
 	const teams = await getSanityClient(tenant).fetch<Array<{ slug: string }>>(
 		allTeamsQuery,
 		{},
-		{ next: { tags: ['team'] } }
+		{ next: { tags: [buildTenantCacheTag(tenant, 'team')] } }
 	);
 
 	return teams

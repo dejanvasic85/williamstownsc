@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
 import { getSanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
+import { buildTenantCacheTag } from '@/tenants/cacheTagService';
 import type { Tenant } from '@/tenants/schema/tenantSchema';
 import type { CommitteeMember } from '@/types/committee';
 
@@ -73,7 +74,11 @@ export async function getCommitteePageData(tenant: Tenant): Promise<CommitteePag
 	const data = await getSanityClient(tenant).fetch<CommitteePageData>(
 		committeePageQuery,
 		{},
-		{ next: { tags: ['page', 'committeePage'] } }
+		{
+			next: {
+				tags: [buildTenantCacheTag(tenant, 'page'), buildTenantCacheTag(tenant, 'committeePage')]
+			}
+		}
 	);
 
 	if (!data) {
