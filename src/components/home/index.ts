@@ -1,3 +1,4 @@
+export { ContactSection } from './ContactSection';
 export { ExpressionOfInterestSection } from './ExpressionOfInterestSection';
 export { FootballSection } from './FootballSection';
 export { HeroCarousel } from './HeroCarousel';
