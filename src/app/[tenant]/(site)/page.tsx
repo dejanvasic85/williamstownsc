@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import clsx from 'clsx';
 import {
+	ContactSection,
 	ExpressionOfInterestSection,
 	FootballSection,
 	HeroSection,
@@ -26,7 +27,13 @@ import { urlFor } from '@/sanity/lib/image';
 import { getCurrentTenant } from '@/tenants/current';
 
 const nextMatchCardColors: MatchColor[] = ['blue', 'purple'];
-const keyDatesColumnClassValue = ['md:col-span-3', 'md:col-span-2', 'md:col-span-1'];
+// Column spans on a 6-column grid, keyed by how many match cards show.
+// Contact always sits left of key dates; with two matches they move to a second row.
+const cardColumnLayoutValue = [
+	{ match: '', contact: 'md:col-span-2', keyDates: 'md:col-span-4' },
+	{ match: 'md:col-span-2', contact: 'md:col-span-2', keyDates: 'md:col-span-2' },
+	{ match: 'md:col-span-3', contact: 'md:col-span-2', keyDates: 'md:col-span-4' }
+];
 
 // The match countdown reads live matchday fixtures, so it tracks the team routes' 3600.
 export const revalidate = 3600;
@@ -66,8 +73,8 @@ export default async function Home() {
 	const upcomingMatchCards = nextMatchCards.filter(
 		(card): card is typeof card & { match: NonNullable<typeof card.match> } => card.match !== null
 	);
-	const keyDatesColumnClass =
-		keyDatesColumnClassValue[upcomingMatchCards.length] ?? 'md:col-span-1';
+	const cardColumnLayout =
+		cardColumnLayoutValue[upcomingMatchCards.length] ?? cardColumnLayoutValue[0];
 
 	const hasAnnouncements = announcements.length > 0;
 	const logoUrl = siteSettings?.logo
@@ -102,17 +109,21 @@ export default async function Home() {
 				</div>
 
 				<div className="container mx-auto">
-					<div className="grid items-stretch gap-8 md:grid-cols-3">
+					<div className="grid items-stretch gap-8 md:grid-cols-6">
 						{upcomingMatchCards.map((card) => (
-							<MatchCountdownSection
-								key={card.slug}
-								match={card.match}
-								teamSlug={card.slug}
-								teamName={card.displayName}
-								color={card.color}
-							/>
+							<div key={card.slug} className={cardColumnLayout.match}>
+								<MatchCountdownSection
+									match={card.match}
+									teamSlug={card.slug}
+									teamName={card.displayName}
+									color={card.color}
+								/>
+							</div>
 						))}
-						<div className={keyDatesColumnClass}>
+						<div className={cardColumnLayout.contact}>
+							<ContactSection />
+						</div>
+						<div className={cardColumnLayout.keyDates}>
 							<KeyDatesSection
 								heading={homePageData?.keyDatesSection?.heading}
 								leadingText={homePageData?.keyDatesSection?.leadingText}
