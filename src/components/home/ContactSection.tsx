@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
+import type { ContactType } from '@/lib/contact/contactEmail';
 import { routes } from '@/lib/routes';
+
+const contactType: ContactType = 'player';
+const contactHref = `${routes.contact()}?type=${contactType}`;
 
 export function ContactSection() {
 	return (
@@ -12,7 +16,7 @@ export function ContactSection() {
 			<p className="text-base-content/70 text-base md:text-lg">
 				Have a question about the club? Send us a message and we will get back to you.
 			</p>
-			<Link href={routes.contact()} className="btn btn-primary btn-lg mt-auto">
+			<Link href={contactHref} className="btn btn-primary btn-lg mt-auto">
 				Contact Us
 			</Link>
 		</div>

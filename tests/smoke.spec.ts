@@ -11,7 +11,7 @@ test.describe('Homepage', () => {
 
 	test('links to the contact page from the get in touch card', async ({ page }) => {
 		await page.getByRole('link', { name: 'Contact Us', exact: true }).click();
-		await expect(page).toHaveURL(/\/contact$/);
+		await expect(page).toHaveURL(/\/contact\?type=player$/);
 	});
 
 	test('displays hero carousel if featured news available', async ({ page }) => {
