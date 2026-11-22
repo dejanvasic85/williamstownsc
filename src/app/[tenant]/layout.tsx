@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import clsx from 'clsx';
 import '@/app/globals.css';
@@ -29,14 +30,14 @@ export async function generateStaticParams() {
 	return getAllTenants().map((tenant) => ({ tenant: tenant.slug }));
 }
 
-// Rule 3: only slugs generated above can render, so an unregistered slug cannot.
-export const dynamicParams = false;
-
+// Rule 3: an unregistered slug renders 404. This is not done with `dynamicParams = false`,
+// because Next applies that to every child route, so news and teams published after the
+// build would 404 too.
 export default async function TenantLayout({ children, params }: TenantLayoutProps) {
 	const { tenant: tenantSlug } = await params;
 	const tenant = getTenantBySlug(tenantSlug);
 	if (!tenant) {
-		throw new Error(`Unknown tenant: ${tenantSlug}`);
+		notFound();
 	}
 	const config = getClientConfig();
 	const siteSettings = await getSiteSettings(tenant);

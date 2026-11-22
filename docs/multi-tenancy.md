@@ -75,11 +75,11 @@ That last one does not make **adding** a club deploy-free, and it is worth being
 Three things still come from the build:
 
 - `generateStaticParams()` returns the slugs known at build time.
-- `dynamicParams = false` rejects any slug it did not generate.
+- An unregistered slug renders 404.
 - The club's config file is code: secrets, theme and Sanity project.
 
-Adding a club without a deploy would mean moving all of that to runtime, turning `dynamicParams`
-back on and giving up per-club prerendering. That is a different architecture, not an increment.
+Adding a club without a deploy would mean moving all of that to runtime, resolving clubs at
+request time and giving up per-club prerendering. That is a different architecture, not an increment.
 Deploy-free onboarding is not on this roadmap.
 
 ## The demo club
@@ -469,7 +469,9 @@ another club's data.
    belongs in the proxy: a layout comparing `[tenant]` against `headers()` would force every route
    dynamic. This rule protects production club domains, so it is off when
    `VERCEL_ENV !== 'production'`, which is what makes preview URLs usable.
-3. **`dynamicParams = false` on `[tenant]`.** An unregistered slug cannot render.
+3. **An unregistered slug renders 404.** The `[tenant]` layout and `getCurrentTenant()` call
+   `notFound()`. Do not use `dynamicParams = false` on `[tenant]`: Next applies it to every child
+   route, so news articles and teams published after the build would also 404.
 4. **No handler falls back to a default club**, and none reads the tenant from a query parameter or
    request body. A handler with a missing or unknown `x-tenant` returns 400.
 5. **Webhook handlers never let an unauthenticated caller name the club.** The two handlers do this
